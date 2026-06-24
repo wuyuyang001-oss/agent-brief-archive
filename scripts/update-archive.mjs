@@ -9,8 +9,7 @@ const briefsDir = path.join(archiveDir, "briefs");
 const overviewsDir = path.join(archiveDir, "overviews");
 const dataDir = path.join(archiveDir, "data");
 
-const now = new Date();
-const generatedAt = now.toISOString();
+let generatedAt = "";
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -710,6 +709,8 @@ function main() {
   if (sourceFiles.length === 0) {
     throw new Error(`No morning-brief*.html files found in ${workspaceDir}`);
   }
+  const latestSourceMtime = Math.max(...sourceFiles.map(file => fs.statSync(path.join(workspaceDir, file)).mtimeMs));
+  generatedAt = process.env.ARCHIVE_GENERATED_AT || new Date(latestSourceMtime).toISOString();
 
   const briefs = [];
   for (const fileName of sourceFiles) {

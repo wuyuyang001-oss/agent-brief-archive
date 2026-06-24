@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI / Agent 晨间简报 - 2026-06-24</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --panel2: #eef4fb;
+      --text: #132334;
+      --muted: #5f7184;
+      --line: #d7e2ec;
+      --cyan: #0a67a3;
+      --green: #087f5b;
+      --amber: #a15c00;
+      --red: #b42355;
+      --shadow: 0 14px 36px rgba(16, 32, 48, .09);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(10,103,163,.09), transparent 34rem),
+        radial-gradient(circle at 85% 10%, rgba(8,127,91,.08), transparent 30rem),
+        linear-gradient(180deg, #f7faff, #eef5fb 45%, #f7f9fc);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Noto Sans SC", sans-serif;
+      line-height: 1.72;
+    }
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 34px 20px 56px; }
+    header {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 34px;
+      background: linear-gradient(135deg, #ffffff, #eef5fb);
+      box-shadow: var(--shadow);
+    }
+    h1 { margin: 0 0 12px; font-size: clamp(34px, 5vw, 62px); line-height: 1; letter-spacing: -0.06em; }
+    h2 { margin: 34px 0 14px; font-size: 28px; letter-spacing: -0.035em; }
+    h3 { margin: 20px 0 10px; font-size: 20px; letter-spacing: -0.02em; }
+    h4 { margin: 0 0 8px; font-size: 16px; }
+    p { margin: 0 0 12px; }
+    .lede { color: var(--muted); font-size: 16px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+    .chip, .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 27px;
+      padding: 0 10px;
+      border: 1px solid rgba(10,103,163,.22);
+      border-radius: 999px;
+      color: #084d7a;
+      background: rgba(10,103,163,.07);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .section {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: var(--shadow);
+    }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .card {
+      border: 1px solid rgba(19,35,52,.10);
+      border-radius: 18px;
+      padding: 16px;
+      background: #f8fbfe;
+    }
+    .note {
+      border-left: 3px solid var(--cyan);
+      padding: 12px 14px;
+      margin: 12px 0;
+      border-radius: 12px;
+      background: rgba(10,103,163,.07);
+      color: #183247;
+    }
+    .warn { border-left-color: var(--amber); background: rgba(161,92,0,.08); }
+    .good { border-left-color: var(--green); background: rgba(8,127,91,.08); }
+    .muted { color: var(--muted); }
+    .small { font-size: 13px; }
+    .meta {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 8px 14px;
+      margin: 14px 0;
+    }
+    .meta dt { color: var(--muted); }
+    .meta dd { margin: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; overflow: hidden; border-radius: 14px; }
+    th, td { border: 1px solid rgba(19,35,52,.12); padding: 9px 10px; vertical-align: top; }
+    th { color: #16334a; background: #eaf3fb; text-align: left; }
+    td { color: #203447; background: #ffffff; }
+    .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .delta { color: var(--green); font-weight: 800; }
+    figure {
+      margin: 16px 0;
+      border: 1px solid rgba(19,35,52,.12);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #f8fafc;
+      color: #12202c;
+    }
+    figure img { display: block; width: 100%; height: auto; background: #fff; }
+    figcaption {
+      padding: 11px 13px;
+      background: #edf3f7;
+      color: #243746;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .gallery figure.wide, figure.wide { grid-column: 1 / -1; }
+    .source-list li { margin-bottom: 8px; }
+    code {
+      padding: 1px 5px;
+      border-radius: 5px;
+      background: #eef3f8;
+      color: #19354c;
+    }
+    @media (max-width: 820px) {
+      .grid, .gallery { grid-template-columns: 1fr; }
+      .meta { grid-template-columns: 1fr; }
+      header, .section { padding: 20px; border-radius: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>AI / Agent 晨间简报</h1>
+      <p class="lede">生成日期：2026-06-24（周三）<br>信息截止时间：2026-06-24 10:49 CST（UTC+8）</p>
+      <div class="chips">
+        <span class="chip">今日论文：EnterpriseClawBench</span>
+        <span class="chip">GitHub 增长：约 48 小时代理</span>
+        <span class="chip">高 Star 首次推荐：5 项</span>
+        <span class="chip">官方动态：OpenAI / Anthropic</span>
+      </div>
+    </header>
+
+    <h2>1. 今日论文</h2>
+    <section class="section">
+      <h3>EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions</h3>
+      <p class="note">选择原因：该论文在上一份已发布日报（2026-06-22 10:36 CST）之后进入本轮检索范围，且直接面向企业真实工作流中的 agent benchmark。它不是合成玩具任务，而是从真实 workplace sessions 构造 852 个可复现任务，重点评估模型、harness、工具使用、交付物质量、成本、耗时和 skill transfer。</p>
+      <dl class="meta">
+        <dt>作者</dt><dd>Jincheng Zhong, Weizhi Wang, Che Jiang, Kai Tian, Zhenzhao Yuan, Junlin Yang, Dianqiao Lei, Kaiyan Zhang</dd>
+        <dt>发布日期</dt><dd>arXiv 显示 Submitted on 22 Jun 2026</dd>
+        <dt>论文链接</dt><dd><a href="https://arxiv.org/abs/2606.23654">arXiv 摘要页</a> · <a href="https://arxiv.org/pdf/2606.23654">PDF</a> · <a href="https://arxiv.org/html/2606.23654v1">arXiv HTML</a></dd>
+        <dt>代码</dt><dd><a href="https://github.com/FrontisAI/EnterpriseClawBench">FrontisAI/EnterpriseClawBench</a>（GitHub 当前 29 ★，Python，更新于 2026-06-23 19:40 UTC）</dd>
+      </dl>
+
+      <h3>English overview</h3>
+      <p>EnterpriseClawBench introduces a benchmark for enterprise agents built from proprietary real-world workplace sessions. The pipeline converts noisy sessions into 852 reproducible tasks with recovered fixtures, rewritten prompts, role classes, skill subclasses, hard rules, and semantic rubrics. Because the original sessions contain internal enterprise content, the benchmark data itself is not released; the reusable contribution is the construction and evaluation protocol. The Lite subset evaluates 32 harness-model combinations, and the best reported configuration, Codex with GPT-5.5, reaches only 0.663, indicating that enterprise artifact tasks remain far from saturated. The paper argues that agent evaluation should report harness-model pairs, artifact delivery, visual quality, cost, runtime, and skill-transfer behavior, rather than compressing performance into a single model score.</p>
+
+      <h3>对应中文翻译</h3>
+      <p>EnterpriseClawBench 提出了一个面向企业 agent 的 benchmark，其任务来源于专有的真实 workplace sessions。该流水线把噪声较大的会话转化为 852 个可复现任务，并为每个任务恢复输入文件、重写提示词、标注角色类别和技能子类，同时提供硬规则与语义评分 rubrics。由于原始会话包含企业内部内容，作者没有公开 benchmark 数据本身；可复用贡献主要是构造和评估协议。Lite 子集评估了 32 组 harness-model 组合，论文报告的最优配置是 Codex 搭配 GPT-5.5，得分仅为 0.663，说明企业交付物任务尚远未被当前 agent 解决。论文主张，agent 评估不应只压缩为单一模型分数，而应报告 harness-model 配对、交付物产出、视觉质量、成本、运行时间和 skill-transfer 行为。</p>
+
+      <div class="grid">
+        <article class="card"><h4>核心方法</h4><p>从真实企业会话中恢复任务实例，经切分、合并、脱敏、fixture 恢复、提示词重写、沙箱预检和 judge routing，得到 852 个任务与 120 个 Lite 任务。评价同时包含文本、视觉和规则检查。</p></article>
+        <article class="card"><h4>创新点</h4><p>把企业 agent 的真实交付物纳入评测，而不是只测试问答或代码 patch；同时把 harness、模型、成本、时间、产物格式和 skill injection 都作为评估对象。</p></article>
+        <article class="card"><h4>主要结论</h4><p>Lite 榜单最优为 Codex/GPT-5.5，得分 0.663；GPT-5.5 是最稳健的 generalist。视觉交付物的 judge-human 一致性弱于文本路线，skill 注入也可能出现负迁移。</p></article>
+        <article class="card"><h4>局限</h4><p>benchmark 数据因企业隐私不能公开，外部研究者无法直接复现完整任务；评分依赖自动 judge，视觉路线与人类相关性较弱；榜单结果强依赖 harness-model 配对，不能解释为单纯模型能力排名。</p></article>
+      </div>
+
+      <h3>全部公开图表</h3>
+      <p class="muted small">论文公开 HTML/PDF 共包含 12 幅 Figure 与 4 张 Table。Figure 采用 arXiv HTML 提供的原始图片；Table 2、Table 3 转写为 HTML；Table 1 与 Table 4 较宽且结构复杂，采用清晰页图，避免手工转写破坏列关系。未发现缺失图表。</p>
+      <div class="gallery">
+        <figure><img src="morning-brief-2026-06-24-assets/enterpriseclawbench-fig-1.png" alt="EnterpriseClawBench Figure 1"><figcaption>Figure 1 · Main Lite leaderboard across 32 harness-model combinations. 来源：<a href="https://arxiv.org/html/2606.23654v1">arXiv HTML</a>。</figcaption></figure>
+        <figure><img src="morning-brief-2026-06-24-assets/enterpriseclawbench-page-02.jpg" alt="EnterpriseClawBench Table 1 page"><figcaption>Table 1 · Positioning of EnterpriseClawBench against related benchmarks. 来源：<a href="https://arxiv.org/pdf/2606.23654#page=2">PDF 第 2 页</a>。</figcaption></figure>
+        <figure><img src="morning-brief-2026-06-24-assets/enterpriseclawbench-fig-2.png" alt="EnterpriseClawBench Figure 2"><figcaption>Figure 2 · Pipeline from enterprise sessions to benchmark tasks and evaluation assets. 来源：arXiv HTML。</figcaption></figure>
+        <figure><img src="morning-brief-2026-06-24-assets/enterpriseclawbench-fig-3.png" alt="EnterpriseClawBench Figure 3"><figcaption>Figure 3 · Construction funnel from raw TaskInstances to final benchmark tasks. 来源：arXiv HTML。</figcaption></figure>
+        <figure class="wide"><img src="morning-brief-2026-06-24-assets/enterpriseclawbench-fig-4.png" alt="EnterpriseClawBench Figure 4"><figcaption>Figure 4 · Statistics for the 852-task set: role taxonomy, skill subclasses, input types and expected artifact types. 来源：arXiv HTML。</figcaption></figure>
+        <figure><img src="morning-brief-2026-06-24-assets/enterpriseclawbench-fig-5.png" alt="EnterpriseClawBench Figure 5"><figcaption>Figure 5 · Cost-score trade-off on Lite. 来源：arXiv HTML。</figcaption></figure>
+        <figure><img src="morning-brief-2026-06-24-assets/enterpriseclawbench-fig-6.png" alt="EnterpriseClawBench Figure 6"><figcaption>Figure 6 · Model performance differs by enterprise role class. 来源：arXiv HTML。</figcaption></figure>
+        <figure><img src="morning-brief-2026-06-24-assets/enterpriseclawbench-fig-7.png" alt="EnterpriseClawBench Figure 7"><figcaption>Figure 7 · Model performance differs by expected deliverable type. 来源：arXiv HTML。</figcaption></figure>
+        <figure><img src="morning-brief-2026-06-24-assets/enterpriseclawbench-fig-8.png" alt="EnterpriseClawBench Figure 8"><figcaption>Figure 8 · Five-dimension semantic diagnostic by model. 来源：arXiv HTML。</figcaption></figure>
+      </div>
+      <table>
+        <caption class="small muted">Table 2 · Scalability check on the full 852-task set under the DeepAgents harness. 来源：arXiv HTML / PDF 第 7 页。</caption>
+        <thead><tr><th>Model</th><th class="num">Score</th><th class="num">Text</th><th class="num">Visual</th><th class="num">Rule</th></tr></thead>
+        <tbody>
+          <tr><td>GPT-5.5</td><td class="num">0.766</td><td class="num">0.813</td><td class="num">0.642</td><td class="num">0.959</td></tr>
+          <tr><td>Sonnet 4.6</td><td class="num">0.749</td><td class="num">0.793</td><td class="num">0.634</td><td class="num">0.957</td></tr>
+          <tr><td>Haiku 4.5</td><td class="num">0.632</td><td class="num">0.666</td><td class="num">0.542</td><td class="num">0.963</td></tr>
+          <tr><td>GPT-4.1-mini</td><td class="num">0.336</td><td class="num">0.383</td><td class="num">0.213</td><td class="num">0.817</td></tr>
+        </tbody>
+      </table>
+      <div class="gallery">
+        <figure><img src="morning-brief-2026-06-24-assets/enterpriseclawbench-fig-9.png" alt="EnterpriseClawBench Figure 9"><figcaption>Figure 9 · Task-class skill injection matrix for held-out frontend-page-generation tasks. 来源：arXiv HTML。</figcaption></figure>
+        <figure><figcaption>Table 3 · Human calibration audit for the Sonnet 4.6 judge. 来源：arXiv HTML / PDF 第 8 页。</figcaption><table><thead><tr><th>Scope</th><th class="num">n</th><th class="num">Human</th><th class="num">Sonnet</th><th class="num">MAE</th><th class="num">Spearman</th></tr></thead><tbody><tr><td>Overall</td><td class="num">48</td><td class="num">0.571</td><td class="num">0.498</td><td class="num">0.219</td><td class="num">0.263</td></tr><tr><td>Text</td><td class="num">24</td><td class="num">0.476</td><td class="num">0.504</td><td class="num">0.134</td><td class="num">0.790</td></tr><tr><td>Visual</td><td class="num">24</td><td class="num">0.666</td><td class="num">0.492</td><td class="num">0.303</td><td class="num">-0.259</td></tr></tbody></table></figure>
+        <figure class="wide"><img src="morning-brief-2026-06-24-assets/enterpriseclawbench-page-16.jpg" alt="EnterpriseClawBench Table 4 page"><figcaption>Table 4 · Representative tasks from the Lite subset by role class. 来源：<a href="https://arxiv.org/pdf/2606.23654#page=16">PDF 第 16 页</a>。</figcaption></figure>
+        <figure><img src="morning-brief-2026-06-24-assets/enterpriseclawbench-fig-10.png" alt="EnterpriseClawBench Figure 10"><figcaption>Figure 10 · Positive transfer evidence for the HTML task. 来源：arXiv HTML。</figcaption></figure>
+        <figure><img src="morning-brief-2026-06-24-assets/enterpriseclawbench-fig-11.png" alt="EnterpriseClawBench Figure 11"><figcaption>Figure 11 · Negative transfer evidence for the same HTML task. 来源：arXiv HTML。</figcaption></figure>
+        <figure class="wide"><img src="morning-brief-2026-06-24-assets/enterpriseclawbench-fig-12.png" alt="EnterpriseClawBench Figure 12"><figcaption>Figure 12 · Judge-model ablation over Lite artifacts. 来源：arXiv HTML。</figcaption></figure>
+      </div>
+    </section>
+
+    <h2>2. GitHub 三日增长项目</h2>
+    <section class="section">
+      <p class="note warn">当前只有 2026-06-22 10:21-10:27 CST 的历史快照，距离本次查询约 48 小时，不足严格 72 小时。因此本榜使用“当前 star - 2026-06-22 快照”的可验证代理指标，并按该代理新增数排序；不能解释为严格三日新增。</p>
+      <table>
+        <thead><tr><th>排名</th><th>项目</th><th>用途简介</th><th class="num">当前 Star</th><th class="num">约 48h 新增</th><th>语言</th><th>最近更新</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>强调长期个性化与持续能力积累的个人 agent。</td><td class="num">201,039</td><td class="num delta">+1,981</td><td>Python</td><td>2026-06-24 02:41 UTC</td></tr>
+          <tr><td class="num">2</td><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>Agentic skills framework 与软件开发方法论。</td><td class="num">237,011</td><td class="num delta">+1,937</td><td>Shell</td><td>2026-06-24 02:41 UTC</td></tr>
+          <tr><td class="num">3</td><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>面向 agent 的网页搜索、抓取与交互 API。</td><td class="num">138,230</td><td class="num delta">+1,868</td><td>TypeScript</td><td>2026-06-24 02:38 UTC</td></tr>
+          <tr><td class="num">4</td><td><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td>Claude Code、Codex、OpenCode、OpenClaw、Gemini CLI、Hermes Agent 的跨平台桌面切换与管理工具。</td><td class="num">107,133</td><td class="num delta">+1,375</td><td>Rust</td><td>2026-06-24 02:37 UTC</td></tr>
+          <tr><td class="num">5</td><td><a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a></td><td>把 Andrej Karpathy 关于 LLM coding 的观察整理为 CLAUDE.md 风格技能文件。</td><td class="num">181,059</td><td class="num delta">+1,290</td><td>未标明</td><td>2026-06-24 02:40 UTC</td></tr>
+        </tbody>
+      </table>
+      <p class="muted small">近三天新建候选中，当前 star 较高的项目包括 <a href="https://github.com/bozhouDev/codex-orange-book">bozhouDev/codex-orange-book</a>（586 ★）、<a href="https://github.com/HKUDS/AgentSpace">HKUDS/AgentSpace</a>（313 ★）、<a href="https://github.com/Johell1NS/browser-search">Johell1NS/browser-search</a>（137 ★）、<a href="https://github.com/iart-ai/motion-skills">iart-ai/motion-skills</a>（114 ★）。它们作为“新建项目增长代理”记录，但当前值低于上述快照差分榜前五。</p>
+    </section>
+
+    <h2>3. GitHub 高 Star 未总结项目</h2>
+    <section class="section">
+      <p class="note">执行前已扫描当前线程历史与工作区 <code>/Users/wuyuyang/Documents/Rhythm</code> 下此前生成的 <code>morning-brief*.html</code>，并排除曾在任一 GitHub 板块或论文代码链接出现的 30 个仓库。以下按当前总 star 降序，仅保留与 AI Agent、Agent Skill、coding agent、MCP、agent framework/toolchain 高度相关的项目。</p>
+      <table>
+        <thead><tr><th>排名</th><th>项目</th><th class="num">当前 Star</th><th>用途与核心能力</th><th>为什么值得关注</th><th>语言</th><th>最近更新</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></td><td class="num">143,470</td><td>面向 Claude Code 工作流的工程技能集合。</td><td>Agent Skills 正在从“提示词”变成可复用的工作流资产，该仓库展示了工程师个人技能库的组织方式。</td><td>Shell</td><td>2026-06-24 02:40 UTC</td></tr>
+          <tr><td class="num">2</td><td><a href="https://github.com/garrytan/gstack">garrytan/gstack</a></td><td class="num">114,173</td><td>面向 Claude Code 的 23 个 opinionated tools，覆盖 CEO、设计、工程管理、发布、文档和 QA 等角色。</td><td>代表“角色化 agent 工具栈”趋势，适合观察个人/小团队如何把 coding agent 扩展为组织级协作系统。</td><td>TypeScript</td><td>2026-06-24 02:40 UTC</td></tr>
+          <tr><td class="num">3</td><td><a href="https://github.com/modelcontextprotocol/servers">modelcontextprotocol/servers</a></td><td class="num">87,614</td><td>Model Context Protocol 官方/公共服务器集合。</td><td>MCP 是 agent 工具接入的关键接口层，服务器生态决定 agent 可用工具和企业系统集成范围。</td><td>TypeScript</td><td>2026-06-24 02:33 UTC</td></tr>
+          <tr><td class="num">4</td><td><a href="https://github.com/OpenHands/OpenHands">OpenHands/OpenHands</a></td><td class="num">78,156</td><td>AI-driven development agent，可执行软件开发任务。</td><td>是开源 coding agent 领域的核心项目之一，适合与 Codex、Claude Code、OpenCode 等工具横向比较。</td><td>Python</td><td>2026-06-24 02:38 UTC</td></tr>
+          <tr><td class="num">5</td><td><a href="https://github.com/microsoft/autogen">microsoft/autogen</a></td><td class="num">59,185</td><td>Microsoft 的 agentic AI programming framework。</td><td>多智能体编程框架的早期代表项目，仍是 agent 架构、对话式协作和工具调用研究的重要基线。</td><td>Python</td><td>2026-06-24 00:27 UTC</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <h2>4. OpenAI / Anthropic 动态</h2>
+    <section class="section">
+      <h3>OpenAI：发现新发布内容</h3>
+      <div class="grid">
+        <article class="card"><span class="tag">官方文章</span> <span class="tag">2026-06-23</span><h4><a href="https://openai.com/index/how-gpt-5-helped-an-immunologist-decode-the-pregnancy-immune-system/">How GPT-5 helped an immunologist decode the pregnancy immune system</a></h4><p>OpenAI 官方研究案例，介绍 GPT-5 如何辅助免疫学研究人员理解妊娠期间免疫系统变化。与 agent 主题的直接关系弱于 Codex 更新，但属于官方技术/研究应用内容。</p></article>
+        <article class="card"><span class="tag">官方文章</span> <span class="tag">2026-06-22</span><h4><a href="https://openai.com/index/codex-maxxing-for-long-running-work/">Codex-maxxing for Long-Running Work</a></h4><p>面向 Codex 长时间运行任务的工作流指南，强调准备项目上下文、环境、任务边界、验证命令和可交接状态，直接关联 coding agent 的可靠执行。</p></article>
+        <article class="card"><span class="tag">官方安全</span> <span class="tag">2026-06-22</span><h4><a href="https://openai.com/index/daybreak/">Daybreak: Tools for securing every organization</a></h4><p>OpenAI 发布 Daybreak 安全方向内容，关注利用 AI 辅助发现、修复和规模化处理安全问题。</p></article>
+        <article class="card"><span class="tag">官方安全</span> <span class="tag">2026-06-22</span><h4><a href="https://openai.com/index/patch-the-planet/">Patch the Planet</a></h4><p>围绕 Daybreak 的开源维护者支持计划，强调 AI 安全工具与开源生态漏洞修补的结合。</p></article>
+      </div>
+      <h3>OpenAI 官方视频：发现 4 个新视频</h3>
+      <table>
+        <thead><tr><th>发布时间</th><th>标题</th><th>简介</th></tr></thead>
+        <tbody>
+          <tr><td>2026-06-23 18:45 UTC</td><td><a href="https://www.youtube.com/watch?v=mVpCDzoNtxA">ChatGPT Futures, Class of 2026: The Next Generation of AI Leaders</a></td><td>ChatGPT Futures 2026 学员对 AI 未来用途的短片，偏生态与教育。</td></tr>
+          <tr><td>2026-06-23 11:30 UTC</td><td><a href="https://www.youtube.com/watch?v=qU5-komJ-GE">How Omio is building the future of conversational travel</a></td><td>客户案例：Omio 使用 ChatGPT、Codex 和 OpenAI API 重构旅行搜索与预订体验。</td></tr>
+          <tr><td>2026-06-22 21:06 UTC</td><td><a href="https://www.youtube.com/watch?v=GhCP2eDrKHk">Meet the ChatGPT Futures, Class of 2026</a></td><td>介绍 ChatGPT Futures 2026 项目和学生构建的 AI 项目。</td></tr>
+          <tr><td>2026-06-22 17:45 UTC</td><td><a href="https://www.youtube.com/watch?v=27-GjDIWGo0">How Zendesk CEO Tom Eggemeier goes from Idea to Action</a></td><td>Monday Morning 系列首期，讨论 AI 时代从 idea 到 action 的管理和产品落地。</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Anthropic：发现新发布内容</h3>
+      <article class="card">
+        <span class="tag">官方产品更新</span> <span class="tag">2026-06-23</span>
+        <h4><a href="https://www.anthropic.com/news/introducing-claude-tag">Introducing Claude Tag</a></h4>
+        <p>Anthropic 发布 Claude Tag，允许团队在 Slack 频道中 tag <strong>@Claude</strong>，并把 Claude 连接到选定频道、工具、数据和代码库。文章称 Claude Tag 是 Claude Code 演进的开始，特点包括多人协作、频道上下文记忆、任务分解与计划未来任务。官方页面内嵌视频：<a href="https://www.youtube.com/watch?v=VojDzHaciKQ">Claude Tag 视频</a>。</p>
+      </article>
+      <p class="muted small">Anthropic 官方 YouTube RSS 在本次窗口内没有新的公开频道视频；Claude Tag 视频来自 Anthropic 官方文章内嵌链接。</p>
+    </section>
+
+    <h2>来源与方法</h2>
+    <section class="section">
+      <ul class="source-list">
+        <li>检索与生成时间：2026-06-24 10:35-10:49 CST。</li>
+        <li>论文：<a href="https://arxiv.org/abs/2606.23654">arXiv 2606.23654</a>、<a href="https://arxiv.org/pdf/2606.23654">官方 PDF</a>、<a href="https://arxiv.org/html/2606.23654v1">arXiv HTML</a>、<a href="https://github.com/FrontisAI/EnterpriseClawBench">FrontisAI/EnterpriseClawBench</a>。PDF 元数据与 arXiv 摘要页核验了标题、作者、提交日期和摘要。</li>
+        <li>论文图表：12 幅 Figure 直接下载自 arXiv HTML 的 <code>x1.png</code> 至 <code>x12.png</code>；Table 2、Table 3 从 arXiv HTML 表格转写；Table 1、Table 4 使用 PDF 页图。Poppler 渲染 PDF 附录页时对部分中文字体有缺失警告，因此涉及中文原文的页图仅作为视觉定位，准确文本以原始 PDF/HTML 为准。</li>
+        <li>GitHub：使用 GitHub REST API 当前仓库元数据与搜索 API。查询时间：2026-06-24 10:39-10:43 CST。增长榜使用 2026-06-22 报告中的 star 快照作为基线，窗口约 48 小时，不是严格三日窗口。</li>
+        <li>OpenAI：<a href="https://openai.com/news/">OpenAI News</a>、<a href="https://openai.com/index/codex-maxxing-for-long-running-work/">Codex-maxxing for Long-Running Work</a>、<a href="https://openai.com/index/daybreak/">Daybreak</a>、<a href="https://openai.com/index/patch-the-planet/">Patch the Planet</a>、<a href="https://openai.com/index/how-gpt-5-helped-an-immunologist-decode-the-pregnancy-immune-system/">GPT-5 immunology case</a>、<a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">OpenAI 官方 YouTube RSS</a>。</li>
+        <li>Anthropic：<a href="https://www.anthropic.com/news">Anthropic News</a>、<a href="https://www.anthropic.com/news/introducing-claude-tag">Introducing Claude Tag</a>、<a href="https://www.youtube.com/watch?v=VojDzHaciKQ">Claude Tag 官方页面内嵌视频</a>、<a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCrDwWp7EBBv4NwvScIpBDOA">Anthropic 官方 YouTube RSS</a>。</li>
+      </ul>
+
+      <h3>GitHub Star 快照</h3>
+      <table>
+        <thead><tr><th>仓库</th><th class="num">2026-06-22 快照</th><th class="num">2026-06-24 当前</th><th class="num">代理新增</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td class="num">199,058</td><td class="num">201,039</td><td class="num delta">+1,981</td></tr>
+          <tr><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td class="num">235,074</td><td class="num">237,011</td><td class="num delta">+1,937</td></tr>
+          <tr><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td class="num">136,362</td><td class="num">138,230</td><td class="num delta">+1,868</td></tr>
+          <tr><td><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td class="num">105,758</td><td class="num">107,133</td><td class="num delta">+1,375</td></tr>
+          <tr><td><a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a></td><td class="num">179,769</td><td class="num">181,059</td><td class="num delta">+1,290</td></tr>
+          <tr><td><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></td><td class="num">219,369</td><td class="num">220,602</td><td class="num">+1,233</td></tr>
+          <tr><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td class="num">153,544</td><td class="num">154,395</td><td class="num">+851</td></tr>
+          <tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td class="num">177,031</td><td class="num">177,834</td><td class="num">+803</td></tr>
+          <tr><td><a href="https://github.com/browser-use/browser-use">browser-use/browser-use</a></td><td class="num">99,951</td><td class="num">100,360</td><td class="num">+409</td></tr>
+          <tr><td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td><td class="num">133,625</td><td class="num">134,008</td><td class="num">+383</td></tr>
+        </tbody>
+      </table>
+
+      <h3>已总结仓库集合与本次新增</h3>
+      <p class="small muted">历史扫描排除仓库数：30。包括但不限于 <code>openclaw/openclaw</code>、<code>obra/superpowers</code>、<code>NousResearch/hermes-agent</code>、<code>anthropics/skills</code>、<code>anthropics/claude-code</code>、<code>langchain-ai/langchain</code>、<code>langflow-ai/langflow</code>、<code>langgenius/dify</code>、<code>firecrawl/firecrawl</code>、<code>browser-use/browser-use</code>、<code>google-gemini/gemini-cli</code> 等。</p>
+      <p><strong>本次新增至已总结仓库集合：</strong><code>mattpocock/skills</code>、<code>garrytan/gstack</code>、<code>modelcontextprotocol/servers</code>、<code>OpenHands/OpenHands</code>、<code>microsoft/autogen</code>。</p>
+
+      <h3>数据限制与不确定性</h3>
+      <ul class="source-list">
+        <li>GitHub star 数会持续变化；本次增长榜因缺少约 72 小时历史快照，使用约 48 小时差分，适合观察短期热度但不能用于严格三日增长结论。</li>
+        <li>高 Star 未总结榜按当前总 star 排序，但人工排除了通用教程、提示词归档、通用模型运行时、非 agent 主体项目和此前日报已出现项目。</li>
+        <li>EnterpriseClawBench 的完整数据集未公开，论文结果不能由本简报独立复现；其主要价值是构造协议、评估维度和报告方式。</li>
+        <li>今天不是周六，按自动化规则完全省略“本周周报”板块。</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

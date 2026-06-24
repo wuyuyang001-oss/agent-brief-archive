@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI / Agent 晨间简报与周报 | 2026-06-13</title>
+  <style>
+    :root{--ink:#15212b;--muted:#607080;--line:#d9e2e8;--paper:#f3f6f8;--card:#fff;--blue:#1769aa;--green:#087f5b;--amber:#986801;--purple:#6951a3}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+    main{max-width:1180px;margin:auto;padding:34px 22px 72px}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+    header{padding:38px;border-radius:22px;background:linear-gradient(135deg,#142b3c,#17614f);color:#fff;box-shadow:0 12px 30px #17334a25}
+    header h1{margin:0 0 8px;font-size:35px;letter-spacing:-1px}header p{margin:4px 0;color:#dcece7}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.chip{padding:5px 10px;border-radius:999px;background:#ffffff18;border:1px solid #ffffff35;font-size:13px}
+    section{margin-top:26px;padding:28px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 5px 18px #22384b0d}
+    h2{margin:0 0 18px;font-size:25px;letter-spacing:-.4px}h3{margin:23px 0 9px;font-size:18px}h4{margin:0 0 7px;font-size:16px}p{margin:8px 0}
+    .muted{color:var(--muted)}.small{font-size:13px}.note{padding:13px 15px;border-left:4px solid var(--blue);background:#edf6fc;border-radius:8px}.good{border-left-color:var(--green);background:#eef9f5}.warn{border-left-color:var(--amber);background:#fff8e7}
+    .meta,.cards,.signals{display:grid;gap:12px}.meta{grid-template-columns:repeat(4,1fr);margin:18px 0}.meta div,.card,.signal{padding:15px;border:1px solid var(--line);border-radius:12px;background:#fbfcfd}
+    .meta b{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}.meta span{font-size:16px}.cards{grid-template-columns:repeat(2,1fr)}.signals{grid-template-columns:repeat(4,1fr)}
+    .rank{display:inline-grid;place-items:center;width:27px;height:27px;margin-right:7px;border-radius:50%;background:#e7f2fa;color:#075b96;font-weight:700}.delta{color:var(--green);font-weight:750}.stars{font-variant-numeric:tabular-nums;font-weight:700}
+    table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}th,td{padding:10px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f3f6f8;color:#44515d}.table-wrap{overflow:auto}
+    .en{font-family:Georgia,"Times New Roman",serif;background:#f7f9fa;padding:14px;border-radius:10px}.zh{background:#f0f7fb;padding:14px;border-radius:10px}
+    .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}.gallery figure{margin:0;padding:10px;border:1px solid var(--line);border-radius:12px;background:#fafbfc}.gallery img{display:block;width:100%;height:auto;border-radius:6px;background:#fff}.gallery figcaption{padding:8px 4px 2px;font-size:13px;color:#52616d}.wide{grid-column:1/-1}
+    .weekly{border-color:#cfc5e7;background:linear-gradient(180deg,#fff,#fbf9ff)}.weekly h2{color:#493677}.signal b{display:block;color:var(--purple);font-size:20px}.sources li{margin:6px 0}.footer{margin-top:24px;text-align:center;color:var(--muted)}
+    @media(max-width:900px){.meta,.signals{grid-template-columns:repeat(2,1fr)}}@media(max-width:760px){header{padding:25px}header h1{font-size:28px}.meta,.cards,.signals,.gallery{grid-template-columns:1fr}.wide{grid-column:auto}section{padding:20px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>AI / Agent 晨间简报与周报</h1>
+    <p>生成日期：2026 年 6 月 13 日（周六）</p>
+    <p>信息截止时间：2026-06-13 15:26（Asia/Shanghai）</p>
+    <div class="chips"><span class="chip">今日论文：SpatialClaw</span><span class="chip">GitHub 可验证近期增长</span><span class="chip">高 Star 未总结项目</span><span class="chip">OpenAI / Anthropic 官方动态</span><span class="chip">本周周报</span></div>
+  </header>
+
+  <section id="paper">
+    <h2>1. 今日论文：SpatialClaw</h2>
+    <h3>SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning</h3>
+    <div class="meta">
+      <div><b>提交时间</b><span>2026-06-11 17:59 UTC</span></div>
+      <div><b>架构主题</b><span>Code-as-Action Agent</span></div>
+      <div><b>评测范围</b><span>20 个空间推理 Benchmark</span></div>
+      <div><b>最佳平均准确率</b><span>59.9%</span></div>
+    </div>
+    <p><b>作者：</b>Seokju Cho、Ryo Hachiuma、Abhishek Badki、Hang Su、Byung-Kwan Lee、Chan Hee Song、Sifei Liu、Subhashree Radhakrishnan、Seungryong Kim、Yu-Chiang Frank Wang、Min-Hung Chen。</p>
+    <p><b>链接：</b><a href="https://arxiv.org/abs/2606.13673">arXiv 摘要</a> · <a href="https://arxiv.org/pdf/2606.13673">论文 PDF</a> · <a href="https://github.com/NVlabs/SpatialClaw">代码仓库</a> · <a href="https://spatialclaw.github.io/">项目页</a></p>
+    <p class="note">选择理由：该论文在上一份报告截止时间之后提交，直接研究 Agent 的 action interface。它证明工具是否有效，不仅取决于工具本身，也取决于 Agent 能否在看到中间结果后继续组合、修正和验证操作。</p>
+
+    <h3>英文简介与对应翻译</h3>
+    <p class="en"><b>English.</b> SpatialClaw is a training-free spatial-reasoning agent that treats executable code as the action interface. Instead of producing a complete program in one pass or invoking tools through a fixed structured schema, the agent writes one Python cell at a time inside a persistent kernel, observes text, variables, errors, and visual outputs, and revises its next action accordingly. Across 20 static and dynamic 3D/4D spatial-reasoning benchmarks, SpatialClaw reaches 59.9% average accuracy with a Gemma4-31B backbone, outperforming the strongest recent spatial-agent baseline by 11.2 percentage points and improving consistently across six open-source VLM backbones.</p>
+    <p class="zh"><b>中文翻译。</b>SpatialClaw 是一个无需训练的空间推理 Agent，以可执行代码作为 action interface。它不要求 Agent 一次性生成完整程序，也不把操作限制在固定的结构化工具调用模式中；Agent 会在持久 Python 内核里逐步编写代码单元，观察文本、变量、错误和视觉输出，并据此修正下一步动作。在 20 个静态与动态 3D/4D 空间推理 benchmark 上，使用 Gemma4-31B 作为骨干模型时，SpatialClaw 达到 59.9% 平均准确率，比最强的近期空间 Agent 基线高 11.2 个百分点，并在六个开源 VLM 骨干上持续取得提升。</p>
+
+    <h3>核心方法、创新、结果与局限</h3>
+    <div class="cards">
+      <article class="card"><h4>核心架构</h4><p>独立 planner 先生成分析计划；主 Agent 在持久 IPython 内核中逐步生成并执行代码；每一步的 stdout、错误、变量摘要与通过 <code>show()</code> 注册的图像进入下一轮上下文，直到调用 <code>ReturnAnswer()</code>。</p></article>
+      <article class="card"><h4>关键创新</h4><p>把代码从一次性产物改造成可观察、可迭代的 action interface。Agent 能复用先前的分割、深度、重建和几何变量，并根据问题动态组合 NumPy、SciPy、Matplotlib 与感知工具。</p></article>
+      <article class="card"><h4>主要实验结论</h4><p>在相同 Gemma4-31B 骨干下，SpatialClaw 平均准确率 59.9%，Structured Tool-Call 为 56.7%，Single-Pass Code 为 55.2%，No-tool 为 53.4%。在 13 个元类别中的 11 个优于两种 action-interface 基线。</p></article>
+      <article class="card"><h4>驱动因素与局限</h4><p>LLM-as-judge 将 52.2% 的胜例归因于代码组合、19.5% 归因于控制流。剩余错误中，几何计算错误占 21%，工具选择/覆盖错误占 18%。作者明确指出当前瓶颈已更多转向 VLM 和底层感知工具质量。</p></article>
+    </div>
+    <p class="note warn"><b>可信度判断：</b>覆盖 20 个 benchmark、六个开源骨干，并保持统一 prompt、工具集和配置，横向比较较扎实；但部分 benchmark 仅随机采样 1,000 个样本，工具消融仅在 15 个 benchmark 各 500 个样本上进行；胜因与失败模式依赖 Gemini-3.1-Pro 作为 judge，存在评判模型偏差。</p>
+
+    <h3>论文全部公开图表（按论文顺序）</h3>
+    <p class="muted small">论文共包含 7 幅 Figure 与 6 张 Table，以下全部附上。密集表格采用原始 PDF 清晰截图，避免转写造成数值错误。</p>
+    <div class="gallery">
+      <figure class="wide"><img src="morning-brief-2026-06-13-assets/figure-1.png" alt="Figure 1"><figcaption><b>Figure 1.</b> SpatialClaw 在 20 个空间推理 benchmark 上的表现。<a href="https://arxiv.org/pdf/2606.13673">来源</a></figcaption></figure>
+      <figure class="wide"><img src="morning-brief-2026-06-13-assets/figure-2.png" alt="Figure 2"><figcaption><b>Figure 2.</b> Single-pass、Structured Tool-Call 与 SpatialClaw action interface 对比。<a href="https://arxiv.org/pdf/2606.13673">来源</a></figcaption></figure>
+      <figure class="wide"><img src="morning-brief-2026-06-13-assets/figure-3.png" alt="Figure 3"><figcaption><b>Figure 3.</b> 持久内核上的迭代代码执行 Agent loop。<a href="https://arxiv.org/pdf/2606.13673">来源</a></figcaption></figure>
+      <figure class="wide"><img src="morning-brief-2026-06-13-assets/table-1.png" alt="Table 1"><figcaption><b>Table 1.</b> 六个骨干模型在 20 个空间推理 benchmark 上的主结果。<a href="https://arxiv.org/pdf/2606.13673">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-13-assets/table-2.png" alt="Table 2"><figcaption><b>Table 2.</b> 相同工具集下的 action interface 比较。<a href="https://arxiv.org/pdf/2606.13673">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-13-assets/table-3.png" alt="Table 3"><figcaption><b>Table 3.</b> 与其他空间推理 Agent 的比较。<a href="https://arxiv.org/pdf/2606.13673">来源</a></figcaption></figure>
+      <figure class="wide"><img src="morning-brief-2026-06-13-assets/figure-4.png" alt="Figure 4"><figcaption><b>Figure 4.</b> SpatialClaw 相对两类基线在 13 个元类别上的胜负差。<a href="https://arxiv.org/pdf/2606.13673">来源</a></figcaption></figure>
+      <figure class="wide"><img src="morning-brief-2026-06-13-assets/table-4.png" alt="Table 4"><figcaption><b>Table 4.</b> 感知工具与 utility function 消融。<a href="https://arxiv.org/pdf/2606.13673">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-13-assets/figure-5.png" alt="Figure 5"><figcaption><b>Figure 5.</b> 不同问题类别下的 primitive 使用频率。<a href="https://arxiv.org/pdf/2606.13673">来源</a></figcaption></figure>
+      <figure class="wide"><img src="morning-brief-2026-06-13-assets/table-5.png" alt="Table 5"><figcaption><b>Table 5.</b> 各 benchmark 的评测指标与评分协议。<a href="https://arxiv.org/pdf/2606.13673">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-13-assets/figure-6.png" alt="Figure 6"><figcaption><b>Figure 6.</b> 相对 Structured Tool-Call 胜例的归因。<a href="https://arxiv.org/pdf/2606.13673">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-13-assets/figure-7.png" alt="Figure 7"><figcaption><b>Figure 7.</b> 1,000 个错误 Agent session 的失败模式。<a href="https://arxiv.org/pdf/2606.13673">来源</a></figcaption></figure>
+      <figure class="wide"><img src="morning-brief-2026-06-13-assets/table-6.png" alt="Table 6"><figcaption><b>Table 6.</b> 主实验使用的六个开源骨干模型。<a href="https://arxiv.org/pdf/2606.13673">来源</a></figcaption></figure>
+    </div>
+  </section>
+
+  <section id="growth">
+    <h2>2. GitHub 近期 Star 增长项目</h2>
+    <p class="note good">当前没有 2026-06-10 或 2026-06-11 的约 72 小时快照。为避免编造三日增量，本榜使用上一份报告中同一组高相关仓库的 2026-06-12 10:00 快照，计算至 2026-06-13 15:26 的约 29.5 小时可验证净增，并按净增排序。这是当前最接近、且时间窗一致的可验证代理指标。</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>#</th><th>项目</th><th>用途</th><th>当前 Star</th><th>约 29.5 小时新增</th><th>主要语言</th><th>最近更新（UTC）</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>强调长期适应与能力积累的个人 Agent。</td><td class="stars">192,193</td><td class="delta">+1,139</td><td>Python</td><td>2026-06-13 07:24</td></tr>
+        <tr><td>2</td><td><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></td><td>跨 Claude Code、Codex、OpenCode、Cursor 的 Agent harness 优化系统。</td><td class="stars">214,453</td><td class="delta">+887</td><td>JavaScript</td><td>2026-06-13 07:24</td></tr>
+        <tr><td>3</td><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>开源 coding agent 与可替换 Agent harness。</td><td class="stars">173,814</td><td class="delta">+537</td><td>TypeScript</td><td>2026-06-13 07:23</td></tr>
+        <tr><td>4</td><td><a href="https://github.com/n8n-io/n8n">n8n-io/n8n</a></td><td>支持 AI 与大量业务集成的工作流自动化平台。</td><td class="stars">192,267</td><td class="delta">+157</td><td>TypeScript</td><td>2026-06-13 07:16</td></tr>
+        <tr><td>5</td><td><a href="https://github.com/langgenius/dify">langgenius/dify</a></td><td>生产级 agentic workflow 开发平台。</td><td class="stars">145,027</td><td class="delta">+135</td><td>TypeScript</td><td>2026-06-13 07:23</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted small">补充观察：在拥有 6 月 9 日快照的早期 skills 样本中，截至当前约 100.5 小时的净增为 GordenSuperPPTSkills +414、baoyu-design +308、guard-skills +130、AgentHarness +83、DeepX +57、codex-chatgpt-control +50。由于窗口不同，未与上表混排。</p>
+  </section>
+
+  <section id="unseen">
+    <h2>3. GitHub 高 Star、此前未总结项目</h2>
+    <p class="note">执行前已检查本周此前三份 <code>morning-brief*.html</code>，排除所有曾在 GitHub 板块或论文代码链接中出现的仓库。筛选范围包括 AI Agent、Agent 架构、多智能体、coding agent、Agent Skill、MCP、工具链与运行时；以下按当前总 Star 降序。</p>
+    <div class="cards">
+      <article class="card"><h4><span class="rank">1</span><a href="https://github.com/openclaw/openclaw">openclaw/openclaw</a></h4><p><span class="stars">378,452 ★</span> · TypeScript · 更新于 2026-06-13 07:19 UTC</p><p>跨操作系统与平台运行的个人 AI assistant。值得关注：它代表通用个人 Agent 从单一终端或单一聊天入口走向跨平台执行层。</p></article>
+      <article class="card"><h4><span class="rank">2</span><a href="https://github.com/obra/superpowers">obra/superpowers</a></h4><p><span class="stars">226,262 ★</span> · Shell · 更新于 2026-06-13 07:22 UTC</p><p>Agentic skills 框架与软件开发方法论。值得关注：本周 GitHub 增长反复指向“可组合 skills + 固化工程方法”，该项目是这一方向的高规模代表。</p></article>
+      <article class="card"><h4><span class="rank">3</span><a href="https://github.com/ultraworkers/claw-code">ultraworkers/claw-code</a></h4><p><span class="stars">193,705 ★</span> · Rust · 更新于 2026-06-13 07:24 UTC</p><p>由 Agent 管理和持续开发的软件项目。值得关注：它提供了观察“Agent 作为长期软件维护主体”所需的代码、运行时和治理实验样本。</p></article>
+      <article class="card"><h4><span class="rank">4</span><a href="https://github.com/Significant-Gravitas/AutoGPT">Significant-Gravitas/AutoGPT</a></h4><p><span class="stars">184,923 ★</span> · Python · 更新于 2026-06-13 07:13 UTC</p><p>面向通用自主 Agent 构建与使用的平台。值得关注：作为早期通用 Agent 代表，其架构演进可以与当前 skills、harness 和标准协议趋势对照。</p></article>
+      <article class="card wide"><h4><span class="rank">5</span><a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a></h4><p><span class="stars">174,386 ★</span> · 未标注 · 更新于 2026-06-13 07:23 UTC</p><p>通过单一 <code>CLAUDE.md</code> 将编码经验与行为约束注入 Claude Code。值得关注：它说明轻量文本化 skills 也能以极低集成成本改变 coding-agent 行为。</p></article>
+    </div>
+  </section>
+
+  <section id="official">
+    <h2>4. OpenAI / Anthropic 官方动态</h2>
+    <p class="muted">检查窗口：自上一份报告截止时间 2026-06-12 10:00 CST 至 2026-06-13 15:26 CST。</p>
+    <h3>OpenAI：发现 1 条新发布内容</h3>
+    <article class="card">
+      <h4><a href="https://openai.com/index/academy-courses-applying-ai-at-work">New OpenAI Academy courses for the next era of work</a></h4>
+      <p class="muted">2026-06-12 10:00 UTC · 官方教育/开发者应用更新</p>
+      <p>OpenAI 发布三门 Academy 课程，目标是帮助用户建立实用 AI 技能、构建可重复工作流，并在日常工作中应用 Agent。该更新不是模型或 API 发布，但反映官方正在把 Agent 使用方式产品化、课程化。</p>
+    </article>
+    <p class="note">OpenAI 官方视频：在本次检查窗口内未发现可核验的新发布内容。</p>
+
+    <h3>Anthropic：发现 2 条新发布内容</h3>
+    <div class="cards">
+      <article class="card"><h4><a href="https://www.anthropic.com/news/claude-fable-5-access-statement">Claude Fable 5 access statement</a></h4><p class="muted">2026-06-12 · 官方模型访问声明</p><p>Anthropic 发布 Fable 5 的访问声明。官方页面仅标注日期、未提供精确时间；该条目未出现在上一份日报中，因此纳入本次更新。其重点是说明模型访问状态与相关限制，而不是新增技术能力。</p></article>
+      <article class="card"><h4><a href="https://www.anthropic.com/news/building-the-public-record">Building the Public Record: A new cross-lab collaboration studying how people use AI</a></h4><p class="muted">2026-06-12 · 官方研究文章</p><p>Anthropic 与 Periodic Labs、Pollara 和多伦多大学开展跨实验室合作，研究人们如何使用 AI，以及用户的偏好、体验和态度。该项目属于 AI 使用与社会影响研究。</p></article>
+    </div>
+    <p class="note">Anthropic 官方视频：在本次检查窗口内未发现可核验的新发布内容。</p>
+  </section>
+
+  <section id="weekly" class="weekly">
+    <h2>5. 本周周报</h2>
+    <p><b>覆盖范围：</b>2026-06-08 至 2026-06-12；仅总结本次运行前已经发布的三份报告，不包含今天的 SpatialClaw、今日 GitHub 榜单和今日官方动态。</p>
+    <h3>本周最重要的 8 个信号</h3>
+    <div class="signals">
+      <div class="signal"><b>01</b>Agent 的核心竞争点从“模型能力”移动到“反馈回路、harness 和 action interface”。</div>
+      <div class="signal"><b>02</b>规划、执行、验证、评判逐步被拆成独立角色，形成可替换的多 Agent 架构。</div>
+      <div class="signal"><b>03</b>确定性验证、安全边界、回滚和逐级自治成为高风险生产 Agent 的必要组件。</div>
+      <div class="signal"><b>04</b>A2A 与 MCP 开始承担评测和工具访问的标准接口，减少 benchmark 与 Agent 的定制集成。</div>
+      <div class="signal"><b>05</b>Agent Skill 是 GitHub 最明显的短期增长主题，设计、PPT、代码质量门禁增长尤其突出。</div>
+      <div class="signal"><b>06</b>模型与 harness 的原生配对显著影响评测结果，单独比较模型分数越来越不充分。</div>
+      <div class="signal"><b>07</b>OpenAI 的 Codex 场景从软件工程扩展到科研、创意、数据科学与企业工作流。</div>
+      <div class="signal"><b>08</b>Anthropic 本周重点是新一代 Claude 模型与长周期复杂任务能力，而非新的 Agent 协议。</div>
+    </div>
+
+    <h3>论文主题归纳与共同架构模式</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>主题</th><th>本周论文</th><th>共同模式与关键结果</th><th>局限与可信度</th></tr></thead>
+      <tbody>
+        <tr><td>可验证反馈循环</td><td><a href="https://arxiv.org/abs/2606.07314">QBugLM</a></td><td>将缺陷生成、定位、修复和确定性模拟验证组成闭环；允许重试后，Pass@1 从低于 25% 提升到高于 80%。</td><td>仅覆盖五个五量子位电路和两种模型，不能直接外推到真实量子硬件。</td></tr>
+        <tr><td>生产自治与安全</td><td><a href="https://arxiv.org/abs/2606.09122">Autonomous Incident Resolution at Hyperscale</a></td><td>Intake、Planning、Execution、Verification 四类 Agent；以分层授权、爆炸半径、熔断和回滚支撑渐进式自治。作者报告成熟故障类别自动解决率超过 90%。</td><td>缺少公开样本规模、基线和代码，更适合作为架构参考，而不是严格 benchmark 证据。</td></tr>
+        <tr><td>评测接口标准化</td><td><a href="https://arxiv.org/abs/2606.13608">AgentBeats</a></td><td>把评测实现为 judge agent，用 A2A 管理任务、MCP 提供工具，使集成量从 N×M 降为 N+M；原生模型-harness 配对在六次比较中赢得五次。</td><td>依赖协议包装和自选择竞赛样本；结果说明 harness 协同适配，不能当作纯模型排名。</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note good"><b>共同架构模式：</b>三篇论文都把“一次生成答案”改造成可观察、可验证、可重试的过程；都将执行与验证分离；都说明 Agent 的真实能力由模型、工具、协议、harness、安全机制和反馈共同决定。</p>
+
+    <h3>最能说明本周趋势的论文图表</h3>
+    <div class="gallery">
+      <figure><img src="morning-brief-test-assets/figure-1.png" alt="QBugLM architecture"><figcaption>QBugLM：双 Agent 调试与确定性验证闭环。<a href="https://arxiv.org/abs/2606.07314">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-09-assets/figure-1.png" alt="Incident resolution architecture"><figcaption>生产运维 Agent：编排、知识、安全与基础设施四层架构。<a href="https://arxiv.org/abs/2606.09122">来源</a></figcaption></figure>
+      <figure class="wide"><img src="morning-brief-2026-06-12-assets/figure-1.png" alt="AgentBeats AAA architecture"><figcaption>AgentBeats：标准接口将 benchmark-agent 集成从 N×M 降为 N+M。<a href="https://arxiv.org/abs/2606.13608">来源</a></figcaption></figure>
+    </div>
+
+    <h3>GitHub 增长、排名变化与下周跟踪</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>项目</th><th>06-08</th><th>06-09</th><th>06-12</th><th>截至今日补充观察</th><th>周内判断</th></tr></thead>
+      <tbody>
+        <tr><td>GordenSuperPPTSkills</td><td>#3 · 247</td><td>#3 · 439</td><td>#1 · 790</td><td>853</td><td>周内反超成为 skills 样本第一，增长持续且斜率最高。</td></tr>
+        <tr><td>baoyu-design</td><td>#1 · 453</td><td>#1 · 531</td><td>#2 · 775</td><td>839</td><td>持续高速增长，说明可直接产出设计结果的 Agent Skill 需求强。</td></tr>
+        <tr><td>guard-skills</td><td>#2 · 413</td><td>#2 · 474</td><td>#3 · 571</td><td>604</td><td>稳定增长；代码质量与 Agent 治理开始成为独立技能类别。</td></tr>
+        <tr><td>AgentHarness</td><td>未入榜</td><td>#5 · 49</td><td>#4 · 122</td><td>132</td><td>新出现后快速增长，评测 harness 与论文趋势相互印证。</td></tr>
+        <tr><td>codex-chatgpt-control</td><td>#4 · 123</td><td>#4 · 159</td><td>#5 · 205</td><td>209</td><td>仍增长但明显放缓。</td></tr>
+      </tbody>
+    </table></div>
+    <p><b>下周最值得跟踪的 5 个项目：</b><a href="https://github.com/NousResearch/hermes-agent">hermes-agent</a>（持续型个人 Agent）、<a href="https://github.com/affaan-m/ECC">ECC</a>（跨 harness 优化）、<a href="https://github.com/anomalyco/opencode">opencode</a>（coding-agent harness）、<a href="https://github.com/ApodexAI/AgentHarness">AgentHarness</a>（评测基础设施）、<a href="https://github.com/GordenSun/GordenSuperPPTSkills">GordenSuperPPTSkills</a>（高增长 Agent Skill）。</p>
+
+    <h3>OpenAI / Anthropic 本周官方动态去重总结</h3>
+    <ul>
+      <li><b>OpenAI：</b>Codex 是本周官方内容主线。案例覆盖 Nextdoor、Notion、黑洞模拟、数据科学、创意和企业工作流；收购 Ona 指向安全、持久、可长时间运行的云 Agent 环境；Oracle 云合作降低企业采购和部署摩擦。</li>
+      <li><b>Anthropic：</b>发布 Claude Fable 5 与 Claude Mythos 5，并通过官方视频强调复杂、长周期知识工作和编码能力。本周没有出现与 A2A/MCP 类似的新 Agent 标准协议。</li>
+    </ul>
+
+    <h3>跨日报洞察与下周问题</h3>
+    <ul>
+      <li>Agent 系统正在形成两层分工：上层是可组合 skills、工作流和领域能力；下层是 harness、协议、运行时、权限和验证基础设施。</li>
+      <li>“可执行代码”与“结构化工具调用”并非简单替代关系。代码提供开放组合能力，结构化调用提供治理与可审计性；下周值得关注两者如何在生产系统中混合。</li>
+      <li>评测必须开始报告模型-harness-tool 的完整组合，否则单一模型分数可能掩盖关键工程差异。</li>
+      <li>需要继续追踪：高 Star skills 是否形成可持续生态；Agent benchmark 是否采用 A2A/MCP；长期运行 Agent 的权限、回滚、成本和审计是否出现统一实践。</li>
+    </ul>
+  </section>
+
+  <section id="sources">
+    <h2>6. 来源与方法</h2>
+    <h3>检索、筛选与数据限制</h3>
+    <ul class="sources">
+      <li>检索时间：2026-06-13 15:10–15:26（Asia/Shanghai）。论文通过 arXiv API、原始 PDF、项目页与代码仓库核验。</li>
+      <li>论文图表：从作者上传的 30 页 PDF 中识别并附上全部 7 幅 Figure 与 6 张 Table；表格保留原始截图以避免密集数值转写错误。</li>
+      <li>GitHub：使用 GitHub Search API 与仓库 REST API。严格 72 小时历史快照不存在，因此增长榜使用同一批候选项目的约 29.5 小时可验证净增；没有把不同时间窗项目混排，也没有估算三日数值。</li>
+      <li>高 Star 未总结榜排除了此前三份报告出现的仓库：qachub/qbuglm、JimLiu/baoyu-design、amElnagdy/guard-skills、GordenSun/GordenSuperPPTSkills、adamallcock/codex-chatgpt-control、RainyMarks/DeepX、ApodexAI/AgentHarness、affaan-m/ECC、n8n-io/n8n、NousResearch/hermes-agent、anomalyco/opencode、langgenius/dify。</li>
+      <li>OpenAI 动态来自官方 News RSS 与官方页面；Anthropic 动态来自官方 Newsroom。Anthropic 页面仅提供日期，不提供精确发布时间。官方视频源在本次检查窗口内未发现可核验的新条目。</li>
+      <li>GitHub Star 会持续变化；搜索主题与仓库描述存在索引偏差；Star 总量和增长速度都不等同于项目质量；论文实验结果未在本简报中独立复现。</li>
+    </ul>
+
+    <h3>GitHub 当前 Star 快照</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>仓库</th><th>历史快照</th><th>当前快照</th><th>可验证变化</th></tr></thead>
+      <tbody>
+        <tr><td>NousResearch/hermes-agent</td><td>191,054（06-12）</td><td>192,193</td><td class="delta">+1,139 / 约 29.5h</td></tr>
+        <tr><td>affaan-m/ECC</td><td>213,566（06-12）</td><td>214,453</td><td class="delta">+887 / 约 29.5h</td></tr>
+        <tr><td>anomalyco/opencode</td><td>173,277（06-12）</td><td>173,814</td><td class="delta">+537 / 约 29.5h</td></tr>
+        <tr><td>n8n-io/n8n</td><td>192,110（06-12）</td><td>192,267</td><td class="delta">+157 / 约 29.5h</td></tr>
+        <tr><td>langgenius/dify</td><td>144,892（06-12）</td><td>145,027</td><td class="delta">+135 / 约 29.5h</td></tr>
+        <tr><td>openclaw/openclaw</td><td>无历史快照</td><td>378,452</td><td>不计算</td></tr>
+        <tr><td>obra/superpowers</td><td>无历史快照</td><td>226,262</td><td>不计算</td></tr>
+        <tr><td>ultraworkers/claw-code</td><td>无历史快照</td><td>193,705</td><td>不计算</td></tr>
+        <tr><td>Significant-Gravitas/AutoGPT</td><td>无历史快照</td><td>184,923</td><td>不计算</td></tr>
+        <tr><td>multica-ai/andrej-karpathy-skills</td><td>无历史快照</td><td>174,386</td><td>不计算</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>本次新增至“已总结仓库集合”</h3>
+    <p><code>openclaw/openclaw</code>、<code>obra/superpowers</code>、<code>ultraworkers/claw-code</code>、<code>Significant-Gravitas/AutoGPT</code>、<code>multica-ai/andrej-karpathy-skills</code>。</p>
+    <h3>周报使用过的日报文件</h3>
+    <p><code>morning-brief-test-2026-06-08.html</code>、<code>morning-brief-2026-06-09.html</code>、<code>morning-brief-2026-06-12.html</code>。</p>
+    <h3>主要来源链接</h3>
+    <p class="small"><a href="https://arxiv.org/abs/2606.13673">SpatialClaw arXiv</a> · <a href="https://github.com/NVlabs/SpatialClaw">SpatialClaw GitHub</a> · <a href="https://spatialclaw.github.io/">SpatialClaw Project</a> · <a href="https://github.com/search?q=agent&type=repositories&s=stars&o=desc">GitHub Repository Search</a> · <a href="https://openai.com/news/">OpenAI News</a> · <a href="https://openai.com/index/academy-courses-applying-ai-at-work">OpenAI Academy Courses</a> · <a href="https://www.anthropic.com/news">Anthropic News</a> · <a href="https://www.anthropic.com/news/claude-fable-5-access-statement">Fable 5 Access Statement</a> · <a href="https://www.anthropic.com/news/building-the-public-record">Building the Public Record</a></p>
+  </section>
+  <p class="footer">AI / Agent Morning Brief & Weekly Review · 2026-06-13</p>
+</main>
+</body>
+</html>

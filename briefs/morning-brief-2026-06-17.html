@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI / Agent 晨间简报 | 2026-06-17</title>
+  <style>
+    :root{--bg:#f6f4ef;--paper:#fffdf8;--ink:#172033;--muted:#667085;--line:#e4ded2;--accent:#355cde;--accent2:#7b3ff2;--green:#087443;--red:#b42318;--amber:#8a5600}
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#faf8f2 0%,#f1eee6 100%);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC","PingFang SC",Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:1180px;margin:0 auto;padding:32px 18px 60px}
+    header{background:linear-gradient(135deg,#172033 0%,#243b7c 58%,#6b40d8 100%);color:white;border-radius:28px;padding:34px;box-shadow:0 24px 60px rgba(24,32,51,.18)}
+    header h1{margin:0 0 10px;font-size:34px;line-height:1.15;letter-spacing:-.02em}
+    header p{margin:6px 0;color:#e6e9ff}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.chip{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.12);border-radius:999px;padding:6px 11px;font-size:13px}
+    section{margin-top:22px;background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 12px 36px rgba(39,35,25,.06)}
+    h2{font-size:24px;line-height:1.25;margin:0 0 14px} h3{font-size:18px;margin:22px 0 10px} h4{font-size:16px;margin:0 0 8px}
+    .note{background:#f4f7ff;border:1px solid #dbe4ff;border-radius:16px;padding:13px 15px;color:#344054;margin:12px 0}
+    .warn{background:#fff8e8;border-color:#f3d9a4;color:#5f3c00}.ok{background:#eefbf4;border-color:#c9efd8;color:#075e34}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{border:1px solid var(--line);border-radius:18px;padding:16px;background:#fff}.wide{grid-column:1/-1}
+    table{width:100%;border-collapse:collapse;margin:12px 0 4px;background:white;border-radius:14px;overflow:hidden}th,td{border-bottom:1px solid var(--line);padding:10px 11px;text-align:left;vertical-align:top}th{background:#f3f1eb;color:#344054;font-size:13px}td{font-size:14px}.num{font-variant-numeric:tabular-nums}.delta{color:var(--green);font-weight:800}.muted{color:var(--muted)}.small{font-size:13px;color:var(--muted)}
+    .paper-meta{display:grid;grid-template-columns:150px 1fr;gap:8px 14px;margin:14px 0}.paper-meta div:nth-child(odd){color:var(--muted)}
+    .summary{border-left:4px solid var(--accent);padding-left:14px;margin:14px 0}.summary.en{font-family:Georgia,"Times New Roman",serif;color:#243047}.summary.cn{border-color:var(--accent2)}
+    .fig{margin:18px 0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}.fig figcaption{padding:12px 14px;background:#faf8f2;border-bottom:1px solid var(--line);font-weight:700}.fig img{display:block;width:100%;height:auto;background:white}
+    .source-list li{margin:6px 0}.archive iframe{width:100%;height:540px;border:1px solid var(--line);border-radius:14px;background:white}.archive details{margin:12px 0}.archive summary{cursor:pointer;font-weight:800;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#faf8f2}
+    code{background:#f1efe8;border:1px solid #e5ded0;border-radius:6px;padding:1px 5px}
+    @media (max-width:760px){header{padding:24px;border-radius:22px}.grid{grid-template-columns:1fr}.paper-meta{grid-template-columns:1fr}section{padding:18px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>AI / Agent 晨间简报</h1>
+    <p>生成日期：2026-06-17（周三）</p>
+    <p>信息截止时间：2026-06-17 13:10 CST；联网核验范围覆盖 arXiv、GitHub API、OpenAI 官方 RSS/YouTube、Anthropic 官方 News/YouTube。</p>
+    <div class="chips">
+      <span class="chip">今日论文：ReproRepo</span>
+      <span class="chip">GitHub 近期可验证净增</span>
+      <span class="chip">高 Star 未总结项目</span>
+      <span class="chip">OpenAI / Anthropic 官方动态</span>
+      <span class="chip">历史简报重发</span>
+    </div>
+  </header>
+
+  <section id="paper">
+    <h2>1. 今日论文</h2>
+    <div class="note ok">选择原因：这是 2026-06-16 新提交的 agent benchmark / evaluation 论文，直接讨论如何用 GitHub issues 扩展 LLM agent 的科研复现审计评测；比继续沿用前几日论文更符合“优先选择自上次运行以来的新论文”。</div>
+    <h3><a href="https://arxiv.org/abs/2606.18237">ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues</a></h3>
+    <div class="paper-meta">
+      <div>作者</div><div>Shanda Li, Qiuhong Anna Wei, Jingwu Tang, Valerie Chen, Nihar B Shah, Tim Dettmers, Yiming Yang, Ameet Talwalkar</div>
+      <div>发布日期</div><div>2026-06-16（arXiv submitted）</div>
+      <div>论文链接</div><div><a href="https://arxiv.org/abs/2606.18237">arXiv 摘要页</a> · <a href="https://arxiv.org/pdf/2606.18237">PDF</a></div>
+      <div>代码 / 项目页</div><div><a href="https://github.com/LithiumDA/ReproRepo">LithiumDA/ReproRepo</a>（GitHub API 核验为公开仓库；2026-06-17 13:10 CST 时 0 star）</div>
+    </div>
+    <p class="summary en">ReproRepo proposes a scalable benchmark for evaluating LLM agents as reproducibility auditors. Instead of hand-writing expert tasks, it uses human-raised GitHub issues as natural supervision over real paper-repository pairs. The benchmark covers 1,149 machine-learning papers and 7,553 reported reproducibility blockers, then asks agents such as Claude Code and Codex to inspect a paper plus a fixed repository snapshot without executing code. The strongest configuration, Codex with GPT-5.5, semantically surfaces at least one related human-reported blocker for 89.7% of ICLR 2026 papers, while exact localization remains much harder. The main contribution is not a new agent architecture, but a scalable evaluation design: issue-grounded labels, static audit tasks, post-fix false-positive checks, and paper-level as well as issue-level metrics. Its limits are important: GitHub issues are noisy and incomplete, the study emphasizes static no-execution auditing, and an LLM judge is still part of the matching pipeline despite human validation.</p>
+    <p class="summary cn">ReproRepo 提出了一套可扩展的 LLM agent 复现审计 benchmark。它不依赖专家手写任务，而是把真实用户在 GitHub issues 中提出的复现问题作为自然监督信号，构造论文-仓库配对任务。数据集覆盖 1,149 篇机器学习论文和 7,553 个被报告的复现阻塞点，让 Claude Code、Codex 等 agent 在不执行代码的情况下审查论文与固定仓库快照。最强配置 Codex + GPT-5.5 能在 ICLR 2026 论文中，对 89.7% 的论文语义命中至少一个真实用户报告过的阻塞点，但精确定位具体根因仍明显更难。它的核心创新不是新的 agent 架构，而是评测设计：用 issue 做标签、设计静态审计任务、通过修复后快照检查误报，并同时报告论文级与 issue 级指标。局限也很清楚：GitHub issues 本身有噪声且不完整，实验重点是无执行的静态审计，匹配过程仍依赖 LLM judge，虽然作者补充了人工验证。</p>
+
+    <h3>核心方法、结果与局限</h3>
+    <div class="grid">
+      <article class="card"><h4>方法</h4><p>从会议论文、公开代码仓库和 GitHub issues 构造样本；过滤出与复现相关的问题；让 agent 在论文与仓库快照上做静态审计；再用 exact match、semantic match、paper-level any/all match 和 post-fix FPR 衡量是否找回真实问题。</p></article>
+      <article class="card"><h4>创新点</h4><p>把真实用户遇到的问题变成可持续更新的监督信号，降低 benchmark 维护成本；同时保留真实仓库复杂性，比人工注入错误更贴近研究复现场景。</p></article>
+      <article class="card"><h4>主要结论</h4><p>Codex + GPT-5.5 在 ICLR 2026 上达到 issue-level SM@10 58.1%、paper-level any SM@10 89.7%，平均成本约 1.26 美元；所有模型的误报率最高 3.5%。semantic match 明显高于 exact match，说明 agent 常能找到风险区域，但不一定能精确定位根因。</p></article>
+      <article class="card"><h4>局限</h4><p>GitHub issue 标签并不覆盖全部复现风险；静态审计无法替代运行实验；长耗时训练、硬件依赖、外部服务和指标偏差仍需要执行式验证；LLM judge 虽有人类抽样验证，但仍可能带来匹配偏差。</p></article>
+    </div>
+
+    <h3>论文图表</h3>
+    <p class="note">以下按论文顺序列出全部公开可访问的 Figure 1-9 与 Table 1-9。复杂图表与表格以论文 PDF 页面截图嵌入，未发现需要额外列出的缺失图表。来源均为 <a href="https://arxiv.org/pdf/2606.18237">作者上传 PDF</a>。</p>
+    <figure class="fig"><figcaption>Figure 1：ReproRepo 数据构造、agent 审计与评测流程总览。来源：PDF 第 2 页。</figcaption><img src="morning-brief-2026-06-17-assets/page-02.png" alt="ReproRepo Figure 1"></figure>
+    <figure class="fig"><figcaption>Table 1：与既有科研复现评测的输入类型、规模和监督来源对比。来源：PDF 第 3 页。</figcaption><img src="morning-brief-2026-06-17-assets/page-03.png" alt="ReproRepo Table 1"></figure>
+    <figure class="fig"><figcaption>Table 2 + Figure 2：数据集规模、issue 分布、论文主题分布和失败类别构成。来源：PDF 第 6 页。</figcaption><img src="morning-brief-2026-06-17-assets/page-06.png" alt="ReproRepo Table 2 and Figure 2"></figure>
+    <figure class="fig"><figcaption>Table 3：四种模型-agent 配置在 ICLR 2026 上的 exact/semantic match、误报率与成本。来源：PDF 第 7 页。</figcaption><img src="morning-brief-2026-06-17-assets/page-07.png" alt="ReproRepo Table 3"></figure>
+    <figure class="fig"><figcaption>Table 4：Codex + GPT-5.5 在不同会议/track 上的结果、token 用量和成本。来源：PDF 第 8 页。</figcaption><img src="morning-brief-2026-06-17-assets/page-08.png" alt="ReproRepo Table 4"></figure>
+    <figure class="fig"><figcaption>Figure 3 + Figure 4：不同报告预算 k 下的语义命中率，以及按失败类别划分的召回率。来源：PDF 第 9 页。</figcaption><img src="morning-brief-2026-06-17-assets/page-09.png" alt="ReproRepo Figures 3 and 4"></figure>
+    <figure class="fig"><figcaption>Table 5 + Table 6：未匹配高排位发现的人手分类，以及是否加入论文输入的消融。来源：PDF 第 10 页。</figcaption><img src="morning-brief-2026-06-17-assets/page-10.png" alt="ReproRepo Tables 5 and 6"></figure>
+    <figure class="fig"><figcaption>Figure 5：各会议/track 中每篇论文隐藏 issue 数的长尾分布。来源：PDF 第 17 页。</figcaption><img src="morning-brief-2026-06-17-assets/page-17.png" alt="ReproRepo Figure 5"></figure>
+    <figure class="fig"><figcaption>Table 7 + Table 8：不截断 top-10 时的全发现结果，以及 token/成本细分。来源：PDF 第 18 页。</figcaption><img src="morning-brief-2026-06-17-assets/page-18.png" alt="ReproRepo Tables 7 and 8"></figure>
+    <figure class="fig"><figcaption>Figure 6 + Table 9：排序指令消融与三次独立运行方差。来源：PDF 第 19 页。</figcaption><img src="morning-brief-2026-06-17-assets/page-19.png" alt="ReproRepo Figure 6 and Table 9"></figure>
+    <figure class="fig"><figcaption>Figure 7：agent 预测 issue 类别在不同会议/track 中的分布。来源：PDF 第 20 页。</figcaption><img src="morning-brief-2026-06-17-assets/page-20.png" alt="ReproRepo Figure 7"></figure>
+    <figure class="fig"><figcaption>Figure 8 + Figure 9：exact-match 与 semantic-match 预测类别分布。来源：PDF 第 21 页。</figcaption><img src="morning-brief-2026-06-17-assets/page-21.png" alt="ReproRepo Figures 8 and 9"></figure>
+  </section>
+
+  <section id="github-growth">
+    <h2>2. GitHub 近期 Star 增长项目</h2>
+    <p class="note warn">GitHub 官方 API 不提供任意仓库任意历史点的 star 时间序列。本次使用历史日报中 2026-06-13 15:26 CST 的同批仓库快照，与 2026-06-17 13:10 CST 当前值相减，得到约 93.7 小时的可验证净增；这不是严格 72 小时三日值，但优于无法核验的估算。</p>
+    <table>
+      <thead><tr><th>#</th><th>项目</th><th>用途简介</th><th>当前 Star</th><th>最近可验证净增</th><th>语言</th><th>最近更新 UTC</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>Agentic skills 框架与软件开发方法论，围绕 agent 工作方式组织项目能力。</td><td class="num">230,075</td><td class="delta">+3,813 / 约 93.7h</td><td>Shell</td><td>2026-06-17 05:08</td></tr>
+        <tr><td>2</td><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>强调长期适应与持续个性化的个人 agent。</td><td class="num">195,533</td><td class="delta">+3,340 / 约 93.7h</td><td>Python</td><td>2026-06-17 05:02</td></tr>
+        <tr><td>3</td><td><a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a></td><td>以单一 <code>CLAUDE.md</code> 形式注入 coding agent 行为约束与工程经验。</td><td class="num">177,061</td><td class="delta">+2,675 / 约 93.7h</td><td>未标注</td><td>2026-06-17 05:07</td></tr>
+        <tr><td>4</td><td><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></td><td>跨 Claude Code、Codex、OpenCode、Cursor 的 agent harness 优化系统。</td><td class="num">216,838</td><td class="delta">+2,385 / 约 93.7h</td><td>JavaScript</td><td>2026-06-17 05:07</td></tr>
+        <tr><td>5</td><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>开源 coding agent 与可替换 agent harness。</td><td class="num">175,360</td><td class="delta">+1,546 / 约 93.7h</td><td>TypeScript</td><td>2026-06-17 05:05</td></tr>
+      </tbody>
+    </table>
+    <p class="small">排名方法：仅在已有同源历史快照的高相关仓库中计算当前 star 减历史 star，并按净增降序排列。未把不同窗口或缺失历史值的仓库混排。</p>
+  </section>
+
+  <section id="github-highstar">
+    <h2>3. GitHub 高 Star、此前未总结项目</h2>
+    <p class="note">执行前检查了当前工作区所有 <code>morning-brief*.html</code>，并排除任何此前 GitHub 板块出现过的仓库。筛选范围聚焦 AI Agent、Agent Skill、agent 架构/运行时、coding agent、agent 工具链与 agent 可用基础设施；泛化 awesome 列表、通用开发路线图、纯提示词合集和低相关 AI UI 被排除。</p>
+    <div class="grid">
+      <article class="card"><h4>1. <a href="https://github.com/anthropics/skills">anthropics/skills</a></h4><p><span class="num">151,775 ★</span> · Python · 更新于 2026-06-17 05:07 UTC</p><p>用途与能力：Anthropic 官方 Agent Skills 公共仓库，用于组织可被 agent 调用的技能包。值得关注：skills 正成为 coding agent 和桌面 agent 能力扩展的轻量接口。</p></article>
+      <article class="card"><h4>2. <a href="https://github.com/langflow-ai/langflow">langflow-ai/langflow</a></h4><p><span class="num">149,773 ★</span> · Python · 更新于 2026-06-17 04:41 UTC</p><p>用途与能力：构建和部署 AI agents 与 workflows 的可视化平台。值得关注：代表从 prompt 原型转向可编排、可部署 agent workflow 的工程化方向。</p></article>
+      <article class="card"><h4>3. <a href="https://github.com/langchain-ai/langchain">langchain-ai/langchain</a></h4><p><span class="num">139,517 ★</span> · Python · 更新于 2026-06-17 04:59 UTC</p><p>用途与能力：面向 agent engineering 的基础框架，覆盖模型、工具、状态、链路和运行组件。值得关注：仍是观察 agent 应用抽象层演进的核心项目。</p></article>
+      <article class="card"><h4>4. <a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></h4><p><span class="num">133,717 ★</span> · TypeScript · 更新于 2026-06-17 05:17 UTC</p><p>用途与能力：提供网页搜索、抓取与交互 API，让 agent 更可靠地读取开放网页。值得关注：web-grounded agent 的瓶颈常在信息获取与页面结构化，Firecrawl 是常见工具层选择。</p></article>
+      <article class="card wide"><h4>5. <a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></h4><p><span class="num">132,877 ★</span> · Python · 更新于 2026-06-17 05:02 UTC</p><p>用途与能力：终端里的 agentic coding tool，可理解代码库、执行例行任务、解释复杂代码并处理 git 工作流。值得关注：它是 coding agent 产品化、CLI 化和长任务工程化的标杆之一。</p></article>
+    </div>
+  </section>
+
+  <section id="official">
+    <h2>4. OpenAI / Anthropic 官方动态</h2>
+    <h3>OpenAI：发现新发布内容</h3>
+    <div class="grid">
+      <article class="card"><h4><a href="https://openai.com/index/deployment-simulation">Predicting model behavior before release by simulating deployment</a></h4><p class="muted">2026-06-16 · 官方研究/安全评测文章</p><p>OpenAI 介绍 Deployment Simulation：用真实对话数据在发布前模拟部署行为，以预测模型在实际使用中的表现并改进安全评测。该方向与 agent/工具模型上线前评估高度相关。</p></article>
+      <article class="card"><h4><a href="https://openai.com/index/introducing-openai-partner-network">Introducing the OpenAI Partner Network</a></h4><p class="muted">2026-06-14 · 官方生态/企业部署更新</p><p>OpenAI 宣布 Partner Network，并称投入 1.5 亿美元帮助全球合作伙伴推进企业 AI 采用、部署和转型。它不是模型能力发布，但影响企业侧 agent 落地渠道。</p></article>
+    </div>
+    <h3>OpenAI 官方视频：发现 5 个新视频</h3>
+    <table>
+      <thead><tr><th>发布日期 UTC</th><th>标题</th><th>简介</th></tr></thead>
+      <tbody>
+        <tr><td>2026-06-16 17:00</td><td><a href="https://www.youtube.com/watch?v=CFqjjKp9Y-Q">Why Tejal Patwardhan stopped underestimating the models - Episode 21</a></td><td>官方系列访谈视频，主题围绕对模型能力的判断与实践经验。</td></tr>
+        <tr><td>2026-06-15 23:20</td><td><a href="https://www.youtube.com/watch?v=u9zLlcsCDiQ">Build and test iOS apps without leaving Codex</a></td><td>Codex 开发者演示，展示在 Codex 内构建与测试 iOS app 的工作流。</td></tr>
+        <tr><td>2026-06-15 18:02</td><td><a href="https://www.youtube.com/watch?v=TDM2Dz_MuPk">How Wayfair Uses GPT-5.5 to Power Catalog Enrichment Across 40M Products</a></td><td>企业案例视频，介绍 GPT-5.5 在大规模商品目录增强中的应用。</td></tr>
+        <tr><td>2026-06-15 13:03</td><td><a href="https://www.youtube.com/watch?v=_jNbM8pV9oI">Codex as a Solutions Engineering Partner</a></td><td>Codex 场景视频，聚焦解决方案工程中的 agentic coding 协作。</td></tr>
+        <tr><td>2026-06-14 22:44</td><td><a href="https://www.youtube.com/watch?v=NxAxwsu6_Zs">How Payward Ships Faster with Codex</a></td><td>Codex 企业采用案例，主题为用 coding agent 加速软件交付。</td></tr>
+      </tbody>
+    </table>
+    <h3>Anthropic：未发现新发布内容</h3>
+    <p class="note">检查 Anthropic 官方 News 与官方 YouTube RSS 后，未发现 2026-06-13 15:26 CST 之后的新技术博客、研究文章、开发者更新或官方视频。官方 News 最新可见条目仍集中在 2026-06-12，已在此前日报中覆盖。</p>
+  </section>
+
+  <section id="archive" class="archive">
+    <h2>5. 历史简报重发</h2>
+    <p class="note">以下为我此前在工作区生成并发给你的简报。本节提供可点击原文件链接，并内嵌预览，方便你直接回看。</p>
+    <table>
+      <thead><tr><th>日期</th><th>文件</th><th>主题</th></tr></thead>
+      <tbody>
+        <tr><td>2026-06-08</td><td><a href="morning-brief-test-2026-06-08.html">morning-brief-test-2026-06-08.html</a></td><td>测试稿；今日论文 QBugLM；首次 GitHub 三日代理榜；OpenAI/Anthropic 动态。</td></tr>
+        <tr><td>2026-06-09</td><td><a href="morning-brief-2026-06-09.html">morning-brief-2026-06-09.html</a></td><td>Autonomous Incident Resolution；新建仓库三日净增；OpenAI 官方视频。</td></tr>
+        <tr><td>2026-06-12</td><td><a href="morning-brief-2026-06-12.html">morning-brief-2026-06-12.html</a></td><td>AgentBeats；约三日 Star 增长；新增高 Star 未总结项目。</td></tr>
+        <tr><td>2026-06-13</td><td><a href="morning-brief-2026-06-13.html">morning-brief-2026-06-13.html</a></td><td>SpatialClaw；GitHub 可验证近期增长；官方动态；当日包含阶段性总结。</td></tr>
+      </tbody>
+    </table>
+    <details><summary>预览：2026-06-08 测试稿</summary><iframe src="morning-brief-test-2026-06-08.html" title="2026-06-08 morning brief"></iframe></details>
+    <details><summary>预览：2026-06-09 简报</summary><iframe src="morning-brief-2026-06-09.html" title="2026-06-09 morning brief"></iframe></details>
+    <details><summary>预览：2026-06-12 简报</summary><iframe src="morning-brief-2026-06-12.html" title="2026-06-12 morning brief"></iframe></details>
+    <details><summary>预览：2026-06-13 简报</summary><iframe src="morning-brief-2026-06-13.html" title="2026-06-13 morning brief"></iframe></details>
+  </section>
+
+  <section id="sources">
+    <h2>6. 来源与方法</h2>
+    <h3>检索时间与主要来源</h3>
+    <ul class="source-list">
+      <li>检索与生成时间：2026-06-17 13:10 CST。</li>
+      <li>论文：<a href="https://arxiv.org/abs/2606.18237">ReproRepo arXiv</a>、<a href="https://arxiv.org/pdf/2606.18237">ReproRepo PDF</a>、<a href="https://github.com/LithiumDA/ReproRepo">ReproRepo GitHub</a>。</li>
+      <li>GitHub：使用 <a href="https://api.github.com/search/repositories?q=agent%20in:name,description,readme%20stars:%3E50000&amp;sort=stars&amp;order=desc&amp;per_page=40">GitHub Search API 高 Star 查询</a> 与各仓库 REST API 当前值。</li>
+      <li>OpenAI：<a href="https://openai.com/news/">OpenAI News</a>、<a href="https://openai.com/news/rss.xml">OpenAI RSS</a>、<a href="https://www.youtube.com/@OpenAI">OpenAI 官方 YouTube</a>、<a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">OpenAI YouTube RSS</a>。</li>
+      <li>Anthropic：<a href="https://www.anthropic.com/news">Anthropic News</a>、<a href="https://www.youtube.com/@anthropic-ai">Anthropic 官方 YouTube</a>、<a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCrDwWp7EBBv4NwvScIpBDOA">Anthropic YouTube RSS</a>。</li>
+    </ul>
+    <h3>GitHub Star 快照</h3>
+    <table>
+      <thead><tr><th>用途</th><th>仓库</th><th>历史 Star</th><th>当前 Star</th><th>可验证净增 / 说明</th></tr></thead>
+      <tbody>
+        <tr><td>增长候选</td><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td class="num">226,262（2026-06-13）</td><td class="num">230,075</td><td class="delta">+3,813</td></tr>
+        <tr><td>增长候选</td><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td class="num">192,193（2026-06-13）</td><td class="num">195,533</td><td class="delta">+3,340</td></tr>
+        <tr><td>增长候选</td><td><a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a></td><td class="num">174,386（2026-06-13）</td><td class="num">177,061</td><td class="delta">+2,675</td></tr>
+        <tr><td>增长候选</td><td><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></td><td class="num">214,453（2026-06-13）</td><td class="num">216,838</td><td class="delta">+2,385</td></tr>
+        <tr><td>增长候选</td><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td class="num">173,814（2026-06-13）</td><td class="num">175,360</td><td class="delta">+1,546</td></tr>
+        <tr><td>增长候选</td><td><a href="https://github.com/openclaw/openclaw">openclaw/openclaw</a></td><td class="num">378,452（2026-06-13）</td><td class="num">379,077</td><td class="delta">+625</td></tr>
+        <tr><td>增长候选</td><td><a href="https://github.com/n8n-io/n8n">n8n-io/n8n</a></td><td class="num">192,267（2026-06-13）</td><td class="num">192,863</td><td class="delta">+596</td></tr>
+        <tr><td>增长候选</td><td><a href="https://github.com/langgenius/dify">langgenius/dify</a></td><td class="num">145,027（2026-06-13）</td><td class="num">145,541</td><td class="delta">+514</td></tr>
+        <tr><td>高 Star 新增</td><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td>此前未总结</td><td class="num">151,775</td><td>按当前总 Star 排名</td></tr>
+        <tr><td>高 Star 新增</td><td><a href="https://github.com/langflow-ai/langflow">langflow-ai/langflow</a></td><td>此前未总结</td><td class="num">149,773</td><td>按当前总 Star 排名</td></tr>
+        <tr><td>高 Star 新增</td><td><a href="https://github.com/langchain-ai/langchain">langchain-ai/langchain</a></td><td>此前未总结</td><td class="num">139,517</td><td>按当前总 Star 排名</td></tr>
+        <tr><td>高 Star 新增</td><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>此前未总结</td><td class="num">133,717</td><td>按当前总 Star 排名</td></tr>
+        <tr><td>高 Star 新增</td><td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td><td>此前未总结</td><td class="num">132,877</td><td>按当前总 Star 排名</td></tr>
+      </tbody>
+    </table>
+    <h3>排除规则与不确定性</h3>
+    <ul class="source-list">
+      <li>已总结仓库集合来自当前线程历史与工作区文件：<code>morning-brief-test-2026-06-08.html</code>、<code>morning-brief-2026-06-09.html</code>、<code>morning-brief-2026-06-12.html</code>、<code>morning-brief-2026-06-13.html</code>。</li>
+      <li>高 Star 未总结榜排除了此前日报 GitHub 板块出现过的仓库，包括 qachub/qbuglm、JimLiu/baoyu-design、amElnagdy/guard-skills、GordenSun/GordenSuperPPTSkills、adamallcock/codex-chatgpt-control、RainyMarks/DeepX、ApodexAI/AgentHarness、affaan-m/ECC、n8n-io/n8n、NousResearch/hermes-agent、anomalyco/opencode、langgenius/dify、NVlabs/SpatialClaw、openclaw/openclaw、obra/superpowers、ultraworkers/claw-code、Significant-Gravitas/AutoGPT、multica-ai/andrej-karpathy-skills。</li>
+      <li>GitHub star 实时变化；今日增长榜不是严格 72 小时窗口，而是最近可核验历史窗口。高 Star 榜由 GitHub Search API 候选加人工相关性筛选得到，可能遗漏未使用相关关键词但实际相关的仓库。</li>
+      <li>论文图表来自 arXiv PDF 页面截图。表格未逐项转写为 HTML，是为了避免 OCR/抽取错误；截图可点击来源 PDF 复核。</li>
+      <li>OpenAI/Anthropic 动态仅以官方 News/RSS/YouTube RSS 判定；非官方转述、社交媒体和二级媒体未纳入。</li>
+    </ul>
+    <h3>本次新增至“已总结仓库集合”</h3>
+    <p><code>LithiumDA/ReproRepo</code>、<code>anthropics/skills</code>、<code>langflow-ai/langflow</code>、<code>langchain-ai/langchain</code>、<code>firecrawl/firecrawl</code>、<code>anthropics/claude-code</code>。</p>
+  </section>
+</div>
+</body>
+</html>

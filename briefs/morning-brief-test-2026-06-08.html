@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI / Agent 晨间简报测试稿 - 2026-06-08</title>
+  <style>
+    :root {
+      --ink: #18212b;
+      --muted: #637083;
+      --paper: #f5f7fa;
+      --card: #ffffff;
+      --line: #dce3ea;
+      --blue: #2457d6;
+      --blue-soft: #edf3ff;
+      --green: #087a57;
+      --amber: #9b5c00;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    main { width: min(1180px, calc(100% - 32px)); margin: 28px auto 64px; }
+    header {
+      padding: 42px;
+      color: #fff;
+      border-radius: 22px;
+      background: linear-gradient(130deg, #152a55, #2457d6 60%, #3f7ee8);
+      box-shadow: 0 18px 50px rgba(24, 57, 130, .2);
+    }
+    header h1 { margin: 0 0 8px; font-size: clamp(30px, 5vw, 52px); line-height: 1.12; }
+    header p { margin: 5px 0 0; opacity: .9; }
+    section {
+      margin-top: 24px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+      box-shadow: 0 8px 28px rgba(35, 52, 74, .06);
+    }
+    h2 { margin: 0 0 18px; font-size: 26px; line-height: 1.25; }
+    h3 { margin: 24px 0 10px; font-size: 19px; }
+    h4 { margin: 16px 0 6px; font-size: 16px; }
+    p { margin: 8px 0; }
+    a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .eyebrow { color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .meta, .note { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      margin: 3px 6px 3px 0;
+      padding: 3px 9px;
+      border-radius: 999px;
+      color: #244264;
+      background: var(--blue-soft);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .callout {
+      margin: 16px 0;
+      padding: 14px 16px;
+      border-left: 4px solid var(--blue);
+      border-radius: 8px;
+      background: var(--blue-soft);
+    }
+    .warn { border-color: #d28a16; background: #fff8e8; color: #63420a; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .mini {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fbfcfe;
+    }
+    .mini h3, .mini h4 { margin-top: 0; }
+    .lang {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fbfcfe;
+    }
+    figure {
+      margin: 18px 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+    figure img { display: block; width: 100%; height: auto; padding: 10px; background: #fff; }
+    figcaption { padding: 12px 16px; color: var(--muted); border-top: 1px solid var(--line); }
+    .chart-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .chart-grid figure { margin: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+    th, td { padding: 10px 11px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: #edf3fb; }
+    code { padding: 2px 5px; border-radius: 5px; background: #eef1f5; }
+    ol, ul { padding-left: 22px; }
+    .status-ok { color: var(--green); font-weight: 800; }
+    .status-none { color: var(--amber); font-weight: 800; }
+    footer { margin-top: 24px; color: var(--muted); text-align: center; }
+    @media (max-width: 800px) {
+      header, section { padding: 22px; }
+      .grid, .chart-grid { grid-template-columns: 1fr; }
+      table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow" style="color:#cfe0ff">Automation test run</div>
+    <h1>AI / Agent 晨间简报</h1>
+    <p>测试运行日期：2026-06-08 · 信息截止：20:45 CST（12:45 UTC）</p>
+    <p>覆盖：新论文 · GitHub 三日增长代理榜 · OpenAI / Anthropic 官方动态</p>
+  </header>
+
+  <section>
+    <div class="eyebrow">01 · Paper of the day</div>
+    <h2>QBugLM: An Agentic Benchmarking Framework for LLM-based Quantum Software Debugging</h2>
+    <p class="meta">
+      An B. B. Pham, Hoa T. Nguyen, Muhammad Usman · 2026-06-05 · IEEE QSW 2026 accepted
+    </p>
+    <p>
+      <span class="pill">Agentic benchmark</span>
+      <span class="pill">Multi-agent architecture</span>
+      <span class="pill">Quantum software debugging</span>
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/2606.07314">arXiv 摘要页</a> ·
+      <a href="https://arxiv.org/pdf/2606.07314">论文 PDF</a> ·
+      <a href="https://github.com/qachub/qbuglm">论文中声明的代码链接</a>
+    </p>
+    <div class="callout warn">
+      选择原因：这是检索时最新的明确命中 “agent benchmark” 的论文之一，并且同时给出多智能体架构与可复现实验流程。论文声明的 GitHub 地址在本次核验时返回 404。
+    </div>
+
+    <h3>English overview</h3>
+    <div class="lang" lang="en">
+      QBugLM is an agentic benchmarking framework for evaluating whether large language models can detect and repair bugs in framework-agnostic OpenQASM 3.0 programs. Its pipeline separates mutation generation, bug finding, bug fixing, and deterministic simulation-based validation into four components. In a case study comparing Claude Sonnet 4.6 and Qwen3 Coder Next, the authors find that iterative feedback is the dominant performance driver: moving beyond the first attempt raises Pass@1 from below 25% to above 80%. They also report that simple structured prompts can outperform Chain-of-Thought and ReAct under fixed-resource constraints.
+    </div>
+
+    <h3>对应中文翻译</h3>
+    <div class="lang">
+      QBugLM 是一个智能体式评测框架，用于评估大语言模型能否发现并修复与具体开发框架无关的 OpenQASM 3.0 程序中的缺陷。其流水线将变异生成、缺陷定位、缺陷修复和基于模拟器的确定性验证拆分为四个组件。在比较 Claude Sonnet 4.6 与 Qwen3 Coder Next 的案例研究中，作者发现迭代反馈是性能提升的主导因素：允许模型超越首次尝试后，Pass@1 从低于 25% 提升到高于 80%。论文还报告，在固定资源约束下，简单的结构化提示可能优于 Chain-of-Thought 和 ReAct。
+    </div>
+
+    <div class="grid">
+      <div class="mini">
+        <h3>核心方法</h3>
+        <p><strong>QBugGen</strong> 注入有明确真值标签的量子程序缺陷；<strong>QBugFind</strong> 由 LLM 智能体定位和分类缺陷；<strong>QBugFix</strong> 由第二个智能体实施修复；<strong>QBugCheck</strong> 使用无噪声模拟器、测量分布距离与门数量进行验证。</p>
+      </div>
+      <div class="mini">
+        <h3>关键结论</h3>
+        <p>结构化提示在 BV 电路上达到 Qwen3 95%、Sonnet 97% Pass@1。两次重试后，大多数缺陷类别达到或接近 100%。除语义偏差外，Qwen3 的成本通常低 4 至 9 倍，速度快 1.5 至 4.6 倍。</p>
+      </div>
+      <div class="mini">
+        <h3>创新点</h3>
+        <p>将缺陷生成、双智能体调试和确定性验证组合成端到端 benchmark；将重试反馈、提示策略、缺陷类别、token、时间和货币成本放入同一评估框架。</p>
+      </div>
+      <div class="mini">
+        <h3>局限</h3>
+        <p>案例研究只覆盖 5 个五量子位电路、两种模型，并存在缺陷类别不平衡。实验基于模拟器，不能直接代表真实量子硬件上的调试效果。</p>
+      </div>
+    </div>
+
+    <h3>论文全部图表</h3>
+    <p class="note">PDF 共识别出 1 个表格和 5 张图。以下按论文顺序完整附上。</p>
+
+    <h4>Table I · Taxonomy of common bugs in quantum software</h4>
+    <table>
+      <thead>
+        <tr><th>类别</th><th>含义 / 示例</th><th>OpenQASM 3 示例</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>C1：弃用语法错误</td><td>在 OpenQASM 3.0 中使用弃用的 2.0 语法，或引入语法错误</td><td><code>include "stdgates.inc";</code> → <code>include "qelib1.inc";</code></td></tr>
+        <tr><td>C2：电路构建结构错误</td><td>违反电路构造规则，例如 CNOT 控制位和目标位使用相同索引</td><td><code>cx q[0],q[1]</code> → <code>cx q[0],q[0]</code></td></tr>
+        <tr><td>C3：门过度使用 / 冗余</td><td>重复自逆量子门</td><td><code>h q[0]</code> → 连续执行三次 <code>h q[0]</code></td></tr>
+        <tr><td>C4：语义偏差</td><td>替换、插入或删除门；修改旋转相位；错误重复或删除测量语句</td><td><code>rx(0.5) q[0]</code> → <code>ry(0.5) q[0]</code> 等</td></tr>
+      </tbody>
+    </table>
+
+    <figure>
+      <img src="morning-brief-test-assets/figure-1.png" alt="QBugLM framework overview">
+      <figcaption>Fig. 1 · QBugLM 框架总览：QBugGen、QBugFind、QBugFix、QBugCheck 组成带反馈循环的端到端流程。来源：<a href="https://arxiv.org/pdf/2606.07314#page=3">论文第 3 页</a>。</figcaption>
+    </figure>
+
+    <div class="chart-grid">
+      <figure>
+        <img src="morning-brief-test-assets/figure-2.png" alt="Pass@1 across prompting strategies">
+        <figcaption>Fig. 2 · 两个模型在三种提示策略下的 Pass@1；结构化提示最佳。<a href="https://arxiv.org/pdf/2606.07314#page=4">来源</a></figcaption>
+      </figure>
+      <figure>
+        <img src="morning-brief-test-assets/figure-3.png" alt="Pass@1 by bug category and retries">
+        <figcaption>Fig. 3 · 各缺陷类别在 0 次与 2 次重试下的 Pass@1。<a href="https://arxiv.org/pdf/2606.07314#page=5">来源</a></figcaption>
+      </figure>
+      <figure>
+        <img src="morning-brief-test-assets/figure-4.png" alt="Token consumption and Pass@1">
+        <figcaption>Fig. 4 · 两次重试下各类别的平均 token 消耗和 Pass@1。<a href="https://arxiv.org/pdf/2606.07314#page=5">来源</a></figcaption>
+      </figure>
+      <figure>
+        <img src="morning-brief-test-assets/figure-5.png" alt="Wall clock time by bug category">
+        <figcaption>Fig. 5 · 两次重试下各类别的平均墙钟时间。<a href="https://arxiv.org/pdf/2606.07314#page=5">来源</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">02 · GitHub momentum</div>
+    <h2>过去三天新建的 AI / Agent 高增长项目 Top 5</h2>
+    <div class="callout warn">
+      GitHub 官方 API 不提供任意仓库的历史 star 快照，且这是首次测试运行，尚无三天前的本地基线。因此本榜采用可核验代理指标：筛选 2026-06-05 之后新建且与 AI / Agent 高度相关的仓库，并按当前 star 数排序。对这些新仓库，当前 star 数接近其过去三天累计新增 star 数，但不是严格的 72 小时差值。
+    </div>
+    <table>
+      <thead>
+        <tr><th>#</th><th>项目</th><th>用途</th><th>当前 star / 三日代理值</th><th>主要语言</th><th>新建时间 UTC</th><th>最近更新 UTC</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><a href="https://github.com/JimLiu/baoyu-design">JimLiu/baoyu-design</a></td><td>把 Claude Design 作为 Agent Skill 在 Cursor、Claude Code 等环境本地运行，生成 UI、原型和演示文稿。</td><td><strong>453</strong></td><td>JavaScript</td><td>2026-06-07 01:16</td><td>2026-06-08 12:31</td></tr>
+        <tr><td>2</td><td><a href="https://github.com/amElnagdy/guard-skills">amElnagdy/guard-skills</a></td><td>面向 coding agents 的质量门禁 skills，用于发现 AI 生成代码、测试和文档中的常见失效模式。</td><td><strong>413</strong></td><td>未标注</td><td>2026-06-06 16:59</td><td>2026-06-08 12:37</td></tr>
+        <tr><td>3</td><td><a href="https://github.com/GordenSun/GordenSuperPPTSkills">GordenSun/GordenSuperPPTSkills</a></td><td>使用 GPT 生成图片风格 PPT，再转换为可编辑 PPTX 的 Agent Skill。</td><td><strong>247</strong></td><td>Python</td><td>2026-06-07 16:20</td><td>2026-06-08 12:41</td></tr>
+        <tr><td>4</td><td><a href="https://github.com/adamallcock/codex-chatgpt-control">adamallcock/codex-chatgpt-control</a></td><td>让 Codex agent 控制可见 ChatGPT 网页会话的非官方 SDK。</td><td><strong>123</strong></td><td>TypeScript</td><td>2026-06-06 21:09</td><td>2026-06-08 12:22</td></tr>
+        <tr><td>5</td><td><a href="https://github.com/RainyMarks/DeepX">RainyMarks/DeepX</a></td><td>Rust 编写的 AI agent workspace。</td><td><strong>32</strong></td><td>Rust</td><td>2026-06-07 02:30</td><td>2026-06-08 10:33</td></tr>
+      </tbody>
+    </table>
+    <p class="note">查询来源：GitHub Search API 与各仓库 REST API；查询时间约为 2026-06-08 20:41 CST。</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">03 · Official updates</div>
+    <h2>OpenAI / Anthropic 官方动态</h2>
+
+    <div class="grid">
+      <div class="mini">
+        <h3>OpenAI 技术博客 / 研究文章</h3>
+        <p class="status-none">过去 24 小时未发现新发布内容。</p>
+        <p>官方 News RSS 最新条目仍为 2026-06-04 发布的 <a href="https://openai.com/index/endava-frontiers">How Endava is redesigning software delivery around AI agents</a>。</p>
+      </div>
+      <div class="mini">
+        <h3>Anthropic 博客 / 官方视频</h3>
+        <p class="status-none">过去 24 小时未发现新发布内容。</p>
+        <p>Anthropic Newsroom 当前较新的条目包括 2026-06-02 的 <a href="https://www.anthropic.com/news/expanding-project-glasswing">Expanding Project Glasswing</a>；官方 YouTube RSS 最新视频发布于 2026-05-07。</p>
+      </div>
+    </div>
+
+    <h3>OpenAI 官方 YouTube：过去 24 小时新增 8 个视频</h3>
+    <p class="status-ok">已发现新发布内容。以下视频均发布于 2026-06-08 08:30 UTC 左右（16:30 CST）。</p>
+    <ol>
+      <li><a href="https://www.youtube.com/watch?v=1NtS2KdnDok"><strong>OpenAI on OpenAI: Stacie Faggioli, Business Finance Officer Applications, OpenAI</strong></a><br>介绍 OpenAI 财务团队如何利用 ChatGPT、ChatGPT for Excel、Codex 和自定义 agents 重构财务运营。</li>
+      <li><a href="https://www.youtube.com/watch?v=fAxlEcXiSts"><strong>Operationalizing AI in workflows: Lee Spacagna, Solutions Engineer, OpenAI</strong></a><br>讲解 Workspace Agents、Codex 等企业产品如何嵌入金融服务工作流。</li>
+      <li><a href="https://www.youtube.com/watch?v=ykNmTvRcqPQ"><strong>Frontier Intelligence &amp; Financial Services: Katy Elkin, GTM Lead, OpenAI</strong></a><br>围绕工作流转型、员工生产力和 AI 原生客户产品，介绍金融服务行业应用愿景。</li>
+      <li><a href="https://www.youtube.com/watch?v=gli3gNI2saU"><strong>Customer Ignite Talk: Maurizio Poletto (Erste Group) &amp; OpenAI</strong></a><br>Erste Group 客户分享；官方 RSS 未提供更详细简介。</li>
+      <li><a href="https://www.youtube.com/watch?v=LJKzZAH0bEw"><strong>Customer Ignite Talk: Emily Prince (LSEG) &amp; OpenAI</strong></a><br>LSEG 客户分享；官方 RSS 未提供更详细简介。</li>
+      <li><a href="https://www.youtube.com/watch?v=re-18gil_ec"><strong>Win through AI powered products: Conor Spicer, Solutions Engineer, OpenAI</strong></a><br>讨论金融机构如何通过 AI 驱动的客户产品和数字体验建立差异化优势。</li>
+      <li><a href="https://www.youtube.com/watch?v=m2TV8slGQKc"><strong>Multiplying workforce impact: Stephanie Anani, Solutions Engineer, OpenAI</strong></a><br>讨论部署策略、组织转型，以及如何在受监管环境中规模化可信 AI 系统。</li>
+      <li><a href="https://www.youtube.com/watch?v=pcAtJDBO3hw"><strong>Customer Ignite Talk: Ravneet Shah (Allica Bank) &amp; OpenAI</strong></a><br>Allica Bank 客户分享；官方 RSS 未提供更详细简介。</li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="eyebrow">04 · Sources &amp; method</div>
+    <h2>来源与方法</h2>
+    <ul>
+      <li>论文发现与元数据：<a href="https://export.arxiv.org/api/query?search_query=all:%22agent%20benchmark%22&amp;start=0&amp;max_results=20&amp;sortBy=submittedDate&amp;sortOrder=descending">arXiv API 查询</a>、<a href="https://arxiv.org/abs/2606.07314">QBugLM arXiv 页面</a>、<a href="https://arxiv.org/pdf/2606.07314">论文 PDF</a>。</li>
+      <li>论文图表：从作者上传至 arXiv 的 PDF 中识别并抽取；共 1 表、5 图。表格按原文语义转写为 HTML，图像保留原始内容。</li>
+      <li>GitHub：<a href="https://api.github.com/search/repositories?q=created:%3E2026-06-05%20%28AI%20OR%20agent%20OR%20LLM%29&amp;sort=stars&amp;order=desc">GitHub Search API 查询</a>及仓库 API。由于首次运行没有三日前基线，使用“过去三天新建仓库的当前 star 数”作为增长代理指标。</li>
+      <li>OpenAI：<a href="https://openai.com/news/rss.xml">官方 News RSS</a>、<a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">官方 YouTube RSS</a>。</li>
+      <li>Anthropic：<a href="https://www.anthropic.com/news">官方 Newsroom</a>、<a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCrDwWp7EBBv4NwvScIpBDOA">官方 YouTube RSS</a>。</li>
+      <li>时间窗口：首次运行按过去 24 小时检查官方动态；检索截止 2026-06-08 20:45 CST。</li>
+      <li>不确定性：GitHub star 数持续变化；论文实验结果为作者报告，未在本次简报中独立复现实验；论文声明的代码仓库本次访问返回 404。</li>
+    </ul>
+  </section>
+
+  <footer>AI / Agent 晨间简报自动化 · 首次测试运行</footer>
+</main>
+</body>
+</html>

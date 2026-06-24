@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI / Agent 晨间简报 - 2026-06-22</title>
+  <style>
+    :root{--ink:#172033;--muted:#657083;--line:#dce2eb;--paper:#f7f8fb;--card:#fff;--blue:#315efb;--teal:#087f8c;--orange:#b45400;--green:#147a55;--red:#b33b3b}
+    *{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;line-height:1.72}
+    main{max-width:1120px;margin:0 auto;padding:32px 22px 72px} header{padding:38px;border-radius:22px;background:linear-gradient(135deg,#152349,#315efb);color:#fff;box-shadow:0 18px 50px rgba(30,55,120,.18)}
+    h1{margin:0 0 10px;font-size:clamp(30px,5vw,52px);line-height:1.1} h2{margin:48px 0 18px;font-size:30px;line-height:1.25} h3{margin:28px 0 12px;font-size:21px} h4{margin:0 0 8px;font-size:17px}
+    p{margin:8px 0 14px} a{color:var(--blue);text-decoration:none} a:hover{text-decoration:underline} header a{color:#fff;text-decoration:underline}
+    .lede{max-width:880px;font-size:17px;opacity:.94}.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.chip{padding:7px 11px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(255,255,255,.1);font-size:13px}
+    .section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;margin-top:18px;box-shadow:0 7px 24px rgba(30,45,80,.055)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.card{border:1px solid var(--line);border-radius:14px;padding:17px;background:#fff}.card p:last-child{margin-bottom:0}
+    .meta{display:grid;grid-template-columns:160px 1fr;gap:8px 16px;margin:18px 0}.meta dt{font-weight:700;color:var(--muted)}.meta dd{margin:0}
+    .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}.quote{padding:18px;border-radius:13px;background:#f2f5ff;border-left:4px solid var(--blue)}.quote.zh{background:#edf8f6;border-left-color:var(--teal)}
+    table{width:100%;border-collapse:collapse;margin:14px 0 4px;font-size:14px} th,td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top} th{background:#f2f5fa;font-weight:700} .num{font-variant-numeric:tabular-nums;white-space:nowrap}.delta{color:var(--green);font-weight:700}.muted{color:var(--muted)}
+    .note{padding:14px 16px;border-radius:12px;background:#fff7e9;border:1px solid #f2d4a3;color:#6d4200}.warning{padding:14px 16px;border-radius:12px;background:#fff1f1;border:1px solid #e9bcbc;color:#762727}
+    .visual{margin:18px 0 26px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#f4f6fa}.visual img{display:block;width:100%;height:auto;background:#fff}.visual figcaption{padding:13px 15px;font-size:14px}.visual strong{display:block;margin-bottom:3px}
+    .rank{display:inline-grid;place-items:center;width:29px;height:29px;border-radius:9px;background:#eaf0ff;color:#2447b5;font-weight:800;margin-right:8px}.tag{display:inline-block;padding:3px 8px;border-radius:999px;background:#eef2f8;color:#4f5d70;font-size:12px;margin-right:5px}.source-list{padding-left:20px}.source-list li{margin:7px 0}.nowrap{white-space:nowrap}.small{font-size:13px}.footer{margin-top:22px;color:var(--muted);font-size:13px}
+    @media(max-width:760px){main{padding:16px 12px 48px}header{padding:26px 20px}.section{padding:18px}.pair{grid-template-columns:1fr}.meta{grid-template-columns:1fr}.meta dt{margin-top:7px}table{display:block;overflow-x:auto;white-space:nowrap}td:nth-child(3){white-space:normal;min-width:220px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>AI / Agent 晨间简报</h1>
+    <p class="lede">生成日期：2026-06-22（周一）<br>信息截止时间：2026-06-22 10:32 CST（UTC+8）</p>
+    <div class="chips">
+      <span class="chip">今日论文：StaminaBench</span>
+      <span class="chip">GitHub 增长：5 项</span>
+      <span class="chip">高 Star 首次推荐：5 项</span>
+      <span class="chip">官方动态：OpenAI / Anthropic</span>
+    </div>
+  </header>
+
+  <h2>1. 今日论文</h2>
+  <section class="section">
+    <h3>StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns</h3>
+    <p class="note">选择原因：这是自上次已发布简报（2026-06-17）以来的新论文，直接评估 coding agent 在连续需求变更中的长期可靠性。它补足了单次任务成功率无法回答的关键问题：一个 agent 能稳定工作多少轮，以及模型、harness、测试反馈分别贡献了什么。</p>
+    <dl class="meta">
+      <dt>作者</dt><dd>Vlad Sobal, Shuo Yang, Yuting Zhang, Wei Xia, Stefano Soatto</dd>
+      <dt>发布日期</dt><dd>2026-06-17 21:36 UTC（arXiv v1；北京时间 2026-06-18 05:36）</dd>
+      <dt>论文</dt><dd><a href="https://arxiv.org/abs/2606.19613">arXiv 摘要页</a> · <a href="https://arxiv.org/pdf/2606.19613">PDF</a></dd>
+      <dt>代码与数据</dt><dd><a href="https://github.com/amazon-science/StaminaBench">amazon-science/StaminaBench</a></dd>
+    </dl>
+
+    <h3>英文简介与对应中文</h3>
+    <div class="pair">
+      <div class="quote"><strong>English</strong><p>StaminaBench evaluates how long a coding agent can survive a sequence of valid, stateful change requests rather than whether it can solve one isolated task. Each run starts from a REST API implementation and applies up to 100 procedurally generated modifications inside an isolated environment. Across seven open or open-weight models and multiple agent harnesses, systems without a test-feedback loop fail after only a few turns; detailed feedback and retries improve endurance substantially, while the same model can differ by several-fold across harnesses. The benchmark therefore measures the joint reliability of the model, tool loop, context management, and recovery strategy.</p></div>
+      <div class="quote zh"><strong>中文对应翻译</strong><p>StaminaBench 评估的不是 coding agent 能否完成一个孤立任务，而是它能在一系列合法、带状态的连续变更请求中坚持多久。每次运行从一个 REST API 实现开始，在隔离环境中依次施加最多 100 个程序化生成的修改。对 7 个开放或开放权重模型及多个 agent harness 的实验表明：没有测试反馈闭环时，系统通常只经过几轮就失败；详细反馈与重试能显著提高耐力，而同一模型搭配不同 harness 时，结果可相差数倍。因此，该 benchmark 衡量的是模型、工具循环、上下文管理与恢复策略的联合可靠性。</p></div>
+    </div>
+
+    <h3>方法、结果与局限</h3>
+    <table>
+      <tbody>
+        <tr><th>核心方法</th><td>在黑盒 HTTP 接口下，让 agent 构建 REST API，并依次处理 100 个由结构化动作空间生成的变更。20 个固定场景保证配置间可比；测试、agent 与服务均在隔离环境运行。</td></tr>
+        <tr><th>主要创新</th><td>用“首次失败前连续通过的轮数”替代一次性解题率；将反馈粒度、重试预算、编程语言、场景采样器与 harness 作为可控变量；测试完全程序化生成，不依赖 LLM 判分。</td></tr>
+        <tr><th>关键结论</th><td>无反馈时最佳组合平均仅通过 6.2 轮。启用 2 次重试后，GLM-5 + OpenCode 达到 57.0 ± 8.6 轮、25% 场景完整通过；详细反馈相对最小反馈可带来 6 至 12 倍提升。OpenCode 对 7 个模型均为最佳或统计上不劣于最佳，说明 harness 影响不能忽略。</td></tr>
+        <tr><th>可信度</th><td>同一组 20 个场景用于配置间配对比较，并采用配对 Wilcoxon 检验及 Holm 校正；但部分差异在 n=20 下未达到显著性，且五次重复的配置均值仍可波动约 6 至 7 轮。</td></tr>
+        <tr><th>局限</th><td>完整网格成本极高，未覆盖前沿闭源模型；仅 20 个场景，统计功效有限；任务集中于 REST API 服务，结论未必泛化到 GUI、移动端或大型遗留仓库。论文估算单个闭源配置可能耗资约 1.36 万至 2.27 万美元。</td></tr>
+      </tbody>
+    </table>
+
+    <h3>全部公开图表</h3>
+    <p class="muted">论文共 6 幅图、12 张表，以下按出现顺序完整覆盖。为避免复杂表格转写错误，采用 144 DPI 清晰页图；每项均链接到原始 PDF 对应页。</p>
+
+    <figure class="visual"><img src="morning-brief-2026-06-22-assets/staminabench-page-02.jpg" alt="StaminaBench PDF 第2页 Figure 1"><figcaption><strong>Figure 1 - Overview of StaminaBench</strong>展示环境策略、连续变更、agent、服务与测试反馈循环。<a href="https://arxiv.org/pdf/2606.19613#page=2">来源：PDF 第 2 页</a></figcaption></figure>
+    <figure class="visual"><img src="morning-brief-2026-06-22-assets/staminabench-page-03.jpg" alt="StaminaBench PDF 第3页 Table 1"><figcaption><strong>Table 1 - 与相关 benchmark 的关键属性比较</strong>比较多轮长度、程序化生成、测试方式、语言无关性与评测对象。<a href="https://arxiv.org/pdf/2606.19613#page=3">来源：PDF 第 3 页</a></figcaption></figure>
+    <figure class="visual"><img src="morning-brief-2026-06-22-assets/staminabench-page-06.jpg" alt="StaminaBench PDF 第6页 Table 2 和 Figure 2"><figcaption><strong>Table 2 - 无反馈闭环时各模型与 harness 的平均通过轮数；Figure 2 - 扩展与消融曲线</strong>包含反馈粒度、重试预算以及成本效率三组分析。<a href="https://arxiv.org/pdf/2606.19613#page=6">来源：PDF 第 6 页</a></figcaption></figure>
+    <figure class="visual"><img src="morning-brief-2026-06-22-assets/staminabench-page-07.jpg" alt="StaminaBench PDF 第7页 Table 3"><figcaption><strong>Table 3 - 两次重试条件下的主结果</strong>报告模型与 harness 组合的平均轮数、标准误和完整通过率。<a href="https://arxiv.org/pdf/2606.19613#page=7">来源：PDF 第 7 页</a></figcaption></figure>
+    <figure class="visual"><img src="morning-brief-2026-06-22-assets/staminabench-page-08.jpg" alt="StaminaBench PDF 第8页 Table 4"><figcaption><strong>Table 4 - 编程语言与场景采样策略消融</strong>比较 Python、JavaScript、Rust 以及 LLM / 程序化采样。<a href="https://arxiv.org/pdf/2606.19613#page=8">来源：PDF 第 8 页</a></figcaption></figure>
+    <figure class="visual"><img src="morning-brief-2026-06-22-assets/staminabench-page-09.jpg" alt="StaminaBench PDF 第9页 Figure 3"><figcaption><strong>Figure 3 - OpenCode 的失败特征分析</strong>展示首次失败类型与失败轮次关系。<a href="https://arxiv.org/pdf/2606.19613#page=9">来源：PDF 第 9 页</a></figcaption></figure>
+    <figure class="visual"><img src="morning-brief-2026-06-22-assets/staminabench-page-17.jpg" alt="StaminaBench PDF 第17页 Table 5 和 Table 6"><figcaption><strong>Table 5 - 成本估算使用的 token 定价；Table 6 - 每个完整实验配置的预计 API 成本</strong><a href="https://arxiv.org/pdf/2606.19613#page=17">来源：PDF 第 17 页</a></figcaption></figure>
+    <figure class="visual"><img src="morning-brief-2026-06-22-assets/staminabench-page-18.jpg" alt="StaminaBench PDF 第18页 Table 7"><figcaption><strong>Table 7 - 通用框架的示例实例化</strong>说明该评测框架如何映射到不同任务构造。<a href="https://arxiv.org/pdf/2606.19613#page=18">来源：PDF 第 18 页</a></figcaption></figure>
+    <figure class="visual"><img src="morning-brief-2026-06-22-assets/staminabench-page-19.jpg" alt="StaminaBench PDF 第19页 Table 8"><figcaption><strong>Table 8 - StaminaBench 支持的 schema 变更类型</strong>按类别列出结构修改动作。<a href="https://arxiv.org/pdf/2606.19613#page=19">来源：PDF 第 19 页</a></figcaption></figure>
+    <figure class="visual"><img src="morning-brief-2026-06-22-assets/staminabench-page-32.jpg" alt="StaminaBench PDF 第32页 Table 9 和 Table 10"><figcaption><strong>Table 9 - 实验使用的 harness 版本；Table 10 - 十次重试预算下的结果</strong><a href="https://arxiv.org/pdf/2606.19613#page=32">来源：PDF 第 32 页</a></figcaption></figure>
+    <figure class="visual"><img src="morning-brief-2026-06-22-assets/staminabench-page-33.jpg" alt="StaminaBench PDF 第33页 Table 11 和 Table 12"><figcaption><strong>Table 11 - 三种反馈粒度下的平均通过轮数；Table 12 - 五次重复运行的方差</strong><a href="https://arxiv.org/pdf/2606.19613#page=33">来源：PDF 第 33 页</a></figcaption></figure>
+    <figure class="visual"><img src="morning-brief-2026-06-22-assets/staminabench-page-35.jpg" alt="StaminaBench PDF 第35页 Figure 4"><figcaption><strong>Figure 4 - 场景首次失败轮次上的失败类型分布</strong><a href="https://arxiv.org/pdf/2606.19613#page=35">来源：PDF 第 35 页</a></figcaption></figure>
+    <figure class="visual"><img src="morning-brief-2026-06-22-assets/staminabench-page-36.jpg" alt="StaminaBench PDF 第36页 Figure 5"><figcaption><strong>Figure 5 - 默认重试预算 R=2 下全部失败轮次的类型分布</strong><a href="https://arxiv.org/pdf/2606.19613#page=36">来源：PDF 第 36 页</a></figcaption></figure>
+    <figure class="visual"><img src="morning-brief-2026-06-22-assets/staminabench-page-37.jpg" alt="StaminaBench PDF 第37页 Figure 6"><figcaption><strong>Figure 6 - 扩展重试预算 R=10 下全部失败轮次的类型分布</strong><a href="https://arxiv.org/pdf/2606.19613#page=37">来源：PDF 第 37 页</a></figcaption></figure>
+  </section>
+
+  <h2>2. GitHub 近期增长项目</h2>
+  <section class="section">
+    <p class="warning"><strong>口径说明：</strong>工作区没有约 72 小时前的历史快照。以下不是严格三日新增，而是 2026-06-17 13:10 CST 至 2026-06-22 10:21 CST（约 116.9 小时）的同源 GitHub API 净增代理。排名只在具有两端快照的相关候选集中进行，不把代理值伪装成三日数据。</p>
+    <table>
+      <thead><tr><th>排名</th><th>项目</th><th>用途</th><th>当前 Star</th><th>代理净增</th><th>语言</th><th>最近更新 UTC</th></tr></thead>
+      <tbody>
+        <tr><td><span class="rank">1</span></td><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>面向软件开发 agent 的技能框架与工作方法，强调可复用技能、测试与流程约束。</td><td class="num">235,074</td><td class="delta">+4,999 / 116.9h</td><td>Shell</td><td class="nowrap">2026-06-22 00:29</td></tr>
+        <tr><td><span class="rank">2</span></td><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>具备工具、记忆与持续扩展能力的个人 agent 运行时。</td><td class="num">199,058</td><td class="delta">+3,525 / 116.9h</td><td>Python</td><td class="nowrap">2026-06-22 02:18</td></tr>
+        <tr><td><span class="rank">3</span></td><td><a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a></td><td>将 coding agent 常见失误整理为单文件技能与行为约束。</td><td class="num">179,769</td><td class="delta">+2,708 / 116.9h</td><td>未标注</td><td class="nowrap">2026-04-20 10:05</td></tr>
+        <tr><td><span class="rank">4</span></td><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>面向 agent 的网页搜索、抓取与交互 API，承担 Web 工具层。</td><td class="num">136,362</td><td class="delta">+2,645 / 116.9h</td><td>TypeScript</td><td class="nowrap">2026-06-21 20:13</td></tr>
+        <tr><td><span class="rank">5</span></td><td><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></td><td>跨 Claude Code、Codex、OpenCode 等工具的 agent harness 优化、技能与记忆系统。</td><td class="num">219,369</td><td class="delta">+2,531 / 116.9h</td><td>JavaScript</td><td class="nowrap">2026-06-22 01:49</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <h2>3. GitHub 高 Star 未总结项目</h2>
+  <section class="section">
+    <p>扫描工作区 5 份既有日报并提取全部 GitHub 仓库链接，共得到 24 个历史仓库，全部从候选中排除。随后以 agent、coding agent、multi-agent、MCP 等关键词检索 GitHub Search API，并对高位候选逐仓核验。下列 5 项按当前总 Star 降序排列，均未在此前日报出现。</p>
+    <div class="grid">
+      <article class="card"><h4><span class="rank">1</span><a href="https://github.com/Shubhamsaboo/awesome-llm-apps">Shubhamsaboo/awesome-llm-apps</a></h4><p><strong class="num">115,256 ★</strong> · Python · 更新于 2026-06-15 01:00 UTC</p><p>用途与能力：100 多个可运行的 AI Agent 与 RAG 应用示例，覆盖多 agent、工具调用、记忆和垂直场景。值得关注：它是快速比较 agent 应用模式与落地栈的高密度样本库。</p></article>
+      <article class="card"><h4><span class="rank">2</span><a href="https://github.com/msitarzewski/agency-agents">msitarzewski/agency-agents</a></h4><p><strong class="num">114,944 ★</strong> · Shell · 更新于 2026-06-21 20:48 UTC</p><p>用途与能力：面向产品、工程、营销等职能的专用 agent 配置集合，强调角色、流程与交付物。值得关注：它体现“能力由模型迁移到可审查角色与技能包”的趋势。</p></article>
+      <article class="card"><h4><span class="rank">3</span><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></h4><p><strong class="num">105,758 ★</strong> · Rust · 更新于 2026-06-22 01:55 UTC</p><p>用途与能力：跨平台桌面工具，统一管理 Claude Code、Codex、OpenCode、OpenClaw、Gemini CLI 与 Hermes Agent。值得关注：多 coding agent 并存后，配置、模型与入口切换正形成独立工具层。</p></article>
+      <article class="card"><h4><span class="rank">4</span><a href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a></h4><p><strong class="num">105,475 ★</strong> · TypeScript · 更新于 2026-06-22 01:43 UTC</p><p>用途与能力：Google 官方开源终端 agent，支持代码理解、工具使用与终端工作流。值得关注：它是主流模型厂商 coding agent 的重要开源实现与对照基线。</p></article>
+      <article class="card"><h4><span class="rank">5</span><a href="https://github.com/browser-use/browser-use">browser-use/browser-use</a></h4><p><strong class="num">99,951 ★</strong> · Python · 更新于 2026-06-20 18:21 UTC</p><p>用途与能力：让 agent 通过浏览器执行网页任务的框架与运行组件。值得关注：computer-use agent 的可靠性、可观测性与网页适配仍是实际部署的核心瓶颈。</p></article>
+    </div>
+  </section>
+
+  <h2>4. OpenAI / Anthropic 动态</h2>
+  <section class="section">
+    <h3>OpenAI：发现新文章与 6 个官方视频</h3>
+    <div class="grid">
+      <article class="card"><span class="tag">官方文章</span><span class="tag">2026-06-18</span><h4><a href="https://openai.com/index/improving-health-intelligence-in-chatgpt/">Improving health intelligence in ChatGPT</a></h4><p>OpenAI 介绍 GPT-5.5 Instant 在健康场景中的改进，包括识别紧急就医需求、主动询问关键上下文、解释不确定性及降低复杂健康信息理解门槛。官方称每周有超过 2.3 亿用户使用 ChatGPT 处理健康与保健问题，并说明评测由全球医生网络参与设计与审阅。</p></article>
+      <article class="card"><span class="tag">官方视频</span><span class="tag">2026-06-17</span><h4><a href="https://www.youtube.com/watch?v=rOLKQJMLBHI">Build and test iOS apps without leaving Codex!</a></h4><p>演示 Build iOS Apps 插件：Codex 可查看并测试 iOS 应用、打开 SwiftUI Preview，并在应用内浏览器中热重载。</p></article>
+      <article class="card"><span class="tag">官方视频</span><span class="tag">2026-06-18</span><h4><a href="https://www.youtube.com/watch?v=ZK3JhU73W18">Record &amp; Replay in Codex</a></h4><p>展示将一次人工操作录制为可检查、可编辑的 Codex skill，用于重复执行报销、请假等浏览器工作流。</p></article>
+      <article class="card"><span class="tag">官方视频</span><span class="tag">2026-06-18</span><h4><a href="https://www.youtube.com/watch?v=UxY8zJKRrHU">Improving health intelligence in ChatGPT</a></h4><p>配套介绍 ChatGPT 健康能力、医生参与的评测方法，以及 GPT-5.5 Instant 在高难度健康评测上的进展。</p></article>
+      <article class="card"><span class="tag">官方视频</span><span class="tag">2026-06-19</span><h4><a href="https://www.youtube.com/watch?v=5sDfhQq_g8A">Score with ChatGPT</a></h4><p>官方短视频，主题为使用 ChatGPT 完成比分或评分相关任务；官方 RSS 未提供文字简介，未扩展推断具体功能。</p></article>
+      <article class="card"><span class="tag">官方视频</span><span class="tag">2026-06-19</span><h4><a href="https://www.youtube.com/watch?v=YPNOjXTDP9c">Plan with ChatGPT</a></h4><p>官方短视频，主题为使用 ChatGPT 进行计划相关任务；官方 RSS 未提供文字简介，未扩展推断具体功能。</p></article>
+      <article class="card"><span class="tag">官方视频</span><span class="tag">2026-06-19</span><h4><a href="https://www.youtube.com/watch?v=0JIbgZ544wU">What Codex Unlocks for NTT Data</a></h4><p>NTT DATA 案例：Codex 在数月内扩展至超过 10,000 名活跃用户，并被用于客户列表维护与报告生成；案例称部分报告流程从两天缩短至约 30 分钟。</p></article>
+    </div>
+
+    <h3>Anthropic：未发现符合范围的新发布内容</h3>
+    <p class="note">核对 Anthropic 官方 News 与官方 YouTube RSS 后，未发现 2026-06-17 13:10 CST 之后的新技术博客、研究文章、开发者更新或官方视频。官方 News 在此窗口内出现一篇首尔办公室与韩国生态合作公告，但它属于公司与市场拓展信息，不纳入本简报定义的技术动态。</p>
+  </section>
+
+  <h2>5. 来源与方法</h2>
+  <section class="section">
+    <h3>主要来源</h3>
+    <ul class="source-list">
+      <li>论文：<a href="https://arxiv.org/abs/2606.19613">arXiv 2606.19613</a>、<a href="https://arxiv.org/pdf/2606.19613">官方 PDF</a>、<a href="https://github.com/amazon-science/StaminaBench">官方代码仓库</a>。检索时间：2026-06-22 10:19 至 10:21 CST。</li>
+      <li>GitHub：<a href="https://api.github.com/">GitHub REST API</a> 与 <a href="https://docs.github.com/en/rest/search/search">Repository Search API</a>。查询时间：2026-06-22 10:21 至 10:27 CST。</li>
+      <li>OpenAI：<a href="https://openai.com/news/">OpenAI News</a>、<a href="https://openai.com/index/improving-health-intelligence-in-chatgpt/">健康智能文章</a>、<a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">官方 YouTube RSS</a>。</li>
+      <li>Anthropic：<a href="https://www.anthropic.com/news">Anthropic News</a>、<a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCrDwWp7EBBv4NwvScIpBDOA">官方 YouTube RSS</a>。</li>
+    </ul>
+
+    <h3>GitHub Star 快照</h3>
+    <table>
+      <thead><tr><th>候选仓库</th><th>2026-06-17 快照</th><th>2026-06-22 快照</th><th>净增 / 用途</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td class="num">230,075</td><td class="num">235,074</td><td class="delta">+4,999</td></tr>
+        <tr><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td class="num">195,533</td><td class="num">199,058</td><td class="delta">+3,525</td></tr>
+        <tr><td><a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a></td><td class="num">177,061</td><td class="num">179,769</td><td class="delta">+2,708</td></tr>
+        <tr><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td class="num">133,717</td><td class="num">136,362</td><td class="delta">+2,645</td></tr>
+        <tr><td><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></td><td class="num">216,838</td><td class="num">219,369</td><td class="delta">+2,531</td></tr>
+        <tr><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td class="num">151,775</td><td class="num">153,544</td><td class="delta">+1,769</td></tr>
+        <tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td class="num">175,360</td><td class="num">177,031</td><td class="delta">+1,671</td></tr>
+        <tr><td><a href="https://github.com/openclaw/openclaw">openclaw/openclaw</a></td><td class="num">379,077</td><td class="num">379,834</td><td class="delta">+757</td></tr>
+        <tr><td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td><td class="num">132,877</td><td class="num">133,625</td><td class="delta">+748</td></tr>
+        <tr><td><a href="https://github.com/n8n-io/n8n">n8n-io/n8n</a></td><td class="num">192,863</td><td class="num">193,529</td><td class="delta">+666</td></tr>
+        <tr><td><a href="https://github.com/langgenius/dify">langgenius/dify</a></td><td class="num">145,541</td><td class="num">146,076</td><td class="delta">+535</td></tr>
+        <tr><td><a href="https://github.com/langchain-ai/langchain">langchain-ai/langchain</a></td><td class="num">139,517</td><td class="num">139,832</td><td class="delta">+315</td></tr>
+        <tr><td><a href="https://github.com/langflow-ai/langflow">langflow-ai/langflow</a></td><td class="num">149,773</td><td class="num">149,912</td><td class="delta">+139</td></tr>
+        <tr><td><a href="https://github.com/Shubhamsaboo/awesome-llm-apps">Shubhamsaboo/awesome-llm-apps</a></td><td>此前未总结</td><td class="num">115,256</td><td>高 Star 新增</td></tr>
+        <tr><td><a href="https://github.com/msitarzewski/agency-agents">msitarzewski/agency-agents</a></td><td>此前未总结</td><td class="num">114,944</td><td>高 Star 新增</td></tr>
+        <tr><td><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td>此前未总结</td><td class="num">105,758</td><td>高 Star 新增</td></tr>
+        <tr><td><a href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a></td><td>此前未总结</td><td class="num">105,475</td><td>高 Star 新增</td></tr>
+        <tr><td><a href="https://github.com/browser-use/browser-use">browser-use/browser-use</a></td><td>此前未总结</td><td class="num">99,951</td><td>高 Star 新增</td></tr>
+      </tbody>
+    </table>
+
+    <h3>限制与不确定性</h3>
+    <ul class="source-list">
+      <li>截至本次运行，工作区已发布日报止于 2026-06-17；6 月 18 至 21 日的自动化执行中断，未生成 HTML，因此不作为历史日报或 Star 快照。</li>
+      <li>GitHub 没有可用的约 72 小时历史快照；增长榜使用约 116.9 小时净增代理。它适合辨识持续热度，但不能解释为严格三日增长，也不能覆盖未进入候选集的新爆发项目。</li>
+      <li>高 Star 榜的筛选范围为 GitHub Search API 中包含 agent、coding agent、multi-agent、MCP 等关键词的高 Star 仓库，再按与目标领域的直接相关性人工复核。通用 AI UI、纯提示词泄露归档、教程与非 agent 主体项目被排除。</li>
+      <li>OpenAI News 与 RSS 入口在本次命令行及应用内浏览器核验时触发访问验证；官方 YouTube RSS 可用，并提供了健康智能文章的官方链接与摘要。报告仅列出能够从官方端点直接核验的内容，不据第三方转载补齐。</li>
+      <li>论文图表均来自公开 PDF；复杂表格未手工重录，以避免数字与列关系错误。14 张页图覆盖全部 6 幅图和 12 张表，无缺项。</li>
+    </ul>
+
+    <h3>本次新增至“已总结仓库集合”</h3>
+    <p>Shubhamsaboo/awesome-llm-apps、msitarzewski/agency-agents、farion1231/cc-switch、google-gemini/gemini-cli、browser-use/browser-use。</p>
+    <p class="footer">本简报依据可公开访问的一手页面与 API 生成。Star、更新时间及页面内容均可能在查询后继续变化。</p>
+  </section>
+</main>
+</body>
+</html>

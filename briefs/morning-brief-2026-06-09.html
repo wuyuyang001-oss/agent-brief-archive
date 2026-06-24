@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI / Agent 晨间简报 - 2026-06-09</title>
+  <style>
+    :root {
+      --ink:#18212b; --muted:#657184; --paper:#f4f7fa; --card:#fff;
+      --line:#dce4ec; --blue:#2458d6; --blue-soft:#edf3ff;
+      --green:#087a57; --amber:#995d05; --red:#b23b3b;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; color:var(--ink); background:var(--paper);
+      font:15px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+        "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    }
+    main { width:min(1180px,calc(100% - 32px)); margin:28px auto 64px; }
+    header {
+      padding:42px; color:#fff; border-radius:22px;
+      background:linear-gradient(130deg,#10244b,#2458d6 60%,#4381e6);
+      box-shadow:0 18px 50px rgba(24,57,130,.2);
+    }
+    header h1 { margin:0 0 8px; font-size:clamp(30px,5vw,52px); line-height:1.12; }
+    header p { margin:5px 0 0; opacity:.9; }
+    section {
+      margin-top:24px; padding:30px; border:1px solid var(--line);
+      border-radius:18px; background:var(--card);
+      box-shadow:0 8px 28px rgba(35,52,74,.06);
+    }
+    h2 { margin:0 0 18px; font-size:26px; line-height:1.25; }
+    h3 { margin:24px 0 10px; font-size:19px; }
+    h4 { margin:16px 0 6px; font-size:16px; }
+    p { margin:8px 0; }
+    a { color:var(--blue); text-decoration-thickness:1px; text-underline-offset:3px; }
+    .eyebrow { color:var(--blue); font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    .meta,.note { color:var(--muted); }
+    .pill {
+      display:inline-block; margin:3px 6px 3px 0; padding:3px 9px;
+      border-radius:999px; color:#244264; background:var(--blue-soft);
+      font-size:12px; font-weight:700;
+    }
+    .callout {
+      margin:16px 0; padding:14px 16px; border-left:4px solid var(--blue);
+      border-radius:8px; background:var(--blue-soft);
+    }
+    .warn { border-color:#d28a16; background:#fff8e8; color:#63420a; }
+    .risk { border-color:var(--red); background:#fff1f1; color:#6f2929; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .mini {
+      padding:18px; border:1px solid var(--line); border-radius:14px;
+      background:#fbfcfe;
+    }
+    .mini h3,.mini h4 { margin-top:0; }
+    .lang { padding:16px 18px; border:1px solid var(--line); border-radius:12px; background:#fbfcfe; }
+    figure {
+      margin:18px 0; overflow:hidden; border:1px solid var(--line);
+      border-radius:14px; background:#fff;
+    }
+    figure img { display:block; width:100%; height:auto; padding:10px; background:#fff; }
+    figcaption { padding:12px 16px; color:var(--muted); border-top:1px solid var(--line); }
+    .chart-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .chart-grid figure { margin:0; }
+    table { width:100%; border-collapse:collapse; margin:14px 0; font-size:14px; }
+    th,td { padding:10px 11px; border:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { background:#edf3fb; }
+    code { padding:2px 5px; border-radius:5px; background:#eef1f5; }
+    ol,ul { padding-left:22px; }
+    .status-ok { color:var(--green); font-weight:800; }
+    .status-none { color:var(--amber); font-weight:800; }
+    .delta { color:var(--green); font-weight:800; white-space:nowrap; }
+    footer { margin-top:24px; color:var(--muted); text-align:center; }
+    @media (max-width:800px) {
+      header,section { padding:22px; }
+      .grid,.chart-grid { grid-template-columns:1fr; }
+      table { display:block; overflow-x:auto; white-space:nowrap; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow" style="color:#cfe0ff">Daily AI / Agent Brief</div>
+    <h1>今天的 AI / Agent 早报</h1>
+    <p>2026-06-09 · 信息截止：11:00 CST（03:00 UTC）</p>
+    <p>今日重点：生产级 Agent 架构 · GitHub 三日净增长 · OpenAI 官方视频动态</p>
+  </header>
+
+  <section>
+    <div class="eyebrow">01 · Paper of the day</div>
+    <h2>Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations</h2>
+    <p class="meta">Arun Malik · Microsoft Azure Networking · 2026-06-08</p>
+    <p>
+      <span class="pill">Agent architecture</span>
+      <span class="pill">Multi-agent orchestration</span>
+      <span class="pill">Progressive autonomy</span>
+      <span class="pill">Safety boundaries</span>
+    </p>
+    <p>
+      <a href="https://arxiv.org/abs/2606.09122">arXiv 摘要页</a> ·
+      <a href="https://arxiv.org/pdf/2606.09122">论文 PDF</a>
+    </p>
+    <div class="callout">
+      选择原因：这是自昨天测试运行后新发布的 Agent 架构论文。它没有把“自治”简化为让 LLM 直接操作生产系统，而是将 Agent 协作、技能调用、知识编码、授权、爆炸半径、回滚和闭环验证放在同一架构中。
+    </div>
+
+    <h3>English overview</h3>
+    <div class="lang" lang="en">
+      This paper presents a production-oriented agentic AI architecture for autonomous incident resolution in hyperscale network operations. It decomposes the workflow into Intake, Planning, Execution, and Verification Agents, supported by a structured knowledge layer, a skills registry, layered authorization, blast-radius controls, circuit breakers, and rollback mechanisms. The authors advocate progressive autonomy, where an agent advances from advisory to supervised, monitored, autonomous, and eventually self-improving operation only after sustained reliability. The deployment reportedly resolves more than 90% of incidents in well-understood categories and reduces resolution time from hours to minutes.
+    </div>
+
+    <h3>对应中文翻译</h3>
+    <div class="lang">
+      本文提出了一种面向生产环境的智能体式 AI 架构，用于超大规模网络运维中的自主事件解决。它将工作流拆分为接入、规划、执行和验证四类 Agent，并由结构化知识层、技能注册表、分层授权、爆炸半径控制、熔断器和回滚机制提供支撑。作者主张采用渐进式自治：只有在持续证明可靠之后，Agent 才能从建议模式依次晋升到受监督、受监控、自主运行，最终进入自我改进模式。据论文报告，该部署可自动解决已充分理解类别中超过 90% 的事件，并将解决时间从数小时缩短到数分钟。
+    </div>
+
+    <div class="grid">
+      <div class="mini">
+        <h3>核心架构</h3>
+        <p><strong>编排层</strong>包含 Intake、Planning、Execution、Verification 四类 Agent；<strong>知识层</strong>提供 playbook、技能注册、拓扑模型和历史数据；<strong>安全层</strong>实施最小权限、爆炸半径、熔断和回滚；<strong>基础设施层</strong>封装设备、遥测和状态存储。</p>
+      </div>
+      <div class="mini">
+        <h3>值得借鉴</h3>
+        <p>将 Agent 推理与技能执行分离；技能具备类型化接口、权限要求、幂等保证和沙箱。所有动作先做确定性安全检查，关键决策可要求多模型共识，验证失败自动回滚。</p>
+      </div>
+      <div class="mini">
+        <h3>报告结果</h3>
+        <p>作者报告：成熟故障类别自动解决率超过 90%，解决时间从小时级降低到分钟级；误报式修复低于 5%，且安全框架避免了客户可见影响。</p>
+      </div>
+      <div class="mini">
+        <h3>主要局限</h3>
+        <p>未公开样本规模、故障类别明细、基线构造、统计区间、代码或可复现数据；仍无法覆盖长尾及跨领域故障。监管、责任归属与审计问题也未被纯技术机制完全解决。</p>
+      </div>
+    </div>
+
+    <div class="callout risk">
+      <strong>阅读判断：</strong>这篇论文更适合作为生产 Agent 系统的架构参考，而不是严格 benchmark。其图 2 至图 6 为汇总性图表，但论文未给出足够的测量方法和底层数据，不能独立验证图中数值或“超过 90%”结论。
+    </div>
+
+    <h3>论文全部图表</h3>
+    <p class="note">PDF 共识别出 1 个表格和 6 张图，以下按论文顺序完整附上。</p>
+
+    <figure>
+      <img src="morning-brief-2026-06-09-assets/figure-1.png" alt="Four-layer architecture for autonomous incident resolution">
+      <figcaption>Fig. 1 · 自主事件解决的四层架构。<a href="https://arxiv.org/pdf/2606.09122#page=3">论文第 3 页</a></figcaption>
+    </figure>
+
+    <h4>Table I · Progressive Autonomy Levels</h4>
+    <table>
+      <thead><tr><th>级别</th><th>名称</th><th>描述</th></tr></thead>
+      <tbody>
+        <tr><td>0</td><td>Advisory / 建议</td><td>Agent 建议动作，由人类执行。</td></tr>
+        <tr><td>1</td><td>Supervised / 受监督</td><td>Agent 在人类预先批准后执行。</td></tr>
+        <tr><td>2</td><td>Monitored / 受监控</td><td>Agent 自主执行，人类事后审核。</td></tr>
+        <tr><td>3</td><td>Autonomous / 自主</td><td>对已批准类别无需人类参与即可执行。</td></tr>
+        <tr><td>4</td><td>Self-improving / 自我改进</td><td>Agent 可依据执行结果改进自身操作流程。</td></tr>
+      </tbody>
+    </table>
+
+    <div class="chart-grid">
+      <figure>
+        <img src="morning-brief-2026-06-09-assets/figure-2.png" alt="Operational capability comparison">
+        <figcaption>Fig. 2 · 手工运维、规则自动化、AIOps 与自治系统的能力对比。<a href="https://arxiv.org/pdf/2606.09122#page=5">来源</a></figcaption>
+      </figure>
+      <figure>
+        <img src="morning-brief-2026-06-09-assets/figure-3.png" alt="Incident volume distribution by autonomy level">
+        <figcaption>Fig. 3 · 随部署阶段演进，事件逐渐迁移至更高自治等级。<a href="https://arxiv.org/pdf/2606.09122#page=5">来源</a></figcaption>
+      </figure>
+      <figure>
+        <img src="morning-brief-2026-06-09-assets/figure-4.png" alt="Mean time to resolution comparison">
+        <figcaption>Fig. 4 · 不同运维代际的平均解决时间对比。<a href="https://arxiv.org/pdf/2606.09122#page=5">来源</a></figcaption>
+      </figure>
+      <figure>
+        <img src="morning-brief-2026-06-09-assets/figure-5.png" alt="Incident resolution outcomes">
+        <figcaption>Fig. 5 · 自主解决、人工复核、升级人工及安全阻止的事件结果分布。<a href="https://arxiv.org/pdf/2606.09122#page=6">来源</a></figcaption>
+      </figure>
+      <figure>
+        <img src="morning-brief-2026-06-09-assets/figure-6.png" alt="Safety framework effectiveness">
+        <figcaption>Fig. 6 · 分层安全框架与基础授权模型的安全能力对比。<a href="https://arxiv.org/pdf/2606.09122#page=6">来源</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">02 · GitHub momentum</div>
+    <h2>过去三天 AI / Agent 项目 Star 净增长 Top 5</h2>
+    <div class="callout">
+      本次榜单中的项目均在过去三天窗口内从零新建，因此“当前 star 数”可作为严格的三日净增长值。排名仅纳入当前公开可访问、且与 Agent、Agent Skill 或 Agent 评测直接相关的仓库。
+    </div>
+    <table>
+      <thead>
+        <tr><th>#</th><th>项目</th><th>用途</th><th>当前 star</th><th>三日净增</th><th>昨日测试后变化</th><th>语言</th><th>最近更新 UTC</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><a href="https://github.com/JimLiu/baoyu-design">JimLiu/baoyu-design</a></td><td>把 Claude Design 作为 Agent Skill 本地运行，生成 UI、原型和演示文稿。</td><td>531</td><td class="delta">+531</td><td class="delta">+78</td><td>JavaScript</td><td>2026-06-09 02:44</td></tr>
+        <tr><td>2</td><td><a href="https://github.com/amElnagdy/guard-skills">amElnagdy/guard-skills</a></td><td>面向 coding agents 的质量门禁 skills，发现 AI 生成代码、测试和文档中的失效模式。</td><td>474</td><td class="delta">+474</td><td class="delta">+61</td><td>未标注</td><td>2026-06-09 02:56</td></tr>
+        <tr><td>3</td><td><a href="https://github.com/GordenSun/GordenSuperPPTSkills">GordenSun/GordenSuperPPTSkills</a></td><td>使用 GPT 生成图片风格 PPT，再转换为可编辑 PPTX 的 Agent Skill。</td><td>439</td><td class="delta">+439</td><td class="delta">+192</td><td>Python</td><td>2026-06-09 02:55</td></tr>
+        <tr><td>4</td><td><a href="https://github.com/adamallcock/codex-chatgpt-control">adamallcock/codex-chatgpt-control</a></td><td>让 Codex agents 控制可见 ChatGPT 网页会话的非官方 SDK。</td><td>159</td><td class="delta">+159</td><td class="delta">+36</td><td>JavaScript</td><td>2026-06-09 02:34</td></tr>
+        <tr><td>5</td><td><a href="https://github.com/ApodexAI/AgentHarness">ApodexAI/AgentHarness</a></td><td>用于在公开深度研究 benchmark 上评估 Apodex-1.0 的 Agent Harness。</td><td>49</td><td class="delta">+49</td><td>昨日未入快照</td><td>Python</td><td>2026-06-09 02:49</td></tr>
+      </tbody>
+    </table>
+    <p class="note">三日窗口起点约为 2026-06-06 11:00 CST。上述仓库均在窗口起点后创建；净增值为从创建时的 0 star 到查询时当前 star 的净变化。查询时间约为 2026-06-09 10:56 CST。</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">03 · Official updates</div>
+    <h2>OpenAI / Anthropic 官方动态</h2>
+    <p class="note">检查窗口：自昨天测试稿截止时间 2026-06-08 20:45 CST 起。</p>
+
+    <h3>OpenAI</h3>
+    <div class="grid">
+      <div class="mini">
+        <h4>技术博客 / 研究 / 开发者更新</h4>
+        <p class="status-none">未发现新的技术博客、研究文章或开发者更新。</p>
+        <p>窗口内发布了一条非技术公司动态：<a href="https://openai.com/index/openai-submits-confidential-s-1">Confidential submission of draft S-1 to the SEC</a>（2026-06-08 14:00 UTC），确认已秘密提交 S-1 草案；发布时间及后续行动尚未确定。</p>
+      </div>
+      <div class="mini">
+        <h4>官方视频</h4>
+        <p class="status-ok">发现 3 个新视频。</p>
+        <p>主题集中在企业采用、Codex 工作流，以及 GPT-5.5 在网络安全和资产管理中的落地案例。</p>
+      </div>
+    </div>
+    <ol>
+      <li><a href="https://www.youtube.com/watch?v=gRSzTChV_bk"><strong>Intelligence At Work - Enterprise Readiness</strong></a> · 2026-06-08 21:51 UTC<br>概述 OpenAI 企业产品路线：ChatGPT 与 Codex 的统一体验、六类角色 Agent Plugins、Annotations、Sites，以及企业级 AI 转型。</li>
+      <li><a href="https://www.youtube.com/watch?v=KWAE5G7nF8Q"><strong>Palo Alto Networks Moves Faster with GPT-5.5</strong></a> · 2026-06-08 18:06 UTC<br>介绍 Palo Alto Networks 使用 GPT-5.5 与 Codex 改进网络安全漏洞报告，并借助并行工具调用提升 token 效率。</li>
+      <li><a href="https://www.youtube.com/watch?v=m1PV1a9BWao"><strong>Codex Unlocks Next Level Intelligence for Balyasny Asset Management</strong></a> · 2026-06-08 14:38 UTC<br>介绍 Balyasny Asset Management 在投资研究、编码和后台自动化中部署 Codex 与 GPT-5.5 的案例。</li>
+    </ol>
+
+    <h3>Anthropic</h3>
+    <div class="callout warn">
+      <strong>未发现新发布内容。</strong> Anthropic Newsroom 和官方 YouTube 在检查窗口内均没有新增技术博客、研究文章、开发者更新或视频。
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">04 · Sources &amp; method</div>
+    <h2>来源与方法</h2>
+    <ul>
+      <li>论文发现：<a href="https://export.arxiv.org/api/query?search_query=%28all:%22agent%20benchmark%22%20OR%20all:%22agentic%20benchmark%22%20OR%20all:%22multi-agent%22%29&amp;start=0&amp;max_results=40&amp;sortBy=submittedDate&amp;sortOrder=descending">arXiv API 查询</a>；论文正文与图表来自 <a href="https://arxiv.org/pdf/2606.09122">作者上传 PDF</a>。</li>
+      <li>论文图表：PDF 共识别 1 表、6 图。表格按原文转为 HTML，图片从 PDF 原始对象抽取。</li>
+      <li>GitHub：使用 <a href="https://api.github.com/search/repositories?q=created:%3E2026-06-06%20%28AI%20OR%20agent%20OR%20LLM%29&amp;sort=stars&amp;order=desc">GitHub Search API</a> 与各仓库 REST API。只纳入三日内新建的公开项目，因此三日净增等于当前 star 数。</li>
+      <li>昨日测试后变化使用 2026-06-08 测试稿快照：baoyu-design 453、guard-skills 413、GordenSuperPPTSkills 247、codex-chatgpt-control 123。</li>
+      <li>OpenAI：<a href="https://openai.com/news/rss.xml">官方 News RSS</a>、<a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">官方 YouTube RSS</a>。</li>
+      <li>Anthropic：<a href="https://www.anthropic.com/news">官方 Newsroom</a>、<a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCrDwWp7EBBv4NwvScIpBDOA">官方 YouTube RSS</a>。</li>
+      <li>限制：GitHub star 会持续变化；GitHub 搜索与主题筛选可能遗漏未使用相关关键词的项目；论文结果为作者报告，未在本早报中独立复现。</li>
+    </ul>
+    <h3>本次 GitHub Star 快照</h3>
+    <p><code>2026-06-09 10:56 CST</code> · baoyu-design 531 · guard-skills 474 · GordenSuperPPTSkills 439 · codex-chatgpt-control 159 · AgentHarness 49 · DeepX 38</p>
+  </section>
+
+  <footer>AI / Agent 晨间简报 · 2026-06-09</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI / Agent 晨间简报 | 2026-06-12</title>
+  <style>
+    :root{--ink:#16202a;--muted:#607080;--line:#d9e1e8;--paper:#f4f7f9;--card:#fff;--blue:#1769aa;--green:#087f5b;--amber:#9a6700}
+    *{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+    main{max-width:1180px;margin:0 auto;padding:34px 22px 72px} a{color:var(--blue);text-decoration:none} a:hover{text-decoration:underline}
+    header{padding:38px;border-radius:22px;background:linear-gradient(135deg,#122536,#1b5375);color:#fff;box-shadow:0 12px 30px #17334a25}
+    header h1{margin:0 0 8px;font-size:35px;letter-spacing:-1px} header p{margin:4px 0;color:#d8e7f2}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.chip{padding:5px 10px;border-radius:999px;background:#ffffff18;border:1px solid #ffffff35;font-size:13px}
+    section{margin-top:26px;padding:28px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 5px 18px #22384b0d}
+    h2{margin:0 0 18px;font-size:25px;letter-spacing:-.4px} h3{margin:22px 0 8px;font-size:18px} h4{margin:0 0 7px;font-size:16px}
+    p{margin:8px 0}.muted{color:var(--muted)}.note{padding:13px 15px;border-left:4px solid var(--blue);background:#edf6fc;border-radius:8px}
+    .warn{border-left-color:var(--amber);background:#fff8e6}.good{border-left-color:var(--green);background:#eef9f5}
+    .meta,.cards{display:grid;gap:12px}.meta{grid-template-columns:repeat(4,1fr);margin:18px 0}.meta div,.card{padding:15px;border:1px solid var(--line);border-radius:12px;background:#fbfcfd}
+    .meta b{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}.meta span{font-size:16px}
+    .cards{grid-template-columns:repeat(2,1fr)}.card p{margin:5px 0}.rank{display:inline-grid;place-items:center;width:27px;height:27px;margin-right:7px;border-radius:50%;background:#e7f2fa;color:#075b96;font-weight:700}
+    .delta{color:var(--green);font-weight:750}.stars{font-variant-numeric:tabular-nums;font-weight:700}
+    table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}th,td{padding:10px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f3f6f8;color:#44515d}
+    .table-wrap{overflow:auto}.en{font-family:Georgia,"Times New Roman",serif;background:#f7f9fa;padding:14px;border-radius:10px}.zh{background:#f0f7fb;padding:14px;border-radius:10px}
+    .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}.gallery figure{margin:0;padding:10px;border:1px solid var(--line);border-radius:12px;background:#fafbfc}
+    .gallery img{display:block;width:100%;height:auto;border-radius:6px;background:#fff}.gallery figcaption{padding:8px 4px 2px;font-size:13px;color:#52616d}
+    .wide{grid-column:1/-1}.sources li{margin:6px 0}.small{font-size:13px}.footer{margin-top:24px;text-align:center;color:var(--muted)}
+    @media(max-width:820px){header{padding:25px}header h1{font-size:28px}.meta,.cards,.gallery{grid-template-columns:1fr}.wide{grid-column:auto}section{padding:20px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>AI / Agent 晨间简报</h1>
+    <p>生成日期：2026 年 6 月 12 日（周五）</p>
+    <p>信息截止时间：2026-06-12 10:00（Asia/Shanghai）</p>
+    <div class="chips"><span class="chip">今日论文：AgentBeats</span><span class="chip">约三日 Star 净增榜</span><span class="chip">高 Star 未总结项目</span><span class="chip">OpenAI / Anthropic 官方动态</span></div>
+  </header>
+
+  <section id="paper">
+    <h2>1. 今日论文：AgentBeats</h2>
+    <h3>AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility</h3>
+    <div class="meta">
+      <div><b>发布日期</b><span>2026-06-11</span></div>
+      <div><b>主题</b><span>Agent Benchmark 架构</span></div>
+      <div><b>规模</b><span>298 Judge + 467 Subject Agents</span></div>
+      <div><b>协议</b><span>A2A + MCP</span></div>
+    </div>
+    <p><b>作者：</b>Xiaoyuan Liu、Jianhong Tu、Yuqi Chen、Siyuan Xie、Sihan Ren、Tianneng Shi、Gal Gantar、Evan Sandoval、Donghyun Lee、Daniel Miao、Peter J. Gilbert、Nick Hynes、Mauro Staver、Warren He、David Marn、Andrew Low、Xi Zhang、Elron Bandel、Michal Shmueli-Scheuer、Siva Reddy、Alexandre Drouin、Alexandre Lacoste、Ramayya Krishnan、Elham Tabassi、Yu Su、Victor Barres、Chenguang Wang、Wenbo Guo、Dawn Song。</p>
+    <p><b>链接：</b><a href="https://arxiv.org/abs/2606.13608">arXiv 摘要</a> · <a href="https://arxiv.org/pdf/2606.13608">论文 PDF</a> · <a href="https://agentbeats.org">AgentBeats 项目页</a> · <a href="https://rdi.berkeley.edu/agentx-agentbeats.html">AgentX-AgentBeats Competition</a></p>
+    <p class="note">选择理由：这是自上一份日报后发布的最新、且直接改变 Agent benchmark 集成方式的工作。它不再把 benchmark 固定在某个模型中心化 harness 中，而是把评测本身实现成可交互的 judge agent。</p>
+
+    <h3>英文简介与对应翻译</h3>
+    <p class="en"><b>English.</b> AgentBeats proposes Agentified Agent Assessment (AAA), an agent-agnostic evaluation architecture in which judge agents conduct assessments and subject agents expose their capabilities through standardized interfaces. A2A handles task management and MCP handles tool access, reducing benchmark-to-agent integrations from N×M to N+M. A five-month field study covering 298 judge agents in 12 categories and 467 subject agents demonstrates broad applicability, while a controlled coding-agent case study shows that benchmark outcomes depend materially on the model-harness pairing rather than on the model alone.</p>
+    <p class="zh"><b>中文翻译。</b> AgentBeats 提出了“智能体化智能体评测”（AAA）：一种与具体智能体实现无关的评测架构，由 judge agent 执行评测，subject agent 通过标准接口暴露能力。A2A 负责任务管理，MCP 负责工具访问，使 benchmark 与 agent 之间的集成数量从 N×M 降为 N+M。为期五个月的实地研究覆盖 12 个类别中的 298 个 judge agent 与 467 个 subject agent，说明该架构具有广泛适用性；受控 coding-agent 案例进一步表明，评测结果显著取决于模型与 harness 的配对，而非只取决于模型本身。</p>
+
+    <h3>核心结论</h3>
+    <div class="cards">
+      <div class="card"><h4>方法与创新</h4><p>将 benchmark 评测逻辑封装为 judge agent；用 A2A 管理任务、用 MCP 提供工具，从接口层分离评测逻辑和被测 agent。论文还定义了 Local、Remote、Hosted、Proxy、CI 五种运行模式。</p></div>
+      <div class="card"><h4>主要实验结果</h4><p>DevEval 最优为 GPT-5.4 × Codex（94.8%）；SWE-Bench Pro 与 Terminal-Bench 2.0 最优为 Opus 4.7 × Claude Code（69.1%、68.5%）。原生模型-harness 配对在 6 次对比中赢得 5 次，平均高 5.3 个百分点。</p></div>
+      <div class="card"><h4>为什么重要</h4><p>它把“benchmark 适配每个 agent”的工作，变成“benchmark 和 agent 各自适配标准协议”。这有利于开放复现、私有 agent 评测、多智能体评测，以及更接近生产环境的比较。</p></div>
+      <div class="card"><h4>局限与可信度</h4><p>Agent 化迁移仍有工程成本，并依赖 A2A/MCP 包装；竞赛样本存在自选择偏差；coding case study 总成本约 6,000 美元，覆盖面有限。结果更能证明 harness 协同适配的重要性，不能被解读为纯模型能力排名。</p></div>
+    </div>
+
+    <h3>论文全部公开图表（按论文顺序）</h3>
+    <p class="muted small">以下附上论文中的全部 8 幅 Figure 与 10 张 Table。为保持原始排版、避免密集表格转写错误，表格采用论文 PDF 的清晰截图；每项均链接至原始 PDF。</p>
+    <div class="gallery">
+      <figure><img src="morning-brief-2026-06-12-assets/figure-1.png" alt="Figure 1"><figcaption><b>Figure 1.</b> 传统 LLM/Agent benchmark 与 AAA 对比：集成量从 N×M 降为 N+M。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-12-assets/table-1.png" alt="Table 1"><figcaption><b>Table 1.</b> 传统 agent benchmarking 与 AAA 的比较。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-12-assets/figure-2.png" alt="Figure 2"><figcaption><b>Figure 2.</b> benchmark 与 agent 的完全分离。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-12-assets/figure-3.png" alt="Figure 3"><figcaption><b>Figure 3.</b> AAA 交互模式。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure class="wide"><img src="morning-brief-2026-06-12-assets/table-2.png" alt="Table 2"><figcaption><b>Table 2.</b> 代表性相关工作的能力比较。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-12-assets/figure-4.png" alt="Figure 4"><figcaption><b>Figure 4.</b> AgentBeats 评测生命周期。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure class="wide"><img src="morning-brief-2026-06-12-assets/table-3.png" alt="Table 3"><figcaption><b>Table 3.</b> AgentBeats 的五种运行模式。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-12-assets/table-4.png" alt="Table 4"><figcaption><b>Table 4.</b> 提交 agent 的 Python 代码和 prompt 特征。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure class="wide"><img src="morning-brief-2026-06-12-assets/figure-5.png" alt="Figure 5"><figcaption><b>Figure 5.</b> Judge/subject agent 类别分布与竞赛提交时间线。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-12-assets/table-5.png" alt="Table 5"><figcaption><b>Table 5.</b> Coding agent 在 SWE-Bench Pro 与 Terminal-Bench 2.0 上的公开记录。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-12-assets/table-6.png" alt="Table 6"><figcaption><b>Table 6.</b> 代表性 coding agent 在三个 agentified benchmark 上的表现。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-12-assets/table-7.png" alt="Table 7"><figcaption><b>Table 7.</b> Harness-swapping 实验。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-12-assets/table-8.png" alt="Table 8"><figcaption><b>Table 8.</b> 主实验 Token 用量与工具调用量。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-12-assets/table-9.png" alt="Table 9"><figcaption><b>Table 9.</b> 成功与失败运行的平均资源消耗。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure class="wide"><img src="morning-brief-2026-06-12-assets/figure-6.png" alt="Figure 6"><figcaption><b>Figure 6.</b> 三个主实验的工具调用类别分布。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure class="wide"><img src="morning-brief-2026-06-12-assets/figure-7.png" alt="Figure 7"><figcaption><b>Figure 7.</b> 成功与失败运行的平均单实例成本。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure><img src="morning-brief-2026-06-12-assets/table-10.png" alt="Table 10"><figcaption><b>Table 10.</b> 主实验中的工具调用失败率。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+      <figure class="wide"><img src="morning-brief-2026-06-12-assets/figure-8.png" alt="Figure 8"><figcaption><b>Figure 8.</b> 成功与失败运行的平均工具调用次数。<a href="https://arxiv.org/pdf/2606.13608">来源</a></figcaption></figure>
+    </div>
+  </section>
+
+  <section id="growth">
+    <h2>2. GitHub 约三日 Star 增长项目</h2>
+    <p class="note good">本次已拥有可比历史快照，因此采用严格可验证的净增值，而非 Trending 等代理指标。统计窗口为 2026-06-09 10:56 至 2026-06-12 10:00（Asia/Shanghai），约 71 小时；按当前 Star 减历史 Star 排序。</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>#</th><th>项目</th><th>用途</th><th>当前 Star</th><th>约三日新增</th><th>语言</th><th>最近更新（UTC）</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="https://github.com/GordenSun/GordenSuperPPTSkills">GordenSuperPPTSkills</a></td><td>通过 Agent Skill 生成图片式 PPT，并转换为可编辑 PPTX。</td><td class="stars">790</td><td class="delta">+351</td><td>Python</td><td>2026-06-12 02:00</td></tr>
+        <tr><td>2</td><td><a href="https://github.com/JimLiu/baoyu-design">baoyu-design</a></td><td>在 Cursor、Claude Code 等环境中运行的设计 Agent Skill，可生成 UI、原型、deck 与线框图。</td><td class="stars">775</td><td class="delta">+244</td><td>JavaScript</td><td>2026-06-12 01:58</td></tr>
+        <tr><td>3</td><td><a href="https://github.com/amElnagdy/guard-skills">guard-skills</a></td><td>面向 coding agent 的质量门禁 skills，检查 AI 生成代码、测试和文档的常见失败模式。</td><td class="stars">571</td><td class="delta">+97</td><td>未标注</td><td>2026-06-11 22:47</td></tr>
+        <tr><td>4</td><td><a href="https://github.com/ApodexAI/AgentHarness">AgentHarness</a></td><td>用于 Apodex-1.0 深度研究 benchmark 的公开评测 harness。</td><td class="stars">122</td><td class="delta">+73</td><td>Python</td><td>2026-06-12 01:51</td></tr>
+        <tr><td>5</td><td><a href="https://github.com/adamallcock/codex-chatgpt-control">codex-chatgpt-control</a></td><td>让 Codex agent 控制可见 ChatGPT Web 会话的非官方 SDK。</td><td class="stars">205</td><td class="delta">+46</td><td>JavaScript</td><td>2026-06-12 01:11</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted small">观察：增长最集中在可直接复用的 Agent Skill，而非通用框架；设计/PPT 类 skills 两项合计净增 595 Star。AgentHarness 的绝对规模较小，但约三日增长达历史基数的 149%，值得持续观察。</p>
+  </section>
+
+  <section id="unseen">
+    <h2>3. GitHub 高 Star、此前未总结项目</h2>
+    <p class="note">筛选范围：AI Agent、Agent 架构、多智能体、评测、coding/computer-use agent、Agent Skill、MCP、工具链与运行时。已检查工作区内此前两份 morning-brief HTML，并排除其中任一 GitHub 板块出现过的仓库；以下按当前总 Star 降序。</p>
+    <div class="cards">
+      <article class="card"><h4><span class="rank">1</span><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></h4><p><span class="stars">213,566 ★</span> · JavaScript · 更新于 2026-06-12 02:00 UTC</p><p>面向 Claude Code、Codex、OpenCode、Cursor 等 agent harness 的性能优化系统，覆盖 skills、记忆、安全和 research-first 开发。值得关注：它把跨 harness 的工程最佳实践打包成可迁移系统。</p></article>
+      <article class="card"><h4><span class="rank">2</span><a href="https://github.com/n8n-io/n8n">n8n-io/n8n</a></h4><p><span class="stars">192,110 ★</span> · TypeScript · 更新于 2026-06-12 02:01 UTC</p><p>可自托管的工作流自动化平台，原生支持 AI 能力并连接 400+ 服务。值得关注：它是 agent 工具调用、审批和业务系统落地的重要运行层。</p></article>
+      <article class="card"><h4><span class="rank">3</span><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></h4><p><span class="stars">191,054 ★</span> · Python · 更新于 2026-06-12 02:02 UTC</p><p>定位为“与你共同成长”的个人 agent，强调长期适应和能力积累。值得关注：代表从单次任务 agent 转向持续个性化 agent 的方向。</p></article>
+      <article class="card"><h4><span class="rank">4</span><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></h4><p><span class="stars">173,277 ★</span> · TypeScript · 更新于 2026-06-12 02:01 UTC</p><p>开源 coding agent。值得关注：AgentBeats 今日论文也使用 OpenCode 作为 harness，说明其既是产品，也正成为可研究、可替换的评测组件。</p></article>
+      <article class="card wide"><h4><span class="rank">5</span><a href="https://github.com/langgenius/dify">langgenius/dify</a></h4><p><span class="stars">144,892 ★</span> · TypeScript · 更新于 2026-06-12 02:01 UTC</p><p>面向生产环境的 agentic workflow 开发平台。值得关注：把编排、模型接入、工具、观测和部署聚合在一个成熟平台中，适合观察 agent 从原型进入生产的工程边界。</p></article>
+    </div>
+  </section>
+
+  <section id="official">
+    <h2>4. OpenAI / Anthropic 官方动态</h2>
+    <h3>OpenAI：发现新发布内容</h3>
+    <div class="cards">
+      <article class="card"><h4><a href="https://openai.com/index/openai-to-acquire-ona">OpenAI to acquire Ona</a></h4><p class="muted">2026-06-11 · 官方博客</p><p>OpenAI 宣布收购 Ona，重点是为长时间运行的 Codex agent 提供安全、持久的云开发环境。</p></article>
+      <article class="card"><h4><a href="https://openai.com/index/using-codex-to-simulate-black-holes">How an astrophysicist uses Codex to help simulate black holes</a></h4><p class="muted">2026-06-11 · 官方案例</p><p>展示研究人员如何使用 Codex 辅助构建、调试与运行黑洞模拟，体现 coding agent 向科研工作流延伸。</p></article>
+      <article class="card"><h4><a href="https://openai.com/index/openai-on-oracle-cloud">Access OpenAI models and Codex through Oracle cloud commitment</a></h4><p class="muted">2026-06-10 · 官方公告</p><p>OpenAI 模型与 Codex 可通过 Oracle 云承诺进行采购与使用，降低企业现有云预算接入 agent 工具的摩擦。</p></article>
+      <article class="card"><h4>官方视频精选</h4><p><a href="https://www.youtube.com/watch?v=bhgYFRZLyKI">Debug web apps with browser use in Codex</a>（06-12）</p><p><a href="https://www.youtube.com/watch?v=K6wxZOqD-HY">Codex for Creatives</a>（06-11）</p><p><a href="https://www.youtube.com/watch?v=4XSI4SClBMA">Creating black hole simulations with Codex</a>（06-11）</p><p><a href="https://www.youtube.com/watch?v=Lvk_VZOppIY">Codex for data science</a>（06-09）</p></article>
+    </div>
+    <h3>Anthropic：发现新发布内容</h3>
+    <div class="cards">
+      <article class="card"><h4><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5">Claude Fable 5 and Claude Mythos 5</a></h4><p class="muted">2026-06-09 · 官方模型公告</p><p>Anthropic 发布面向高难度知识工作与编码的新一代模型。公告把长期复杂任务能力和更强编码能力作为重点。</p></article>
+      <article class="card"><h4><a href="https://www.youtube.com/watch?v=Y9Wz2PV404E">Introducing Claude Fable 5</a></h4><p class="muted">2026-06-09 · 官方视频</p><p>官方视频介绍 Fable 5，并强调其在复杂、长周期任务上的能力与安全措施。</p></article>
+    </div>
+  </section>
+
+  <section id="sources">
+    <h2>5. 来源与方法</h2>
+    <h3>检索与排名方法</h3>
+    <ul class="sources">
+      <li>检索时间：2026-06-12 09:50–10:00（Asia/Shanghai）。论文由 arXiv 最新条目与原始 PDF 核验；图表直接来自论文 PDF。</li>
+      <li>GitHub 当前值由 GitHub 公开 API/仓库元数据查询；约三日增长值使用 <code>morning-brief-2026-06-09.html</code> 中的历史快照相减。窗口约 71 小时，不等同于自然日三天。</li>
+      <li>高 Star 未总结榜检查了 <code>morning-brief-test-2026-06-08.html</code> 与 <code>morning-brief-2026-06-09.html</code>，并排除已出现仓库。相关性由仓库描述、主题与项目定位人工筛选；总 Star 不是质量或近期增长的直接指标。</li>
+      <li>OpenAI 与 Anthropic 动态仅使用两家公司官方新闻页、官方 RSS 和官方 YouTube。列出的是自上一份报告后的技术、模型、开发者与 agent 相关重点内容，不代表所有公司新闻。</li>
+    </ul>
+    <h3>GitHub Star 快照</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>仓库</th><th>2026-06-09 快照</th><th>2026-06-12 快照</th><th>差值</th></tr></thead>
+      <tbody>
+        <tr><td>GordenSun/GordenSuperPPTSkills</td><td>439</td><td>790</td><td class="delta">+351</td></tr>
+        <tr><td>JimLiu/baoyu-design</td><td>531</td><td>775</td><td class="delta">+244</td></tr>
+        <tr><td>amElnagdy/guard-skills</td><td>474</td><td>571</td><td class="delta">+97</td></tr>
+        <tr><td>ApodexAI/AgentHarness</td><td>49</td><td>122</td><td class="delta">+73</td></tr>
+        <tr><td>adamallcock/codex-chatgpt-control</td><td>159</td><td>205</td><td class="delta">+46</td></tr>
+        <tr><td>affaan-m/ECC</td><td>无历史快照</td><td>213,566</td><td>不计算</td></tr>
+        <tr><td>n8n-io/n8n</td><td>无历史快照</td><td>192,110</td><td>不计算</td></tr>
+        <tr><td>NousResearch/hermes-agent</td><td>无历史快照</td><td>191,054</td><td>不计算</td></tr>
+        <tr><td>anomalyco/opencode</td><td>无历史快照</td><td>173,277</td><td>不计算</td></tr>
+        <tr><td>langgenius/dify</td><td>无历史快照</td><td>144,892</td><td>不计算</td></tr>
+      </tbody>
+    </table></div>
+    <h3>本次新增至“已总结仓库集合”</h3>
+    <p><code>affaan-m/ECC</code>、<code>n8n-io/n8n</code>、<code>NousResearch/hermes-agent</code>、<code>anomalyco/opencode</code>、<code>langgenius/dify</code>。</p>
+    <h3>主要来源链接</h3>
+    <p class="small"><a href="https://arxiv.org/abs/2606.13608">AgentBeats arXiv</a> · <a href="https://agentbeats.org">AgentBeats</a> · <a href="https://github.com/search?q=agent&type=repositories&s=stars&o=desc">GitHub Repository Search</a> · <a href="https://openai.com/news/">OpenAI News</a> · <a href="https://www.youtube.com/@OpenAI">OpenAI YouTube</a> · <a href="https://www.anthropic.com/news">Anthropic News</a> · <a href="https://www.youtube.com/@anthropic-ai">Anthropic YouTube</a></p>
+    <p class="note warn"><b>数据限制与不确定性：</b>GitHub Star 会实时变化；“三日”窗口比 72 小时少约 1 小时；GitHub 搜索对超高 Star 项目和主题标签存在索引偏差；官方动态的发布日期按官方页面/RSS 显示时间记录；论文图表截图忠实呈现原文，但本简报的中文解释属于编辑性概括。</p>
+  </section>
+  <p class="footer">AI / Agent Morning Brief · 2026-06-12</p>
+</main>
+</body>
+</html>

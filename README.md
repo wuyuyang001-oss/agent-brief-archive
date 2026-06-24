@@ -34,6 +34,14 @@ The script will:
 
 Each overview image includes the day's paper title and summary, key counts, and a GitHub project trend/proxy bar chart extracted from the brief tables.
 
+To update the public GitHub Pages site in one step, run:
+
+```bash
+designs/agent-brief-archive/scripts/update-and-publish.sh
+```
+
+That command regenerates the archive, commits any changed files, and pushes to GitHub. GitHub Pages then serves the latest version from the `main` branch.
+
 ## Deploy
 
 Deploy `designs/agent-brief-archive/` as the site root on any static host:

@@ -1,6 +1,73 @@
 {
-  "generatedAt": "2026-06-29T04:53:53.185Z",
+  "generatedAt": "2026-06-29T06:53:45.653Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-06-29.html",
+      "date": "2026-06-29",
+      "weekday": "周一",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents",
+      "summary": "选择原因： 本次 arXiv 检索未发现 2026-06-28 12:35 CST 之后新发布的 agent benchmark/架构论文；因此选择最近且高度相关的 2026-06-26 新论文。ToolPrivacyBench 直接补上了 tool-using LLM agents 的一个关键盲点：任务成…",
+      "source": "briefs/morning-brief-2026-06-29.html",
+      "overview": "overviews/morning-brief-2026-06-29.svg",
+      "githubRows": [
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 2026,
+          "text": "1 firecrawl/firecrawl 面向 agent 的网页搜索、抓取与交互 API，常作为 Web 工具层。 140,982 +894 TypeScript 2026-06-29 06:40:12 UTC"
+        },
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 2026,
+          "text": "2 obra/superpowers Agentic skills framework 与软件开发方法论。 240,906 +759 Shell 2026-06-29 06:40:06 UTC"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 2026,
+          "text": "3 NousResearch/hermes-agent 会随用户成长的个人 agent runtime，强调持续能力和个性化。 205,184 +755 Python 2026-06-29 06:38:38 UTC"
+        },
+        {
+          "repo": "multica-ai/andrej-karpathy-skills",
+          "label": "multica-ai/andrej-karpathy-skills",
+          "value": 2026,
+          "text": "4 multica-ai/andrej-karpathy-skills 把 LLM coding 经验整理为 CLAUDE.md 风格技能文件。 184,185 +679 未标明 2026-06-29 06:39:56 UTC"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 2026,
+          "text": "5 farion1231/cc-switch Claude Code、Codex、OpenCode、OpenClaw、Gemini CLI 与 Hermes Agent 的桌面管理工具。 110,198 +616 Rust 2026-06…"
+        },
+        {
+          "repo": "openai/codex",
+          "label": "openai/codex",
+          "value": 2026,
+          "text": "1 openai/codex 94,293 Rust 2026-06-29 06:41:50 UTC 轻量级终端 coding agent。 它是 coding agent 工具链的核心参考实现之一，直接连接本地代码库、终端执行与自然语言…"
+        },
+        {
+          "repo": "punkpeye/awesome-mcp-servers",
+          "label": "punkpeye/awesome-mcp-servers",
+          "value": 2026,
+          "text": "2 punkpeye/awesome-mcp-servers 89,939 未标明 2026-06-29 06:29:47 UTC MCP server 集合。 MCP 是 agent 工具接入的关键协议层，高质量 server 索引能反…"
+        },
+        {
+          "repo": "TauricResearch/TradingAgents",
+          "label": "TauricResearch/TradingAgents",
+          "value": 2026,
+          "text": "3 TauricResearch/TradingAgents 89,554 Python 2026-06-29 06:42:52 UTC 多智能体 LLM 金融交易框架。 虽然领域较垂直，但它提供了 multi-agent role de…"
+        }
+      ],
+      "githubRepoCount": 20,
+      "figureCount": 15,
+      "tableCount": 4,
+      "linkCount": 60,
+      "officialStatus": "未发现新发布内容",
+      "tags": "2026-06-29 ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-06-28.html",
       "date": "2026-06-28",

@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI/Agent 晨间简报 · 2026-06-28</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f9fc;
+      --paper: #ffffff;
+      --ink: #17212f;
+      --muted: #596b80;
+      --line: #d7e2ee;
+      --soft: #f2f6fb;
+      --blue: #0a67a3;
+      --green: #087f5b;
+      --amber: #9b5a00;
+      --red: #b42318;
+      --shadow: 0 12px 32px rgba(15, 35, 55, .08);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--bg); line-height: 1.72; }
+    a { color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(10,103,163,.25); }
+    a:hover { border-bottom-color: var(--blue); }
+    .container { max-width: 1180px; margin: 0 auto; padding: 28px 20px 64px; }
+    header { padding: 34px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(135deg, #fff 0%, #f7fbff 100%); box-shadow: var(--shadow); }
+    .eyebrow { color: var(--blue); font-size: 13px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: 12px 0 8px; font-size: clamp(36px, 5vw, 62px); line-height: 1.02; letter-spacing: -.055em; }
+    .subtitle { margin: 0; color: var(--muted); font-size: 17px; }
+    .meta-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 22px; }
+    .metric { padding: 16px; border: 1px solid var(--line); border-radius: 18px; background: #fff; }
+    .metric strong { display: block; color: var(--blue); font-size: 26px; line-height: 1.1; }
+    .metric span { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; }
+    section { margin-top: 24px; padding: 28px; border: 1px solid var(--line); border-radius: 24px; background: var(--paper); box-shadow: var(--shadow); }
+    h2 { margin: 0 0 18px; font-size: 28px; line-height: 1.22; letter-spacing: -.035em; }
+    h3 { margin: 22px 0 10px; font-size: 20px; line-height: 1.3; }
+    p { margin: 0 0 14px; }
+    .note { padding: 14px 16px; border: 1px solid #cfe3f7; border-left: 5px solid var(--blue); border-radius: 14px; background: #f6fbff; color: #27445e; }
+    .warn { border-color: #f5dfb9; border-left-color: var(--amber); background: #fffaf0; color: #604100; }
+    .ok { border-color: #cce9dc; border-left-color: var(--green); background: #f5fbf8; color: #164a35; }
+    .paper-card { display: grid; grid-template-columns: 1fr; gap: 10px; }
+    .kv { display: grid; grid-template-columns: 150px 1fr; gap: 8px 14px; margin: 14px 0; padding: 14px; border: 1px solid var(--line); border-radius: 16px; background: var(--soft); }
+    .kv dt { color: var(--muted); font-weight: 700; }
+    .kv dd { margin: 0; }
+    .translation { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .translation article { padding: 18px; border: 1px solid var(--line); border-radius: 18px; background: #fbfdff; }
+    .translation h3 { margin-top: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 6px; font-size: 14px; }
+    th, td { padding: 10px 12px; border: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { background: #eef5fb; color: #203246; font-weight: 800; }
+    tr:nth-child(even) td { background: #fbfdff; }
+    .table-wrap { overflow-x: auto; border-radius: 16px; }
+    .paper-figure { margin: 18px 0; padding: 14px; border: 1px solid var(--line); border-radius: 18px; background: #fff; }
+    .paper-figure img { display: block; width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 12px; background: #fff; }
+    figcaption { margin-top: 10px; color: var(--muted); font-size: 14px; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .card { padding: 16px; border: 1px solid var(--line); border-radius: 18px; background: #fbfdff; }
+    .card h3 { margin-top: 0; }
+    .tag { display: inline-block; margin: 0 6px 6px 0; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--muted); font-size: 12px; font-weight: 700; }
+    ul { margin: 8px 0 0; padding-left: 22px; }
+    li { margin: 6px 0; }
+    .small { color: var(--muted); font-size: 13px; }
+    code { padding: 2px 6px; border-radius: 6px; background: #eef3f8; color: #21364d; }
+    @media (max-width: 860px) { .meta-grid, .translation, .cards { grid-template-columns: 1fr; } .kv { grid-template-columns: 1fr; } section, header { padding: 20px; } }
+    @media print { body { background: #fff; } .container { max-width: none; padding: 0; } section, header { box-shadow: none; break-inside: avoid; } a { color: #000; border: 0; } }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="eyebrow">AI / Agent Morning Brief</div>
+      <h1>2026-06-28 晨间简报</h1>
+      <p class="subtitle">生成日期：2026-06-28（周日）｜信息截止时间：2026-06-28 12:35 CST (UTC+8)｜主题：Agent benchmark、computer-use agent、Agent Skill、GitHub 增长与官方动态</p>
+      <div class="meta-grid" aria-label="今日概览指标">
+        <div class="metric"><strong>1</strong><span>今日重点论文</span></div>
+        <div class="metric"><strong>5</strong><span>三日增长代理项目</span></div>
+        <div class="metric"><strong>5</strong><span>高 Star 未总结项目</span></div>
+        <div class="metric"><strong>4</strong><span>OpenAI / Anthropic 新官方条目</span></div>
+      </div>
+    </header>
+
+    <section id="paper">
+      <h2>1. 今日论文</h2>
+      <p class="note"><strong>选择原因：</strong>这篇论文在上一份已发布简报（2026-06-24 10:49 CST 左右）之后发布，直接面向 computer-use agents 的 GUI grounding 可信度评估。它不是只报告任务成功率，而是系统比较 post-hoc uncertainty quantification（UQ）方法在开放权重和闭源 VLM agent 上的可迁移性，很适合作为今天的 benchmark 论文。</p>
+      <div class="paper-card">
+        <h3>Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets</h3>
+        <dl class="kv">
+          <dt>作者</dt><dd>Divake Kumar; Sina Tayebati; Devashri Naik; Amanda Sofie Rios; Nilesh Ahuja; Omesh Tickoo; Ranganath Krishnan; Amit Ranjan Trivedi</dd>
+          <dt>发布日期</dt><dd>2026-06-24 12:34 UTC（2026-06-24 20:34 CST），arXiv v1</dd>
+          <dt>论文链接</dt><dd><a href="https://arxiv.org/abs/2606.25760" target="_blank" rel="noopener">arXiv abstract</a> · <a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">PDF</a></dd>
+          <dt>代码/项目页</dt><dd>arXiv metadata 与论文可见链接中未发现独立公开代码仓库；论文正文称会发布 per-item records、calibration/test splits、UQ scores 与 analysis scripts，但本次检索未找到可核验 URL。</dd>
+        </dl>
+      </div>
+
+      <div class="translation">
+        <article>
+          <h3>English overview</h3>
+          <p>ARGUS benchmarks post-hoc uncertainty quantification for computer-use agents that turn vision-language model predictions into executable GUI clicks. The paper evaluates a 27-method open-weight matrix over four VLM agents and four GUI grounding datasets, plus an eight-method closed-source-compatible matrix across three vendors where logits, hidden states, and attention may be unavailable.</p>
+          <p>The main result is practical rather than cosmetic: UQ rankings transfer reasonably well within a fixed model and dataset family, but they become fragile across model classes, interfaces, and observability regimes. Hidden-state and density estimators are among the most stable choices when internals are available; for black-box systems, sampling, Focus-style signals, P(True), and verbalized confidence are useful but should be re-ranked on the target model.</p>
+          <p>The paper also evaluates conformal click regions for executable actions. Locally weighted disks can substantially shrink click radii under matched calibration, but coverage degrades when the calibration and deployment distributions diverge. The key limitation is scope: the benchmark focuses on single-step GUI grounding and post-hoc UQ, so multi-step planning, tool recovery, and long-horizon agent failure modes remain open.</p>
+        </article>
+        <article>
+          <h3>对应中文翻译</h3>
+          <p>ARGUS 评测的是 computer-use agents 的后验不确定性量化：这些 agent 会把视觉语言模型的预测转成可执行的 GUI 点击。论文在 4 个开放权重 VLM agent 与 4 个 GUI grounding 数据集上比较 27 种 UQ 方法，并在 3 家闭源模型供应商上比较 8 种兼容黑盒接口的方法，因为这些接口通常拿不到 logits、hidden states 或 attention。</p>
+          <p>核心结论非常工程化：在固定模型和相近数据集内，UQ 方法排序有一定可迁移性；但一旦跨模型类别、接口形态或可观测性 regime，排序就会变脆弱。当能访问内部状态时，hidden-state 与 density estimator 通常更稳定；黑盒系统中，sampling、Focus 类信号、P(True) 和 verbalized confidence 有用，但最好在目标模型上重新排序。</p>
+          <p>论文还评估了可执行动作的 conformal click regions。校准与部署分布匹配时，局部加权 disk 可以显著缩小点击半径；但遇到分布错配时覆盖率会下降。主要局限也很清楚：它聚焦单步 GUI grounding 与 post-hoc UQ，还没有覆盖多步规划、工具恢复和长程 agent 失效模式。</p>
+        </article>
+      </div>
+
+      <h3>方法、创新点、主要结论与局限</h3>
+      <div class="cards">
+        <div class="card"><h3>核心方法</h3><p>把 GUI grounding 输出视为可执行坐标/动作，并比较 logit、sampling consistency、hidden-state/density、attention、P(True)、verbalized confidence 与 split conformal prediction 等 post-hoc UQ 方法。</p></div>
+        <div class="card"><h3>创新点</h3><p>同时覆盖开放权重和闭源接口，把“能否访问模型内部状态”纳入 benchmark 设计；并用 ranking transfer、cross-tier transfer 和 conformal click disk 评估 UQ 是否可迁移。</p></div>
+        <div class="card"><h3>实验结论</h3><p>同一模型内的 UQ 排序较稳定，跨模型/接口则明显下降；开放权重下 hidden-state/density family 表现更稳，闭源场景不能简单照搬开放模型排序，目标模型重排更可靠。</p></div>
+        <div class="card"><h3>局限</h3><p>任务主要是单步 GUI grounding；闭源模型只能使用黑盒信号；conformal 方法对校准/部署分布匹配敏感；长程任务、恢复策略和真实用户环境仍需后续 benchmark。</p></div>
+      </div>
+
+      <h3>论文公开图表</h3>
+      <p class="note"><strong>覆盖声明：</strong>本次从 32 页 arXiv PDF 中按论文顺序抽取并渲染了 Figure 1-3 与 Table 1-26 所在页面。复杂矩阵表格以清晰页图嵌入，避免人工转写误差；未发现需要单独列出的缺失图表。</p>
+      <figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-03.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-03.png" alt="ARGUS paper page 3: Table 1" loading="lazy"></a>
+          <figcaption><strong>Table 1.</strong> ARGUS 定位与公共 API：与既有视觉语言不确定性 benchmark 的比较。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.3</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-04.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-04.png" alt="ARGUS paper page 4: Tables 2-3" loading="lazy"></a>
+          <figcaption><strong>Tables 2-3.</strong> 开放权重/闭源评测 regime 与 protocol card。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.4</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-06.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-06.png" alt="ARGUS paper page 6: Table 4" loading="lazy"></a>
+          <figcaption><strong>Table 4.</strong> Headline benchmark：跨 dataset、model family 和 UQ family 的主要结果摘要。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.6</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-07.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-07.png" alt="ARGUS paper page 7: Figure 1" loading="lazy"></a>
+          <figcaption><strong>Figure 1.</strong> Full-method ranking transfer：不同数据集、模型与接口之间的排序 Spearman 相关。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.7</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-08.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-08.png" alt="ARGUS paper page 8: Figure 2" loading="lazy"></a>
+          <figcaption><strong>Figure 2.</strong> Adaptive conformal click-disks：固定半径、全局加权与局部加权半径的覆盖/效率对比。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.8</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-09.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-09.png" alt="ARGUS paper page 9: Table 5" loading="lazy"></a>
+          <figcaption><strong>Table 5.</strong> Regime-aware UQ selection recipe：不同部署可观测性下的 UQ 方法选择建议。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.9</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-14.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-14.png" alt="ARGUS paper page 14: Figure 3" loading="lazy"></a>
+          <figcaption><strong>Figure 3.</strong> Cross-regime benchmark：单步可执行 GUI grounding 的 post-hoc UQ 全景对比。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.14</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-16.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-16.png" alt="ARGUS paper page 16: Table 6" loading="lazy"></a>
+          <figcaption><strong>Table 6.</strong> Metric card：AUROC、AUPRC、FPR@95、PRR、ECE、Brier 等指标定义。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.16</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-17.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-17.png" alt="ARGUS paper page 17: Table 7" loading="lazy"></a>
+          <figcaption><strong>Table 7.</strong> 完整开放源 AUROC 矩阵。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.17</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-18.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-18.png" alt="ARGUS paper page 18: Tables 8-9" loading="lazy"></a>
+          <figcaption><strong>Tables 8-9.</strong> 完整开放源 PRR 矩阵与完整闭源 AUROC 矩阵。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.18</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-19.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-19.png" alt="ARGUS paper page 19: Table 10" loading="lazy"></a>
+          <figcaption><strong>Table 10.</strong> Cross-tier ranking transfer：开放权重到闭源接口的排序迁移。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.19</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-20.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-20.png" alt="ARGUS paper page 20: Table 11" loading="lazy"></a>
+          <figcaption><strong>Table 11.</strong> Per-family mean AUROC：按 UQ family 汇总的均值表现。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.20</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-21.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-21.png" alt="ARGUS paper page 21: Table 12" loading="lazy"></a>
+          <figcaption><strong>Table 12.</strong> Compute-tier tags：不同 UQ 方法的成本与可部署性标签。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.21</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-22.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-22.png" alt="ARGUS paper page 22: Table 13" loading="lazy"></a>
+          <figcaption><strong>Table 13.</strong> Vanilla-to-specialist transitions：从基础到 specialist 模型时 UQ family 偏好的变化。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.22</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-23.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-23.png" alt="ARGUS paper page 23: Tables 14-15" loading="lazy"></a>
+          <figcaption><strong>Tables 14-15.</strong> Comprehensive transition grid：V2 与 SP 模型转移的 family 偏好矩阵。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.23</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-24.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-24.png" alt="ARGUS paper page 24: Tables 16-17" loading="lazy"></a>
+          <figcaption><strong>Tables 16-17.</strong> OSG 与 UIV 数据集上的 transition grid。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.24</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-25.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-25.png" alt="ARGUS paper page 25: Table 18 and Table 19 intro" loading="lazy"></a>
+          <figcaption><strong>Table 18 and Table 19 intro.</strong> Ren et al. 复现实验与二分类/空间严重性实验入口。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.25</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-26.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-26.png" alt="ARGUS paper page 26: Table 19" loading="lazy"></a>
+          <figcaption><strong>Table 19.</strong> Binary detection / spatial severity：正确性检测与空间误差严重程度结果。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.26</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-30.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-30.png" alt="ARGUS paper page 30: Tables 20-22" loading="lazy"></a>
+          <figcaption><strong>Tables 20-22.</strong> 开放源/闭源 split-ratio 与 cross-ratio Spearman 稳健性。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.30</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-31.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-31.png" alt="ARGUS paper page 31: Tables 23-24" loading="lazy"></a>
+          <figcaption><strong>Tables 23-24.</strong> 开放源与闭源 top-1 置信区间。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.31</a></figcaption>
+        </figure>
+<figure class="paper-figure">
+          <a href="morning-brief-2026-06-28-assets/argus-page-32.png" target="_blank" rel="noopener"><img src="morning-brief-2026-06-28-assets/argus-page-32.png" alt="ARGUS paper page 32: Tables 25-26" loading="lazy"></a>
+          <figcaption><strong>Tables 25-26.</strong> 开放源与闭源 Wilcoxon 检验。 来源：<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF p.32</a></figcaption>
+        </figure>
+    </section>
+
+    <section id="github-growth">
+      <h2>2. GitHub 三日增长项目</h2>
+      <p class="warn"><strong>排名方法：</strong>当前线程/工作区有 2026-06-24 的 star 快照，距离本次查询约 95 小时，不是严格 72 小时。因此下表使用“当前 GitHub API stars - 2026-06-24 快照 stars”的可核验代理增量排序，并在来源与方法中列出完整快照。禁止把该数值误读为精确三日新增。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>项目</th><th>用途简介</th><th>当前 stars</th><th>约 95 小时代理增量</th><th>主要语言</th><th>最近更新时间</th></tr></thead>
+          <tbody><tr><td>1</td><td><a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">NousResearch/hermes-agent</a></td><td>长期个性化、工具使用和持续扩展能力的个人 agent 运行时。</td><td>204,429</td><td>+3,390</td><td>Python</td><td>2026-06-28 04:27:39 UTC</td></tr>
+<tr><td>2</td><td><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a></td><td>面向软件开发 agent 的 skills 框架与工作方法集合。</td><td>240,147</td><td>+3,136</td><td>Shell</td><td>2026-06-28 04:28:22 UTC</td></tr>
+<tr><td>3</td><td><a href="https://github.com/farion1231/cc-switch" target="_blank" rel="noopener">farion1231/cc-switch</a></td><td>Claude Code、Codex、OpenCode、OpenClaw、Gemini CLI、Hermes Agent 的桌面切换与管理工具。</td><td>109,582</td><td>+2,449</td><td>Rust</td><td>2026-06-28 04:21:25 UTC</td></tr>
+<tr><td>4</td><td><a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener">multica-ai/andrej-karpathy-skills</a></td><td>把 Andrej Karpathy 关于 LLM coding 的观察整理为 CLAUDE.md 风格技能文件。</td><td>183,506</td><td>+2,447</td><td>未标明</td><td>2026-06-28 04:24:14 UTC</td></tr>
+<tr><td>5</td><td><a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">affaan-m/ECC</a></td><td>跨 Claude Code、Codex、OpenCode、Cursor 的 agent harness 优化、技能、记忆与安全经验。</td><td>222,705</td><td>+2,103</td><td>JavaScript</td><td>2026-06-28 04:17:35 UTC</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="github-highstar">
+      <h2>3. GitHub 高 Star 未总结项目</h2>
+      <p class="note"><strong>排除规则：</strong>执行前检查了当前线程历史日报和 <code>/Users/wuyuyang/Documents/Rhythm</code> 下已生成的 <code>morning-brief*.html</code>，凡在此前任一 GitHub 板块出现过的仓库都排除。候选范围聚焦 AI Agent、Agent 架构、多智能体、Agent benchmark/evaluation、coding agent、computer-use agent、Agent Skill、MCP、Agent 工具链与运行时。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>项目</th><th>当前 stars</th><th>主要语言</th><th>最近更新时间</th><th>用途与核心能力</th><th>为什么值得关注</th></tr></thead>
+          <tbody><tr><td>1</td><td><a href="https://github.com/paperclipai/paperclip" target="_blank" rel="noopener">paperclipai/paperclip</a></td><td>71,726</td><td>TypeScript</td><td>2026-06-28 04:26:34 UTC</td><td>开源的工作场景 agent 管理应用。</td><td>它把 agent 从单个 CLI/脚本推进到团队可管理的工作台形态，适合观察 agent ops 与企业协作层。</td></tr>
+<tr><td>2</td><td><a href="https://github.com/DietrichGebert/ponytail" target="_blank" rel="noopener">DietrichGebert/ponytail</a></td><td>62,011</td><td>JavaScript</td><td>2026-06-28 04:28:24 UTC</td><td>面向 Claude Code/Cursor 的 agent skills、rules 与开发行为约束。</td><td>它体现了“技能/规则文件”作为 agent 工程资产的快速增长，也更接近你关注的 Agent Skill 方向。</td></tr>
+<tr><td>3</td><td><a href="https://github.com/ruvnet/ruflo" target="_blank" rel="noopener">ruvnet/ruflo</a></td><td>61,787</td><td>TypeScript</td><td>2026-06-28 04:14:16 UTC</td><td>agent meta-harness，覆盖 multi-agent swarms、RAG、记忆、MCP 与 Claude Code/Codex 集成。</td><td>它把多智能体编排、工具协议和 coding agent runtime 放在同一层，值得持续看其架构收敛。</td></tr>
+<tr><td>4</td><td><a href="https://github.com/shanraisshan/claude-code-best-practice" target="_blank" rel="noopener">shanraisshan/claude-code-best-practice</a></td><td>61,334</td><td>HTML</td><td>2026-06-28 04:28:36 UTC</td><td>Claude Code 的命令、技能与 agentic engineering 实践集合。</td><td>它反映了从 vibe coding 到可复用上下文工程/命令工程的社区实践。</td></tr>
+<tr><td>5</td><td><a href="https://github.com/mem0ai/mem0" target="_blank" rel="noopener">mem0ai/mem0</a></td><td>59,603</td><td>Python</td><td>2026-06-28 04:13:44 UTC</td><td>面向 AI agents 的通用长期记忆层。</td><td>记忆是 agent runtime 的横向基础设施；该项目连接个性化、长期任务和多会话连续性。</td></tr></tbody>
+        </table>
+      </div>
+      <p class="small">近似候补：<a href="https://github.com/crewAIInc/crewAI" target="_blank" rel="noopener">crewAIInc/crewAI</a>（54,474 stars）因总 star 数低于前五而未列入。</p>
+    </section>
+
+    <section id="official">
+      <h2>4. OpenAI / Anthropic 官方动态</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>OpenAI</h3>
+          <ul>
+            <li><strong>2026-06-26：</strong><a href="https://openai.com/index/previewing-gpt-5-6-sol/" target="_blank" rel="noopener">Previewing GPT-5.6 Sol: Expanding AI’s scientific frontier</a>。官方介绍 GPT-5.6 Sol 预览版，定位为面向科学问题的模型变体；与 agent 关系在于科学工作流和复杂研究任务的模型能力边界。</li>
+            <li><strong>2026-06-25：</strong><a href="https://openai.com/index/estimating-intelligence-with-gdpval/" target="_blank" rel="noopener">Estimating intelligence with GDPval</a>。官方发布/介绍 GDPval，用经济价值任务来估计模型能力；其 benchmark 取向对 agent evaluation 很有参考价值。相关仓库：<a href="https://github.com/openai/gdpval" target="_blank" rel="noopener">openai/gdpval</a>。</li>
+            <li><strong>2026-06-24（日期边界项）：</strong><a href="https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration-to-deploy-10-gigawatts-of-openai-designed-ai-accelerators/" target="_blank" rel="noopener">OpenAI and Broadcom announce strategic collaboration to deploy 10 gigawatts of OpenAI-designed AI accelerators</a>。该条与上一份日报同日，但未出现在 2026-06-24 简报中，因此作为边界项列入。</li>
+            <li><strong>官方视频：</strong>本次只按 OpenAI 官方来源核验；未发现自上次运行以来新的官方视频条目。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Anthropic</h3>
+          <ul>
+            <li><strong>2026-06-26：</strong><a href="https://www.anthropic.com/research/economic-index-june-2026" target="_blank" rel="noopener">Economic Index: AI and the Global Exchange of Work</a>。Anthropic Economic Index 新报告，观察 Claude.ai 与 Claude Code 在跨地区、跨工作类型中的使用方式；对理解 AI/agent 在真实劳动市场中的扩散路径有参考价值。</li>
+            <li><strong>新闻/博客：</strong>Anthropic 新闻页在本次检索中未发现晚于 2026-06-23 Claude Tag 的新新闻条目；该 2026-06-23 条目已在上一份简报覆盖。</li>
+            <li><strong>官方视频：</strong>未发现自上次运行以来新的 Anthropic 官方视频条目。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <h2>6. 来源与方法</h2>
+      <h3>检索时间与归档状态</h3>
+      <ul>
+        <li>信息截止时间：2026-06-28 12:35 CST (UTC+8)；GitHub API 查询集中在 2026-06-28 12:27-12:30 CST。</li>
+        <li>本地历史日报检查范围：<code>/Users/wuyuyang/Documents/Rhythm/morning-brief*.html</code> 与 <code>designs/agent-brief-archive/data/briefs.json</code>。</li>
+        <li>归档/发布状态：已保存 <code>morning-brief-2026-06-28.html</code> 并生成同名 assets。第一次直接运行 <code>update-and-publish.sh</code> 失败，原因为当前 shell 找不到 <code>node</code>；随后使用 Codex bundled Node 等价执行，已成功更新本地归档、生成概览 SVG 并创建本地 Git commit。GitHub push 失败，原因为 <code>fatal: could not read Username for 'https://github.com': Device not configured</code>。因此 GitHub Pages 公开站点尚未同步远端；未更新项：远端 <code>origin/main</code> 与公开页面。</li>
+      </ul>
+
+      <h3>主要来源链接</h3>
+      <ul>
+        <li>论文：<a href="https://arxiv.org/abs/2606.25760" target="_blank" rel="noopener">arXiv abstract 2606.25760</a>；<a href="https://arxiv.org/pdf/2606.25760" target="_blank" rel="noopener">arXiv PDF</a>；arXiv API metadata。</li>
+        <li>GitHub REST API：<a href="https://api.github.com/repos/NousResearch/hermes-agent" target="_blank" rel="noopener">NousResearch/hermes-agent</a>、<a href="https://api.github.com/repos/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a>、<a href="https://api.github.com/repos/farion1231/cc-switch" target="_blank" rel="noopener">farion1231/cc-switch</a>、<a href="https://api.github.com/repos/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener">multica-ai/andrej-karpathy-skills</a>、<a href="https://api.github.com/repos/affaan-m/ECC" target="_blank" rel="noopener">affaan-m/ECC</a>、<a href="https://api.github.com/repos/firecrawl/firecrawl" target="_blank" rel="noopener">firecrawl/firecrawl</a>、<a href="https://api.github.com/repos/anthropics/skills" target="_blank" rel="noopener">anthropics/skills</a>、<a href="https://api.github.com/repos/anomalyco/opencode" target="_blank" rel="noopener">anomalyco/opencode</a>、<a href="https://api.github.com/repos/browser-use/browser-use" target="_blank" rel="noopener">browser-use/browser-use</a>、<a href="https://api.github.com/repos/anthropics/claude-code" target="_blank" rel="noopener">anthropics/claude-code</a>。</li>
+        <li>高 Star 未总结项目 GitHub API：<a href="https://api.github.com/repos/paperclipai/paperclip" target="_blank" rel="noopener">paperclipai/paperclip</a>、<a href="https://api.github.com/repos/DietrichGebert/ponytail" target="_blank" rel="noopener">DietrichGebert/ponytail</a>、<a href="https://api.github.com/repos/ruvnet/ruflo" target="_blank" rel="noopener">ruvnet/ruflo</a>、<a href="https://api.github.com/repos/shanraisshan/claude-code-best-practice" target="_blank" rel="noopener">shanraisshan/claude-code-best-practice</a>、<a href="https://api.github.com/repos/mem0ai/mem0" target="_blank" rel="noopener">mem0ai/mem0</a>、<a href="https://api.github.com/repos/crewAIInc/crewAI" target="_blank" rel="noopener">crewAIInc/crewAI</a>。</li>
+        <li>OpenAI 官方：<a href="https://openai.com/index/previewing-gpt-5-6-sol/" target="_blank" rel="noopener">GPT-5.6 Sol</a>；<a href="https://openai.com/index/estimating-intelligence-with-gdpval/" target="_blank" rel="noopener">GDPval</a>；<a href="https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration-to-deploy-10-gigawatts-of-openai-designed-ai-accelerators/" target="_blank" rel="noopener">OpenAI x Broadcom</a>。</li>
+        <li>Anthropic 官方：<a href="https://www.anthropic.com/research/economic-index-june-2026" target="_blank" rel="noopener">Economic Index: AI and the Global Exchange of Work</a>；Anthropic News/Research 官方页面。</li>
+      </ul>
+
+      <h3>GitHub star 快照</h3>
+      <p class="small">下表为 2026-06-24 历史日报快照与 2026-06-28 当前 API 值的差分。时间跨度约 95 小时，因此是透明代理指标，不是严格三日历史。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>仓库</th><th>2026-06-24 快照 stars</th><th>2026-06-28 当前 stars</th><th>代理增量</th></tr></thead>
+          <tbody><tr><td>NousResearch/hermes-agent</td><td>201,039</td><td>204,429</td><td>+3,390</td></tr>
+<tr><td>obra/superpowers</td><td>237,011</td><td>240,147</td><td>+3,136</td></tr>
+<tr><td>firecrawl/firecrawl</td><td>138,230</td><td>140,088</td><td>+1,858</td></tr>
+<tr><td>farion1231/cc-switch</td><td>107,133</td><td>109,582</td><td>+2,449</td></tr>
+<tr><td>multica-ai/andrej-karpathy-skills</td><td>181,059</td><td>183,506</td><td>+2,447</td></tr>
+<tr><td>affaan-m/ECC</td><td>220,602</td><td>222,705</td><td>+2,103</td></tr>
+<tr><td>anthropics/skills</td><td>154,395</td><td>155,941</td><td>+1,546</td></tr>
+<tr><td>anomalyco/opencode</td><td>177,834</td><td>179,841</td><td>+2,007</td></tr>
+<tr><td>browser-use/browser-use</td><td>100,360</td><td>100,998</td><td>+638</td></tr>
+<tr><td>anthropics/claude-code</td><td>134,008</td><td>134,734</td><td>+726</td></tr></tbody>
+        </table>
+      </div>
+
+      <h3>数据限制与不确定性</h3>
+      <ul>
+        <li>GitHub stars 是实时变动值；GitHub REST API 不提供任意历史 star 总量，本次只有 2026-06-24 本地快照可用于差分。</li>
+        <li>“高 Star 未总结项目”不是全 GitHub 穷举，而是基于 GitHub API/search 候选、主题相关性与历史日报排除集合筛选；已尽量避免重复推荐。</li>
+        <li>论文图表来自 arXiv PDF 页面渲染，复杂矩阵未人工改写，避免数值转录错误。</li>
+        <li>OpenAI / Anthropic 动态只以官方网页/官方视频来源为准；第三方转述未用于判定发布状态。</li>
+      </ul>
+
+      <h3>本次新增至“已总结仓库集合”的仓库</h3>
+      <p><code>paperclipai/paperclip</code>、<code>DietrichGebert/ponytail</code>、<code>ruvnet/ruflo</code>、<code>shanraisshan/claude-code-best-practice</code>、<code>mem0ai/mem0</code>。</p>
+    </section>
+  </main>
+</body>
+</html>

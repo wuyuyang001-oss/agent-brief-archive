@@ -1,6 +1,73 @@
 {
-  "generatedAt": "2026-06-24T03:13:53.489Z",
+  "generatedAt": "2026-06-29T04:53:53.185Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-06-28.html",
+      "date": "2026-06-28",
+      "weekday": "周日",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets",
+      "summary": "选择原因： 这篇论文在上一份已发布简报（2026-06-24 10:49 CST 左右）之后发布，直接面向 computer-use agents 的 GUI grounding 可信度评估。它不是只报告任务成功率，而是系统比较 post-hoc uncertainty quantification（UQ）…",
+      "source": "briefs/morning-brief-2026-06-28.html",
+      "overview": "overviews/morning-brief-2026-06-28.svg",
+      "githubRows": [
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 2026,
+          "text": "1 NousResearch/hermes-agent 长期个性化、工具使用和持续扩展能力的个人 agent 运行时。 204,429 +3,390 Python 2026-06-28 04:27:39 UTC"
+        },
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 2026,
+          "text": "2 obra/superpowers 面向软件开发 agent 的 skills 框架与工作方法集合。 240,147 +3,136 Shell 2026-06-28 04:28:22 UTC"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 2026,
+          "text": "3 farion1231/cc-switch Claude Code、Codex、OpenCode、OpenClaw、Gemini CLI、Hermes Agent 的桌面切换与管理工具。 109,582 +2,449 Rust 2026…"
+        },
+        {
+          "repo": "multica-ai/andrej-karpathy-skills",
+          "label": "multica-ai/andrej-karpathy-skills",
+          "value": 2026,
+          "text": "4 multica-ai/andrej-karpathy-skills 把 Andrej Karpathy 关于 LLM coding 的观察整理为 CLAUDE.md 风格技能文件。 183,506 +2,447 未标明 2026-06…"
+        },
+        {
+          "repo": "affaan-m/ECC",
+          "label": "affaan-m/ECC",
+          "value": 2026,
+          "text": "5 affaan-m/ECC 跨 Claude Code、Codex、OpenCode、Cursor 的 agent harness 优化、技能、记忆与安全经验。 222,705 +2,103 JavaScript 2026-06-28 …"
+        },
+        {
+          "repo": "paperclipai/paperclip",
+          "label": "paperclipai/paperclip",
+          "value": 2026,
+          "text": "1 paperclipai/paperclip 71,726 TypeScript 2026-06-28 04:26:34 UTC 开源的工作场景 agent 管理应用。 它把 agent 从单个 CLI/脚本推进到团队可管理的工作台形态…"
+        },
+        {
+          "repo": "DietrichGebert/ponytail",
+          "label": "DietrichGebert/ponytail",
+          "value": 2026,
+          "text": "2 DietrichGebert/ponytail 62,011 JavaScript 2026-06-28 04:28:24 UTC 面向 Claude Code/Cursor 的 agent skills、rules 与开发行为约束。…"
+        },
+        {
+          "repo": "ruvnet/ruflo",
+          "label": "ruvnet/ruflo",
+          "value": 2026,
+          "text": "3 ruvnet/ruflo 61,787 TypeScript 2026-06-28 04:14:16 UTC agent meta-harness，覆盖 multi-agent swarms、RAG、记忆、MCP 与 Claude C…"
+        }
+      ],
+      "githubRepoCount": 27,
+      "figureCount": 21,
+      "tableCount": 3,
+      "linkCount": 82,
+      "officialStatus": "8 条官方链接/动态",
+      "tags": "2026-06-28 Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-06-24.html",
       "date": "2026-06-24",

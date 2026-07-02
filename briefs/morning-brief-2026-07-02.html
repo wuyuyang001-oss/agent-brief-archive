@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-07-02 AI / Agent 晨间简报</title>
+<style>
+:root { --bg:#f7f9fc; --paper:#ffffff; --ink:#1f2937; --muted:#5b6472; --line:#d8e0ea; --accent:#0b6bcb; --accent2:#0f8b6f; --warn:#8a5a00; --soft:#eef5ff; }
+* { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; line-height:1.65; }
+a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
+.container { max-width:1180px; margin:0 auto; padding:28px 18px 56px; }
+header { background:linear-gradient(135deg,#ffffff,#f0f7ff 62%,#edfdf7); border:1px solid var(--line); border-radius:26px; padding:32px; box-shadow:0 16px 48px rgba(37,65,105,.10); }
+.eyebrow { color:var(--accent); font-weight:800; letter-spacing:.12em; text-transform:uppercase; font-size:13px; } h1 { margin:8px 0 10px; font-size:38px; line-height:1.16; } h2 { margin:36px 0 16px; font-size:26px; border-left:5px solid var(--accent); padding-left:12px; } h3 { margin:24px 0 10px; font-size:20px; }
+.subtitle { color:var(--muted); margin:0; } .grid { display:grid; gap:14px; } .metrics { grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); margin-top:22px; } .metric { background:var(--paper); border:1px solid var(--line); border-radius:18px; padding:16px; } .metric strong { display:block; font-size:28px; color:#0f3d67; } .metric span { color:var(--muted); font-size:14px; }
+.card { background:var(--paper); border:1px solid var(--line); border-radius:22px; padding:24px; margin-top:18px; box-shadow:0 10px 28px rgba(37,65,105,.06); } .note { background:#f5f9ff; border:1px solid #cfe0f8; border-radius:16px; padding:14px 16px; color:#263647; } .warn { background:#fff8e8; border-color:#f2d79b; color:#5f4300; } .small { font-size:14px; color:var(--muted); } .tag { display:inline-block; padding:4px 9px; border:1px solid var(--line); border-radius:999px; background:#fff; color:#334155; font-size:13px; margin:2px 4px 2px 0; }
+.table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:16px; background:#fff; } table { width:100%; border-collapse:collapse; min-width:860px; } th,td { padding:12px 13px; border-bottom:1px solid var(--line); vertical-align:top; } th { background:#eef4fb; text-align:left; color:#162235; font-weight:800; } tr:last-child td { border-bottom:none; } .num { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; } .delta { color:#087f5b; font-weight:800; }
+figure { margin:18px 0; background:#fff; border:1px solid var(--line); border-radius:18px; padding:14px; } figure img { display:block; width:100%; max-width:980px; margin:10px auto 0; border:1px solid #e3e8ef; border-radius:10px; } figcaption { color:#334155; font-size:14px; }
+.two-col { grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); } .source-list li { margin:7px 0; } code { background:#eef2f7; border:1px solid #d7dee8; border-radius:6px; padding:1px 5px; }
+@media print { body { background:#fff; } .container { max-width:none; padding:0; } header,.card,figure { box-shadow:none; break-inside:avoid; } a { color:#064f93; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="eyebrow">AI / Agent Morning Brief</div>
+<h1>2026-07-02 晨间简报</h1>
+<p class="subtitle">生成日期：2026-07-02（周四）｜信息截止时间：2026-07-02 16:45 CST (UTC+8)｜覆盖：Agent benchmark、coding agent 评测可信度、GitHub 增长、高 Star 未总结项目、OpenAI / Anthropic 官方动态</p>
+<div class="grid metrics">
+<div class="metric"><strong>1</strong><span>今日重点论文</span></div>
+<div class="metric"><strong>5</strong><span>约三日 star 增长项目</span></div>
+<div class="metric"><strong>5</strong><span>高 Star 首次总结项目</span></div>
+<div class="metric"><strong>6</strong><span>官方动态条目</span></div>
+</div>
+</header>
+
+<section class="card" id="paper">
+<h2>1. 今日论文</h2>
+<p class="note"><strong>选择原因：</strong>这篇 2026-07-01 新论文直接审计 repository-level 性能优化 benchmark 是否可靠测量 coding agents。它不是又发布一个新榜单，而是拆解 GSO、SWE-Perf、SWE-fficiency 的重放稳定性、计分规则敏感性和任务剩余难度，是今天对 agent benchmark 可信度最有价值的信号。</p>
+<h3>Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents?</h3>
+<p><strong>作者：</strong>Zhi Chen、Zhensu Sun、Yuling Shi、David Lo、Lingxiao Jiang。<strong>发布日期：</strong>2026-07-01。<strong>链接：</strong><a href="https://arxiv.org/abs/2607.01211" target="_blank" rel="noopener">arXiv 摘要</a>、<a href="https://arxiv.org/pdf/2607.01211v1" target="_blank" rel="noopener">PDF</a>。<strong>代码/项目页：</strong>论文正文与 arXiv 元数据未发现独立代码仓库链接；相关 benchmark 原始仓库/公开提交来自论文引用的 GSO、SWE-Perf、SWE-fficiency。</p>
+<h3>English overview</h3>
+<p>This paper audits whether repository-level performance-optimization benchmarks actually provide stable evidence about coding-agent progress. Instead of accepting leaderboard scores at face value, it replays official reference patches for 740 optimization tasks across four Google Cloud machine profiles and multiple rounds, then re-computes validity, scoring sensitivity, and remaining task difficulty. The core finding is uncomfortable but useful: many tasks remain executable, yet their reference optimization signal is not always stable across machines; only 39/102 GSO tasks, 11/140 SWE-Perf tasks, and 411/498 SWE-fficiency tasks satisfy the original benchmark validity rules in every replay. The paper also shows that leaderboard rankings can change materially under different scoring rules, and that many tasks already have at least one public submission beating the base program, so the remaining challenge is often matching or exceeding expert reference speed rather than producing any working optimization. Its limitation is that the audit covers three specific benchmark families and available public submissions, not all performance-engineering agent settings.</p>
+<h3>对应中文翻译</h3>
+<p>这篇论文审查 repository-level 性能优化 benchmark 是否真的能稳定证明 coding agent 的进步。它没有直接接受排行榜分数，而是把 740 个优化任务的官方 reference patch 放到四类 Google Cloud 机器和多轮重放中，重新计算有效性、计分规则敏感性和任务剩余难度。核心结论有点刺耳但很有用：很多任务仍然能运行，但 reference 优化信号并不总能跨机器稳定成立；只有 39/102 个 GSO 任务、11/140 个 SWE-Perf 任务和 411/498 个 SWE-fficiency 任务在所有重放中都满足原始 benchmark 的有效性规则。论文还指出，不同计分规则会显著改变排行榜排序；而很多任务已经至少有一个公开提交能跑赢 base program，因此剩余挑战往往不是“能否产出可运行优化”，而是能否达到或超过专家 reference patch 的速度。局限在于：审计覆盖的是三个具体 benchmark 家族和已公开提交，不代表所有性能工程 agent 场景。</p>
+<h3>核心方法、创新点、实验结论与局限</h3>
+<ul>
+<li><strong>方法：</strong>跨四种 Google Cloud CPU/机器配置和多轮重放官方 reference patch，区分“能运行”“快于 base”“仍满足原始构造规则”三层信号；再对公开提交做计分规则重算和 task-level 覆盖分析。</li>
+<li><strong>创新点：</strong>把 coding-agent benchmark 从“排行榜是否高”拉回到“reference 信号是否稳定、评分是否被极端任务支配、剩余任务是否还有区分度”的计量学问题。</li>
+<li><strong>主要结论：</strong>SWE-Perf 的 reference signal 尤其脆弱，因为许多 reference patch 的 runtime gain 接近零；SWE-fficiency 的 harmonic mean 会让最差的 10 个任务承载 58.5%-82.8% 的分数权重；在 replay-valid 的 GSO 和 SWE-fficiency 任务中，至少一个公开提交在 85.3% 的任务上达到或超过 reference patch。</li>
+<li><strong>局限：</strong>它不是新 benchmark，也不覆盖所有 coding-agent 性能工程；SWE-Perf 因缺少可比公开 agent 输出，被排除在部分 task-level 分析之外；跨机器实验仍受云硬件、公开 artifact 质量和论文实现选择影响。</li>
+</ul>
+<h3>论文公开图表</h3>
+<p class="small">PDF 共有 Figure 1-7 与 Table I-IX。由于表格与图在双栏 PDF 中混排，且手工转写容易引入数值错误，本简报按论文顺序嵌入相关页面渲染截图，覆盖全部公开可访问图表。</p>
+<figure><figcaption><strong>表 1.</strong> Repository-level performance-optimization benchmarks。来源：<a href="https://arxiv.org/pdf/2607.01211v1" target="_blank" rel="noopener">arXiv PDF</a> 页面渲染截图。</figcaption><img src="morning-brief-2026-07-02-assets/perfbench-page-02.png" alt="表 1 Repository-level performance-optimization benchmarks"></figure><figure><figcaption><strong>表 2-3 / 图 1.</strong> Replay machine profiles、原始有效性规则、跨机器重放任务计数。来源：<a href="https://arxiv.org/pdf/2607.01211v1" target="_blank" rel="noopener">arXiv PDF</a> 页面渲染截图。</figcaption><img src="morning-brief-2026-07-02-assets/perfbench-page-03.png" alt="表 2-3 / 图 1 Replay machine profiles、原始有效性规则、跨机器重放任务计数"></figure><figure><figcaption><strong>图 2 / 表 4.</strong> Reference-patch runtime-change distributions 与 replay evaluability。来源：<a href="https://arxiv.org/pdf/2607.01211v1" target="_blank" rel="noopener">arXiv PDF</a> 页面渲染截图。</figcaption><img src="morning-brief-2026-07-02-assets/perfbench-page-04.png" alt="图 2 / 表 4 Reference-patch runtime-change distributions 与 replay evaluability"></figure><figure><figcaption><strong>表 5.</strong> Runtime signal and replay variation。来源：<a href="https://arxiv.org/pdf/2607.01211v1" target="_blank" rel="noopener">arXiv PDF</a> 页面渲染截图。</figcaption><img src="morning-brief-2026-07-02-assets/perfbench-page-05.png" alt="表 5 Runtime signal and replay variation"></figure><figure><figcaption><strong>表 6-7.</strong> Shared-submission 官方排名与 scoring-rule diagnostics。来源：<a href="https://arxiv.org/pdf/2607.01211v1" target="_blank" rel="noopener">arXiv PDF</a> 页面渲染截图。</figcaption><img src="morning-brief-2026-07-02-assets/perfbench-page-06.png" alt="表 6-7 Shared-submission 官方排名与 scoring-rule diagnostics"></figure><figure><figcaption><strong>图 3 / 表 8.</strong> SWE-fficiency harmonic mean worst-task weight 与 bounded-penalty diagnostic。来源：<a href="https://arxiv.org/pdf/2607.01211v1" target="_blank" rel="noopener">arXiv PDF</a> 页面渲染截图。</figcaption><img src="morning-brief-2026-07-02-assets/perfbench-page-07.png" alt="图 3 / 表 8 SWE-fficiency harmonic mean worst-task weight 与 bounded-penalty diagnostic"></figure><figure><figcaption><strong>图 4-5.</strong> Public submissions task outcomes 与 best/reference speed distribution。来源：<a href="https://arxiv.org/pdf/2607.01211v1" target="_blank" rel="noopener">arXiv PDF</a> 页面渲染截图。</figcaption><img src="morning-brief-2026-07-02-assets/perfbench-page-08.png" alt="图 4-5 Public submissions task outcomes 与 best/reference speed distribution"></figure><figure><figcaption><strong>表 9 / 图 6-7.</strong> Reference-category alignment 与 strategy-alignment speedup gap。来源：<a href="https://arxiv.org/pdf/2607.01211v1" target="_blank" rel="noopener">arXiv PDF</a> 页面渲染截图。</figcaption><img src="morning-brief-2026-07-02-assets/perfbench-page-09.png" alt="表 9 / 图 6-7 Reference-category alignment 与 strategy-alignment speedup gap"></figure>
+</section>
+
+<section class="card" id="github-growth">
+<h2>2. GitHub 三日增长项目</h2>
+<p class="note"><strong>排名方法：</strong>使用 2026-06-29 简报中记录的当前 star 快照作为历史基线，与 2026-07-02 16:38 CST GitHub REST API 当前值相减。窗口约 73.8 小时，接近三日但不是秒级滚动 72 小时；下表按该可核验差分排序。候选集为历史日报连续跟踪的 AI/Agent、Agent Skill、coding agent 与 agent 工具链项目。</p>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>项目</th><th>用途简介</th><th>语言</th><th>最近更新</th><th>当前 stars</th><th>6/29 快照</th><th>约 73.8h 新增</th></tr></thead><tbody>
+<tr>
+<td>1</td>
+<td><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a></td>
+<td>An agentic skills framework &amp; software development methodology that works.</td>
+<td>Shell</td>
+<td>07-02 08:37 UTC</td>
+<td class="num">243,804</td>
+<td class="num">240,906</td>
+<td class="num delta">+2,898</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">NousResearch/hermes-agent</a></td>
+<td>The agent that grows with you</td>
+<td>Python</td>
+<td>07-02 08:37 UTC</td>
+<td class="num">207,559</td>
+<td class="num">205,184</td>
+<td class="num delta">+2,375</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener">multica-ai/andrej-karpathy-skills</a></td>
+<td>A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy&#x27;s observations on LLM coding pitfalls.</td>
+<td>未标明</td>
+<td>07-02 08:38 UTC</td>
+<td class="num">186,327</td>
+<td class="num">184,185</td>
+<td class="num delta">+2,142</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://github.com/firecrawl/firecrawl" target="_blank" rel="noopener">firecrawl/firecrawl</a></td>
+<td>The API to search, scrape, and interact with the web at scale. 🔥</td>
+<td>TypeScript</td>
+<td>07-02 08:32 UTC</td>
+<td class="num">142,920</td>
+<td class="num">140,982</td>
+<td class="num delta">+1,938</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://github.com/farion1231/cc-switch" target="_blank" rel="noopener">farion1231/cc-switch</a></td>
+<td>A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI &amp; Hermes Agent. Only official website: ccswitch.io</td>
+<td>Rust</td>
+<td>07-02 08:38 UTC</td>
+<td class="num">112,131</td>
+<td class="num">110,198</td>
+<td class="num delta">+1,933</td>
+</tr></tbody></table></div>
+</section>
+
+<section class="card" id="github-highstar">
+<h2>3. GitHub 高 Star 未总结项目</h2>
+<p class="note"><strong>排除规则：</strong>执行前检查当前线程历史与 <code>/Users/wuyuyang/Documents/Rhythm/morning-brief*.html</code>，不仅排除已入榜项目，也排除此前 GitHub 板块或来源快照中出现过的仓库。因此 2026-06-29 来源快照中出现过但未正式入榜的 <code>lobehub/lobehub</code>、<code>bytedance/deer-flow</code>、<code>nexu-io/open-design</code>、<code>FoundationAgents/MetaGPT</code>、<code>ComposioHQ/awesome-claude-skills</code> 也被排除。</p>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>项目</th><th>语言</th><th>最近更新</th><th>当前 stars</th><th>用途与核心能力</th><th>为什么值得关注</th></tr></thead><tbody>
+<tr>
+<td>1</td>
+<td><a href="https://github.com/shareAI-lab/learn-claude-code" target="_blank" rel="noopener">shareAI-lab/learn-claude-code</a></td>
+<td>Python</td>
+<td>07-02 08:35 UTC</td>
+<td class="num">69,548</td>
+<td>Bash is all you need -  A nano claude code–like 「agent harness」, built from 0 to 1</td>
+<td>把 Claude Code 类 agent harness 拆成可学习、可改造的 Bash/脚本化范式，适合观察轻量 coding-agent 运行时如何被社区复刻。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://github.com/FlowiseAI/Flowise" target="_blank" rel="noopener">FlowiseAI/Flowise</a></td>
+<td>TypeScript</td>
+<td>07-02 07:58 UTC</td>
+<td class="num">54,189</td>
+<td>Build AI Agents, Visually</td>
+<td>低代码 AI agent / workflow builder，把工具编排、RAG、模型接入与可视化调试打包成团队可用界面。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://github.com/run-llama/llama_index" target="_blank" rel="noopener">run-llama/llama_index</a></td>
+<td>Python</td>
+<td>07-02 07:37 UTC</td>
+<td class="num">50,584</td>
+<td>LlamaIndex is the leading document agent and OCR platform</td>
+<td>围绕文档、检索、OCR 与 agent 工作流的数据层，常被用作 agent 记忆、知识接入和 RAG 编排基础。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://github.com/agno-agi/agno" target="_blank" rel="noopener">agno-agi/agno</a></td>
+<td>Python</td>
+<td>07-02 07:34 UTC</td>
+<td class="num">40,956</td>
+<td>Build, run, and manage agent platforms.</td>
+<td>面向生产 agent 平台的运行、管理和部署框架，强调多 agent、工具、知识和监控的一体化。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://github.com/langchain-ai/langgraph" target="_blank" rel="noopener">langchain-ai/langgraph</a></td>
+<td>Python</td>
+<td>07-02 08:02 UTC</td>
+<td class="num">36,283</td>
+<td>Build resilient agents.</td>
+<td>LangChain 生态里的有状态 agent 图运行时，适合构建可恢复、可控、可观察的多步 agent。</td>
+</tr></tbody></table></div>
+</section>
+
+<section class="card" id="official">
+<h2>4. OpenAI / Anthropic 动态</h2>
+<p class="small">检查窗口：自上一份日报 2026-06-29 14:49 CST 之后至 2026-07-02 16:45 CST。仅使用官方来源；未发现同期新的官方视频条目。</p>
+<div class="grid two-col">
+<div>
+<h3>OpenAI</h3>
+<ul>
+<li><strong><a href="https://openai.com/index/introducing-genebench-pro/" target="_blank" rel="noopener">Introducing GeneBench-Pro</a></strong>（2026-06-30，Research）：OpenAI 发布面向高级生物研发能力评估的 GeneBench-Pro。对你的 agent/benchmark 视角，重点是它继续把前沿模型评估推向高专业度、可审计任务，而不只是通用问答。</li>
+<li><strong><a href="https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug/" target="_blank" rel="noopener">Core dump epidemiology: diagnosing a data infrastructure bug</a></strong>（2026-06-30，Engineering）：OpenAI 工程排障文章，围绕 core dump 分布与系统性 bug 诊断。它对 agent 工程的间接价值在于展示大规模 AI 基础设施如何做故障证据收集和根因分析。</li>
+</ul>
+</div>
+<div>
+<h3>Anthropic</h3>
+<ul>
+<li><strong><a href="https://www.anthropic.com/news/claude-sonnet-5" target="_blank" rel="noopener">Introducing Claude Sonnet 5</a></strong>（2026-06-30，Product）：Anthropic 将 Sonnet 5 定位为“most agentic Sonnet yet”，强调规划、浏览器/终端工具使用、coding 与知识工作，并在 Claude Code 和 Claude API 提供 <code>claude-sonnet-5</code>。</li>
+<li><strong><a href="https://www.anthropic.com/claude-sonnet-5-system-card" target="_blank" rel="noopener">Claude Sonnet 5 System Card</a></strong>（2026-06-30，System card）：与 Sonnet 5 同步发布，提供更完整的能力与安全评测细节，是评估新模型 agentic 能力与风险边界的主要官方材料。</li>
+<li><strong><a href="https://www.anthropic.com/news/claude-science" target="_blank" rel="noopener">Claude Science</a></strong>（2026-06-30，Product）：Anthropic 发布科学工作台方向的 Claude Science，面向研究工作流中的文献、实验分析和知识工作自动化。</li>
+<li><strong><a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener">Redeploying Fable 5</a></strong>（2026-06-30，Safety / policy）：Anthropic 更新 Fable 5 相关部署与 safeguards，伴随 jailbreak 分级、分类器与 CBRN 风险表述调整，属于模型发布后安全治理动态。</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="card" id="sources">
+<h2>6. 来源与方法</h2>
+<h3>检索时间与归档状态</h3>
+<ul class="source-list">
+<li>信息截止时间：2026-07-02 16:45 CST (UTC+8)。arXiv API 检索约 16:33 CST；GitHub API 查询约 16:38 CST；OpenAI/Anthropic 官方页面约 16:40-16:45 CST 核验。</li>
+<li>归档/发布状态：已保存本地简报并成功更新本地归档、复制 assets、生成 overviews/morning-brief-2026-07-02.svg，且创建本地 Git commit（最终提交见归档仓库 log）。GitHub push 失败，原因为 fatal: could not read Username for 'https://github.com': Device not configured；因此远端 origin/main 与 GitHub Pages 公开站点尚未同步。本地归档仓库当前领先 origin/main 三个提交（含 2026-06-28、2026-06-29、2026-07-02）。未更新项：远端 GitHub 仓库与公开 GitHub Pages。</li>
+<li>今天是周四，不执行“周六周报总结”，因此本 HTML 完全省略周报板块。</li>
+</ul>
+<h3>主要来源链接</h3>
+<ul class="source-list">
+<li>论文：<a href="https://arxiv.org/abs/2607.01211" target="_blank" rel="noopener">arXiv 2607.01211 abstract</a>；<a href="https://arxiv.org/pdf/2607.01211v1" target="_blank" rel="noopener">arXiv PDF</a>；arXiv API <code>id_list=2607.01211</code>。</li>
+<li>OpenAI 官方：<a href="https://openai.com/news/" target="_blank" rel="noopener">OpenAI News</a>；<a href="https://openai.com/index/introducing-genebench-pro/" target="_blank" rel="noopener">Introducing GeneBench-Pro</a>；<a href="https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug/" target="_blank" rel="noopener">Core dump epidemiology</a>。</li>
+<li>Anthropic 官方：<a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic News</a>；<a href="https://www.anthropic.com/news/claude-sonnet-5" target="_blank" rel="noopener">Claude Sonnet 5</a>；<a href="https://www.anthropic.com/claude-sonnet-5-system-card" target="_blank" rel="noopener">System Card</a>；<a href="https://www.anthropic.com/news/claude-science" target="_blank" rel="noopener">Claude Science</a>；<a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener">Redeploying Fable 5</a>。</li>
+<li>GitHub API：<a href="https://api.github.com/repos/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a>, <a href="https://api.github.com/repos/NousResearch/hermes-agent" target="_blank" rel="noopener">NousResearch/hermes-agent</a>, <a href="https://api.github.com/repos/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener">multica-ai/andrej-karpathy-skills</a>, <a href="https://api.github.com/repos/firecrawl/firecrawl" target="_blank" rel="noopener">firecrawl/firecrawl</a>, <a href="https://api.github.com/repos/farion1231/cc-switch" target="_blank" rel="noopener">farion1231/cc-switch</a>, <a href="https://api.github.com/repos/affaan-m/ECC" target="_blank" rel="noopener">affaan-m/ECC</a>, <a href="https://api.github.com/repos/anomalyco/opencode" target="_blank" rel="noopener">anomalyco/opencode</a>, <a href="https://api.github.com/repos/anthropics/skills" target="_blank" rel="noopener">anthropics/skills</a>, <a href="https://api.github.com/repos/browser-use/browser-use" target="_blank" rel="noopener">browser-use/browser-use</a>, <a href="https://api.github.com/repos/anthropics/claude-code" target="_blank" rel="noopener">anthropics/claude-code</a>。</li>
+<li>高 Star 候选 API：<a href="https://api.github.com/repos/shareAI-lab/learn-claude-code" target="_blank" rel="noopener">shareAI-lab/learn-claude-code</a>, <a href="https://api.github.com/repos/FlowiseAI/Flowise" target="_blank" rel="noopener">FlowiseAI/Flowise</a>, <a href="https://api.github.com/repos/run-llama/llama_index" target="_blank" rel="noopener">run-llama/llama_index</a>, <a href="https://api.github.com/repos/agno-agi/agno" target="_blank" rel="noopener">agno-agi/agno</a>, <a href="https://api.github.com/repos/langchain-ai/langgraph" target="_blank" rel="noopener">langchain-ai/langgraph</a>。</li>
+</ul>
+<h3>GitHub star 快照：增长候选</h3>
+<p class="small">历史基线来自 2026-06-29 简报，当前值来自 2026-07-02 GitHub REST API。</p>
+<div class="table-wrap"><table><thead><tr><th>仓库</th><th>2026-06-29 快照</th><th>2026-07-02 当前</th><th>差分</th><th>语言</th></tr></thead><tbody><tr><td>obra/superpowers</td><td>240,906</td><td>243,804</td><td class="delta">+2,898</td><td>Shell</td></tr><tr><td>NousResearch/hermes-agent</td><td>205,184</td><td>207,559</td><td class="delta">+2,375</td><td>Python</td></tr><tr><td>multica-ai/andrej-karpathy-skills</td><td>184,185</td><td>186,327</td><td class="delta">+2,142</td><td>未标明</td></tr><tr><td>firecrawl/firecrawl</td><td>140,982</td><td>142,920</td><td class="delta">+1,938</td><td>TypeScript</td></tr><tr><td>farion1231/cc-switch</td><td>110,198</td><td>112,131</td><td class="delta">+1,933</td><td>Rust</td></tr><tr><td>affaan-m/ECC</td><td>223,177</td><td>224,813</td><td class="delta">+1,636</td><td>JavaScript</td></tr><tr><td>anomalyco/opencode</td><td>180,313</td><td>181,487</td><td class="delta">+1,174</td><td>TypeScript</td></tr><tr><td>anthropics/skills</td><td>156,378</td><td>157,499</td><td class="delta">+1,121</td><td>Python</td></tr><tr><td>browser-use/browser-use</td><td>101,246</td><td>102,093</td><td class="delta">+847</td><td>Python</td></tr><tr><td>anthropics/claude-code</td><td>134,874</td><td>135,397</td><td class="delta">+523</td><td>Python</td></tr></tbody></table></div>
+<h3>GitHub star 快照：高 Star 候选与排除</h3>
+<div class="table-wrap"><table><thead><tr><th>候选仓库</th><th>当前 stars</th><th>语言</th><th>处理</th></tr></thead><tbody><tr><td>lobehub/lobehub</td><td>79,346</td><td>TypeScript</td><td>已排除：历史日报已出现</td></tr><tr><td>bytedance/deer-flow</td><td>75,835</td><td>Python</td><td>已排除：历史日报已出现</td></tr><tr><td>nexu-io/open-design</td><td>73,958</td><td>TypeScript</td><td>已排除：历史日报已出现</td></tr><tr><td>FoundationAgents/MetaGPT</td><td>69,142</td><td>Python</td><td>已排除：历史日报已出现</td></tr><tr><td>ComposioHQ/awesome-claude-skills</td><td>66,572</td><td>Python</td><td>已排除：历史日报已出现</td></tr><tr><td>shareAI-lab/learn-claude-code</td><td>69,548</td><td>Python</td><td>未出现；可入选/候补</td></tr><tr><td>crewAIInc/crewAI</td><td>54,748</td><td>Python</td><td>已排除：历史日报已出现</td></tr><tr><td>FlowiseAI/Flowise</td><td>54,189</td><td>TypeScript</td><td>未出现；可入选/候补</td></tr><tr><td>run-llama/llama_index</td><td>50,584</td><td>Python</td><td>未出现；可入选/候补</td></tr><tr><td>agno-agi/agno</td><td>40,956</td><td>Python</td><td>未出现；可入选/候补</td></tr><tr><td>langchain-ai/langgraph</td><td>36,283</td><td>Python</td><td>未出现；可入选/候补</td></tr><tr><td>e2b-dev/awesome-ai-agents</td><td>28,576</td><td>未标明</td><td>未出现；可入选/候补</td></tr><tr><td>microsoft/semantic-kernel</td><td>28,237</td><td>C#</td><td>未出现；可入选/候补</td></tr><tr><td>camel-ai/camel</td><td>17,314</td><td>Python</td><td>未出现；可入选/候补</td></tr></tbody></table></div>
+<h3>数据限制与不确定性</h3>
+<ul class="source-list">
+<li>GitHub REST API 提供当前 star，不提供任意历史总 star；本次三日增长使用本地历史日报快照差分，窗口约 73.8 小时。</li>
+<li>高 Star 未总结榜不是全 GitHub 穷举，而是基于历史排除集合、GitHub API 候选、主题相关性和当前 star 排序筛选；泛 AI UI、教程或非 agent 主体项目被降权。</li>
+<li>论文图表来自 arXiv PDF 页面渲染；表格未人工重排，避免数值转录错误。PDF 中所有公开可访问 Figure 1-7 与 Table I-IX 均已通过页面截图覆盖。</li>
+<li>OpenAI 页面直接抓取时出现 Cloudflare managed challenge；本次仍只采用 OpenAI 官方链接与官方新闻索引判定发布状态，不使用第三方转述作为发布依据。</li>
+<li>未发现 OpenAI / Anthropic 官方网页在检查窗口内发布新的官方视频条目。</li>
+</ul>
+<h3>本次新增至“已总结仓库集合”的仓库</h3>
+<p><code>shareAI-lab/learn-claude-code</code>、<code>FlowiseAI/Flowise</code>、<code>run-llama/llama_index</code>、<code>agno-agi/agno</code>、<code>langchain-ai/langgraph</code>。</p>
+</section>
+</div>
+</body>
+</html>

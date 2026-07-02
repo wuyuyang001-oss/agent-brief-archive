@@ -1,6 +1,73 @@
 {
-  "generatedAt": "2026-06-29T06:53:45.653Z",
+  "generatedAt": "2026-07-02T08:47:41.313Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-02.html",
+      "date": "2026-07-02",
+      "weekday": "周四",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents?",
+      "summary": "选择原因： 这篇 2026-07-01 新论文直接审计 repository-level 性能优化 benchmark 是否可靠测量 coding agents。它不是又发布一个新榜单，而是拆解 GSO、SWE-Perf、SWE-fficiency 的重放稳定性、计分规则敏感性和任务剩余难度，是今天对 ag…",
+      "source": "briefs/morning-brief-2026-07-02.html",
+      "overview": "overviews/morning-brief-2026-07-02.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 2898,
+          "text": "1 obra/superpowers An agentic skills framework & software development methodology that works. Shell 07-02 08:37 UTC 243…"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 2375,
+          "text": "2 NousResearch/hermes-agent The agent that grows with you Python 07-02 08:37 UTC 207,559 205,184 +2,375"
+        },
+        {
+          "repo": "multica-ai/andrej-karpathy-skills",
+          "label": "multica-ai/andrej-karpathy-skills",
+          "value": 2142,
+          "text": "3 multica-ai/andrej-karpathy-skills A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpat…"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 1938,
+          "text": "4 firecrawl/firecrawl The API to search, scrape, and interact with the web at scale. 🔥 TypeScript 07-02 08:32 UTC 142,…"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 1933,
+          "text": "5 farion1231/cc-switch A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini…"
+        },
+        {
+          "repo": "shareAI-lab/learn-claude-code",
+          "label": "shareAI-lab/learn-claude-code",
+          "value": 69548,
+          "text": "1 shareAI-lab/learn-claude-code Python 07-02 08:35 UTC 69,548 Bash is all you need - A nano claude code–like 「agent har…"
+        },
+        {
+          "repo": "FlowiseAI/Flowise",
+          "label": "FlowiseAI/Flowise",
+          "value": 54189,
+          "text": "2 FlowiseAI/Flowise TypeScript 07-02 07:58 UTC 54,189 Build AI Agents, Visually 低代码 AI agent / workflow builder，把工具编排、R…"
+        },
+        {
+          "repo": "run-llama/llama_index",
+          "label": "run-llama/llama_index",
+          "value": 50584,
+          "text": "3 run-llama/llama_index Python 07-02 07:37 UTC 50,584 LlamaIndex is the leading document agent and OCR platform 围绕文档、检索…"
+        }
+      ],
+      "githubRepoCount": 24,
+      "figureCount": 8,
+      "tableCount": 4,
+      "linkCount": 51,
+      "officialStatus": "14 条官方链接/动态",
+      "tags": "2026-07-02 Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents? AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-06-29.html",
       "date": "2026-06-29",

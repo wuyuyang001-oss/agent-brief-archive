@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="2026-06-17 AI Agent 晨间简报概览">
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="2026-07-03 AI Agent 晨间简报概览">
   <defs>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0a67a3"/>
@@ -22,28 +22,28 @@
   <rect x="42" y="42" width="1196" height="636" rx="34" fill="none" stroke="#d8e5f2"/>
 
   <text x="82" y="96" font-size="18" font-weight="800" letter-spacing="3" fill="#0a67a3">AI / AGENT MORNING BRIEF</text>
-  <text x="82" y="148" font-size="54" font-weight="850" letter-spacing="-2.2" fill="#122033">2026-06-17</text>
-  <text x="82" y="184" font-size="21" font-weight="650" fill="#5d7186">周三 · 自动生成概览图 · 日报</text>
+  <text x="82" y="148" font-size="54" font-weight="850" letter-spacing="-2.2" fill="#122033">2026-07-03</text>
+  <text x="82" y="184" font-size="21" font-weight="650" fill="#5d7186">周五 · 自动生成概览图 · 日报</text>
 
   <rect x="82" y="224" width="548" height="204" rx="24" fill="#f7fbff" stroke="#d8e5f2"/>
   <text x="110" y="266" font-size="20" font-weight="800" fill="#087f5b">当日核心摘要</text>
-  <text x="110" y="311" font-size="27" font-weight="850" fill="#132334">ReproRepo: Scaling Reproducibility Audits with</text>
-<text x="110" y="345" font-size="27" font-weight="850" fill="#132334">GitHub Repository Issues…</text>
-  <text x="110" y="378" font-size="18" font-weight="500" fill="#4d6176">以下按论文顺序列出全部公开可访问的 Figure 1-9 与 Table 1-9。复杂图表</text>
-<text x="110" y="405" font-size="18" font-weight="500" fill="#4d6176">与表格以论文 PDF 页面截图嵌入，未发现需要额外列出的缺失图表。来源均为…</text>
+  <text x="110" y="311" font-size="27" font-weight="850" fill="#132334">A Task-State Representation for Long-Horizon M</text>
+<text x="110" y="345" font-size="27" font-weight="850" fill="#132334">obile GUI Agents</text>
+  <text x="110" y="378" font-size="18" font-weight="500" fill="#4d6176">选择理由： arXiv API 在本次运行中返回 rate exceeded，因此改用 arXiv 官</text>
+<text x="110" y="405" font-size="18" font-weight="500" fill="#4d6176">方页面与 PDF 核验。未发现比 2026-07-01 这篇更适合“benchmark / agent…</text>
 
   <g>
     <rect x="82" y="460" width="130" height="106" rx="20" fill="#f3f8ff" stroke="#d8e5f2"/>
-    <text x="110" y="503" font-size="38" font-weight="850" fill="#0a67a3">15</text>
+    <text x="110" y="503" font-size="38" font-weight="850" fill="#0a67a3">10</text>
     <text x="110" y="536" font-size="15" font-weight="700" fill="#5f7184">GitHub 仓库</text>
     <rect x="224" y="460" width="130" height="106" rx="20" fill="#f3fbf6" stroke="#d8e5f2"/>
-    <text x="252" y="503" font-size="38" font-weight="850" fill="#087f5b">12</text>
+    <text x="252" y="503" font-size="38" font-weight="850" fill="#087f5b">6</text>
     <text x="252" y="536" font-size="15" font-weight="700" fill="#5f7184">论文图表</text>
     <rect x="366" y="460" width="130" height="106" rx="20" fill="#fff8ed" stroke="#d8e5f2"/>
-    <text x="394" y="503" font-size="38" font-weight="850" fill="#a15c00">4</text>
+    <text x="394" y="503" font-size="38" font-weight="850" fill="#a15c00">8</text>
     <text x="394" y="536" font-size="15" font-weight="700" fill="#5f7184">HTML 表格</text>
     <rect x="508" y="460" width="122" height="106" rx="20" fill="#f7f4ff" stroke="#d8e5f2"/>
-    <text x="536" y="503" font-size="38" font-weight="850" fill="#4f46e5">50</text>
+    <text x="536" y="503" font-size="38" font-weight="850" fill="#4f46e5">26</text>
     <text x="536" y="536" font-size="15" font-weight="700" fill="#5f7184">来源链接</text>
   </g>
 
@@ -55,27 +55,27 @@
       <text x="690" y="455" font-size="17" font-weight="650" fill="#233246">obra/superpowers</text>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="#e8eef6"/>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">736</text>
 
       <text x="690" y="493" font-size="17" font-weight="650" fill="#233246">NousResearch/hermes-agent</text>
       <rect x="910" y="476" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="476" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="491" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="476" width="239" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1164" y="491" font-size="13" font-weight="700" fill="#0b5f91">534</text>
 
       <text x="690" y="531" font-size="17" font-weight="650" fill="#233246">multica-ai/andrej-karpathy-skills</text>
       <rect x="910" y="514" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="514" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="529" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="514" width="191" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1116" y="529" font-size="13" font-weight="700" fill="#0b5f91">426</text>
 
       <text x="690" y="569" font-size="17" font-weight="650" fill="#233246">affaan-m/ECC</text>
       <rect x="910" y="552" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="552" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="567" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="552" width="188" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1113" y="567" font-size="13" font-weight="700" fill="#0b5f91">419</text>
 
-      <text x="690" y="607" font-size="17" font-weight="650" fill="#233246">anomalyco/opencode</text>
+      <text x="690" y="607" font-size="17" font-weight="650" fill="#233246">firecrawl/firecrawl</text>
       <rect x="910" y="590" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="590" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="605" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="590" width="170" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1095" y="605" font-size="13" font-weight="700" fill="#0b5f91">379</text>
 
   <rect x="82" y="596" width="1116" height="42" rx="21" fill="url(#accent)" opacity="0.10"/>
   <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：未发现新发布内容 · 生成时间：2026-07-03 02:51:58 UTC</text>

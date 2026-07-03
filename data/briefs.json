@@ -1,6 +1,73 @@
 {
-  "generatedAt": "2026-07-02T08:47:41.313Z",
+  "generatedAt": "2026-07-03T02:51:58.724Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-03.html",
+      "date": "2026-07-03",
+      "weekday": "周五",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "A Task-State Representation for Long-Horizon Mobile GUI Agents",
+      "summary": "选择理由： arXiv API 在本次运行中返回 rate exceeded，因此改用 arXiv 官方页面与 PDF 核验。未发现比 2026-07-01 这篇更适合“benchmark / agent 架构 / computer-use GUI agent”主题且尚未总结过的近期论文；它提出训练无关的 …",
+      "source": "briefs/morning-brief-2026-07-03.html",
+      "overview": "overviews/morning-brief-2026-07-03.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 736,
+          "text": "obra/superpowers Agentic skills framework 与软件开发方法论，围绕 skill 驱动的工程协作。 Shell 2026-07-03 02:43:27 UTC 244,540 243,804 +736"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 534,
+          "text": "NousResearch/hermes-agent Nous 的自成长 agent 项目，聚焦长期运行中的能力积累。 Python 2026-07-03 02:41:02 UTC 208,093 207,559 +534"
+        },
+        {
+          "repo": "multica-ai/andrej-karpathy-skills",
+          "label": "multica-ai/andrej-karpathy-skills",
+          "value": 426,
+          "text": "multica-ai/andrej-karpathy-skills 从 Karpathy 观察提炼的 CLAUDE.md/agent 行为改进配置。 未标明 2026-07-03 02:41:36 UTC 186,753 186,327 …"
+        },
+        {
+          "repo": "affaan-m/ECC",
+          "label": "affaan-m/ECC",
+          "value": 419,
+          "text": "affaan-m/ECC Agent harness 性能优化系统，覆盖 skills、instincts、memory、安全与 research。 JavaScript 2026-07-03 02:40:56 UTC 225,232 2…"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 379,
+          "text": "firecrawl/firecrawl 面向 agent/RAG 的网页搜索、抓取与结构化交互 API。 TypeScript 2026-07-03 02:41:07 UTC 143,299 142,920 +379"
+        },
+        {
+          "repo": "VoltAgent/awesome-design-md",
+          "label": "VoltAgent/awesome-design-md",
+          "value": 95297,
+          "text": "VoltAgent/awesome-design-md 收集主流品牌 DESIGN.md / 设计系统说明，用于让 coding agents 生成一致 UI。 它把“设计上下文”变成可交给 agent 的项目内技能/约束，适合跟你现在的…"
+        },
+        {
+          "repo": "karpathy/autoresearch",
+          "label": "karpathy/autoresearch",
+          "value": 89576,
+          "text": "karpathy/autoresearch 让 AI agents 自动运行单 GPU nanochat 训练研究流程。 它把研究循环自动化成可执行 pipeline，是 agent 介入 ML 实验/研究迭代的高关注样本。 Python…"
+        },
+        {
+          "repo": "JuliusBrussee/caveman",
+          "label": "JuliusBrussee/caveman",
+          "value": 81169,
+          "text": "JuliusBrussee/caveman Claude Code skill，目标是用极短上下文表达压缩 token。 它代表 Agent Skill 生态里“低成本上下文工程”的方向，对长任务代理和日报自动化都很实用。 JavaScr…"
+        }
+      ],
+      "githubRepoCount": 10,
+      "figureCount": 6,
+      "tableCount": 8,
+      "linkCount": 26,
+      "officialStatus": "未发现新发布内容",
+      "tags": "2026-07-03 A Task-State Representation for Long-Horizon Mobile GUI Agents AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-02.html",
       "date": "2026-07-02",

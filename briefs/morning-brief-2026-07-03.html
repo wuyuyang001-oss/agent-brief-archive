@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI / Agent 晨间简报 - 2026-07-03</title>
+<style>
+:root { --bg:#f8fafc; --paper:#ffffff; --ink:#172033; --muted:#5b667a; --line:#d8e0ec; --accent:#0b67a3; --accent2:#0f8a6a; --soft:#eef6ff; --warn:#fff7ed; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"PingFang SC","Microsoft YaHei",sans-serif; }
+a { color:#075f9b; text-decoration:none; border-bottom:1px solid rgba(7,95,155,.25); }
+a:hover { border-bottom-color:#075f9b; }
+main { max-width:1180px; margin:0 auto; padding:28px 22px 64px; }
+header { background:linear-gradient(135deg,#ffffff 0%,#eef6ff 62%,#f3fff9 100%); border:1px solid var(--line); border-radius:24px; padding:30px; box-shadow:0 20px 45px rgba(24,44,72,.08); }
+h1 { margin:0 0 8px; font-size:36px; line-height:1.2; letter-spacing:-.03em; }
+h2 { margin:34px 0 16px; font-size:25px; border-left:5px solid var(--accent); padding-left:12px; }
+h3 { margin:24px 0 10px; font-size:19px; }
+p { margin:10px 0; }
+.subtitle, .meta { color:var(--muted); }
+.grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+.card { background:var(--paper); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 10px 28px rgba(24,44,72,.05); }
+.card strong { display:block; font-size:21px; color:#0f3152; }
+.note { background:var(--soft); border:1px solid #c8ddf3; border-radius:16px; padding:14px 16px; }
+.warn { background:var(--warn); border:1px solid #fed7aa; border-radius:16px; padding:14px 16px; }
+.table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:16px; background:#fff; margin:14px 0 20px; }
+table { width:100%; border-collapse:collapse; min-width:760px; }
+th, td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { background:#f1f5f9; text-align:left; color:#243447; font-weight:700; }
+tr:last-child td { border-bottom:none; }
+.badge { display:inline-block; padding:2px 8px; border-radius:999px; background:#e7f5ff; color:#0b67a3; font-size:13px; font-weight:650; }
+figure { margin:18px 0; padding:14px; background:#fff; border:1px solid var(--line); border-radius:18px; }
+figure img { display:block; max-width:100%; height:auto; border:1px solid #e5edf6; border-radius:12px; background:#fff; }
+figcaption { margin-top:10px; color:#4b5565; font-size:14px; }
+.twocol { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.small { font-size:14px; color:var(--muted); }
+ul { margin:8px 0 8px 22px; padding:0; }
+li { margin:6px 0; }
+@media (max-width:850px) { .grid,.twocol { grid-template-columns:1fr; } h1 { font-size:29px; } main { padding:18px 12px 40px; } }
+@media print { body { background:#fff; } main { max-width:none; } header,.card,figure,.table-wrap { box-shadow:none; } a { color:#000; border-bottom:0; } }
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>AI / Agent 晨间简报</h1>
+<p class="subtitle">生成日期：2026-07-03（周五）｜信息截止时间：2026-07-03 10:51:37 CST (UTC+0800)｜主题：GUI agent 架构、Agent Skill / MCP 工具链、GitHub star 动向、OpenAI / Anthropic 官方动态</p>
+<div class="grid">
+<div class="card"><strong>今日论文</strong><span>A Task-State Representation for Long-Horizon Mobile GUI Agents</span></div>
+<div class="card"><strong>GitHub 增长</strong><span>使用 2026-07-02 快照做短窗差分，Top 项目 +736 stars</span></div>
+<div class="card"><strong>官方动态</strong><span>OpenAI 未见新条目；Anthropic 有 7/2 Fable 5 safeguards 更新</span></div>
+</div>
+</header>
+
+<section>
+<h2>1. 今日论文</h2>
+<p class="note"><strong>选择理由：</strong>arXiv API 在本次运行中返回 rate exceeded，因此改用 arXiv 官方页面与 PDF 核验。未发现比 2026-07-01 这篇更适合“benchmark / agent 架构 / computer-use GUI agent”主题且尚未总结过的近期论文；它提出训练无关的 Task-State Representation wrapper，直接对应长程 GUI agent 的状态漂移问题。</p>
+<h3>A Task-State Representation for Long-Horizon Mobile GUI Agents</h3>
+<ul>
+<li><strong>作者：</strong>Yujie Zheng, Zikang Liu, Xin Zhao, Ji-Rong Wen</li>
+<li><strong>发布日期：</strong>2026-07-01（arXiv submitted on 1 Jul 2026）</li>
+<li><strong>论文链接：</strong><a href="https://arxiv.org/abs/2607.00502" target="_blank" rel="noopener">arXiv:2607.00502</a>；<a href="https://arxiv.org/pdf/2607.00502" target="_blank" rel="noopener">PDF</a></li>
+<li><strong>代码 / 项目页：</strong>本次核验未在 arXiv 页面发现官方代码或项目页；若作者后续补充，需要下次重新检查。</li>
+</ul>
+<div class="twocol">
+<div class="card"><h3>English overview</h3><p>The paper argues that long-horizon mobile GUI agents fail partly because the usual thought-action-observation trace mixes persistent task state with transient screen evidence. The proposed Task-State Representation (TSR) is a training-free wrapper around an existing GUI actor. At each step, a state updater compares the screenshots before and after the last action and maintains three structured views: a global task summary, a progress tracker, and a transition-aware focus that verifies whether the last action actually changed the environment. This state is serialized back into the actor prompt, while the base actor remains fixed.</p><p>Across MobileWorld, AndroidWorld, MemGUI-Bench, MemGUI-Memory, and VenusBench-Mobile settings with Qwen3.5-plus and Kimi-k2.5, TSR improves many long-horizon and memory-intensive tasks, with the largest reported absolute gain of +12 success-rate points on MobileWorld. The limitation is equally important: the updater adds an extra LLM call at each step, can propagate wrong state, may over-decompose easy tasks, and is only tested on Android-based mobile GUI benchmarks.</p></div>
+<div class="card"><h3>对应中文翻译</h3><p>论文认为，长程移动 GUI 智能体失败的部分原因，是常见的 thought-action-observation 轨迹把持久任务状态和短暂屏幕证据混在一起。作者提出的 Task-State Representation（TSR）是包在现有 GUI actor 外部的训练无关 wrapper。每一步中，state updater 会比较上一步动作前后的截图，并维护三类结构化视图：全局任务摘要、进度追踪器，以及用于验证上一步是否真正改变环境的 transition-aware focus。随后这些状态被序列化回 actor prompt，而基础 actor 本身保持不变。</p><p>在 MobileWorld、AndroidWorld、MemGUI-Bench、MemGUI-Memory 与 VenusBench-Mobile 等设置中，TSR 在 Qwen3.5-plus 与 Kimi-k2.5 上改善了许多长程与记忆密集任务，最大报告增益是在 MobileWorld 上 +12 个成功率百分点。局限也很关键：updater 每步增加一次 LLM 调用，错误状态可能沿轨迹传播，对简单任务可能过度拆解，而且实验只覆盖 Android 移动 GUI benchmark。</p></div>
+</div>
+<h3>核心方法、创新点、实验结论与局限</h3>
+<ul>
+<li><strong>核心方法：</strong>把 agent 的“持久任务状态”从屏幕 observation/history 中拆出来，用一个外部状态块维护，并通过 prompt 注入给固定 actor。</li>
+<li><strong>创新点：</strong>TSR 同时维护 global summary、progress tracker、transition-aware focus；其中 transition-aware focus 用动作前后截图判断动作是否生效，专门应对 stale screen 与重复动作。</li>
+<li><strong>主要实验结论：</strong>MobileWorld 上增益最大，Qwen3.5-plus 从 43.00 到 55.00，Kimi-k2.5 从 49.00 到 58.00；记忆密集设置也有约 3-5 个百分点提升。</li>
+<li><strong>可信度与局限：</strong>实验覆盖 4 个移动 GUI benchmark 与 2 个多模态模型，但 TSR 会增加每步 1024-token updater 调用；在 AndroidWorld 的 Qwen3.5-plus 上反而下降 3.45 点，说明它不是无条件更优。</li>
+</ul>
+<h3>论文公开图表</h3>
+<p class="small">PDF 共 9 页；arXiv 备注为 3 figures，渲染与文本检查确认正文/附录共有 3 张图、4 张表。图采用 arXiv PDF 页面渲染截图，表格优先转写为 HTML；截图源页附在表格后用于核对。</p>
+<figure><img src="morning-brief-2026-07-03-assets/tsr-figure-1-page-03.png" alt="Figure 1 - Overview of the task-state representation"><figcaption><strong>Figure 1：</strong>Overview of the task-state representation。第 3 页渲染图。展示标准 GUI actor 与 TSR wrapper 的差异：TSR 维护 global summary、progress tracker 和 transition-aware focus。 来源：<a href="https://arxiv.org/pdf/2607.00502" target="_blank" rel="noopener">arXiv PDF</a>。</figcaption></figure>
+<figure><img src="morning-brief-2026-07-03-assets/tsr-figure-2-page-05.png" alt="Figure 2 - Stale-screen recovery"><figcaption><strong>Figure 2：</strong>Stale-screen recovery。第 5 页渲染图。展示 baseline 在延迟 UI 更新中重复删除动作，TSR 引导先验证再重试。 来源：<a href="https://arxiv.org/pdf/2607.00502" target="_blank" rel="noopener">arXiv PDF</a>。</figcaption></figure>
+<figure><img src="morning-brief-2026-07-03-assets/tsr-figure-3-page-06.png" alt="Figure 3 - Over-decomposition failure"><figcaption><strong>Figure 3：</strong>Over-decomposition failure。第 6 页渲染图。展示 TSR 可能把任务拆得过细，导致逐项检查超过步数预算。 来源：<a href="https://arxiv.org/pdf/2607.00502" target="_blank" rel="noopener">arXiv PDF</a>。</figcaption></figure>
+
+<h3>Table 1：Performance comparison of baseline and task-state representation</h3>
+<div class="table-wrap"><table><thead><tr><th>Model</th><th>Benchmark</th><th>Baseline SR</th><th>+Context SR</th><th>Delta SR</th><th>Baseline avg steps</th><th>+Context avg steps</th></tr></thead><tbody>
+<tr><td>Qwen3.5-plus</td><td>MobileWorld</td><td>43.00</td><td>55.00</td><td>+12.00</td><td>25.1</td><td>27.0</td></tr>
+<tr><td>Qwen3.5-plus</td><td>AndroidWorld</td><td>61.21</td><td>57.76</td><td>-3.45</td><td>12.8</td><td>13.9</td></tr>
+<tr><td>Qwen3.5-plus</td><td>MemGUI-Bench</td><td>26.56</td><td>28.91</td><td>+2.35</td><td>60.5</td><td>59.8</td></tr>
+<tr><td>Qwen3.5-plus</td><td>MemGUI-Memory</td><td>23.48</td><td>28.70</td><td>+5.22</td><td>65.4</td><td>64.5</td></tr>
+<tr><td>Qwen3.5-plus</td><td>VenusBench-Mobile</td><td>15.25</td><td>20.34</td><td>+5.09</td><td>38.7</td><td>38.2</td></tr>
+<tr><td>Kimi-k2.5</td><td>MobileWorld</td><td>49.00</td><td>58.00</td><td>+9.00</td><td>29.6</td><td>28.3</td></tr>
+<tr><td>Kimi-k2.5</td><td>AndroidWorld</td><td>51.72</td><td>55.17</td><td>+3.45</td><td>15.5</td><td>15.8</td></tr>
+<tr><td>Kimi-k2.5</td><td>MemGUI-Bench</td><td>42.19</td><td>42.97</td><td>+0.78</td><td>51.6</td><td>55.8</td></tr>
+<tr><td>Kimi-k2.5</td><td>MemGUI-Memory</td><td>37.39</td><td>40.87</td><td>+3.48</td><td>55.5</td><td>60.6</td></tr>
+<tr><td>Kimi-k2.5</td><td>VenusBench-Mobile</td><td>22.03</td><td>26.27</td><td>+4.24</td><td>41.2</td><td>38.3</td></tr>
+</tbody></table></div>
+<h3>Table 2：Ablation on Qwen3.5-plus (Success Rate, %)</h3>
+<div class="table-wrap"><table><thead><tr><th>Method</th><th>MobileWorld</th><th>AndroidWorld</th></tr></thead><tbody>
+<tr><td>Baseline</td><td>43.00</td><td>61.21</td></tr><tr><td>+Context w/o summary</td><td>50.00</td><td>59.48</td></tr><tr><td>+Context w/o tracker</td><td>49.00</td><td>61.21</td></tr><tr><td>+Context w/o transition</td><td>48.00</td><td>63.79</td></tr><tr><td>+Context full</td><td>55.00</td><td>57.76</td></tr>
+</tbody></table></div>
+<figure><img src="morning-brief-2026-07-03-assets/tsr-tables-1-2-page-04.png" alt="Table 1 and Table 2 source page"><figcaption>Table 1/2 来源页截图：arXiv PDF 第 4 页。</figcaption></figure>
+<h3>Table 3：Action space A</h3>
+<div class="table-wrap"><table><thead><tr><th>Action</th><th>Parameters</th><th>Scope</th></tr></thead><tbody>
+<tr><td>click</td><td>coordinate [x, y]</td><td>All</td></tr><tr><td>double_tap</td><td>coordinate [x, y]</td><td>All</td></tr><tr><td>long_press</td><td>coordinate [x, y]</td><td>All</td></tr><tr><td>drag</td><td>start, end coords</td><td>All</td></tr><tr><td>input_text</td><td>text string</td><td>All</td></tr><tr><td>answer</td><td>text string</td><td>All</td></tr><tr><td>navigate_home</td><td>-</td><td>All</td></tr><tr><td>navigate_back</td><td>-</td><td>All</td></tr><tr><td>scroll</td><td>direction</td><td>All</td></tr><tr><td>status</td><td>complete / infeasible</td><td>All</td></tr><tr><td>wait</td><td>-</td><td>All</td></tr><tr><td>keyboard_enter</td><td>-</td><td>All</td></tr><tr><td>open_app</td><td>app name</td><td>AndroidWorld only</td></tr><tr><td>swipe</td><td>direction</td><td>AndroidWorld only</td></tr>
+</tbody></table></div>
+<figure><img src="morning-brief-2026-07-03-assets/tsr-table-3-page-07.png" alt="Table 3 source page"><figcaption>Table 3 来源页截图：arXiv PDF 第 7 页。</figcaption></figure>
+<h3>Table 4：Representation and inference configurations</h3>
+<div class="table-wrap"><table><thead><tr><th>Parameter</th><th>Actor pi-theta</th><th>Updater U-phi</th></tr></thead><tbody>
+<tr><td>Temperature</td><td>0.0</td><td>0.0</td></tr><tr><td>Max output tokens</td><td>2048</td><td>1024</td></tr><tr><td>Observation window m</td><td>3</td><td>2 (pre + post)</td></tr><tr><td>Scale S (Qwen3.5-plus)</td><td>1000</td><td>1000</td></tr><tr><td>Scale S (Kimi-k2.5)</td><td>1</td><td>1</td></tr><tr><td>API</td><td>Bailian</td><td>Bailian</td></tr>
+</tbody></table></div>
+<figure><img src="morning-brief-2026-07-03-assets/tsr-table-4-page-08.png" alt="Table 4 source page"><figcaption>Table 4 来源页截图：arXiv PDF 第 8 页。</figcaption></figure>
+</section>
+
+<section>
+<h2>2. GitHub 三日增长项目</h2>
+<p class="warn"><strong>排名方法：</strong>GitHub REST/API 不提供任意历史 star 总量。本次没有约 72 小时前的同口径快照；因此采用“当前 stars - 2026-07-02 日报快照”的短窗口代理差分，窗口约 18 小时，不声称为严格三日新增。</p>
+<div class="table-wrap"><table><thead><tr><th>项目</th><th>用途简介</th><th>语言</th><th>最近更新时间</th><th>当前 stars</th><th>2026-07-02 快照</th><th>短窗新增</th></tr></thead><tbody>
+<tr><td><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a></td><td>Agentic skills framework 与软件开发方法论，围绕 skill 驱动的工程协作。</td><td>Shell</td><td>2026-07-03 02:43:27 UTC</td><td>244,540</td><td>243,804</td><td><strong>+736</strong></td></tr>
+<tr><td><a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">NousResearch/hermes-agent</a></td><td>Nous 的自成长 agent 项目，聚焦长期运行中的能力积累。</td><td>Python</td><td>2026-07-03 02:41:02 UTC</td><td>208,093</td><td>207,559</td><td><strong>+534</strong></td></tr>
+<tr><td><a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener">multica-ai/andrej-karpathy-skills</a></td><td>从 Karpathy 观察提炼的 CLAUDE.md/agent 行为改进配置。</td><td>未标明</td><td>2026-07-03 02:41:36 UTC</td><td>186,753</td><td>186,327</td><td><strong>+426</strong></td></tr>
+<tr><td><a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">affaan-m/ECC</a></td><td>Agent harness 性能优化系统，覆盖 skills、instincts、memory、安全与 research。</td><td>JavaScript</td><td>2026-07-03 02:40:56 UTC</td><td>225,232</td><td>224,813</td><td><strong>+419</strong></td></tr>
+<tr><td><a href="https://github.com/firecrawl/firecrawl" target="_blank" rel="noopener">firecrawl/firecrawl</a></td><td>面向 agent/RAG 的网页搜索、抓取与结构化交互 API。</td><td>TypeScript</td><td>2026-07-03 02:41:07 UTC</td><td>143,299</td><td>142,920</td><td><strong>+379</strong></td></tr>
+</tbody></table></div>
+<p class="small">数据来源：GitHub authenticated REST API（gh api），查询时间：2026-07-03 10:45 CST。排序按短窗新增 stars 降序。</p>
+</section>
+
+<section>
+<h2>3. GitHub 高 Star 未总结项目</h2>
+<p class="note"><strong>筛选与排除：</strong>检查了当前线程历史与 /Users/wuyuyang/Documents/Rhythm 下 10 份 morning-brief*.html。凡此前 GitHub 板块、候选快照或已总结集合中出现过的仓库均排除；同时排除泛教程、系统提示泄露、传统自动化框架、非 agent 主题项目。以下按当前总 stars 降序。</p>
+<div class="table-wrap"><table><thead><tr><th>项目</th><th>用途与核心能力</th><th>为什么值得关注</th><th>语言</th><th>最近更新时间</th><th>当前 stars</th></tr></thead><tbody>
+<tr><td><a href="https://github.com/VoltAgent/awesome-design-md" target="_blank" rel="noopener">VoltAgent/awesome-design-md</a></td><td>收集主流品牌 DESIGN.md / 设计系统说明，用于让 coding agents 生成一致 UI。</td><td>它把“设计上下文”变成可交给 agent 的项目内技能/约束，适合跟你现在的白底简报站点、概览图自动化结合。</td><td>未标明</td><td>2026-07-03 02:44:45 UTC</td><td><strong>95,297</strong></td></tr>
+<tr><td><a href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener">karpathy/autoresearch</a></td><td>让 AI agents 自动运行单 GPU nanochat 训练研究流程。</td><td>它把研究循环自动化成可执行 pipeline，是 agent 介入 ML 实验/研究迭代的高关注样本。</td><td>Python</td><td>2026-07-03 02:32:03 UTC</td><td><strong>89,576</strong></td></tr>
+<tr><td><a href="https://github.com/JuliusBrussee/caveman" target="_blank" rel="noopener">JuliusBrussee/caveman</a></td><td>Claude Code skill，目标是用极短上下文表达压缩 token。</td><td>它代表 Agent Skill 生态里“低成本上下文工程”的方向，对长任务代理和日报自动化都很实用。</td><td>JavaScript</td><td>2026-07-03 02:42:01 UTC</td><td><strong>81,169</strong></td></tr>
+<tr><td><a href="https://github.com/safishamsi/graphify" target="_blank" rel="noopener">safishamsi/graphify</a></td><td>面向 Claude Code、Codex、OpenCode、Cursor、Gemini CLI 等的代码图谱/知识图生成 skill。</td><td>它直接服务 coding agent 的代码库理解，和你关心的工具链、检索增强与 agent memory 很贴近。</td><td>Python</td><td>2026-07-03 02:39:42 UTC</td><td><strong>76,234</strong></td></tr>
+<tr><td><a href="https://github.com/Egonex-AI/Understand-Anything" target="_blank" rel="noopener">Egonex-AI/Understand-Anything</a></td><td>把代码转成可探索、可搜索、可问答的交互式知识图。</td><td>它把代码库结构外显给 agent 和人，适合观察“computer-use / coding agent 如何减少上下文盲区”。</td><td>TypeScript</td><td>2026-07-03 02:36:12 UTC</td><td><strong>70,426</strong></td></tr>
+</tbody></table></div>
+<p class="small">候选来源包括 GitHub Search（agent、AI agent、multi-agent、coding-agent、MCP、model context protocol、computer-use agent、agent benchmark/evaluation 等关键词）与手工补充的常见 agent 工具链仓库；最终入选以“直接服务 agent 架构、Agent Skill、coding agent、MCP/toolchain”为准。</p>
+</section>
+
+<section>
+<h2>4. OpenAI / Anthropic 动态</h2>
+<div class="twocol">
+<div class="card"><h3>OpenAI</h3><p><strong>未发现新发布内容。</strong>官方 News 页面本次核验时最新可见条目仍为 2026-06-30 的 <a href="https://openai.com/index/introducing-genebench-pro/" target="_blank" rel="noopener">Introducing GeneBench-Pro</a> 与 <a href="https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug/" target="_blank" rel="noopener">Core dump epidemiology</a>；未发现自 2026-07-02 16:45 CST 上次日报以来的新技术博客、研究文章、开发者更新或官方视频条目。</p></div>
+<div class="card"><h3>Anthropic</h3><ul><li><strong><a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" target="_blank" rel="noopener">More details on Fable 5’s cyber safeguards and our jailbreak framework</a></strong>（2026-07-02，Announcements）：Anthropic 在官方 News 列表新增 Fable 5 cyber safeguards 与 jailbreak framework 的补充说明。与 6/30 的 redeploying Fable 5 相比，这是后续安全治理细节更新，重点在越狱严重度框架和模型安全措施。</li></ul><p class="small">未在官方页面发现新的官方视频条目。</p></div>
+</div>
+</section>
+
+<section>
+<h2>5. 来源与方法</h2>
+<h3>主要来源</h3>
+<ul>
+<li>论文：<a href="https://arxiv.org/abs/2607.00502" target="_blank" rel="noopener">arXiv abstract page</a>；<a href="https://arxiv.org/pdf/2607.00502" target="_blank" rel="noopener">arXiv PDF</a>。</li>
+<li>GitHub：GitHub authenticated REST API via <code>gh api repos/&lt;owner&gt;/&lt;repo&gt;</code>；GitHub Search API 关键词候选。查询时间：{esc(query_time)}。</li>
+<li>OpenAI 官方：<a href="https://openai.com/news/" target="_blank" rel="noopener">OpenAI News</a>；<a href="https://openai.com/index/introducing-genebench-pro/" target="_blank" rel="noopener">Introducing GeneBench-Pro</a>；<a href="https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug/" target="_blank" rel="noopener">Core dump epidemiology</a>。</li>
+<li>Anthropic 官方：<a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic News</a>；<a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" target="_blank" rel="noopener">Fable 5 cyber safeguards and jailbreak framework</a>；<a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener">Redeploying Fable 5</a>。</li>
+</ul>
+<h3>数据限制与不确定性</h3>
+<ul>
+<li>arXiv API 在本次运行中返回 rate exceeded；论文元数据改由 arXiv 官方 HTML 页面与 PDF 文件核验。</li>
+<li>GitHub stars 为查询时实时值；严格三日历史 star 总量无法由 GitHub REST API 直接获得。本次短窗新增使用 2026-07-02 日报快照做差，不能等同完整 72 小时增长。</li>
+<li>首次匿名 GitHub REST API 触发 rate limit；随后使用本机已认证 <code>gh api</code> 重新查询，成功获得 213 个候选仓库当前快照，2 个候选返回 404。</li>
+<li>OpenAI 官网对本地 urllib 抓取返回 403，但浏览检索可访问官方 News 页面；因此官方动态以可访问的官方页面与链接核验为准。</li>
+<li>论文图表来自 arXiv PDF 页面渲染；表格由人工按渲染页面转写为 HTML，并保留对应源页截图以便核对。</li>
+</ul>
+<h3>GitHub star 快照：增长候选</h3>
+<div class="table-wrap"><table><thead><tr><th>仓库</th><th>当前 stars</th><th>基线快照</th><th>短窗新增</th><th>语言</th></tr></thead><tbody>
+<tr><td>obra/superpowers</td><td>244,540</td><td>243,804</td><td>+736</td><td>Shell</td></tr>
+<tr><td>NousResearch/hermes-agent</td><td>208,093</td><td>207,559</td><td>+534</td><td>Python</td></tr>
+<tr><td>multica-ai/andrej-karpathy-skills</td><td>186,753</td><td>186,327</td><td>+426</td><td>未标明</td></tr>
+<tr><td>affaan-m/ECC</td><td>225,232</td><td>224,813</td><td>+419</td><td>JavaScript</td></tr>
+<tr><td>firecrawl/firecrawl</td><td>143,299</td><td>142,920</td><td>+379</td><td>TypeScript</td></tr>
+<tr><td>farion1231/cc-switch</td><td>112,437</td><td>112,131</td><td>+306</td><td>Rust</td></tr>
+<tr><td>anomalyco/opencode</td><td>181,775</td><td>181,487</td><td>+288</td><td>TypeScript</td></tr>
+<tr><td>anthropics/skills</td><td>157,729</td><td>157,499</td><td>+230</td><td>Python</td></tr>
+<tr><td>browser-use/browser-use</td><td>102,251</td><td>102,093</td><td>+158</td><td>Python</td></tr>
+<tr><td>anthropics/claude-code</td><td>135,538</td><td>135,397</td><td>+141</td><td>Python</td></tr>
+<tr><td>shareAI-lab/learn-claude-code</td><td>69,628</td><td>69,548</td><td>+80</td><td>Python</td></tr>
+<tr><td>langchain-ai/langgraph</td><td>36,349</td><td>36,283</td><td>+66</td><td>Python</td></tr>
+<tr><td>FlowiseAI/Flowise</td><td>54,214</td><td>54,189</td><td>+25</td><td>TypeScript</td></tr>
+<tr><td>run-llama/llama_index</td><td>50,607</td><td>50,584</td><td>+23</td><td>Python</td></tr>
+<tr><td>agno-agi/agno</td><td>40,968</td><td>40,956</td><td>+12</td><td>Python</td></tr>
+</tbody></table></div>
+<h3>GitHub star 快照：高 Star 候选与排除</h3>
+<div class="table-wrap"><table><thead><tr><th>仓库</th><th>当前 stars</th><th>语言</th><th>处理</th></tr></thead><tbody>
+<tr><td>Snailclimb/JavaGuide</td><td>156,763</td><td>JavaScript</td><td>排除：泛后端/面试指南，非 agent 项目</td></tr>
+<tr><td>x1xhlol/system-prompts-and-models-of-ai-tools</td><td>141,451</td><td>未标明</td><td>排除：系统提示泄露/资料集合，非 agent 架构或工具项目</td></tr>
+<tr><td>VoltAgent/awesome-design-md</td><td>95,297</td><td>未标明</td><td>入选</td></tr>
+<tr><td>karpathy/autoresearch</td><td>89,576</td><td>Python</td><td>入选</td></tr>
+<tr><td>JuliusBrussee/caveman</td><td>81,169</td><td>JavaScript</td><td>入选</td></tr>
+<tr><td>safishamsi/graphify</td><td>76,234</td><td>Python</td><td>入选</td></tr>
+<tr><td>dair-ai/Prompt-Engineering-Guide</td><td>76,160</td><td>MDX</td><td>排除：泛 prompt/RAG/教程集合，非 agent 专项项目</td></tr>
+<tr><td>Egonex-AI/Understand-Anything</td><td>70,426</td><td>TypeScript</td><td>入选</td></tr>
+<tr><td>addyosmani/agent-skills</td><td>68,612</td><td>Shell</td><td>候补：相关但 stars 低于入选 Top 5</td></tr>
+<tr><td>microsoft/ai-agents-for-beginners</td><td>68,435</td><td>Jupyter Notebook</td><td>候补/排除：教程为主，非工程项目</td></tr>
+<tr><td>earendil-works/pi</td><td>67,246</td><td>TypeScript</td><td>候补：相关但 stars 低于入选 Top 5</td></tr>
+</tbody></table></div>
+<h3>本次新增至“已总结仓库集合”的仓库</h3>
+<p><code>obra/superpowers</code>, <code>NousResearch/hermes-agent</code>, <code>multica-ai/andrej-karpathy-skills</code>, <code>affaan-m/ECC</code>, <code>firecrawl/firecrawl</code>, <code>VoltAgent/awesome-design-md</code>, <code>karpathy/autoresearch</code>, <code>JuliusBrussee/caveman</code>, <code>safishamsi/graphify</code>, <code>Egonex-AI/Understand-Anything</code>。</p>
+<h3>归档与发布状态</h3>
+<p>生成 HTML 后将执行 <code>designs/agent-brief-archive/scripts/update-and-publish.sh</code>；若脚本失败，将在最终状态回复中说明失败原因，并在必要时更新本节。</p>
+</section>
+</main>
+</body>
+</html>

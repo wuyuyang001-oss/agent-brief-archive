@@ -1,6 +1,73 @@
 {
-  "generatedAt": "2026-07-03T02:51:58.724Z",
+  "generatedAt": "2026-07-06T07:39:29.559Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-06.html",
+      "date": "2026-07-06",
+      "weekday": "周一",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution",
+      "summary": "选择理由： 7/4-7/6 期间未发现比这篇更贴合 coding agent benchmark 的新论文。TestEvo-Bench 直接评估 agent 是否能让测试与代码变更共同演化，并提供可执行 runner、动态标签、时间戳切分与 live benchmark 机制，比只看静态 diff 或覆盖率…",
+      "source": "briefs/morning-brief-2026-07-06.html",
+      "overview": "overviews/morning-brief-2026-07-06.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 2657,
+          "text": "obra/superpowers Agentic skills framework 与软件开发方法论，围绕 skill 驱动的软件工程协作。 Shell 2026-07-06 07:32:08 UTC 247,197 244,540 +2…"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 2076,
+          "text": "firecrawl/firecrawl 面向 agent/RAG 的网页搜索、抓取、结构化提取与交互 API。 TypeScript 2026-07-06 07:30:44 UTC 145,375 143,299 +2,076"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1801,
+          "text": "NousResearch/hermes-agent Nous 的自成长 agent 项目，关注持续运行中的能力与记忆增长。 Python 2026-07-06 07:32:29 UTC 209,894 208,093 +1,801"
+        },
+        {
+          "repo": "multica-ai/andrej-karpathy-skills",
+          "label": "multica-ai/andrej-karpathy-skills",
+          "value": 1432,
+          "text": "multica-ai/andrej-karpathy-skills 从 Karpathy 观察提炼的 CLAUDE.md/agent 行为改进配置。 未标明 2026-07-06 07:30:06 UTC 188,185 186,753 …"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 1239,
+          "text": "farion1231/cc-switch 跨平台桌面助手，用于 Claude Code、Codex、OpenCode、OpenClaw 等 agent 切换与调度。 Rust 2026-07-06 07:32:22 UTC 113,676…"
+        },
+        {
+          "repo": "addyosmani/agent-skills",
+          "label": "addyosmani/agent-skills",
+          "value": 70099,
+          "text": "addyosmani/agent-skills 生产级 engineering skills 集合，面向 AI coding agents。 把可复用工程经验沉淀为 agent 可执行技能，是 Agent Skill 生态的高 star …"
+        },
+        {
+          "repo": "earendil-works/pi",
+          "label": "earendil-works/pi",
+          "value": 67933,
+          "text": "earendil-works/pi 统一 LLM API、agent loop、TUI、coding agent CLI 的 agent toolkit。 把 agent runtime 与开发者终端体验放在一起，适合观察轻量 codin…"
+        },
+        {
+          "repo": "code-yeongyu/oh-my-openagent",
+          "label": "code-yeongyu/oh-my-openagent",
+          "value": 64972,
+          "text": "code-yeongyu/oh-my-openagent 面向大型代码库的 coding agent harness / lazycodex 工具。 它把复杂代码库协作、token 预算和 agent harness 做成一体化体验。 T…"
+        }
+      ],
+      "githubRepoCount": 10,
+      "figureCount": 12,
+      "tableCount": 6,
+      "linkCount": 36,
+      "officialStatus": "未发现新发布内容",
+      "tags": "2026-07-06 TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-03.html",
       "date": "2026-07-03",

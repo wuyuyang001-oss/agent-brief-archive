@@ -1,6 +1,73 @@
 {
-  "generatedAt": "2026-07-08T07:31:31.898Z",
+  "generatedAt": "2026-07-10T03:00:53.864Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-10.html",
+      "date": "2026-07-10",
+      "weekday": "周五",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search",
+      "summary": "选择理由： 该论文于 2026-07-09 提交，晚于 2026-07-08 简报的信息截止时间；主题直接命中 agent 架构：用递归 delegation tree、search mode、web-probing 和同层经验复用来改进复杂网页信息搜索。",
+      "source": "briefs/morning-brief-2026-07-10.html",
+      "overview": "overviews/morning-brief-2026-07-10.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 1901,
+          "text": "obra/superpowers An agentic skills framework & software development methodology that works. Shell 2026-07-10T02:51:04Z …"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1107,
+          "text": "NousResearch/hermes-agent The agent that grows with you Python 2026-07-10T02:49:06Z 212,265 211,158 +1,107"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 1067,
+          "text": "firecrawl/firecrawl The API to search, scrape, and interact with the web at scale. 🔥 TypeScript 2026-07-10T02:50:59Z 1…"
+        },
+        {
+          "repo": "multica-ai/andrej-karpathy-skills",
+          "label": "multica-ai/andrej-karpathy-skills",
+          "value": 922,
+          "text": "multica-ai/andrej-karpathy-skills A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy…"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 809,
+          "text": "farion1231/cc-switch A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini C…"
+        },
+        {
+          "repo": "open-webui/open-webui",
+          "label": "open-webui/open-webui",
+          "value": 144889,
+          "text": "open-webui/open-webui User-friendly AI Interface (Supports Ollama, OpenAI API, ...) 自托管 AI 工作台，topics 含 MCP/RAG/openapi…"
+        },
+        {
+          "repo": "D4Vinci/Scrapling",
+          "label": "D4Vinci/Scrapling",
+          "value": 68914,
+          "text": "D4Vinci/Scrapling 🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale …"
+        },
+        {
+          "repo": "headroomlabs-ai/headroom",
+          "label": "headroomlabs-ai/headroom",
+          "value": 58194,
+          "text": "headroomlabs-ai/headroom Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tok…"
+        }
+      ],
+      "githubRepoCount": 10,
+      "figureCount": 13,
+      "tableCount": 10,
+      "linkCount": 44,
+      "officialStatus": "11 条官方链接/动态",
+      "tags": "2026-07-10 WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-08.html",
       "date": "2026-07-08",

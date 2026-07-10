@@ -1,6 +1,15 @@
 # AI / Agent Morning Brief Archive
 
-This folder is a static website that collects the generated AI / Agent morning briefs. It now also generates one visual overview image for each daily brief.
+This folder is a static research console for the generated AI / Agent morning briefs. It prioritizes decision-ready summaries, model and product signals, evaluation methods, reusable tools, and one visual overview image per brief.
+
+The public UI includes:
+
+- a compact 90-second decision summary before the full report
+- topic views for model capability, Agent products, evaluation methods, and architecture/tools
+- verified OpenAI/Anthropic or leader signals extracted from each report
+- repository-name search across all historical GitHub links
+- a responsive full-screen reader on mobile
+- private feedback states and notes stored only in the current browser via `localStorage`
 
 ## Local Preview
 
@@ -31,6 +40,7 @@ The script will:
 - generate one SVG overview image per brief under `overviews/`
 - write extracted metadata to `data/briefs.json`
 - rebuild `index.html` so the newest brief is the default entry
+- add lazy loading to copied report images without modifying the source reports
 
 Each overview image includes the day's paper title and summary, key counts, and a GitHub project trend/proxy bar chart extracted from the brief tables.
 
@@ -40,7 +50,7 @@ To update the public GitHub Pages site in one step, run:
 designs/agent-brief-archive/scripts/update-and-publish.sh
 ```
 
-That command regenerates the archive, commits any changed files, and pushes to GitHub. GitHub Pages then serves the latest version from the `main` branch.
+That command regenerates the archive, commits any changed files, and pushes to GitHub. It can use either `node` from `PATH` or the bundled Codex Node runtime. GitHub Pages then serves the latest version from the `main` branch.
 
 ## Deploy
 

@@ -3,646 +3,831 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI / Agent 晨间简报档案站</title>
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="面向 Agent 产品与评测产品的技术红利、模型能力、评测方法和工具趋势研究档案。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23155eef'/%3E%3Cpath d='M17 43 29 17h7l12 26h-8l-2-6H27l-2 6Zm13-13h6l-3-8Z' fill='white'/%3E%3C/svg%3E">
+  <title>Agent 技术红利与产品机会雷达</title>
   <style>
     :root {
       color-scheme: light;
-      --bg: #f6f8fb;
+      --canvas: #f4f7fb;
       --paper: #ffffff;
-      --panel: #f8fbff;
-      --ink: #132334;
-      --muted: #607184;
-      --faint: #8ba0b4;
-      --line: #d8e4ef;
-      --blue: #0a67a3;
-      --green: #087f5b;
-      --violet: #4f46e5;
-      --amber: #a15c00;
-      --red: #b42355;
-      --shadow: 0 18px 48px rgba(19, 35, 52, .10);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Noto Sans SC", sans-serif;
+      --ink: #102033;
+      --muted: #526176;
+      --quiet: #6b7890;
+      --line: #d9e1ec;
+      --line-strong: #c6d1df;
+      --blue: #155eef;
+      --blue-soft: #eef4ff;
+      --green: #087a5b;
+      --green-soft: #eaf8f3;
+      --amber: #9a5b00;
+      --amber-soft: #fff6e8;
+      --red: #b42318;
+      --radius: 18px;
+      --shadow: 0 14px 40px rgba(30, 50, 75, .08);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Noto Sans SC", sans-serif;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 16% 0%, rgba(10,103,163,.10), transparent 34rem),
-        radial-gradient(circle at 90% 10%, rgba(8,127,91,.08), transparent 32rem),
-        linear-gradient(180deg, #f7faff 0%, #eef5fb 46%, #f8fafc 100%);
-    }
+    html { min-width: 0; background: var(--canvas); scroll-behavior: smooth; }
+    [hidden] { display: none !important; }
+    body { margin: 0; min-width: 0; overflow-x: hidden; color: var(--ink); background: var(--canvas); }
+    button, input, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
     a { color: inherit; text-decoration: none; }
-    .shell { width: min(1480px, calc(100% - 40px)); margin: 0 auto; padding: 34px 0 52px; }
-    .hero {
+    :focus-visible { outline: 3px solid rgba(21, 94, 239, .28); outline-offset: 2px; }
+    .page { width: min(1640px, 100%); margin: 0 auto; padding: 18px 22px 24px; }
+    .topbar {
       display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr);
-      gap: 20px;
-      align-items: stretch;
-      margin-bottom: 20px;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 24px;
+      padding: 8px 2px 15px;
+      border-bottom: 1px solid var(--line-strong);
     }
-    .hero-main, .signal-panel, .toolbar, .archive-card, .reader, .method-card {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.92);
+    .brand-line { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(8, 122, 91, .10); }
+    .kicker { color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(25px, 3.2vw, 42px); line-height: 1.08; letter-spacing: -.045em; }
+    .brand p { margin: 7px 0 0; max-width: 820px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .top-stats { display: flex; align-items: center; gap: 8px; color: var(--quiet); font-size: 12px; white-space: nowrap; }
+    .top-stats span { padding: 7px 9px; border: 1px solid var(--line); border-radius: 9px; background: var(--paper); }
+    .top-stats strong { color: var(--ink); }
+    .track-tabs {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      margin: 0 -2px;
+      padding: 11px 2px 10px;
+      scrollbar-width: none;
+    }
+    .track-tabs::-webkit-scrollbar { display: none; }
+    .track-tab {
+      flex: 0 0 auto;
+      min-height: 36px;
+      padding: 0 13px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      color: var(--muted);
+      background: transparent;
+      font-size: 13px;
+      font-weight: 720;
+      cursor: pointer;
+    }
+    .track-tab:hover { color: var(--blue); background: var(--blue-soft); }
+    .track-tab[aria-pressed="true"] { color: #fff; background: var(--blue); border-color: var(--blue); }
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(330px, 35%) minmax(0, 65%);
+      gap: 14px;
+      min-height: 680px;
+      height: calc(100vh - 147px);
+    }
+    .archive-panel, .reader-panel {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--paper);
       box-shadow: var(--shadow);
     }
-    .hero-main {
-      position: relative;
-      overflow: hidden;
-      min-height: 330px;
-      border-radius: 30px;
-      padding: 34px;
-    }
-    .hero-main::after {
-      content: "";
-      position: absolute;
-      right: -170px;
-      top: -190px;
-      width: 470px;
-      height: 470px;
-      border-radius: 50%;
-      background: conic-gradient(from 120deg, rgba(10,103,163,.20), rgba(79,70,229,.16), rgba(8,127,91,.16), rgba(10,103,163,.20));
-      border: 1px solid rgba(10,103,163,.18);
-      opacity: .82;
-    }
-    .eyebrow {
-      position: relative;
-      display: inline-flex;
+    .archive-panel { display: flex; flex-direction: column; }
+    .panel-tools {
+      display: grid;
+      grid-template-columns: 1fr auto;
       align-items: center;
-      gap: 10px;
-      color: var(--blue);
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: 800;
+      gap: 9px;
+      padding: 11px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfe;
     }
-    .eyebrow::before {
-      content: "";
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 18px rgba(8,127,91,.35);
+    .search-box { position: relative; min-width: 0; }
+    .search-box svg { position: absolute; left: 11px; top: 50%; width: 16px; height: 16px; color: var(--quiet); transform: translateY(-50%); pointer-events: none; }
+    .search-box input {
+      width: 100%;
+      height: 40px;
+      padding: 0 12px 0 35px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      color: var(--ink);
+      background: var(--paper);
+      outline: 0;
     }
-    h1 {
-      position: relative;
-      max-width: 820px;
-      margin: 24px 0 18px;
-      font-size: clamp(42px, 6vw, 78px);
-      line-height: .96;
-      letter-spacing: -.075em;
+    .search-box input:focus { border-color: rgba(21, 94, 239, .55); box-shadow: 0 0 0 3px rgba(21, 94, 239, .08); }
+    .result-count { min-width: 58px; color: var(--quiet); font-size: 12px; text-align: right; }
+    .archive-list { min-height: 0; overflow-y: auto; padding: 7px; scrollbar-color: #c6d1df transparent; }
+    .brief-row {
+      display: grid;
+      grid-template-columns: 108px minmax(0, 1fr);
+      gap: 12px;
+      min-width: 0;
+      padding: 10px;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: border-color .16s ease, background .16s ease, transform .16s ease;
     }
-    .hero p {
-      position: relative;
-      max-width: 760px;
+    .brief-row + .brief-row { margin-top: 3px; }
+    .brief-row:hover { border-color: var(--line); background: #f9fbfe; transform: translateY(-1px); }
+    .brief-row.active { border-color: rgba(21, 94, 239, .35); background: var(--blue-soft); }
+    .brief-thumb { width: 108px; aspect-ratio: 16 / 9; align-self: start; border: 1px solid var(--line); border-radius: 10px; object-fit: cover; background: #fff; }
+    .brief-copy { min-width: 0; }
+    .brief-meta { display: flex; justify-content: space-between; gap: 8px; color: var(--quiet); font-size: 10.5px; font-weight: 720; letter-spacing: .02em; }
+    .brief-meta span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: var(--green); }
+    .brief-row h2 {
+      display: -webkit-box;
+      overflow: hidden;
+      margin: 5px 0 4px;
+      font-size: 14px;
+      line-height: 1.32;
+      letter-spacing: -.015em;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+    .brief-row p {
+      display: -webkit-box;
+      overflow: hidden;
       margin: 0;
       color: var(--muted);
-      font-size: 18px;
-      line-height: 1.74;
+      font-size: 11.5px;
+      line-height: 1.42;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
     }
-    .hero-actions { position: relative; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .button {
+    .brief-tags { display: flex; gap: 5px; align-items: center; margin-top: 7px; overflow: hidden; }
+    .micro-tag {
+      flex: 0 0 auto;
+      padding: 2px 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--quiet);
+      background: #fff;
+      font-size: 9.5px;
+      font-weight: 700;
+    }
+    .feedback-mark { display: none; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+    .brief-row.has-feedback .feedback-mark { display: inline-block; }
+    .empty-list { display: none; padding: 42px 22px; color: var(--muted); font-size: 13px; line-height: 1.6; text-align: center; }
+    .reader-panel { display: flex; flex-direction: column; position: relative; }
+    .reader-empty { display: none; place-items: center; height: 100%; padding: 30px; color: var(--muted); text-align: center; }
+    .reader-panel.is-empty .reader-empty { display: grid; }
+    .reader-panel.is-empty .reader-content { display: none; }
+    .reader-content { display: flex; flex: 1; flex-direction: column; min-height: 0; }
+    .reader-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+      min-height: 56px;
+      padding: 9px 13px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfe;
+    }
+    .reader-heading { min-width: 0; }
+    .reader-heading strong { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 13.5px; }
+    .reader-heading span { display: block; margin-top: 3px; color: var(--quiet); font-size: 10.5px; }
+    .reader-actions { display: flex; align-items: center; gap: 6px; }
+    .compact-link, .close-reader {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 44px;
-      padding: 0 17px;
-      border: 1px solid rgba(10,103,163,.22);
-      border-radius: 999px;
-      background: rgba(10,103,163,.08);
-      color: #084d7a;
-      font-size: 14px;
-      font-weight: 800;
+      min-height: 34px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      color: var(--muted);
+      background: #fff;
+      font-size: 11.5px;
+      font-weight: 760;
+      cursor: pointer;
     }
-    .button.secondary { color: var(--muted); border-color: var(--line); background: #fff; }
-    .signal-panel { border-radius: 30px; padding: 22px; display: grid; gap: 18px; }
-    .stat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .stat { min-height: 112px; border: 1px solid var(--line); border-radius: 20px; padding: 16px; background: var(--panel); }
-    .stat strong { display: block; color: var(--blue); font-size: 34px; letter-spacing: -.04em; }
-    .stat span { display: block; margin-top: 7px; color: var(--muted); font-size: 13px; line-height: 1.45; }
-    .latest { border: 1px solid rgba(8,127,91,.18); border-radius: 22px; padding: 18px; background: linear-gradient(135deg, rgba(8,127,91,.07), rgba(10,103,163,.05)); }
-    .latest .label { color: var(--green); font-size: 12px; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
-    .latest h2 { margin: 10px 0 9px; font-size: 22px; line-height: 1.2; letter-spacing: -.03em; }
-    .latest p { font-size: 14px; line-height: 1.62; }
-    .mini-timeline { display: grid; grid-template-columns: repeat(14, 1fr); gap: 7px; align-items: end; margin-top: 14px; min-height: 148px; }
-    .timeline-bar { display: grid; gap: 7px; align-items: end; justify-items: center; color: var(--faint); font-size: 11px; }
-    .timeline-bar span { width: 100%; max-width: 34px; border-radius: 999px 999px 8px 8px; background: linear-gradient(180deg, var(--blue), var(--green)); }
-    .toolbar { position: sticky; top: 14px; z-index: 4; display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; margin: 20px 0; padding: 14px; border-radius: 22px; }
-    .search { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 15px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
-    .search span { color: var(--blue); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; }
-    input[type="search"] { width: 100%; border: 0; outline: 0; color: var(--ink); background: transparent; font: inherit; }
-    input[type="search"]::placeholder { color: var(--faint); }
-    .filters { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
-    .filter { border: 1px solid var(--line); border-radius: 999px; padding: 10px 13px; background: #fff; color: var(--muted); font: inherit; font-size: 13px; cursor: pointer; }
-    .filter[aria-pressed="true"] { color: #fff; background: var(--blue); border-color: var(--blue); }
-    .layout { display: grid; grid-template-columns: minmax(430px, .46fr) minmax(0, .54fr); gap: 20px; align-items: start; }
-    .archive-grid { display: grid; gap: 14px; }
-    .archive-card { overflow: hidden; display: grid; grid-template-columns: 180px 1fr; gap: 15px; border-radius: 24px; padding: 14px; transition: transform .18s ease, border-color .18s ease; cursor: pointer; }
-    .archive-card:hover, .archive-card.active { transform: translateY(-2px); border-color: rgba(10,103,163,.45); }
-    .overview-thumb { width: 180px; aspect-ratio: 16 / 9; border: 1px solid var(--line); border-radius: 16px; background: #fff; object-fit: cover; }
-    .card-body { display: grid; gap: 10px; min-width: 0; }
-    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-    .date { display: flex; flex-direction: column; gap: 2px; color: var(--blue); font-weight: 850; letter-spacing: -.01em; }
-    .date small { color: var(--faint); font-size: 12px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
-    .badge-row, .meta-row { display: flex; flex-wrap: wrap; gap: 7px; }
-    .badge { display: inline-flex; align-items: center; min-height: 25px; padding: 0 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: #fff; font-size: 12px; font-weight: 750; }
-    .badge.paper { color: var(--green); border-color: rgba(8,127,91,.22); }
-    .badge.weekly { color: var(--amber); border-color: rgba(161,92,0,.22); }
-    .badge.test { color: var(--red); border-color: rgba(180,35,85,.22); }
-    .archive-card h3 { margin: 0; font-size: 19px; line-height: 1.32; letter-spacing: -.035em; }
-    .archive-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.62; }
-    .card-actions { display: flex; flex-wrap: wrap; gap: 9px; align-items: center; }
-    .text-link { display: inline-flex; align-items: center; min-height: 34px; padding: 0 11px; border-radius: 999px; color: var(--blue); background: rgba(10,103,163,.08); font-size: 13px; font-weight: 850; }
-    .text-link.soft { color: var(--green); background: rgba(8,127,91,.08); }
-    .reader { position: sticky; top: 104px; overflow: hidden; border-radius: 28px; min-height: calc(100vh - 126px); }
-    .reader-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 16px 18px; border-bottom: 1px solid var(--line); background: #fbfdff; }
-    .reader-title { min-width: 0; }
-    .reader-title strong { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 14px; letter-spacing: .02em; }
-    .reader-title span { display: block; margin-top: 3px; color: var(--faint); font-size: 12px; }
-    .overview-preview { display: block; width: 100%; background: #fff; border-bottom: 1px solid var(--line); }
-    .overview-preview img { display: block; width: 100%; height: auto; }
-    .reader iframe { display: block; width: 100%; height: calc(100vh - 500px); min-height: 460px; border: 0; background: #fff; }
-    .method { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
-    .method-card { border-radius: 24px; padding: 20px; }
-    .method-card h2, .method-card h3 { margin: 0 0 10px; font-size: 17px; letter-spacing: -.02em; }
-    .method-card p, .method-card li { color: var(--muted); font-size: 14px; line-height: 1.7; }
-    .method-card p { margin: 0; }
-    .method-card ul { margin: 0; padding-left: 18px; }
-    .empty { display: none; border: 1px dashed rgba(10,103,163,.28); border-radius: 24px; padding: 28px; color: var(--muted); text-align: center; background: rgba(255,255,255,.64); }
-    code { padding: 2px 5px; border-radius: 6px; background: #eef3f8; color: #19354c; }
-    @media (max-width: 1120px) {
-      .hero, .layout, .method { grid-template-columns: 1fr; }
-      .reader { position: relative; top: 0; }
-      .toolbar { position: relative; top: 0; grid-template-columns: 1fr; }
-      .filters { justify-content: flex-start; }
-      .reader iframe { height: 72vh; }
+    .compact-link.primary { color: var(--blue); border-color: rgba(21, 94, 239, .24); background: var(--blue-soft); }
+    .close-reader { display: none; width: 34px; padding: 0; font-size: 18px; }
+    details { min-width: 0; }
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    .decision { border-bottom: 1px solid var(--line); background: #fff; }
+    .decision > summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 40px;
+      padding: 7px 13px;
     }
-    @media (max-width: 720px) {
-      .shell { width: min(100% - 22px, 1480px); padding-top: 18px; }
-      .hero-main, .signal-panel { border-radius: 22px; padding: 22px; }
-      .stat-grid { grid-template-columns: 1fr; }
-      .archive-card { grid-template-columns: 1fr; }
-      .overview-thumb { width: 100%; }
+    .summary-label { display: flex; align-items: center; gap: 8px; min-width: 0; font-size: 12px; font-weight: 800; }
+    .summary-label::before { content: "90s"; padding: 3px 6px; border-radius: 6px; color: var(--blue); background: var(--blue-soft); font: 800 9px ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .summary-meta { overflow: hidden; color: var(--quiet); font-size: 10.5px; white-space: nowrap; text-overflow: ellipsis; }
+    .decision > summary::after, .overview-fold > summary::after, .feedback-panel > summary::after { content: "＋"; flex: 0 0 auto; color: var(--quiet); font-size: 14px; }
+    .decision[open] > summary::after, .overview-fold[open] > summary::after, .feedback-panel[open] > summary::after { content: "−"; }
+    .decision-body { padding: 0 13px 11px; }
+    .decision-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; }
+    .decision-card { min-width: 0; min-height: 86px; padding: 9px 10px; border: 1px solid var(--line); border-radius: 10px; background: #fbfcfe; }
+    .decision-card b { display: block; margin-bottom: 5px; color: var(--blue); font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; }
+    .decision-card p { display: -webkit-box; overflow: hidden; margin: 0; color: var(--muted); font-size: 10.5px; line-height: 1.43; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
+    .decision-foot { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 7px; }
+    .signal-chip { min-width: 0; padding: 7px 9px; border-radius: 9px; color: var(--muted); background: var(--green-soft); font-size: 10.5px; line-height: 1.4; }
+    .signal-chip b { color: var(--green); }
+    .signal-chip.action { background: var(--amber-soft); }
+    .signal-chip.action b { color: var(--amber); }
+    .leader-signal {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 10px;
+      min-height: 66px;
+      padding: 8px 13px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(21, 94, 239, .035), transparent 58%);
+    }
+    .signal-kind { padding: 4px 7px; border: 1px solid rgba(8, 122, 91, .22); border-radius: 7px; color: var(--green); background: var(--green-soft); font-size: 9.5px; font-weight: 800; white-space: nowrap; }
+    .leader-copy { min-width: 0; }
+    .leader-copy strong { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 11.5px; }
+    .leader-copy p { display: block; overflow: hidden; margin: 3px 0 0; color: var(--muted); font-size: 10.5px; line-height: 1.35; white-space: nowrap; text-overflow: ellipsis; }
+    .leader-source { color: var(--blue); font-size: 10.5px; font-weight: 760; white-space: nowrap; }
+    .overview-fold { border-bottom: 1px solid var(--line); background: #fbfcfe; }
+    .overview-fold > summary, .feedback-panel > summary {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 36px;
+      padding: 6px 13px;
+      color: var(--muted);
+      font-size: 10.5px;
+      font-weight: 760;
+    }
+    .overview-fold > summary span, .feedback-panel > summary span { margin-left: auto; color: var(--quiet); font-weight: 500; }
+    .overview-image-link { display: block; max-height: 330px; overflow: auto; padding: 9px; border-top: 1px solid var(--line); background: #f3f6fa; }
+    .overview-image-link img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+    .frame-wrap { flex: 1; min-height: 0; position: relative; background: #fff; }
+    .frame-wrap iframe { display: block; width: 100%; height: 100%; min-height: 420px; border: 0; background: #fff; }
+    .feedback-panel { border-top: 1px solid var(--line); background: #fbfcfe; }
+    .feedback-body { display: grid; grid-template-columns: auto minmax(180px, 1fr); gap: 8px; padding: 0 13px 10px; }
+    .feedback-options { display: flex; flex-wrap: wrap; gap: 5px; }
+    .feedback-button { min-height: 30px; padding: 0 8px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); background: #fff; font-size: 10.5px; cursor: pointer; }
+    .feedback-button.active { color: #fff; border-color: var(--green); background: var(--green); }
+    .feedback-button[data-feedback="dismiss"].active { border-color: var(--red); background: var(--red); }
+    .feedback-note { width: 100%; min-height: 30px; padding: 6px 9px; resize: vertical; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: #fff; font-size: 10.5px; outline: 0; }
+    .privacy-note { color: var(--quiet); font-size: 9.5px; font-weight: 500; }
+    @media (max-width: 1180px) {
+      .workspace { grid-template-columns: minmax(300px, 38%) minmax(0, 62%); }
+      .decision-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .decision-card { min-height: 70px; }
+    }
+    @media (max-width: 980px) {
+      .page { padding: 12px 12px 18px; }
+      .topbar { grid-template-columns: 1fr; gap: 10px; padding-top: 2px; }
+      .brand p { max-width: none; font-size: 12px; }
+      .top-stats { overflow-x: auto; }
+      .workspace { display: block; height: auto; min-height: 0; }
+      .archive-panel { min-height: calc(100dvh - 174px); box-shadow: none; }
+      .archive-list { overflow: visible; }
+      .reader-panel {
+        position: fixed;
+        inset: 0;
+        z-index: 20;
+        height: 100dvh;
+        min-height: 0;
+        border: 0;
+        border-radius: 0;
+        transform: translateY(105%);
+        transition: transform .24s ease;
+      }
+      .reader-panel.is-open { transform: translateY(0); }
+      .reader-head { grid-template-columns: 34px minmax(0, 1fr) auto; }
+      .close-reader { display: inline-flex; }
+      .reader-head { padding-left: 10px; }
+      .compact-link { white-space: nowrap; }
+      .decision-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .frame-wrap iframe { min-height: 260px; }
+      body.reader-open { overflow: hidden; }
+    }
+    @media (max-width: 560px) {
+      h1 { font-size: 27px; }
+      .brand p { display: none; }
+      .top-stats span:nth-child(n+3) { display: none; }
+      .track-tabs { padding-top: 9px; }
+      .track-tab { min-height: 34px; padding: 0 11px; font-size: 12px; }
+      .panel-tools { position: sticky; top: 0; z-index: 2; }
+      .brief-row { grid-template-columns: 92px minmax(0, 1fr); padding: 9px; }
+      .brief-thumb { width: 92px; }
+      .brief-row p { -webkit-line-clamp: 1; }
+      .reader-actions .compact-link:not(.primary) { display: none; }
+      .reader-heading span { display: none; }
+      .decision-grid { grid-template-columns: 1fr; }
+      .decision-card { min-height: 0; }
+      .decision-foot, .feedback-body { grid-template-columns: 1fr; }
+      .leader-signal { grid-template-columns: auto minmax(0, 1fr); }
+      .leader-source { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
-  <main class="shell">
-    <section class="hero" aria-labelledby="site-title">
-      <div class="hero-main">
-        <div class="eyebrow">Rhythm Research Console</div>
-        <h1 id="site-title">AI / Agent 晨间简报档案站</h1>
-        <p>每天的日报会自动汇入同一个主 HTML：左侧检索与切换历史简报，右侧预览原文；每期同时生成一张概览图，汇总当日核心摘要、关键数据与 GitHub 趋势可视化。</p>
-        <div class="hero-actions">
-          <a class="button" href="#archive">浏览全部简报</a>
-          <a class="button secondary" href="briefs/morning-brief-2026-07-10.html" target="_blank" rel="noopener">打开最新一期</a>
-          <a class="button secondary" href="overviews/morning-brief-2026-07-10.svg" target="_blank" rel="noopener">查看最新概览图</a>
-        </div>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-line"><span class="pulse"></span><span class="kicker">Rhythm Research Console</span></div>
+        <h1>Agent 技术红利与产品机会雷达</h1>
+        <p>先看结论、可信度与行动，再决定是否深读。持续追踪模型能力、Agent 产品、架构工具、评测方法与领头羊关注方向。</p>
       </div>
-
-      <aside class="signal-panel" aria-label="站点统计">
-        <div class="stat-grid">
-          <div class="stat"><strong>13</strong><span>正式晨间简报</span></div>
-          <div class="stat"><strong>1</strong><span>测试稿保留入口</span></div>
-          <div class="stat"><strong>203</strong><span>历史简报中出现过的 GitHub 仓库链接</span></div>
-          <div class="stat"><strong>1</strong><span>已生成周报/含周报日期</span></div>
-        </div>
-        <div class="latest">
-          <div class="label">Latest Signal</div>
-          <h2>WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search</h2>
-          <p>选择理由： 该论文于 2026-07-09 提交，晚于 2026-07-08 简报的信息截止时间；主题直接命中 agent 架构：用递归 delegation tree、search mode、web-probing 和同层经验复用来改进复杂网页信息搜索。</p>
-          <div class="mini-timeline" aria-label="GitHub 仓库覆盖趋势"><div class="timeline-bar" title="2026-06-08 · 7 GitHub repos"><span style="height:29px"></span><small>06-08</small></div><div class="timeline-bar" title="2026-06-09 · 6 GitHub repos"><span style="height:25px"></span><small>06-09</small></div><div class="timeline-bar" title="2026-06-12 · 10 GitHub repos"><span style="height:41px"></span><small>06-12</small></div><div class="timeline-bar" title="2026-06-13 · 13 GitHub repos"><span style="height:54px"></span><small>06-13</small></div><div class="timeline-bar" title="2026-06-17 · 15 GitHub repos"><span style="height:62px"></span><small>06-17</small></div><div class="timeline-bar" title="2026-06-22 · 20 GitHub repos"><span style="height:83px"></span><small>06-22</small></div><div class="timeline-bar" title="2026-06-24 · 20 GitHub repos"><span style="height:83px"></span><small>06-24</small></div><div class="timeline-bar" title="2026-06-28 · 27 GitHub repos"><span style="height:112px"></span><small>06-28</small></div><div class="timeline-bar" title="2026-06-29 · 20 GitHub repos"><span style="height:83px"></span><small>06-29</small></div><div class="timeline-bar" title="2026-07-02 · 24 GitHub repos"><span style="height:100px"></span><small>07-02</small></div><div class="timeline-bar" title="2026-07-03 · 10 GitHub repos"><span style="height:41px"></span><small>07-03</small></div><div class="timeline-bar" title="2026-07-06 · 10 GitHub repos"><span style="height:41px"></span><small>07-06</small></div><div class="timeline-bar" title="2026-07-08 · 11 GitHub repos"><span style="height:46px"></span><small>07-08</small></div><div class="timeline-bar" title="2026-07-10 · 10 GitHub repos"><span style="height:41px"></span><small>07-10</small></div></div>
-        </div>
-      </aside>
-    </section>
-
-    <section class="toolbar" aria-label="检索与筛选">
-      <label class="search">
-        <span>Search</span>
-        <input id="searchInput" type="search" placeholder="搜索日期、论文、GitHub、OpenAI、Anthropic..." autocomplete="off">
-      </label>
-      <div class="filters" role="group" aria-label="筛选">
-        <button class="filter" type="button" data-filter="all" aria-pressed="true">全部</button>
-        <button class="filter" type="button" data-filter="formal" aria-pressed="false">正式简报</button>
-        <button class="filter" type="button" data-filter="weekly" aria-pressed="false">含周报</button>
-        <button class="filter" type="button" data-filter="test" aria-pressed="false">测试稿</button>
+      <div class="top-stats" aria-label="档案统计">
+        <span><strong>13</strong> 期日报</span>
+        <span><strong>41</strong> 个项目</span>
+        <span><strong>1</strong> 期周报</span>
+        <span>更新 2026-07-10</span>
       </div>
-    </section>
+    </header>
 
-    <section id="archive" class="layout">
-      <div>
-        <div id="archiveGrid" class="archive-grid">
+    <nav class="track-tabs" aria-label="研究主题">
+      <button class="track-tab" type="button" data-track="latest" aria-pressed="true">今日信号</button>
+      <button class="track-tab" type="button" data-track="model" aria-pressed="false">模型能力</button>
+      <button class="track-tab" type="button" data-track="product" aria-pressed="false">Agent 产品</button>
+      <button class="track-tab" type="button" data-track="evaluation" aria-pressed="false">评测方法</button>
+      <button class="track-tab" type="button" data-track="architecture" aria-pressed="false">架构与工具</button>
+      <button class="track-tab" type="button" data-track="all" aria-pressed="false">全部档案</button>
+    </nav>
 
-          <article class="archive-card active" tabindex="0" data-type="formal" data-tags="2026-07-10 WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报" data-src="briefs/morning-brief-2026-07-10.html" data-title="2026-07-10 · WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search" data-overview="overviews/morning-brief-2026-07-10.svg">
-            <img class="overview-thumb" src="overviews/morning-brief-2026-07-10.svg" alt="2026-07-10 简报概览图" loading="lazy">
-            <div class="card-body">
-              <div class="card-top">
-                <div class="date">2026-07-10<small>周五</small></div>
-                <div class="badge-row"><span class="badge paper">论文</span><span class="badge">GitHub</span></div>
+    <section class="workspace">
+      <aside class="archive-panel" aria-label="简报档案">
+        <div class="panel-tools">
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="m21 21-4.4-4.4m2.4-5.1a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+            <input id="searchInput" type="search" placeholder="搜索论文、项目或机构" autocomplete="off">
+          </label>
+          <span id="resultCount" class="result-count" aria-live="polite">1 / 14</span>
+        </div>
+        <div id="archiveList" class="archive-list">
+
+          <article class="brief-row active" role="button" tabindex="0"
+            aria-selected="true" data-id="morning-brief-2026-07-10.html">
+            <img class="brief-thumb" src="overviews/morning-brief-2026-07-10.svg" alt="" loading="lazy">
+            <div class="brief-copy">
+              <div class="brief-meta">
+                <time datetime="2026-07-10">07-10 · 周五</time>
+                <span>Agent 架构与工具</span>
               </div>
-              <h3>WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search</h3>
+              <h2>WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search</h2>
               <p>选择理由： 该论文于 2026-07-09 提交，晚于 2026-07-08 简报的信息截止时间；主题直接命中 agent 架构：用递归 delegation tree、search mode、web-probing 和同层经验复用来改进复杂网页信息搜索。</p>
-              <div class="meta-row">
-                <span class="badge">10 GitHub repos</span>
-                <span class="badge">13 figures</span>
-                <span class="badge">10 tables</span>
-              </div>
-              <div class="card-actions">
-                <a class="text-link" href="briefs/morning-brief-2026-07-10.html" target="_blank" rel="noopener">打开原文</a>
-                <a class="text-link soft" href="overviews/morning-brief-2026-07-10.svg" target="_blank" rel="noopener">打开概览图</a>
-              </div>
+              <div class="brief-tags"><span class="micro-tag">架构与工具</span><span class="micro-tag">模型能力</span><span class="micro-tag">Agent 产品</span><span class="feedback-mark" aria-label="已有私人反馈"></span></div>
             </div>
           </article>
 
-          <article class="archive-card" tabindex="0" data-type="formal" data-tags="2026-07-08 RuBench: A Repository-Level Agentic Coding Benchmark with Natively Authored Russian Task Specifications AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报" data-src="briefs/morning-brief-2026-07-08.html" data-title="2026-07-08 · RuBench: A Repository-Level Agentic Coding Benchmark with Natively Authored Russian Task Specifications" data-overview="overviews/morning-brief-2026-07-08.svg">
-            <img class="overview-thumb" src="overviews/morning-brief-2026-07-08.svg" alt="2026-07-08 简报概览图" loading="lazy">
-            <div class="card-body">
-              <div class="card-top">
-                <div class="date">2026-07-08<small>周三</small></div>
-                <div class="badge-row"><span class="badge paper">论文</span><span class="badge">GitHub</span></div>
+          <article class="brief-row" role="button" tabindex="0"
+            aria-selected="false" data-id="morning-brief-2026-07-08.html">
+            <img class="brief-thumb" src="overviews/morning-brief-2026-07-08.svg" alt="" loading="lazy">
+            <div class="brief-copy">
+              <div class="brief-meta">
+                <time datetime="2026-07-08">07-08 · 周三</time>
+                <span>评测方法</span>
               </div>
-              <h3>RuBench: A Repository-Level Agentic Coding Benchmark with Natively Authored Russian Task Specifications</h3>
+              <h2>RuBench: A Repository-Level Agentic Coding Benchmark with Natively Authored Russian Task Specifications</h2>
               <p>选择理由： RuBench 于 2026-07-07 提交，直接面向 repository-level agentic coding evaluation，且把“原生非英语客户式需求 + 产品级 CLI agent + 私有 oracle + 可审计轨迹”放在同一套评测里。它补上了 SWE-bench 系列…</p>
-              <div class="meta-row">
-                <span class="badge">11 GitHub repos</span>
-                <span class="badge">7 figures</span>
-                <span class="badge">6 tables</span>
-              </div>
-              <div class="card-actions">
-                <a class="text-link" href="briefs/morning-brief-2026-07-08.html" target="_blank" rel="noopener">打开原文</a>
-                <a class="text-link soft" href="overviews/morning-brief-2026-07-08.svg" target="_blank" rel="noopener">打开概览图</a>
-              </div>
+              <div class="brief-tags"><span class="micro-tag">架构与工具</span><span class="micro-tag">模型能力</span><span class="micro-tag">Agent 产品</span><span class="feedback-mark" aria-label="已有私人反馈"></span></div>
             </div>
           </article>
 
-          <article class="archive-card" tabindex="0" data-type="formal" data-tags="2026-07-06 TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报" data-src="briefs/morning-brief-2026-07-06.html" data-title="2026-07-06 · TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution" data-overview="overviews/morning-brief-2026-07-06.svg">
-            <img class="overview-thumb" src="overviews/morning-brief-2026-07-06.svg" alt="2026-07-06 简报概览图" loading="lazy">
-            <div class="card-body">
-              <div class="card-top">
-                <div class="date">2026-07-06<small>周一</small></div>
-                <div class="badge-row"><span class="badge paper">论文</span><span class="badge">GitHub</span></div>
+          <article class="brief-row" role="button" tabindex="0"
+            aria-selected="false" data-id="morning-brief-2026-07-06.html">
+            <img class="brief-thumb" src="overviews/morning-brief-2026-07-06.svg" alt="" loading="lazy">
+            <div class="brief-copy">
+              <div class="brief-meta">
+                <time datetime="2026-07-06">07-06 · 周一</time>
+                <span>评测方法</span>
               </div>
-              <h3>TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution</h3>
+              <h2>TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution</h2>
               <p>选择理由： 7/4-7/6 期间未发现比这篇更贴合 coding agent benchmark 的新论文。TestEvo-Bench 直接评估 agent 是否能让测试与代码变更共同演化，并提供可执行 runner、动态标签、时间戳切分与 live benchmark 机制，比只看静态 diff 或覆盖率…</p>
-              <div class="meta-row">
-                <span class="badge">10 GitHub repos</span>
-                <span class="badge">12 figures</span>
-                <span class="badge">6 tables</span>
-              </div>
-              <div class="card-actions">
-                <a class="text-link" href="briefs/morning-brief-2026-07-06.html" target="_blank" rel="noopener">打开原文</a>
-                <a class="text-link soft" href="overviews/morning-brief-2026-07-06.svg" target="_blank" rel="noopener">打开概览图</a>
-              </div>
+              <div class="brief-tags"><span class="micro-tag">架构与工具</span><span class="micro-tag">模型能力</span><span class="micro-tag">Agent 产品</span><span class="feedback-mark" aria-label="已有私人反馈"></span></div>
             </div>
           </article>
 
-          <article class="archive-card" tabindex="0" data-type="formal" data-tags="2026-07-03 A Task-State Representation for Long-Horizon Mobile GUI Agents AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报" data-src="briefs/morning-brief-2026-07-03.html" data-title="2026-07-03 · A Task-State Representation for Long-Horizon Mobile GUI Agents" data-overview="overviews/morning-brief-2026-07-03.svg">
-            <img class="overview-thumb" src="overviews/morning-brief-2026-07-03.svg" alt="2026-07-03 简报概览图" loading="lazy">
-            <div class="card-body">
-              <div class="card-top">
-                <div class="date">2026-07-03<small>周五</small></div>
-                <div class="badge-row"><span class="badge paper">论文</span><span class="badge">GitHub</span></div>
+          <article class="brief-row" role="button" tabindex="0"
+            aria-selected="false" data-id="morning-brief-2026-07-03.html">
+            <img class="brief-thumb" src="overviews/morning-brief-2026-07-03.svg" alt="" loading="lazy">
+            <div class="brief-copy">
+              <div class="brief-meta">
+                <time datetime="2026-07-03">07-03 · 周五</time>
+                <span>Agent 架构与工具</span>
               </div>
-              <h3>A Task-State Representation for Long-Horizon Mobile GUI Agents</h3>
+              <h2>A Task-State Representation for Long-Horizon Mobile GUI Agents</h2>
               <p>选择理由： arXiv API 在本次运行中返回 rate exceeded，因此改用 arXiv 官方页面与 PDF 核验。未发现比 2026-07-01 这篇更适合“benchmark / agent 架构 / computer-use GUI agent”主题且尚未总结过的近期论文；它提出训练无关的 …</p>
-              <div class="meta-row">
-                <span class="badge">10 GitHub repos</span>
-                <span class="badge">6 figures</span>
-                <span class="badge">8 tables</span>
-              </div>
-              <div class="card-actions">
-                <a class="text-link" href="briefs/morning-brief-2026-07-03.html" target="_blank" rel="noopener">打开原文</a>
-                <a class="text-link soft" href="overviews/morning-brief-2026-07-03.svg" target="_blank" rel="noopener">打开概览图</a>
-              </div>
+              <div class="brief-tags"><span class="micro-tag">架构与工具</span><span class="micro-tag">模型能力</span><span class="micro-tag">Agent 产品</span><span class="feedback-mark" aria-label="已有私人反馈"></span></div>
             </div>
           </article>
 
-          <article class="archive-card" tabindex="0" data-type="formal" data-tags="2026-07-02 Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents? AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报" data-src="briefs/morning-brief-2026-07-02.html" data-title="2026-07-02 · Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents?" data-overview="overviews/morning-brief-2026-07-02.svg">
-            <img class="overview-thumb" src="overviews/morning-brief-2026-07-02.svg" alt="2026-07-02 简报概览图" loading="lazy">
-            <div class="card-body">
-              <div class="card-top">
-                <div class="date">2026-07-02<small>周四</small></div>
-                <div class="badge-row"><span class="badge paper">论文</span><span class="badge">GitHub</span></div>
+          <article class="brief-row" role="button" tabindex="0"
+            aria-selected="false" data-id="morning-brief-2026-07-02.html">
+            <img class="brief-thumb" src="overviews/morning-brief-2026-07-02.svg" alt="" loading="lazy">
+            <div class="brief-copy">
+              <div class="brief-meta">
+                <time datetime="2026-07-02">07-02 · 周四</time>
+                <span>评测方法</span>
               </div>
-              <h3>Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents?</h3>
+              <h2>Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents?</h2>
               <p>选择原因： 这篇 2026-07-01 新论文直接审计 repository-level 性能优化 benchmark 是否可靠测量 coding agents。它不是又发布一个新榜单，而是拆解 GSO、SWE-Perf、SWE-fficiency 的重放稳定性、计分规则敏感性和任务剩余难度，是今天对 ag…</p>
-              <div class="meta-row">
-                <span class="badge">24 GitHub repos</span>
-                <span class="badge">8 figures</span>
-                <span class="badge">4 tables</span>
-              </div>
-              <div class="card-actions">
-                <a class="text-link" href="briefs/morning-brief-2026-07-02.html" target="_blank" rel="noopener">打开原文</a>
-                <a class="text-link soft" href="overviews/morning-brief-2026-07-02.svg" target="_blank" rel="noopener">打开概览图</a>
-              </div>
+              <div class="brief-tags"><span class="micro-tag">架构与工具</span><span class="micro-tag">模型能力</span><span class="micro-tag">Agent 产品</span><span class="feedback-mark" aria-label="已有私人反馈"></span></div>
             </div>
           </article>
 
-          <article class="archive-card" tabindex="0" data-type="formal" data-tags="2026-06-29 ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报" data-src="briefs/morning-brief-2026-06-29.html" data-title="2026-06-29 · ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents" data-overview="overviews/morning-brief-2026-06-29.svg">
-            <img class="overview-thumb" src="overviews/morning-brief-2026-06-29.svg" alt="2026-06-29 简报概览图" loading="lazy">
-            <div class="card-body">
-              <div class="card-top">
-                <div class="date">2026-06-29<small>周一</small></div>
-                <div class="badge-row"><span class="badge paper">论文</span><span class="badge">GitHub</span></div>
+          <article class="brief-row" role="button" tabindex="0"
+            aria-selected="false" data-id="morning-brief-2026-06-29.html">
+            <img class="brief-thumb" src="overviews/morning-brief-2026-06-29.svg" alt="" loading="lazy">
+            <div class="brief-copy">
+              <div class="brief-meta">
+                <time datetime="2026-06-29">06-29 · 周一</time>
+                <span>评测方法</span>
               </div>
-              <h3>ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents</h3>
+              <h2>ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents</h2>
               <p>选择原因： 本次 arXiv 检索未发现 2026-06-28 12:35 CST 之后新发布的 agent benchmark/架构论文；因此选择最近且高度相关的 2026-06-26 新论文。ToolPrivacyBench 直接补上了 tool-using LLM agents 的一个关键盲点：任务成…</p>
-              <div class="meta-row">
-                <span class="badge">20 GitHub repos</span>
-                <span class="badge">15 figures</span>
-                <span class="badge">4 tables</span>
-              </div>
-              <div class="card-actions">
-                <a class="text-link" href="briefs/morning-brief-2026-06-29.html" target="_blank" rel="noopener">打开原文</a>
-                <a class="text-link soft" href="overviews/morning-brief-2026-06-29.svg" target="_blank" rel="noopener">打开概览图</a>
-              </div>
+              <div class="brief-tags"><span class="micro-tag">架构与工具</span><span class="micro-tag">模型能力</span><span class="micro-tag">Agent 产品</span><span class="feedback-mark" aria-label="已有私人反馈"></span></div>
             </div>
           </article>
 
-          <article class="archive-card" tabindex="0" data-type="formal" data-tags="2026-06-28 Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报" data-src="briefs/morning-brief-2026-06-28.html" data-title="2026-06-28 · Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets" data-overview="overviews/morning-brief-2026-06-28.svg">
-            <img class="overview-thumb" src="overviews/morning-brief-2026-06-28.svg" alt="2026-06-28 简报概览图" loading="lazy">
-            <div class="card-body">
-              <div class="card-top">
-                <div class="date">2026-06-28<small>周日</small></div>
-                <div class="badge-row"><span class="badge paper">论文</span><span class="badge">GitHub</span></div>
+          <article class="brief-row" role="button" tabindex="0"
+            aria-selected="false" data-id="morning-brief-2026-06-28.html">
+            <img class="brief-thumb" src="overviews/morning-brief-2026-06-28.svg" alt="" loading="lazy">
+            <div class="brief-copy">
+              <div class="brief-meta">
+                <time datetime="2026-06-28">06-28 · 周日</time>
+                <span>评测方法</span>
               </div>
-              <h3>Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets</h3>
+              <h2>Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets</h2>
               <p>选择原因： 这篇论文在上一份已发布简报（2026-06-24 10:49 CST 左右）之后发布，直接面向 computer-use agents 的 GUI grounding 可信度评估。它不是只报告任务成功率，而是系统比较 post-hoc uncertainty quantification（UQ）…</p>
-              <div class="meta-row">
-                <span class="badge">27 GitHub repos</span>
-                <span class="badge">21 figures</span>
-                <span class="badge">3 tables</span>
-              </div>
-              <div class="card-actions">
-                <a class="text-link" href="briefs/morning-brief-2026-06-28.html" target="_blank" rel="noopener">打开原文</a>
-                <a class="text-link soft" href="overviews/morning-brief-2026-06-28.svg" target="_blank" rel="noopener">打开概览图</a>
-              </div>
+              <div class="brief-tags"><span class="micro-tag">架构与工具</span><span class="micro-tag">模型能力</span><span class="micro-tag">Agent 产品</span><span class="feedback-mark" aria-label="已有私人反馈"></span></div>
             </div>
           </article>
 
-          <article class="archive-card" tabindex="0" data-type="formal" data-tags="2026-06-24 EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报" data-src="briefs/morning-brief-2026-06-24.html" data-title="2026-06-24 · EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions" data-overview="overviews/morning-brief-2026-06-24.svg">
-            <img class="overview-thumb" src="overviews/morning-brief-2026-06-24.svg" alt="2026-06-24 简报概览图" loading="lazy">
-            <div class="card-body">
-              <div class="card-top">
-                <div class="date">2026-06-24<small>周三</small></div>
-                <div class="badge-row"><span class="badge paper">论文</span><span class="badge">GitHub</span></div>
+          <article class="brief-row" role="button" tabindex="0"
+            aria-selected="false" data-id="morning-brief-2026-06-24.html">
+            <img class="brief-thumb" src="overviews/morning-brief-2026-06-24.svg" alt="" loading="lazy">
+            <div class="brief-copy">
+              <div class="brief-meta">
+                <time datetime="2026-06-24">06-24 · 周三</time>
+                <span>评测方法</span>
               </div>
-              <h3>EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions</h3>
+              <h2>EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions</h2>
               <p>选择原因：该论文在上一份已发布日报（2026-06-22 10:36 CST）之后进入本轮检索范围，且直接面向企业真实工作流中的 agent benchmark。它不是合成玩具任务，而是从真实 workplace sessions 构造 852 个可复现任务，重点评估模型、harness、工具使用、交付物质…</p>
-              <div class="meta-row">
-                <span class="badge">20 GitHub repos</span>
-                <span class="badge">15 figures</span>
-                <span class="badge">6 tables</span>
-              </div>
-              <div class="card-actions">
-                <a class="text-link" href="briefs/morning-brief-2026-06-24.html" target="_blank" rel="noopener">打开原文</a>
-                <a class="text-link soft" href="overviews/morning-brief-2026-06-24.svg" target="_blank" rel="noopener">打开概览图</a>
-              </div>
+              <div class="brief-tags"><span class="micro-tag">架构与工具</span><span class="micro-tag">模型能力</span><span class="micro-tag">Agent 产品</span><span class="feedback-mark" aria-label="已有私人反馈"></span></div>
             </div>
           </article>
 
-          <article class="archive-card" tabindex="0" data-type="formal" data-tags="2026-06-22 StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报" data-src="briefs/morning-brief-2026-06-22.html" data-title="2026-06-22 · StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns" data-overview="overviews/morning-brief-2026-06-22.svg">
-            <img class="overview-thumb" src="overviews/morning-brief-2026-06-22.svg" alt="2026-06-22 简报概览图" loading="lazy">
-            <div class="card-body">
-              <div class="card-top">
-                <div class="date">2026-06-22<small>周一</small></div>
-                <div class="badge-row"><span class="badge paper">论文</span><span class="badge">GitHub</span></div>
+          <article class="brief-row" role="button" tabindex="0"
+            aria-selected="false" data-id="morning-brief-2026-06-22.html">
+            <img class="brief-thumb" src="overviews/morning-brief-2026-06-22.svg" alt="" loading="lazy">
+            <div class="brief-copy">
+              <div class="brief-meta">
+                <time datetime="2026-06-22">06-22 · 周一</time>
+                <span>Agent 产品</span>
               </div>
-              <h3>StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns</h3>
+              <h2>StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns</h2>
               <p>选择原因：这是自上次已发布简报（2026-06-17）以来的新论文，直接评估 coding agent 在连续需求变更中的长期可靠性。它补足了单次任务成功率无法回答的关键问题：一个 agent 能稳定工作多少轮，以及模型、harness、测试反馈分别贡献了什么。</p>
-              <div class="meta-row">
-                <span class="badge">20 GitHub repos</span>
-                <span class="badge">14 figures</span>
-                <span class="badge">3 tables</span>
-              </div>
-              <div class="card-actions">
-                <a class="text-link" href="briefs/morning-brief-2026-06-22.html" target="_blank" rel="noopener">打开原文</a>
-                <a class="text-link soft" href="overviews/morning-brief-2026-06-22.svg" target="_blank" rel="noopener">打开概览图</a>
-              </div>
+              <div class="brief-tags"><span class="micro-tag">架构与工具</span><span class="micro-tag">模型能力</span><span class="micro-tag">Agent 产品</span><span class="feedback-mark" aria-label="已有私人反馈"></span></div>
             </div>
           </article>
 
-          <article class="archive-card" tabindex="0" data-type="formal" data-tags="2026-06-17 ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报" data-src="briefs/morning-brief-2026-06-17.html" data-title="2026-06-17 · ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues" data-overview="overviews/morning-brief-2026-06-17.svg">
-            <img class="overview-thumb" src="overviews/morning-brief-2026-06-17.svg" alt="2026-06-17 简报概览图" loading="lazy">
-            <div class="card-body">
-              <div class="card-top">
-                <div class="date">2026-06-17<small>周三</small></div>
-                <div class="badge-row"><span class="badge paper">论文</span><span class="badge">GitHub</span></div>
+          <article class="brief-row" role="button" tabindex="0"
+            aria-selected="false" data-id="morning-brief-2026-06-17.html">
+            <img class="brief-thumb" src="overviews/morning-brief-2026-06-17.svg" alt="" loading="lazy">
+            <div class="brief-copy">
+              <div class="brief-meta">
+                <time datetime="2026-06-17">06-17 · 周三</time>
+                <span>Agent 架构与工具</span>
               </div>
-              <h3>ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues</h3>
+              <h2>ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues</h2>
               <p>以下按论文顺序列出全部公开可访问的 Figure 1-9 与 Table 1-9。复杂图表与表格以论文 PDF 页面截图嵌入，未发现需要额外列出的缺失图表。来源均为 作者上传 PDF 。</p>
-              <div class="meta-row">
-                <span class="badge">15 GitHub repos</span>
-                <span class="badge">12 figures</span>
-                <span class="badge">4 tables</span>
-              </div>
-              <div class="card-actions">
-                <a class="text-link" href="briefs/morning-brief-2026-06-17.html" target="_blank" rel="noopener">打开原文</a>
-                <a class="text-link soft" href="overviews/morning-brief-2026-06-17.svg" target="_blank" rel="noopener">打开概览图</a>
-              </div>
+              <div class="brief-tags"><span class="micro-tag">架构与工具</span><span class="micro-tag">模型能力</span><span class="micro-tag">Agent 产品</span><span class="feedback-mark" aria-label="已有私人反馈"></span></div>
             </div>
           </article>
 
-          <article class="archive-card" tabindex="0" data-type="formal weekly" data-tags="2026-06-13 SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning AI Agent benchmark GitHub OpenAI Anthropic weekly 周报 formal 正式简报" data-src="briefs/morning-brief-2026-06-13.html" data-title="2026-06-13 · SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning" data-overview="overviews/morning-brief-2026-06-13.svg">
-            <img class="overview-thumb" src="overviews/morning-brief-2026-06-13.svg" alt="2026-06-13 简报概览图" loading="lazy">
-            <div class="card-body">
-              <div class="card-top">
-                <div class="date">2026-06-13<small>周六</small></div>
-                <div class="badge-row"><span class="badge paper">论文</span><span class="badge">GitHub</span><span class="badge weekly">周报</span></div>
+          <article class="brief-row" role="button" tabindex="0"
+            aria-selected="false" data-id="morning-brief-2026-06-13.html">
+            <img class="brief-thumb" src="overviews/morning-brief-2026-06-13.svg" alt="" loading="lazy">
+            <div class="brief-copy">
+              <div class="brief-meta">
+                <time datetime="2026-06-13">06-13 · 周六</time>
+                <span>模型能力</span>
               </div>
-              <h3>SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning</h3>
+              <h2>SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning</h2>
               <p>选择理由：该论文在上一份报告截止时间之后提交，直接研究 Agent 的 action interface。它证明工具是否有效，不仅取决于工具本身，也取决于 Agent 能否在看到中间结果后继续组合、修正和验证操作。</p>
-              <div class="meta-row">
-                <span class="badge">13 GitHub repos</span>
-                <span class="badge">16 figures</span>
-                <span class="badge">4 tables</span>
-              </div>
-              <div class="card-actions">
-                <a class="text-link" href="briefs/morning-brief-2026-06-13.html" target="_blank" rel="noopener">打开原文</a>
-                <a class="text-link soft" href="overviews/morning-brief-2026-06-13.svg" target="_blank" rel="noopener">打开概览图</a>
-              </div>
+              <div class="brief-tags"><span class="micro-tag">架构与工具</span><span class="micro-tag">模型能力</span><span class="micro-tag">Agent 产品</span><span class="feedback-mark" aria-label="已有私人反馈"></span></div>
             </div>
           </article>
 
-          <article class="archive-card" tabindex="0" data-type="formal" data-tags="2026-06-12 AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报" data-src="briefs/morning-brief-2026-06-12.html" data-title="2026-06-12 · AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility" data-overview="overviews/morning-brief-2026-06-12.svg">
-            <img class="overview-thumb" src="overviews/morning-brief-2026-06-12.svg" alt="2026-06-12 简报概览图" loading="lazy">
-            <div class="card-body">
-              <div class="card-top">
-                <div class="date">2026-06-12<small>周五</small></div>
-                <div class="badge-row"><span class="badge paper">论文</span><span class="badge">GitHub</span></div>
+          <article class="brief-row" role="button" tabindex="0"
+            aria-selected="false" data-id="morning-brief-2026-06-12.html">
+            <img class="brief-thumb" src="overviews/morning-brief-2026-06-12.svg" alt="" loading="lazy">
+            <div class="brief-copy">
+              <div class="brief-meta">
+                <time datetime="2026-06-12">06-12 · 周五</time>
+                <span>Agent 架构与工具</span>
               </div>
-              <h3>AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility</h3>
+              <h2>AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility</h2>
               <p>选择理由：这是自上一份日报后发布的最新、且直接改变 Agent benchmark 集成方式的工作。它不再把 benchmark 固定在某个模型中心化 harness 中，而是把评测本身实现成可交互的 judge agent。</p>
-              <div class="meta-row">
-                <span class="badge">10 GitHub repos</span>
-                <span class="badge">18 figures</span>
-                <span class="badge">2 tables</span>
-              </div>
-              <div class="card-actions">
-                <a class="text-link" href="briefs/morning-brief-2026-06-12.html" target="_blank" rel="noopener">打开原文</a>
-                <a class="text-link soft" href="overviews/morning-brief-2026-06-12.svg" target="_blank" rel="noopener">打开概览图</a>
-              </div>
+              <div class="brief-tags"><span class="micro-tag">架构与工具</span><span class="micro-tag">模型能力</span><span class="micro-tag">Agent 产品</span><span class="feedback-mark" aria-label="已有私人反馈"></span></div>
             </div>
           </article>
 
-          <article class="archive-card" tabindex="0" data-type="formal" data-tags="2026-06-09 Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报" data-src="briefs/morning-brief-2026-06-09.html" data-title="2026-06-09 · Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations" data-overview="overviews/morning-brief-2026-06-09.svg">
-            <img class="overview-thumb" src="overviews/morning-brief-2026-06-09.svg" alt="2026-06-09 简报概览图" loading="lazy">
-            <div class="card-body">
-              <div class="card-top">
-                <div class="date">2026-06-09<small>周二</small></div>
-                <div class="badge-row"><span class="badge paper">论文</span><span class="badge">GitHub</span></div>
+          <article class="brief-row" role="button" tabindex="0"
+            aria-selected="false" data-id="morning-brief-2026-06-09.html">
+            <img class="brief-thumb" src="overviews/morning-brief-2026-06-09.svg" alt="" loading="lazy">
+            <div class="brief-copy">
+              <div class="brief-meta">
+                <time datetime="2026-06-09">06-09 · 周二</time>
+                <span>Agent 架构与工具</span>
               </div>
-              <h3>Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations</h3>
+              <h2>Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations</h2>
               <p>PDF 共识别出 1 个表格和 6 张图，以下按论文顺序完整附上。</p>
-              <div class="meta-row">
-                <span class="badge">6 GitHub repos</span>
-                <span class="badge">6 figures</span>
-                <span class="badge">2 tables</span>
-              </div>
-              <div class="card-actions">
-                <a class="text-link" href="briefs/morning-brief-2026-06-09.html" target="_blank" rel="noopener">打开原文</a>
-                <a class="text-link soft" href="overviews/morning-brief-2026-06-09.svg" target="_blank" rel="noopener">打开概览图</a>
-              </div>
+              <div class="brief-tags"><span class="micro-tag">架构与工具</span><span class="micro-tag">模型能力</span><span class="micro-tag">Agent 产品</span><span class="feedback-mark" aria-label="已有私人反馈"></span></div>
             </div>
           </article>
 
-          <article class="archive-card" tabindex="0" data-type="test" data-tags="2026-06-08 QBugLM: An Agentic Benchmarking Framework for LLM-based Quantum Software Debugging AI Agent benchmark GitHub OpenAI Anthropic  test 测试稿" data-src="briefs/morning-brief-test-2026-06-08.html" data-title="2026-06-08 · QBugLM: An Agentic Benchmarking Framework for LLM-based Quantum Software Debugging" data-overview="overviews/morning-brief-test-2026-06-08.svg">
-            <img class="overview-thumb" src="overviews/morning-brief-test-2026-06-08.svg" alt="2026-06-08 简报概览图" loading="lazy">
-            <div class="card-body">
-              <div class="card-top">
-                <div class="date">2026-06-08<small>周一</small></div>
-                <div class="badge-row"><span class="badge paper">论文</span><span class="badge">GitHub</span><span class="badge test">测试稿</span></div>
+          <article class="brief-row" role="button" tabindex="0"
+            aria-selected="false" data-id="morning-brief-test-2026-06-08.html">
+            <img class="brief-thumb" src="overviews/morning-brief-test-2026-06-08.svg" alt="" loading="lazy">
+            <div class="brief-copy">
+              <div class="brief-meta">
+                <time datetime="2026-06-08">06-08 · 周一</time>
+                <span>评测方法</span>
               </div>
-              <h3>QBugLM: An Agentic Benchmarking Framework for LLM-based Quantum Software Debugging</h3>
+              <h2>QBugLM: An Agentic Benchmarking Framework for LLM-based Quantum Software Debugging</h2>
               <p>PDF 共识别出 1 个表格和 5 张图。以下按论文顺序完整附上。</p>
-              <div class="meta-row">
-                <span class="badge">7 GitHub repos</span>
-                <span class="badge">5 figures</span>
-                <span class="badge">2 tables</span>
-              </div>
-              <div class="card-actions">
-                <a class="text-link" href="briefs/morning-brief-test-2026-06-08.html" target="_blank" rel="noopener">打开原文</a>
-                <a class="text-link soft" href="overviews/morning-brief-test-2026-06-08.svg" target="_blank" rel="noopener">打开概览图</a>
-              </div>
+              <div class="brief-tags"><span class="micro-tag">架构与工具</span><span class="micro-tag">模型能力</span><span class="micro-tag">Agent 产品</span><span class="feedback-mark" aria-label="已有私人反馈"></span></div>
             </div>
           </article>
+          <div id="emptyList" class="empty-list">没有匹配结果。可以换一个项目名、论文关键词，或切换到“全部档案”。</div>
         </div>
-        <div id="emptyState" class="empty">没有匹配的简报。换一个关键词，或者切回“全部”。</div>
-      </div>
-
-      <aside class="reader" aria-label="简报预览">
-        <div class="reader-head">
-          <div class="reader-title">
-            <strong id="readerTitle">2026-07-10 · WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search</strong>
-            <span>上方为自动概览图，下方为内嵌原文预览</span>
-          </div>
-          <div class="card-actions">
-            <a id="overviewOpen" class="text-link soft" href="overviews/morning-brief-2026-07-10.svg" target="_blank" rel="noopener">概览图</a>
-            <a id="readerOpen" class="text-link" href="briefs/morning-brief-2026-07-10.html" target="_blank" rel="noopener">打开原文</a>
-          </div>
-        </div>
-        <a id="overviewPreviewLink" class="overview-preview" href="overviews/morning-brief-2026-07-10.svg" target="_blank" rel="noopener">
-          <img id="overviewPreview" src="overviews/morning-brief-2026-07-10.svg" alt="2026-07-10 简报概览图">
-        </a>
-        <iframe id="readerFrame" title="简报预览" src="briefs/morning-brief-2026-07-10.html" loading="lazy"></iframe>
       </aside>
-    </section>
 
-    <section id="deploy" class="method" aria-label="上线说明与自动化方法">
-      <article class="method-card">
-        <h2>每日更新流程</h2>
-        <p>生成新的 <code>morning-brief-YYYY-MM-DD.html</code> 后，运行 <code>node scripts/update-archive.mjs</code>，脚本会复制日报、同步 assets、生成概览 SVG，并重建本页。</p>
-      </article>
-      <article class="method-card">
-        <h3>概览图内容</h3>
-        <ul>
-          <li>当日论文标题与核心摘要。</li>
-          <li>GitHub 仓库、论文图表、表格、来源链接等关键数据。</li>
-          <li>从日报 GitHub 表格抽取的项目关注度/增长代理条形图。</li>
-        </ul>
-      </article>
-      <article class="method-card">
-        <h3>当前数据</h3>
-        <p>正式简报：13 份；测试稿：1 份；论文图表合计：168 个；最近整理时间：2026-07-10 03:00:53 UTC。</p>
-      </article>
+      <section id="readerPanel" class="reader-panel" aria-label="简报阅读器">
+        <div class="reader-empty"><div><strong>当前筛选没有可读简报</strong><br><span>调整搜索条件后，阅读区会自动载入第一条匹配结果。</span></div></div>
+        <div class="reader-content">
+          <header class="reader-head">
+            <button id="closeReader" class="close-reader" type="button" aria-label="关闭阅读器">×</button>
+            <div class="reader-heading">
+              <strong id="readerTitle">2026-07-10 · WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search</strong>
+              <span id="readerSubline">Agent 架构与工具 · 论文实验 · 待独立复现</span>
+            </div>
+            <div class="reader-actions">
+              <a id="overviewOpen" class="compact-link" href="overviews/morning-brief-2026-07-10.svg" target="_blank" rel="noopener">概览图</a>
+              <a id="readerOpen" class="compact-link primary" href="briefs/morning-brief-2026-07-10.html" target="_blank" rel="noopener">独立阅读</a>
+            </div>
+          </header>
+
+          <details id="decisionPanel" class="decision" open>
+            <summary><span class="summary-label">90 秒决策摘要</span><span id="summaryMeta" class="summary-meta">Agent 架构与工具 · 10 个项目</span></summary>
+            <div class="decision-body">
+              <div class="decision-grid">
+                <article class="decision-card"><b>此前问题</b><p id="problemText">该论文于 2026-07-09 提交，晚于 2026-07-08 简报的信息截止时间；主题直接命中 agent 架构：用递归 delegation tree、search mode、web-probing 和同层经验复用来改进复杂网页信息搜索。</p></article>
+                <article class="decision-card"><b>研究做法</b><p id="methodText">构建递归 delegation tree；每个节点绑定局部目标和搜索模式；父节点根据子节点返回证据继续扩展、修正或聚合。</p></article>
+                <article class="decision-card"><b>关键结论</b><p id="conclusionText">GLM-4.5 backbone 下，WebSwarm 在 BC-Plus ACC 达 68.00，比 GLM-4.5 ReAct 高 17.50；WideSearch Item F1 达 74.37，高 9.76；DeepWideSearch Item F1 达 58.40，高 11.77；GISA Overall 达 62.30，高 6.76。</p></article>
+                <article class="decision-card"><b>差异与可信度</b><p id="differenceText">web-structure-guided expansion 用外部信息组织方式约束拆解维度；experience-guided node solving 在同一实例的同质兄弟节点间复用过程经验，避免重复试错。 · 论文实验 · 待独立复现</p></article>
+              </div>
+              <div class="decision-foot">
+                <div class="signal-chip"><b>技术红利：</b><span id="radarText">obra/superpowers · NousResearch/hermes-agent · firecrawl/firecrawl</span></div>
+                <div class="signal-chip action"><b>建议动作：</b><span id="actionText">持续追踪代码开放与后续复现，暂不直接接入</span></div>
+              </div>
+            </div>
+          </details>
+
+          <a id="leaderLink" class="leader-signal" href="https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/" target="_blank" rel="noopener">
+            <span id="leaderKind" class="signal-kind">官方发布</span>
+            <span class="leader-copy"><strong id="leaderTitle">OpenAI · GPT-5.6 is now the preferred model in Microsoft 365 Copilot</strong><p id="leaderSummary">OpenAI 将 GPT-5.6 接入 Microsoft 365 Copilot，强调更高 token 效率和跨 Word/Excel/PowerPoint/Cowork 的生产力能力。</p></span>
+            <span class="leader-source">查看原始信号 ↗</span>
+          </a>
+
+          <details class="overview-fold">
+            <summary>当日概览图 <span>核心摘要、关键数据与 GitHub 趋势</span></summary>
+            <a id="overviewPreviewLink" class="overview-image-link" href="overviews/morning-brief-2026-07-10.svg" target="_blank" rel="noopener">
+              <img id="overviewPreview" src="overviews/morning-brief-2026-07-10.svg" alt="2026-07-10 简报概览图">
+            </a>
+          </details>
+
+          <div class="frame-wrap">
+            <iframe id="readerFrame" title="简报原文" src="briefs/morning-brief-2026-07-10.html"></iframe>
+          </div>
+
+          <details id="feedbackPanel" class="feedback-panel">
+            <summary>私人反馈 <span id="feedbackSummary" class="privacy-note">仅保存在当前浏览器</span></summary>
+            <div class="feedback-body">
+              <div class="feedback-options" role="group" aria-label="简报反馈">
+                <button class="feedback-button" type="button" data-feedback="interest">感兴趣</button>
+                <button class="feedback-button" type="button" data-feedback="read">已读</button>
+                <button class="feedback-button" type="button" data-feedback="try">准备试用</button>
+                <button class="feedback-button" type="button" data-feedback="track">持续跟踪</button>
+                <button class="feedback-button" type="button" data-feedback="dismiss">不再推荐</button>
+              </div>
+              <textarea id="feedbackNote" class="feedback-note" rows="1" maxlength="240" placeholder="记录一句产品判断、验证结果或创业线索"></textarea>
+            </div>
+          </details>
+        </div>
+      </section>
     </section>
   </main>
 
   <script>
-    const cards = Array.from(document.querySelectorAll(".archive-card"));
-    const frame = document.getElementById("readerFrame");
+    const briefs = [{"fileName":"morning-brief-2026-07-10.html","date":"2026-07-10","weekday":"周五","type":"formal","hasWeekly":false,"title":"WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search","summary":"选择理由： 该论文于 2026-07-09 提交，晚于 2026-07-08 简报的信息截止时间；主题直接命中 agent 架构：用递归 delegation tree、search mode、web-probing 和同层经验复用来改进复杂网页信息搜索。","problem":"该论文于 2026-07-09 提交，晚于 2026-07-08 简报的信息截止时间；主题直接命中 agent 架构：用递归 delegation tree、search mode、web-probing 和同层经验复用来改进复杂网页信息搜索。","method":"构建递归 delegation tree；每个节点绑定局部目标和搜索模式；父节点根据子节点返回证据继续扩展、修正或聚合。","conclusion":"GLM-4.5 backbone 下，WebSwarm 在 BC-Plus ACC 达 68.00，比 GLM-4.5 ReAct 高 17.50；WideSearch Item F1 达 74.37，高 9.76；DeepWideSearch Item F1 达 58.40，高 11.77；GISA Overall 达 62.30，高 6.76。","difference":"web-structure-guided expansion 用外部信息组织方式约束拆解维度；experience-guided node solving 在同一实例的同质兄弟节点间复用过程经验，避免重复试错。","limitation":"更多 LLM 调用和 web-tool 请求导致成本/延迟上升；delegation 与 search-mode assignment 仍依赖基础模型能力；当前主要处理文本网页工具，还没有系统覆盖图像、视频、音频或 GUI 操作。","evidence":"论文实验 · 待独立复现","action":"持续追踪代码开放与后续复现，暂不直接接入","primaryTrack":"Agent 架构与工具","tracks":["architecture","model","product","evaluation"],"leaderSignal":{"kind":"官方发布","org":"OpenAI","title":"GPT-5.6 is now the preferred model in Microsoft 365 Copilot","summary":"OpenAI 将 GPT-5.6 接入 Microsoft 365 Copilot，强调更高 token 效率和跨 Word/Excel/PowerPoint/Cowork 的生产力能力。","url":"https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/"},"source":"briefs/morning-brief-2026-07-10.html","overview":"overviews/morning-brief-2026-07-10.svg","githubRows":[{"repo":"obra/superpowers","label":"obra/superpowers","value":1901,"text":"obra/superpowers An agentic skills framework & software development methodology that works. Shell 2026-07-10T02:51:04Z …"},{"repo":"NousResearch/hermes-agent","label":"NousResearch/hermes-agent","value":1107,"text":"NousResearch/hermes-agent The agent that grows with you Python 2026-07-10T02:49:06Z 212,265 211,158 +1,107"},{"repo":"firecrawl/firecrawl","label":"firecrawl/firecrawl","value":1067,"text":"firecrawl/firecrawl The API to search, scrape, and interact with the web at scale. 🔥 TypeScript 2026-07-10T02:50:59Z 1…"},{"repo":"multica-ai/andrej-karpathy-skills","label":"multica-ai/andrej-karpathy-skills","value":922,"text":"multica-ai/andrej-karpathy-skills A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy…"},{"repo":"farion1231/cc-switch","label":"farion1231/cc-switch","value":809,"text":"farion1231/cc-switch A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini C…"},{"repo":"open-webui/open-webui","label":"open-webui/open-webui","value":144889,"text":"open-webui/open-webui User-friendly AI Interface (Supports Ollama, OpenAI API, ...) 自托管 AI 工作台，topics 含 MCP/RAG/openapi…"},{"repo":"D4Vinci/Scrapling","label":"D4Vinci/Scrapling","value":68914,"text":"D4Vinci/Scrapling 🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale …"},{"repo":"headroomlabs-ai/headroom","label":"headroomlabs-ai/headroom","value":58194,"text":"headroomlabs-ai/headroom Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tok…"}],"githubRepoCount":10,"figureCount":13,"tableCount":10,"linkCount":44,"officialStatus":"11 条官方链接/动态","tags":"2026-07-10 WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch open-webui/open-webui D4Vinci/Scrapling headroomlabs-ai/headroom MemPalace/mempalace Panniantong/Agent-Reach AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"},{"fileName":"morning-brief-2026-07-08.html","date":"2026-07-08","weekday":"周三","type":"formal","hasWeekly":false,"title":"RuBench: A Repository-Level Agentic Coding Benchmark with Natively Authored Russian Task Specifications","summary":"选择理由： RuBench 于 2026-07-07 提交，直接面向 repository-level agentic coding evaluation，且把“原生非英语客户式需求 + 产品级 CLI agent + 私有 oracle + 可审计轨迹”放在同一套评测里。它补上了 SWE-bench 系列…","problem":"RuBench 于 2026-07-07 提交，直接面向 repository-level agentic coding evaluation，且把“原生非英语客户式需求 + 产品级 CLI agent + 私有 oracle + 可审计轨迹”放在同一套评测里。它补上了 SWE-bench 系列和翻译式 multilingual benchmark 没覆盖…","method":"从 2026 年真实 fix commit 挖掘任务，去除仓库历史和 oracle tests，用俄语原生规格驱动产品级 CLI agent，再用私有回归测试判分并公开轨迹、diff、成本与 token 记录。","conclusion":"Opus 4.8 点估计最高 78.7%，Sonnet 5 74.7%，Codex CLI + GPT-5.5 66.7%，Haiku 4.5 53.3%；Codex 的 token output 约 16k/任务，约为 Opus 4.8 的一半。","difference":"第一个把 repo-level agent、原生非英语任务、私有 oracle 和模型替换审计结合起来的 benchmark；强调评测部署产品配置，而不是只评测裸模型。","limitation":"N=25 很小，约 25 个百分点才有较强分辨率；任务集中在俄语与少数仓库/语言；网络开放使 upstream 查询成为可审计但无法完全禁止的变量；benchmark 构建过程也使用了 Claude agentic sessions，作者用私有可执行 oracle 和公开轨迹来降低风险。","evidence":"论文实验 · 待独立复现","action":"核验代码与复现条件，安排小规模产品验证","primaryTrack":"评测方法","tracks":["architecture","model","product","evaluation"],"leaderSignal":{"kind":"官方核验","org":"OpenAI / Anthropic","title":"本期未抽取到新的官方技术信号","summary":"历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。","url":""},"source":"briefs/morning-brief-2026-07-08.html","overview":"overviews/morning-brief-2026-07-08.svg","githubRows":[{"repo":"firecrawl/firecrawl","label":"firecrawl/firecrawl","value":2028,"text":"firecrawl/firecrawl 面向 agent/RAG 的网页搜索、抓取、结构化提取与交互 API。 TypeScript 2026-07-08 06:35:37 UTC 147,403 145,375 +2,028"},{"repo":"obra/superpowers","label":"obra/superpowers","value":1864,"text":"obra/superpowers Agentic skills framework 与软件开发方法论，围绕 skill 驱动的软件工程协作。 Shell 2026-07-08 06:35:34 UTC 249,061 247,197 +1…"},{"repo":"NousResearch/hermes-agent","label":"NousResearch/hermes-agent","value":1264,"text":"NousResearch/hermes-agent Nous 的自成长 agent 项目，关注持续运行中的能力与记忆增长。 Python 2026-07-08 06:35:24 UTC 211,158 209,894 +1,264"},{"repo":"multica-ai/andrej-karpathy-skills","label":"multica-ai/andrej-karpathy-skills","value":1011,"text":"multica-ai/andrej-karpathy-skills 从 Karpathy 观察提炼的 CLAUDE.md/agent 行为改进配置。 未标明 2026-07-08 06:34:48 UTC 189,196 188,185 …"},{"repo":"farion1231/cc-switch","label":"farion1231/cc-switch","value":847,"text":"farion1231/cc-switch 跨平台桌面助手，用于 Claude Code、Codex、OpenCode、OpenClaw 等 agent 切换与调度。 Rust 2026-07-08 06:35:19 UTC 114,523…"},{"repo":"bytedance/UI-TARS-desktop","label":"bytedance/UI-TARS-desktop","value":37789,"text":"bytedance/UI-TARS-desktop 开源多模态 AI agent stack，连接 GUI agent 模型、桌面/浏览器操作与 agent infra。 它直接覆盖 computer-use / GUI agent 运行…"},{"repo":"microsoft/playwright-mcp","label":"microsoft/playwright-mcp","value":34822,"text":"microsoft/playwright-mcp 把 Playwright 浏览器自动化暴露为 MCP server。 它是 MCP + browser automation 的高关注基础设施，适合 coding agent 和 web …"},{"repo":"continuedev/continue","label":"continuedev/continue","value":34732,"text":"continuedev/continue 开源 coding agent / AI code assistant，覆盖 IDE 与开发工作流。 它代表开源 coding agent 在开发者工具中的产品化落地，并且与闭源 Codex/Cl…"}],"githubRepoCount":11,"figureCount":7,"tableCount":6,"linkCount":33,"officialStatus":"8 条官方链接/动态","tags":"2026-07-08 RuBench: A Repository-Level Agentic Coding Benchmark with Natively Authored Russian Task Specifications eugeneshilow/rubench firecrawl/firecrawl obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills farion1231/cc-switch bytedance/UI-TARS-desktop microsoft/playwright-mcp continuedev/continue ComposioHQ/composio openai/openai-agents-python AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"},{"fileName":"morning-brief-2026-07-06.html","date":"2026-07-06","weekday":"周一","type":"formal","hasWeekly":false,"title":"TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution","summary":"选择理由： 7/4-7/6 期间未发现比这篇更贴合 coding agent benchmark 的新论文。TestEvo-Bench 直接评估 agent 是否能让测试与代码变更共同演化，并提供可执行 runner、动态标签、时间戳切分与 live benchmark 机制，比只看静态 diff 或覆盖率…","problem":"7/4-7/6 期间未发现比这篇更贴合 coding agent benchmark 的新论文。TestEvo-Bench 直接评估 agent 是否能让测试与代码变更共同演化，并提供可执行 runner、动态标签、时间戳切分与 live benchmark 机制，比只看静态 diff 或覆盖率更能反映工程 agent 能力。","method":"三阶段管线先挖掘 test-code change pair，再用跨 revision 执行、依赖映射、覆盖与 mutation 信号清洗，最后打包成可执行 agent 任务。","conclusion":"Claude Code 与 Gemini CLI 在 test generation 均为 77.5%；Gemini CLI 在 test update 为 74.6%。新近任务成功率更低，说明 benchmark 尚未饱和。","difference":"用“新测试在新代码通过、旧代码失败”等动态标签定义任务成功，而不是依赖静态 co-change 或 diff similarity；同时支持按时间切片评估，降低训练污染风险。","limitation":"只覆盖 Java Maven；四个 agent 配置不能代表全部生态；执行、覆盖、mutation 分析成本高，完整运行约 72 小时级别。","evidence":"论文实验 · 待独立复现","action":"持续追踪代码开放与后续复现，暂不直接接入","primaryTrack":"评测方法","tracks":["architecture","model","product","evaluation"],"leaderSignal":{"kind":"官方核验","org":"OpenAI / Anthropic","title":"本期未抽取到新的官方技术信号","summary":"历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。","url":""},"source":"briefs/morning-brief-2026-07-06.html","overview":"overviews/morning-brief-2026-07-06.svg","githubRows":[{"repo":"obra/superpowers","label":"obra/superpowers","value":2657,"text":"obra/superpowers Agentic skills framework 与软件开发方法论，围绕 skill 驱动的软件工程协作。 Shell 2026-07-06 07:32:08 UTC 247,197 244,540 +2…"},{"repo":"firecrawl/firecrawl","label":"firecrawl/firecrawl","value":2076,"text":"firecrawl/firecrawl 面向 agent/RAG 的网页搜索、抓取、结构化提取与交互 API。 TypeScript 2026-07-06 07:30:44 UTC 145,375 143,299 +2,076"},{"repo":"NousResearch/hermes-agent","label":"NousResearch/hermes-agent","value":1801,"text":"NousResearch/hermes-agent Nous 的自成长 agent 项目，关注持续运行中的能力与记忆增长。 Python 2026-07-06 07:32:29 UTC 209,894 208,093 +1,801"},{"repo":"multica-ai/andrej-karpathy-skills","label":"multica-ai/andrej-karpathy-skills","value":1432,"text":"multica-ai/andrej-karpathy-skills 从 Karpathy 观察提炼的 CLAUDE.md/agent 行为改进配置。 未标明 2026-07-06 07:30:06 UTC 188,185 186,753 …"},{"repo":"farion1231/cc-switch","label":"farion1231/cc-switch","value":1239,"text":"farion1231/cc-switch 跨平台桌面助手，用于 Claude Code、Codex、OpenCode、OpenClaw 等 agent 切换与调度。 Rust 2026-07-06 07:32:22 UTC 113,676…"},{"repo":"addyosmani/agent-skills","label":"addyosmani/agent-skills","value":70099,"text":"addyosmani/agent-skills 生产级 engineering skills 集合，面向 AI coding agents。 把可复用工程经验沉淀为 agent 可执行技能，是 Agent Skill 生态的高 star …"},{"repo":"earendil-works/pi","label":"earendil-works/pi","value":67933,"text":"earendil-works/pi 统一 LLM API、agent loop、TUI、coding agent CLI 的 agent toolkit。 把 agent runtime 与开发者终端体验放在一起，适合观察轻量 codin…"},{"repo":"code-yeongyu/oh-my-openagent","label":"code-yeongyu/oh-my-openagent","value":64972,"text":"code-yeongyu/oh-my-openagent 面向大型代码库的 coding agent harness / lazycodex 工具。 它把复杂代码库协作、token 预算和 agent harness 做成一体化体验。 T…"}],"githubRepoCount":10,"figureCount":12,"tableCount":6,"linkCount":36,"officialStatus":"未发现新发布内容","tags":"2026-07-06 TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution obra/superpowers firecrawl/firecrawl NousResearch/hermes-agent multica-ai/andrej-karpathy-skills farion1231/cc-switch addyosmani/agent-skills earendil-works/pi code-yeongyu/oh-my-openagent cline/cline openinterpreter/openinterpreter AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"},{"fileName":"morning-brief-2026-07-03.html","date":"2026-07-03","weekday":"周五","type":"formal","hasWeekly":false,"title":"A Task-State Representation for Long-Horizon Mobile GUI Agents","summary":"选择理由： arXiv API 在本次运行中返回 rate exceeded，因此改用 arXiv 官方页面与 PDF 核验。未发现比 2026-07-01 这篇更适合“benchmark / agent 架构 / computer-use GUI agent”主题且尚未总结过的近期论文；它提出训练无关的 …","problem":"arXiv API 在本次运行中返回 rate exceeded，因此改用 arXiv 官方页面与 PDF 核验。未发现比 2026-07-01 这篇更适合“benchmark / agent 架构 / computer-use GUI agent”主题且尚未总结过的近期论文；它提出训练无关的 Task-State Representation wrapp…","method":"把 agent 的“持久任务状态”从屏幕 observation/history 中拆出来，用一个外部状态块维护，并通过 prompt 注入给固定 actor。","conclusion":"查看当期实验结果与核心结论。","difference":"TSR 同时维护 global summary、progress tracker、transition-aware focus；其中 transition-aware focus 用动作前后截图判断动作是否生效，专门应对 stale screen 与重复动作。","limitation":"仍需结合复现、成本和真实产品场景验证。","evidence":"论文实验 · 待独立复现","action":"持续追踪代码开放与后续复现，暂不直接接入","primaryTrack":"Agent 架构与工具","tracks":["architecture","model","product","evaluation"],"leaderSignal":{"kind":"官方核验","org":"OpenAI / Anthropic","title":"本期未抽取到新的官方技术信号","summary":"历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。","url":""},"source":"briefs/morning-brief-2026-07-03.html","overview":"overviews/morning-brief-2026-07-03.svg","githubRows":[{"repo":"obra/superpowers","label":"obra/superpowers","value":736,"text":"obra/superpowers Agentic skills framework 与软件开发方法论，围绕 skill 驱动的工程协作。 Shell 2026-07-03 02:43:27 UTC 244,540 243,804 +736"},{"repo":"NousResearch/hermes-agent","label":"NousResearch/hermes-agent","value":534,"text":"NousResearch/hermes-agent Nous 的自成长 agent 项目，聚焦长期运行中的能力积累。 Python 2026-07-03 02:41:02 UTC 208,093 207,559 +534"},{"repo":"multica-ai/andrej-karpathy-skills","label":"multica-ai/andrej-karpathy-skills","value":426,"text":"multica-ai/andrej-karpathy-skills 从 Karpathy 观察提炼的 CLAUDE.md/agent 行为改进配置。 未标明 2026-07-03 02:41:36 UTC 186,753 186,327 …"},{"repo":"affaan-m/ECC","label":"affaan-m/ECC","value":419,"text":"affaan-m/ECC Agent harness 性能优化系统，覆盖 skills、instincts、memory、安全与 research。 JavaScript 2026-07-03 02:40:56 UTC 225,232 2…"},{"repo":"firecrawl/firecrawl","label":"firecrawl/firecrawl","value":379,"text":"firecrawl/firecrawl 面向 agent/RAG 的网页搜索、抓取与结构化交互 API。 TypeScript 2026-07-03 02:41:07 UTC 143,299 142,920 +379"},{"repo":"VoltAgent/awesome-design-md","label":"VoltAgent/awesome-design-md","value":95297,"text":"VoltAgent/awesome-design-md 收集主流品牌 DESIGN.md / 设计系统说明，用于让 coding agents 生成一致 UI。 它把“设计上下文”变成可交给 agent 的项目内技能/约束，适合跟你现在的…"},{"repo":"karpathy/autoresearch","label":"karpathy/autoresearch","value":89576,"text":"karpathy/autoresearch 让 AI agents 自动运行单 GPU nanochat 训练研究流程。 它把研究循环自动化成可执行 pipeline，是 agent 介入 ML 实验/研究迭代的高关注样本。 Python…"},{"repo":"JuliusBrussee/caveman","label":"JuliusBrussee/caveman","value":81169,"text":"JuliusBrussee/caveman Claude Code skill，目标是用极短上下文表达压缩 token。 它代表 Agent Skill 生态里“低成本上下文工程”的方向，对长任务代理和日报自动化都很实用。 JavaScr…"}],"githubRepoCount":10,"figureCount":6,"tableCount":8,"linkCount":26,"officialStatus":"未发现新发布内容","tags":"2026-07-03 A Task-State Representation for Long-Horizon Mobile GUI Agents obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC firecrawl/firecrawl VoltAgent/awesome-design-md karpathy/autoresearch JuliusBrussee/caveman safishamsi/graphify Egonex-AI/Understand-Anything AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"},{"fileName":"morning-brief-2026-07-02.html","date":"2026-07-02","weekday":"周四","type":"formal","hasWeekly":false,"title":"Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents?","summary":"选择原因： 这篇 2026-07-01 新论文直接审计 repository-level 性能优化 benchmark 是否可靠测量 coding agents。它不是又发布一个新榜单，而是拆解 GSO、SWE-Perf、SWE-fficiency 的重放稳定性、计分规则敏感性和任务剩余难度，是今天对 ag…","problem":"选择原因： 这篇 2026-07-01 新论文直接审计 repository-level 性能优化 benchmark 是否可靠测量 coding agents。它不是又发布一个新榜单，而是拆解 GSO、SWE-Perf、SWE-fficiency 的重放稳定性、计分规则敏感性和任务剩余难度，是今天对 agent benchmark 可信度最有价值的信号。","method":"跨四种 Google Cloud CPU/机器配置和多轮重放官方 reference patch，区分“能运行”“快于 base”“仍满足原始构造规则”三层信号；再对公开提交做计分规则重算和 task-level 覆盖分析。","conclusion":"查看当期实验结果与核心结论。","difference":"把 coding-agent benchmark 从“排行榜是否高”拉回到“reference 信号是否稳定、评分是否被极端任务支配、剩余任务是否还有区分度”的计量学问题。","limitation":"它不是新 benchmark，也不覆盖所有 coding-agent 性能工程；SWE-Perf 因缺少可比公开 agent 输出，被排除在部分 task-level 分析之外；跨机器实验仍受云硬件、公开 artifact 质量和论文实现选择影响。","evidence":"论文实验 · 待独立复现","action":"持续追踪代码开放与后续复现，暂不直接接入","primaryTrack":"评测方法","tracks":["architecture","model","product","evaluation"],"leaderSignal":{"kind":"官方核验","org":"OpenAI / Anthropic","title":"本期未抽取到新的官方技术信号","summary":"历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。","url":""},"source":"briefs/morning-brief-2026-07-02.html","overview":"overviews/morning-brief-2026-07-02.svg","githubRows":[{"repo":"obra/superpowers","label":"obra/superpowers","value":2898,"text":"1 obra/superpowers An agentic skills framework & software development methodology that works. Shell 07-02 08:37 UTC 243…"},{"repo":"NousResearch/hermes-agent","label":"NousResearch/hermes-agent","value":2375,"text":"2 NousResearch/hermes-agent The agent that grows with you Python 07-02 08:37 UTC 207,559 205,184 +2,375"},{"repo":"multica-ai/andrej-karpathy-skills","label":"multica-ai/andrej-karpathy-skills","value":2142,"text":"3 multica-ai/andrej-karpathy-skills A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpat…"},{"repo":"firecrawl/firecrawl","label":"firecrawl/firecrawl","value":1938,"text":"4 firecrawl/firecrawl The API to search, scrape, and interact with the web at scale. 🔥 TypeScript 07-02 08:32 UTC 142,…"},{"repo":"farion1231/cc-switch","label":"farion1231/cc-switch","value":1933,"text":"5 farion1231/cc-switch A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini…"},{"repo":"shareAI-lab/learn-claude-code","label":"shareAI-lab/learn-claude-code","value":69548,"text":"1 shareAI-lab/learn-claude-code Python 07-02 08:35 UTC 69,548 Bash is all you need - A nano claude code–like 「agent har…"},{"repo":"FlowiseAI/Flowise","label":"FlowiseAI/Flowise","value":54189,"text":"2 FlowiseAI/Flowise TypeScript 07-02 07:58 UTC 54,189 Build AI Agents, Visually 低代码 AI agent / workflow builder，把工具编排、R…"},{"repo":"run-llama/llama_index","label":"run-llama/llama_index","value":50584,"text":"3 run-llama/llama_index Python 07-02 07:37 UTC 50,584 LlamaIndex is the leading document agent and OCR platform 围绕文档、检索…"}],"githubRepoCount":24,"figureCount":8,"tableCount":4,"linkCount":51,"officialStatus":"14 条官方链接/动态","tags":"2026-07-02 Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents? obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills firecrawl/firecrawl farion1231/cc-switch shareAI-lab/learn-claude-code FlowiseAI/Flowise run-llama/llama_index agno-agi/agno langchain-ai/langgraph repos/obra repos/NousResearch repos/multica-ai repos/firecrawl repos/farion1231 repos/affaan-m repos/anomalyco repos/anthropics repos/browser-use repos/shareAI-lab repos/FlowiseAI repos/run-llama repos/agno-agi repos/langchain-ai AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"},{"fileName":"morning-brief-2026-06-29.html","date":"2026-06-29","weekday":"周一","type":"formal","hasWeekly":false,"title":"ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents","summary":"选择原因： 本次 arXiv 检索未发现 2026-06-28 12:35 CST 之后新发布的 agent benchmark/架构论文；因此选择最近且高度相关的 2026-06-26 新论文。ToolPrivacyBench 直接补上了 tool-using LLM agents 的一个关键盲点：任务成…","problem":"选择原因： 本次 arXiv 检索未发现 2026-06-28 12:35 CST 之后新发布的 agent benchmark/架构论文；因此选择最近且高度相关的 2026-06-26 新论文。ToolPrivacyBench 直接补上了 tool-using LLM agents 的一个关键盲点：任务成功不等于隐私合规，隐私要在完整工具调用轨迹和后端审…","method":"查看当期论文方法与架构摘要。","conclusion":"查看当期实验结果与核心结论。","difference":"查看当期创新点与既有工作的比较。","limitation":"仍需结合复现、成本和真实产品场景验证。","evidence":"论文实验 · 待独立复现","action":"持续追踪代码开放与后续复现，暂不直接接入","primaryTrack":"评测方法","tracks":["architecture","model","product","evaluation"],"leaderSignal":{"kind":"官方核验","org":"OpenAI / Anthropic","title":"本期未抽取到新的官方技术信号","summary":"历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。","url":""},"source":"briefs/morning-brief-2026-06-29.html","overview":"overviews/morning-brief-2026-06-29.svg","githubRows":[{"repo":"firecrawl/firecrawl","label":"firecrawl/firecrawl","value":2026,"text":"1 firecrawl/firecrawl 面向 agent 的网页搜索、抓取与交互 API，常作为 Web 工具层。 140,982 +894 TypeScript 2026-06-29 06:40:12 UTC"},{"repo":"obra/superpowers","label":"obra/superpowers","value":2026,"text":"2 obra/superpowers Agentic skills framework 与软件开发方法论。 240,906 +759 Shell 2026-06-29 06:40:06 UTC"},{"repo":"NousResearch/hermes-agent","label":"NousResearch/hermes-agent","value":2026,"text":"3 NousResearch/hermes-agent 会随用户成长的个人 agent runtime，强调持续能力和个性化。 205,184 +755 Python 2026-06-29 06:38:38 UTC"},{"repo":"multica-ai/andrej-karpathy-skills","label":"multica-ai/andrej-karpathy-skills","value":2026,"text":"4 multica-ai/andrej-karpathy-skills 把 LLM coding 经验整理为 CLAUDE.md 风格技能文件。 184,185 +679 未标明 2026-06-29 06:39:56 UTC"},{"repo":"farion1231/cc-switch","label":"farion1231/cc-switch","value":2026,"text":"5 farion1231/cc-switch Claude Code、Codex、OpenCode、OpenClaw、Gemini CLI 与 Hermes Agent 的桌面管理工具。 110,198 +616 Rust 2026-06…"},{"repo":"openai/codex","label":"openai/codex","value":2026,"text":"1 openai/codex 94,293 Rust 2026-06-29 06:41:50 UTC 轻量级终端 coding agent。 它是 coding agent 工具链的核心参考实现之一，直接连接本地代码库、终端执行与自然语言…"},{"repo":"punkpeye/awesome-mcp-servers","label":"punkpeye/awesome-mcp-servers","value":2026,"text":"2 punkpeye/awesome-mcp-servers 89,939 未标明 2026-06-29 06:29:47 UTC MCP server 集合。 MCP 是 agent 工具接入的关键协议层，高质量 server 索引能反…"},{"repo":"TauricResearch/TradingAgents","label":"TauricResearch/TradingAgents","value":2026,"text":"3 TauricResearch/TradingAgents 89,554 Python 2026-06-29 06:42:52 UTC 多智能体 LLM 金融交易框架。 虽然领域较垂直，但它提供了 multi-agent role de…"}],"githubRepoCount":20,"figureCount":15,"tableCount":4,"linkCount":60,"officialStatus":"未发现新发布内容","tags":"2026-06-29 ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents firecrawl/firecrawl obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills farion1231/cc-switch openai/codex punkpeye/awesome-mcp-servers TauricResearch/TradingAgents thedotmack/claude-mem infiniflow/ragflow repos/firecrawl repos/obra repos/NousResearch repos/multica-ai repos/farion1231 repos/openai repos/punkpeye repos/TauricResearch repos/thedotmack repos/infiniflow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"},{"fileName":"morning-brief-2026-06-28.html","date":"2026-06-28","weekday":"周日","type":"formal","hasWeekly":false,"title":"Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets","summary":"选择原因： 这篇论文在上一份已发布简报（2026-06-24 10:49 CST 左右）之后发布，直接面向 computer-use agents 的 GUI grounding 可信度评估。它不是只报告任务成功率，而是系统比较 post-hoc uncertainty quantification（UQ）…","problem":"选择原因： 这篇论文在上一份已发布简报（2026-06-24 10:49 CST 左右）之后发布，直接面向 computer-use agents 的 GUI grounding 可信度评估。它不是只报告任务成功率，而是系统比较 post-hoc uncertainty quantification（UQ）方法在开放权重和闭源 VLM agent 上的可迁…","method":"查看当期论文方法与架构摘要。","conclusion":"查看当期实验结果与核心结论。","difference":"查看当期创新点与既有工作的比较。","limitation":"仍需结合复现、成本和真实产品场景验证。","evidence":"论文实验 · 待独立复现","action":"持续追踪代码开放与后续复现，暂不直接接入","primaryTrack":"评测方法","tracks":["architecture","model","product","evaluation"],"leaderSignal":{"kind":"官方核验","org":"OpenAI / Anthropic","title":"本期未抽取到新的官方技术信号","summary":"历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。","url":""},"source":"briefs/morning-brief-2026-06-28.html","overview":"overviews/morning-brief-2026-06-28.svg","githubRows":[{"repo":"NousResearch/hermes-agent","label":"NousResearch/hermes-agent","value":2026,"text":"1 NousResearch/hermes-agent 长期个性化、工具使用和持续扩展能力的个人 agent 运行时。 204,429 +3,390 Python 2026-06-28 04:27:39 UTC"},{"repo":"obra/superpowers","label":"obra/superpowers","value":2026,"text":"2 obra/superpowers 面向软件开发 agent 的 skills 框架与工作方法集合。 240,147 +3,136 Shell 2026-06-28 04:28:22 UTC"},{"repo":"farion1231/cc-switch","label":"farion1231/cc-switch","value":2026,"text":"3 farion1231/cc-switch Claude Code、Codex、OpenCode、OpenClaw、Gemini CLI、Hermes Agent 的桌面切换与管理工具。 109,582 +2,449 Rust 2026…"},{"repo":"multica-ai/andrej-karpathy-skills","label":"multica-ai/andrej-karpathy-skills","value":2026,"text":"4 multica-ai/andrej-karpathy-skills 把 Andrej Karpathy 关于 LLM coding 的观察整理为 CLAUDE.md 风格技能文件。 183,506 +2,447 未标明 2026-06…"},{"repo":"affaan-m/ECC","label":"affaan-m/ECC","value":2026,"text":"5 affaan-m/ECC 跨 Claude Code、Codex、OpenCode、Cursor 的 agent harness 优化、技能、记忆与安全经验。 222,705 +2,103 JavaScript 2026-06-28 …"},{"repo":"paperclipai/paperclip","label":"paperclipai/paperclip","value":2026,"text":"1 paperclipai/paperclip 71,726 TypeScript 2026-06-28 04:26:34 UTC 开源的工作场景 agent 管理应用。 它把 agent 从单个 CLI/脚本推进到团队可管理的工作台形态…"},{"repo":"DietrichGebert/ponytail","label":"DietrichGebert/ponytail","value":2026,"text":"2 DietrichGebert/ponytail 62,011 JavaScript 2026-06-28 04:28:24 UTC 面向 Claude Code/Cursor 的 agent skills、rules 与开发行为约束。…"},{"repo":"ruvnet/ruflo","label":"ruvnet/ruflo","value":2026,"text":"3 ruvnet/ruflo 61,787 TypeScript 2026-06-28 04:14:16 UTC agent meta-harness，覆盖 multi-agent swarms、RAG、记忆、MCP 与 Claude C…"}],"githubRepoCount":27,"figureCount":21,"tableCount":3,"linkCount":82,"officialStatus":"8 条官方链接/动态","tags":"2026-06-28 Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets NousResearch/hermes-agent obra/superpowers farion1231/cc-switch multica-ai/andrej-karpathy-skills affaan-m/ECC paperclipai/paperclip DietrichGebert/ponytail ruvnet/ruflo shanraisshan/claude-code-best-practice mem0ai/mem0 crewAIInc/crewAI openai/gdpval repos/NousResearch repos/obra repos/farion1231 repos/multica-ai repos/affaan-m repos/firecrawl repos/anthropics repos/anomalyco repos/browser-use repos/paperclipai repos/DietrichGebert repos/ruvnet repos/shanraisshan repos/mem0ai repos/crewAIInc AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"},{"fileName":"morning-brief-2026-06-24.html","date":"2026-06-24","weekday":"周三","type":"formal","hasWeekly":false,"title":"EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions","summary":"选择原因：该论文在上一份已发布日报（2026-06-22 10:36 CST）之后进入本轮检索范围，且直接面向企业真实工作流中的 agent benchmark。它不是合成玩具任务，而是从真实 workplace sessions 构造 852 个可复现任务，重点评估模型、harness、工具使用、交付物质…","problem":"选择原因：该论文在上一份已发布日报（2026-06-22 10:36 CST）之后进入本轮检索范围，且直接面向企业真实工作流中的 agent benchmark。它不是合成玩具任务，而是从真实 workplace sessions 构造 852 个可复现任务，重点评估模型、harness、工具使用、交付物质量、成本、耗时和 skill transfer。","method":"查看当期论文方法与架构摘要。","conclusion":"查看当期实验结果与核心结论。","difference":"查看当期创新点与既有工作的比较。","limitation":"仍需结合复现、成本和真实产品场景验证。","evidence":"论文实验 · 待独立复现","action":"核验代码与复现条件，安排小规模产品验证","primaryTrack":"评测方法","tracks":["architecture","model","product","evaluation"],"leaderSignal":{"kind":"官方核验","org":"OpenAI / Anthropic","title":"本期未抽取到新的官方技术信号","summary":"历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。","url":""},"source":"briefs/morning-brief-2026-06-24.html","overview":"overviews/morning-brief-2026-06-24.svg","githubRows":[{"repo":"NousResearch/hermes-agent","label":"NousResearch/hermes-agent","value":2026,"text":"1 NousResearch/hermes-agent 强调长期个性化与持续能力积累的个人 agent。 201,039 +1,981 Python 2026-06-24 02:41 UTC"},{"repo":"obra/superpowers","label":"obra/superpowers","value":2026,"text":"2 obra/superpowers Agentic skills framework 与软件开发方法论。 237,011 +1,937 Shell 2026-06-24 02:41 UTC"},{"repo":"firecrawl/firecrawl","label":"firecrawl/firecrawl","value":2026,"text":"3 firecrawl/firecrawl 面向 agent 的网页搜索、抓取与交互 API。 138,230 +1,868 TypeScript 2026-06-24 02:38 UTC"},{"repo":"farion1231/cc-switch","label":"farion1231/cc-switch","value":2026,"text":"4 farion1231/cc-switch Claude Code、Codex、OpenCode、OpenClaw、Gemini CLI、Hermes Agent 的跨平台桌面切换与管理工具。 107,133 +1,375 Rust 2…"},{"repo":"multica-ai/andrej-karpathy-skills","label":"multica-ai/andrej-karpathy-skills","value":2026,"text":"5 multica-ai/andrej-karpathy-skills 把 Andrej Karpathy 关于 LLM coding 的观察整理为 CLAUDE.md 风格技能文件。 181,059 +1,290 未标明 2026-06…"},{"repo":"mattpocock/skills","label":"mattpocock/skills","value":2026,"text":"1 mattpocock/skills 143,470 面向 Claude Code 工作流的工程技能集合。 Agent Skills 正在从“提示词”变成可复用的工作流资产，该仓库展示了工程师个人技能库的组织方式。 Shell 2026…"},{"repo":"garrytan/gstack","label":"garrytan/gstack","value":2026,"text":"2 garrytan/gstack 114,173 面向 Claude Code 的 23 个 opinionated tools，覆盖 CEO、设计、工程管理、发布、文档和 QA 等角色。 代表“角色化 agent 工具栈”趋势，适合观…"},{"repo":"modelcontextprotocol/servers","label":"modelcontextprotocol/servers","value":2026,"text":"3 modelcontextprotocol/servers 87,614 Model Context Protocol 官方/公共服务器集合。 MCP 是 agent 工具接入的关键接口层，服务器生态决定 agent 可用工具和企业系统…"}],"githubRepoCount":20,"figureCount":15,"tableCount":6,"linkCount":55,"officialStatus":"12 条官方链接/动态","tags":"2026-06-24 EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions FrontisAI/EnterpriseClawBench NousResearch/hermes-agent obra/superpowers firecrawl/firecrawl farion1231/cc-switch multica-ai/andrej-karpathy-skills bozhouDev/codex-orange-book HKUDS/AgentSpace Johell1NS/browser-search iart-ai/motion-skills mattpocock/skills garrytan/gstack modelcontextprotocol/servers OpenHands/OpenHands microsoft/autogen affaan-m/ECC anthropics/skills anomalyco/opencode browser-use/browser-use anthropics/claude-code AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"},{"fileName":"morning-brief-2026-06-22.html","date":"2026-06-22","weekday":"周一","type":"formal","hasWeekly":false,"title":"StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns","summary":"选择原因：这是自上次已发布简报（2026-06-17）以来的新论文，直接评估 coding agent 在连续需求变更中的长期可靠性。它补足了单次任务成功率无法回答的关键问题：一个 agent 能稳定工作多少轮，以及模型、harness、测试反馈分别贡献了什么。","problem":"选择原因：这是自上次已发布简报（2026-06-17）以来的新论文，直接评估 coding agent 在连续需求变更中的长期可靠性。它补足了单次任务成功率无法回答的关键问题：一个 agent 能稳定工作多少轮，以及模型、harness、测试反馈分别贡献了什么。","method":"查看当期论文方法与架构摘要。","conclusion":"查看当期实验结果与核心结论。","difference":"查看当期创新点与既有工作的比较。","limitation":"仍需结合复现、成本和真实产品场景验证。","evidence":"论文实验 · 待独立复现","action":"核验代码与复现条件，安排小规模产品验证","primaryTrack":"Agent 产品","tracks":["architecture","model","product","evaluation"],"leaderSignal":{"kind":"官方核验","org":"OpenAI / Anthropic","title":"本期未抽取到新的官方技术信号","summary":"历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。","url":""},"source":"briefs/morning-brief-2026-06-22.html","overview":"overviews/morning-brief-2026-06-22.svg","githubRows":[{"repo":"obra/superpowers","label":"obra/superpowers","value":2026,"text":"1 obra/superpowers 面向软件开发 agent 的技能框架与工作方法，强调可复用技能、测试与流程约束。 235,074 +4,999 / 116.9h Shell 2026-06-22 00:29"},{"repo":"NousResearch/hermes-agent","label":"NousResearch/hermes-agent","value":2026,"text":"2 NousResearch/hermes-agent 具备工具、记忆与持续扩展能力的个人 agent 运行时。 199,058 +3,525 / 116.9h Python 2026-06-22 02:18"},{"repo":"multica-ai/andrej-karpathy-skills","label":"multica-ai/andrej-karpathy-skills","value":2026,"text":"3 multica-ai/andrej-karpathy-skills 将 coding agent 常见失误整理为单文件技能与行为约束。 179,769 +2,708 / 116.9h 未标注 2026-04-20 10:05"},{"repo":"firecrawl/firecrawl","label":"firecrawl/firecrawl","value":2026,"text":"4 firecrawl/firecrawl 面向 agent 的网页搜索、抓取与交互 API，承担 Web 工具层。 136,362 +2,645 / 116.9h TypeScript 2026-06-21 20:13"},{"repo":"affaan-m/ECC","label":"affaan-m/ECC","value":2026,"text":"5 affaan-m/ECC 跨 Claude Code、Codex、OpenCode 等工具的 agent harness 优化、技能与记忆系统。 219,369 +2,531 / 116.9h JavaScript 2026-06-2…"},{"repo":"anthropics/skills","label":"anthropics/skills","value":1769,"text":"anthropics/skills 151,775 153,544 +1,769"},{"repo":"anomalyco/opencode","label":"anomalyco/opencode","value":1671,"text":"anomalyco/opencode 175,360 177,031 +1,671"},{"repo":"openclaw/openclaw","label":"openclaw/openclaw","value":757,"text":"openclaw/openclaw 379,077 379,834 +757"}],"githubRepoCount":20,"figureCount":14,"tableCount":3,"linkCount":62,"officialStatus":"4 条官方链接/动态","tags":"2026-06-22 StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns amazon-science/StaminaBench obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills firecrawl/firecrawl affaan-m/ECC Shubhamsaboo/awesome-llm-apps msitarzewski/agency-agents farion1231/cc-switch google-gemini/gemini-cli browser-use/browser-use en/rest anthropics/skills anomalyco/opencode openclaw/openclaw anthropics/claude-code n8n-io/n8n langgenius/dify langchain-ai/langchain langflow-ai/langflow AI Agent benchmark GitHub OpenAI Anthropic Agent 产品 architecture model product evaluation  formal 正式简报"},{"fileName":"morning-brief-2026-06-17.html","date":"2026-06-17","weekday":"周三","type":"formal","hasWeekly":false,"title":"ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues","summary":"以下按论文顺序列出全部公开可访问的 Figure 1-9 与 Table 1-9。复杂图表与表格以论文 PDF 页面截图嵌入，未发现需要额外列出的缺失图表。来源均为 作者上传 PDF 。","problem":"以下按论文顺序列出全部公开可访问的 Figure 1-9 与 Table 1-9。复杂图表与表格以论文 PDF 页面截图嵌入，未发现需要额外列出的缺失图表。来源均为 作者上传 PDF 。","method":"查看当期论文方法与架构摘要。","conclusion":"查看当期实验结果与核心结论。","difference":"查看当期创新点与既有工作的比较。","limitation":"仍需结合复现、成本和真实产品场景验证。","evidence":"论文实验 · 待独立复现","action":"核验代码与复现条件，安排小规模产品验证","primaryTrack":"Agent 架构与工具","tracks":["architecture","model","product","evaluation"],"leaderSignal":{"kind":"官方核验","org":"OpenAI / Anthropic","title":"本期未抽取到新的官方技术信号","summary":"历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。","url":""},"source":"briefs/morning-brief-2026-06-17.html","overview":"overviews/morning-brief-2026-06-17.svg","githubRows":[{"repo":"obra/superpowers","label":"obra/superpowers","value":2026,"text":"1 obra/superpowers Agentic skills 框架与软件开发方法论，围绕 agent 工作方式组织项目能力。 230,075 +3,813 / 约 93.7h Shell 2026-06-17 05:08"},{"repo":"NousResearch/hermes-agent","label":"NousResearch/hermes-agent","value":2026,"text":"2 NousResearch/hermes-agent 强调长期适应与持续个性化的个人 agent。 195,533 +3,340 / 约 93.7h Python 2026-06-17 05:02"},{"repo":"multica-ai/andrej-karpathy-skills","label":"multica-ai/andrej-karpathy-skills","value":2026,"text":"3 multica-ai/andrej-karpathy-skills 以单一 CLAUDE.md 形式注入 coding agent 行为约束与工程经验。 177,061 +2,675 / 约 93.7h 未标注 2026-06-17 …"},{"repo":"affaan-m/ECC","label":"affaan-m/ECC","value":2026,"text":"4 affaan-m/ECC 跨 Claude Code、Codex、OpenCode、Cursor 的 agent harness 优化系统。 216,838 +2,385 / 约 93.7h JavaScript 2026-06-17…"},{"repo":"anomalyco/opencode","label":"anomalyco/opencode","value":2026,"text":"5 anomalyco/opencode 开源 coding agent 与可替换 agent harness。 175,360 +1,546 / 约 93.7h TypeScript 2026-06-17 05:05"},{"repo":"openclaw/openclaw","label":"openclaw/openclaw","value":625,"text":"增长候选 openclaw/openclaw 378,452（2026-06-13） 379,077 +625"},{"repo":"n8n-io/n8n","label":"n8n-io/n8n","value":596,"text":"增长候选 n8n-io/n8n 192,267（2026-06-13） 192,863 +596"},{"repo":"langgenius/dify","label":"langgenius/dify","value":514,"text":"增长候选 langgenius/dify 145,027（2026-06-13） 145,541 +514"}],"githubRepoCount":15,"figureCount":12,"tableCount":4,"linkCount":50,"officialStatus":"未发现新发布内容","tags":"2026-06-17 ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues LithiumDA/ReproRepo obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC anomalyco/opencode anthropics/skills langflow-ai/langflow langchain-ai/langchain firecrawl/firecrawl anthropics/claude-code search/repositories openclaw/openclaw n8n-io/n8n langgenius/dify AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"},{"fileName":"morning-brief-2026-06-13.html","date":"2026-06-13","weekday":"周六","type":"formal","hasWeekly":true,"title":"SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning","summary":"选择理由：该论文在上一份报告截止时间之后提交，直接研究 Agent 的 action interface。它证明工具是否有效，不仅取决于工具本身，也取决于 Agent 能否在看到中间结果后继续组合、修正和验证操作。","problem":"该论文在上一份报告截止时间之后提交，直接研究 Agent 的 action interface。它证明工具是否有效，不仅取决于工具本身，也取决于 Agent 能否在看到中间结果后继续组合、修正和验证操作。","method":"查看当期论文方法与架构摘要。","conclusion":"查看当期实验结果与核心结论。","difference":"查看当期创新点与既有工作的比较。","limitation":"仍需结合复现、成本和真实产品场景验证。","evidence":"论文实验 · 待独立复现","action":"核验代码与复现条件，安排小规模产品验证","primaryTrack":"模型能力","tracks":["architecture","model","product","evaluation"],"leaderSignal":{"kind":"官方核验","org":"OpenAI / Anthropic","title":"本期未抽取到新的官方技术信号","summary":"历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。","url":""},"source":"briefs/morning-brief-2026-06-13.html","overview":"overviews/morning-brief-2026-06-13.svg","githubRows":[{"repo":"NousResearch/hermes-agent","label":"NousResearch/hermes-agent","value":2026,"text":"1 NousResearch/hermes-agent 强调长期适应与能力积累的个人 Agent。 192,193 +1,139 Python 2026-06-13 07:24"},{"repo":"affaan-m/ECC","label":"affaan-m/ECC","value":2026,"text":"2 affaan-m/ECC 跨 Claude Code、Codex、OpenCode、Cursor 的 Agent harness 优化系统。 214,453 +887 JavaScript 2026-06-13 07:24"},{"repo":"anomalyco/opencode","label":"anomalyco/opencode","value":2026,"text":"3 anomalyco/opencode 开源 coding agent 与可替换 Agent harness。 173,814 +537 TypeScript 2026-06-13 07:23"},{"repo":"n8n-io/n8n","label":"n8n-io/n8n","value":2026,"text":"4 n8n-io/n8n 支持 AI 与大量业务集成的工作流自动化平台。 192,267 +157 TypeScript 2026-06-13 07:16"},{"repo":"langgenius/dify","label":"langgenius/dify","value":2026,"text":"5 langgenius/dify 生产级 agentic workflow 开发平台。 145,027 +135 TypeScript 2026-06-13 07:23"}],"githubRepoCount":13,"figureCount":16,"tableCount":4,"linkCount":50,"officialStatus":"8 条官方链接/动态","tags":"2026-06-13 SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning NVlabs/SpatialClaw NousResearch/hermes-agent affaan-m/ECC anomalyco/opencode n8n-io/n8n langgenius/dify openclaw/openclaw obra/superpowers ultraworkers/claw-code Significant-Gravitas/AutoGPT multica-ai/andrej-karpathy-skills ApodexAI/AgentHarness GordenSun/GordenSuperPPTSkills AI Agent benchmark GitHub OpenAI Anthropic 模型能力 architecture model product evaluation weekly 周报 formal 正式简报"},{"fileName":"morning-brief-2026-06-12.html","date":"2026-06-12","weekday":"周五","type":"formal","hasWeekly":false,"title":"AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility","summary":"选择理由：这是自上一份日报后发布的最新、且直接改变 Agent benchmark 集成方式的工作。它不再把 benchmark 固定在某个模型中心化 harness 中，而是把评测本身实现成可交互的 judge agent。","problem":"这是自上一份日报后发布的最新、且直接改变 Agent benchmark 集成方式的工作。它不再把 benchmark 固定在某个模型中心化 harness 中，而是把评测本身实现成可交互的 judge agent。","method":"查看当期论文方法与架构摘要。","conclusion":"查看当期实验结果与核心结论。","difference":"查看当期创新点与既有工作的比较。","limitation":"仍需结合复现、成本和真实产品场景验证。","evidence":"论文实验 · 待独立复现","action":"持续追踪代码开放与后续复现，暂不直接接入","primaryTrack":"Agent 架构与工具","tracks":["architecture","model","product","evaluation"],"leaderSignal":{"kind":"官方核验","org":"OpenAI / Anthropic","title":"本期未抽取到新的官方技术信号","summary":"历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。","url":""},"source":"briefs/morning-brief-2026-06-12.html","overview":"overviews/morning-brief-2026-06-12.svg","githubRows":[{"repo":"GordenSun/GordenSuperPPTSkills","label":"GordenSuperPPTSkills","value":2026,"text":"1 GordenSuperPPTSkills 通过 Agent Skill 生成图片式 PPT，并转换为可编辑 PPTX。 790 +351 Python 2026-06-12 02:00"},{"repo":"JimLiu/baoyu-design","label":"baoyu-design","value":2026,"text":"2 baoyu-design 在 Cursor、Claude Code 等环境中运行的设计 Agent Skill，可生成 UI、原型、deck 与线框图。 775 +244 JavaScript 2026-06-12 01:58"},{"repo":"amElnagdy/guard-skills","label":"guard-skills","value":2026,"text":"3 guard-skills 面向 coding agent 的质量门禁 skills，检查 AI 生成代码、测试和文档的常见失败模式。 571 +97 未标注 2026-06-11 22:47"},{"repo":"ApodexAI/AgentHarness","label":"AgentHarness","value":2026,"text":"4 AgentHarness 用于 Apodex-1.0 深度研究 benchmark 的公开评测 harness。 122 +73 Python 2026-06-12 01:51"},{"repo":"adamallcock/codex-chatgpt-control","label":"codex-chatgpt-control","value":2026,"text":"5 codex-chatgpt-control 让 Codex agent 控制可见 ChatGPT Web 会话的非官方 SDK。 205 +46 JavaScript 2026-06-12 01:11"}],"githubRepoCount":10,"figureCount":18,"tableCount":2,"linkCount":48,"officialStatus":"6 条官方链接/动态","tags":"2026-06-12 AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility GordenSun/GordenSuperPPTSkills JimLiu/baoyu-design amElnagdy/guard-skills ApodexAI/AgentHarness adamallcock/codex-chatgpt-control affaan-m/ECC n8n-io/n8n NousResearch/hermes-agent anomalyco/opencode langgenius/dify AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"},{"fileName":"morning-brief-2026-06-09.html","date":"2026-06-09","weekday":"周二","type":"formal","hasWeekly":false,"title":"Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations","summary":"PDF 共识别出 1 个表格和 6 张图，以下按论文顺序完整附上。","problem":"PDF 共识别出 1 个表格和 6 张图，以下按论文顺序完整附上。","method":"查看当期论文方法与架构摘要。","conclusion":"查看当期实验结果与核心结论。","difference":"查看当期创新点与既有工作的比较。","limitation":"GitHub star 会持续变化；GitHub 搜索与主题筛选可能遗漏未使用相关关键词的项目；论文结果为作者报告，未在本早报中独立复现。","evidence":"论文实验 · 待独立复现","action":"核验代码与复现条件，安排小规模产品验证","primaryTrack":"Agent 架构与工具","tracks":["architecture","model","product","evaluation"],"leaderSignal":{"kind":"官方核验","org":"OpenAI / Anthropic","title":"本期未抽取到新的官方技术信号","summary":"历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。","url":""},"source":"briefs/morning-brief-2026-06-09.html","overview":"overviews/morning-brief-2026-06-09.svg","githubRows":[{"repo":"JimLiu/baoyu-design","label":"JimLiu/baoyu-design","value":2026,"text":"1 JimLiu/baoyu-design 把 Claude Design 作为 Agent Skill 本地运行，生成 UI、原型和演示文稿。 531 +531 +78 JavaScript 2026-06-09 02:44"},{"repo":"amElnagdy/guard-skills","label":"amElnagdy/guard-skills","value":2026,"text":"2 amElnagdy/guard-skills 面向 coding agents 的质量门禁 skills，发现 AI 生成代码、测试和文档中的失效模式。 474 +474 +61 未标注 2026-06-09 02:56"},{"repo":"GordenSun/GordenSuperPPTSkills","label":"GordenSun/GordenSuperPPTSkills","value":2026,"text":"3 GordenSun/GordenSuperPPTSkills 使用 GPT 生成图片风格 PPT，再转换为可编辑 PPTX 的 Agent Skill。 439 +439 +192 Python 2026-06-09 02:55"},{"repo":"adamallcock/codex-chatgpt-control","label":"adamallcock/codex-chatgpt-control","value":2026,"text":"4 adamallcock/codex-chatgpt-control 让 Codex agents 控制可见 ChatGPT 网页会话的非官方 SDK。 159 +159 +36 JavaScript 2026-06-09 02:34"},{"repo":"ApodexAI/AgentHarness","label":"ApodexAI/AgentHarness","value":2026,"text":"5 ApodexAI/AgentHarness 用于在公开深度研究 benchmark 上评估 Apodex-1.0 的 Agent Harness。 49 +49 昨日未入快照 Python 2026-06-09 02:49"}],"githubRepoCount":6,"figureCount":6,"tableCount":2,"linkCount":24,"officialStatus":"未发现新发布内容","tags":"2026-06-09 Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations JimLiu/baoyu-design amElnagdy/guard-skills GordenSun/GordenSuperPPTSkills adamallcock/codex-chatgpt-control ApodexAI/AgentHarness search/repositories AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"},{"fileName":"morning-brief-test-2026-06-08.html","date":"2026-06-08","weekday":"周一","type":"test","hasWeekly":false,"title":"QBugLM: An Agentic Benchmarking Framework for LLM-based Quantum Software Debugging","summary":"PDF 共识别出 1 个表格和 5 张图。以下按论文顺序完整附上。","problem":"PDF 共识别出 1 个表格和 5 张图。以下按论文顺序完整附上。","method":"查看当期论文方法与架构摘要。","conclusion":"查看当期实验结果与核心结论。","difference":"查看当期创新点与既有工作的比较。","limitation":"仍需结合复现、成本和真实产品场景验证。","evidence":"论文实验 · 待独立复现","action":"核验代码与复现条件，安排小规模产品验证","primaryTrack":"评测方法","tracks":["architecture","model","product","evaluation"],"leaderSignal":{"kind":"官方核验","org":"OpenAI / Anthropic","title":"本期未抽取到新的官方技术信号","summary":"历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。","url":""},"source":"briefs/morning-brief-test-2026-06-08.html","overview":"overviews/morning-brief-test-2026-06-08.svg","githubRows":[{"repo":"JimLiu/baoyu-design","label":"JimLiu/baoyu-design","value":2026,"text":"1 JimLiu/baoyu-design 把 Claude Design 作为 Agent Skill 在 Cursor、Claude Code 等环境本地运行，生成 UI、原型和演示文稿。 453 JavaScript 2026-06…"},{"repo":"amElnagdy/guard-skills","label":"amElnagdy/guard-skills","value":2026,"text":"2 amElnagdy/guard-skills 面向 coding agents 的质量门禁 skills，用于发现 AI 生成代码、测试和文档中的常见失效模式。 413 未标注 2026-06-06 16:59 2026-06-08 …"},{"repo":"GordenSun/GordenSuperPPTSkills","label":"GordenSun/GordenSuperPPTSkills","value":2026,"text":"3 GordenSun/GordenSuperPPTSkills 使用 GPT 生成图片风格 PPT，再转换为可编辑 PPTX 的 Agent Skill。 247 Python 2026-06-07 16:20 2026-06-08 1…"},{"repo":"adamallcock/codex-chatgpt-control","label":"adamallcock/codex-chatgpt-control","value":2026,"text":"4 adamallcock/codex-chatgpt-control 让 Codex agent 控制可见 ChatGPT 网页会话的非官方 SDK。 123 TypeScript 2026-06-06 21:09 2026-06-08…"},{"repo":"RainyMarks/DeepX","label":"RainyMarks/DeepX","value":2026,"text":"5 RainyMarks/DeepX Rust 编写的 AI agent workspace。 32 Rust 2026-06-07 02:30 2026-06-08 10:33"}],"githubRepoCount":7,"figureCount":5,"tableCount":2,"linkCount":31,"officialStatus":"未发现新发布内容","tags":"2026-06-08 QBugLM: An Agentic Benchmarking Framework for LLM-based Quantum Software Debugging qachub/qbuglm JimLiu/baoyu-design amElnagdy/guard-skills GordenSun/GordenSuperPPTSkills adamallcock/codex-chatgpt-control RainyMarks/DeepX search/repositories AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  test 测试稿"}];
+    const feedbackKey = "agentBriefFeedback:v1";
+    const rows = Array.from(document.querySelectorAll(".brief-row"));
+    const trackButtons = Array.from(document.querySelectorAll(".track-tab"));
+    const feedbackButtons = Array.from(document.querySelectorAll(".feedback-button"));
+    const readerPanel = document.getElementById("readerPanel");
+    const readerFrame = document.getElementById("readerFrame");
     const readerTitle = document.getElementById("readerTitle");
+    const readerSubline = document.getElementById("readerSubline");
     const readerOpen = document.getElementById("readerOpen");
     const overviewOpen = document.getElementById("overviewOpen");
     const overviewPreview = document.getElementById("overviewPreview");
     const overviewPreviewLink = document.getElementById("overviewPreviewLink");
+    const decisionPanel = document.getElementById("decisionPanel");
     const searchInput = document.getElementById("searchInput");
-    const filters = Array.from(document.querySelectorAll(".filter"));
-    const emptyState = document.getElementById("emptyState");
-    let activeFilter = "all";
+    const resultCount = document.getElementById("resultCount");
+    const emptyList = document.getElementById("emptyList");
+    const feedbackNote = document.getElementById("feedbackNote");
+    const feedbackSummary = document.getElementById("feedbackSummary");
+    let activeTrack = "latest";
+    let selectedId = briefs[0].fileName;
+    let feedbackState = {};
+    let noteTimer = null;
 
-    function selectCard(card) {
-      cards.forEach(item => item.classList.toggle("active", item === card));
-      const src = card.dataset.src;
-      const overview = card.dataset.overview;
-      frame.src = src;
-      readerTitle.textContent = card.dataset.title;
-      readerOpen.href = src;
-      overviewOpen.href = overview;
-      overviewPreview.src = overview;
-      overviewPreview.alt = card.dataset.title + " 概览图";
-      overviewPreviewLink.href = overview;
+    try { feedbackState = JSON.parse(localStorage.getItem(feedbackKey) || "{}"); } catch (_) { feedbackState = {}; }
+
+    function isMobile() {
+      return window.matchMedia("(max-width: 980px)").matches;
     }
 
-    function matchesFilter(card) {
-      if (activeFilter === "all") return true;
-      return card.dataset.type.split(" ").includes(activeFilter);
+    function briefById(id) {
+      return briefs.find(item => item.fileName === id);
     }
 
-    function matchesSearch(card) {
-      const query = searchInput.value.trim().toLowerCase();
-      if (!query) return true;
-      return `${card.dataset.tags} ${card.textContent}`.toLowerCase().includes(query);
+    function setText(id, value) {
+      document.getElementById(id).textContent = value || "当期未单独提炼，请查看原文。";
     }
 
-    function applyFilters() {
-      let visibleCount = 0;
-      cards.forEach(card => {
-        const visible = matchesFilter(card) && matchesSearch(card);
-        card.style.display = visible ? "grid" : "none";
-        if (visible) visibleCount += 1;
+    function saveFeedback() {
+      localStorage.setItem(feedbackKey, JSON.stringify(feedbackState));
+    }
+
+    function feedbackFor(id) {
+      return feedbackState[id] || { states: [], note: "" };
+    }
+
+    function renderFeedback(brief) {
+      const entry = feedbackFor(brief.fileName);
+      feedbackButtons.forEach(button => button.classList.toggle("active", entry.states.includes(button.dataset.feedback)));
+      feedbackNote.value = entry.note || "";
+      feedbackSummary.textContent = entry.states.length || entry.note ? "已记录 · 仅保存在当前浏览器" : "仅保存在当前浏览器";
+      rows.forEach(row => {
+        const value = feedbackFor(row.dataset.id);
+        row.classList.toggle("has-feedback", Boolean(value.states.length || value.note));
       });
-      emptyState.style.display = visibleCount === 0 ? "block" : "none";
-      const activeVisible = cards.some(card => card.classList.contains("active") && card.style.display !== "none");
-      if (!activeVisible) {
-        const firstVisible = cards.find(card => card.style.display !== "none");
-        if (firstVisible) selectCard(firstVisible);
+    }
+
+    function selectBrief(brief, options) {
+      const config = Object.assign({ openMobile: false, updateHash: true }, options || {});
+      selectedId = brief.fileName;
+      rows.forEach(row => {
+        const active = row.dataset.id === brief.fileName;
+        row.classList.toggle("active", active);
+        row.setAttribute("aria-selected", String(active));
+      });
+      readerPanel.classList.remove("is-empty");
+      readerTitle.textContent = brief.date + " · " + brief.title;
+      readerSubline.textContent = brief.primaryTrack + " · " + brief.evidence;
+      readerOpen.href = brief.source;
+      overviewOpen.href = brief.overview;
+      overviewPreview.src = brief.overview;
+      overviewPreview.alt = brief.date + " 简报概览图";
+      overviewPreviewLink.href = brief.overview;
+      if (readerFrame.getAttribute("src") !== brief.source) readerFrame.src = brief.source;
+      setText("summaryMeta", brief.primaryTrack + " · " + brief.githubRepoCount + " 个项目");
+      setText("problemText", brief.problem);
+      setText("methodText", brief.method);
+      setText("conclusionText", brief.conclusion);
+      setText("differenceText", brief.difference + " · " + brief.evidence);
+      setText("radarText", brief.githubRows.slice(0, 3).map(row => row.repo).join(" · ") || brief.primaryTrack);
+      setText("actionText", brief.action);
+      setText("leaderKind", brief.leaderSignal.kind);
+      setText("leaderTitle", brief.leaderSignal.org + " · " + brief.leaderSignal.title);
+      setText("leaderSummary", brief.leaderSignal.summary);
+      document.getElementById("leaderLink").href = brief.leaderSignal.url || brief.source;
+      renderFeedback(brief);
+      if (config.updateHash) history.replaceState(null, "", "#" + brief.fileName.replace(".html", ""));
+      if (config.openMobile && isMobile()) {
+        readerPanel.classList.add("is-open");
+        document.body.classList.add("reader-open");
       }
     }
 
-    cards.forEach(card => {
-      card.addEventListener("click", event => {
-        if (event.target.closest("a")) return;
-        selectCard(card);
+    function matchesTrack(brief, index) {
+      if (activeTrack === "all") return true;
+      if (activeTrack === "latest") return index === 0;
+      return brief.tracks.includes(activeTrack);
+    }
+
+    function matchesSearch(brief) {
+      const query = searchInput.value.trim().toLowerCase();
+      if (!query) return true;
+      const haystack = [
+        brief.tags,
+        brief.summary,
+        brief.problem,
+        brief.method,
+        brief.conclusion,
+        brief.githubRows.map(row => row.repo).join(" "),
+      ].join(" ").toLowerCase();
+      return haystack.includes(query);
+    }
+
+    function applyFilters() {
+      const visible = [];
+      briefs.forEach((brief, index) => {
+        const show = matchesTrack(brief, index) && matchesSearch(brief);
+        const row = rows.find(item => item.dataset.id === brief.fileName);
+        row.hidden = !show;
+        if (show) visible.push(brief);
       });
-      card.addEventListener("keydown", event => {
+      resultCount.textContent = visible.length + " / " + briefs.length;
+      emptyList.style.display = visible.length ? "none" : "block";
+      if (!visible.length) {
+        readerPanel.classList.add("is-empty");
+        readerFrame.src = "about:blank";
+        readerPanel.classList.remove("is-open");
+        document.body.classList.remove("reader-open");
+        return;
+      }
+      const selectedVisible = visible.some(brief => brief.fileName === selectedId);
+      if (!selectedVisible) selectBrief(visible[0], { openMobile: false });
+    }
+
+    rows.forEach(row => {
+      const activate = () => {
+        const brief = briefById(row.dataset.id);
+        if (brief) selectBrief(brief, { openMobile: true });
+      };
+      row.addEventListener("click", activate);
+      row.addEventListener("keydown", event => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
-          selectCard(card);
+          activate();
         }
       });
     });
 
-    filters.forEach(button => {
+    trackButtons.forEach(button => {
       button.addEventListener("click", () => {
-        activeFilter = button.dataset.filter;
-        filters.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+        activeTrack = button.dataset.track;
+        trackButtons.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
         applyFilters();
       });
     });
 
+    feedbackButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const entry = feedbackFor(selectedId);
+        const value = button.dataset.feedback;
+        if (value === "dismiss") {
+          entry.states = entry.states.includes("dismiss") ? [] : ["dismiss"];
+        } else {
+          entry.states = entry.states.filter(item => item !== "dismiss");
+          entry.states = entry.states.includes(value) ? entry.states.filter(item => item !== value) : entry.states.concat(value);
+        }
+        feedbackState[selectedId] = entry;
+        saveFeedback();
+        renderFeedback(briefById(selectedId));
+      });
+    });
+
+    feedbackNote.addEventListener("input", () => {
+      clearTimeout(noteTimer);
+      noteTimer = setTimeout(() => {
+        const entry = feedbackFor(selectedId);
+        entry.note = feedbackNote.value.trim();
+        feedbackState[selectedId] = entry;
+        saveFeedback();
+        renderFeedback(briefById(selectedId));
+      }, 250);
+    });
+
     searchInput.addEventListener("input", applyFilters);
+    document.getElementById("closeReader").addEventListener("click", () => {
+      readerPanel.classList.remove("is-open");
+      document.body.classList.remove("reader-open");
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        readerPanel.classList.remove("is-open");
+        document.body.classList.remove("reader-open");
+      }
+    });
+
+    const deepLink = decodeURIComponent(location.hash.replace(/^#/, ""));
+    const linkedBrief = briefs.find(brief => brief.fileName.replace(".html", "") === deepLink);
+    if (linkedBrief) selectBrief(linkedBrief, { openMobile: isMobile(), updateHash: false });
+    else selectBrief(briefs[0], { openMobile: false, updateHash: false });
+    if (isMobile()) decisionPanel.removeAttribute("open");
+    applyFilters();
   </script>
 </body>
 </html>

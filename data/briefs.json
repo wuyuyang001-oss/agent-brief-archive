@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T03:00:53.864Z",
+  "generatedAt": "2026-07-10T03:02:50.663Z",
   "briefs": [
     {
       "fileName": "morning-brief-2026-07-10.html",
@@ -9,6 +9,27 @@
       "hasWeekly": false,
       "title": "WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search",
       "summary": "选择理由： 该论文于 2026-07-09 提交，晚于 2026-07-08 简报的信息截止时间；主题直接命中 agent 架构：用递归 delegation tree、search mode、web-probing 和同层经验复用来改进复杂网页信息搜索。",
+      "problem": "该论文于 2026-07-09 提交，晚于 2026-07-08 简报的信息截止时间；主题直接命中 agent 架构：用递归 delegation tree、search mode、web-probing 和同层经验复用来改进复杂网页信息搜索。",
+      "method": "构建递归 delegation tree；每个节点绑定局部目标和搜索模式；父节点根据子节点返回证据继续扩展、修正或聚合。",
+      "conclusion": "GLM-4.5 backbone 下，WebSwarm 在 BC-Plus ACC 达 68.00，比 GLM-4.5 ReAct 高 17.50；WideSearch Item F1 达 74.37，高 9.76；DeepWideSearch Item F1 达 58.40，高 11.77；GISA Overall 达 62.30，高 6.76。",
+      "difference": "web-structure-guided expansion 用外部信息组织方式约束拆解维度；experience-guided node solving 在同一实例的同质兄弟节点间复用过程经验，避免重复试错。",
+      "limitation": "更多 LLM 调用和 web-tool 请求导致成本/延迟上升；delegation 与 search-mode assignment 仍依赖基础模型能力；当前主要处理文本网页工具，还没有系统覆盖图像、视频、音频或 GUI 操作。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "Agent 架构与工具",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方发布",
+        "org": "OpenAI",
+        "title": "GPT-5.6 is now the preferred model in Microsoft 365 Copilot",
+        "summary": "OpenAI 将 GPT-5.6 接入 Microsoft 365 Copilot，强调更高 token 效率和跨 Word/Excel/PowerPoint/Cowork 的生产力能力。",
+        "url": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/"
+      },
       "source": "briefs/morning-brief-2026-07-10.html",
       "overview": "overviews/morning-brief-2026-07-10.svg",
       "githubRows": [
@@ -66,7 +87,7 @@
       "tableCount": 10,
       "linkCount": 44,
       "officialStatus": "11 条官方链接/动态",
-      "tags": "2026-07-10 WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+      "tags": "2026-07-10 WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch open-webui/open-webui D4Vinci/Scrapling headroomlabs-ai/headroom MemPalace/mempalace Panniantong/Agent-Reach AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-08.html",
@@ -76,6 +97,27 @@
       "hasWeekly": false,
       "title": "RuBench: A Repository-Level Agentic Coding Benchmark with Natively Authored Russian Task Specifications",
       "summary": "选择理由： RuBench 于 2026-07-07 提交，直接面向 repository-level agentic coding evaluation，且把“原生非英语客户式需求 + 产品级 CLI agent + 私有 oracle + 可审计轨迹”放在同一套评测里。它补上了 SWE-bench 系列…",
+      "problem": "RuBench 于 2026-07-07 提交，直接面向 repository-level agentic coding evaluation，且把“原生非英语客户式需求 + 产品级 CLI agent + 私有 oracle + 可审计轨迹”放在同一套评测里。它补上了 SWE-bench 系列和翻译式 multilingual benchmark 没覆盖…",
+      "method": "从 2026 年真实 fix commit 挖掘任务，去除仓库历史和 oracle tests，用俄语原生规格驱动产品级 CLI agent，再用私有回归测试判分并公开轨迹、diff、成本与 token 记录。",
+      "conclusion": "Opus 4.8 点估计最高 78.7%，Sonnet 5 74.7%，Codex CLI + GPT-5.5 66.7%，Haiku 4.5 53.3%；Codex 的 token output 约 16k/任务，约为 Opus 4.8 的一半。",
+      "difference": "第一个把 repo-level agent、原生非英语任务、私有 oracle 和模型替换审计结合起来的 benchmark；强调评测部署产品配置，而不是只评测裸模型。",
+      "limitation": "N=25 很小，约 25 个百分点才有较强分辨率；任务集中在俄语与少数仓库/语言；网络开放使 upstream 查询成为可审计但无法完全禁止的变量；benchmark 构建过程也使用了 Claude agentic sessions，作者用私有可执行 oracle 和公开轨迹来降低风险。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
       "source": "briefs/morning-brief-2026-07-08.html",
       "overview": "overviews/morning-brief-2026-07-08.svg",
       "githubRows": [
@@ -133,7 +175,7 @@
       "tableCount": 6,
       "linkCount": 33,
       "officialStatus": "8 条官方链接/动态",
-      "tags": "2026-07-08 RuBench: A Repository-Level Agentic Coding Benchmark with Natively Authored Russian Task Specifications AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+      "tags": "2026-07-08 RuBench: A Repository-Level Agentic Coding Benchmark with Natively Authored Russian Task Specifications eugeneshilow/rubench firecrawl/firecrawl obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills farion1231/cc-switch bytedance/UI-TARS-desktop microsoft/playwright-mcp continuedev/continue ComposioHQ/composio openai/openai-agents-python AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-06.html",
@@ -143,6 +185,27 @@
       "hasWeekly": false,
       "title": "TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution",
       "summary": "选择理由： 7/4-7/6 期间未发现比这篇更贴合 coding agent benchmark 的新论文。TestEvo-Bench 直接评估 agent 是否能让测试与代码变更共同演化，并提供可执行 runner、动态标签、时间戳切分与 live benchmark 机制，比只看静态 diff 或覆盖率…",
+      "problem": "7/4-7/6 期间未发现比这篇更贴合 coding agent benchmark 的新论文。TestEvo-Bench 直接评估 agent 是否能让测试与代码变更共同演化，并提供可执行 runner、动态标签、时间戳切分与 live benchmark 机制，比只看静态 diff 或覆盖率更能反映工程 agent 能力。",
+      "method": "三阶段管线先挖掘 test-code change pair，再用跨 revision 执行、依赖映射、覆盖与 mutation 信号清洗，最后打包成可执行 agent 任务。",
+      "conclusion": "Claude Code 与 Gemini CLI 在 test generation 均为 77.5%；Gemini CLI 在 test update 为 74.6%。新近任务成功率更低，说明 benchmark 尚未饱和。",
+      "difference": "用“新测试在新代码通过、旧代码失败”等动态标签定义任务成功，而不是依赖静态 co-change 或 diff similarity；同时支持按时间切片评估，降低训练污染风险。",
+      "limitation": "只覆盖 Java Maven；四个 agent 配置不能代表全部生态；执行、覆盖、mutation 分析成本高，完整运行约 72 小时级别。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
       "source": "briefs/morning-brief-2026-07-06.html",
       "overview": "overviews/morning-brief-2026-07-06.svg",
       "githubRows": [
@@ -200,7 +263,7 @@
       "tableCount": 6,
       "linkCount": 36,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-07-06 TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+      "tags": "2026-07-06 TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution obra/superpowers firecrawl/firecrawl NousResearch/hermes-agent multica-ai/andrej-karpathy-skills farion1231/cc-switch addyosmani/agent-skills earendil-works/pi code-yeongyu/oh-my-openagent cline/cline openinterpreter/openinterpreter AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-03.html",
@@ -210,6 +273,27 @@
       "hasWeekly": false,
       "title": "A Task-State Representation for Long-Horizon Mobile GUI Agents",
       "summary": "选择理由： arXiv API 在本次运行中返回 rate exceeded，因此改用 arXiv 官方页面与 PDF 核验。未发现比 2026-07-01 这篇更适合“benchmark / agent 架构 / computer-use GUI agent”主题且尚未总结过的近期论文；它提出训练无关的 …",
+      "problem": "arXiv API 在本次运行中返回 rate exceeded，因此改用 arXiv 官方页面与 PDF 核验。未发现比 2026-07-01 这篇更适合“benchmark / agent 架构 / computer-use GUI agent”主题且尚未总结过的近期论文；它提出训练无关的 Task-State Representation wrapp…",
+      "method": "把 agent 的“持久任务状态”从屏幕 observation/history 中拆出来，用一个外部状态块维护，并通过 prompt 注入给固定 actor。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "TSR 同时维护 global summary、progress tracker、transition-aware focus；其中 transition-aware focus 用动作前后截图判断动作是否生效，专门应对 stale screen 与重复动作。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "Agent 架构与工具",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
       "source": "briefs/morning-brief-2026-07-03.html",
       "overview": "overviews/morning-brief-2026-07-03.svg",
       "githubRows": [
@@ -267,7 +351,7 @@
       "tableCount": 8,
       "linkCount": 26,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-07-03 A Task-State Representation for Long-Horizon Mobile GUI Agents AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+      "tags": "2026-07-03 A Task-State Representation for Long-Horizon Mobile GUI Agents obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC firecrawl/firecrawl VoltAgent/awesome-design-md karpathy/autoresearch JuliusBrussee/caveman safishamsi/graphify Egonex-AI/Understand-Anything AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-02.html",
@@ -277,6 +361,27 @@
       "hasWeekly": false,
       "title": "Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents?",
       "summary": "选择原因： 这篇 2026-07-01 新论文直接审计 repository-level 性能优化 benchmark 是否可靠测量 coding agents。它不是又发布一个新榜单，而是拆解 GSO、SWE-Perf、SWE-fficiency 的重放稳定性、计分规则敏感性和任务剩余难度，是今天对 ag…",
+      "problem": "选择原因： 这篇 2026-07-01 新论文直接审计 repository-level 性能优化 benchmark 是否可靠测量 coding agents。它不是又发布一个新榜单，而是拆解 GSO、SWE-Perf、SWE-fficiency 的重放稳定性、计分规则敏感性和任务剩余难度，是今天对 agent benchmark 可信度最有价值的信号。",
+      "method": "跨四种 Google Cloud CPU/机器配置和多轮重放官方 reference patch，区分“能运行”“快于 base”“仍满足原始构造规则”三层信号；再对公开提交做计分规则重算和 task-level 覆盖分析。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "把 coding-agent benchmark 从“排行榜是否高”拉回到“reference 信号是否稳定、评分是否被极端任务支配、剩余任务是否还有区分度”的计量学问题。",
+      "limitation": "它不是新 benchmark，也不覆盖所有 coding-agent 性能工程；SWE-Perf 因缺少可比公开 agent 输出，被排除在部分 task-level 分析之外；跨机器实验仍受云硬件、公开 artifact 质量和论文实现选择影响。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
       "source": "briefs/morning-brief-2026-07-02.html",
       "overview": "overviews/morning-brief-2026-07-02.svg",
       "githubRows": [
@@ -334,7 +439,7 @@
       "tableCount": 4,
       "linkCount": 51,
       "officialStatus": "14 条官方链接/动态",
-      "tags": "2026-07-02 Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents? AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+      "tags": "2026-07-02 Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents? obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills firecrawl/firecrawl farion1231/cc-switch shareAI-lab/learn-claude-code FlowiseAI/Flowise run-llama/llama_index agno-agi/agno langchain-ai/langgraph repos/obra repos/NousResearch repos/multica-ai repos/firecrawl repos/farion1231 repos/affaan-m repos/anomalyco repos/anthropics repos/browser-use repos/shareAI-lab repos/FlowiseAI repos/run-llama repos/agno-agi repos/langchain-ai AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-29.html",
@@ -344,6 +449,27 @@
       "hasWeekly": false,
       "title": "ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents",
       "summary": "选择原因： 本次 arXiv 检索未发现 2026-06-28 12:35 CST 之后新发布的 agent benchmark/架构论文；因此选择最近且高度相关的 2026-06-26 新论文。ToolPrivacyBench 直接补上了 tool-using LLM agents 的一个关键盲点：任务成…",
+      "problem": "选择原因： 本次 arXiv 检索未发现 2026-06-28 12:35 CST 之后新发布的 agent benchmark/架构论文；因此选择最近且高度相关的 2026-06-26 新论文。ToolPrivacyBench 直接补上了 tool-using LLM agents 的一个关键盲点：任务成功不等于隐私合规，隐私要在完整工具调用轨迹和后端审…",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
       "source": "briefs/morning-brief-2026-06-29.html",
       "overview": "overviews/morning-brief-2026-06-29.svg",
       "githubRows": [
@@ -401,7 +527,7 @@
       "tableCount": 4,
       "linkCount": 60,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-06-29 ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+      "tags": "2026-06-29 ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents firecrawl/firecrawl obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills farion1231/cc-switch openai/codex punkpeye/awesome-mcp-servers TauricResearch/TradingAgents thedotmack/claude-mem infiniflow/ragflow repos/firecrawl repos/obra repos/NousResearch repos/multica-ai repos/farion1231 repos/openai repos/punkpeye repos/TauricResearch repos/thedotmack repos/infiniflow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-28.html",
@@ -411,6 +537,27 @@
       "hasWeekly": false,
       "title": "Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets",
       "summary": "选择原因： 这篇论文在上一份已发布简报（2026-06-24 10:49 CST 左右）之后发布，直接面向 computer-use agents 的 GUI grounding 可信度评估。它不是只报告任务成功率，而是系统比较 post-hoc uncertainty quantification（UQ）…",
+      "problem": "选择原因： 这篇论文在上一份已发布简报（2026-06-24 10:49 CST 左右）之后发布，直接面向 computer-use agents 的 GUI grounding 可信度评估。它不是只报告任务成功率，而是系统比较 post-hoc uncertainty quantification（UQ）方法在开放权重和闭源 VLM agent 上的可迁…",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
       "source": "briefs/morning-brief-2026-06-28.html",
       "overview": "overviews/morning-brief-2026-06-28.svg",
       "githubRows": [
@@ -468,7 +615,7 @@
       "tableCount": 3,
       "linkCount": 82,
       "officialStatus": "8 条官方链接/动态",
-      "tags": "2026-06-28 Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+      "tags": "2026-06-28 Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets NousResearch/hermes-agent obra/superpowers farion1231/cc-switch multica-ai/andrej-karpathy-skills affaan-m/ECC paperclipai/paperclip DietrichGebert/ponytail ruvnet/ruflo shanraisshan/claude-code-best-practice mem0ai/mem0 crewAIInc/crewAI openai/gdpval repos/NousResearch repos/obra repos/farion1231 repos/multica-ai repos/affaan-m repos/firecrawl repos/anthropics repos/anomalyco repos/browser-use repos/paperclipai repos/DietrichGebert repos/ruvnet repos/shanraisshan repos/mem0ai repos/crewAIInc AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-24.html",
@@ -478,6 +625,27 @@
       "hasWeekly": false,
       "title": "EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions",
       "summary": "选择原因：该论文在上一份已发布日报（2026-06-22 10:36 CST）之后进入本轮检索范围，且直接面向企业真实工作流中的 agent benchmark。它不是合成玩具任务，而是从真实 workplace sessions 构造 852 个可复现任务，重点评估模型、harness、工具使用、交付物质…",
+      "problem": "选择原因：该论文在上一份已发布日报（2026-06-22 10:36 CST）之后进入本轮检索范围，且直接面向企业真实工作流中的 agent benchmark。它不是合成玩具任务，而是从真实 workplace sessions 构造 852 个可复现任务，重点评估模型、harness、工具使用、交付物质量、成本、耗时和 skill transfer。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
       "source": "briefs/morning-brief-2026-06-24.html",
       "overview": "overviews/morning-brief-2026-06-24.svg",
       "githubRows": [
@@ -535,7 +703,7 @@
       "tableCount": 6,
       "linkCount": 55,
       "officialStatus": "12 条官方链接/动态",
-      "tags": "2026-06-24 EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+      "tags": "2026-06-24 EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions FrontisAI/EnterpriseClawBench NousResearch/hermes-agent obra/superpowers firecrawl/firecrawl farion1231/cc-switch multica-ai/andrej-karpathy-skills bozhouDev/codex-orange-book HKUDS/AgentSpace Johell1NS/browser-search iart-ai/motion-skills mattpocock/skills garrytan/gstack modelcontextprotocol/servers OpenHands/OpenHands microsoft/autogen affaan-m/ECC anthropics/skills anomalyco/opencode browser-use/browser-use anthropics/claude-code AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-22.html",
@@ -545,6 +713,27 @@
       "hasWeekly": false,
       "title": "StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns",
       "summary": "选择原因：这是自上次已发布简报（2026-06-17）以来的新论文，直接评估 coding agent 在连续需求变更中的长期可靠性。它补足了单次任务成功率无法回答的关键问题：一个 agent 能稳定工作多少轮，以及模型、harness、测试反馈分别贡献了什么。",
+      "problem": "选择原因：这是自上次已发布简报（2026-06-17）以来的新论文，直接评估 coding agent 在连续需求变更中的长期可靠性。它补足了单次任务成功率无法回答的关键问题：一个 agent 能稳定工作多少轮，以及模型、harness、测试反馈分别贡献了什么。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "Agent 产品",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
       "source": "briefs/morning-brief-2026-06-22.html",
       "overview": "overviews/morning-brief-2026-06-22.svg",
       "githubRows": [
@@ -602,7 +791,7 @@
       "tableCount": 3,
       "linkCount": 62,
       "officialStatus": "4 条官方链接/动态",
-      "tags": "2026-06-22 StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+      "tags": "2026-06-22 StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns amazon-science/StaminaBench obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills firecrawl/firecrawl affaan-m/ECC Shubhamsaboo/awesome-llm-apps msitarzewski/agency-agents farion1231/cc-switch google-gemini/gemini-cli browser-use/browser-use en/rest anthropics/skills anomalyco/opencode openclaw/openclaw anthropics/claude-code n8n-io/n8n langgenius/dify langchain-ai/langchain langflow-ai/langflow AI Agent benchmark GitHub OpenAI Anthropic Agent 产品 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-17.html",
@@ -612,6 +801,27 @@
       "hasWeekly": false,
       "title": "ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues",
       "summary": "以下按论文顺序列出全部公开可访问的 Figure 1-9 与 Table 1-9。复杂图表与表格以论文 PDF 页面截图嵌入，未发现需要额外列出的缺失图表。来源均为 作者上传 PDF 。",
+      "problem": "以下按论文顺序列出全部公开可访问的 Figure 1-9 与 Table 1-9。复杂图表与表格以论文 PDF 页面截图嵌入，未发现需要额外列出的缺失图表。来源均为 作者上传 PDF 。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "Agent 架构与工具",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
       "source": "briefs/morning-brief-2026-06-17.html",
       "overview": "overviews/morning-brief-2026-06-17.svg",
       "githubRows": [
@@ -669,7 +879,7 @@
       "tableCount": 4,
       "linkCount": 50,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-06-17 ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+      "tags": "2026-06-17 ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues LithiumDA/ReproRepo obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC anomalyco/opencode anthropics/skills langflow-ai/langflow langchain-ai/langchain firecrawl/firecrawl anthropics/claude-code search/repositories openclaw/openclaw n8n-io/n8n langgenius/dify AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-13.html",
@@ -679,6 +889,27 @@
       "hasWeekly": true,
       "title": "SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning",
       "summary": "选择理由：该论文在上一份报告截止时间之后提交，直接研究 Agent 的 action interface。它证明工具是否有效，不仅取决于工具本身，也取决于 Agent 能否在看到中间结果后继续组合、修正和验证操作。",
+      "problem": "该论文在上一份报告截止时间之后提交，直接研究 Agent 的 action interface。它证明工具是否有效，不仅取决于工具本身，也取决于 Agent 能否在看到中间结果后继续组合、修正和验证操作。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "模型能力",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
       "source": "briefs/morning-brief-2026-06-13.html",
       "overview": "overviews/morning-brief-2026-06-13.svg",
       "githubRows": [
@@ -718,7 +949,7 @@
       "tableCount": 4,
       "linkCount": 50,
       "officialStatus": "8 条官方链接/动态",
-      "tags": "2026-06-13 SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning AI Agent benchmark GitHub OpenAI Anthropic weekly 周报 formal 正式简报"
+      "tags": "2026-06-13 SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning NVlabs/SpatialClaw NousResearch/hermes-agent affaan-m/ECC anomalyco/opencode n8n-io/n8n langgenius/dify openclaw/openclaw obra/superpowers ultraworkers/claw-code Significant-Gravitas/AutoGPT multica-ai/andrej-karpathy-skills ApodexAI/AgentHarness GordenSun/GordenSuperPPTSkills AI Agent benchmark GitHub OpenAI Anthropic 模型能力 architecture model product evaluation weekly 周报 formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-12.html",
@@ -728,6 +959,27 @@
       "hasWeekly": false,
       "title": "AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility",
       "summary": "选择理由：这是自上一份日报后发布的最新、且直接改变 Agent benchmark 集成方式的工作。它不再把 benchmark 固定在某个模型中心化 harness 中，而是把评测本身实现成可交互的 judge agent。",
+      "problem": "这是自上一份日报后发布的最新、且直接改变 Agent benchmark 集成方式的工作。它不再把 benchmark 固定在某个模型中心化 harness 中，而是把评测本身实现成可交互的 judge agent。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "Agent 架构与工具",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
       "source": "briefs/morning-brief-2026-06-12.html",
       "overview": "overviews/morning-brief-2026-06-12.svg",
       "githubRows": [
@@ -767,7 +1019,7 @@
       "tableCount": 2,
       "linkCount": 48,
       "officialStatus": "6 条官方链接/动态",
-      "tags": "2026-06-12 AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+      "tags": "2026-06-12 AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility GordenSun/GordenSuperPPTSkills JimLiu/baoyu-design amElnagdy/guard-skills ApodexAI/AgentHarness adamallcock/codex-chatgpt-control affaan-m/ECC n8n-io/n8n NousResearch/hermes-agent anomalyco/opencode langgenius/dify AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-09.html",
@@ -777,6 +1029,27 @@
       "hasWeekly": false,
       "title": "Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations",
       "summary": "PDF 共识别出 1 个表格和 6 张图，以下按论文顺序完整附上。",
+      "problem": "PDF 共识别出 1 个表格和 6 张图，以下按论文顺序完整附上。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "GitHub star 会持续变化；GitHub 搜索与主题筛选可能遗漏未使用相关关键词的项目；论文结果为作者报告，未在本早报中独立复现。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "Agent 架构与工具",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
       "source": "briefs/morning-brief-2026-06-09.html",
       "overview": "overviews/morning-brief-2026-06-09.svg",
       "githubRows": [
@@ -816,7 +1089,7 @@
       "tableCount": 2,
       "linkCount": 24,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-06-09 Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations AI Agent benchmark GitHub OpenAI Anthropic  formal 正式简报"
+      "tags": "2026-06-09 Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations JimLiu/baoyu-design amElnagdy/guard-skills GordenSun/GordenSuperPPTSkills adamallcock/codex-chatgpt-control ApodexAI/AgentHarness search/repositories AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-test-2026-06-08.html",
@@ -826,6 +1099,27 @@
       "hasWeekly": false,
       "title": "QBugLM: An Agentic Benchmarking Framework for LLM-based Quantum Software Debugging",
       "summary": "PDF 共识别出 1 个表格和 5 张图。以下按论文顺序完整附上。",
+      "problem": "PDF 共识别出 1 个表格和 5 张图。以下按论文顺序完整附上。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
       "source": "briefs/morning-brief-test-2026-06-08.html",
       "overview": "overviews/morning-brief-test-2026-06-08.svg",
       "githubRows": [
@@ -865,7 +1159,7 @@
       "tableCount": 2,
       "linkCount": 31,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-06-08 QBugLM: An Agentic Benchmarking Framework for LLM-based Quantum Software Debugging AI Agent benchmark GitHub OpenAI Anthropic  test 测试稿"
+      "tags": "2026-06-08 QBugLM: An Agentic Benchmarking Framework for LLM-based Quantum Software Debugging qachub/qbuglm JimLiu/baoyu-design amElnagdy/guard-skills GordenSun/GordenSuperPPTSkills adamallcock/codex-chatgpt-control RainyMarks/DeepX search/repositories AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  test 测试稿"
     }
   ]
 }

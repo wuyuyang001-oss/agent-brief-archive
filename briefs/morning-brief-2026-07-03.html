@@ -74,9 +74,9 @@ li { margin:6px 0; }
 </ul>
 <h3>论文公开图表</h3>
 <p class="small">PDF 共 9 页；arXiv 备注为 3 figures，渲染与文本检查确认正文/附录共有 3 张图、4 张表。图采用 arXiv PDF 页面渲染截图，表格优先转写为 HTML；截图源页附在表格后用于核对。</p>
-<figure><img src="morning-brief-2026-07-03-assets/tsr-figure-1-page-03.png" alt="Figure 1 - Overview of the task-state representation"><figcaption><strong>Figure 1：</strong>Overview of the task-state representation。第 3 页渲染图。展示标准 GUI actor 与 TSR wrapper 的差异：TSR 维护 global summary、progress tracker 和 transition-aware focus。 来源：<a href="https://arxiv.org/pdf/2607.00502" target="_blank" rel="noopener">arXiv PDF</a>。</figcaption></figure>
-<figure><img src="morning-brief-2026-07-03-assets/tsr-figure-2-page-05.png" alt="Figure 2 - Stale-screen recovery"><figcaption><strong>Figure 2：</strong>Stale-screen recovery。第 5 页渲染图。展示 baseline 在延迟 UI 更新中重复删除动作，TSR 引导先验证再重试。 来源：<a href="https://arxiv.org/pdf/2607.00502" target="_blank" rel="noopener">arXiv PDF</a>。</figcaption></figure>
-<figure><img src="morning-brief-2026-07-03-assets/tsr-figure-3-page-06.png" alt="Figure 3 - Over-decomposition failure"><figcaption><strong>Figure 3：</strong>Over-decomposition failure。第 6 页渲染图。展示 TSR 可能把任务拆得过细，导致逐项检查超过步数预算。 来源：<a href="https://arxiv.org/pdf/2607.00502" target="_blank" rel="noopener">arXiv PDF</a>。</figcaption></figure>
+<figure><img loading="lazy" decoding="async" src="morning-brief-2026-07-03-assets/tsr-figure-1-page-03.png" alt="Figure 1 - Overview of the task-state representation"><figcaption><strong>Figure 1：</strong>Overview of the task-state representation。第 3 页渲染图。展示标准 GUI actor 与 TSR wrapper 的差异：TSR 维护 global summary、progress tracker 和 transition-aware focus。 来源：<a href="https://arxiv.org/pdf/2607.00502" target="_blank" rel="noopener">arXiv PDF</a>。</figcaption></figure>
+<figure><img loading="lazy" decoding="async" src="morning-brief-2026-07-03-assets/tsr-figure-2-page-05.png" alt="Figure 2 - Stale-screen recovery"><figcaption><strong>Figure 2：</strong>Stale-screen recovery。第 5 页渲染图。展示 baseline 在延迟 UI 更新中重复删除动作，TSR 引导先验证再重试。 来源：<a href="https://arxiv.org/pdf/2607.00502" target="_blank" rel="noopener">arXiv PDF</a>。</figcaption></figure>
+<figure><img loading="lazy" decoding="async" src="morning-brief-2026-07-03-assets/tsr-figure-3-page-06.png" alt="Figure 3 - Over-decomposition failure"><figcaption><strong>Figure 3：</strong>Over-decomposition failure。第 6 页渲染图。展示 TSR 可能把任务拆得过细，导致逐项检查超过步数预算。 来源：<a href="https://arxiv.org/pdf/2607.00502" target="_blank" rel="noopener">arXiv PDF</a>。</figcaption></figure>
 
 <h3>Table 1：Performance comparison of baseline and task-state representation</h3>
 <div class="table-wrap"><table><thead><tr><th>Model</th><th>Benchmark</th><th>Baseline SR</th><th>+Context SR</th><th>Delta SR</th><th>Baseline avg steps</th><th>+Context avg steps</th></tr></thead><tbody>
@@ -95,17 +95,17 @@ li { margin:6px 0; }
 <div class="table-wrap"><table><thead><tr><th>Method</th><th>MobileWorld</th><th>AndroidWorld</th></tr></thead><tbody>
 <tr><td>Baseline</td><td>43.00</td><td>61.21</td></tr><tr><td>+Context w/o summary</td><td>50.00</td><td>59.48</td></tr><tr><td>+Context w/o tracker</td><td>49.00</td><td>61.21</td></tr><tr><td>+Context w/o transition</td><td>48.00</td><td>63.79</td></tr><tr><td>+Context full</td><td>55.00</td><td>57.76</td></tr>
 </tbody></table></div>
-<figure><img src="morning-brief-2026-07-03-assets/tsr-tables-1-2-page-04.png" alt="Table 1 and Table 2 source page"><figcaption>Table 1/2 来源页截图：arXiv PDF 第 4 页。</figcaption></figure>
+<figure><img loading="lazy" decoding="async" src="morning-brief-2026-07-03-assets/tsr-tables-1-2-page-04.png" alt="Table 1 and Table 2 source page"><figcaption>Table 1/2 来源页截图：arXiv PDF 第 4 页。</figcaption></figure>
 <h3>Table 3：Action space A</h3>
 <div class="table-wrap"><table><thead><tr><th>Action</th><th>Parameters</th><th>Scope</th></tr></thead><tbody>
 <tr><td>click</td><td>coordinate [x, y]</td><td>All</td></tr><tr><td>double_tap</td><td>coordinate [x, y]</td><td>All</td></tr><tr><td>long_press</td><td>coordinate [x, y]</td><td>All</td></tr><tr><td>drag</td><td>start, end coords</td><td>All</td></tr><tr><td>input_text</td><td>text string</td><td>All</td></tr><tr><td>answer</td><td>text string</td><td>All</td></tr><tr><td>navigate_home</td><td>-</td><td>All</td></tr><tr><td>navigate_back</td><td>-</td><td>All</td></tr><tr><td>scroll</td><td>direction</td><td>All</td></tr><tr><td>status</td><td>complete / infeasible</td><td>All</td></tr><tr><td>wait</td><td>-</td><td>All</td></tr><tr><td>keyboard_enter</td><td>-</td><td>All</td></tr><tr><td>open_app</td><td>app name</td><td>AndroidWorld only</td></tr><tr><td>swipe</td><td>direction</td><td>AndroidWorld only</td></tr>
 </tbody></table></div>
-<figure><img src="morning-brief-2026-07-03-assets/tsr-table-3-page-07.png" alt="Table 3 source page"><figcaption>Table 3 来源页截图：arXiv PDF 第 7 页。</figcaption></figure>
+<figure><img loading="lazy" decoding="async" src="morning-brief-2026-07-03-assets/tsr-table-3-page-07.png" alt="Table 3 source page"><figcaption>Table 3 来源页截图：arXiv PDF 第 7 页。</figcaption></figure>
 <h3>Table 4：Representation and inference configurations</h3>
 <div class="table-wrap"><table><thead><tr><th>Parameter</th><th>Actor pi-theta</th><th>Updater U-phi</th></tr></thead><tbody>
 <tr><td>Temperature</td><td>0.0</td><td>0.0</td></tr><tr><td>Max output tokens</td><td>2048</td><td>1024</td></tr><tr><td>Observation window m</td><td>3</td><td>2 (pre + post)</td></tr><tr><td>Scale S (Qwen3.5-plus)</td><td>1000</td><td>1000</td></tr><tr><td>Scale S (Kimi-k2.5)</td><td>1</td><td>1</td></tr><tr><td>API</td><td>Bailian</td><td>Bailian</td></tr>
 </tbody></table></div>
-<figure><img src="morning-brief-2026-07-03-assets/tsr-table-4-page-08.png" alt="Table 4 source page"><figcaption>Table 4 来源页截图：arXiv PDF 第 8 页。</figcaption></figure>
+<figure><img loading="lazy" decoding="async" src="morning-brief-2026-07-03-assets/tsr-table-4-page-08.png" alt="Table 4 source page"><figcaption>Table 4 来源页截图：arXiv PDF 第 8 页。</figcaption></figure>
 </section>
 
 <section>

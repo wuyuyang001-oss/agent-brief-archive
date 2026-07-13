@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI / Agent 晨间简报 · 2026-07-13</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #dfe5ef;
+      --blue: #2457e6;
+      --blue-soft: #eef4ff;
+      --green: #087a55;
+      --green-soft: #eaf8f2;
+      --amber: #9a5b05;
+      --amber-soft: #fff7e8;
+      --red: #b42318;
+      --red-soft: #fff1f0;
+      --shadow: 0 12px 32px rgba(23, 32, 51, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.72;
+    }
+    a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    main { width: min(1180px, calc(100% - 32px)); margin: 28px auto 64px; }
+    header, section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    header { padding: 34px; border-top: 5px solid var(--blue); }
+    section { margin-top: 20px; padding: 30px; }
+    h1 { margin: 0; font-size: clamp(30px, 5vw, 48px); letter-spacing: -.035em; line-height: 1.12; }
+    h2 { margin: 0 0 18px; font-size: 27px; letter-spacing: -.02em; }
+    h3 { margin: 24px 0 10px; font-size: 19px; }
+    p { margin: 10px 0; }
+    ul, ol { padding-left: 22px; }
+    .eyebrow { color: var(--blue); font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .subtitle { margin-top: 12px; color: var(--muted); }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .chip, .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 750;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .status.new { color: var(--blue); background: var(--blue-soft); border-color: #bed0ff; }
+    .status.up { color: var(--green); background: var(--green-soft); border-color: #bcebd9; }
+    .status.release { color: var(--amber); background: var(--amber-soft); border-color: #f4d9a6; }
+    .status.none { color: var(--muted); background: #f7f8fa; }
+    .hero-grid, .signal-grid, .track-grid, .two-col {
+      display: grid;
+      gap: 14px;
+    }
+    .hero-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 24px; }
+    .signal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .track-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .metric, .signal, .track, .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 18px;
+    }
+    .metric { background: linear-gradient(145deg, #fff, #f7faff); }
+    .metric strong { display: block; color: var(--blue); font-size: 25px; line-height: 1.1; }
+    .metric span { display: block; margin-top: 7px; color: var(--muted); font-size: 13px; }
+    .signal { border-left: 4px solid var(--blue); }
+    .signal h3 { margin-top: 0; }
+    .signal dl { margin: 12px 0 0; }
+    .signal dt { margin-top: 8px; color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: .06em; }
+    .signal dd { margin: 2px 0 0; }
+    .track h3 { margin-top: 0; }
+    .callout {
+      border-radius: 12px;
+      padding: 14px 16px;
+      border: 1px solid #bfd1ff;
+      background: var(--blue-soft);
+    }
+    .callout.warn { border-color: #f2d197; background: var(--amber-soft); }
+    .callout.risk { border-color: #f3c1bd; background: var(--red-soft); }
+    .label {
+      display: inline-block;
+      margin-right: 5px;
+      padding: 2px 7px;
+      border-radius: 5px;
+      background: #eef1f6;
+      color: #465066;
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .label.fact { background: var(--green-soft); color: var(--green); }
+    .label.author { background: var(--blue-soft); color: var(--blue); }
+    .label.editor { background: var(--amber-soft); color: var(--amber); }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+    table { width: 100%; border-collapse: collapse; min-width: 760px; font-size: 14px; }
+    th, td { padding: 11px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    th { background: #f2f5fa; color: #39445b; font-size: 12px; letter-spacing: .03em; }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover td { background: #fbfcff; }
+    .positive { color: var(--green); font-weight: 800; }
+    .muted, .small { color: var(--muted); }
+    .small { font-size: 13px; }
+    details {
+      margin-top: 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fbfcfe;
+      overflow: hidden;
+    }
+    summary { cursor: pointer; padding: 14px 16px; font-weight: 800; background: #f5f7fb; }
+    details > div { padding: 4px 18px 20px; }
+    figure { margin: 20px 0 0; }
+    figure img { display: block; width: min(100%, 920px); max-height: 760px; object-fit: contain; margin: 0 auto; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+    figcaption { margin-top: 8px; color: var(--muted); font-size: 13px; }
+    code { padding: 2px 5px; border-radius: 5px; background: #f1f3f7; font-size: .92em; }
+    .decision {
+      border-left: 4px solid var(--green);
+      padding: 12px 15px;
+      background: var(--green-soft);
+      border-radius: 0 10px 10px 0;
+    }
+    .toc { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .toc a { text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 7px 11px; background: #fff; font-size: 13px; }
+    @media (max-width: 900px) {
+      .hero-grid, .signal-grid, .track-grid, .two-col { grid-template-columns: 1fr; }
+      header, section { padding: 22px; }
+      main { width: min(100% - 20px, 1180px); margin-top: 10px; }
+    }
+    @media print {
+      body { background: #fff; }
+      main { width: 100%; margin: 0; }
+      header, section { box-shadow: none; break-inside: avoid; }
+      details > div { display: block !important; }
+      summary { display: none; }
+      a { color: #000; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Agent Product &amp; Evaluation Intelligence</div>
+    <h1>AI / Agent 晨间简报</h1>
+    <p class="subtitle">生成日期：2026-07-13（周一）｜信息截止：2026-07-13 21:35 CST（UTC+8）｜目标：把模型、Agent、工具与评测进展转成产品决策线索。</p>
+    <div class="meta">
+      <span class="chip">白底高可读</span>
+      <span class="chip">摘要优先</span>
+      <span class="chip">证据分层</span>
+      <span class="chip">深读内容折叠</span>
+      <span class="chip">周一：不含周报</span>
+    </div>
+    <div class="hero-grid">
+      <div class="metric"><strong>5</strong><span>90 秒高价值信号</span></div>
+      <div class="metric"><strong>0.402</strong><span>今日论文自报 QANTA 总分，排名第 1</span></div>
+      <div class="metric"><strong>+2,604</strong><span>82.5 小时候选窗最高 Star 增量</span></div>
+      <div class="metric"><strong>0</strong><span>上次截止后 OpenAI / Anthropic 新官方技术发布</span></div>
+    </div>
+    <nav class="toc" aria-label="目录">
+      <a href="#summary">90 秒摘要</a>
+      <a href="#leaders">前沿领头羊</a>
+      <a href="#tracks">四条主线</a>
+      <a href="#paper">今日论文</a>
+      <a href="#growth">GitHub 增长</a>
+      <a href="#unseen">高 Star 未总结</a>
+      <a href="#watch">持续追踪</a>
+      <a href="#methods">来源与方法</a>
+    </nav>
+  </header>
+
+  <section id="summary">
+    <h2>90 秒摘要</h2>
+    <div class="signal-grid">
+      <article class="signal">
+        <span class="status new">新出现 · 评测方法</span>
+        <h3>Agent 的关键不是只答对，而是知道何时行动</h3>
+        <dl>
+          <dt>核心结论</dt><dd><span class="label author">作者结论</span>QANTA 系统把答案生成与“是否抢答”拆开，以 0.90 置信阈值、期望收益门控和 Numeric Firewall 抑制过早行动，自报总分 0.402、榜首。</dd>
+          <dt>证据 / 可信度</dt><dd>官方 shared challenge 结果是正向证据，但论文没有公开代码、轨迹、样本量或置信区间；阈值消融只来自小型定性开发集。可信度：中低。</dd>
+          <dt>与既有工作差异</dt><dd>不是换更大的统一模型，而是按 Tossup / Bonus 的决策目标拆成两个角色，并把“行动时机”纳入可评分策略。</dd>
+          <dt>产品与评测意义</dt><dd>对 computer-use、审批、交易、写入系统等不可逆动作，应把“生成质量”和“行动策略”分开评测。</dd>
+          <dt>建议动作</dt><dd>本周在现有 Agent eval 中增加 abstain / wait / escalate 三类动作，并统计效用、误触发成本和校准曲线。</dd>
+        </dl>
+      </article>
+      <article class="signal">
+        <span class="status up">持续增长 · Agent 工具</span>
+        <h3>Skills、个人 Agent 与 Web 工具仍是 GitHub 注意力中心</h3>
+        <dl>
+          <dt>核心结论</dt><dd><span class="label fact">已证实事实</span>相对 7 月 10 日快照，<code>obra/superpowers</code>、<code>NousResearch/hermes-agent</code>、<code>firecrawl/firecrawl</code> 分别增加 2,604、1,811、1,741 Stars。</dd>
+          <dt>证据 / 可信度</dt><dd>GitHub REST 实时值减本地日报快照，实际窗口 82 小时 34 分。是可核验短窗代理，不冒充严格 72 小时。</dd>
+          <dt>与既有工作差异</dt><dd>增长重心从“单一 Agent 框架”进一步向可移植技能、长期个体化和网页执行基础设施分化。</dd>
+          <dt>产品与评测意义</dt><dd>评测产品需要从单次任务成功率扩到技能复用、记忆增长、网页证据质量和成本控制。</dd>
+          <dt>建议动作</dt><dd>选 Superpowers、Hermes Agent、Firecrawl 各跑一个真实工作流，记录接入时间、失败恢复和单位成功任务成本。</dd>
+        </dl>
+      </article>
+      <article class="signal">
+        <span class="status release">关键版本 · Agent 产品</span>
+        <h3>周末进展主要来自产品迭代，不是新模型发布</h3>
+        <dl>
+          <dt>核心结论</dt><dd><span class="label fact">已证实事实</span>Codex 发布 <a href="https://github.com/openai/codex/releases/tag/rust-v0.144.3">0.144.3</a>，Claude Code 发布 <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.207">2.1.207</a>，browser-use 发布 <a href="https://github.com/browser-use/browser-use/releases/tag/0.13.4">0.13.4</a>。</dd>
+          <dt>证据 / 可信度</dt><dd>GitHub 官方仓库 Release 与提交时间；本简报没有把版本号本身推断为具体能力提升。</dd>
+          <dt>与既有工作差异</dt><dd>领先 coding/browser Agent 已进入高频交付阶段，真实技术红利更可能藏在版本行为和工作流细节，而非发布会。</dd>
+          <dt>产品与评测意义</dt><dd>静态 benchmark 会漏掉产品版本快速变化，回归评测需要绑定版本、配置和工具权限。</dd>
+          <dt>建议动作</dt><dd>把 Agent 产品版本写入每次评测 manifest，并对关键版本自动跑固定回归集。</dd>
+        </dl>
+      </article>
+      <article class="signal">
+        <span class="status none">无重要增量 · 模型能力</span>
+        <h3>没有新证据，就不制造“能力跃迁”叙事</h3>
+        <dl>
+          <dt>核心结论</dt><dd><span class="label fact">已证实事实</span>从 7 月 10 日上次简报截止到本次截止，OpenAI 与 Anthropic 官方 News / Research 页面未发现新的模型、System Card 或技术博客。</dd>
+          <dt>证据 / 可信度</dt><dd>仅以官方发布页判定，可信度高；不等于内部没有进展。</dd>
+          <dt>与既有工作差异</dt><dd>今天的增量是工程与评测方法，不是底层模型能力边界。</dd>
+          <dt>产品与评测意义</dt><dd>不要为追热点更换模型；应利用安静窗口完善评测集与产品回归。</dd>
+          <dt>建议动作</dt><dd>维持当前模型基线，优先验证门控、回退、版本追踪和成本度量。</dd>
+        </dl>
+      </article>
+      <article class="signal">
+        <span class="status none">未核验到原帖 · 领头羊</span>
+        <h3>Grok / 聚合摘要不能替代人物原始帖子</h3>
+        <dl>
+          <dt>核心结论</dt><dd><span class="label fact">已证实事实</span>本窗口内未检索到可同时确认人物身份、发布时间和原文的 OpenAI / Anthropic 关键负责人新 X 帖子。</dd>
+          <dt>证据 / 可信度</dt><dd>X 搜索出现第三方趋势摘要，但无法回到对应原帖核验，因此全部排除。</dd>
+          <dt>与既有工作差异</dt><dd>把“没有可靠信号”和“没有观点”分开，避免把个人观点误写成公司立场。</dd>
+          <dt>产品与评测意义</dt><dd>知识库保留证据链比抢先转述更重要。</dd>
+          <dt>建议动作</dt><dd>继续跟踪，但只有原帖可访问时才进入日报；聚合页只作为发现入口。</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section id="leaders">
+    <h2>前沿领头羊信号</h2>
+    <div class="two-col">
+      <div class="card">
+        <h3>OpenAI</h3>
+        <p><span class="status none">官方发布 · 无新增</span></p>
+        <p>检查 <a href="https://openai.com/news/">OpenAI News</a> 与 <a href="https://openai.com/research/index/">OpenAI Research</a>。自 2026-07-10 11:00 CST 后，未发现新的技术博客、研究文章、System Card、开发者更新或官方视频。</p>
+        <p class="small">连续性基线：上次简报已覆盖 7 月 9 日 GPT-5.6 / ChatGPT Work，以及 7 月 8 日 coding evaluation 文章；今天不重复计为新增。</p>
+      </div>
+      <div class="card">
+        <h3>Anthropic</h3>
+        <p><span class="status none">官方发布 · 无新增</span></p>
+        <p>检查 <a href="https://www.anthropic.com/news">Anthropic Newsroom</a>。最新可核验条目仍停留在 7 月 9 日，本窗口未发现新的技术博客、研究文章、产品更新或官方视频。</p>
+        <p class="small">连续性基线：上次简报已覆盖 UST physical AI、Reflect with Claude 与 hard questions；今天不重复计为新增。</p>
+      </div>
+      <div class="card">
+        <h3>其他头部实验室</h3>
+        <p><span class="status none">官方发布 · 未发现值得纳入的增量</span></p>
+        <p>检查 Google DeepMind 官方 News 等一手渠道，未发现本窗口内直接改变 Agent 产品、模型能力或评测方法判断的新材料。</p>
+      </div>
+      <div class="card">
+        <h3>关键负责人公开判断</h3>
+        <p><span class="status none">个人公开判断 · 无可核验新增</span></p>
+        <p>检索 Sam Altman、Greg Brockman、Dario Amodei、Mike Krieger 等公开账号。由于没有找到满足“原帖可访问 + 身份可确认 + 发布时间在窗口内”的帖子，本期不转述任何人物观点。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tracks">
+    <h2>四条主线</h2>
+    <div class="track-grid">
+      <article class="track">
+        <h3>模型能力进展</h3>
+        <p><span class="status none">未发现值得纳入的增量</span></p>
+        <p>今天没有新的官方模型或独立评测足以证明能力边界变化。QANTA 论文使用 GPT-4.1 / GPT-4.1-mini 家族，但它证明的是策略与校准的产品价值，不是模型本身变强。</p>
+      </article>
+      <article class="track">
+        <h3>Agent 产品进展</h3>
+        <p><span class="status release">发布关键版本</span></p>
+        <p>Codex、Claude Code、browser-use 周末均有 release。产品决策上的增量是“版本变化需要进入评测 manifest”，而不是未经验证地断言每次 release 都提升成功率。</p>
+      </article>
+      <article class="track">
+        <h3>Agent 架构与可复用工具</h3>
+        <p><span class="status up">持续增长</span></p>
+        <p>Skills、个体化 Agent、Web 抓取与 coding agent 继续占据注意力。高 Star 未总结榜新增 Spec Kit、DeerFlow、Daytona，分别对应规范驱动、长时任务和安全执行环境。</p>
+      </article>
+      <article class="track">
+        <h3>评测方法进展</h3>
+        <p><span class="status new">新出现</span></p>
+        <p>QANTA 把“何时回答”“是否回答”“人是否采纳”纳入评测，提示 Agent eval 应从终局正确率转向序列决策效用、校准和人机协同。</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="paper">
+    <h2>今日论文</h2>
+    <p><span class="status new">新出现 · 2026-07-10 提交</span></p>
+    <h3>Task-Specific Multimodal Question Answering Agents via Confidence Calibration and Incremental Reasoning for QANTA 2026</h3>
+    <p><strong>作者：</strong>Nirjhar Das, Md. Al-Mamun Provath</p>
+    <p><strong>发布日期：</strong>2026-07-10 17:22 UTC（北京时间 2026-07-11 01:22）</p>
+    <p><strong>链接：</strong><a href="https://arxiv.org/abs/2607.09623">arXiv:2607.09623</a> · <a href="https://arxiv.org/pdf/2607.09623">PDF</a> · <a href="https://arxiv.org/e-print/2607.09623">源文件</a></p>
+    <p><strong>代码 / 项目页：</strong>论文与 arXiv 元数据未链接公开代码或独立项目页；作者标注为 ICML 2026 EMM-QA Workshop non-archival 接收论文。</p>
+    <div class="callout"><strong>选择理由：</strong>该论文在上次简报截止后提交，直接连接“Agent 产品如何决定行动时机”和“评测如何计入不确定性、成本与人类采纳”。相比再选一篇架构堆叠论文，它对评测产品更有可转化价值。</div>
+
+    <h3>价值增量：问题 → 做法 → 结论</h3>
+    <div class="two-col">
+      <div class="card">
+        <p><strong>此前遇到的问题</strong></p>
+        <p>增量式问答不是拿到完整上下文后给答案，而是在信息逐步出现时决定“现在答、继续等、还是不答”。只优化准确率会鼓励过早行动；多模态输入还会引入视觉锚定与额外成本。</p>
+      </div>
+      <div class="card">
+        <p><strong>研究做法</strong></p>
+        <p>按任务目标拆成 Tossup 与 Bonus 两个 Agent。前者使用置信门控、期望收益和 Numeric Firewall；后者使用 leadin-aware 推理、文本先行的 late fusion 与便于人类审计的短答案。</p>
+      </div>
+      <div class="card">
+        <p><strong>关键结论</strong></p>
+        <p><span class="label author">作者自报</span>总分 0.402、排行榜第 1；Tossup E[Score] 0.238、Buzz Precision 72.5%；Bonus Effect 0.164、Part Accuracy 89.1%。</p>
+      </div>
+      <div class="card">
+        <p><strong>与既有工作的差异</strong></p>
+        <p>贡献不是新基础模型，也不是复杂检索或模型集成，而是把任务特定策略、行动阈值、数值防火墙和人类采纳格式组合成低成本系统。</p>
+      </div>
+    </div>
+
+    <h3>可信度、局限与待验证问题</h3>
+    <div class="callout warn">
+      <p><strong>综合可信度：中低。</strong>官方 challenge 排名与完整指标表提供一定外部约束，但结论主要是作者自报，论文未公开代码、运行轨迹、评测样本量、置信区间或独立复现。</p>
+      <ul>
+        <li><strong>样本与统计：</strong>正式评测样本量未披露；没有显著性检验或误差区间。</li>
+        <li><strong>基线公平性：</strong>表格只给最终系统与“最近竞争者”总分差，没有完整同成本基线与模型消融。</li>
+        <li><strong>阈值证据：</strong>0.75 / 0.85 / 0.90 的阈值消融来自“小型定性 playground 集”，不能证明 0.90 可泛化。</li>
+        <li><strong>模型命名：</strong>摘要将模型描述为 GPT-4o-class，同时称竞赛日志使用 GPT-4.1 命名；模型身份与版本需要进一步澄清。</li>
+        <li><strong>污染与外推：</strong>Quizbowl 题目可能存在训练数据污染；结果不能直接外推到网页操作、企业审批或高风险写入任务。</li>
+        <li><strong>待验证：</strong>需要公开代码、完整轨迹、可靠性图、Brier / ECE 指标，以及在不可逆 Agent 动作上的成本敏感复现。</li>
+      </ul>
+    </div>
+    <div class="decision"><strong>对产品的直接启发：</strong>给 Agent 增加独立 policy layer，输入候选动作、模型置信、可逆性与失败成本，输出 execute / wait / ask / escalate；评测同时记录任务收益、误操作损失和校准误差。</div>
+
+    <details>
+      <summary>展开：英文简介与逐段中文对应翻译</summary>
+      <div>
+        <h3>English overview</h3>
+        <p>This paper treats incremental multimodal question answering as a decision problem rather than a pure answer-generation task. It assigns a lightweight model to the time-sensitive Tossup track and a stronger model to the full-context Bonus track. The Tossup agent separates prediction from action through an expected-value rule, a conservative confidence gate, and a numeric guardrail that blocks confidence increases based on isolated quantities. The Bonus agent first uses the lead-in to constrain candidate answers, then cross-checks text-derived hypotheses with visual evidence and returns concise evidence for human review.</p>
+        <p>The authors report first place in the QANTA 2026 challenge with an overall score of 0.402. The result suggests that task specialization, selective multimodal fusion, and calibrated action policies can outperform a single uniform prompting strategy under hosted-model constraints. However, the evidence is preliminary: the threshold study is qualitative and small, the official sample size is not reported, code and trajectories are unavailable, and no independent replication or statistical uncertainty is provided.</p>
+        <h3>中文对应翻译</h3>
+        <p>这篇论文把增量式多模态问答视为一个决策问题，而不只是答案生成任务。它把轻量模型分配给时间敏感的 Tossup 赛道，把更强模型分配给完整上下文的 Bonus 赛道。Tossup Agent 通过期望收益规则、保守置信门槛和数值防护机制，将预测与行动拆开；当证据只是孤立数字时，系统会阻止置信度继续上升。Bonus Agent 先用 lead-in 收窄候选答案，再用视觉证据核对文本产生的假设，并返回便于人类审核的简洁依据。</p>
+        <p>作者报告该系统以 0.402 总分获得 QANTA 2026 挑战赛第 1 名。结果表明，在托管模型约束下，任务专门化、选择性多模态融合和校准后的行动策略可能优于统一提示策略。但证据仍属初步：阈值研究规模小且偏定性，正式评测样本量没有披露，代码与轨迹未公开，也没有独立复现或统计不确定性。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>展开：论文全部公开图表（1 图 + 5 表，按论文顺序）</summary>
+      <div>
+        <figure>
+          <img loading="lazy" decoding="async" src="morning-brief-2026-07-13-assets/qanta-architecture.png" alt="QANTA 2026 双 Agent 架构图">
+          <figcaption><strong>Figure 1.</strong> QANTA 2026 system overview：Tossup Agent 包含 evidence routing、confidence calibration、Numeric Firewall 与期望收益抢答；Bonus Agent 进行 leadin-aware 多模态推理与证据融合。来源：<a href="https://arxiv.org/e-print/2607.09623">arXiv source</a>。</figcaption>
+        </figure>
+        <h3>Table 1. Final Tossup Results</h3>
+        <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>
+          <tr><td>E[Score]</td><td>0.238</td></tr><tr><td>Buzz Precision</td><td>72.5%</td></tr>
+          <tr><td>Buzz Frequency</td><td>94.2%</td></tr><tr><td>Buzz Position</td><td>60.558</td></tr>
+          <tr><td>Win Rate</td><td>71.1%</td></tr><tr><td>Total Evaluation Cost</td><td>US$0.14</td></tr>
+        </tbody></table></div>
+        <h3>Table 2. Final Bonus Results</h3>
+        <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>
+          <tr><td>Bonus Effect</td><td>0.164</td></tr><tr><td>Part Accuracy</td><td>89.1%</td></tr>
+          <tr><td>Question Accuracy</td><td>72.7%</td></tr><tr><td>Calibration</td><td>88.2%</td></tr>
+          <tr><td>Adoption</td><td>33.8%</td></tr>
+        </tbody></table></div>
+        <h3>Table 3. Overall Leaderboard Performance</h3>
+        <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>
+          <tr><td>Overall Rank</td><td>1</td></tr><tr><td>Overall Score</td><td>0.402</td></tr>
+          <tr><td>Tossup E[Score]</td><td>0.238</td></tr><tr><td>Bonus Effect</td><td>0.164</td></tr>
+          <tr><td>Bonus Part Accuracy</td><td>89.1%</td></tr><tr><td>Bonus Adoption</td><td>33.8%</td></tr>
+        </tbody></table></div>
+        <h3>Table 4. Confidence Threshold Ablation</h3>
+        <div class="table-wrap"><table><thead><tr><th>Threshold</th><th>Precision</th><th>Buzz Position</th><th>Expected Score</th></tr></thead><tbody>
+          <tr><td>0.75</td><td>25%</td><td>25</td><td>-0.2</td></tr>
+          <tr><td>0.85</td><td>75%</td><td>39</td><td>0.0</td></tr>
+          <tr><td>0.90</td><td>100%</td><td>48</td><td>+0.5</td></tr>
+        </tbody></table></div>
+        <p class="small">注意：作者明确称该表来自小型定性开发集，不代表正式 leaderboard 评测。</p>
+        <h3>Table 5. Additional Competition Statistics</h3>
+        <div class="table-wrap"><table><thead><tr><th>Agent</th><th>Metric</th><th>Value</th></tr></thead><tbody>
+          <tr><td>Glint (Tossup)</td><td>Tossup Wins</td><td>37</td></tr>
+          <tr><td>Glint (Tossup)</td><td>Tossup Accuracy</td><td>78.4%</td></tr>
+          <tr><td>Guild (Bonus)</td><td>Bonus Accuracy</td><td>71.2%</td></tr>
+        </tbody></table></div>
+        <p class="small">完整性核对：arXiv 源文件共包含 1 个 <code>figure*</code> 环境与 5 个 <code>table</code> 环境，本折叠区已全部列出；未发现无法访问而被遗漏的图表。</p>
+      </div>
+    </details>
+  </section>
+
+  <section id="growth">
+    <h2>GitHub 三日增长项目</h2>
+    <div class="callout warn"><strong>窗口说明：</strong>以 2026-07-10 11:00:53 CST 本地日报快照为基线，在 2026-07-13 21:35 CST 查询 GitHub REST API；实际窗口约 82 小时 34 分，超过严格 72 小时，因此以下是“最接近三日的可验证差分”，不声称严格三日新增。</div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>排名 / 项目</th><th>用途</th><th>当前 Stars</th><th>基线</th><th>窗口新增</th><th>语言</th><th>最近推送</th><th>状态</th></tr></thead>
+      <tbody>
+        <tr><td>1 · <a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>Agent Skills 框架与软件开发方法</td><td>253,566</td><td>250,962</td><td class="positive">+2,604</td><td>Shell</td><td>2026-07-10 23:58 CST</td><td><span class="status up">持续增长</span></td></tr>
+        <tr><td>2 · <a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>可随用户长期成长的个人 Agent</td><td>214,076</td><td>212,265</td><td class="positive">+1,811</td><td>Python</td><td>2026-07-13 20:49 CST</td><td><span class="status up">持续增长</span></td></tr>
+        <tr><td>3 · <a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>网页搜索、抓取和交互基础设施</td><td>150,211</td><td>148,470</td><td class="positive">+1,741</td><td>TypeScript</td><td>2026-07-13 21:21 CST</td><td><span class="status up">持续增长</span></td></tr>
+        <tr><td>4 · <a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a></td><td>面向 coding agents 的行为规则文件</td><td>191,476</td><td>190,118</td><td class="positive">+1,358</td><td>未标明</td><td>2026-04-20 18:05 CST</td><td><span class="status up">关注增长</span></td></tr>
+        <tr><td>5 · <a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td>多 coding agent 桌面切换与配置管理</td><td>116,662</td><td>115,332</td><td class="positive">+1,330</td><td>Rust</td><td>2026-07-12 21:47 CST</td><td><span class="status up">持续增长</span></td></tr>
+      </tbody>
+    </table></div>
+    <p class="small"><span class="label editor">编辑判断</span>Stars 只代表注意力，不代表稳定性、质量或企业可用性。特别是 <code>andrej-karpathy-skills</code> 在本窗口没有代码推送，增长更像传播效应，应与维护活跃度分开看。</p>
+  </section>
+
+  <section id="unseen">
+    <h2>GitHub 高 Star 未总结项目</h2>
+    <p>扫描当前工作区与归档中的全部 <code>morning-brief*.html</code>，建立 78 个已出现仓库的排除集合；随后以 GitHub Search 的 Agent、coding agent、computer-use、MCP、多智能体相关查询构建候选集，并人工排除泛学习资料、通用框架和主题弱相关项目。以下 5 项此前从未出现在任何日报 GitHub 板块，按当前 Stars 降序。</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>项目</th><th>当前 Stars</th><th>用途与核心能力</th><th>为什么值得关注</th><th>语言 / License</th><th>最近更新</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools">x1xhlol/system-prompts-and-models-of-ai-tools</a></td><td>141,870</td><td>收集主流 AI 工具的 system prompts、内部工具描述与模型信息</td><td>可用于对比 Agent 产品的上下文结构、工具协议和交互边界，但来源真实性需逐项核验，不能直接当官方规范。</td><td>未标明 / GPL-3.0</td><td>2026-07-13 21:02 CST</td></tr>
+        <tr><td><a href="https://github.com/github/spec-kit">github/spec-kit</a></td><td>120,301</td><td>Spec-Driven Development 工具包，把需求、计划与实现变成可复用流程</td><td>把 coding agent 从自由生成拉回可审查的规范与阶段产物，适合作为评测中的“过程质量”基线。</td><td>Python / MIT</td><td>2026-07-13 21:31 CST</td></tr>
+        <tr><td><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill">nextlevelbuilder/ui-ux-pro-max-skill</a></td><td>105,002</td><td>为多平台 UI/UX 生成提供设计知识的 Agent Skill</td><td>是“领域知识打包成 Skill”的高关注样本；可评估其是否真正提高设计一致性，而非只增加提示文本。</td><td>Python / MIT</td><td>2026-07-13 21:32 CST</td></tr>
+        <tr><td><a href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a></td><td>76,921</td><td>带 sandbox、memory、tools、skills、subagents 与消息网关的长时 SuperAgent harness</td><td>覆盖分钟到小时级研究、编码与创作任务，适合观察长时任务的编排、隔离和恢复机制。</td><td>Python / MIT</td><td>2026-07-13 21:29 CST</td></tr>
+        <tr><td><a href="https://github.com/daytonaio/daytona">daytonaio/daytona</a></td><td>72,198</td><td>运行 AI 生成代码的安全、弹性执行基础设施</td><td>直接解决 coding agent 的隔离、扩缩容与执行环境问题，是 Agent 产品从 Demo 走向生产的关键底座。</td><td>未标明 / 未标明</td><td>2026-07-13 21:11 CST</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">筛选不是对整个 GitHub 的数学完备枚举；它是基于公开 Search API、主题相关性和历史排除集合的可复核候选排名。</p>
+  </section>
+
+  <section id="watch">
+    <h2>持续追踪项目</h2>
+    <p>这一板块不受“未总结”排除规则限制。状态同时考虑 Star、release、推送活跃度、License、部署难度与复用价值；Stars 只作为采用兴趣的代理。</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>项目 / 状态</th><th>Stars / 采用代理</th><th>版本与活跃度</th><th>关键能力 / 集成</th><th>部署判断</th><th>真实复用价值与风险</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://github.com/openai/codex">openai/codex</a><br><span class="status release">发布关键版本</span></td><td>97,632 · 14,537 forks</td><td><a href="https://github.com/openai/codex/releases/tag/rust-v0.144.3">0.144.3</a>，7 月 13 日发布；当日推送</td><td>终端 coding agent，Git 工作流与本地代码库操作</td><td>中</td><td>适合做 coding eval 主流产品基线；风险是版本高频变化和工具权限差异导致结果不可比。Apache-2.0。</td></tr>
+        <tr><td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a><br><span class="status release">发布关键版本</span></td><td>137,672 · 22,223 forks</td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.207">2.1.207</a>，7 月 11 日发布</td><td>代码库理解、命令执行与 Git 工作流</td><td>中</td><td>是 coding agent 产品对照组；风险是仓库未标明 SPDX License，且能力依赖托管模型与账号权限。</td></tr>
+        <tr><td><a href="https://github.com/browser-use/browser-use">browser-use/browser-use</a><br><span class="status release">发布关键版本</span></td><td>104,518 · 11,520 forks</td><td><a href="https://github.com/browser-use/browser-use/releases/tag/0.13.4">0.13.4</a>，7 月 12 日发布；7 月 13 日推送</td><td>网页浏览与任务自动化</td><td>中</td><td>可直接验证 computer-use 工作流；风险包括页面漂移、登录态、安全边界与网站条款。MIT。</td></tr>
+        <tr><td><a href="https://github.com/obra/superpowers">obra/superpowers</a><br><span class="status up">持续增长</span></td><td>253,566 · 22,646 forks</td><td>最新 <a href="https://github.com/obra/superpowers/releases/tag/v6.1.1">6.1.1</a>；本窗无新 release</td><td>可移植开发 Skills 与方法论</td><td>低</td><td>接入快、适合做 Skill 复用实验；风险是高 Star 与真实质量之间可能存在传播偏差。MIT。</td></tr>
+        <tr><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a><br><span class="status up">持续增长</span></td><td>214,076 · 39,720 forks</td><td><a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.7.7.2">2026.7.7.2</a>；7 月 13 日仍活跃推送</td><td>个体化、长期成长 Agent</td><td>中</td><td>适合测试记忆与持续学习价值；风险是 26k+ open issues 作为 API 计数可能混合 PR，维护负担需另核验。MIT。</td></tr>
+        <tr><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a><br><span class="status up">持续增长</span></td><td>150,211 · 8,587 forks</td><td>最新 <a href="https://github.com/firecrawl/firecrawl/releases/tag/v2.11.0">2.11.0</a>；7 月 13 日活跃推送</td><td>搜索、抓取、网页交互 API</td><td>中高</td><td>可复用于 deep research 与网页 Agent；自托管、反爬、内容授权和 AGPL-3.0 是主要风险。</td></tr>
+        <tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a><br><span class="status up">持续增长</span></td><td>185,337 · 23,155 forks</td><td><a href="https://github.com/anomalyco/opencode/releases/tag/v1.17.18">1.17.18</a>；7 月 13 日活跃推送</td><td>开源 coding agent</td><td>中</td><td>适合做开放实现与闭源产品对照；风险是 provider、模型和配置组合多，评测复现需锁定 manifest。MIT。</td></tr>
+        <tr><td><a href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a><br><span class="status new">新进入追踪</span></td><td>76,921 · 10,448 forks</td><td><a href="https://github.com/bytedance/deer-flow/releases/tag/v2.0.0">2.0.0</a>；7 月 13 日活跃推送</td><td>长时 SuperAgent、sandbox、memory、skills、subagents</td><td>中高</td><td>架构覆盖面完整，适合端到端试跑；风险是组件多导致故障归因和部署成本上升。MIT。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="decision"><strong>本周最值得实际试用的 3 件事：</strong>1）把 0.90 门控改造成可配置行动策略，在一个不可逆任务上跑校准曲线；2）用 Spec Kit + Codex / Claude Code 比较“有规范”与“无规范”的返工率；3）用 browser-use 或 Firecrawl 跑同一网页任务，记录成功率、证据可追溯性、延迟和成本。</div>
+  </section>
+
+  <section id="methods">
+    <h2>来源与方法</h2>
+    <h3>主要原始来源</h3>
+    <ul>
+      <li><a href="https://export.arxiv.org/api/query?search_query=%28all%3A%22agent%20benchmark%22%20OR%20all%3A%22agent%20architecture%22%20OR%20all%3A%22agentic%20evaluation%22%29&amp;start=0&amp;max_results=30&amp;sortBy=submittedDate&amp;sortOrder=descending">arXiv API 查询</a>、<a href="https://arxiv.org/abs/2607.09623">论文页</a>、<a href="https://arxiv.org/pdf/2607.09623">PDF</a>、<a href="https://arxiv.org/e-print/2607.09623">源文件</a></li>
+      <li><a href="https://openai.com/news/">OpenAI News</a>、<a href="https://openai.com/research/index/">OpenAI Research</a>、<a href="https://www.anthropic.com/news">Anthropic Newsroom</a>、<a href="https://deepmind.google/blog/">Google DeepMind News</a></li>
+      <li><a href="https://api.github.com/">GitHub REST API</a>、各仓库首页与 Release 页面</li>
+      <li>历史基线：本地 <code>morning-brief-2026-07-10.html</code> 的 GitHub Star 快照，信息截止 2026-07-10 11:00:53 CST。</li>
+    </ul>
+    <h3>检索时间与数据限制</h3>
+    <ul>
+      <li>统一检索与快照时间：2026-07-13 21:28-21:35 CST。由于本次补跑发生在晚间，GitHub 差分窗口为 82 小时 34 分，而非严格 72 小时。</li>
+      <li>AI HOT 精选 API 被当前网络环境重定向至企业过滤页，未返回 JSON；本期改用 arXiv、GitHub 与实验室官方一手来源，不使用过滤页内容。</li>
+      <li>OpenAI / Anthropic 发布状态只以官方页面判定。X / Grok 聚合结果只作发现线索；无法回到原始帖核验的内容全部排除。</li>
+      <li>GitHub Search 并非全站完备枚举；高 Star 榜经过关键词候选、主题相关性判断与 78 仓库历史排除集合筛选。</li>
+      <li>GitHub Stars、forks、issues 与更新时间均为查询时快照；Stars 代表注意力，不能替代安全、质量、维护性或采用率。</li>
+      <li>今日是周一，按规则完全省略周六“技术红利决策备忘录”。</li>
+    </ul>
+    <details>
+      <summary>展开：GitHub 增长候选完整快照</summary>
+      <div class="table-wrap"><table>
+        <thead><tr><th>仓库</th><th>当前 Stars</th><th>2026-07-10 基线</th><th>82.5h 增量</th><th>语言</th></tr></thead>
+        <tbody>
+          <tr><td>obra/superpowers</td><td>253,566</td><td>250,962</td><td>+2,604</td><td>Shell</td></tr>
+          <tr><td>NousResearch/hermes-agent</td><td>214,076</td><td>212,265</td><td>+1,811</td><td>Python</td></tr>
+          <tr><td>firecrawl/firecrawl</td><td>150,211</td><td>148,470</td><td>+1,741</td><td>TypeScript</td></tr>
+          <tr><td>multica-ai/andrej-karpathy-skills</td><td>191,476</td><td>190,118</td><td>+1,358</td><td>未标明</td></tr>
+          <tr><td>farion1231/cc-switch</td><td>116,662</td><td>115,332</td><td>+1,330</td><td>Rust</td></tr>
+          <tr><td>affaan-m/ECC</td><td>229,130</td><td>227,911</td><td>+1,219</td><td>JavaScript</td></tr>
+          <tr><td>anomalyco/opencode</td><td>185,337</td><td>184,263</td><td>+1,074</td><td>TypeScript</td></tr>
+          <tr><td>anthropics/skills</td><td>160,775</td><td>159,852</td><td>+923</td><td>Python</td></tr>
+          <tr><td>anthropics/claude-code</td><td>137,672</td><td>137,091</td><td>+581</td><td>Python</td></tr>
+          <tr><td>browser-use/browser-use</td><td>104,518</td><td>103,994</td><td>+524</td><td>Python</td></tr>
+          <tr><td>microsoft/playwright-mcp</td><td>35,025</td><td>34,895</td><td>+130</td><td>TypeScript</td></tr>
+          <tr><td>openai/openai-agents-python</td><td>27,876</td><td>27,770</td><td>+106</td><td>Python</td></tr>
+          <tr><td>bytedance/UI-TARS-desktop</td><td>37,956</td><td>37,878</td><td>+78</td><td>TypeScript</td></tr>
+          <tr><td>continuedev/continue</td><td>34,846</td><td>34,769</td><td>+77</td><td>TypeScript</td></tr>
+          <tr><td>ComposioHQ/composio</td><td>29,213</td><td>29,153</td><td>+60</td><td>TypeScript</td></tr>
+        </tbody>
+      </table></div>
+    </details>
+    <details>
+      <summary>展开：高 Star 候选快照与排除说明</summary>
+      <div class="table-wrap"><table>
+        <thead><tr><th>仓库</th><th>当前 Stars</th><th>处理</th><th>理由</th></tr></thead>
+        <tbody>
+          <tr><td>x1xhlol/system-prompts-and-models-of-ai-tools</td><td>141,870</td><td>新增总结</td><td>Agent 产品提示与工具结构</td></tr>
+          <tr><td>github/spec-kit</td><td>120,301</td><td>新增总结</td><td>coding agent 规范驱动工具链</td></tr>
+          <tr><td>nextlevelbuilder/ui-ux-pro-max-skill</td><td>105,002</td><td>新增总结</td><td>Agent Skill</td></tr>
+          <tr><td>bytedance/deer-flow</td><td>76,921</td><td>新增总结</td><td>长时 Agent harness</td></tr>
+          <tr><td>daytonaio/daytona</td><td>72,198</td><td>新增总结</td><td>Agent 代码执行基础设施</td></tr>
+          <tr><td>openclaw/openclaw</td><td>382,802</td><td>排除</td><td>此前日报已出现</td></tr>
+          <tr><td>n8n-io/n8n</td><td>196,267</td><td>排除</td><td>此前日报已出现</td></tr>
+          <tr><td>mattpocock/skills</td><td>167,844</td><td>排除</td><td>此前日报已出现</td></tr>
+          <tr><td>langflow-ai/langflow</td><td>151,807</td><td>排除</td><td>此前日报已出现</td></tr>
+          <tr><td>msitarzewski/agency-agents</td><td>131,008</td><td>排除</td><td>此前日报已出现</td></tr>
+        </tbody>
+      </table></div>
+    </details>
+    <h3>本次新增至“已总结仓库集合”</h3>
+    <p><code>x1xhlol/system-prompts-and-models-of-ai-tools</code>、<code>github/spec-kit</code>、<code>nextlevelbuilder/ui-ux-pro-max-skill</code>、<code>bytedance/deer-flow</code>、<code>daytonaio/daytona</code>。</p>
+    <h3>归档与发布记录</h3>
+    <p>本文件生成后将执行 <code>designs/agent-brief-archive/scripts/update-and-publish.sh</code>，生成归档副本、主页数据与概览 SVG，并推送 GitHub Pages。最终推送与 Pages 可见状态以本次任务的状态回复为准。</p>
+  </section>
+</main>
+</body>
+</html>

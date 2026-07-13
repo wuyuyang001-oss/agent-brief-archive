@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-07-10T03:02:50.663Z",
+  "generatedAt": "2026-07-13T13:41:51.842Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-13.html",
+      "date": "2026-07-13",
+      "weekday": "周一",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "Task-Specific Multimodal Question Answering Agents via Confidence Calibration and Incremental Reasoning for QANTA 2026",
+      "summary": "生成日期：2026-07-13（周一）｜信息截止：2026-07-13 21:35 CST（UTC+8）｜目标：把模型、Agent、工具与评测进展转成产品决策线索。",
+      "problem": "生成日期：2026-07-13（周一）｜信息截止：2026-07-13 21:35 CST（UTC+8）｜目标：把模型、Agent、工具与评测进展转成产品决策线索。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "",
+      "difference": "",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "模型能力",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-07-13.html",
+      "overview": "overviews/morning-brief-2026-07-13.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "1 ·",
+          "value": 2026,
+          "text": "1 · obra/superpowers Agent Skills 框架与软件开发方法 253,566 250,962 +2,604 Shell 2026-07-10 23:58 CST 持续增长"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "2 ·",
+          "value": 2026,
+          "text": "2 · NousResearch/hermes-agent 可随用户长期成长的个人 Agent 214,076 212,265 +1,811 Python 2026-07-13 20:49 CST 持续增长"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "3 ·",
+          "value": 2026,
+          "text": "3 · firecrawl/firecrawl 网页搜索、抓取和交互基础设施 150,211 148,470 +1,741 TypeScript 2026-07-13 21:21 CST 持续增长"
+        },
+        {
+          "repo": "multica-ai/andrej-karpathy-skills",
+          "label": "4 ·",
+          "value": 2026,
+          "text": "4 · multica-ai/andrej-karpathy-skills 面向 coding agents 的行为规则文件 191,476 190,118 +1,358 未标明 2026-04-20 18:05 CST 关注增长"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "5 ·",
+          "value": 2026,
+          "text": "5 · farion1231/cc-switch 多 coding agent 桌面切换与配置管理 116,662 115,332 +1,330 Rust 2026-07-12 21:47 CST 持续增长"
+        },
+        {
+          "repo": "x1xhlol/system-prompts-and-models-of-ai-tools",
+          "label": "x1xhlol/system-prompts-and-models-of-ai-t…",
+          "value": 2026,
+          "text": "x1xhlol/system-prompts-and-models-of-ai-tools 141,870 收集主流 AI 工具的 system prompts、内部工具描述与模型信息 可用于对比 Agent 产品的上下文结构、工具协议和…"
+        },
+        {
+          "repo": "github/spec-kit",
+          "label": "github/spec-kit",
+          "value": 2026,
+          "text": "github/spec-kit 120,301 Spec-Driven Development 工具包，把需求、计划与实现变成可复用流程 把 coding agent 从自由生成拉回可审查的规范与阶段产物，适合作为评测中的“过程质量”基线…"
+        },
+        {
+          "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+          "label": "nextlevelbuilder/ui-ux-pro-max-skill",
+          "value": 2026,
+          "text": "nextlevelbuilder/ui-ux-pro-max-skill 105,002 为多平台 UI/UX 生成提供设计知识的 Agent Skill 是“领域知识打包成 Skill”的高关注样本；可评估其是否真正提高设计一致性，而非…"
+        }
+      ],
+      "githubRepoCount": 14,
+      "figureCount": 1,
+      "tableCount": 10,
+      "linkCount": 53,
+      "officialStatus": "6 条官方链接/动态",
+      "tags": "2026-07-13 Task-Specific Multimodal Question Answering Agents via Confidence Calibration and Incremental Reasoning for QANTA 2026 openai/codex anthropics/claude-code browser-use/browser-use obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch x1xhlol/system-prompts-and-models-of-ai-tools github/spec-kit nextlevelbuilder/ui-ux-pro-max-skill bytedance/deer-flow daytonaio/daytona anomalyco/opencode AI Agent benchmark GitHub OpenAI Anthropic 模型能力 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-10.html",
       "date": "2026-07-10",

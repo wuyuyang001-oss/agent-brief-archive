@@ -30,7 +30,8 @@
   <text x="110" y="266" font-size="20" font-weight="800" fill="#087f5b">当日核心摘要</text>
   <text x="110" y="311" font-size="27" font-weight="850" fill="#132334">QBugLM: An Agentic Benchmarking Framework for</text>
 <text x="110" y="345" font-size="27" font-weight="850" fill="#132334">LLM-based Quantum Software Debugging…</text>
-  <text x="110" y="378" font-size="18" font-weight="500" fill="#4d6176">PDF 共识别出 1 个表格和 5 张图。以下按论文顺序完整附上。</text>
+  <text x="110" y="378" font-size="18" font-weight="500" fill="#4d6176">选择原因：这是检索时最新的明确命中 “agent benchmark” 的论文之一，并且</text>
+<text x="110" y="405" font-size="18" font-weight="500" fill="#4d6176">同时给出多智能体架构与可复现实验流程。论文声明的 GitHub 地址在本次核…</text>
 
   <g>
     <rect x="82" y="460" width="130" height="106" rx="20" fill="#f3f8ff" stroke="#d8e5f2"/>
@@ -55,27 +56,27 @@
       <text x="690" y="455" font-size="17" font-weight="650" fill="#233246">JimLiu/baoyu-design</text>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="#e8eef6"/>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">453</text>
 
       <text x="690" y="493" font-size="17" font-weight="650" fill="#233246">amElnagdy/guard-skills</text>
       <rect x="910" y="476" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="476" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="491" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="476" width="301" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1226" y="491" font-size="13" font-weight="700" fill="#0b5f91">413</text>
 
       <text x="690" y="531" font-size="17" font-weight="650" fill="#233246">GordenSun/GordenSuperPPTSkills</text>
       <rect x="910" y="514" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="514" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="529" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="514" width="180" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1105" y="529" font-size="13" font-weight="700" fill="#0b5f91">247</text>
 
       <text x="690" y="569" font-size="17" font-weight="650" fill="#233246">adamallcock/codex-chatgpt-control</text>
       <rect x="910" y="552" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="552" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="567" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="552" width="90" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1015" y="567" font-size="13" font-weight="700" fill="#0b5f91">123</text>
 
       <text x="690" y="607" font-size="17" font-weight="650" fill="#233246">RainyMarks/DeepX</text>
       <rect x="910" y="590" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="590" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="605" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="590" width="34" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="959" y="605" font-size="13" font-weight="700" fill="#0b5f91">32</text>
 
   <rect x="82" y="596" width="1116" height="42" rx="21" fill="url(#accent)" opacity="0.10"/>
   <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：未发现新发布内容 · 生成时间：2026-07-13 13:41:51 UTC</text>

@@ -8,15 +8,15 @@
       "type": "formal",
       "hasWeekly": false,
       "title": "Task-Specific Multimodal Question Answering Agents via Confidence Calibration and Incremental Reasoning for QANTA 2026",
-      "summary": "生成日期：2026-07-13（周一）｜信息截止：2026-07-13 21:35 CST（UTC+8）｜目标：把模型、Agent、工具与评测进展转成产品决策线索。",
-      "problem": "生成日期：2026-07-13（周一）｜信息截止：2026-07-13 21:35 CST（UTC+8）｜目标：把模型、Agent、工具与评测进展转成产品决策线索。",
-      "method": "查看当期论文方法与架构摘要。",
-      "conclusion": "",
-      "difference": "",
-      "limitation": "仍需结合复现、成本和真实产品场景验证。",
-      "evidence": "论文实验 · 待独立复现",
-      "action": "持续追踪代码开放与后续复现，暂不直接接入",
-      "primaryTrack": "模型能力",
+      "summary": "Agent 的关键不是只答对，而是知道何时行动：作者结论 QANTA 系统把答案生成与“是否抢答”拆开，以 0.90 置信阈值、期望收益门控和 Numeric Firewall 抑制过早行动，自报总分 0.402、榜首。",
+      "problem": "增量式问答不是拿到完整上下文后给答案，而是在信息逐步出现时决定“现在答、继续等、还是不答”。只优化准确率会鼓励过早行动；多模态输入还会引入视觉锚定与额外成本。",
+      "method": "按任务目标拆成 Tossup 与 Bonus 两个 Agent。前者使用置信门控、期望收益和 Numeric Firewall；后者使用 leadin-aware 推理、文本先行的 late fusion 与便于人类审计的短答案。",
+      "conclusion": "作者自报 总分 0.402、排行榜第 1；Tossup E[Score] 0.238、Buzz Precision 72.5%；Bonus Effect 0.164、Part Accuracy 89.1%。",
+      "difference": "贡献不是新基础模型，也不是复杂检索或模型集成，而是把任务特定策略、行动阈值、数值防火墙和人类采纳格式组合成低成本系统。",
+      "limitation": "综合可信度：中低。 官方 challenge 排名与完整指标表提供一定外部约束，但结论主要是作者自报，论文未公开代码、运行轨迹、评测样本量、置信区间或独立复现。 样本与统计： 正式评测样本量未披露；没有显著性检验或误差区间。 基线公平性： 表格只给最终系统与“最近竞争者”总分差，没有完整同成本基线与模型消融。 阈值证据： 0.75 / 0.85 / 0.9…",
+      "evidence": "作者自报 · 可信度中低",
+      "action": "给 Agent 增加独立 policy layer，输入候选动作、模型置信、可逆性与失败成本，输出 execute / wait / ask / escalate；评测同时记录任务收益、误操作损失和校准误差。",
+      "primaryTrack": "评测方法",
       "tracks": [
         "architecture",
         "model",
@@ -26,8 +26,8 @@
       "leaderSignal": {
         "kind": "官方核验",
         "org": "OpenAI / Anthropic",
-        "title": "本期未抽取到新的官方技术信号",
-        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "title": "本窗口未发现新的官方技术发布",
+        "summary": "同时未发现可核验的关键负责人新原帖；聚合摘要未进入日报。",
         "url": ""
       },
       "source": "briefs/morning-brief-2026-07-13.html",
@@ -36,49 +36,49 @@
         {
           "repo": "obra/superpowers",
           "label": "1 ·",
-          "value": 2026,
+          "value": 2604,
           "text": "1 · obra/superpowers Agent Skills 框架与软件开发方法 253,566 250,962 +2,604 Shell 2026-07-10 23:58 CST 持续增长"
         },
         {
           "repo": "NousResearch/hermes-agent",
           "label": "2 ·",
-          "value": 2026,
+          "value": 1811,
           "text": "2 · NousResearch/hermes-agent 可随用户长期成长的个人 Agent 214,076 212,265 +1,811 Python 2026-07-13 20:49 CST 持续增长"
         },
         {
           "repo": "firecrawl/firecrawl",
           "label": "3 ·",
-          "value": 2026,
+          "value": 1741,
           "text": "3 · firecrawl/firecrawl 网页搜索、抓取和交互基础设施 150,211 148,470 +1,741 TypeScript 2026-07-13 21:21 CST 持续增长"
         },
         {
           "repo": "multica-ai/andrej-karpathy-skills",
           "label": "4 ·",
-          "value": 2026,
+          "value": 1358,
           "text": "4 · multica-ai/andrej-karpathy-skills 面向 coding agents 的行为规则文件 191,476 190,118 +1,358 未标明 2026-04-20 18:05 CST 关注增长"
         },
         {
           "repo": "farion1231/cc-switch",
           "label": "5 ·",
-          "value": 2026,
+          "value": 1330,
           "text": "5 · farion1231/cc-switch 多 coding agent 桌面切换与配置管理 116,662 115,332 +1,330 Rust 2026-07-12 21:47 CST 持续增长"
         },
         {
           "repo": "x1xhlol/system-prompts-and-models-of-ai-tools",
           "label": "x1xhlol/system-prompts-and-models-of-ai-t…",
-          "value": 2026,
+          "value": 141870,
           "text": "x1xhlol/system-prompts-and-models-of-ai-tools 141,870 收集主流 AI 工具的 system prompts、内部工具描述与模型信息 可用于对比 Agent 产品的上下文结构、工具协议和…"
         },
         {
           "repo": "github/spec-kit",
           "label": "github/spec-kit",
-          "value": 2026,
+          "value": 120301,
           "text": "github/spec-kit 120,301 Spec-Driven Development 工具包，把需求、计划与实现变成可复用流程 把 coding agent 从自由生成拉回可审查的规范与阶段产物，适合作为评测中的“过程质量”基线…"
         },
         {
           "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
           "label": "nextlevelbuilder/ui-ux-pro-max-skill",
-          "value": 2026,
+          "value": 105002,
           "text": "nextlevelbuilder/ui-ux-pro-max-skill 105,002 为多平台 UI/UX 生成提供设计知识的 Agent Skill 是“领域知识打包成 Skill”的高关注样本；可评估其是否真正提高设计一致性，而非…"
         }
       ],
@@ -86,8 +86,8 @@
       "figureCount": 1,
       "tableCount": 10,
       "linkCount": 53,
-      "officialStatus": "6 条官方链接/动态",
-      "tags": "2026-07-13 Task-Specific Multimodal Question Answering Agents via Confidence Calibration and Incremental Reasoning for QANTA 2026 openai/codex anthropics/claude-code browser-use/browser-use obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch x1xhlol/system-prompts-and-models-of-ai-tools github/spec-kit nextlevelbuilder/ui-ux-pro-max-skill bytedance/deer-flow daytonaio/daytona anomalyco/opencode AI Agent benchmark GitHub OpenAI Anthropic 模型能力 architecture model product evaluation  formal 正式简报"
+      "officialStatus": "未发现新发布内容",
+      "tags": "2026-07-13 Task-Specific Multimodal Question Answering Agents via Confidence Calibration and Incremental Reasoning for QANTA 2026 openai/codex anthropics/claude-code browser-use/browser-use obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch x1xhlol/system-prompts-and-models-of-ai-tools github/spec-kit nextlevelbuilder/ui-ux-pro-max-skill bytedance/deer-flow daytonaio/daytona anomalyco/opencode AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-10.html",
@@ -166,7 +166,7 @@
         {
           "repo": "headroomlabs-ai/headroom",
           "label": "headroomlabs-ai/headroom",
-          "value": 58194,
+          "value": 60,
           "text": "headroomlabs-ai/headroom Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tok…"
         }
       ],
@@ -506,19 +506,19 @@
         {
           "repo": "shareAI-lab/learn-claude-code",
           "label": "shareAI-lab/learn-claude-code",
-          "value": 69548,
+          "value": 7,
           "text": "1 shareAI-lab/learn-claude-code Python 07-02 08:35 UTC 69,548 Bash is all you need - A nano claude code–like 「agent har…"
         },
         {
           "repo": "FlowiseAI/Flowise",
           "label": "FlowiseAI/Flowise",
-          "value": 54189,
+          "value": 7,
           "text": "2 FlowiseAI/Flowise TypeScript 07-02 07:58 UTC 54,189 Build AI Agents, Visually 低代码 AI agent / workflow builder，把工具编排、R…"
         },
         {
           "repo": "run-llama/llama_index",
           "label": "run-llama/llama_index",
-          "value": 50584,
+          "value": 7,
           "text": "3 run-llama/llama_index Python 07-02 07:37 UTC 50,584 LlamaIndex is the leading document agent and OCR platform 围绕文档、检索…"
         }
       ],
@@ -564,49 +564,49 @@
         {
           "repo": "firecrawl/firecrawl",
           "label": "firecrawl/firecrawl",
-          "value": 2026,
+          "value": 894,
           "text": "1 firecrawl/firecrawl 面向 agent 的网页搜索、抓取与交互 API，常作为 Web 工具层。 140,982 +894 TypeScript 2026-06-29 06:40:12 UTC"
         },
         {
           "repo": "obra/superpowers",
           "label": "obra/superpowers",
-          "value": 2026,
+          "value": 759,
           "text": "2 obra/superpowers Agentic skills framework 与软件开发方法论。 240,906 +759 Shell 2026-06-29 06:40:06 UTC"
         },
         {
           "repo": "NousResearch/hermes-agent",
           "label": "NousResearch/hermes-agent",
-          "value": 2026,
+          "value": 755,
           "text": "3 NousResearch/hermes-agent 会随用户成长的个人 agent runtime，强调持续能力和个性化。 205,184 +755 Python 2026-06-29 06:38:38 UTC"
         },
         {
           "repo": "multica-ai/andrej-karpathy-skills",
           "label": "multica-ai/andrej-karpathy-skills",
-          "value": 2026,
+          "value": 679,
           "text": "4 multica-ai/andrej-karpathy-skills 把 LLM coding 经验整理为 CLAUDE.md 风格技能文件。 184,185 +679 未标明 2026-06-29 06:39:56 UTC"
         },
         {
           "repo": "farion1231/cc-switch",
           "label": "farion1231/cc-switch",
-          "value": 2026,
+          "value": 616,
           "text": "5 farion1231/cc-switch Claude Code、Codex、OpenCode、OpenClaw、Gemini CLI 与 Hermes Agent 的桌面管理工具。 110,198 +616 Rust 2026-06…"
         },
         {
           "repo": "openai/codex",
           "label": "openai/codex",
-          "value": 2026,
+          "value": 94293,
           "text": "1 openai/codex 94,293 Rust 2026-06-29 06:41:50 UTC 轻量级终端 coding agent。 它是 coding agent 工具链的核心参考实现之一，直接连接本地代码库、终端执行与自然语言…"
         },
         {
           "repo": "punkpeye/awesome-mcp-servers",
           "label": "punkpeye/awesome-mcp-servers",
-          "value": 2026,
+          "value": 89939,
           "text": "2 punkpeye/awesome-mcp-servers 89,939 未标明 2026-06-29 06:29:47 UTC MCP server 集合。 MCP 是 agent 工具接入的关键协议层，高质量 server 索引能反…"
         },
         {
           "repo": "TauricResearch/TradingAgents",
           "label": "TauricResearch/TradingAgents",
-          "value": 2026,
+          "value": 89554,
           "text": "3 TauricResearch/TradingAgents 89,554 Python 2026-06-29 06:42:52 UTC 多智能体 LLM 金融交易框架。 虽然领域较垂直，但它提供了 multi-agent role de…"
         }
       ],
@@ -652,49 +652,49 @@
         {
           "repo": "NousResearch/hermes-agent",
           "label": "NousResearch/hermes-agent",
-          "value": 2026,
+          "value": 3390,
           "text": "1 NousResearch/hermes-agent 长期个性化、工具使用和持续扩展能力的个人 agent 运行时。 204,429 +3,390 Python 2026-06-28 04:27:39 UTC"
         },
         {
           "repo": "obra/superpowers",
           "label": "obra/superpowers",
-          "value": 2026,
+          "value": 3136,
           "text": "2 obra/superpowers 面向软件开发 agent 的 skills 框架与工作方法集合。 240,147 +3,136 Shell 2026-06-28 04:28:22 UTC"
         },
         {
           "repo": "farion1231/cc-switch",
           "label": "farion1231/cc-switch",
-          "value": 2026,
+          "value": 2449,
           "text": "3 farion1231/cc-switch Claude Code、Codex、OpenCode、OpenClaw、Gemini CLI、Hermes Agent 的桌面切换与管理工具。 109,582 +2,449 Rust 2026…"
         },
         {
           "repo": "multica-ai/andrej-karpathy-skills",
           "label": "multica-ai/andrej-karpathy-skills",
-          "value": 2026,
+          "value": 2447,
           "text": "4 multica-ai/andrej-karpathy-skills 把 Andrej Karpathy 关于 LLM coding 的观察整理为 CLAUDE.md 风格技能文件。 183,506 +2,447 未标明 2026-06…"
         },
         {
           "repo": "affaan-m/ECC",
           "label": "affaan-m/ECC",
-          "value": 2026,
+          "value": 2103,
           "text": "5 affaan-m/ECC 跨 Claude Code、Codex、OpenCode、Cursor 的 agent harness 优化、技能、记忆与安全经验。 222,705 +2,103 JavaScript 2026-06-28 …"
         },
         {
           "repo": "paperclipai/paperclip",
           "label": "paperclipai/paperclip",
-          "value": 2026,
+          "value": 71726,
           "text": "1 paperclipai/paperclip 71,726 TypeScript 2026-06-28 04:26:34 UTC 开源的工作场景 agent 管理应用。 它把 agent 从单个 CLI/脚本推进到团队可管理的工作台形态…"
         },
         {
           "repo": "DietrichGebert/ponytail",
           "label": "DietrichGebert/ponytail",
-          "value": 2026,
+          "value": 62011,
           "text": "2 DietrichGebert/ponytail 62,011 JavaScript 2026-06-28 04:28:24 UTC 面向 Claude Code/Cursor 的 agent skills、rules 与开发行为约束。…"
         },
         {
           "repo": "ruvnet/ruflo",
           "label": "ruvnet/ruflo",
-          "value": 2026,
+          "value": 61787,
           "text": "3 ruvnet/ruflo 61,787 TypeScript 2026-06-28 04:14:16 UTC agent meta-harness，覆盖 multi-agent swarms、RAG、记忆、MCP 与 Claude C…"
         }
       ],
@@ -740,49 +740,49 @@
         {
           "repo": "NousResearch/hermes-agent",
           "label": "NousResearch/hermes-agent",
-          "value": 2026,
+          "value": 1981,
           "text": "1 NousResearch/hermes-agent 强调长期个性化与持续能力积累的个人 agent。 201,039 +1,981 Python 2026-06-24 02:41 UTC"
         },
         {
           "repo": "obra/superpowers",
           "label": "obra/superpowers",
-          "value": 2026,
+          "value": 1937,
           "text": "2 obra/superpowers Agentic skills framework 与软件开发方法论。 237,011 +1,937 Shell 2026-06-24 02:41 UTC"
         },
         {
           "repo": "firecrawl/firecrawl",
           "label": "firecrawl/firecrawl",
-          "value": 2026,
+          "value": 1868,
           "text": "3 firecrawl/firecrawl 面向 agent 的网页搜索、抓取与交互 API。 138,230 +1,868 TypeScript 2026-06-24 02:38 UTC"
         },
         {
           "repo": "farion1231/cc-switch",
           "label": "farion1231/cc-switch",
-          "value": 2026,
+          "value": 1375,
           "text": "4 farion1231/cc-switch Claude Code、Codex、OpenCode、OpenClaw、Gemini CLI、Hermes Agent 的跨平台桌面切换与管理工具。 107,133 +1,375 Rust 2…"
         },
         {
           "repo": "multica-ai/andrej-karpathy-skills",
           "label": "multica-ai/andrej-karpathy-skills",
-          "value": 2026,
+          "value": 1290,
           "text": "5 multica-ai/andrej-karpathy-skills 把 Andrej Karpathy 关于 LLM coding 的观察整理为 CLAUDE.md 风格技能文件。 181,059 +1,290 未标明 2026-06…"
         },
         {
           "repo": "mattpocock/skills",
           "label": "mattpocock/skills",
-          "value": 2026,
+          "value": 143470,
           "text": "1 mattpocock/skills 143,470 面向 Claude Code 工作流的工程技能集合。 Agent Skills 正在从“提示词”变成可复用的工作流资产，该仓库展示了工程师个人技能库的组织方式。 Shell 2026…"
         },
         {
           "repo": "garrytan/gstack",
           "label": "garrytan/gstack",
-          "value": 2026,
+          "value": 114173,
           "text": "2 garrytan/gstack 114,173 面向 Claude Code 的 23 个 opinionated tools，覆盖 CEO、设计、工程管理、发布、文档和 QA 等角色。 代表“角色化 agent 工具栈”趋势，适合观…"
         },
         {
           "repo": "modelcontextprotocol/servers",
           "label": "modelcontextprotocol/servers",
-          "value": 2026,
+          "value": 87614,
           "text": "3 modelcontextprotocol/servers 87,614 Model Context Protocol 官方/公共服务器集合。 MCP 是 agent 工具接入的关键接口层，服务器生态决定 agent 可用工具和企业系统…"
         }
       ],
@@ -828,31 +828,31 @@
         {
           "repo": "obra/superpowers",
           "label": "obra/superpowers",
-          "value": 2026,
+          "value": 4999,
           "text": "1 obra/superpowers 面向软件开发 agent 的技能框架与工作方法，强调可复用技能、测试与流程约束。 235,074 +4,999 / 116.9h Shell 2026-06-22 00:29"
         },
         {
           "repo": "NousResearch/hermes-agent",
           "label": "NousResearch/hermes-agent",
-          "value": 2026,
+          "value": 3525,
           "text": "2 NousResearch/hermes-agent 具备工具、记忆与持续扩展能力的个人 agent 运行时。 199,058 +3,525 / 116.9h Python 2026-06-22 02:18"
         },
         {
           "repo": "multica-ai/andrej-karpathy-skills",
           "label": "multica-ai/andrej-karpathy-skills",
-          "value": 2026,
+          "value": 2708,
           "text": "3 multica-ai/andrej-karpathy-skills 将 coding agent 常见失误整理为单文件技能与行为约束。 179,769 +2,708 / 116.9h 未标注 2026-04-20 10:05"
         },
         {
           "repo": "firecrawl/firecrawl",
           "label": "firecrawl/firecrawl",
-          "value": 2026,
+          "value": 2645,
           "text": "4 firecrawl/firecrawl 面向 agent 的网页搜索、抓取与交互 API，承担 Web 工具层。 136,362 +2,645 / 116.9h TypeScript 2026-06-21 20:13"
         },
         {
           "repo": "affaan-m/ECC",
           "label": "affaan-m/ECC",
-          "value": 2026,
+          "value": 2531,
           "text": "5 affaan-m/ECC 跨 Claude Code、Codex、OpenCode 等工具的 agent harness 优化、技能与记忆系统。 219,369 +2,531 / 116.9h JavaScript 2026-06-2…"
         },
         {
@@ -888,8 +888,8 @@
       "type": "formal",
       "hasWeekly": false,
       "title": "ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues",
-      "summary": "以下按论文顺序列出全部公开可访问的 Figure 1-9 与 Table 1-9。复杂图表与表格以论文 PDF 页面截图嵌入，未发现需要额外列出的缺失图表。来源均为 作者上传 PDF 。",
-      "problem": "以下按论文顺序列出全部公开可访问的 Figure 1-9 与 Table 1-9。复杂图表与表格以论文 PDF 页面截图嵌入，未发现需要额外列出的缺失图表。来源均为 作者上传 PDF 。",
+      "summary": "选择原因：这是 2026-06-16 新提交的 agent benchmark / evaluation 论文，直接讨论如何用 GitHub issues 扩展 LLM agent 的科研复现审计评测；比继续沿用前几日论文更符合“优先选择自上次运行以来的新论文”。",
+      "problem": "选择原因：这是 2026-06-16 新提交的 agent benchmark / evaluation 论文，直接讨论如何用 GitHub issues 扩展 LLM agent 的科研复现审计评测；比继续沿用前几日论文更符合“优先选择自上次运行以来的新论文”。",
       "method": "查看当期论文方法与架构摘要。",
       "conclusion": "查看当期实验结果与核心结论。",
       "difference": "查看当期创新点与既有工作的比较。",
@@ -916,31 +916,31 @@
         {
           "repo": "obra/superpowers",
           "label": "obra/superpowers",
-          "value": 2026,
+          "value": 3813,
           "text": "1 obra/superpowers Agentic skills 框架与软件开发方法论，围绕 agent 工作方式组织项目能力。 230,075 +3,813 / 约 93.7h Shell 2026-06-17 05:08"
         },
         {
           "repo": "NousResearch/hermes-agent",
           "label": "NousResearch/hermes-agent",
-          "value": 2026,
+          "value": 3340,
           "text": "2 NousResearch/hermes-agent 强调长期适应与持续个性化的个人 agent。 195,533 +3,340 / 约 93.7h Python 2026-06-17 05:02"
         },
         {
           "repo": "multica-ai/andrej-karpathy-skills",
           "label": "multica-ai/andrej-karpathy-skills",
-          "value": 2026,
+          "value": 2675,
           "text": "3 multica-ai/andrej-karpathy-skills 以单一 CLAUDE.md 形式注入 coding agent 行为约束与工程经验。 177,061 +2,675 / 约 93.7h 未标注 2026-06-17 …"
         },
         {
           "repo": "affaan-m/ECC",
           "label": "affaan-m/ECC",
-          "value": 2026,
+          "value": 2385,
           "text": "4 affaan-m/ECC 跨 Claude Code、Codex、OpenCode、Cursor 的 agent harness 优化系统。 216,838 +2,385 / 约 93.7h JavaScript 2026-06-17…"
         },
         {
           "repo": "anomalyco/opencode",
           "label": "anomalyco/opencode",
-          "value": 2026,
+          "value": 1546,
           "text": "5 anomalyco/opencode 开源 coding agent 与可替换 agent harness。 175,360 +1,546 / 约 93.7h TypeScript 2026-06-17 05:05"
         },
         {
@@ -1004,31 +1004,31 @@
         {
           "repo": "NousResearch/hermes-agent",
           "label": "NousResearch/hermes-agent",
-          "value": 2026,
+          "value": 1139,
           "text": "1 NousResearch/hermes-agent 强调长期适应与能力积累的个人 Agent。 192,193 +1,139 Python 2026-06-13 07:24"
         },
         {
           "repo": "affaan-m/ECC",
           "label": "affaan-m/ECC",
-          "value": 2026,
+          "value": 887,
           "text": "2 affaan-m/ECC 跨 Claude Code、Codex、OpenCode、Cursor 的 Agent harness 优化系统。 214,453 +887 JavaScript 2026-06-13 07:24"
         },
         {
           "repo": "anomalyco/opencode",
           "label": "anomalyco/opencode",
-          "value": 2026,
+          "value": 537,
           "text": "3 anomalyco/opencode 开源 coding agent 与可替换 Agent harness。 173,814 +537 TypeScript 2026-06-13 07:23"
         },
         {
           "repo": "n8n-io/n8n",
           "label": "n8n-io/n8n",
-          "value": 2026,
+          "value": 157,
           "text": "4 n8n-io/n8n 支持 AI 与大量业务集成的工作流自动化平台。 192,267 +157 TypeScript 2026-06-13 07:16"
         },
         {
           "repo": "langgenius/dify",
           "label": "langgenius/dify",
-          "value": 2026,
+          "value": 135,
           "text": "5 langgenius/dify 生产级 agentic workflow 开发平台。 145,027 +135 TypeScript 2026-06-13 07:23"
         }
       ],
@@ -1074,31 +1074,31 @@
         {
           "repo": "GordenSun/GordenSuperPPTSkills",
           "label": "GordenSuperPPTSkills",
-          "value": 2026,
+          "value": 351,
           "text": "1 GordenSuperPPTSkills 通过 Agent Skill 生成图片式 PPT，并转换为可编辑 PPTX。 790 +351 Python 2026-06-12 02:00"
         },
         {
           "repo": "JimLiu/baoyu-design",
           "label": "baoyu-design",
-          "value": 2026,
+          "value": 244,
           "text": "2 baoyu-design 在 Cursor、Claude Code 等环境中运行的设计 Agent Skill，可生成 UI、原型、deck 与线框图。 775 +244 JavaScript 2026-06-12 01:58"
         },
         {
           "repo": "amElnagdy/guard-skills",
           "label": "guard-skills",
-          "value": 2026,
+          "value": 97,
           "text": "3 guard-skills 面向 coding agent 的质量门禁 skills，检查 AI 生成代码、测试和文档的常见失败模式。 571 +97 未标注 2026-06-11 22:47"
         },
         {
           "repo": "ApodexAI/AgentHarness",
           "label": "AgentHarness",
-          "value": 2026,
+          "value": 73,
           "text": "4 AgentHarness 用于 Apodex-1.0 深度研究 benchmark 的公开评测 harness。 122 +73 Python 2026-06-12 01:51"
         },
         {
           "repo": "adamallcock/codex-chatgpt-control",
           "label": "codex-chatgpt-control",
-          "value": 2026,
+          "value": 46,
           "text": "5 codex-chatgpt-control 让 Codex agent 控制可见 ChatGPT Web 会话的非官方 SDK。 205 +46 JavaScript 2026-06-12 01:11"
         }
       ],
@@ -1116,8 +1116,8 @@
       "type": "formal",
       "hasWeekly": false,
       "title": "Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations",
-      "summary": "PDF 共识别出 1 个表格和 6 张图，以下按论文顺序完整附上。",
-      "problem": "PDF 共识别出 1 个表格和 6 张图，以下按论文顺序完整附上。",
+      "summary": "选择原因：这是自昨天测试运行后新发布的 Agent 架构论文。它没有把“自治”简化为让 LLM 直接操作生产系统，而是将 Agent 协作、技能调用、知识编码、授权、爆炸半径、回滚和闭环验证放在同一架构中。",
+      "problem": "选择原因：这是自昨天测试运行后新发布的 Agent 架构论文。它没有把“自治”简化为让 LLM 直接操作生产系统，而是将 Agent 协作、技能调用、知识编码、授权、爆炸半径、回滚和闭环验证放在同一架构中。",
       "method": "查看当期论文方法与架构摘要。",
       "conclusion": "查看当期实验结果与核心结论。",
       "difference": "查看当期创新点与既有工作的比较。",
@@ -1144,31 +1144,31 @@
         {
           "repo": "JimLiu/baoyu-design",
           "label": "JimLiu/baoyu-design",
-          "value": 2026,
+          "value": 531,
           "text": "1 JimLiu/baoyu-design 把 Claude Design 作为 Agent Skill 本地运行，生成 UI、原型和演示文稿。 531 +531 +78 JavaScript 2026-06-09 02:44"
         },
         {
           "repo": "amElnagdy/guard-skills",
           "label": "amElnagdy/guard-skills",
-          "value": 2026,
+          "value": 474,
           "text": "2 amElnagdy/guard-skills 面向 coding agents 的质量门禁 skills，发现 AI 生成代码、测试和文档中的失效模式。 474 +474 +61 未标注 2026-06-09 02:56"
         },
         {
           "repo": "GordenSun/GordenSuperPPTSkills",
           "label": "GordenSun/GordenSuperPPTSkills",
-          "value": 2026,
+          "value": 439,
           "text": "3 GordenSun/GordenSuperPPTSkills 使用 GPT 生成图片风格 PPT，再转换为可编辑 PPTX 的 Agent Skill。 439 +439 +192 Python 2026-06-09 02:55"
         },
         {
           "repo": "adamallcock/codex-chatgpt-control",
           "label": "adamallcock/codex-chatgpt-control",
-          "value": 2026,
+          "value": 159,
           "text": "4 adamallcock/codex-chatgpt-control 让 Codex agents 控制可见 ChatGPT 网页会话的非官方 SDK。 159 +159 +36 JavaScript 2026-06-09 02:34"
         },
         {
           "repo": "ApodexAI/AgentHarness",
           "label": "ApodexAI/AgentHarness",
-          "value": 2026,
+          "value": 49,
           "text": "5 ApodexAI/AgentHarness 用于在公开深度研究 benchmark 上评估 Apodex-1.0 的 Agent Harness。 49 +49 昨日未入快照 Python 2026-06-09 02:49"
         }
       ],
@@ -1186,12 +1186,12 @@
       "type": "test",
       "hasWeekly": false,
       "title": "QBugLM: An Agentic Benchmarking Framework for LLM-based Quantum Software Debugging",
-      "summary": "PDF 共识别出 1 个表格和 5 张图。以下按论文顺序完整附上。",
-      "problem": "PDF 共识别出 1 个表格和 5 张图。以下按论文顺序完整附上。",
+      "summary": "选择原因：这是检索时最新的明确命中 “agent benchmark” 的论文之一，并且同时给出多智能体架构与可复现实验流程。论文声明的 GitHub 地址在本次核验时返回 404。",
+      "problem": "选择原因：这是检索时最新的明确命中 “agent benchmark” 的论文之一，并且同时给出多智能体架构与可复现实验流程。论文声明的 GitHub 地址在本次核验时返回 404。",
       "method": "查看当期论文方法与架构摘要。",
       "conclusion": "查看当期实验结果与核心结论。",
       "difference": "查看当期创新点与既有工作的比较。",
-      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "limitation": "选择原因：这是检索时最新的明确命中 “agent benchmark” 的论文之一，并且同时给出多智能体架构与可复现实验流程。论文声明的 GitHub 地址在本次核验时返回 404。",
       "evidence": "论文实验 · 待独立复现",
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "评测方法",
@@ -1214,31 +1214,31 @@
         {
           "repo": "JimLiu/baoyu-design",
           "label": "JimLiu/baoyu-design",
-          "value": 2026,
+          "value": 453,
           "text": "1 JimLiu/baoyu-design 把 Claude Design 作为 Agent Skill 在 Cursor、Claude Code 等环境本地运行，生成 UI、原型和演示文稿。 453 JavaScript 2026-06…"
         },
         {
           "repo": "amElnagdy/guard-skills",
           "label": "amElnagdy/guard-skills",
-          "value": 2026,
+          "value": 413,
           "text": "2 amElnagdy/guard-skills 面向 coding agents 的质量门禁 skills，用于发现 AI 生成代码、测试和文档中的常见失效模式。 413 未标注 2026-06-06 16:59 2026-06-08 …"
         },
         {
           "repo": "GordenSun/GordenSuperPPTSkills",
           "label": "GordenSun/GordenSuperPPTSkills",
-          "value": 2026,
+          "value": 247,
           "text": "3 GordenSun/GordenSuperPPTSkills 使用 GPT 生成图片风格 PPT，再转换为可编辑 PPTX 的 Agent Skill。 247 Python 2026-06-07 16:20 2026-06-08 1…"
         },
         {
           "repo": "adamallcock/codex-chatgpt-control",
           "label": "adamallcock/codex-chatgpt-control",
-          "value": 2026,
+          "value": 123,
           "text": "4 adamallcock/codex-chatgpt-control 让 Codex agent 控制可见 ChatGPT 网页会话的非官方 SDK。 123 TypeScript 2026-06-06 21:09 2026-06-08…"
         },
         {
           "repo": "RainyMarks/DeepX",
           "label": "RainyMarks/DeepX",
-          "value": 2026,
+          "value": 32,
           "text": "5 RainyMarks/DeepX Rust 编写的 AI agent workspace。 32 Rust 2026-06-07 02:30 2026-06-08 10:33"
         }
       ],

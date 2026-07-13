@@ -56,27 +56,27 @@
       <text x="690" y="455" font-size="17" font-weight="650" fill="#233246">firecrawl/firecrawl</text>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="#e8eef6"/>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">894</text>
 
       <text x="690" y="493" font-size="17" font-weight="650" fill="#233246">obra/superpowers</text>
       <rect x="910" y="476" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="476" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="491" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="476" width="280" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1205" y="491" font-size="13" font-weight="700" fill="#0b5f91">759</text>
 
       <text x="690" y="531" font-size="17" font-weight="650" fill="#233246">NousResearch/hermes-agent</text>
       <rect x="910" y="514" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="514" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="529" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="514" width="279" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1204" y="529" font-size="13" font-weight="700" fill="#0b5f91">755</text>
 
       <text x="690" y="569" font-size="17" font-weight="650" fill="#233246">multica-ai/andrej-karpathy-skills</text>
       <rect x="910" y="552" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="552" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="567" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="552" width="251" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1176" y="567" font-size="13" font-weight="700" fill="#0b5f91">679</text>
 
       <text x="690" y="607" font-size="17" font-weight="650" fill="#233246">farion1231/cc-switch</text>
       <rect x="910" y="590" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="590" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="605" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="590" width="227" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1152" y="605" font-size="13" font-weight="700" fill="#0b5f91">616</text>
 
   <rect x="82" y="596" width="1116" height="42" rx="21" fill="url(#accent)" opacity="0.10"/>
   <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：未发现新发布内容 · 生成时间：2026-07-13 13:41:51 UTC</text>

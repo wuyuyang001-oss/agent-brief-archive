@@ -30,8 +30,8 @@
   <text x="110" y="266" font-size="20" font-weight="800" fill="#087f5b">当日核心摘要</text>
   <text x="110" y="311" font-size="27" font-weight="850" fill="#132334">ReproRepo: Scaling Reproducibility Audits with</text>
 <text x="110" y="345" font-size="27" font-weight="850" fill="#132334">GitHub Repository Issues…</text>
-  <text x="110" y="378" font-size="18" font-weight="500" fill="#4d6176">以下按论文顺序列出全部公开可访问的 Figure 1-9 与 Table 1-9。复杂图表</text>
-<text x="110" y="405" font-size="18" font-weight="500" fill="#4d6176">与表格以论文 PDF 页面截图嵌入，未发现需要额外列出的缺失图表。来源均为…</text>
+  <text x="110" y="378" font-size="18" font-weight="500" fill="#4d6176">选择原因：这是 2026-06-16 新提交的 agent benchmark / evaluation 论文，</text>
+<text x="110" y="405" font-size="18" font-weight="500" fill="#4d6176">直接讨论如何用 GitHub issues 扩展 LLM agent 的科研复现审计评测；比继…</text>
 
   <g>
     <rect x="82" y="460" width="130" height="106" rx="20" fill="#f3f8ff" stroke="#d8e5f2"/>
@@ -56,27 +56,27 @@
       <text x="690" y="455" font-size="17" font-weight="650" fill="#233246">obra/superpowers</text>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="#e8eef6"/>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">3,813</text>
 
       <text x="690" y="493" font-size="17" font-weight="650" fill="#233246">NousResearch/hermes-agent</text>
       <rect x="910" y="476" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="476" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="491" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="476" width="289" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1214" y="491" font-size="13" font-weight="700" fill="#0b5f91">3,340</text>
 
       <text x="690" y="531" font-size="17" font-weight="650" fill="#233246">multica-ai/andrej-karpathy-skills</text>
       <rect x="910" y="514" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="514" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="529" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="514" width="232" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1157" y="529" font-size="13" font-weight="700" fill="#0b5f91">2,675</text>
 
       <text x="690" y="569" font-size="17" font-weight="650" fill="#233246">affaan-m/ECC</text>
       <rect x="910" y="552" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="552" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="567" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="552" width="206" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1131" y="567" font-size="13" font-weight="700" fill="#0b5f91">2,385</text>
 
       <text x="690" y="607" font-size="17" font-weight="650" fill="#233246">anomalyco/opencode</text>
       <rect x="910" y="590" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="590" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="605" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="590" width="134" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1059" y="605" font-size="13" font-weight="700" fill="#0b5f91">1,546</text>
 
   <rect x="82" y="596" width="1116" height="42" rx="21" fill="url(#accent)" opacity="0.10"/>
   <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：未发现新发布内容 · 生成时间：2026-07-13 13:41:51 UTC</text>

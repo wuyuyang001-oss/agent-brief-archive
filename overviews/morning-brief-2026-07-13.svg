@@ -30,8 +30,8 @@
   <text x="110" y="266" font-size="20" font-weight="800" fill="#087f5b">当日核心摘要</text>
   <text x="110" y="311" font-size="27" font-weight="850" fill="#132334">Task-Specific Multimodal Question Answering Ag</text>
 <text x="110" y="345" font-size="27" font-weight="850" fill="#132334">ents via Confidence Calibration and Incrementa…</text>
-  <text x="110" y="378" font-size="18" font-weight="500" fill="#4d6176">生成日期：2026-07-13（周一）｜信息截止：2026-07-13 21:35 CST（UTC+8）｜目标：</text>
-<text x="110" y="405" font-size="18" font-weight="500" fill="#4d6176">把模型、Agent、工具与评测进展转成产品决策线索。</text>
+  <text x="110" y="378" font-size="18" font-weight="500" fill="#4d6176">Agent 的关键不是只答对，而是知道何时行动：作者结论 QANTA 系统把答案生</text>
+<text x="110" y="405" font-size="18" font-weight="500" fill="#4d6176">成与“是否抢答”拆开，以 0.90 置信阈值、期望收益门控和 Numeric Firewall…</text>
 
   <g>
     <rect x="82" y="460" width="130" height="106" rx="20" fill="#f3f8ff" stroke="#d8e5f2"/>
@@ -56,28 +56,28 @@
       <text x="690" y="455" font-size="17" font-weight="650" fill="#233246">obra/superpowers</text>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="#e8eef6"/>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">2,604</text>
 
       <text x="690" y="493" font-size="17" font-weight="650" fill="#233246">NousResearch/hermes-agent</text>
       <rect x="910" y="476" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="476" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="491" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="476" width="230" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1155" y="491" font-size="13" font-weight="700" fill="#0b5f91">1,811</text>
 
       <text x="690" y="531" font-size="17" font-weight="650" fill="#233246">firecrawl/firecrawl</text>
       <rect x="910" y="514" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="514" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="529" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="514" width="221" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1146" y="529" font-size="13" font-weight="700" fill="#0b5f91">1,741</text>
 
       <text x="690" y="569" font-size="17" font-weight="650" fill="#233246">multica-ai/andrej-karpathy-skills</text>
       <rect x="910" y="552" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="552" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="567" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="552" width="172" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1097" y="567" font-size="13" font-weight="700" fill="#0b5f91">1,358</text>
 
       <text x="690" y="607" font-size="17" font-weight="650" fill="#233246">farion1231/cc-switch</text>
       <rect x="910" y="590" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="590" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="605" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="590" width="169" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1094" y="605" font-size="13" font-weight="700" fill="#0b5f91">1,330</text>
 
   <rect x="82" y="596" width="1116" height="42" rx="21" fill="url(#accent)" opacity="0.10"/>
-  <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：6 条官方链接/动态 · 生成时间：2026-07-13 13:41:51 UTC</text>
+  <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：未发现新发布内容 · 生成时间：2026-07-13 13:41:51 UTC</text>
 </svg>

@@ -56,27 +56,27 @@
       <text x="690" y="455" font-size="17" font-weight="650" fill="#233246">GordenSun/GordenSuperPPTSkills</text>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="#e8eef6"/>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">351</text>
 
       <text x="690" y="493" font-size="17" font-weight="650" fill="#233246">JimLiu/baoyu-design</text>
       <rect x="910" y="476" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="476" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="491" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="476" width="229" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1154" y="491" font-size="13" font-weight="700" fill="#0b5f91">244</text>
 
       <text x="690" y="531" font-size="17" font-weight="650" fill="#233246">amElnagdy/guard-skills</text>
       <rect x="910" y="514" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="514" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="529" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="514" width="91" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1016" y="529" font-size="13" font-weight="700" fill="#0b5f91">97</text>
 
       <text x="690" y="569" font-size="17" font-weight="650" fill="#233246">ApodexAI/AgentHarness</text>
       <rect x="910" y="552" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="552" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="567" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="552" width="69" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="994" y="567" font-size="13" font-weight="700" fill="#0b5f91">73</text>
 
       <text x="690" y="607" font-size="17" font-weight="650" fill="#233246">adamallcock/codex-chatgpt-control</text>
       <rect x="910" y="590" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="590" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="605" font-size="13" font-weight="700" fill="#0b5f91">2,026</text>
+      <rect x="910" y="590" width="43" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="968" y="605" font-size="13" font-weight="700" fill="#0b5f91">46</text>
 
   <rect x="82" y="596" width="1116" height="42" rx="21" fill="url(#accent)" opacity="0.10"/>
   <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：6 条官方链接/动态 · 生成时间：2026-07-13 13:41:51 UTC</text>

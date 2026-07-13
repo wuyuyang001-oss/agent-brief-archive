@@ -104,6 +104,12 @@ function numberFromText(input) {
   return Number.isFinite(value) ? value : null;
 }
 
+function positiveDeltaFromText(input) {
+  const match = String(input).match(/\+\s*(\d[\d,]*(?:\.\d+)?)(?:\s*(k|K|万))?/);
+  if (!match) return null;
+  return numberFromText(`${match[1]}${match[2] || ""}`);
+}
+
 function extractGithubRows(html) {
   const rows = [];
   const tableRows = html.match(/<tr[\s\S]*?<\/tr>/gi) || [];
@@ -115,13 +121,14 @@ function extractGithubRows(html) {
     const repoIndex = Math.max(0, cells.findIndex(cell => cell.includes(repo) || cell.toLowerCase().includes(repo.split("/")[1].toLowerCase())));
     const numericCells = cells.slice(repoIndex + 1).map(numberFromText).filter(value => value !== null && value > 0);
     const text = stripTags(row);
+    const positiveDelta = positiveDeltaFromText(text);
     const fallbackNumbers = [...text.matchAll(/[+-]?\d[\d,]*(?:\.\d+)?(?:\s*(?:k|K|万))?/g)]
       .map(match => numberFromText(match[0]))
-      .filter(value => value !== null && value > 0 && value < 1_000_000);
+      .filter(value => value !== null && value > 0 && value < 1_000_000 && value !== 2026);
     rows.push({
       repo,
       label: cells[repoIndex] ? truncate(cells[repoIndex].replace(repo, "").trim() || repo, 42) : repo,
-      value: numericCells[numericCells.length - 1] || fallbackNumbers[fallbackNumbers.length - 1] || 1,
+      value: positiveDelta || numericCells.find(value => value !== 2026) || fallbackNumbers[0] || 1,
       text: truncate(text, 120),
     });
   }
@@ -140,6 +147,13 @@ function extractPaperTitle(html, todaySection) {
 }
 
 function extractLabeledPoint(section, labels, fallback = "") {
+  for (const label of labels) {
+    const paired = section.match(new RegExp(
+      `<p[^>]*>\\s*<strong[^>]*>\\s*(?:${label})[：:]?\\s*<\\/strong>\\s*<\\/p>\\s*<p[^>]*>([\\s\\S]*?)<\\/p>`,
+      "i",
+    ));
+    if (paired) return truncate(stripTags(paired[1]), 180);
+  }
   const blocks = section.match(/<(?:li|p)[^>]*>[\s\S]*?<\/(?:li|p)>/gi) || [];
   for (const block of blocks) {
     const text = stripTags(block);
@@ -149,6 +163,15 @@ function extractLabeledPoint(section, labels, fallback = "") {
     }
   }
   return truncate(fallback, 180);
+}
+
+function extractSummarySignal(html) {
+  const section = sectionAfterH2(html, "90 秒摘要");
+  const article = section.match(/<article[^>]*class=["'][^"']*signal[^"']*["'][^>]*>[\s\S]*?<\/article>/i);
+  if (!article) return "";
+  const title = firstMatch(article[0], /<h3[^>]*>([\s\S]*?)<\/h3>/i);
+  const core = firstMatch(article[0], /<dt[^>]*>\s*核心结论\s*<\/dt>\s*<dd[^>]*>([\s\S]*?)<\/dd>/i);
+  return truncate([title, core].filter(Boolean).join("："), 180);
 }
 
 function extractFirstSignal(section, domains, kind) {
@@ -172,6 +195,21 @@ function extractFirstSignal(section, domains, kind) {
 
 function extractLeaderSignal(html) {
   const leaderSection = sectionAfterH2(html, "前沿领头羊信号");
+  const leaderText = stripTags(leaderSection);
+  if (
+    /OpenAI[\s\S]*?官方发布\s*·\s*无新增/i.test(leaderText)
+    && /Anthropic[\s\S]*?官方发布\s*·\s*无新增/i.test(leaderText)
+  ) {
+    return {
+      kind: "官方核验",
+      org: "OpenAI / Anthropic",
+      title: "本窗口未发现新的官方技术发布",
+      summary: /无可核验新增/.test(leaderText)
+        ? "同时未发现可核验的关键负责人新原帖；聚合摘要未进入日报。"
+        : "请以当期原文的官方动态板块为准。",
+      url: "",
+    };
+  }
   const social = extractFirstSignal(leaderSection, "(?:x\\.com|twitter\\.com)", "个人公开观点");
   if (social) return social;
 
@@ -197,7 +235,7 @@ function classifyBrief(text, title) {
   if (/(benchmark|evaluation|evals?|评测|评估方法|swe-bench|browsecomp|accuracy|item f1)/i.test(haystack)) tracks.push("evaluation");
 
   let primaryTrack = "Agent 架构与工具";
-  if (/(benchmark|evaluation|evals?|评测|评估方法)/i.test(title)) primaryTrack = "评测方法";
+  if (/(benchmark|evaluation|evals?|评测|评估方法|calibration|challenge|qanta)/i.test(title)) primaryTrack = "评测方法";
   else if (/(gpt|claude|gemini|模型|reasoning|推理)/i.test(title)) primaryTrack = "模型能力";
   else if (/(product|产品|chatgpt|copilot|computer[- ]use|coding agent)/i.test(title)) primaryTrack = "Agent 产品";
   return { tracks: [...new Set(tracks)], primaryTrack };
@@ -212,28 +250,41 @@ function extractBriefMetadata(fileName, html) {
   const isTest = fileName.includes("test");
   const todaySection = sectionAfterH2(html, "今日论文");
   const paperTitle = extractPaperTitle(html, todaySection);
-  const reason = firstMatch(todaySection, /<p[^>]*class="[^"]*(?:note|callout)[^"]*"[^>]*>([\s\S]*?)<\/p>/i)
+  const reason = firstMatch(todaySection, /<(?:p|div)[^>]*class="[^"]*(?:note|callout)[^"]*"[^>]*>([\s\S]*?)<\/(?:p|div)>/i)
     || firstMatch(html, /<p[^>]*>([\s\S]*?)<\/p>/i)
     || "当日 AI/Agent 研究与工程动态摘要。";
+  const summarySignal = extractSummarySignal(html);
   const githubRows = extractGithubRows(html);
   const githubRepos = [...new Set([...(html.matchAll(/github\.com\/([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+)/g))].map(match => match[1].replace(/["'<>\s].*$/, "")))];
   const figureCount = (html.match(/<figure[\s>]/gi) || []).length;
   const tableCount = (html.match(/<table[\s>]/gi) || []).length;
   const linkCount = (html.match(/<a\s+[^>]*href=/gi) || []).length;
   const hasWeekly = /<h2[^>]*>[\s\S]*(本周周报|周报总结|Weekly)[\s\S]*<\/h2>/i.test(html);
-  const officialNoUpdate = /未发现新发布内容/.test(stripTags(html));
+  const leaderSection = sectionAfterH2(html, "前沿领头羊信号");
+  const leaderText = stripTags(leaderSection);
+  const officialNoUpdate = /未发现新发布内容/.test(stripTags(html))
+    || (
+      /OpenAI[\s\S]*?官方发布\s*·\s*无新增/i.test(leaderText)
+      && /Anthropic[\s\S]*?官方发布\s*·\s*无新增/i.test(leaderText)
+    );
   const officialLinks = (html.match(/https:\/\/(?:openai\.com|www\.anthropic\.com|anthropic\.com)[^"'<\s]*/gi) || []).length;
   const type = isTest ? "test" : "formal";
   const plainText = stripTags(html);
   const classification = classifyBrief(plainText, paperTitle);
-  const problem = extractLabeledPoint(todaySection, ["选择理由", "此前问题", "问题"], reason);
-  const method = extractLabeledPoint(todaySection, ["核心方法", "方法", "做法"], "查看当期论文方法与架构摘要。");
+  const credibility = firstMatch(todaySection, /<div[^>]*class="[^"]*callout\s+warn[^"]*"[^>]*>([\s\S]*?)<\/div>/i);
+  const decisionAction = firstMatch(todaySection, /<div[^>]*class="[^"]*decision[^"]*"[^>]*>([\s\S]*?)<\/div>/i);
+  const problem = extractLabeledPoint(todaySection, ["选择理由", "此前遇到的问题", "此前问题", "问题"], reason);
+  const method = extractLabeledPoint(todaySection, ["核心方法", "研究做法", "方法", "做法"], "查看当期论文方法与架构摘要。");
   const conclusion = extractLabeledPoint(todaySection, ["主要结果", "实验结论", "关键结论", "结论"], "查看当期实验结果与核心结论。");
   const difference = extractLabeledPoint(todaySection, ["与既有工作的差异", "创新点", "创新", "差异"], "查看当期创新点与既有工作的比较。");
-  const limitation = extractLabeledPoint(todaySection, ["局限", "限制"], "仍需结合复现、成本和真实产品场景验证。");
+  const limitation = extractLabeledPoint(todaySection, ["局限", "限制"], credibility || "仍需结合复现、成本和真实产品场景验证。");
   const hasOpenCode = /github\.com\//i.test(todaySection) && !/未发现[^。；]*(?:代码|仓库)/i.test(stripTags(todaySection));
-  const evidence = tableCount + figureCount > 0 ? "论文实验 · 待独立复现" : "来源汇总 · 证据待加强";
-  const action = hasOpenCode ? "核验代码与复现条件，安排小规模产品验证" : "持续追踪代码开放与后续复现，暂不直接接入";
+  const evidence = /可信度[：:]?\s*中低/.test(credibility)
+    ? "作者自报 · 可信度中低"
+    : tableCount + figureCount > 0 ? "论文实验 · 待独立复现" : "来源汇总 · 证据待加强";
+  const action = decisionAction
+    ? truncate(decisionAction.replace(/^对产品的直接启发[：:]?\s*/, ""), 170)
+    : hasOpenCode ? "核验代码与复现条件，安排小规模产品验证" : "持续追踪代码开放与后续复现，暂不直接接入";
   const leaderSignal = extractLeaderSignal(html);
   const tags = [
     date,
@@ -253,7 +304,7 @@ function extractBriefMetadata(fileName, html) {
     type,
     hasWeekly,
     title: paperTitle,
-    summary: truncate(reason, 155),
+    summary: truncate(summarySignal || reason, 155),
     problem,
     method,
     conclusion,

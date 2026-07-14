@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="2026-06-09 AI Agent 晨间简报概览">
-  <title>2026-06-09 AI Agent 晨间简报概览</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="2026-07-14 AI Agent 晨间简报概览">
+  <title>2026-07-14 AI Agent 晨间简报概览</title>
   <defs>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0a67a3"/>
@@ -23,28 +23,28 @@
   <rect x="42" y="42" width="1196" height="636" rx="34" fill="none" stroke="#d8e5f2"/>
 
   <text x="82" y="96" font-size="18" font-weight="800" letter-spacing="3" fill="#0a67a3">AI / AGENT MORNING BRIEF</text>
-  <text x="82" y="148" font-size="54" font-weight="850" letter-spacing="-2.2" fill="#122033">2026-06-09</text>
+  <text x="82" y="148" font-size="54" font-weight="850" letter-spacing="-2.2" fill="#122033">2026-07-14</text>
   <text x="82" y="184" font-size="21" font-weight="650" fill="#5d7186">周二 · 自动生成概览图 · 日报</text>
 
   <rect x="82" y="224" width="548" height="204" rx="24" fill="#f7fbff" stroke="#d8e5f2"/>
   <text x="110" y="266" font-size="20" font-weight="800" fill="#087f5b">当日核心摘要</text>
-  <text x="110" y="311" font-size="27" font-weight="850" fill="#132334">Autonomous Incident Resolution at Hyperscale:</text>
-<text x="110" y="345" font-size="27" font-weight="850" fill="#132334">An Agentic AI Architecture for Network Operati…</text>
-  <text x="110" y="378" font-size="18" font-weight="500" fill="#4d6176">选择原因：这是自昨天测试运行后新发布的 Agent 架构论文。它没有把“自治”</text>
-<text x="110" y="405" font-size="18" font-weight="500" fill="#4d6176">简化为让 LLM 直接操作生产系统，而是将 Agent 协作、技能调用、知识编码、授…</text>
+  <text x="110" y="311" font-size="27" font-weight="850" fill="#132334">Failure as a Process: An Anatomy of CLI Coding</text>
+<text x="110" y="345" font-size="27" font-weight="850" fill="#132334">Agent Trajectories…</text>
+  <text x="110" y="378" font-size="18" font-weight="500" fill="#4d6176">1. 评测对象应从“最终输出”扩展到“失败过程”：已证实事实 新论文显示，失败</text>
+<text x="110" y="405" font-size="18" font-weight="500" fill="#4d6176">轨迹的决定性错误中位数出现在第 7 步，首次可观察失败约在第 16 步；仅看…</text>
 
   <g>
     <rect x="82" y="460" width="130" height="106" rx="20" fill="#f3f8ff" stroke="#d8e5f2"/>
-    <text x="110" y="503" font-size="38" font-weight="850" fill="#0a67a3">6</text>
+    <text x="110" y="503" font-size="38" font-weight="850" fill="#0a67a3">16</text>
     <text x="110" y="536" font-size="15" font-weight="700" fill="#5f7184">GitHub 仓库</text>
     <rect x="224" y="460" width="130" height="106" rx="20" fill="#f3fbf6" stroke="#d8e5f2"/>
     <text x="252" y="503" font-size="38" font-weight="850" fill="#087f5b">6</text>
     <text x="252" y="536" font-size="15" font-weight="700" fill="#5f7184">论文图表</text>
     <rect x="366" y="460" width="130" height="106" rx="20" fill="#fff8ed" stroke="#d8e5f2"/>
-    <text x="394" y="503" font-size="38" font-weight="850" fill="#a15c00">2</text>
+    <text x="394" y="503" font-size="38" font-weight="850" fill="#a15c00">11</text>
     <text x="394" y="536" font-size="15" font-weight="700" fill="#5f7184">HTML 表格</text>
     <rect x="508" y="460" width="122" height="106" rx="20" fill="#f7f4ff" stroke="#d8e5f2"/>
-    <text x="536" y="503" font-size="38" font-weight="850" fill="#4f46e5">24</text>
+    <text x="536" y="503" font-size="38" font-weight="850" fill="#4f46e5">60</text>
     <text x="536" y="536" font-size="15" font-weight="700" fill="#5f7184">来源链接</text>
   </g>
 
@@ -53,31 +53,31 @@
   <text x="706" y="301" font-size="16" font-weight="600" fill="#66798d">GitHub 项目关注度/增长代理，按日报原表顺序抽取</text>
   <path d="M706 338 H1166" stroke="#dbe6f0"/>
   
-      <text x="690" y="455" font-size="17" font-weight="650" fill="#233246">JimLiu/baoyu-design</text>
+      <text x="690" y="455" font-size="17" font-weight="650" fill="#233246">obra/superpowers</text>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="#e8eef6"/>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">531</text>
+      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">2,975</text>
 
-      <text x="690" y="493" font-size="17" font-weight="650" fill="#233246">amElnagdy/guard-skills</text>
+      <text x="690" y="493" font-size="17" font-weight="650" fill="#233246">NousResearch/hermes-agent</text>
       <rect x="910" y="476" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="476" width="295" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1220" y="491" font-size="13" font-weight="700" fill="#0b5f91">474</text>
+      <rect x="910" y="476" width="227" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1152" y="491" font-size="13" font-weight="700" fill="#0b5f91">2,047</text>
 
-      <text x="690" y="531" font-size="17" font-weight="650" fill="#233246">GordenSun/GordenSuperPPTSkills</text>
+      <text x="690" y="531" font-size="17" font-weight="650" fill="#233246">firecrawl/firecrawl</text>
       <rect x="910" y="514" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="514" width="273" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1198" y="529" font-size="13" font-weight="700" fill="#0b5f91">439</text>
+      <rect x="910" y="514" width="222" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1147" y="529" font-size="13" font-weight="700" fill="#0b5f91">2,005</text>
 
-      <text x="690" y="569" font-size="17" font-weight="650" fill="#233246">adamallcock/codex-chatgpt-control</text>
+      <text x="690" y="569" font-size="17" font-weight="650" fill="#233246">multica-ai/andrej-karpathy-skills</text>
       <rect x="910" y="552" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="552" width="99" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1024" y="567" font-size="13" font-weight="700" fill="#0b5f91">159</text>
+      <rect x="910" y="552" width="172" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1097" y="567" font-size="13" font-weight="700" fill="#0b5f91">1,548</text>
 
-      <text x="690" y="607" font-size="17" font-weight="650" fill="#233246">ApodexAI/AgentHarness</text>
+      <text x="690" y="607" font-size="17" font-weight="650" fill="#233246">farion1231/cc-switch</text>
       <rect x="910" y="590" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="590" width="34" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="959" y="605" font-size="13" font-weight="700" fill="#0b5f91">49</text>
+      <rect x="910" y="590" width="168" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1093" y="605" font-size="13" font-weight="700" fill="#0b5f91">1,516</text>
 
   <rect x="82" y="596" width="1116" height="42" rx="21" fill="url(#accent)" opacity="0.10"/>
-  <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：未发现新发布内容 · 生成时间：2026-07-14 02:25:03 UTC</text>
+  <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：8 条官方链接/动态 · 生成时间：2026-07-14 02:25:03 UTC</text>
 </svg>

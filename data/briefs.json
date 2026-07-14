@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-07-13T13:41:51.842Z",
+  "generatedAt": "2026-07-14T02:25:03.031Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-14.html",
+      "date": "2026-07-14",
+      "weekday": "周二",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "Failure as a Process: An Anatomy of CLI Coding Agent Trajectories",
+      "summary": "1. 评测对象应从“最终输出”扩展到“失败过程”：已证实事实 新论文显示，失败轨迹的决定性错误中位数出现在第 7 步，首次可观察失败约在第 16 步；仅看最终 pass/fail 会错过干预窗口。",
+      "problem": "论文虽标注 7 月 10 日提交，但在 arXiv 7 月 13 日批次中于上次简报截止后公开出现；其数据规模、公开轨迹和“过程型失败评测”与 Agent 产品可靠性直接相关。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "不是再增加一个静态 failure taxonomy，而是把失败拆成 error onset、lock-in 和 observability，并量化 recoverability window。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "产品决策： 先实现一个低成本 assumption gate：在目录、权限、依赖、任务规格与测试入口等关键状态发生变化时做机器校验；如果恢复尝试超过成功轨迹的典型长度，就回退到重新诊断，而不是继续修同一个错误问题。",
+      "primaryTrack": "Agent 产品",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方发布",
+        "org": "OpenAI",
+        "title": "官方核验",
+        "summary": "维持观察，不用低价值旧内容填充。",
+        "url": "https://openai.com/"
+      },
+      "source": "briefs/morning-brief-2026-07-14.html",
+      "overview": "overviews/morning-brief-2026-07-14.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "1 ·",
+          "value": 2975,
+          "text": "1 · obra/superpowers Agent Skills 框架与软件开发方法 253,937 250,962 +2,975 Shell 2026-07-14 05:25 持续增长"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "2 ·",
+          "value": 2047,
+          "text": "2 · NousResearch/hermes-agent 带记忆和持续成长定位的个人 Agent 214,312 212,265 +2,047 Python 2026-07-14 09:56 持续增长"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "3 ·",
+          "value": 2005,
+          "text": "3 · firecrawl/firecrawl 面向 Agent 的网页搜索、抓取与交互 API 150,475 148,470 +2,005 TypeScript 2026-07-14 04:28 持续增长"
+        },
+        {
+          "repo": "multica-ai/andrej-karpathy-skills",
+          "label": "4 ·",
+          "value": 1548,
+          "text": "4 · multica-ai/andrej-karpathy-skills 面向 coding agent 的单文件行为约束 Skill 191,666 190,118 +1,548 未标明 2026-04-20 18:05 热度高 / …"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "5 ·",
+          "value": 1516,
+          "text": "5 · farion1231/cc-switch Claude Code、Codex、OpenCode 等多 CLI 助手切换工具 116,848 115,332 +1,516 Rust 2026-07-13 23:59 持续增长"
+        },
+        {
+          "repo": "FoundationAgents/MetaGPT",
+          "label": "FoundationAgents/MetaGPT",
+          "value": 69349,
+          "text": "FoundationAgents/MetaGPT 69,349 把软件团队角色和 SOP 编排成多 Agent 软件公司框架。 是角色化多 Agent 的代表性高 Star 项目，适合作为“流程分工是否真实提升结果”的历史基线；但最近推送…"
+        },
+        {
+          "repo": "microsoft/ai-agents-for-beginners",
+          "label": "microsoft/ai-agents-for-beginners",
+          "value": 69265,
+          "text": "microsoft/ai-agents-for-beginners 69,265 18 课 Agent 构建课程，覆盖工具、编排、记忆与评测入门。 不是生产 runtime，但能反映主流 Agent 产品知识结构和生态入口；适合拆成内部培…"
+        },
+        {
+          "repo": "666ghj/MiroFish",
+          "label": "666ghj/MiroFish",
+          "value": 68487,
+          "text": "666ghj/MiroFish 68,487 通用群体智能和多 Agent 预测引擎。 可用于观察大规模角色模拟能否形成可验证预测增量；AGPL 与预测可信度、校准和数据泄漏是重点风险。 Python / AGPL-3.0 2026-05…"
+        }
+      ],
+      "githubRepoCount": 16,
+      "figureCount": 6,
+      "tableCount": 11,
+      "linkCount": 60,
+      "officialStatus": "8 条官方链接/动态",
+      "tags": "2026-07-14 Failure as a Process: An Anatomy of CLI Coding Agent Trajectories anthropics/claude-code anomalyco/opencode xz-Sean/cli_trajectory_analysis obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch FoundationAgents/MetaGPT microsoft/ai-agents-for-beginners 666ghj/MiroFish FoundationAgents/OpenManus hesreallyhim/awesome-claude-code openai/codex browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic Agent 产品 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-13.html",
       "date": "2026-07-13",

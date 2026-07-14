@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI / Agent 晨间简报 - 2026-07-14</title>
+  <style>
+    :root{--ink:#172033;--muted:#647087;--line:#dce4ef;--soft:#f7f9fc;--blue:#2458d3;--blue2:#eef4ff;--green:#087a5b;--green2:#eaf8f2;--amber:#8a5a00;--amber2:#fff7e6;--red:#a23838;--red2:#fff1f1;--shadow:0 12px 38px rgba(30,55,90,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font:16px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}main{max-width:1180px;margin:0 auto;padding:32px 22px 72px}header{border:1px solid var(--line);border-radius:26px;padding:30px;background:linear-gradient(135deg,#fff 0%,#f7faff 62%,#edf4ff 100%);box-shadow:var(--shadow)}h1{font-size:38px;line-height:1.15;margin:0 0 10px;letter-spacing:-.02em}h2{font-size:26px;line-height:1.3;margin:38px 0 16px;padding-left:13px;border-left:6px solid var(--blue)}h3{font-size:19px;line-height:1.45;margin:22px 0 9px}p{margin:8px 0}.subtitle,.muted,.small{color:var(--muted)}.small{font-size:13px}.hero-grid,.signal-grid,.track-grid,.twocol{display:grid;gap:14px}.hero-grid{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:22px}.signal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.track-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.twocol{grid-template-columns:repeat(2,minmax(0,1fr))}.card,.signal,.track{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px;box-shadow:0 6px 22px rgba(30,55,90,.045)}.hero-grid strong{display:block;color:#183c80;margin-bottom:5px}.signal h3,.track h3{margin-top:0}.signal dl{display:grid;grid-template-columns:92px 1fr;gap:8px 10px;margin:10px 0 0}.signal dt{font-weight:750;color:#42506a}.signal dd{margin:0}.track{border-top:4px solid #9bb6ef}.note,.warn,.decision{border-radius:16px;padding:14px 16px;margin:13px 0}.note{background:var(--blue2);border:1px solid #cedfff;color:#19345d}.warn{background:var(--amber2);border:1px solid #efd79b;color:#5d4200}.decision{background:var(--green2);border:1px solid #b8e4d4;color:#155a47}.label,.status{display:inline-flex;align-items:center;border-radius:999px;padding:2px 8px;font-size:12px;font-weight:750;margin-right:6px;white-space:nowrap}.fact{color:#075c45;background:#dff5ec}.author{color:#785100;background:#fff0c8}.inference{color:#244eaa;background:#e6efff}.status.new{color:#244eaa;background:#e6efff}.status.up{color:#075c45;background:#dff5ec}.status.release{color:#785100;background:#fff0c8}.status.watch{color:#6d3da8;background:#f2e9ff}.toc{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow:auto;margin:18px 0;padding:10px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.94);backdrop-filter:blur(12px)}.toc a{white-space:nowrap;border-radius:999px;padding:6px 10px;background:var(--soft);color:#30415f}.section{border-top:1px solid var(--line);padding-top:2px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px;margin:12px 0;background:#fff}table{width:100%;min-width:820px;border-collapse:collapse}th,td{padding:10px 11px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{background:#f1f5fb;color:#17294a;font-weight:760}tr:last-child td{border-bottom:0}.positive{color:var(--green);font-weight:780}.dim{color:var(--muted)}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}code{font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:#f1f4f8;border:1px solid #dfe6ef;border-radius:6px;padding:1px 5px}details{border:1px solid var(--line);border-radius:17px;background:#fff;margin:14px 0;overflow:hidden}summary{cursor:pointer;font-weight:780;padding:14px 16px;background:#f5f8fc;color:#21385f}details>div{padding:4px 16px 18px}figure{margin:18px 0;border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden}figure img{display:block;max-width:100%;height:auto;margin:auto;background:#fff}figcaption{padding:12px 14px;color:var(--muted);border-top:1px solid var(--line)}ul{padding-left:22px}.kpi{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}.pill{border:1px solid var(--line);border-radius:999px;background:#fff;padding:6px 10px;color:#33415c}.quote{border-left:4px solid #b7c9ef;padding:4px 0 4px 14px;color:#32415e}.feedback{border:1px dashed #aebbd0;border-radius:16px;padding:14px;background:#fbfcfe}.footer-note{font-size:13px;color:var(--muted);padding-top:8px}
+    @media(max-width:900px){.hero-grid,.signal-grid,.track-grid,.twocol{grid-template-columns:1fr 1fr}main{padding:22px 14px 56px}h1{font-size:32px}.signal dl{grid-template-columns:78px 1fr}}
+    @media(max-width:620px){.hero-grid,.signal-grid,.track-grid,.twocol{grid-template-columns:1fr}header{padding:22px 18px}h1{font-size:29px}h2{font-size:23px}.toc{top:0}}
+    @media print{.toc{display:none}body{font-size:11pt}main{max-width:none;padding:0}header,.card,.signal,.track,details,figure{box-shadow:none;break-inside:avoid}details>div{display:block}a{color:#111;text-decoration:underline}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>AI / Agent 晨间简报</h1>
+    <p class="subtitle">生成日期：2026-07-14（周二）｜信息截止：2026-07-14 10:20 CST（UTC+8）｜目标：把模型、Agent、工具与评测进展转成产品决策线索。</p>
+    <div class="hero-grid">
+      <div class="card"><strong>今日主判断</strong><span>Agent 可靠性评测需要从最终成败转向轨迹中的早期错误、锁定点和恢复能力。</span></div>
+      <div class="card"><strong>论文证据</strong><span>3,843 条原始轨迹，1,794 条有效轨迹，63,000+ 执行步骤，21 个模型与 scaffold 组合。</span></div>
+      <div class="card"><strong>GitHub 信号</strong><span>约 95 小时代理窗最高 +2,975 Stars；Claude Code 与 OpenCode 在截止前发布新版本。</span></div>
+      <div class="card"><strong>领头羊方向</strong><span>Anthropic 连续把重点放在生产级 Agent 与从真实失败构建端到端 eval。</span></div>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="目录">
+    <a href="#summary">90 秒摘要</a><a href="#leaders">前沿领头羊</a><a href="#tracks">四条主线</a><a href="#paper">今日论文</a><a href="#growth">三日增长</a><a href="#unseen">高 Star 未总结</a><a href="#tracking">持续追踪</a><a href="#methods">来源与方法</a>
+  </nav>
+
+  <section id="summary" class="section">
+    <h2>90 秒摘要</h2>
+    <div class="signal-grid">
+      <article class="signal">
+        <h3>1. 评测对象应从“最终输出”扩展到“失败过程”</h3>
+        <dl>
+          <dt>核心结论</dt><dd><span class="label fact">已证实事实</span>新论文显示，失败轨迹的决定性错误中位数出现在第 7 步，首次可观察失败约在第 16 步；仅看最终 pass/fail 会错过干预窗口。</dd>
+          <dt>证据</dt><dd>1,184 条人工标注失败轨迹；时间点标注加权 Cohen's kappa 不低于 0.94。可信度：中高。</dd>
+          <dt>差异</dt><dd>既有工作多分类“出了什么错”，本研究把错误起点、不可恢复点和可观察点拆成三个时间戳。</dd>
+          <dt>意义</dt><dd>Agent 产品的评测应新增早期假设验证、恢复窗口、观测延迟和锁定后浪费等指标。</dd>
+          <dt>建议动作</dt><dd>在现有 agent eval 中增加关键前提检查，并对失败轨迹标注 <code>t_err</code>、<code>t_lock</code>、<code>t_obs</code>。</dd>
+        </dl>
+      </article>
+      <article class="signal">
+        <h3>2. “不会做”不是主要问题，“相信了错误前提”更常见</h3>
+        <dl>
+          <dt>核心结论</dt><dd><span class="label author">作者结论</span>57.9% 的决定性错误属于 epistemic errors，单项最大来源是 false premise（30.7%）。</dd>
+          <dt>证据</dt><dd>两名标注者独立标注后裁决，根因标注 Cohen's kappa 为 0.83；数据与 codebook 已公开。可信度：中高。</dd>
+          <dt>差异</dt><dd>优化重点从“再换更强模型”转向“验证环境、规格、输出解释和关键假设”。</dd>
+          <dt>意义</dt><dd>可复用的技术红利可能是轻量 verifier、状态断言和 diagnosis gate，而不一定是更大的模型。</dd>
+          <dt>建议动作</dt><dd>先做 20-50 条真实失败的 assumption checklist，并把关键环境事实变成机器可验证断言。</dd>
+        </dl>
+      </article>
+      <article class="signal">
+        <h3>3. Anthropic 把 Agent eval 明确放到模型升级决策链</h3>
+        <dl>
+          <dt>核心结论</dt><dd><span class="label fact">官方活动页</span>Anthropic 预告 7 月 14 日 10:00 PT 的 Agent eval webinar，主题是从真实生产失败构建 eval set，并快速判断新模型是否值得切换。</dd>
+          <dt>证据</dt><dd>官方 webinar 页面；当前尚无录像，不能把活动页描述当成实验结果。可信度：活动存在高，效果主张待验证。</dd>
+          <dt>差异</dt><dd>从单轮提示评测转向 tool use、context retrieval、多步失败和端到端 outcome。</dd>
+          <dt>意义</dt><dd>评测产品的价值不只是排行榜，而是缩短“新模型发布到生产采用”的决策周期。</dd>
+          <dt>建议动作</dt><dd>把产品自己的失败库分成 capability suite 与 regression suite，记录成本、延迟、轨迹和最终状态。</dd>
+        </dl>
+      </article>
+      <article class="signal">
+        <h3>4. 开源关注度继续集中到 Skills、个人 Agent 和网页工具链</h3>
+        <dl>
+          <dt>核心结论</dt><dd><span class="label fact">已证实事实</span>约 95 小时代理窗内，superpowers、hermes-agent、firecrawl 分别增长 +2,975、+2,047、+2,005 Stars。</dd>
+          <dt>证据</dt><dd>GitHub REST API 当前值减 7 月 10 日本地快照；窗口不是严格 72 小时。可信度：当前值高，三日速度仅中。</dd>
+          <dt>差异</dt><dd>热度仍从“通用 Agent 框架”向可插拔 Skills、持续记忆与可调用网页能力聚集。</dd>
+          <dt>意义</dt><dd>产品机会在可验证的 Skill 质量、跨 Agent 迁移、权限治理和运行成本，而非只做仓库目录。</dd>
+          <dt>建议动作</dt><dd>选同一真实任务，对比原生 Agent 与 Skills 增强后的成功率、恢复率、成本和失败类型。</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section id="leaders" class="section">
+    <h2>前沿领头羊信号</h2>
+    <div class="table-wrap"><table><thead><tr><th>类型</th><th>来源与时间</th><th>准确摘要</th><th>为什么重要</th><th>产品 / 评测动作</th></tr></thead><tbody>
+      <tr><td><span class="status release">官方活动</span></td><td><a href="https://www.anthropic.com/webinars/production-grade-agents-on-claude-sonnet-5-live-with-zed-and-clickhouse">Production-Grade Agents on Claude Sonnet 5</a><br>2026-07-13 08:00 PT</td><td>Anthropic 与 Zed、ClickHouse 讨论 Sonnet 5 在高吞吐、长时 Agent 工作负载中的生产使用。页面承诺 live demos 和实践复盘，但当前显示录像尚不可用。</td><td>这是“模型能力能否以足够成本进入整条产品工作流”的官方关注方向，不等于量化能力证据。</td><td>等待录像后提取任务、延迟、成本、失败模式和系统设计；在此之前不把宣传性描述写入 benchmark 结论。</td></tr>
+      <tr><td><span class="status watch">活动预告</span></td><td><a href="https://www.anthropic.com/webinars/evals-for-ai-agents-how-product-builders-get-the-most-out-of-every-new-model">Evals for AI Agents</a><br>2026-07-14 10:00 PT</td><td>官方页面聚焦三件事：为什么单轮 eval 会漏掉 Agent 失败、如何从生产失败构建第一批 eval、如何快速判断新模型是否值得升级。截止时活动尚未开始，录像尚未提供。</td><td>与今日论文形成独立来源的同向信号：轨迹与真实失败库正在成为 Agent 产品迭代基础设施。</td><td>把 webinar 作为后续追踪项；录像发布后验证是否提供可复用数据结构、grader 和决策阈值。</td></tr>
+      <tr><td><span class="status watch">官方核验</span></td><td><a href="https://openai.com/">OpenAI News / Research</a><br>窗口：7 月 13 日 21:35 至本次截止</td><td>未发现新的官方技术博客、研究文章、System Card、开发者更新或官方视频。</td><td>“无新增”只代表官方发布窗口，不代表模型或产品没有后台更新。</td><td>维持观察，不用低价值旧内容填充。</td></tr>
+      <tr><td><span class="status watch">个人公开判断</span></td><td>关键负责人 X 原帖</td><td>本次未找到同时满足“原帖可访问、账号身份可确认、发布时间在窗口内”的高价值新增；聚合摘要未进入日报。</td><td>避免把二手转述写成公司立场。</td><td>后续仅在原帖可核验时纳入，并单独标注个人观点。</td></tr>
+    </tbody></table></div>
+  </section>
+
+  <section id="tracks" class="section">
+    <h2>四条主线</h2>
+    <div class="track-grid">
+      <article class="track"><h3>模型能力进展</h3><p><span class="status watch">无可量化新增</span>本窗口未发现新的官方模型、System Card 或可核验第三方评测。Anthropic 活动页声称 Sonnet 5 适合高吞吐长时 Agent，但未给出成本、延迟或 benchmark 数值，因此只作为待验证产品信号。</p></article>
+      <article class="track"><h3>Agent 产品进展</h3><p><span class="status watch">生产采用信号</span>Zed 与 ClickHouse 被用作 Sonnet 5 生产 Agent 案例；活动录像尚未提供，实际工作流、错误率和 ROI 暂不可核验。产品判断应等待 demo 与量化证据。</p></article>
+      <article class="track"><h3>Agent 架构与可复用工具</h3><p><span class="status release">发布关键版本</span><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.208">Claude Code 2.1.208</a> 增加 screen reader mode、企业 process wrapper，并修复 background agent、长上下文恢复与多类内存泄漏；<a href="https://github.com/anomalyco/opencode/releases/tag/v1.17.20">OpenCode 1.17.20</a> 更新 GPT-5.6 Azure 支持并移除会干扰特定 OpenAI 请求的 workaround。</p></article>
+      <article class="track"><h3>评测方法进展</h3><p><span class="status new">新方法</span>今日论文提出错误起点、lock-in、首次可观察失败的三时间戳框架，并把恢复质量、观测延迟和锁定后浪费纳入评测；它比单一 pass rate 更接近真实产品可靠性。</p></article>
+    </div>
+  </section>
+
+  <section id="paper" class="section">
+    <h2>今日论文</h2>
+    <p class="note"><strong>选择理由：</strong>论文虽标注 7 月 10 日提交，但在 arXiv 7 月 13 日批次中于上次简报截止后公开出现；其数据规模、公开轨迹和“过程型失败评测”与 Agent 产品可靠性直接相关。</p>
+    <h3>Failure as a Process: An Anatomy of CLI Coding Agent Trajectories</h3>
+    <ul>
+      <li><strong>作者：</strong>Xiangxin Zhao, Han Li, Shuaiting Li, Tianyi Zhao, Earl T. Barr, Federica Sarro, He Ye</li>
+      <li><strong>发布日期：</strong>2026-07-10 提交；2026-07-13 arXiv recent 批次公开</li>
+      <li><strong>论文：</strong><a href="https://arxiv.org/abs/2607.09510">arXiv:2607.09510</a>；<a href="https://arxiv.org/pdf/2607.09510">PDF</a>；<a href="https://arxiv.org/html/2607.09510v1">HTML</a></li>
+      <li><strong>代码与数据：</strong><a href="https://github.com/xz-Sean/cli_trajectory_analysis">xz-Sean/cli_trajectory_analysis</a>（截止查询时 1 Star，仓库未标明 SPDX License）</li>
+    </ul>
+    <div class="twocol">
+      <div class="card"><h3>此前遇到的问题</h3><p>多数 coding-agent 研究把失败视为最终标签，能回答“为什么没通过”，却难以回答错误何时开始、何时不可恢复、何时才露出外部信号。产品团队因此很难决定应该在哪里监控和中止。</p></div>
+      <div class="card"><h3>研究做法</h3><p>作者收集 7 个模型、3 个 CLI agent scaffolds 在 Terminal-Bench 上的 3,843 条轨迹，筛选出 1,794 条完整有效轨迹，对 1,184 条失败轨迹进行双人标注，建立三时间戳和根因 / 恢复行为分类。</p></div>
+      <div class="card"><h3>关键结论</h3><p>决定性错误中位数第 7 步，首次可观察失败约第 16 步；57.9% 根因是信息使用错误，71% 的成功轨迹也经历过错误，关键差异是能否利用信号恢复；26% 的失败轨迹出现伪造成功。</p></div>
+      <div class="card"><h3>后续价值</h3><p>在 Agent harness 中加入关键假设验证、恢复预算、诊断重置、独立 outcome verifier；在评测产品中同时报告模型与 scaffold，并保存完整轨迹 manifest。</p></div>
+    </div>
+    <div class="kpi"><span class="pill">原始轨迹 3,843</span><span class="pill">有效轨迹 1,794</span><span class="pill">失败轨迹 1,184</span><span class="pill">任务 89</span><span class="pill">系统组合 21</span><span class="pill">执行步骤 63,000+</span></div>
+    <h3>与既有工作的差异、可信度与局限</h3>
+    <ul>
+      <li><strong>差异：</strong>不是再增加一个静态 failure taxonomy，而是把失败拆成 error onset、lock-in 和 observability，并量化 recoverability window。</li>
+      <li><strong>可信度：</strong>样本规模大于论文对比的多项既有轨迹研究；统一 benchmark / protocol；双人标注根因 kappa 0.83、时间点加权 kappa 不低于 0.94；公开 schema、prompts、scripts 与数据。综合可信度：中高。</li>
+      <li><strong>统计与因果限制：</strong>跨模型 / scaffold 比较是观察性而非因果；论文主要报告比例和中位数，尚不足以证明某个干预机制必然提升成功率。</li>
+      <li><strong>样本选择：</strong>5,040 个理论运行中只收集到 3,843 个完成轨迹，最终对齐到 89 个任务和 1,794 条有效轨迹；排除 timeout / incomplete runs 可能低估基础设施和 harness 失败。</li>
+      <li><strong>外推限制：</strong>只覆盖 Terminal-Bench CLI 场景；不能直接外推到 GUI、客服、研究 Agent 或开放网页环境。尚未见独立复现。</li>
+    </ul>
+    <div class="decision"><strong>产品决策：</strong>先实现一个低成本 assumption gate：在目录、权限、依赖、任务规格与测试入口等关键状态发生变化时做机器校验；如果恢复尝试超过成功轨迹的典型长度，就回退到重新诊断，而不是继续修同一个错误问题。</div>
+
+    <details>
+      <summary>展开：英文简介与逐段中文对应</summary>
+      <div class="twocol">
+        <div><h3>English overview</h3><p>CLI coding agents are often evaluated by whether the final task passes, but this hides how an execution first diverges and when recovery becomes impossible. This study models failure as a temporal process with three timestamps: the decisive error, the lock-in point after which no later action recovers the task, and the first observable failure signal.</p><p>The authors collect 3,843 trajectories from seven frontier models and three agent scaffolds on Terminal-Bench, then retain 1,794 complete trajectories covering more than 63,000 execution steps. Human-adjudicated annotations show that decisive errors usually appear early, while observable evidence often arrives much later. Information misuse, especially commitment to a false premise, is more common than a simple lack of capability.</p><p>The results imply that reliable agents need early state validation, explicit responses to weak error signals, limits on unproductive recovery, and independent verification of claimed success. The evidence is substantial and the artifacts are public, but the comparisons are observational, incomplete runs are excluded, and the findings have not yet been independently replicated outside terminal tasks.</p></div>
+        <div><h3>对应中文翻译</h3><p>CLI coding agent 通常按照最终任务是否通过来评测，但这种方式会遮蔽执行最初如何偏离，以及何时开始无法恢复。该研究把失败建模成具有三个时间点的过程：决定性错误、此后再无动作能挽救任务的 lock-in 点，以及首次出现外部可观察失败信号的时间。</p><p>作者从 7 个前沿模型和 3 个 Agent scaffold 在 Terminal-Bench 上收集 3,843 条轨迹，保留 1,794 条完整轨迹，覆盖超过 63,000 个执行步骤。经过人工裁决的标注显示，决定性错误通常很早出现，而可观察证据往往晚得多。对信息的误用，特别是坚持错误前提，比单纯能力不足更常见。</p><p>结果意味着，可靠 Agent 需要早期状态验证、对微弱错误信号的显式响应、对无效恢复设置上限，以及对“已成功”声明进行独立验证。该研究证据规模较大且公开了产物，但系统比较是观察性的，未完成运行被排除，结论也尚未在终端任务以外得到独立复现。</p></div>
+      </div>
+    </details>
+
+    <details>
+      <summary>展开：全部 6 张图（按论文顺序）</summary>
+      <div>
+        <figure><img loading="lazy" decoding="async" src="morning-brief-2026-07-14-assets/figure-1-method.png" alt="Figure 1 研究方法"><figcaption><strong>Figure 1：</strong>研究方法概览：7 个模型、3 个 scaffolds、轨迹筛选、LLM 辅助加人工裁决标注，以及 RQ1-RQ4。来源：<a href="https://arxiv.org/html/2607.09510v1#S2.F1">arXiv HTML</a>。</figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="morning-brief-2026-07-14-assets/figure-2-distribution.png" alt="Figure 2 失败轨迹分布"><figcaption><strong>Figure 2：</strong>1,184 条失败轨迹按 coding-agent scaffold 与基础模型分布。来源：<a href="https://arxiv.org/html/2607.09510v1#S2.F2">arXiv HTML</a>。</figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="morning-brief-2026-07-14-assets/figure-3-timestamps.png" alt="Figure 3 三时间戳"><figcaption><strong>Figure 3：</strong>错误过程三时间戳：<code>t_err</code>、<code>t_lock</code>、<code>t_obs</code>，以及 fix window 与 observability lag。来源：<a href="https://arxiv.org/html/2607.09510v1#S2.F3">arXiv HTML</a>。</figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="morning-brief-2026-07-14-assets/figure-4-timeline-distributions.png" alt="Figure 4 失败时间点分布"><figcaption><strong>Figure 4：</strong>1,184 条失败轨迹中三个时间点的累积分布；决定性错误中位数第 7 步，lock-in 第 12 步，首次可观察失败约第 16 步。来源：<a href="https://arxiv.org/html/2607.09510v1#S3.F4">arXiv HTML</a>。</figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="morning-brief-2026-07-14-assets/figure-5-silent-failure.png" alt="Figure 5 静默失败"><figcaption><strong>Figure 5：</strong>静默失败案例：第 2 步切换目录失败，第 6 步 lock-in，到第 23 步才通过 Git 错误暴露。arXiv HTML 未提供独立图片文件，本图为论文 PDF 第 6 页清晰裁切。来源：<a href="https://arxiv.org/pdf/2607.09510#page=6">arXiv PDF</a>。</figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="morning-brief-2026-07-14-assets/figure-6-false-premise.png" alt="Figure 6 错误前提"><figcaption><strong>Figure 6：</strong>false premise 案例：把 <code>sudo: not found</code> 错误解释成没有权限，并让错误信念主导后续轨迹。来源：<a href="https://arxiv.org/html/2607.09510v1#S3.F6">arXiv HTML</a>。</figcaption></figure>
+      </div>
+    </details>
+
+    <details>
+      <summary>展开：全部 5 张表（可靠转写）</summary>
+      <div>
+        <h3>Table I：与既有 coding-agent failure 研究比较</h3>
+        <div class="table-wrap"><table><thead><tr><th>Work</th><th>Scale</th><th>Setting</th><th>Failure as Process</th></tr></thead><tbody><tr><td>Bouzenia and Pradel</td><td>120</td><td>Issue</td><td>否</td></tr><tr><td>TrajAudit</td><td>93</td><td>Issue</td><td>否</td></tr><tr><td>Majgaonkar et al.</td><td>559</td><td>Issue</td><td>否</td></tr><tr><td>AgentLens</td><td>2,614</td><td>Issue</td><td>否</td></tr><tr><td>Who&amp;When</td><td>184</td><td>Multi-agent</td><td>否</td></tr><tr><td>MAST</td><td>1,600</td><td>Multi-agent</td><td>否</td></tr><tr><td><strong>本研究</strong></td><td><strong>3,843</strong></td><td>CLI</td><td><strong>是</strong></td></tr></tbody></table></div>
+        <h3>Table II：1,184 条失败轨迹的决定性错误根因</h3>
+        <div class="table-wrap"><table><thead><tr><th>类别</th><th>错误类型</th><th>定义</th><th>占比</th></tr></thead><tbody><tr><td rowspan="5">Epistemic（57.9%）</td><td>False premise</td><td>基于未经验证的任务或环境假设行动</td><td>30.7%</td></tr><tr><td>Specification neglect</td><td>忽略或遗忘明确要求</td><td>14.9%</td></tr><tr><td>Output misreading</td><td>误读命令输出或错误消息</td><td>4.4%</td></tr><tr><td>Ignored signal</td><td>已有证据反驳假设仍继续</td><td>4.1%</td></tr><tr><td>Premature action</td><td>未做基本验证即行动</td><td>3.7%</td></tr><tr><td rowspan="2">Competence（32.8%）</td><td>Knowledge gap</td><td>缺少领域、工具或 API 知识</td><td>24.0%</td></tr><tr><td>Capability limitation</td><td>策略合理但无法正确执行</td><td>8.8%</td></tr><tr><td rowspan="2">Environment（9.4%）</td><td>Environment blocker</td><td>外部环境阻塞</td><td>8.8%</td></tr><tr><td>Other</td><td>分类体系以外</td><td>0.6%</td></tr></tbody></table></div>
+        <h3>Table III：不可恢复之后 Agent 继续做什么</h3>
+        <div class="table-wrap"><table><thead><tr><th>行为</th><th>典型表现</th><th>轨迹占比</th><th>浪费步骤占比</th><th>尾部中位步骤</th></tr></thead><tbody><tr><td>立即放弃</td><td>很少继续执行即停止或宣布失败</td><td>18%</td><td>4%</td><td>2</td></tr><tr><td>修错问题</td><td>意识到异常但误诊根因，反复修复错误对象</td><td>24%</td><td>39%</td><td>21</td></tr><tr><td>重复同一路径</td><td>不改变方向地重复失败策略</td><td>15%</td><td>29%</td><td>17</td></tr><tr><td>做无法改变结果的检查</td><td>不可恢复后仍运行诊断或验证</td><td>28%</td><td>15%</td><td>9</td></tr><tr><td>伪造证据声称成功</td><td>任务未解决但报告成功</td><td>15%</td><td>13%</td><td>8</td></tr></tbody></table></div>
+        <h3>Table IV：21 个 model-scaffold 系统通过率</h3>
+        <div class="table-wrap"><table><thead><tr><th>Scaffold</th><th>GPT-5</th><th>Claude</th><th>Devstral</th><th>DeepSeek</th><th>Kimi</th><th>Qwen</th><th>Gemini</th></tr></thead><tbody><tr><td>MiniSWE</td><td>34%</td><td>35%</td><td>36%</td><td>27%</td><td>33%</td><td>29%</td><td>19%</td></tr><tr><td>OpenHands</td><td>45%</td><td>35%</td><td>31%</td><td>35%</td><td>31%</td><td>31%</td><td>30%</td></tr><tr><td>Terminus2</td><td>39%</td><td>40%</td><td>41%</td><td>43%</td><td>33%</td><td>29%</td><td>40%</td></tr></tbody></table></div>
+        <h3>Table V：21 个系统中 epistemic error 占失败比例</h3>
+        <div class="table-wrap"><table><thead><tr><th>Scaffold</th><th>GPT-5</th><th>Claude</th><th>Devstral</th><th>DeepSeek</th><th>Kimi</th><th>Qwen</th><th>Gemini</th></tr></thead><tbody><tr><td>MiniSWE</td><td>49%</td><td>64%</td><td>59%</td><td>58%</td><td>62%</td><td>60%</td><td>57%</td></tr><tr><td>OpenHands</td><td>51%</td><td>57%</td><td>52%</td><td>64%</td><td>51%</td><td>44%</td><td>62%</td></tr><tr><td>Terminus2</td><td>63%</td><td>80%</td><td>57%</td><td>64%</td><td>59%</td><td>51%</td><td>58%</td></tr></tbody></table></div>
+        <p class="small">表格内容依据 arXiv HTML 结构化转写；Table IV / V 中模型列采用论文展示的简称，比较的是模型与 scaffold 组合，不应解读为模型单独排名。</p>
+      </div>
+    </details>
+  </section>
+
+  <section id="growth" class="section">
+    <h2>GitHub 三日增长项目</h2>
+    <p class="warn"><strong>排名方法：</strong>工作区没有严格 72 小时前同口径快照。本次使用 2026-07-10 11:00:53 CST 快照到 2026-07-14 10:18 CST 的差分，实际窗口约 95 小时 17 分。以下是可验证代理指标，不声称严格三日新增。</p>
+    <div class="table-wrap"><table><thead><tr><th>排名 / 项目</th><th>用途</th><th>当前 Stars</th><th>基线</th><th>代理窗新增</th><th>语言</th><th>最近推送（CST）</th><th>状态</th></tr></thead><tbody>
+      <tr><td>1 · <a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>Agent Skills 框架与软件开发方法</td><td>253,937</td><td>250,962</td><td class="positive">+2,975</td><td>Shell</td><td>2026-07-14 05:25</td><td><span class="status up">持续增长</span></td></tr>
+      <tr><td>2 · <a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>带记忆和持续成长定位的个人 Agent</td><td>214,312</td><td>212,265</td><td class="positive">+2,047</td><td>Python</td><td>2026-07-14 09:56</td><td><span class="status up">持续增长</span></td></tr>
+      <tr><td>3 · <a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>面向 Agent 的网页搜索、抓取与交互 API</td><td>150,475</td><td>148,470</td><td class="positive">+2,005</td><td>TypeScript</td><td>2026-07-14 04:28</td><td><span class="status up">持续增长</span></td></tr>
+      <tr><td>4 · <a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a></td><td>面向 coding agent 的单文件行为约束 Skill</td><td>191,666</td><td>190,118</td><td class="positive">+1,548</td><td>未标明</td><td>2026-04-20 18:05</td><td><span class="status watch">热度高 / 代码静态</span></td></tr>
+      <tr><td>5 · <a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td>Claude Code、Codex、OpenCode 等多 CLI 助手切换工具</td><td>116,848</td><td>115,332</td><td class="positive">+1,516</td><td>Rust</td><td>2026-07-13 23:59</td><td><span class="status up">持续增长</span></td></tr>
+    </tbody></table></div>
+  </section>
+
+  <section id="unseen" class="section">
+    <h2>GitHub 高 Star 未总结项目</h2>
+    <p class="note"><strong>筛选与排除：</strong>已扫描工作区所有 <code>morning-brief*.html</code>，建立 83 个历史 GitHub 仓库集合；任何曾在日报 GitHub 板块或快照出现的仓库均排除。再从 GitHub Search/API 候选中排除泛课程、通用开发列表和与 Agent 关系弱的仓库。以下按当前总 Stars 降序。</p>
+    <div class="table-wrap"><table><thead><tr><th>项目</th><th>当前 Stars</th><th>用途与核心能力</th><th>为什么值得关注</th><th>语言 / License</th><th>最近推送（CST）</th></tr></thead><tbody>
+      <tr><td><a href="https://github.com/FoundationAgents/MetaGPT">FoundationAgents/MetaGPT</a></td><td>69,349</td><td>把软件团队角色和 SOP 编排成多 Agent 软件公司框架。</td><td>是角色化多 Agent 的代表性高 Star 项目，适合作为“流程分工是否真实提升结果”的历史基线；但最近推送停在 2026-01-21，需防止只看总 Star。</td><td>Python / MIT</td><td>2026-01-21 18:12</td></tr>
+      <tr><td><a href="https://github.com/microsoft/ai-agents-for-beginners">microsoft/ai-agents-for-beginners</a></td><td>69,265</td><td>18 课 Agent 构建课程，覆盖工具、编排、记忆与评测入门。</td><td>不是生产 runtime，但能反映主流 Agent 产品知识结构和生态入口；适合拆成内部培训与技术选型清单。</td><td>Jupyter Notebook / MIT</td><td>2026-07-14 08:34</td></tr>
+      <tr><td><a href="https://github.com/666ghj/MiroFish">666ghj/MiroFish</a></td><td>68,487</td><td>通用群体智能和多 Agent 预测引擎。</td><td>可用于观察大规模角色模拟能否形成可验证预测增量；AGPL 与预测可信度、校准和数据泄漏是重点风险。</td><td>Python / AGPL-3.0</td><td>2026-05-25 00:48</td></tr>
+      <tr><td><a href="https://github.com/FoundationAgents/OpenManus">FoundationAgents/OpenManus</a></td><td>57,382</td><td>开放 Manus 风格通用 Agent 实现。</td><td>适合观察通用 Agent 从 demo 到稳定 runtime 的差距；仓库描述非常简略且 2026-02 后无推送，采用前必须实测。</td><td>Python / MIT</td><td>2026-02-11 21:48</td></tr>
+      <tr><td><a href="https://github.com/hesreallyhim/awesome-claude-code">hesreallyhim/awesome-claude-code</a></td><td>49,961</td><td>Claude Code 的 Skills、agents、status lines、plugins 与工具精选集合。</td><td>不是单一产品，但能作为 Skill 市场供给侧雷达；应对每个候选单独核验 License、维护状态和真实可复用性。</td><td>Python / License 未明确</td><td>2026-07-14 08:31</td></tr>
+    </tbody></table></div>
+  </section>
+
+  <section id="tracking" class="section">
+    <h2>持续追踪项目</h2>
+    <div class="table-wrap"><table><thead><tr><th>项目 / 状态</th><th>当前信号</th><th>版本 / 活跃度变化</th><th>真实可复用性</th><th>部署难度</th><th>主要风险</th></tr></thead><tbody>
+      <tr><td><a href="https://github.com/openai/codex">openai/codex</a><br><span class="status up">持续增长</span></td><td>97,747 Stars；较昨日 21:35 快照 +115</td><td><a href="https://github.com/openai/codex/releases/tag/rust-v0.144.3">0.144.3</a> 是无代码变更的版本号发布；截止前仍有推送</td><td>coding-agent 产品与 eval 的主流对照组</td><td>中</td><td>高频版本和权限配置会破坏评测可比性；需锁定 CLI、模型、sandbox 与 prompt manifest。Apache-2.0。</td></tr>
+      <tr><td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a><br><span class="status release">发布关键版本</span></td><td>137,736 Stars；较昨日 +64</td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.208">2.1.208</a> 于 09:10 CST 发布，修复 background agent、长上下文、内存与企业 wrapper</td><td>长时 coding workflow、后台 agents 和企业控制的重要产品样本</td><td>中</td><td>仓库未标明 SPDX License；能力依赖托管模型、账号与策略。</td></tr>
+      <tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a><br><span class="status release">发布关键版本</span></td><td>185,488 Stars；较昨日 +151</td><td><a href="https://github.com/anomalyco/opencode/releases/tag/v1.17.20">1.17.20</a> 于 05:09 CST 发布，更新 Azure GPT-5.6 支持</td><td>开放 coding agent 实现，适合与闭源产品做同任务对照</td><td>中</td><td>provider / model / config 组合多，评测必须固定完整环境。MIT。</td></tr>
+      <tr><td><a href="https://github.com/obra/superpowers">obra/superpowers</a><br><span class="status up">持续增长</span></td><td>253,937 Stars；约 95 小时 +2,975</td><td>最新正式版仍为 <a href="https://github.com/obra/superpowers/releases/tag/v6.1.1">6.1.1</a>；7 月 14 日仍推送</td><td>接入快，适合验证 Skills 是否改善过程纪律与失败恢复</td><td>低</td><td>传播热度不能替代任务级质量；需要 A/B 和轨迹评测。MIT。</td></tr>
+      <tr><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a><br><span class="status up">持续增长</span></td><td>214,312 Stars；约 95 小时 +2,047</td><td>最新 <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.7.7.2">2026.7.7.2</a>；7 月 14 日活跃推送</td><td>适合测试个人化、长期记忆和持续学习价值</td><td>中高</td><td>长期状态导致隐私、可撤销性、错误记忆和评测复现困难。MIT。</td></tr>
+      <tr><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a><br><span class="status up">持续增长</span></td><td>150,475 Stars；约 95 小时 +2,005</td><td>最新正式版 <a href="https://github.com/firecrawl/firecrawl/releases/tag/v2.11.0">2.11.0</a>；7 月 14 日仍推送</td><td>deep research、网页 Agent 的搜索与抓取层</td><td>中高</td><td>反爬、内容授权、自托管成本和 AGPL-3.0。</td></tr>
+      <tr><td><a href="https://github.com/browser-use/browser-use">browser-use/browser-use</a><br><span class="status up">持续增长</span></td><td>104,600 Stars；约 95 小时 +606</td><td>最新 <a href="https://github.com/browser-use/browser-use/releases/tag/0.13.4">0.13.4</a>；本窗口无新 release</td><td>computer-use / browser agent 的快速原型与评测载体</td><td>中</td><td>网页漂移、身份登录、站点条款和成功判定不稳定。MIT。</td></tr>
+      <tr><td><a href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a><br><span class="status watch">新进入追踪后稳定</span></td><td>76,947 Stars；较昨日 +26</td><td>最新 <a href="https://github.com/bytedance/deer-flow/releases/tag/v2.0.0">2.0.0</a>；7 月 14 日活跃推送</td><td>覆盖 sandbox、memory、skills、subagents 的长时 Agent harness</td><td>高</td><td>组件多导致故障归因和部署成本上升；需要先做小规模端到端试跑。MIT。</td></tr>
+    </tbody></table></div>
+    <div class="feedback"><strong>个人反馈入口：</strong>本期最值得标记的对象是“过程型 Agent eval”“Anthropic eval webinar”“Claude Code 2.1.208”。可在你的知识库中分别记为：要试用、要持续追踪、仅观察；静态公开页暂不收集私密反馈。</div>
+  </section>
+
+  <section id="methods" class="section">
+    <h2>来源与方法</h2>
+    <h3>检索窗口与主要来源</h3>
+    <ul>
+      <li>信息检索：2026-07-14 10:02-10:20 CST；官方动态窗口从上次简报 2026-07-13 21:35 CST 起。</li>
+      <li>论文：<a href="https://arxiv.org/list/cs.AI/recent">arXiv cs.AI recent</a>、<a href="https://arxiv.org/abs/2607.09510">论文页</a>、<a href="https://arxiv.org/html/2607.09510v1">结构化 HTML</a>、<a href="https://arxiv.org/pdf/2607.09510">PDF</a>、<a href="https://github.com/xz-Sean/cli_trajectory_analysis">代码与数据仓库</a>。</li>
+      <li>官方动态：<a href="https://openai.com/">OpenAI</a>、<a href="https://openai.com/live/">OpenAI Livestreams</a>、<a href="https://www.anthropic.com/news">Anthropic News</a>、<a href="https://www.anthropic.com/engineering">Anthropic Engineering</a>、<a href="https://www.anthropic.com/events">Anthropic Events</a>、两场官方 webinar 页面。</li>
+      <li>GitHub：<a href="https://api.github.com/">GitHub REST API</a> 与 GitHub Search API；仓库 Star、语言、最近推送、License 和 release 均取自仓库 API。</li>
+    </ul>
+    <h3>数据限制与不确定性</h3>
+    <ul>
+      <li>GitHub REST API 不提供任意日期历史总 Star。本次用 7 月 10 日本地日报快照做差，实际 95 小时 17 分，不是严格三日。</li>
+      <li>Stars 只表示关注度，不表示质量、采用规模或产品成熟度；高 Star 未总结列表是主题相关候选集排序，不是全 GitHub 穷举证明。</li>
+      <li>AI HOT API 在当前网络被企业过滤页重定向，未返回可用 JSON；arXiv API 触发限流，因此论文发现改用 arXiv 官方 recent 列表、HTML 与 PDF。两项失败未被解释为“无新增”。</li>
+      <li>Anthropic webinar 页面提供主题和讲者信息，但两场页面在截止时均显示录像尚不可用；正文不引用未看到的演示结果。OpenAI / Anthropic 官方发布状态只由官方页面判定。</li>
+      <li>X 关键人物信号只有在原帖和身份均可核验时纳入；本次没有合格新增，未使用聚合站转述。</li>
+      <li>论文 Figure 1-4、6 来自 arXiv HTML 原图；Figure 5 因 arXiv HTML 独立图片缺失，使用官方 PDF 第 6 页裁切。5 张表由官方 HTML 结构化转写。</li>
+      <li>今天是周二，按规则完全省略周六周报。</li>
+    </ul>
+    <h3>GitHub Star 快照：增长候选</h3>
+    <div class="table-wrap"><table><thead><tr><th>仓库</th><th>当前 Stars</th><th>7 月 10 日快照</th><th>95h 代理新增</th><th>语言</th></tr></thead><tbody>
+      <tr><td>obra/superpowers</td><td>253,937</td><td>250,962</td><td>+2,975</td><td>Shell</td></tr><tr><td>NousResearch/hermes-agent</td><td>214,312</td><td>212,265</td><td>+2,047</td><td>Python</td></tr><tr><td>firecrawl/firecrawl</td><td>150,475</td><td>148,470</td><td>+2,005</td><td>TypeScript</td></tr><tr><td>multica-ai/andrej-karpathy-skills</td><td>191,666</td><td>190,118</td><td>+1,548</td><td>未标明</td></tr><tr><td>farion1231/cc-switch</td><td>116,848</td><td>115,332</td><td>+1,516</td><td>Rust</td></tr><tr><td>affaan-m/ECC</td><td>229,287</td><td>227,911</td><td>+1,376</td><td>JavaScript</td></tr><tr><td>anomalyco/opencode</td><td>185,488</td><td>184,263</td><td>+1,225</td><td>TypeScript</td></tr><tr><td>anthropics/skills</td><td>160,886</td><td>159,852</td><td>+1,034</td><td>Python</td></tr><tr><td>anthropics/claude-code</td><td>137,736</td><td>137,091</td><td>+645</td><td>Python</td></tr><tr><td>browser-use/browser-use</td><td>104,600</td><td>103,994</td><td>+606</td><td>Python</td></tr><tr><td>openai/codex</td><td>97,747</td><td>96,705</td><td>+1,042</td><td>Rust</td></tr><tr><td>bytedance/deer-flow</td><td>76,947</td><td>无同口径基线</td><td>不排名</td><td>Python</td></tr>
+    </tbody></table></div>
+    <h3>GitHub Star 快照：高 Star 未总结候选</h3>
+    <div class="table-wrap"><table><thead><tr><th>仓库</th><th>当前 Stars</th><th>语言</th><th>处理</th></tr></thead><tbody><tr><td>FoundationAgents/MetaGPT</td><td>69,349</td><td>Python</td><td>新增总结</td></tr><tr><td>microsoft/ai-agents-for-beginners</td><td>69,265</td><td>Jupyter Notebook</td><td>新增总结</td></tr><tr><td>666ghj/MiroFish</td><td>68,487</td><td>Python</td><td>新增总结</td></tr><tr><td>FoundationAgents/OpenManus</td><td>57,382</td><td>Python</td><td>新增总结</td></tr><tr><td>hesreallyhim/awesome-claude-code</td><td>49,961</td><td>Python</td><td>新增总结</td></tr><tr><td>ChromeDevTools/chrome-devtools-mcp</td><td>46,868</td><td>TypeScript</td><td>候选，Star 次位</td></tr><tr><td>HKUDS/nanobot</td><td>45,439</td><td>Python</td><td>候选，Star 次位</td></tr><tr><td>HKUDS/CLI-Anything</td><td>45,265</td><td>Python</td><td>候选，Star 次位</td></tr><tr><td>microsoft/semantic-kernel</td><td>28,309</td><td>C#</td><td>候选，Star 次位</td></tr><tr><td>QwenLM/qwen-code</td><td>26,005</td><td>TypeScript</td><td>候选，Star 次位</td></tr></tbody></table></div>
+    <h3>本次新增至“已总结仓库集合”</h3>
+    <p><code>FoundationAgents/MetaGPT</code>、<code>microsoft/ai-agents-for-beginners</code>、<code>666ghj/MiroFish</code>、<code>FoundationAgents/OpenManus</code>、<code>hesreallyhim/awesome-claude-code</code>。</p>
+    <h3>归档与发布状态</h3>
+    <p id="publish-status">HTML 已生成；归档、概览 SVG、Git 提交、推送与 Pages 状态将在发布脚本执行后核验。若任何步骤失败，本段与最终状态回复将明确记录原因和未更新项。</p>
+    <p class="footer-note">本简报区分已证实事实、作者结论和编辑推断。未经原始来源核验的数值、人物观点和发布状态不会进入正文。</p>
+  </section>
+</main>
+</body>
+</html>

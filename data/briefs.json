@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T02:26:08.113Z",
+  "generatedAt": "2026-07-14T02:33:06.819Z",
   "briefs": [
     {
       "fileName": "morning-brief-2026-07-14.html",
@@ -16,7 +16,7 @@
       "limitation": "仍需结合复现、成本和真实产品场景验证。",
       "evidence": "论文实验 · 待独立复现",
       "action": "产品决策： 先实现一个低成本 assumption gate：在目录、权限、依赖、任务规格与测试入口等关键状态发生变化时做机器校验；如果恢复尝试超过成功轨迹的典型长度，就回退到重新诊断，而不是继续修同一个错误问题。",
-      "primaryTrack": "Agent 产品",
+      "primaryTrack": "评测方法",
       "tracks": [
         "architecture",
         "model",
@@ -25,10 +25,10 @@
       ],
       "leaderSignal": {
         "kind": "官方发布",
-        "org": "OpenAI",
-        "title": "官方核验",
-        "summary": "维持观察，不用低价值旧内容填充。",
-        "url": "https://openai.com/"
+        "org": "Anthropic",
+        "title": "官方活动",
+        "summary": "等待录像后提取任务、延迟、成本、失败模式和系统设计；在此之前不把宣传性描述写入 benchmark 结论。",
+        "url": "https://www.anthropic.com/webinars/production-grade-agents-on-claude-sonnet-5-live-with-zed-and-clickhouse"
       },
       "source": "briefs/morning-brief-2026-07-14.html",
       "overview": "overviews/morning-brief-2026-07-14.svg",
@@ -86,8 +86,8 @@
       "figureCount": 6,
       "tableCount": 11,
       "linkCount": 60,
-      "officialStatus": "8 条官方链接/动态",
-      "tags": "2026-07-14 Failure as a Process: An Anatomy of CLI Coding Agent Trajectories anthropics/claude-code anomalyco/opencode xz-Sean/cli_trajectory_analysis obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch FoundationAgents/MetaGPT microsoft/ai-agents-for-beginners 666ghj/MiroFish FoundationAgents/OpenManus hesreallyhim/awesome-claude-code openai/codex browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic Agent 产品 architecture model product evaluation  formal 正式简报"
+      "officialStatus": "Anthropic：2 场官方活动；OpenAI：无新增",
+      "tags": "2026-07-14 Failure as a Process: An Anatomy of CLI Coding Agent Trajectories anthropics/claude-code anomalyco/opencode xz-Sean/cli_trajectory_analysis obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch FoundationAgents/MetaGPT microsoft/ai-agents-for-beginners 666ghj/MiroFish FoundationAgents/OpenManus hesreallyhim/awesome-claude-code openai/codex browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-13.html",
@@ -984,7 +984,7 @@
       "limitation": "仍需结合复现、成本和真实产品场景验证。",
       "evidence": "论文实验 · 待独立复现",
       "action": "核验代码与复现条件，安排小规模产品验证",
-      "primaryTrack": "Agent 架构与工具",
+      "primaryTrack": "评测方法",
       "tracks": [
         "architecture",
         "model",
@@ -1055,7 +1055,7 @@
       "tableCount": 4,
       "linkCount": 50,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-06-17 ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues LithiumDA/ReproRepo obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC anomalyco/opencode anthropics/skills langflow-ai/langflow langchain-ai/langchain firecrawl/firecrawl anthropics/claude-code search/repositories openclaw/openclaw n8n-io/n8n langgenius/dify AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-06-17 ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues LithiumDA/ReproRepo obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC anomalyco/opencode anthropics/skills langflow-ai/langflow langchain-ai/langchain firecrawl/firecrawl anthropics/claude-code search/repositories openclaw/openclaw n8n-io/n8n langgenius/dify AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-13.html",

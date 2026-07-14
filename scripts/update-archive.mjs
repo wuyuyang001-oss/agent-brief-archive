@@ -216,7 +216,7 @@ function extractLeaderSignal(html) {
   const officialSection = sectionAfterH2(html, "OpenAI / Anthropic");
   return extractFirstSignal(
     officialSection,
-    "(?:openai\\.com|deploymentsafety\\.openai\\.com|anthropic\\.com)",
+    "(?:(?:www\\.)?openai\\.com|deploymentsafety\\.openai\\.com|(?:www\\.)?anthropic\\.com)",
     "官方发布",
   ) || {
     kind: "官方核验",
@@ -235,7 +235,7 @@ function classifyBrief(text, title) {
   if (/(benchmark|evaluation|evals?|评测|评估方法|swe-bench|browsecomp|accuracy|item f1)/i.test(haystack)) tracks.push("evaluation");
 
   let primaryTrack = "Agent 架构与工具";
-  if (/(benchmark|evaluation|evals?|评测|评估方法|calibration|challenge|qanta)/i.test(title)) primaryTrack = "评测方法";
+  if (/(benchmark|evaluation|evals?|评测|评估方法|calibration|challenge|qanta|failure|trajector|reliability|audit)/i.test(title)) primaryTrack = "评测方法";
   else if (/(gpt|claude|gemini|模型|reasoning|推理)/i.test(title)) primaryTrack = "模型能力";
   else if (/(product|产品|chatgpt|copilot|computer[- ]use|coding agent)/i.test(title)) primaryTrack = "Agent 产品";
   return { tracks: [...new Set(tracks)], primaryTrack };
@@ -297,6 +297,10 @@ function extractBriefMetadata(fileName, html) {
     isTest ? "test 测试稿" : "formal 正式简报",
   ].join(" ");
 
+  const declaredOfficialStatus = decodeEntities(
+    (html.match(/data-official-status=["']([^"']+)["']/i) || [])[1] || "",
+  ).trim();
+
   return {
     fileName,
     date,
@@ -322,7 +326,7 @@ function extractBriefMetadata(fileName, html) {
     figureCount,
     tableCount,
     linkCount,
-    officialStatus: officialNoUpdate ? "未发现新发布内容" : `${officialLinks || "若干"} 条官方链接/动态`,
+    officialStatus: declaredOfficialStatus || (officialNoUpdate ? "未发现新发布内容" : `${officialLinks || "若干"} 条官方链接/动态`),
     tags,
   };
 }

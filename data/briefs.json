@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T02:28:36.689Z",
+  "generatedAt": "2026-07-15T02:30:40.989Z",
   "briefs": [
     {
       "fileName": "morning-brief-2026-07-15.html",
@@ -82,12 +82,12 @@
           "text": "warpdotdev/warp 63,185 从终端演进的 agentic development environment。 可观察“交互式终端 + Agent”如何处理权限、上下文、命令执行和协作；适合作为 Codex / Claude…"
         }
       ],
-      "githubRepoCount": 16,
+      "githubRepoCount": 17,
       "figureCount": 2,
       "tableCount": 7,
-      "linkCount": 58,
+      "linkCount": 62,
       "officialStatus": "OpenAI：4 条新官方视频；Anthropic：1 场录像已可看，1 场录像待发布",
-      "tags": "2026-07-15 How Many Tasks Are Enough for Agent Benchmark Decisions? A Replay Analysis of Public LLM Agent Benchmarks anthropics/claude-code WilliamWJHuang/How-Many-Tasks-Are-Enough-for-Agent-Benchmark-Decisions obra/superpowers firecrawl/firecrawl NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC opendatalab/MinerU datawhalechina/hello-agents warpdotdev/warp zhayujie/CowAgent abhigyanpatwari/GitNexus openai/codex anomalyco/opencode browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-15 How Many Tasks Are Enough for Agent Benchmark Decisions? A Replay Analysis of Public LLM Agent Benchmarks anthropics/claude-code WilliamWJHuang/How-Many-Tasks-Are-Enough-for-Agent-Benchmark-Decisions obra/superpowers firecrawl/firecrawl NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC opendatalab/MinerU datawhalechina/hello-agents warpdotdev/warp zhayujie/CowAgent abhigyanpatwari/GitNexus openai/codex anomalyco/opencode browser-use/browser-use bytedance/deer-flow wuyuyang001-oss/agent-brief-archive AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-14.html",

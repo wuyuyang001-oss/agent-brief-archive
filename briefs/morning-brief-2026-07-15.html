@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI / Agent 晨间简报 · 2026-07-15</title>
+  <style>
+    :root{--ink:#152033;--muted:#5c687a;--line:#dbe2eb;--soft:#f5f7fa;--blue:#155eef;--blue-soft:#eef4ff;--green:#067647;--green-soft:#ecfdf3;--amber:#a15c00;--amber-soft:#fff8e8;--red:#b42318;--red-soft:#fff1f0;--shadow:0 8px 28px rgba(21,32,51,.07)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font:16px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+    a{color:var(--blue);text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}.shell{width:100%;max-width:1160px;margin:0 auto;padding-left:16px;padding-right:16px}.hero{padding:58px 0 34px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#fff 0%,#f7faff 56%,#f1f6ff 100%)}
+    .eyebrow{color:var(--blue);font-size:13px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.hero h1{margin:8px 0 8px;font-size:clamp(34px,6vw,60px);line-height:1.08;letter-spacing:-.04em}.hero p{max-width:820px;margin:0;color:var(--muted);font-size:18px}.meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.pill,.status,.label{display:inline-flex;align-items:center;border-radius:999px;font-weight:700}.pill{padding:6px 11px;background:#fff;border:1px solid var(--line);font-size:13px}.nav{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav .shell{display:flex;gap:8px;overflow:auto;padding:10px 0}.nav a{flex:none;padding:7px 10px;border-radius:8px;color:#344054;font-size:13px;font-weight:700}.nav a:hover{background:var(--soft);text-decoration:none}
+    main{padding:30px 0 72px}section{scroll-margin-top:70px;margin:0 0 34px}h2{font-size:28px;line-height:1.2;margin:0 0 16px;letter-spacing:-.02em}h3{font-size:19px;line-height:1.35;margin:0 0 10px}h4{font-size:16px;margin:18px 0 7px}.lead{margin:-7px 0 18px;color:var(--muted)}
+    .signals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.signals>*,.tracks>*{min-width:0}.signal,.card,.track,.decision,.callout{border:1px solid var(--line);border-radius:16px;background:#fff;overflow-wrap:anywhere}.signal{padding:20px;box-shadow:var(--shadow)}.signal:first-child{grid-column:1/-1;border-color:#b9ccfa;background:linear-gradient(135deg,#fff,#f4f7ff)}.signal dl{display:grid;grid-template-columns:110px minmax(0,1fr);gap:6px 12px;margin:0}.signal dt{color:var(--muted);font-size:13px;font-weight:800}.signal dd{min-width:0;margin:0}.label{padding:2px 7px;margin-right:6px;font-size:11px}.fact{color:#175cd3;background:var(--blue-soft)}.author{color:#6941c6;background:#f4f3ff}.editor{color:var(--amber);background:var(--amber-soft)}
+    .status{padding:3px 8px;font-size:12px;margin-right:6px}.new{color:#175cd3;background:var(--blue-soft)}.up{color:var(--green);background:var(--green-soft)}.release{color:#6941c6;background:#f4f3ff}.watch{color:var(--amber);background:var(--amber-soft)}.cool{color:#475467;background:#f2f4f7}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#fff}table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{position:sticky;top:0;background:#f7f9fc;color:#344054;font-size:12px;letter-spacing:.02em}tr:last-child td{border-bottom:0}.positive{color:var(--green);font-weight:800}.small{font-size:13px;color:var(--muted)}
+    .tracks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.track{padding:17px;background:var(--soft)}.track p{margin:0}.card{padding:22px;margin:12px 0}.decision{padding:16px 18px;border-color:#a6c1f5;background:var(--blue-soft)}.callout{padding:15px 17px;margin:14px 0;background:var(--soft)}.callout.warn{border-color:#f0c36d;background:var(--amber-soft)}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.keylist{display:grid;grid-template-columns:150px 1fr;gap:7px 14px;margin:0}.keylist dt{font-weight:800;color:#344054}.keylist dd{margin:0}
+    details{border:1px solid var(--line);border-radius:14px;margin:14px 0;background:#fff}summary{cursor:pointer;padding:14px 17px;font-weight:800;background:#f8fafc;border-radius:14px}details[open] summary{border-bottom:1px solid var(--line);border-radius:14px 14px 0 0}.detail-body{padding:18px}.bilingual{display:grid;grid-template-columns:1fr 1fr;gap:16px}.quote{padding:16px;border-left:4px solid var(--blue);background:var(--soft);border-radius:0 12px 12px 0}.quote p{margin:0}.figure{margin:20px 0}.figure img{display:block;max-width:100%;height:auto;margin:0 auto;border:1px solid var(--line);border-radius:10px;background:#fff}.figure figcaption{margin-top:8px;color:var(--muted);font-size:13px}.footer-note{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;background:#f2f4f7;padding:1px 4px;border-radius:5px}
+    @media(max-width:800px){.signals,.tracks,.grid2,.bilingual{grid-template-columns:minmax(0,1fr)}.signal:first-child{grid-column:auto}.signal dl,.keylist{grid-template-columns:minmax(0,1fr)}.signal dt{margin-top:8px}.hero{padding-top:38px}.shell{padding-left:11px;padding-right:11px}}
+    @media print{.nav{display:none}.hero{padding:24px 0;background:#fff}.signal,.card{box-shadow:none}details{break-inside:avoid}details>.detail-body{display:block!important}summary{list-style:none}a{color:#000;text-decoration:underline}}
+  </style>
+</head>
+<body>
+  <header class="hero"><div class="shell">
+    <div class="eyebrow">AI / Agent Decision Brief</div>
+    <h1>晨间简报</h1>
+    <p>面向 Agent 产品与评测产品的技术红利雷达：先判断证据和决策影响，再决定是否深读。</p>
+    <div class="meta"><span class="pill">2026-07-15 · 周三</span><span class="pill">生成 10:24 CST</span><span class="pill">信息截止 10:22 CST</span><span class="pill">白底 / 打印友好</span></div>
+  </div></header>
+  <nav class="nav"><div class="shell"><a href="#summary">90 秒摘要</a><a href="#leaders">前沿领头羊</a><a href="#tracks">四条主线</a><a href="#paper">今日论文</a><a href="#growth">增长项目</a><a href="#unseen">未总结项目</a><a href="#tracking">持续追踪</a><a href="#methods">来源与方法</a></div></nav>
+  <main class="shell">
+    <section id="summary">
+      <h2>90 秒摘要</h2>
+      <p class="lead">今天最值得保留的不是更多榜单，而是一个评测原则：任务子集只有在能维持完整 benchmark 的决策时才有意义。</p>
+      <div class="signals">
+        <article class="signal">
+          <h3><span class="status new">评测方法 · 新出现</span>“跑了多少任务”不是有效的评测充分性定义</h3>
+          <dl><dt>核心结论</dt><dd><span class="label author">作者结论</span>在 0 个百分点胜出阈值下，AppWorld 只需 15% 任务便首次满足全部目标，tau-bench 需 25%，SWE-bench Verified 需 90%，SWE-bench Lite 到 95% 仍未满足。</dd><dt>证据 / 可信度</dt><dd>复放 SWE-bench、AppWorld、tau-bench 的公开任务级记录，代码、固定种子与 manifest 已开放；但只有单作者、尚无独立复现，结论只覆盖既有完成记录。可信度：中。</dd><dt>与既有工作的差异</dt><dd>不把子集分数相关性当作充分性，而是同时要求决策误差、任务组覆盖和“无法下结论”比例达标。</dd><dt>产品 / 评测意义</dt><dd>评测预算可以缩减，但缩减比例必须针对 benchmark、胜出阈值和覆盖规则校准，不能固定成“抽 25%”。</dd><dt>建议动作</dt><dd>把现有产品 eval 改成“阈值 + 分层覆盖 + unresolved 输出”，先用历史全量运行回放一条预算曲线。</dd></dl>
+        </article>
+        <article class="signal">
+          <h3><span class="status release">Agent 产品 · 官方视频</span>Codex 正把编码、电脑操作、发布和协作压进同一工作面</h3>
+          <dl><dt>核心结论</dt><dd><span class="label fact">已证实事实</span>OpenAI 官方视频列出 GPT-5.6、Ultra、并行工作管理、Computer Use、行内编辑、PR review 和 Sites 发布。</dd><dt>证据 / 可信度</dt><dd>官方 YouTube 视频与频道 RSS，发布时间 07:30 CST；属于产品演示，不是独立成功率评测。可信度：中。</dd><dt>与既有工作的差异</dt><dd>重点从“更会写代码”转向从执行、审阅到托管发布的端到端闭环。</dd><dt>产品 / 评测意义</dt><dd>单点 coding benchmark 不再覆盖产品价值，应加入多项目协调、浏览器验证、发布和回滚任务。</dd><dt>建议动作</dt><dd>建立一个从 issue 到可访问预览站的端到端任务，记录人工接管、权限请求、失败恢复和总时长。</dd></dl>
+        </article>
+        <article class="signal">
+          <h3><span class="status up">模型能力 · 证据增强</span>GPT-Live 的新演示强化“实时前台 + 后台推理”架构</h3>
+          <dl><dt>核心结论</dt><dd><span class="label fact">已证实事实</span>OpenAI 新发布两段 GPT-Live 官方演示，分别聚焦背景噪声鲁棒性和智能水平；底层 GPT-Live 发布日仍是 7 月 8 日，并非今天的新模型。</dd><dt>证据 / 可信度</dt><dd>官方视频和既有技术页；技术页说明全双工前台可把搜索、推理和 agentic 任务委派给后台模型。缺少今天新增的量化表。可信度：中。</dd><dt>与既有工作的差异</dt><dd>把低延迟交互与高成本深度任务解耦，而不是由一个模型串行完成全部环节。</dd><dt>产品 / 评测意义</dt><dd>语音 Agent 应分开测打断、静默、背景噪声、委派正确性和后台结果回注，而非只看转写准确率。</dd><dt>建议动作</dt><dd>为语音工作流新增“前台不阻塞 + 后台任务按时回传”的联合 SLO。</dd></dl>
+        </article>
+        <article class="signal">
+          <h3><span class="status up">工具生态 · 持续增长</span>技能约束、网页基础设施和长期 Agent 仍在吸收注意力</h3>
+          <dl><dt>核心结论</dt><dd><span class="label fact">已证实事实</span>约 36 小时 41 分代理窗内，<code>superpowers</code> +1,160、<code>firecrawl</code> +867、<code>hermes-agent</code> +844 Stars。</dd><dt>证据 / 可信度</dt><dd>GitHub REST 当前值减 7 月 13 日 21:35 CST 本地快照；不是严格三日窗口。关注度可信，质量判断仍低。</dd><dt>与既有工作的差异</dt><dd>增长集中在过程约束、网页数据层和长期状态，而不是新的通用编排框架。</dd><dt>产品 / 评测意义</dt><dd>真正可复用的技术红利可能来自 harness 与工具层，但必须用任务级 A/B 排除传播效应。</dd><dt>建议动作</dt><dd>本周只试一个 Skills 层和一个网页工具层，比较成功率、返工、成本与可追溯性。</dd></dl>
+        </article>
+      </div>
+    </section>
+
+    <section id="leaders">
+      <h2>前沿领头羊信号</h2>
+      <p class="small" data-official-status="OpenAI：4 条新官方视频；Anthropic：1 场录像已可看，1 场录像待发布">官方状态摘要：OpenAI 自上次截止后发布 4 条与模型或 Agent 产品直接相关的视频；Anthropic 的生产级 Agent webinar 已开放录像，Agent eval webinar 已结束但录像仍未开放。</p>
+      <div class="table-wrap"><table><thead><tr><th>类型 / 时间</th><th>原始发布</th><th>准确摘要</th><th>为何重要 / 建议动作</th></tr></thead><tbody>
+        <tr><td>官方视频<br>07-15 07:30 CST</td><td><a href="https://www.youtube.com/watch?v=eiQgljOrkWU">Codex just got better for developers</a></td><td>官方描述列出 GPT-5.6、Ultra、并行工作管理、Computer Use、浏览器与行内编辑、Sites、跨项目协调、移动端和 PR workflow。</td><td>产品边界已扩到交付闭环。用“issue → 验证 → review → 发布”任务实测，勿把功能清单当成可靠性证明。</td></tr>
+        <tr><td>官方视频<br>07-15 06:35 / 04:22 CST</td><td><a href="https://www.youtube.com/watch?v=matzTxfrhJU">Background Robustness with GPT-Live</a><br><a href="https://www.youtube.com/watch?v=avpZWh6sm9M">Improved Intelligence with GPT-Live</a></td><td>两段演示分别补充背景噪声和智能能力体验；底层技术页仍是 7 月 8 日发布的 GPT-Live。</td><td>验证语音 Agent 的连续交互和后台委派架构。建议独立测噪声、打断、委派、回注和端到端延迟。</td></tr>
+        <tr><td>官方视频<br>07-15 03:19 CST</td><td><a href="https://www.youtube.com/watch?v=8zH_O74hZBw">Build and publish web apps directly in ChatGPT</a></td><td>演示在 ChatGPT 中通过自然语言构建、批注修改并发布站点，托管与存储被纳入流程。</td><td>“生成代码”开始让位于“产出可访问结果”。评测应增加发布正确性、数据持久化和回滚。</td></tr>
+        <tr><td>官方录像状态变化</td><td><a href="https://www.anthropic.com/webinars/production-grade-agents-on-claude-sonnet-5-live-with-zed-and-clickhouse">Production-Grade Agents on Claude Sonnet 5</a> · <a href="https://anthropic.ondemand.goldcast.io/on-demand/254ffbff-c79e-421c-8e7b-2ca054e58b05">观看录像</a></td><td>Anthropic 页面已从“录像待发布”切换为可观看，主题是 Zed 和 ClickHouse 如何让 Sonnet 5 承担长时、高吞吐生产 Agent 工作负载。</td><td>这是生产案例，不等于可迁移 benchmark。观看时优先记录失败边界、吞吐、成本、观测和人工审批设计。</td></tr>
+        <tr><td>官方活动已结束 / 录像待发布</td><td><a href="https://www.anthropic.com/webinars/evals-for-ai-agents-how-product-builders-get-the-most-out-of-every-new-model">Evals for AI Agents</a></td><td>页面确认活动已于 7 月 14 日 10:00 PT 举行，仍显示录像不可用；官方议程强调从真实生产失败建立 eval set，并判断新模型是否值得切换。</td><td>议题与今天论文高度一致，但未观看录像前不转述演示结论。继续追踪录像发布。</td></tr>
+      </tbody></table></div>
+      <div class="callout"><strong>关键人物公开观点：</strong>本窗口未找到同时满足“身份已核验、原始 X 帖可访问、发布时间在窗口内、内容直接影响 Agent 或评测决策”的新帖子，因此不做二手转述。个人观点不会被写成公司立场。</div>
+    </section>
+
+    <section id="tracks">
+      <h2>四条主线</h2>
+      <div class="tracks">
+        <article class="track"><h3>模型能力进展</h3><p><span class="status up">证据增强</span>GPT-Live 新增官方演示，但没有新的模型发布日期或今天新增的量化表。能力变化应理解为全双工交互与后台 frontier model 委派的组合；仍需真实语音任务验证。</p></article>
+        <article class="track"><h3>Agent 产品进展</h3><p><span class="status release">官方视频</span>Codex 把 Computer Use、并行协作、PR review、Sites 和跨项目流程合并到一个产品叙事。最值得跟踪的是交付闭环和权限治理，而不是功能数量。</p></article>
+        <article class="track"><h3>Agent 架构与可复用工具</h3><p><span class="status release">发布关键版本</span><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.210">Claude Code 2.1.210</a> 修复 worktree 隔离越界和间接提示注入风险，并强化 unattended session 稳定性；这是可复用的工程安全信号。</p></article>
+        <article class="track"><h3>评测方法进展</h3><p><span class="status new">新出现</span>新论文把部分评测从“抽样得分”重定义为“是否足以支持决策”，并要求同时报告阈值、覆盖、错误和 unresolved comparisons。</p></article>
+      </div>
+    </section>
+
+    <section id="paper">
+      <h2>今日论文</h2>
+      <article class="card">
+        <h3>How Many Tasks Are Enough for Agent Benchmark Decisions? A Replay Analysis of Public LLM Agent Benchmarks</h3>
+        <p><strong>作者：</strong>Wei-Jung Huang　<strong>提交：</strong>2026-07-14 04:36 UTC　<strong>会议：</strong>KDD 2026 Workshop on Agentic AI Evaluation and Trustworthiness</p>
+        <p><a href="https://arxiv.org/abs/2607.12338">arXiv</a> · <a href="https://arxiv.org/html/2607.12338">HTML 全文</a> · <a href="https://arxiv.org/pdf/2607.12338">PDF</a> · <a href="https://github.com/WilliamWJHuang/How-Many-Tasks-Are-Enough-for-Agent-Benchmark-Decisions">代码与复现包</a></p>
+        <p><strong>选择理由：</strong>这是自昨日截止后新增、且直接影响 Agent 评测产品预算和决策可信度的论文。它回答的不是“子集分数与全量分数相关吗”，而是“子集是否支持与完整 benchmark 相同的系统比较结论”。</p>
+        <div class="grid2">
+          <dl class="keylist"><dt>此前遇到的问题</dt><dd>Agent benchmark 成本高，团队会缩减任务，但仅报告任务比例无法说明是否仍能做出同样的产品选择。</dd><dt>研究做法</dt><dd>复放 SWE-bench Lite / Verified、AppWorld 和 tau-bench 完整任务级记录；比较随机、分层、coverage-aware、cheap-first 等 reveal policy。</dd><dt>关键结论</dt><dd>不存在通用“足够比例”。0 pp 阈值下，充分预算从 AppWorld 15% 到 SWE-bench Verified 90%；Lite 到 95% 仍不充分。</dd><dt>与既有工作的差异</dt><dd>把“决策误差 + 任务组覆盖 + unresolved 比例”作为联合门槛，并允许输出“暂不下结论”。</dd></dl>
+          <dl class="keylist"><dt>可信度</dt><dd>中。552 个 Lite 有向比较、156 个 Verified、306 个 AppWorld、12 个 tau-bench；固定种子、代码和派生表开放。单作者、无独立复现，tau-bench 比较数较少。</dd><dt>局限</dt><dd>只重放固定完成记录，不能外推未来任务分布；分组依赖公开元数据；未覆盖 OSWorld、WebArena、AgentDojo 等；自适应选题可能改变预算。</dd><dt>后续待验证</dt><dd>把方法应用到真实产品失败集；验证基于语义失败簇的覆盖；把 token、延迟、交互次数和人类接管加入成本预算。</dd><dt>建议动作</dt><dd>先对内部完整历史运行做 replay，不直接把论文的 15% 或 90% 搬进生产。</dd></dl>
+        </div>
+        <div class="decision"><strong>对评测产品的直接启发：</strong>默认输出不应只有排行榜分数。至少要同时展示“胜出阈值、已覆盖任务组、错误上界、未决比较比例”，并在证据不足时给出继续跑哪些任务的建议。</div>
+        <div class="callout warn"><strong>对抗性审查：</strong>作者把完成 benchmark 当成参考决策，而完成 benchmark 自身不等于真实产品真值；任务之间也可能相关。该方法能降低“子集误导完整榜单”的风险，不能证明榜单能预测线上效果。</div>
+      </article>
+
+      <details><summary>英文简介与逐段中文对应翻译</summary><div class="detail-body bilingual">
+        <div class="quote"><h4>English</h4><p>Agent benchmarks often compare two agents after all tasks have run, but costly evaluations make partial runs tempting. A task fraction alone does not show whether a partial run supports the same pairwise conclusion as the completed benchmark. This paper replays completed public task-level records from SWE-bench, AppWorld, and tau-bench. A partial budget is considered sufficient only when it preserves the completed benchmark's decision, covers required task groups, and leaves no more than a target fraction of comparisons unresolved. Under a strict zero-percentage-point threshold, AppWorld first meets all targets at 15%, tau-bench at 25%, and SWE-bench Verified at 90%; SWE-bench Lite does not meet all targets by 95% under the primary coverage rule. The study argues that partial-evaluation reports must specify the improvement threshold, task-selection policy, coverage rule, decision rule, and allowed unresolved rate.</p></div>
+        <div class="quote"><h4>中文对应翻译</h4><p>Agent benchmark 通常在所有任务完成后比较两个 Agent，但高昂成本使部分运行很有吸引力。仅有任务比例不能说明部分运行是否支持与完整 benchmark 相同的成对结论。本文复放 SWE-bench、AppWorld 和 tau-bench 已完成且公开的任务级记录。只有当部分预算保持完整 benchmark 的决策、覆盖要求的任务组，并把未决比较控制在目标比例内时，才被视为充分。在严格的 0 个百分点阈值下，AppWorld 首次在 15% 达到全部目标，tau-bench 为 25%，SWE-bench Verified 为 90%；在主要覆盖规则下，SWE-bench Lite 到 95% 仍未满足全部目标。研究主张，部分评测报告必须明确改进阈值、任务选择策略、覆盖规则、决策规则和允许的未决比例。</p></div>
+      </div></details>
+
+      <details><summary>论文全部公开图表（2 图 + 1 表）</summary><div class="detail-body">
+        <figure class="figure"><img loading="lazy" decoding="async" src="morning-brief-2026-07-15-assets/paper-figure-1.png" alt="Figure 1：从完成记录到部分任务复放、决策和报告的流程"><figcaption><strong>Figure 1.</strong> Replay tests whether partial task evidence can support the same pairwise decision as the completed benchmark. 来源：<a href="https://arxiv.org/html/2607.12338#S3.F1">arXiv HTML</a>。</figcaption></figure>
+        <div class="table-wrap"><table><thead><tr><th>Source</th><th>Pairs</th><th>Task units</th><th>Positive 0 pp</th><th>Positive 5 pp</th><th>Positive 10 pp</th><th>Grouping</th><th>Cost</th><th>Evidence role</th></tr></thead><tbody>
+          <tr><td>SWE-bench Lite</td><td>552 (276)</td><td>300 median overlap</td><td>275</td><td>199</td><td>154</td><td>repository</td><td>no</td><td>large task-count case</td></tr>
+          <tr><td>SWE-bench Verified</td><td>156 (78)</td><td>496 median overlap</td><td>77</td><td>60</td><td>54</td><td>repository</td><td>no</td><td>many unresolved cases</td></tr>
+          <tr><td>AppWorld leaderboard</td><td>306 (153)</td><td>585 tasks</td><td>153</td><td>128</td><td>108</td><td>split-difficulty</td><td>no</td><td>outside software repair</td></tr>
+          <tr><td>tau-bench public grid</td><td>12 (6)</td><td>278 domain-task items</td><td>6</td><td>5</td><td>2</td><td>domain</td><td>yes</td><td>cheap-first cost check</td></tr>
+        </tbody></table></div>
+        <p class="small"><strong>Table 1.</strong> Public records used in the replay. Pair counts are ordered, with unordered pair counts in parentheses. 来源：<a href="https://arxiv.org/html/2607.12338#S4.T1">arXiv HTML</a>；逐格转写，未改动数值。</p>
+        <figure class="figure"><img loading="lazy" decoding="async" src="morning-brief-2026-07-15-assets/paper-figure-2.png" alt="Figure 2：任务预算与未决比较比例"><figcaption><strong>Figure 2.</strong> Unresolved comparisons across the 5 percentage point budget grid at the 0 pp threshold. 绿色区域是未决比例目标，空心标记是首次同时满足错误、覆盖和未决目标的预算。来源：<a href="https://arxiv.org/html/2607.12338#S5.F2">arXiv HTML</a>。</figcaption></figure>
+        <p class="small">图表完整性核验：arXiv HTML v1 共公开 2 个 figure 和 1 个 table，以上已全部按论文顺序附上；未发现遗漏项。PDF 端点在本次网络环境返回 404，因此图表以同版本 arXiv HTML 为准。</p>
+      </div></details>
+    </section>
+
+    <section id="growth">
+      <h2>GitHub 三日增长项目</h2>
+      <p class="lead">当前没有约 72 小时的同口径快照。以下按 2026-07-13 21:35 至 2026-07-15 10:16 CST 的约 36 小时 41 分代理增量排序，禁止将其解释为严格三日新增。</p>
+      <div class="table-wrap"><table><thead><tr><th>排名 / 仓库</th><th>用途</th><th>当前 Stars</th><th>基线</th><th>代理新增</th><th>语言</th><th>最近推送</th><th>状态</th></tr></thead><tbody>
+        <tr><td>1 · <a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>Agent Skills 框架与软件开发方法</td><td>254,726</td><td>253,566</td><td class="positive">+1,160</td><td>Shell</td><td>07-15 06:02 CST</td><td><span class="status up">持续增长</span></td></tr>
+        <tr><td>2 · <a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>Agent 网页搜索、抓取和交互 API</td><td>151,078</td><td>150,211</td><td class="positive">+867</td><td>TypeScript</td><td>07-15 10:11 CST</td><td><span class="status up">持续增长</span></td></tr>
+        <tr><td>3 · <a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>带长期记忆和持续成长定位的个人 Agent</td><td>214,920</td><td>214,076</td><td class="positive">+844</td><td>Python</td><td>07-15 09:06 CST</td><td><span class="status up">持续增长</span></td></tr>
+        <tr><td>4 · <a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a></td><td>coding agent 单文件行为约束</td><td>192,295</td><td>191,476</td><td class="positive">+819</td><td>未标明</td><td>04-20 18:05 CST</td><td><span class="status watch">热度高 / 代码静态</span></td></tr>
+        <tr><td>5 · <a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></td><td>跨 Claude Code、Codex、OpenCode 的 Agent harness 优化</td><td>229,748</td><td>229,130</td><td class="positive">+618</td><td>JavaScript</td><td>07-14 09:31 CST</td><td><span class="status up">持续增长</span></td></tr>
+      </tbody></table></div>
+      <p class="small"><span class="label editor">编辑判断</span>Star 只是注意力信号。<code>andrej-karpathy-skills</code> 四月后没有代码推送，其增长更可能是传播效应；Firecrawl 和 Hermes 同期仍有活跃推送，工程信号更强。</p>
+    </section>
+
+    <section id="unseen">
+      <h2>GitHub 高 Star 未总结项目</h2>
+      <p class="lead">扫描工作区全部历史 <code>morning-brief*.html</code>，任何曾在 GitHub 板块出现的仓库均排除；再从 Agent、coding agent、multi-agent、MCP 搜索候选中按当前总 Star 降序筛选。</p>
+      <div class="table-wrap"><table><thead><tr><th>仓库</th><th>Stars</th><th>核心能力</th><th>为什么值得关注</th><th>语言 / License</th><th>最近推送</th></tr></thead><tbody>
+        <tr><td><a href="https://github.com/opendatalab/MinerU">opendatalab/MinerU</a></td><td>74,629</td><td>把复杂 PDF 和 Office 文档转成 Agent 可消费的 Markdown / JSON。</td><td>文档解析是 research agent 和企业知识工作流的基础层；值得比较表格、公式、版面与引用可追溯性，而不只看 OCR。</td><td>Python / 未明确</td><td>07-14 17:31 CST</td></tr>
+        <tr><td><a href="https://github.com/datawhalechina/hello-agents">datawhalechina/hello-agents</a></td><td>66,194</td><td>中文 Agent 原理与实践教程。</td><td>适合作为团队共同知识底座和架构词典；真正采用前应把教程示例映射到内部故障案例。</td><td>Python / 未明确</td><td>07-10 20:57 CST</td></tr>
+        <tr><td><a href="https://github.com/warpdotdev/warp">warpdotdev/warp</a></td><td>63,185</td><td>从终端演进的 agentic development environment。</td><td>可观察“交互式终端 + Agent”如何处理权限、上下文、命令执行和协作；适合作为 Codex / Claude Code 的产品对照。</td><td>Rust / AGPL-3.0</td><td>07-15 10:10 CST</td></tr>
+        <tr><td><a href="https://github.com/zhayujie/CowAgent">zhayujie/CowAgent</a></td><td>45,981</td><td>多模型、多渠道、带计划、工具、Skills、记忆和知识的轻量 Agent harness。</td><td>组件完整且一键安装定位清晰，适合验证个人 Agent 的可部署性；风险是长期状态、插件供应链和多渠道权限。</td><td>Python / MIT</td><td>07-14 18:03 CST</td></tr>
+        <tr><td><a href="https://github.com/abhigyanpatwari/GitNexus">abhigyanpatwari/GitNexus</a></td><td>44,116</td><td>浏览器内、零服务器的代码知识图谱和 Graph RAG Agent。</td><td>本地优先架构可能降低代码外传风险；应验证大型仓库索引成本、增量更新、召回和复杂重构任务价值。</td><td>TypeScript / 未明确</td><td>07-15 09:44 CST</td></tr>
+      </tbody></table></div>
+      <p class="small">筛选不是全 GitHub 穷举：候选来自 GitHub Search 的 Agent、coding agent、multi-agent、MCP 高 Star 查询，经主题相关性和历史排除集合复核。Star 为 10:16 CST 快照。</p>
+    </section>
+
+    <section id="tracking">
+      <h2>持续追踪项目</h2>
+      <p class="lead">比较昨日快照、版本、活跃度、License、部署门槛与真实可复用性。排名不是质量结论。</p>
+      <div class="table-wrap"><table><thead><tr><th>项目 / 状态</th><th>24h 关注度</th><th>版本与活跃度</th><th>可复用价值</th><th>主要风险</th></tr></thead><tbody>
+        <tr><td><a href="https://github.com/openai/codex">openai/codex</a><br><span class="status release">发布 0.144.4</span></td><td>98,086 Stars；较昨日 +339</td><td><a href="https://github.com/openai/codex/releases/tag/rust-v0.144.4">0.144.4</a> 明确为无用户可见变化的补丁；截止前仍活跃推送</td><td>主流 coding-agent 产品与端到端交付基线</td><td>版本、模型、sandbox 和 prompt manifest 高频变化；Apache-2.0。</td></tr>
+        <tr><td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a><br><span class="status release">发布 2.1.210</span></td><td>137,885；较昨日 +149</td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.210">2.1.210</a> 修复 worktree 隔离越界、提示注入和后台会话问题</td><td>把安全隔离、无人值守与多 Agent 作为评测维度的现实样本</td><td>仓库未标明 SPDX License；依赖托管模型和策略。</td></tr>
+        <tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a><br><span class="status release">发布 1.18.1</span></td><td>185,869；较昨日 +381</td><td><a href="https://github.com/anomalyco/opencode/releases/tag/v1.18.1">1.18.1</a> 仅修复桌面设置间距；仍活跃推送</td><td>开放 coding agent，可用于 provider 与闭源产品对照</td><td>provider / model / config 组合多，需锁完整环境；MIT。</td></tr>
+        <tr><td><a href="https://github.com/obra/superpowers">obra/superpowers</a><br><span class="status up">持续增长</span></td><td>254,726；较昨日 +789</td><td>最新正式版仍为 <a href="https://github.com/obra/superpowers/releases/tag/v6.1.1">6.1.1</a>；持续推送</td><td>低接入成本地验证 Skills 对过程纪律和失败恢复的影响</td><td>传播热度很强，必须做同任务 A/B；MIT。</td></tr>
+        <tr><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a><br><span class="status up">持续增长</span></td><td>214,920；较昨日 +608</td><td>最新 <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.7.7.2">2026.7.7.2</a>；今日活跃推送</td><td>个人化、长期记忆和持续成长实验载体</td><td>隐私、可撤销性、错误记忆与复现困难；MIT。</td></tr>
+        <tr><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a><br><span class="status up">持续增长</span></td><td>151,078；较昨日 +603</td><td>正式版仍为 <a href="https://github.com/firecrawl/firecrawl/releases/tag/v2.11.0">2.11.0</a>；截止前活跃</td><td>deep research 和网页 Agent 的搜索抓取层</td><td>反爬、授权、自托管成本与 AGPL-3.0。</td></tr>
+        <tr><td><a href="https://github.com/browser-use/browser-use">browser-use/browser-use</a><br><span class="status up">持续增长</span></td><td>104,764；较昨日 +164</td><td>最新 <a href="https://github.com/browser-use/browser-use/releases/tag/0.13.4">0.13.4</a>；今日推送</td><td>computer-use 原型和网页任务评测载体</td><td>页面漂移、登录态、网站条款与成功判定不稳定；MIT。</td></tr>
+        <tr><td><a href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a><br><span class="status up">持续增长</span></td><td>77,046；较昨日 +99</td><td>最新 <a href="https://github.com/bytedance/deer-flow/releases/tag/v2.0.0">2.0.0</a>；今日活跃推送</td><td>sandbox、memory、skills、subagents 的长时 Agent harness</td><td>组件多导致部署成本和故障归因困难；MIT。</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section id="methods">
+      <h2>来源与方法</h2>
+      <div class="card">
+        <h3>原始来源</h3>
+        <p><a href="https://arxiv.org/abs/2607.12338">论文摘要页</a> · <a href="https://arxiv.org/html/2607.12338">论文 HTML</a> · <a href="https://github.com/WilliamWJHuang/How-Many-Tasks-Are-Enough-for-Agent-Benchmark-Decisions">复现包</a> · <a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">OpenAI 官方 YouTube RSS</a> · <a href="https://openai.com/index/introducing-gpt-live/">GPT-Live 技术页</a> · <a href="https://www.anthropic.com/news">Anthropic News</a> · <a href="https://www.anthropic.com/engineering">Anthropic Engineering</a> · <a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCrDwWp7EBBv4NwvScIpBDOA">Anthropic 官方 YouTube RSS</a> · <a href="https://api.github.com/">GitHub REST API</a></p>
+        <h3>检索和判定</h3>
+        <ul>
+          <li>检索窗口：上次简报截止 2026-07-14 10:20 CST 至本次截止 2026-07-15 10:22 CST。arXiv、OpenAI、Anthropic、YouTube RSS 和 GitHub 均回到原始来源核验。</li>
+          <li>AI HOT 公共 API 按 Skill 要求带浏览器 User-Agent 请求，但本机网络被重定向到企业域名拦截页；本期未把 AI HOT 聚合结果作为证据，所有入选信号均由原始来源重新发现和核验。</li>
+          <li>OpenAI 的 4 条视频是本窗口新发布；GPT-Live 底层发布页日期为 7 月 8 日，因此只记为“新演示 / 证据增强”，不记为“今天发布新模型”。</li>
+          <li>Anthropic 生产 webinar 页面同时保留隐藏的“录像不可用”文案和可见观看按钮；以页面可见状态及有效 on-demand 链接判定为已开放。Evals webinar 仍无 video id 和观看链接，判定录像待发布。</li>
+          <li>人物观点只在身份和原帖可核验时纳入；本窗口没有满足条件的新增，因此没有用搜索摘要或二手转述补位。</li>
+        </ul>
+        <h3>GitHub Star 快照与代理窗口</h3>
+        <p class="small">查询时间 2026-07-15 10:16 CST。GitHub REST API 不提供任意历史总 Star，本次使用本地日报 2026-07-13 21:35 CST 快照，实际窗口约 36 小时 41 分。严格三日新增不可得，所有差值均标为代理。</p>
+        <div class="table-wrap"><table><thead><tr><th>仓库</th><th>当前</th><th>7/13 基线</th><th>代理差值</th><th>语言</th></tr></thead><tbody>
+          <tr><td>obra/superpowers</td><td>254,726</td><td>253,566</td><td>+1,160</td><td>Shell</td></tr><tr><td>firecrawl/firecrawl</td><td>151,078</td><td>150,211</td><td>+867</td><td>TypeScript</td></tr><tr><td>NousResearch/hermes-agent</td><td>214,920</td><td>214,076</td><td>+844</td><td>Python</td></tr><tr><td>multica-ai/andrej-karpathy-skills</td><td>192,295</td><td>191,476</td><td>+819</td><td>未标明</td></tr><tr><td>affaan-m/ECC</td><td>229,748</td><td>229,130</td><td>+618</td><td>JavaScript</td></tr><tr><td>farion1231/cc-switch</td><td>117,231</td><td>116,662</td><td>+569</td><td>Rust</td></tr><tr><td>anomalyco/opencode</td><td>185,869</td><td>185,337</td><td>+532</td><td>TypeScript</td></tr><tr><td>openai/codex</td><td>98,086</td><td>97,632</td><td>+454</td><td>Rust</td></tr><tr><td>anthropics/skills</td><td>161,160</td><td>160,775</td><td>+385</td><td>Python</td></tr><tr><td>browser-use/browser-use</td><td>104,764</td><td>104,518</td><td>+246</td><td>Python</td></tr><tr><td>anthropics/claude-code</td><td>137,885</td><td>137,672</td><td>+213</td><td>Python</td></tr><tr><td>bytedance/deer-flow</td><td>77,046</td><td>76,921</td><td>+125</td><td>Python</td></tr>
+        </tbody></table></div>
+        <h3>高 Star 候选快照和排除规则</h3>
+        <div class="table-wrap"><table><thead><tr><th>仓库</th><th>当前 Stars</th><th>语言</th><th>处理</th></tr></thead><tbody><tr><td>opendatalab/MinerU</td><td>74,629</td><td>Python</td><td>新增总结</td></tr><tr><td>datawhalechina/hello-agents</td><td>66,194</td><td>Python</td><td>新增总结</td></tr><tr><td>warpdotdev/warp</td><td>63,185</td><td>Rust</td><td>新增总结</td></tr><tr><td>zhayujie/CowAgent</td><td>45,981</td><td>Python</td><td>新增总结</td></tr><tr><td>abhigyanpatwari/GitNexus</td><td>44,116</td><td>TypeScript</td><td>新增总结</td></tr><tr><td>sickn33/agentic-awesome-skills</td><td>43,244</td><td>Python</td><td>候选，Star 次位</td></tr><tr><td>kepano/obsidian-skills</td><td>41,944</td><td>未标明</td><td>候选，Star 次位</td></tr><tr><td>danny-avila/LibreChat</td><td>40,743</td><td>TypeScript</td><td>候选，Star 次位</td></tr></tbody></table></div>
+        <p><strong>本次新增至“已总结仓库集合”：</strong><code>opendatalab/MinerU</code>、<code>datawhalechina/hello-agents</code>、<code>warpdotdev/warp</code>、<code>zhayujie/CowAgent</code>、<code>abhigyanpatwari/GitNexus</code>。</p>
+        <h3>数据限制与不确定性</h3>
+        <ul><li>论文图表来自 arXiv HTML v1；PDF 端点在本次网络环境返回 404。HTML 明确包含 2 图 1 表，已全部附上。</li><li>GitHub Search 不是全站穷举；高 Star 板块基于主题查询、相关性审查和历史日报排除集合。Stars 不代表质量、安全或采用程度。</li><li>官方演示和 webinar 属于发布方证据。未看到任务级独立评测时，不把产品宣称写成经过验证的能力边界。</li></ul>
+        <h3>归档与发布状态</h3>
+        <p>本地日报与资源已生成；归档、概览图、GitHub 推送和 Pages 公开地址将在正文生成后执行并反向核验。最终状态以聊天中的简短发布回执为准。</p>
+      </div>
+      <p class="footer-note">本简报明确区分已证实事实、作者结论和编辑推断。没有原始来源或同口径历史快照的内容，不以确定事实或严格增长数据呈现。</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="2026-07-14 AI Agent 晨间简报概览">
-  <title>2026-07-14 AI Agent 晨间简报概览</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="2026-07-15 AI Agent 晨间简报概览">
+  <title>2026-07-15 AI Agent 晨间简报概览</title>
   <defs>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0a67a3"/>
@@ -23,28 +23,28 @@
   <rect x="42" y="42" width="1196" height="636" rx="34" fill="none" stroke="#d8e5f2"/>
 
   <text x="82" y="96" font-size="18" font-weight="800" letter-spacing="3" fill="#0a67a3">AI / AGENT MORNING BRIEF</text>
-  <text x="82" y="148" font-size="54" font-weight="850" letter-spacing="-2.2" fill="#122033">2026-07-14</text>
-  <text x="82" y="184" font-size="21" font-weight="650" fill="#5d7186">周二 · 自动生成概览图 · 日报</text>
+  <text x="82" y="148" font-size="54" font-weight="850" letter-spacing="-2.2" fill="#122033">2026-07-15</text>
+  <text x="82" y="184" font-size="21" font-weight="650" fill="#5d7186">周三 · 自动生成概览图 · 日报</text>
 
   <rect x="82" y="224" width="548" height="204" rx="24" fill="#f7fbff" stroke="#d8e5f2"/>
   <text x="110" y="266" font-size="20" font-weight="800" fill="#087f5b">当日核心摘要</text>
-  <text x="110" y="311" font-size="27" font-weight="850" fill="#132334">Failure as a Process: An Anatomy of CLI Coding</text>
-<text x="110" y="345" font-size="27" font-weight="850" fill="#132334">Agent Trajectories…</text>
-  <text x="110" y="378" font-size="18" font-weight="500" fill="#4d6176">1. 评测对象应从“最终输出”扩展到“失败过程”：已证实事实 新论文显示，失败</text>
-<text x="110" y="405" font-size="18" font-weight="500" fill="#4d6176">轨迹的决定性错误中位数出现在第 7 步，首次可观察失败约在第 16 步；仅看…</text>
+  <text x="110" y="311" font-size="27" font-weight="850" fill="#132334">How Many Tasks Are Enough for Agent Benchmark</text>
+<text x="110" y="345" font-size="27" font-weight="850" fill="#132334">Decisions? A Replay Analysis of Public LLM Age…</text>
+  <text x="110" y="378" font-size="18" font-weight="500" fill="#4d6176">评测方法 · 新出现 “跑了多少任务”不是有效的评测充分性定义：作者结论 在</text>
+<text x="110" y="405" font-size="18" font-weight="500" fill="#4d6176">0 个百分点胜出阈值下，AppWorld 只需 15% 任务便首次满足全部目标，tau-b…</text>
 
   <g>
     <rect x="82" y="460" width="130" height="106" rx="20" fill="#f3f8ff" stroke="#d8e5f2"/>
     <text x="110" y="503" font-size="38" font-weight="850" fill="#0a67a3">16</text>
     <text x="110" y="536" font-size="15" font-weight="700" fill="#5f7184">GitHub 仓库</text>
     <rect x="224" y="460" width="130" height="106" rx="20" fill="#f3fbf6" stroke="#d8e5f2"/>
-    <text x="252" y="503" font-size="38" font-weight="850" fill="#087f5b">6</text>
+    <text x="252" y="503" font-size="38" font-weight="850" fill="#087f5b">2</text>
     <text x="252" y="536" font-size="15" font-weight="700" fill="#5f7184">论文图表</text>
     <rect x="366" y="460" width="130" height="106" rx="20" fill="#fff8ed" stroke="#d8e5f2"/>
-    <text x="394" y="503" font-size="38" font-weight="850" fill="#a15c00">11</text>
+    <text x="394" y="503" font-size="38" font-weight="850" fill="#a15c00">7</text>
     <text x="394" y="536" font-size="15" font-weight="700" fill="#5f7184">HTML 表格</text>
     <rect x="508" y="460" width="122" height="106" rx="20" fill="#f7f4ff" stroke="#d8e5f2"/>
-    <text x="536" y="503" font-size="38" font-weight="850" fill="#4f46e5">60</text>
+    <text x="536" y="503" font-size="38" font-weight="850" fill="#4f46e5">58</text>
     <text x="536" y="536" font-size="15" font-weight="700" fill="#5f7184">来源链接</text>
   </g>
 
@@ -56,28 +56,28 @@
       <text x="690" y="455" font-size="17" font-weight="650" fill="#233246">obra/superpowers</text>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="#e8eef6"/>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">2,975</text>
+      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">1,160</text>
 
-      <text x="690" y="493" font-size="17" font-weight="650" fill="#233246">NousResearch/hermes-agent</text>
+      <text x="690" y="493" font-size="17" font-weight="650" fill="#233246">firecrawl/firecrawl</text>
       <rect x="910" y="476" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="476" width="227" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1152" y="491" font-size="13" font-weight="700" fill="#0b5f91">2,047</text>
+      <rect x="910" y="476" width="247" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1172" y="491" font-size="13" font-weight="700" fill="#0b5f91">867</text>
 
-      <text x="690" y="531" font-size="17" font-weight="650" fill="#233246">firecrawl/firecrawl</text>
+      <text x="690" y="531" font-size="17" font-weight="650" fill="#233246">NousResearch/hermes-agent</text>
       <rect x="910" y="514" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="514" width="222" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1147" y="529" font-size="13" font-weight="700" fill="#0b5f91">2,005</text>
+      <rect x="910" y="514" width="240" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1165" y="529" font-size="13" font-weight="700" fill="#0b5f91">844</text>
 
       <text x="690" y="569" font-size="17" font-weight="650" fill="#233246">multica-ai/andrej-karpathy-skills</text>
       <rect x="910" y="552" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="552" width="172" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1097" y="567" font-size="13" font-weight="700" fill="#0b5f91">1,548</text>
+      <rect x="910" y="552" width="233" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1158" y="567" font-size="13" font-weight="700" fill="#0b5f91">819</text>
 
-      <text x="690" y="607" font-size="17" font-weight="650" fill="#233246">farion1231/cc-switch</text>
+      <text x="690" y="607" font-size="17" font-weight="650" fill="#233246">affaan-m/ECC</text>
       <rect x="910" y="590" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="590" width="168" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1093" y="605" font-size="13" font-weight="700" fill="#0b5f91">1,516</text>
+      <rect x="910" y="590" width="176" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1101" y="605" font-size="13" font-weight="700" fill="#0b5f91">618</text>
 
   <rect x="82" y="596" width="1116" height="42" rx="21" fill="url(#accent)" opacity="0.10"/>
-  <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：Anthropic：2 场官方活动；OpenAI：无新增 · 生成时间：2026-07-15 02:28:36 UTC</text>
+  <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：OpenAI：4 条新官方视频；Anthropic：1 场录像已可看，1 场录像待发布 · 生成时间：2026-07-15 02:28:36 UTC</text>
 </svg>

@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-07-14T02:33:06.819Z",
+  "generatedAt": "2026-07-15T02:28:36.689Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-15.html",
+      "date": "2026-07-15",
+      "weekday": "周三",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "How Many Tasks Are Enough for Agent Benchmark Decisions? A Replay Analysis of Public LLM Agent Benchmarks",
+      "summary": "评测方法 · 新出现 “跑了多少任务”不是有效的评测充分性定义：作者结论 在 0 个百分点胜出阈值下，AppWorld 只需 15% 任务便首次满足全部目标，tau-bench 需 25%，SWE-bench Verified 需 90%，SWE-bench Lite 到 95% 仍未满足。",
+      "problem": "这是自昨日截止后新增、且直接影响 Agent 评测产品预算和决策可信度的论文。它回答的不是“子集分数与全量分数相关吗”，而是“子集是否支持与完整 benchmark 相同的系统比较结论”。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "对抗性审查： 作者把完成 benchmark 当成参考决策，而完成 benchmark 自身不等于真实产品真值；任务之间也可能相关。该方法能降低“子集误导完整榜单”的风险，不能证明榜单能预测线上效果。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "对评测产品的直接启发： 默认输出不应只有排行榜分数。至少要同时展示“胜出阈值、已覆盖任务组、错误上界、未决比较比例”，并在证据不足时给出继续跑哪些任务的建议。",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方发布",
+        "org": "Anthropic",
+        "title": "官方录像状态变化",
+        "summary": "这是生产案例，不等于可迁移 benchmark。观看时优先记录失败边界、吞吐、成本、观测和人工审批设计。",
+        "url": "https://www.anthropic.com/webinars/production-grade-agents-on-claude-sonnet-5-live-with-zed-and-clickhouse"
+      },
+      "source": "briefs/morning-brief-2026-07-15.html",
+      "overview": "overviews/morning-brief-2026-07-15.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "1 ·",
+          "value": 1160,
+          "text": "1 · obra/superpowers Agent Skills 框架与软件开发方法 254,726 253,566 +1,160 Shell 07-15 06:02 CST 持续增长"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "2 ·",
+          "value": 867,
+          "text": "2 · firecrawl/firecrawl Agent 网页搜索、抓取和交互 API 151,078 150,211 +867 TypeScript 07-15 10:11 CST 持续增长"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "3 ·",
+          "value": 844,
+          "text": "3 · NousResearch/hermes-agent 带长期记忆和持续成长定位的个人 Agent 214,920 214,076 +844 Python 07-15 09:06 CST 持续增长"
+        },
+        {
+          "repo": "multica-ai/andrej-karpathy-skills",
+          "label": "4 ·",
+          "value": 819,
+          "text": "4 · multica-ai/andrej-karpathy-skills coding agent 单文件行为约束 192,295 191,476 +819 未标明 04-20 18:05 CST 热度高 / 代码静态"
+        },
+        {
+          "repo": "affaan-m/ECC",
+          "label": "5 ·",
+          "value": 618,
+          "text": "5 · affaan-m/ECC 跨 Claude Code、Codex、OpenCode 的 Agent harness 优化 229,748 229,130 +618 JavaScript 07-14 09:31 CST 持续增长"
+        },
+        {
+          "repo": "opendatalab/MinerU",
+          "label": "opendatalab/MinerU",
+          "value": 74629,
+          "text": "opendatalab/MinerU 74,629 把复杂 PDF 和 Office 文档转成 Agent 可消费的 Markdown / JSON。 文档解析是 research agent 和企业知识工作流的基础层；值得比较表格、公式…"
+        },
+        {
+          "repo": "datawhalechina/hello-agents",
+          "label": "datawhalechina/hello-agents",
+          "value": 66194,
+          "text": "datawhalechina/hello-agents 66,194 中文 Agent 原理与实践教程。 适合作为团队共同知识底座和架构词典；真正采用前应把教程示例映射到内部故障案例。 Python / 未明确 07-10 20:57 C…"
+        },
+        {
+          "repo": "warpdotdev/warp",
+          "label": "warpdotdev/warp",
+          "value": 63185,
+          "text": "warpdotdev/warp 63,185 从终端演进的 agentic development environment。 可观察“交互式终端 + Agent”如何处理权限、上下文、命令执行和协作；适合作为 Codex / Claude…"
+        }
+      ],
+      "githubRepoCount": 16,
+      "figureCount": 2,
+      "tableCount": 7,
+      "linkCount": 58,
+      "officialStatus": "OpenAI：4 条新官方视频；Anthropic：1 场录像已可看，1 场录像待发布",
+      "tags": "2026-07-15 How Many Tasks Are Enough for Agent Benchmark Decisions? A Replay Analysis of Public LLM Agent Benchmarks anthropics/claude-code WilliamWJHuang/How-Many-Tasks-Are-Enough-for-Agent-Benchmark-Decisions obra/superpowers firecrawl/firecrawl NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC opendatalab/MinerU datawhalechina/hello-agents warpdotdev/warp zhayujie/CowAgent abhigyanpatwari/GitNexus openai/codex anomalyco/opencode browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-14.html",
       "date": "2026-07-14",

@@ -830,12 +830,11 @@ function renderIndex(briefs) {
     </header>
 
     <nav class="track-tabs" aria-label="研究主题">
-      <button class="track-tab" type="button" data-track="latest" aria-pressed="true">今日信号</button>
+      <button class="track-tab" type="button" data-track="all" aria-pressed="true">全部档案</button>
       <button class="track-tab" type="button" data-track="model" aria-pressed="false">模型能力</button>
       <button class="track-tab" type="button" data-track="product" aria-pressed="false">Agent 产品</button>
       <button class="track-tab" type="button" data-track="evaluation" aria-pressed="false">评测方法</button>
       <button class="track-tab" type="button" data-track="architecture" aria-pressed="false">架构与工具</button>
-      <button class="track-tab" type="button" data-track="all" aria-pressed="false">全部档案</button>
     </nav>
 
     <section class="workspace">
@@ -845,7 +844,7 @@ function renderIndex(briefs) {
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="m21 21-4.4-4.4m2.4-5.1a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
             <input id="searchInput" type="search" placeholder="搜索论文、项目或机构" autocomplete="off">
           </label>
-          <span id="resultCount" class="result-count" aria-live="polite">1 / ${briefs.length}</span>
+          <span id="resultCount" class="result-count" aria-live="polite">${briefs.length} / ${briefs.length}</span>
         </div>
         <div id="archiveList" class="archive-list">
 ${cards}
@@ -939,7 +938,7 @@ ${cards}
     const emptyList = document.getElementById("emptyList");
     const feedbackNote = document.getElementById("feedbackNote");
     const feedbackSummary = document.getElementById("feedbackSummary");
-    let activeTrack = "latest";
+    let activeTrack = "all";
     let selectedId = briefs[0].fileName;
     let feedbackState = {};
     let noteTimer = null;
@@ -1015,7 +1014,6 @@ ${cards}
 
     function matchesTrack(brief, index) {
       if (activeTrack === "all") return true;
-      if (activeTrack === "latest") return index === 0;
       return brief.tracks.includes(activeTrack);
     }
 

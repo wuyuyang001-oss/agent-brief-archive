@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-07-15T02:30:40.989Z",
+  "generatedAt": "2026-07-17T04:30:47.175Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-17.html",
+      "date": "2026-07-17",
+      "weekday": "周五",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "Alipay-PIBench: A Realistic Payment Integration Benchmark for Coding Agents",
+      "summary": "评测方法 · 新出现 领域 Agent 评测需要结构、执行与安全语义三种证据：作者结论 Alipay-PIBench 的静态检查、Integration/E2E 与 LLM 辅助领域审查会暴露不同失败；Basic 静态 RPR 均值 92.79%，Integration 仅 73.16%，Advanced …",
+      "problem": "这是上次运行后新增，且把 Agent 产品、领域 Skill 和评测方法放进同一个配对实验的论文；对构建 Agent 评测产品的价值高于今天其他只给榜单的论文。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "对抗性审查： 101/108 提升很醒目，但若每个条件只有一次运行，Agent 随机性和运行中断可能放大差值；RPR 也由平台自定义 rubric 决定。采用前应重复运行、盲审关键项，并用真实业务事故反向校准 rubric。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "产品机会： 把通用 Agent benchmark 变成“领域交付验证器”：允许企业上传业务 rubric，自动拆成静态、执行、E2E 与语义检查，输出失败定位、Skill 干预增益和上线门槛。",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方发布",
+        "org": "Anthropic",
+        "title": "官方录像状态变化",
+        "summary": "这是值得持续追踪的评测方法信号。观看时提取真实生产失败如何转成 eval set，以及模型升级决策门槛。",
+        "url": "https://www.anthropic.com/webinars/evals-for-ai-agents-how-product-builders-get-the-most-out-of-every-new-model"
+      },
+      "source": "briefs/morning-brief-2026-07-17.html",
+      "overview": "overviews/morning-brief-2026-07-17.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "1 ·",
+          "value": 2152,
+          "text": "1 · obra/superpowers Agent Skills 与软件开发过程约束 256,089 253,937 +2,152 Shell 07-17 08:52 CST"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "2 ·",
+          "value": 1754,
+          "text": "2 · NousResearch/hermes-agent 长期记忆、持续成长的个人 Agent 216,066 214,312 +1,754 Python 07-17 12:00 CST"
+        },
+        {
+          "repo": "multica-ai/andrej-karpathy-skills",
+          "label": "3 ·",
+          "value": 1667,
+          "text": "3 · multica-ai/andrej-karpathy-skills coding agent 单文件行为约束 193,333 191,666 +1,667 未标明 04-20 18:05 CST"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "4 ·",
+          "value": 1605,
+          "text": "4 · firecrawl/firecrawl Agent 搜索、抓取和网页交互 API 152,080 150,475 +1,605 TypeScript 07-17 08:31 CST"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "5 ·",
+          "value": 1193,
+          "text": "5 · farion1231/cc-switch 多 coding-agent 配置、模型与 provider 切换 118,041 116,848 +1,193 Rust 07-17 02:38 CST"
+        },
+        {
+          "repo": "666ghj/BettaFish",
+          "label": "666ghj/BettaFish",
+          "value": 41771,
+          "text": "666ghj/BettaFish 41,771 从零实现的多 Agent 舆情分析与趋势判断系统。 适合观察多 Agent 在信息检索、观点聚类和决策报告中的分工；应重点审查来源偏差、预测可校准性和 GPL-2.0 约束。 Python …"
+        },
+        {
+          "repo": "multica-ai/multica",
+          "label": "multica-ai/multica",
+          "value": 40832,
+          "text": "multica-ai/multica 40,832 把 coding agents 变成可分配任务、追踪进度、积累 Skills 的托管平台。 直接对应“Agent 作为团队成员”的产品方向；值得比较任务状态、审批、隔离、失败恢复和 Sk…"
+        },
+        {
+          "repo": "coreyhaines31/marketingskills",
+          "label": "coreyhaines31/marketingskills",
+          "value": 40228,
+          "text": "coreyhaines31/marketingskills 40,228 面向 Claude Code 与 Agent 的 CRO、文案、SEO、分析和增长 Skills。 是“领域 Skill 商品化”的现实样本；可直接做营销任务 A/…"
+        }
+      ],
+      "githubRepoCount": 16,
+      "figureCount": 7,
+      "tableCount": 6,
+      "linkCount": 63,
+      "officialStatus": "6 条官方链接/动态",
+      "tags": "2026-07-17 Alipay-PIBench: A Realistic Payment Integration Benchmark for Coding Agents inclusionAI/PIBench obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills firecrawl/firecrawl farion1231/cc-switch 666ghj/BettaFish multica-ai/multica coreyhaines31/marketingskills luongnv89/claude-howto Hmbown/CodeWhale openai/codex anthropics/claude-code anomalyco/opencode browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-15.html",
       "date": "2026-07-15",

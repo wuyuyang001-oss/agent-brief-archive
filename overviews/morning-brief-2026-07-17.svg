@@ -35,7 +35,7 @@
 
   <g>
     <rect x="82" y="460" width="130" height="106" rx="20" fill="#f3f8ff" stroke="#d8e5f2"/>
-    <text x="110" y="503" font-size="38" font-weight="850" fill="#0a67a3">16</text>
+    <text x="110" y="503" font-size="38" font-weight="850" fill="#0a67a3">17</text>
     <text x="110" y="536" font-size="15" font-weight="700" fill="#5f7184">GitHub 仓库</text>
     <rect x="224" y="460" width="130" height="106" rx="20" fill="#f3fbf6" stroke="#d8e5f2"/>
     <text x="252" y="503" font-size="38" font-weight="850" fill="#087f5b">7</text>
@@ -44,7 +44,7 @@
     <text x="394" y="503" font-size="38" font-weight="850" fill="#a15c00">6</text>
     <text x="394" y="536" font-size="15" font-weight="700" fill="#5f7184">HTML 表格</text>
     <rect x="508" y="460" width="122" height="106" rx="20" fill="#f7f4ff" stroke="#d8e5f2"/>
-    <text x="536" y="503" font-size="38" font-weight="850" fill="#4f46e5">63</text>
+    <text x="536" y="503" font-size="38" font-weight="850" fill="#4f46e5">65</text>
     <text x="536" y="536" font-size="15" font-weight="700" fill="#5f7184">来源链接</text>
   </g>
 
@@ -79,5 +79,5 @@
       <text x="1108" y="605" font-size="13" font-weight="700" fill="#0b5f91">1,193</text>
 
   <rect x="82" y="596" width="1116" height="42" rx="21" fill="url(#accent)" opacity="0.10"/>
-  <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：6 条官方链接/动态 · 生成时间：2026-07-17 04:30:47 UTC</text>
+  <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：6 条官方链接/动态 · 生成时间：2026-07-17 04:34:18 UTC</text>
 </svg>

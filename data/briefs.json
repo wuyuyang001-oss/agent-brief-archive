@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T04:30:47.175Z",
+  "generatedAt": "2026-07-17T04:34:18.053Z",
   "briefs": [
     {
       "fileName": "morning-brief-2026-07-17.html",
@@ -82,12 +82,12 @@
           "text": "coreyhaines31/marketingskills 40,228 面向 Claude Code 与 Agent 的 CRO、文案、SEO、分析和增长 Skills。 是“领域 Skill 商品化”的现实样本；可直接做营销任务 A/…"
         }
       ],
-      "githubRepoCount": 16,
+      "githubRepoCount": 17,
       "figureCount": 7,
       "tableCount": 6,
-      "linkCount": 63,
+      "linkCount": 65,
       "officialStatus": "6 条官方链接/动态",
-      "tags": "2026-07-17 Alipay-PIBench: A Realistic Payment Integration Benchmark for Coding Agents inclusionAI/PIBench obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills firecrawl/firecrawl farion1231/cc-switch 666ghj/BettaFish multica-ai/multica coreyhaines31/marketingskills luongnv89/claude-howto Hmbown/CodeWhale openai/codex anthropics/claude-code anomalyco/opencode browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-17 Alipay-PIBench: A Realistic Payment Integration Benchmark for Coding Agents inclusionAI/PIBench obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills firecrawl/firecrawl farion1231/cc-switch 666ghj/BettaFish multica-ai/multica coreyhaines31/marketingskills luongnv89/claude-howto Hmbown/CodeWhale openai/codex anthropics/claude-code anomalyco/opencode browser-use/browser-use bytedance/deer-flow wuyuyang001-oss/agent-brief-archive AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-15.html",

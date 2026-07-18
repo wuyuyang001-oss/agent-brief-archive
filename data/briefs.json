@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-07-17T04:34:18.053Z",
+  "generatedAt": "2026-07-18T06:48:16.472Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-18.html",
+      "date": "2026-07-18",
+      "weekday": "周六",
+      "type": "formal",
+      "hasWeekly": true,
+      "title": "Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Security Agents",
+      "summary": "评测方法 · 新出现 同样增加预算，攻击 Agent 与防守 Agent 的收益规律相反：作者结论 Cybench 的攻击任务会随 test-time compute 增长；BOTS v1 的防守调查更依赖克制的工具使用和正确证据。DeepSeek v4 Flash 在 BOTS 将预算从 $2.10 提到…",
+      "problem": "周末没有新的 arXiv 工作日批次，因此选择最近批次中尚未总结、且最能改变 Agent 产品成本与评测决策的一篇。它不是再给一个安全榜单，而是比较固定预算下的实际 operating points。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "对抗性审查： 表格里 GPT-5.5 在 Cybench 达 94.1%，Claude Opus 4.8 在 BOTS 达 93.9%，但两者不是同一种能力；公开 BOTS 的无工具 probe 仍能得到 50%–74.8%，说明绝对分数可能混入记忆或先验。不能把高分直接写成生产 SOC 就绪。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "产品机会： 为 Agent eval 增加“预算模拟器”：从完整轨迹回放不同 token、工具调用和美元 cap，输出能力曲线、边际收益和推荐部署点。",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方发布",
+        "org": "OpenAI",
+        "title": "OpenAI 官方网页 sitemap",
+        "summary": "继续追踪产品规格与独立任务级评测。",
+        "url": "https://openai.com/sitemap.xml"
+      },
+      "source": "briefs/morning-brief-2026-07-18.html",
+      "overview": "overviews/morning-brief-2026-07-18.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 1,
+          "text": "obra/superpowers 持续第 1 7/13 253,566 → 7/18 256,748；正式版仍 6.1.1。 验证过程约束 Skill 是否降低返工，而不是只增加 token。"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 2,
+          "text": "NousResearch/hermes-agent 持续第 2 7/13 214,076 → 7/18 216,538；代码持续活跃。 长期记忆的撤销、错误累积和隐私仍是产品机会。"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 2,
+          "text": "firecrawl/firecrawl 第 2–4 波动 7/13 150,211 → 7/18 152,496；持续推送。 网页获取是 research agent 的高复用基础设施。"
+        },
+        {
+          "repo": "anthropics/claude-code",
+          "label": "anthropics/claude-code",
+          "value": 2.1,
+          "text": "anthropics/claude-code 2.1.214 从 2.1.210 → 2.1.212 → 2.1.214，重点转向权限、预算和 telemetry。 可直接提炼 runtime 安全 benchmark。"
+        },
+        {
+          "repo": "browser-use/browser-use",
+          "label": "browser-use/browser-use",
+          "value": 0.13,
+          "text": "browser-use/browser-use 0.13.6 0.13.4 → 0.13.5 MCP registry → 0.13.6 Browser Harness。 适合做 GUI Agent 的可恢复任务评测载体。"
+        },
+        {
+          "repo": "multica-ai/andrej-karpathy-skills",
+          "label": "4 ·",
+          "value": 1367,
+          "text": "4 · multica-ai/andrej-karpathy-skills coding agent 单文件行为约束 193,662 192,295 +1,367 未标明 04-20 18:05 CST"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "5 ·",
+          "value": 1173,
+          "text": "5 · farion1231/cc-switch 多 coding-agent 配置和 provider 切换 118,404 117,231 +1,173 Rust 07-17 21:52 CST"
+        },
+        {
+          "repo": "OpenBB-finance/OpenBB",
+          "label": "OpenBB-finance/OpenBB",
+          "value": 70709,
+          "text": "OpenBB-finance/OpenBB 70,709 面向分析师、量化和 AI Agent 的开放金融数据平台。 可作为金融 Agent 的 governed data / tool layer；重点验证数据授权、引用、延迟和商业 L…"
+        }
+      ],
+      "githubRepoCount": 15,
+      "figureCount": 18,
+      "tableCount": 7,
+      "linkCount": 65,
+      "officialStatus": "6 条官方链接/动态",
+      "tags": "2026-07-18 Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Security Agents obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anthropics/claude-code browser-use/browser-use multica-ai/andrej-karpathy-skills farion1231/cc-switch OpenBB-finance/OpenBB Leonxlnx/taste-skill mvanhorn/last30days-skill wshobson/agents Yeachan-Heo/oh-my-claudecode openai/codex anomalyco/opencode bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation weekly 周报 formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-17.html",
       "date": "2026-07-17",

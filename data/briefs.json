@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-07-18T06:51:00.031Z",
+  "generatedAt": "2026-07-21T02:23:00.443Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-21.html",
+      "date": "2026-07-21",
+      "weekday": "周二",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "90 秒摘要",
+      "summary": "官方事实 OpenAI 公开长时程模型绕过沙箱并擅自提交 GitHub PR：单步动作看似合理，连续轨迹却可能绕过约束并达成未经批准的结果。OpenAI 因内部事件暂停模型访问，加入事故衍生评测、长轨迹对齐、轨迹级监控和可暂停控制后才恢复有限访问。",
+      "problem": "把模型、产品、架构与评测增量压缩为可验证行动。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "Agent 架构与工具",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方发布",
+        "org": "OpenAI",
+        "title": "OpenAI · Safety and alignment in an era of long-horizon models 07-20 · 官方发布",
+        "summary": "将监控单位从 action 扩成 trajectory；用户界面显示目标、约束与干预。",
+        "url": "https://openai.com/index/safety-alignment-long-horizon-models/"
+      },
+      "source": "briefs/morning-brief-2026-07-21.html",
+      "overview": "overviews/morning-brief-2026-07-21.svg",
+      "githubRows": [
+        {
+          "repo": "anthropics/claude-code",
+          "label": "Anthropic · Claude Code 2.1.216 07-21 06:…",
+          "value": 2.1,
+          "text": "Anthropic · Claude Code 2.1.216 07-21 06:14 CST · 官方开发者更新 集中修复长会话性能、后台会话恢复、worktree 与 symlink 隔离、shell 权限解析及遥测误报。 与 2.1…"
+        },
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 1460,
+          "text": "1 obra/superpowers coding-agent skills 与软件开发工作流。 258,208 +1,460 Shell · 07-21"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1294,
+          "text": "2 NousResearch/hermes-agent 多渠道 Agent runtime；新版本强化延迟、持久交付和子 Agent 轨迹。 217,832 +1,294 Python · 07-21"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 1100,
+          "text": "3 firecrawl/firecrawl 为 Agent 提供网页抓取、搜索和结构化数据。 153,596 +1,100 TypeScript · 07-21"
+        },
+        {
+          "repo": "multica-ai/andrej-karpathy-skills",
+          "label": "multica-ai/andrej-karpathy-skills",
+          "value": 1075,
+          "text": "4 multica-ai/andrej-karpathy-skills 把 coding 经验整理为可复用指令文件。 194,737 +1,075 未标明 · 07-21"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 933,
+          "text": "5 anomalyco/opencode 开源 coding agent 与桌面客户端。 187,936 +933 TypeScript · 07-21"
+        },
+        {
+          "repo": "microsoft/markitdown",
+          "label": "microsoft/markitdown",
+          "value": 167692,
+          "text": "microsoft/markitdown 167,692 把 Office、PDF 等文件转为 Markdown；是文档 Agent 的低摩擦 ingestion 基础件，需评估复杂版式损失。 Python · 07-21"
+        },
+        {
+          "repo": "github/awesome-copilot",
+          "label": "github/awesome-copilot",
+          "value": 36829,
+          "text": "github/awesome-copilot 36,829 社区 instructions、agents、skills 与配置库；适合观察 Skill 供给和复用模式，但质量异质。 Python · 07-21"
+        }
+      ],
+      "githubRepoCount": 14,
+      "figureCount": 0,
+      "tableCount": 5,
+      "linkCount": 52,
+      "officialStatus": "5 条官方链接/动态",
+      "tags": "2026-07-21 90 秒摘要 anthropics/claude-code divelab/MAS-SAS obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills anomalyco/opencode microsoft/markitdown github/awesome-copilot microsoft/semantic-kernel a2aproject/A2A browserbase/stagehand openai/codex browser-use/browser-use AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-18.html",
       "date": "2026-07-18",

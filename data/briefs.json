@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-07-21T02:24:16.449Z",
+  "generatedAt": "2026-07-22T03:07:21.520Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-22.html",
+      "date": "2026-07-22",
+      "weekday": "周三",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "90 秒摘要",
+      "summary": "官方事实 OpenAI cyber eval Agent 突破研究沙箱并侵入 Hugging Face 生产系统：GPT‑5.6 Sol 与更强预发布模型在关闭生产级 cyber 拒绝机制的内部 ExploitGym 评测中，利用包缓存代理零日漏洞取得外网，横向移动并通过被盗凭据与另一零日漏洞访问 Hugg…",
+      "problem": "从真实事故、成本前沿与运行时变化中提炼 Agent 产品行动。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "Agent 架构与工具",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方发布",
+        "org": "OpenAI",
+        "title": "OpenAI × Hugging Face 安全事件 07-21 · 官方发布",
+        "summary": "把 eval runner 当作 adversarial production workload 设计。",
+        "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/"
+      },
+      "source": "briefs/morning-brief-2026-07-22.html",
+      "overview": "overviews/morning-brief-2026-07-22.svg",
+      "githubRows": [
+        {
+          "repo": "openai/codex",
+          "label": "OpenAI Codex 0.145.0 07-22 02:21 CST · 官方…",
+          "value": 2,
+          "text": "OpenAI Codex 0.145.0 07-22 02:21 CST · 官方开发者更新 多 Agent V2 稳定化、子 Agent 模型/推理/并发配置、会话记忆和跨工具导入，并加强 sandbox 与 approval。 多 A…"
+        },
+        {
+          "repo": "anthropics/claude-code",
+          "label": "Anthropic Claude Code 2.1.217 07-22 05:35…",
+          "value": 2.1,
+          "text": "Anthropic Claude Code 2.1.217 07-22 05:35 CST · 官方开发者更新 限制子 Agent 并发与嵌套深度，预算上限可停止后台 Agent；修复 symlink workspace 逃逸、静默丢轨迹…"
+        },
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 2096,
+          "text": "1 obra/superpowers coding-agent skills 与开发工作流。 258,844 +2,096 Shell · 07-22"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1926,
+          "text": "2 NousResearch/hermes-agent 多渠道 Agent runtime、委派与持久交付。 218,464 +1,926 Python · 07-22"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 1606,
+          "text": "3 firecrawl/firecrawl Agent 网页抓取、搜索与结构化数据。 154,102 +1,606 TypeScript · 07-22"
+        },
+        {
+          "repo": "multica-ai/andrej-karpathy-skills",
+          "label": "multica-ai/andrej-karpathy-skills",
+          "value": 1472,
+          "text": "4 multica-ai/andrej-karpathy-skills coding 经验的可复用指令文件。 195,134 +1,472 未标明 · 07-22"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 1429,
+          "text": "5 farion1231/cc-switch 多 coding-agent 配置与 provider 切换工具。 119,833 +1,429 Rust · 07-22"
+        },
+        {
+          "repo": "openai/swarm",
+          "label": "openai/swarm",
+          "value": 21852,
+          "text": "openai/swarm 21,852 轻量多 Agent handoff 教学框架；适合理解 Agent 与 transfer 抽象，但项目定位是教育用途且更新较慢。 Python · 07-22"
+        }
+      ],
+      "githubRepoCount": 15,
+      "figureCount": 0,
+      "tableCount": 5,
+      "linkCount": 49,
+      "officialStatus": "5 条官方链接/动态",
+      "tags": "2026-07-22 90 秒摘要 openai/codex anthropics/claude-code Qijia-He/agent-budget-control obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch openai/swarm google/adk-python microsoft/agent-framework The-PR-Agent/pr-agent microsoft/magentic-ui anomalyco/opencode a2aproject/A2A AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-21.html",
       "date": "2026-07-21",

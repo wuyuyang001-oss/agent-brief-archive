@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI / Agent 晨间简报 · 2026-07-24</title>
+<style>
+:root{--bg:#fff;--soft:#f6f8fc;--ink:#142033;--muted:#5c6b80;--line:#dce3ee;--blue:#145df5;--green:#087f5b;--amber:#9a6700}*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font:15px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}header{padding:38px max(24px,calc((100% - 1180px)/2));background:linear-gradient(135deg,#f4f7ff,#fff);border-bottom:1px solid var(--line)}main{max-width:1180px;margin:auto;padding:22px 24px 72px}h1{font-size:36px;margin:0 0 8px}h2{font-size:24px;margin:36px 0 14px}h3{font-size:18px;margin:22px 0 10px}p{margin:8px 0}a{color:#0b55d4;text-decoration:none}a:hover{text-decoration:underline}.meta,.muted{color:var(--muted)}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.chip,.status{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 9px;background:#fff;font-size:12px}.status.new{color:var(--blue);background:#edf3ff}.status.watch{color:var(--green);background:#eaf8f2}.status.caveat{color:var(--amber);background:#fff7e0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff;box-shadow:0 3px 14px rgba(20,32,51,.045)}.signal{border-left:4px solid var(--blue)}.fact{color:var(--green);font-weight:700}.infer{color:var(--amber);font-weight:700}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid var(--line)}th{background:#f3f6fb;position:sticky;top:0}details{border:1px solid var(--line);border-radius:12px;margin:12px 0;background:#fff}summary{cursor:pointer;padding:13px 15px;font-weight:700}details>div{padding:0 15px 16px}.figure{margin:18px 0;padding:12px;border:1px solid var(--line);border-radius:10px}.figure img{display:block;max-width:100%;height:auto;margin:auto}.figure figcaption{font-size:13px;color:var(--muted);margin-top:8px}.callout{background:#f1f6ff;border:1px solid #cbdcff;border-radius:12px;padding:14px}.feedback textarea{width:100%;min-height:90px;border:1px solid var(--line);border-radius:10px;padding:12px;font:inherit}.feedback button{margin-top:8px;border:0;border-radius:8px;padding:8px 14px;background:var(--blue);color:#fff}@media(max-width:760px){.grid{grid-template-columns:1fr}h1{font-size:29px}main{padding-inline:16px}}@media print{header{padding:18px 0}.card,details{break-inside:avoid}body{font-size:12px}button{display:none}}
+</style>
+</head>
+<body>
+<header><div class="meta">AI / AGENT DECISION BRIEF</div><h1>晨间简报</h1><p>为 Agent 产品、评测产品与创业判断提取可复用技术红利。</p><div class="chips"><span class="chip">2026-07-24</span><span class="chip">生成 10:42 CST</span><span class="chip">信息截止 10:20 CST</span><span class="chip">白底 · 可打印</span></div></header>
+<main>
+<section>
+<h2>90 秒摘要</h2>
+<div class="grid">
+<article class="card signal"><span class="status new">Agent 架构 · 新出现</span><h3>长程记忆可以先从“完整日志 + 代码检索”开始</h3><p><span class="fact">已证实：</span>PRO-LONG 不做摘要压缩，也不依赖向量库，而是保存所有观察、动作和结果，让 coding agent 用 grep、Python 和自写脚本检索。</p><p><b>证据：</b>完整 ARC-AGI-3 公共游戏集上，相对基础 coding agent 平均提升 18.0 个百分点；最高 76.1% pass@1，token 少 4.2–5.8 倍。</p><p><b>差异：</b>把“记住什么”的智能从写入阶段移到读取阶段，降低早期摘要丢失未来关键细节的风险。</p><p><b>建议动作：</b>先为现有 Agent 增加 append-only 事件日志和可执行查询，再决定是否需要向量记忆。</p></article>
+<article class="card signal"><span class="status new">Agent 产品 · 官方发布</span><h3>ChatGPT Health 展示了高风险连接器的产品范式</h3><p><span class="fact">官方发布：</span>用户可连接 Apple Health 与支持的医疗记录；默认在使用连接数据前请求许可，敏感外发动作增加确认，连接数据不用于基础模型训练。</p><p><b>差异：</b>连接器不只是“多一个数据源”，而是独立权限、数据生命周期、记忆边界和外发防护的组合。</p><p><b>产品意义：</b>Agent 平台应把数据域、目的限制、临时授权和撤销删除做成一等能力。</p><p><b>建议动作：</b>以 Health 的权限路径为参照，审查你的连接器是否区分读取、推理、记忆和外发。</p></article>
+<article class="card signal"><span class="status watch">评测方法 · 证据增强</span><h3>长程 Agent 评测必须同时报告 pass@1、best@k 与成本</h3><p><span class="fact">已证实：</span>PRO-LONG 在同一游戏的独立运行间方差明显；论文重算先前 harness 日志以统一 500-action 预算和评分。</p><p><b>差异：</b>单次成功率无法说明探索覆盖率，best@k 又会放大预算优势。</p><p><b>建议动作：</b>固定动作预算、重复次数和总成本，并把 pass@1 与 best@k 并列展示。</p></article>
+<article class="card signal"><span class="status caveat">产品机会 · 编辑推断</span><h3>Agent 记忆产品的价值可能在可审计查询，而非“更聪明的摘要”</h3><p><span class="infer">编辑判断：</span>当日志达到 10 万至 32 万行仍可通过程序化检索利用时，可观测、查询 DSL、重放与轨迹验证可能比又一套 embedding memory 更接近刚需。</p><p><b>创业假设：</b>面向 Agent 的“事件仓库 + 查询 + 回放 + eval”可同时服务调试、记忆、安全审计和产品分析。</p></article>
+</div>
+</section>
+
+<section>
+<h2>前沿领头羊信号</h2>
+<div class="table-wrap"><table><thead><tr><th>信号</th><th>准确摘要</th><th>连续性 / 影响</th><th>建议动作</th></tr></thead><tbody>
+<tr><td><a href="https://openai.com/index/health-in-chatgpt/">Launching Health in ChatGPT</a><br>2026-07-23 · 官方发布</td><td>美国 18+ 用户可连接健康记录和 Apple Health；设置独立权限、删除期限、训练排除和敏感外发确认。</td><td>延续连接器与领域 Agent 路线，但把数据治理嵌入交互流程。</td><td>把权限提示率、拒绝率、误外发与撤销完整性加入产品评测。</td></tr>
+<tr><td><a href="https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes">Voice in Work and Codex</a><br>2026-07-23 · 官方产品更新</td><td>Business 用户可通过语音启动任务、查看进度、提问并协调多个 Agent；桌面端可用，支持 iOS 远程配对。</td><td>Agent 操作界面从文本命令扩展为持续语音控制面。</td><td>测试误唤醒、任务指代、跨 Agent 状态播报与高风险动作确认。</td></tr>
+<tr><td><a href="https://academy.openai.com/en/public/clubs/builders-etkn1/events/builder-bootcamp-production-and-optimization-kkda6wo4hp">Builder Bootcamp: Production &amp; Optimization</a><br>2026-07-23 · 官方视频/材料</td><td>围绕质量、延迟、成本、baseline、蒸馏和生产优化讲解评测闭环。</td><td>与 DynamicRubric、PRO-LONG 的共同方向是从“能用”转向可测量、成本约束下的系统优化。</td><td>将模型选择评测改为质量-延迟-成本 Pareto 面，而非单榜单。</td></tr>
+<tr><td>Anthropic News / 关键人物 X</td><td>自上一窗口后未发现可核验的新技术文章；也未找到同时满足身份、原帖和发布时间核验的关键人物新帖。</td><td>不把活动预告或二手转述当正式立场。</td><td>继续等待官方 News、release 或原帖。</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>四条主线</h2>
+<div class="grid">
+<article class="card"><h3>模型能力进展</h3><p>未发现新的基础模型发布。Health 页面称 GPT-5.6 Sol 在复杂健康问题上优于 GPT-5.5，但证据来自官方领域评测，不能外推为通用 Agent 能力提升。</p></article>
+<article class="card"><h3>Agent 产品进展</h3><p>Health 与 Voice in Work/Codex 分别展示“敏感数据连接器治理”和“多 Agent 控制面”两类产品能力。</p></article>
+<article class="card"><h3>Agent 架构与可复用工具</h3><p>PRO-LONG 的 append-all 日志、程序化读取和轨迹重放是低复杂度、高可审计的记忆基线。</p></article>
+<article class="card"><h3>评测方法进展</h3><p>长程评测需控制动作预算、模型/harness 产品配置、重复次数、pass@1、best@k、token 与美元成本。</p></article>
+</div>
+</section>
+
+<section>
+<h2>今日论文</h2>
+<div class="card">
+<h3>PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning</h3>
+<p class="meta">Alexis Fox、Junlin Wang、Paul Rosu、Bhuwan Dhingra · Duke University · v1 2026-07-22，v2 2026-07-23 · <a href="https://arxiv.org/abs/2607.20064">arXiv</a> · <a href="https://arxiv.org/html/2607.20064">HTML</a> · <a href="https://github.com/alexisfox7/PRO-LONG">代码与日志</a></p>
+<p><b>此前问题：</b>长程 Agent 的摘要会丢失未来才显得关键的细节；保留全部上下文又昂贵且易受 context rot 影响。</p>
+<p><b>研究做法：</b>harness 将每次观察、动作、计划与结果写入结构化日志；Agent 用 shell、正则和 Python 程序按需读取，不使用专用向量数据库或训练过的 memory writer。</p>
+<p><b>关键结论：</b>25 个 ARC-AGI-3 公共游戏上，平均提升 18.0pp；最高 76.1% pass@1，4.2–5.8 倍更少 token；Fable 5 达到 97.4% best@2，总成本 1,750 美元。</p>
+<p><b>与既有工作差异：</b>WorldModeler、Schema 等加入定制 world model、MCP 工具或多 Agent；PRO-LONG 只对标准 Codex/Claude Code 增加约 30 行提示和完整日志。</p>
+<p><b>可信度：</b><span class="status watch">中等偏高</span> 使用完整公共游戏集、统一预算重算先前日志、报告 bootstrap 区间并公开代码/轨迹；但仅一个游戏类 benchmark，部分先前方法缺少完整重复运行。</p>
+<p><b>局限：</b>新模型可能见过公开 benchmark；best@k 受预算驱动；日志无界增长带来存储、隐私和查询安全问题；没有真实企业长程任务的独立复现。</p>
+<p><b>待验证：</b>在 coding、computer-use 与业务流程中，日志规模、检索延迟、敏感信息隔离和故障恢复是否仍保持收益。</p>
+</div>
+<details><summary>展开英文简介与对应中文翻译</summary><div>
+<p><b>English.</b> Long-horizon agents must preserve details whose relevance may emerge only much later. PRO-LONG uses programmatic memory: every observation, action, and outcome is appended to a structured log, while the coding agent retrieves evidence with regular expressions, shell tools, and Python. On the 25 public ARC-AGI-3 games, the method substantially improves standard coding agents and competes with specialized harnesses at far lower token cost. The evidence is strengthened by released code and logs, matched action budgets, repeated runs, and confidence intervals, but remains limited to one public benchmark with high run-to-run variance.</p>
+<p><b>中文。</b> 长程 Agent 必须保留那些可能在很久以后才显现价值的细节。PRO-LONG 使用程序化记忆：每次观察、动作和结果都追加到结构化日志，coding agent 再通过正则、shell 工具和 Python 检索证据。在 25 个公开 ARC-AGI-3 游戏上，该方法显著增强标准 coding agent，并以更低 token 成本接近或超过专用 harness。公开代码与日志、统一动作预算、重复运行和置信区间增强了证据，但结论仍局限于一个公开 benchmark，且运行方差很高。</p>
+</div></details>
+<details><summary>展开论文全部公开图表（3 图 4 表）</summary><div>
+<p class="muted">按论文顺序展示，均为 arXiv HTML 原始元素截图。</p>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-24-assets/prolong-figure-1.png" alt="PRO-LONG Figure 1"><figcaption>图 1：ARC-AGI-3 表现与 token 成本对比。<a href="https://arxiv.org/html/2607.20064">来源</a></figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-24-assets/prolong-figure-2.png" alt="PRO-LONG Figure 2"><figcaption>图 2：完整日志、截断日志与 no-log 的 best@k。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-24-assets/prolong-table-1.png" alt="PRO-LONG Table 1"><figcaption>表 1：程序化工具阶梯消融。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-24-assets/prolong-table-2.png" alt="PRO-LONG Table 2"><figcaption>表 2：workspace 持久化消融。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-24-assets/prolong-figure-3.png" alt="PRO-LONG Figure 3"><figcaption>图 3：25 个游戏的逐项得分分布。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-24-assets/prolong-table-3.png" alt="PRO-LONG Table 3"><figcaption>表 3：工具调用分布。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-24-assets/prolong-table-4.png" alt="PRO-LONG Table 4"><figcaption>表 4：实验游戏版本清单。</figcaption></figure>
+</div></details>
+</section>
+
+<section>
+<h2>GitHub 三日增长项目</h2>
+<div class="callout">使用 07-21 10:20 与 07-24 10:05 的约 71 小时 45 分本地快照差分，接近但不等于严格 72 小时；按新增 Star 排序。</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>仓库</th><th>用途</th><th>当前 Star</th><th>近 3 日新增</th><th>语言 / 更新</th></tr></thead><tbody>
+<tr><td>1</td><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>coding-agent skills 与开发工作流。</td><td>260,090</td><td><b>+1,882</b></td><td>Shell · 07-24</td></tr>
+<tr><td>2</td><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>多渠道 Agent runtime、委派与持久交付。</td><td>219,539</td><td><b>+1,707</b></td><td>Python · 07-24</td></tr>
+<tr><td>3</td><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>Agent 搜索、抓取和结构化网页数据。</td><td>155,139</td><td><b>+1,543</b></td><td>TypeScript · 07-24</td></tr>
+<tr><td>4</td><td><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td>多 coding-agent 配置与 provider 管理。</td><td>120,552</td><td><b>+1,225</b></td><td>Rust · 07-24</td></tr>
+<tr><td>5</td><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>开源 coding agent 与桌面客户端。</td><td>189,050</td><td><b>+1,114</b></td><td>TypeScript · 07-24</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>GitHub 高 Star 未总结项目</h2>
+<p class="muted">已排除截至 07-23 补档新增项及此前日报仓库；从 Agent / coding-agent 搜索候选池按当前 Star 降序筛选。</p>
+<div class="table-wrap"><table><thead><tr><th>仓库</th><th>Star</th><th>核心能力 / 为什么值得关注</th><th>语言 / License</th></tr></thead><tbody>
+<tr><td><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools/chrome-devtools-mcp</a></td><td>47,482</td><td>让 coding agent 使用 Chrome DevTools；适合浏览器调试、性能与可视化验收。</td><td>TypeScript / Apache-2.0</td></tr>
+<tr><td><a href="https://github.com/HKUDS/nanobot">HKUDS/nanobot</a></td><td>46,137</td><td>轻量开源 Agent runtime，面向聊天、工具和工作流；值得评估部署复杂度与扩展边界。</td><td>Python / MIT</td></tr>
+<tr><td><a href="https://github.com/agentscope-ai/agentscope">agentscope-ai/agentscope</a></td><td>28,211</td><td>强调可观察、可理解和可信的 Agent 开发运行框架，契合评测与治理产品。</td><td>Python / Apache-2.0</td></tr>
+<tr><td><a href="https://github.com/deepset-ai/haystack">deepset-ai/haystack</a></td><td>25,991</td><td>显式控制 retrieval、routing、memory 与 generation 的生产编排框架。</td><td>Python / Apache-2.0</td></tr>
+<tr><td><a href="https://github.com/zai-org/Open-AutoGLM">zai-org/Open-AutoGLM</a></td><td>25,845</td><td>开放手机 Agent 模型与框架；可观察 computer-use 在移动端的能力和安全边界。</td><td>Python / Apache-2.0</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>持续追踪项目</h2>
+<div class="table-wrap"><table><thead><tr><th>对象 / 状态</th><th>变化</th><th>可复用性与风险</th></tr></thead><tbody>
+<tr><td>PRO-LONG · <span class="status new">新出现</span></td><td>127 Star；公开代码与日志，Python，未检测到 SPDX license。</td><td>低复杂度记忆基线价值高；许可、隐私、日志注入和无界存储需先处理。</td></tr>
+<tr><td>Codex · <span class="status watch">持续增长</span></td><td>101,008 Star，约 71h45m +939；最近正式版 0.145.0。</td><td>适合测试多 Agent V2 和程序化记忆；Star 不代表长程成功率。</td></tr>
+<tr><td>Claude Code · <span class="status new">关键版本</span></td><td>138,860 Star；v2.1.218 把 review 后台化并增强 trust。</td><td>可对照 PRO-LONG 的标准 coding-agent harness；注意自动权限与后台退出。</td></tr>
+<tr><td>Hermes Agent · <span class="status watch">持续增长</span></td><td>219,539 Star，约 71h45m +1,707。</td><td>MIT；需验证高频 release 的实际稳定性和持久交付语义。</td></tr>
+<tr><td>Chrome DevTools MCP · <span class="status new">新纳入</span></td><td>47,482 Star，活跃更新。</td><td>可复用为网页 Agent 的观测与验收工具；需要限制调试端口与敏感页面访问。</td></tr>
+<tr><td>Open-AutoGLM · <span class="status new">新纳入</span></td><td>25,845 Star，手机 Agent。</td><td>适合研究移动端 computer use；真实设备权限、隐私和不可逆动作风险高。</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="feedback"><h2>个人反馈</h2><p class="muted">反馈保存在当前浏览器，后续用于调整持续追踪对象。</p><textarea id="feedback" placeholder="今天最值得深读或试用的是什么？你对哪条产品假设有异议？"></textarea><button id="saveFeedback">保存反馈</button><span id="saved" class="muted"></span></section>
+
+<section>
+<h2>来源与方法</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2607.20064">PRO-LONG 摘要</a>、<a href="https://arxiv.org/html/2607.20064">论文 HTML</a>、<a href="https://github.com/alexisfox7/PRO-LONG">代码与日志</a>；3 图 4 表全部附上。</li>
+<li><a href="https://openai.com/index/health-in-chatgpt/">Health in ChatGPT</a>、<a href="https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes">Business release notes</a>、<a href="https://academy.openai.com/en/public/clubs/builders-etkn1/events/builder-bootcamp-production-and-optimization-kkda6wo4hp">OpenAI Academy 视频/材料</a>、<a href="https://www.anthropic.com/news">Anthropic News</a>。</li>
+<li>GitHub REST API / Search / Releases；检索时间 2026-07-24 10:00–10:20 CST。</li>
+</ul>
+<h3>GitHub Star 快照</h3>
+<div class="table-wrap"><table><thead><tr><th>仓库</th><th>07-21 10:20</th><th>07-24 10:05</th><th>约 71h45m</th></tr></thead><tbody>
+<tr><td>obra/superpowers</td><td>258,208</td><td>260,090</td><td>+1,882</td></tr><tr><td>NousResearch/hermes-agent</td><td>217,832</td><td>219,539</td><td>+1,707</td></tr><tr><td>firecrawl/firecrawl</td><td>153,596</td><td>155,139</td><td>+1,543</td></tr><tr><td>farion1231/cc-switch</td><td>119,327</td><td>120,552</td><td>+1,225</td></tr><tr><td>anomalyco/opencode</td><td>187,936</td><td>189,050</td><td>+1,114</td></tr><tr><td>openai/codex</td><td>100,069</td><td>101,008</td><td>+939</td></tr><tr><td>anthropics/skills</td><td>162,976</td><td>163,741</td><td>+765</td></tr><tr><td>browser-use/browser-use</td><td>105,763</td><td>106,404</td><td>+641</td></tr><tr><td>anthropics/claude-code</td><td>138,476</td><td>138,860</td><td>+384</td></tr><tr><td>bytedance/deer-flow</td><td>77,470</td><td>77,714</td><td>+244</td></tr>
+</tbody></table></div>
+<h3>限制与不确定性</h3>
+<ul><li>71h45m 接近但不等于严格 72 小时；Star 仅表示关注度。</li><li>PRO-LONG 的 ARC-AGI-3 公共集可能受公开性和新模型训练数据影响；best@k 不能与 pass@1 混为一谈。</li><li>Health 的安全与能力描述来自 OpenAI 官方，尚缺独立、真实世界纵向评估。</li><li>高 Star 筛选不是全 GitHub 穷举；本次新增：ChromeDevTools/chrome-devtools-mcp、HKUDS/nanobot、agentscope-ai/agentscope、deepset-ai/haystack、zai-org/Open-AutoGLM。</li><li id="publishStatus">归档与 Pages 状态将在本地校验后写回。</li></ul>
+</section>
+</main>
+<script>const k="brief-feedback-2026-07-24",t=document.getElementById("feedback"),s=document.getElementById("saved");t.value=localStorage.getItem(k)||"";document.getElementById("saveFeedback").onclick=()=>{localStorage.setItem(k,t.value);s.textContent=" 已保存";setTimeout(()=>s.textContent="",1800)};</script>
+</body>
+</html>

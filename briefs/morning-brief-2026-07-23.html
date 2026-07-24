@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI / Agent 晨间简报 · 2026-07-23</title>
+<style>
+:root{--bg:#fff;--soft:#f6f8fc;--ink:#142033;--muted:#5c6b80;--line:#dce3ee;--blue:#145df5;--green:#087f5b;--amber:#9a6700;--red:#b42318}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}header{padding:38px max(24px,calc((100% - 1180px)/2));background:linear-gradient(135deg,#f4f7ff,#fff);border-bottom:1px solid var(--line)}main{max-width:1180px;margin:auto;padding:22px 24px 72px}h1{font-size:36px;margin:0 0 8px}h2{font-size:24px;margin:36px 0 14px}h3{font-size:18px;margin:22px 0 10px}p{margin:8px 0}a{color:#0b55d4;text-decoration:none}a:hover{text-decoration:underline}.meta,.muted{color:var(--muted)}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.chip,.status{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 9px;background:#fff;font-size:12px}.status.new{color:var(--blue);background:#edf3ff}.status.watch{color:var(--green);background:#eaf8f2}.status.caveat{color:var(--amber);background:#fff7e0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff;box-shadow:0 3px 14px rgba(20,32,51,.045)}.signal{border-left:4px solid var(--blue)}.fact{color:var(--green);font-weight:700}.infer{color:var(--amber);font-weight:700}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid var(--line)}th{background:#f3f6fb;position:sticky;top:0}details{border:1px solid var(--line);border-radius:12px;margin:12px 0;background:#fff}summary{cursor:pointer;padding:13px 15px;font-weight:700}details>div{padding:0 15px 16px}.figure{margin:18px 0;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff}.figure img{display:block;max-width:100%;height:auto;margin:auto}.figure figcaption{font-size:13px;color:var(--muted);margin-top:8px}.callout{background:#f1f6ff;border:1px solid #cbdcff;border-radius:12px;padding:14px}.feedback textarea{width:100%;min-height:90px;border:1px solid var(--line);border-radius:10px;padding:12px;font:inherit}.feedback button{margin-top:8px;border:0;border-radius:8px;padding:8px 14px;background:var(--blue);color:#fff}@media(max-width:760px){.grid{grid-template-columns:1fr}h1{font-size:29px}main{padding-inline:16px}}@media print{header{padding:18px 0}.card,details{break-inside:avoid}body{font-size:12px}button{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="meta">AI / AGENT DECISION BRIEF · 补档</div>
+  <h1>晨间简报</h1>
+  <p>从模型能力、Agent 产品、架构工具与评测方法中提取可复用技术红利。</p>
+  <div class="chips"><span class="chip">2026-07-23</span><span class="chip">补档生成 2026-07-24 10:38 CST</span><span class="chip">内容截止 2026-07-23 10:00 CST</span><span class="chip">GitHub 快照另行标注</span></div>
+</header>
+<main>
+<section>
+<h2>90 秒摘要</h2>
+<div class="grid">
+  <article class="card signal"><span class="status new">评测方法 · 新出现</span><h3>评测器也要随策略进化</h3><p><span class="fact">已证实：</span>DynamicRubric 根据同一提示下的候选响应集动态生成加权二元 rubric，再由冻结 verifier 判定；8B 生成器在多组 evaluator benchmark 上超过更大的静态方法。</p><p><b>差异：</b>不再给每个回答一个固定绝对分，而是针对“当前难以区分的一组回答”寻找可分辨标准。</p><p><b>产品意义：</b>Agent 评测产品应支持版本化 rubric、候选集条件化和判分漂移监控。</p><p><b>建议动作：</b>用你自己的 Agent 失败对生成动态 rubric，与固定 rubric 做盲评一致性比较。</p></article>
+  <article class="card signal"><span class="status new">Agent 产品 · 关键版本</span><h3>Claude Code 把 review 移到后台子 Agent</h3><p><span class="fact">已证实：</span>v2.1.218 将 <code>/code-review</code> 放入后台，补强 MCP 连接错误、workspace trust、session lineage、自动权限分类与无障碍支持。</p><p><b>差异：</b>多 Agent 价值从“更多并发”转向隔离上下文、保留主对话和明确权限边界。</p><p><b>建议动作：</b>评测后台 review 是否遗漏上下文、是否可追溯、以及主 Agent 退出时任务是否完整收敛。</p></article>
+  <article class="card signal"><span class="status watch">领头羊方向 · 持续增强</span><h3>OpenAI 把 Agent 接入科研基础设施</h3><p><span class="fact">官方发布：</span>OpenAI 宣布向约 2,000 名 Genesis 研究人员提供 Codex，配套 API、超算、实验设施和领域评测。</p><p><b>连续性：</b>延续 Claude Science 与 OpenAI 科研 Agent 的路线：竞争单位从模型回答升级为“模型 + 工具 + 数据 + 验证流程”。</p><p><b>机会：</b>垂直领域 Agent 的护城河可能来自可审计工作流与真实实验反馈，而非聊天 UI。</p></article>
+  <article class="card signal"><span class="status caveat">可信度 · 中等</span><h3>论文有生产部署证据，但独立复现缺失</h3><p><span class="fact">作者报告：</span>DynamicRubric 优化模型已服务微信搜索全部线上流量、每日数千万请求，并改善关键指标。</p><p><span class="infer">编辑判断：</span>这是有价值的外部效度信号，但线上指标定义、实验分桶和置信区间未公开，不能仅凭部署规模判定因果强度。</p></article>
+</div>
+</section>
+
+<section>
+<h2>前沿领头羊信号</h2>
+<div class="table-wrap"><table><thead><tr><th>信号</th><th>准确摘要</th><th>为何重要</th><th>建议动作</th></tr></thead><tbody>
+<tr><td><a href="https://openai.com/index/advancing-the-next-era-of-national-science/">OpenAI：Advancing the next era of national science</a><br>2026-07-22 · 官方发布</td><td>提供 Codex、API 支持、早期模型访问，并把模型连接至国家实验室的超算、数据和实验设施。</td><td>强调真实科研环境中的工作流、评测和验证，而不是孤立 benchmark。</td><td>把“外部工具可用性、实验可追溯、人工验证周期”纳入 Agent 产品指标。</td></tr>
+<tr><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.218">Claude Code v2.1.218</a><br>2026-07-23 05:24 CST · 官方开发者更新</td><td>后台 code review、MCP 错误可见性、workspace trust 与 session 恢复增强。</td><td>运行时可靠性与权限治理正在成为 coding agent 的主要产品差异。</td><td>建立后台子 Agent 的退出、权限、上下文一致性回归集。</td></tr>
+<tr><td><a href="https://www.anthropic.com/events">Claude Founder House Paris</a><br>2026-07-22 · 官方活动</td><td>官方活动页预告由产品负责人讨论最新产品更新与开发者路线；公开页面未提供可核验的完整发布清单。</td><td>可作为方向信号，不能当正式产品发布。</td><td>等待 News、release notes 或录像原文后再纳入功能事实。</td></tr>
+<tr><td>关键人物 X</td><td>截止窗口内未找到能同时核验身份、原帖和发布时间的新内容，因此不转述。</td><td>避免把二手截图或 Grok 摘要写成公司立场。</td><td>保持原帖优先规则。</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>四条主线</h2>
+<div class="grid">
+<article class="card"><h3>模型能力进展</h3><p>未发现值得纳入的新基础模型发布。更重要的增量来自 evaluator 能否在候选质量趋近时保留相对分数差。</p></article>
+<article class="card"><h3>Agent 产品进展</h3><p>Claude Code 把 review 后台化并强化 trust、MCP 和恢复流程，说明 Agent 产品正在从单轮能力转向长时运行治理。</p></article>
+<article class="card"><h3>Agent 架构与可复用工具</h3><p>可复用模式：主 Agent 保持用户上下文，审查类工作交给隔离子 Agent；输出必须有可追溯 finding 与退出状态。</p></article>
+<article class="card"><h3>评测方法进展</h3><p>DynamicRubric 提出 response-set-conditioned evaluator。评测产品可将“区分相近候选的能力”作为独立指标，而非只看与人工总分相关性。</p></article>
+</div>
+</section>
+
+<section>
+<h2>今日论文</h2>
+<div class="card">
+<h3>Co-Evolving LLM Evaluators and Policies via DynamicRubric</h3>
+<p class="meta">Beining Wang 等 · 清华大学 / 微信 · v1 2026-07-22，v2 2026-07-23 · <a href="https://arxiv.org/abs/2607.20083">arXiv</a> · <a href="https://arxiv.org/html/2607.20083">HTML</a> · 未发现作者公开代码仓库</p>
+<p><b>此前问题：</b>策略变强后，同一提示的候选回答质量越来越接近，固定 reward model 的相对分差塌缩，策略优化获得弱或错误信号。</p>
+<p><b>研究做法：</b>DR-Generator 针对当前候选集生成带权二元 rubric；冻结的 DR-Verifier 逐项判定，再聚合为回答分数；generator 与 policy 交替更新。</p>
+<p><b>关键结论：</b>作者报告 8B DynamicRubric 在 evaluator、开放生成、数学与代码任务上均有增益，并已部署于微信搜索。</p>
+<p><b>与既有工作差异：</b>静态 rubric 只依赖 prompt，DynamicRubric 同时看 prompt 与当前 response set，优化目标强调候选间可分辨性。</p>
+<p><b>可信度：</b><span class="status watch">中等偏高</span> 多 benchmark、跨 verifier/backbone 与生产部署提供多层证据；但训练和评测主要由作者体系完成，线上指标不透明，无独立复现。</p>
+<p><b>局限：</b>额外 generator/verifier 调用增加训练延迟；冻结 verifier 决定可用监督边界；动态 rubric 可能奖励“容易分割”而非真正重要的质量维度。</p>
+<p><b>待验证：</b>在工具调用轨迹、computer-use 安全行为和长程任务上，动态 rubric 是否仍与人工偏好及真实成功率一致。</p>
+</div>
+<details><summary>展开英文简介与对应中文翻译</summary><div>
+<p><b>English.</b> As policies improve, their sampled responses become harder to distinguish, so static evaluators often produce collapsed or misleading score gaps. DynamicRubric conditions evaluation criteria on the current response set: a trainable generator creates weighted binary rubrics, a frozen verifier applies them, and the resulting scores supervise policy updates. The paper reports stronger evaluator discrimination and policy gains with 8B backbones, including transfer to verifiable reasoning and coding tasks. Its main risks are training overhead, dependence on verifier scope, and the absence of independent replication.</p>
+<p><b>中文。</b> 随着策略能力提升，其采样回答越来越难区分，静态评测器往往产生塌缩或误导性的分差。DynamicRubric 让评测标准依赖当前候选集：可训练生成器产生带权二元 rubric，冻结 verifier 执行判定，聚合分数再监督策略更新。论文报告 8B 骨干下更强的评测区分能力和策略增益，并迁移至可验证推理与代码任务。主要风险是训练开销、对 verifier 能力边界的依赖，以及缺少独立复现。</p>
+</div></details>
+<details><summary>展开论文全部公开图表（4 图 9 表）</summary><div>
+<p class="muted">以下按论文顺序展示，均为 arXiv HTML 原始元素截图；复杂表格未人工转写，避免数值错误。</p>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-23-assets/dynamicrubric-figure-1.png" alt="DynamicRubric Figure 1"><figcaption>图 1：DynamicRubric 总体架构。<a href="https://arxiv.org/html/2607.20083">来源</a></figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-23-assets/dynamicrubric-table-1.png" alt="DynamicRubric Table 1"><figcaption>表 1：pairwise/listwise evaluator benchmark。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-23-assets/dynamicrubric-table-2.png" alt="DynamicRubric Table 2"><figcaption>表 2：开放生成任务的策略表现。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-23-assets/dynamicrubric-figure-2.png" alt="DynamicRubric Figure 2"><figcaption>图 2：evaluator-policy 共同演化效果。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-23-assets/dynamicrubric-table-3.png" alt="DynamicRubric Table 3"><figcaption>表 3：评测器目标消融。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-23-assets/dynamicrubric-figure-3.png" alt="DynamicRubric Figure 3"><figcaption>图 3：可验证任务迁移表现。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-23-assets/dynamicrubric-table-4.png" alt="DynamicRubric Table 4"><figcaption>表 4：训练计算开销。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-23-assets/dynamicrubric-table-5.png" alt="DynamicRubric Table 5"><figcaption>表 5：不同 verifier 的 evaluator 表现。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-23-assets/dynamicrubric-table-6.png" alt="DynamicRubric Table 6"><figcaption>表 6：GPT-4.1 judge 下的开放生成结果。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-23-assets/dynamicrubric-table-7.png" alt="DynamicRubric Table 7"><figcaption>表 7：跨 Llama/Qwen evaluator 结果。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-23-assets/dynamicrubric-table-8.png" alt="DynamicRubric Table 8"><figcaption>表 8：跨骨干策略表现。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-23-assets/dynamicrubric-table-9.png" alt="DynamicRubric Table 9"><figcaption>表 9：案例评分与聚合排序。</figcaption></figure>
+<figure class="figure"><img loading="lazy" src="morning-brief-2026-07-23-assets/dynamicrubric-figure-4.png" alt="DynamicRubric Figure 4"><figcaption>图 4：GPT-4.1 rubric 质量元评测。</figcaption></figure>
+</div></details>
+</section>
+
+<section>
+<h2>GitHub 三日增长项目</h2>
+<div class="callout">本期为补档，无法还原 07-23 当时的实时 Star。以下使用 07-22 11:05 与 07-24 10:05 的约 47 小时可核验代理差分，不冒充严格三日值；排序仅表示关注度变化。</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>仓库</th><th>用途</th><th>07-24 Star</th><th>47h 代理增量</th><th>语言 / 更新</th></tr></thead><tbody>
+<tr><td>1</td><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>coding-agent skills 与开发工作流。</td><td>260,090</td><td>+1,246</td><td>Shell · 07-24</td></tr>
+<tr><td>2</td><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>多渠道 Agent runtime 与委派。</td><td>219,539</td><td>+1,075</td><td>Python · 07-24</td></tr>
+<tr><td>3</td><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>Agent 网页搜索、抓取与结构化数据。</td><td>155,139</td><td>+1,037</td><td>TypeScript · 07-24</td></tr>
+<tr><td>4</td><td><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td>多 coding-agent 配置与 provider 切换。</td><td>120,552</td><td>+719</td><td>Rust · 07-24</td></tr>
+<tr><td>5</td><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>开源 coding agent 与桌面端。</td><td>189,050</td><td>+683</td><td>TypeScript · 07-24</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>GitHub 高 Star 未总结项目</h2>
+<p class="muted">扫描本地全部历史日报，排除其中 119 个 GitHub 仓库链接；从 GitHub Search 的 Agent / coding-agent 候选池筛选，非全站穷举。</p>
+<div class="table-wrap"><table><thead><tr><th>仓库</th><th>Star</th><th>核心能力与价值</th><th>语言 / License</th></tr></thead><tbody>
+<tr><td><a href="https://github.com/Graphify-Labs/graphify">Graphify-Labs/graphify</a></td><td>94,675</td><td>把代码、文档、schema 与配置转为可查询知识图谱；适合测试 Agent 的可解释代码检索。</td><td>Python / Apache-2.0</td></tr>
+<tr><td><a href="https://github.com/nexu-io/open-design">nexu-io/open-design</a></td><td>81,046</td><td>本地优先的 Agent 设计工作台，多 CLI 驱动并输出 HTML/PDF/PPTX/视频。</td><td>TypeScript / Apache-2.0</td></tr>
+<tr><td><a href="https://github.com/ComposioHQ/awesome-claude-skills">ComposioHQ/awesome-claude-skills</a></td><td>69,473</td><td>Claude Skills 资源集合；价值在发现可复用流程，风险是质量与许可不一致。</td><td>Python / 未声明</td></tr>
+<tr><td><a href="https://github.com/Mintplex-Labs/anything-llm">Mintplex-Labs/anything-llm</a></td><td>63,749</td><td>本地优先 Agent/RAG 产品，可用于研究私有部署和多模型体验。</td><td>JavaScript / MIT</td></tr>
+<tr><td><a href="https://github.com/aaif-goose/goose">aaif-goose/goose</a></td><td>51,554</td><td>可扩展本地 Agent，支持安装、执行、编辑和测试；适合对照 provider-neutral runtime。</td><td>Rust / Apache-2.0</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>持续追踪项目</h2>
+<div class="table-wrap"><table><thead><tr><th>对象 / 状态</th><th>变化</th><th>真实可复用性与风险</th></tr></thead><tbody>
+<tr><td>Claude Code · <span class="status new">关键版本</span></td><td>v2.1.218：后台 code review、信任边界和恢复修复。</td><td>适合验证后台审查架构；风险在自动权限分类与上下文隔离。</td></tr>
+<tr><td>Codex · <span class="status watch">持续增长</span></td><td>101,008 Star；最近正式版仍为 0.145.0。</td><td>Apache-2.0；应跟踪多 Agent V2 的并发、记忆与 approval 回归。</td></tr>
+<tr><td>Hermes Agent · <span class="status watch">持续增长</span></td><td>219,539 Star；Quicksilver release 后仍快速增长。</td><td>MIT；需独立复测 TTFT、durable delivery 与智能审批。</td></tr>
+<tr><td>DynamicRubric · <span class="status new">新出现</span></td><td>论文 v2 增加线上模型信息。</td><td>可转化为 evaluator 产品能力；代码未公开，复现成本较高。</td></tr>
+<tr><td>OpenCode · <span class="status watch">持续增长</span></td><td>189,050 Star，最近版 1.18.4。</td><td>多 provider 对照价值高；高频版本需要自动回归矩阵。</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="feedback">
+<h2>个人反馈</h2>
+<p class="muted">你的反馈只保存在当前浏览器，用于后续判断哪些对象值得持续追踪。</p>
+<textarea id="feedback" placeholder="今天最有价值的信号是什么？哪些内容应减少或持续跟踪？"></textarea><button id="saveFeedback">保存反馈</button><span id="saved" class="muted"></span>
+</section>
+
+<section>
+<h2>来源与方法</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2607.20083">DynamicRubric 摘要</a>、<a href="https://arxiv.org/html/2607.20083">论文 HTML</a>；论文 4 图 9 表均已附上。</li>
+<li><a href="https://openai.com/index/advancing-the-next-era-of-national-science/">OpenAI 国家科学计划</a>、<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.218">Claude Code release</a>、<a href="https://www.anthropic.com/events">Anthropic Events</a>。</li>
+<li>GitHub REST API / Search；检索时间 2026-07-24 10:00–10:20 CST。补档限制：Star 不是 07-23 当时快照。</li>
+</ul>
+<h3>GitHub Star 快照</h3>
+<div class="table-wrap"><table><thead><tr><th>仓库</th><th>07-22</th><th>07-24</th><th>约 47h</th></tr></thead><tbody>
+<tr><td>obra/superpowers</td><td>258,844</td><td>260,090</td><td>+1,246</td></tr><tr><td>NousResearch/hermes-agent</td><td>218,464</td><td>219,539</td><td>+1,075</td></tr><tr><td>firecrawl/firecrawl</td><td>154,102</td><td>155,139</td><td>+1,037</td></tr><tr><td>farion1231/cc-switch</td><td>119,833</td><td>120,552</td><td>+719</td></tr><tr><td>anomalyco/opencode</td><td>188,367</td><td>189,050</td><td>+683</td></tr>
+</tbody></table></div>
+<h3>限制与不确定性</h3>
+<ul><li>论文的生产指标、分桶和置信区间未公开；“数千万请求”来自作者陈述。</li><li>动态 rubric 可能提高区分度但不保证偏好正确，也不等同真实 Agent 任务成功。</li><li>高 Star 候选来自搜索候选池，Star 是关注度而非质量。</li><li>本次新增至已总结集合：Graphify-Labs/graphify、nexu-io/open-design、ComposioHQ/awesome-claude-skills、Mintplex-Labs/anything-llm、aaif-goose/goose。</li><li id="publishStatus">归档与 Pages 状态将在本地校验后写回。</li></ul>
+</section>
+</main>
+<script>
+const k="brief-feedback-2026-07-23",t=document.getElementById("feedback"),s=document.getElementById("saved");t.value=localStorage.getItem(k)||"";document.getElementById("saveFeedback").onclick=()=>{localStorage.setItem(k,t.value);s.textContent=" 已保存";setTimeout(()=>s.textContent="",1800)};
+</script>
+</body>
+</html>

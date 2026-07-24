@@ -1,6 +1,182 @@
 {
-  "generatedAt": "2026-07-22T03:09:15.485Z",
+  "generatedAt": "2026-07-24T02:13:17.139Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-24.html",
+      "date": "2026-07-24",
+      "weekday": "周五",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning",
+      "summary": "长程记忆可以先从“完整日志 + 代码检索”开始",
+      "problem": "长程 Agent 的摘要会丢失未来才显得关键的细节；保留全部上下文又昂贵且易受 context rot 影响。",
+      "method": "harness 将每次观察、动作、计划与结果写入结构化日志；Agent 用 shell、正则和 Python 程序按需读取，不使用专用向量数据库或训练过的 memory writer。",
+      "conclusion": "25 个 ARC-AGI-3 公共游戏上，平均提升 18.0pp；最高 76.1% pass@1，4.2–5.8 倍更少 token；Fable 5 达到 97.4% best@2，总成本 1,750 美元。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "新模型可能见过公开 benchmark；best@k 受预算驱动；日志无界增长带来存储、隐私和查询安全问题；没有真实企业长程任务的独立复现。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "模型能力",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方发布",
+        "org": "OpenAI",
+        "title": "Launching Health in ChatGPT 2026-07-23 · 官方发布",
+        "summary": "把权限提示率、拒绝率、误外发与撤销完整性加入产品评测。",
+        "url": "https://openai.com/index/health-in-chatgpt/"
+      },
+      "source": "briefs/morning-brief-2026-07-24.html",
+      "overview": "overviews/morning-brief-2026-07-24.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 1882,
+          "text": "1 obra/superpowers coding-agent skills 与开发工作流。 260,090 +1,882 Shell · 07-24"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1707,
+          "text": "2 NousResearch/hermes-agent 多渠道 Agent runtime、委派与持久交付。 219,539 +1,707 Python · 07-24"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 1543,
+          "text": "3 firecrawl/firecrawl Agent 搜索、抓取和结构化网页数据。 155,139 +1,543 TypeScript · 07-24"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 1225,
+          "text": "4 farion1231/cc-switch 多 coding-agent 配置与 provider 管理。 120,552 +1,225 Rust · 07-24"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 1114,
+          "text": "5 anomalyco/opencode 开源 coding agent 与桌面客户端。 189,050 +1,114 TypeScript · 07-24"
+        },
+        {
+          "repo": "ChromeDevTools/chrome-devtools-mcp",
+          "label": "ChromeDevTools/chrome-devtools-mcp",
+          "value": 47482,
+          "text": "ChromeDevTools/chrome-devtools-mcp 47,482 让 coding agent 使用 Chrome DevTools；适合浏览器调试、性能与可视化验收。 TypeScript / Apache-2.0"
+        },
+        {
+          "repo": "HKUDS/nanobot",
+          "label": "HKUDS/nanobot",
+          "value": 46137,
+          "text": "HKUDS/nanobot 46,137 轻量开源 Agent runtime，面向聊天、工具和工作流；值得评估部署复杂度与扩展边界。 Python / MIT"
+        },
+        {
+          "repo": "agentscope-ai/agentscope",
+          "label": "agentscope-ai/agentscope",
+          "value": 28211,
+          "text": "agentscope-ai/agentscope 28,211 强调可观察、可理解和可信的 Agent 开发运行框架，契合评测与治理产品。 Python / Apache-2.0"
+        }
+      ],
+      "githubRepoCount": 11,
+      "figureCount": 7,
+      "tableCount": 5,
+      "linkCount": 24,
+      "officialStatus": "3 条官方链接/动态",
+      "tags": "2026-07-24 PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning alexisfox7/PRO-LONG obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl farion1231/cc-switch anomalyco/opencode ChromeDevTools/chrome-devtools-mcp HKUDS/nanobot agentscope-ai/agentscope deepset-ai/haystack zai-org/Open-AutoGLM AI Agent benchmark GitHub OpenAI Anthropic 模型能力 architecture model product evaluation  formal 正式简报"
+    },
+    {
+      "fileName": "morning-brief-2026-07-23.html",
+      "date": "2026-07-23",
+      "weekday": "周四",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "Co-Evolving LLM Evaluators and Policies via DynamicRubric",
+      "summary": "评测器也要随策略进化",
+      "problem": "策略变强后，同一提示的候选回答质量越来越接近，固定 reward model 的相对分差塌缩，策略优化获得弱或错误信号。",
+      "method": "DR-Generator 针对当前候选集生成带权二元 rubric；冻结的 DR-Verifier 逐项判定，再聚合为回答分数；generator 与 policy 交替更新。",
+      "conclusion": "作者报告 8B DynamicRubric 在 evaluator、开放生成、数学与代码任务上均有增益，并已部署于微信搜索。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "额外 generator/verifier 调用增加训练延迟；冻结 verifier 决定可用监督边界；动态 rubric 可能奖励“容易分割”而非真正重要的质量维度。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方发布",
+        "org": "OpenAI",
+        "title": "OpenAI：Advancing the next era of national science 2026-07-22 · 官方发布",
+        "summary": "把“外部工具可用性、实验可追溯、人工验证周期”纳入 Agent 产品指标。",
+        "url": "https://openai.com/index/advancing-the-next-era-of-national-science/"
+      },
+      "source": "briefs/morning-brief-2026-07-23.html",
+      "overview": "overviews/morning-brief-2026-07-23.svg",
+      "githubRows": [
+        {
+          "repo": "anthropics/claude-code",
+          "label": "Claude Code v2.1.218 2026-07-23 05:24 CST…",
+          "value": 2.1,
+          "text": "Claude Code v2.1.218 2026-07-23 05:24 CST · 官方开发者更新 后台 code review、MCP 错误可见性、workspace trust 与 session 恢复增强。 运行时可靠性与权限治…"
+        },
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 1246,
+          "text": "1 obra/superpowers coding-agent skills 与开发工作流。 260,090 +1,246 Shell · 07-24"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1075,
+          "text": "2 NousResearch/hermes-agent 多渠道 Agent runtime 与委派。 219,539 +1,075 Python · 07-24"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 1037,
+          "text": "3 firecrawl/firecrawl Agent 网页搜索、抓取与结构化数据。 155,139 +1,037 TypeScript · 07-24"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 719,
+          "text": "4 farion1231/cc-switch 多 coding-agent 配置与 provider 切换。 120,552 +719 Rust · 07-24"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 683,
+          "text": "5 anomalyco/opencode 开源 coding agent 与桌面端。 189,050 +683 TypeScript · 07-24"
+        },
+        {
+          "repo": "Graphify-Labs/graphify",
+          "label": "Graphify-Labs/graphify",
+          "value": 94675,
+          "text": "Graphify-Labs/graphify 94,675 把代码、文档、schema 与配置转为可查询知识图谱；适合测试 Agent 的可解释代码检索。 Python / Apache-2.0"
+        },
+        {
+          "repo": "nexu-io/open-design",
+          "label": "nexu-io/open-design",
+          "value": 81046,
+          "text": "nexu-io/open-design 81,046 本地优先的 Agent 设计工作台，多 CLI 驱动并输出 HTML/PDF/PPTX/视频。 TypeScript / Apache-2.0"
+        }
+      ],
+      "githubRepoCount": 11,
+      "figureCount": 13,
+      "tableCount": 5,
+      "linkCount": 21,
+      "officialStatus": "4 条官方链接/动态",
+      "tags": "2026-07-23 Co-Evolving LLM Evaluators and Policies via DynamicRubric anthropics/claude-code obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl farion1231/cc-switch anomalyco/opencode Graphify-Labs/graphify nexu-io/open-design ComposioHQ/awesome-claude-skills Mintplex-Labs/anything-llm aaif-goose/goose AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-22.html",
       "date": "2026-07-22",

@@ -1,0 +1,218 @@
+[
+  {
+    "index": 0,
+    "type": "figure",
+    "number": "1",
+    "caption": "Overview of the interactive requirement clarification setting of ICAE-Bench. Given an ambiguous requirement, vibe coding resolves missing design decisions through dialogue between a human and a coding agent. Our benchmark simulates this process with a user agent that answers clarification questions and guides the coding agent toward a complete, testable specification, which is then used to build a working repository.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-figure-1.png"
+  },
+  {
+    "index": 1,
+    "type": "table",
+    "number": "I",
+    "caption": "Comparison with representative from-scratch or repository-level coding benchmarks.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-I.png"
+  },
+  {
+    "index": 2,
+    "type": "figure",
+    "number": "2",
+    "caption": "ICAE-Bench framework. A task begins with a fuzzy PRD and an ultimate image rather than a complete implementation contract. The coding agent can develop, execute, debug, and ask the User Agent for clarifications. Final repositories are evaluated using source-based Native and Enhanced black-box cases; the Public subset is also reported as a visibility-based view.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-figure-2.png"
+  },
+  {
+    "index": 3,
+    "type": "table",
+    "number": "II",
+    "caption": "Roles of task components in ICAE-Bench.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-II.png"
+  },
+  {
+    "index": 4,
+    "type": "table",
+    "number": "III",
+    "caption": "Overview of the ICAE-Bench construction and evaluation pipeline.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-III.png"
+  },
+  {
+    "index": 5,
+    "type": "figure",
+    "number": "3",
+    "caption": "Initial-requirement hierarchy. Information available before interaction increases from Fuzzy L1 to GroundPRD, while the behavioral target remains fixed.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-figure-3.png"
+  },
+  {
+    "index": 6,
+    "type": "table",
+    "number": "IV",
+    "caption": "Language-specific execution environment images used for benchmark packaging.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-IV.png"
+  },
+  {
+    "index": 7,
+    "type": "table",
+    "number": "V",
+    "caption": "Dataset statistics. Token lengths are computed over task documents and User Agent Data.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-V.png"
+  },
+  {
+    "index": 8,
+    "type": "figure",
+    "number": "4",
+    "caption": "Task category distribution in ICAE-Bench (total=480).",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-figure-4.png"
+  },
+  {
+    "index": 9,
+    "type": "figure",
+    "number": "5",
+    "caption": "Task golden-code LOC distribution in ICAE-Bench (total=480).",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-figure-5.png"
+  },
+  {
+    "index": 10,
+    "type": "table",
+    "number": "VI",
+    "caption": "Main results on the full ICAE-Bench split using Claude Code. Values are percentages; File and LOC are generated-to-golden ratios and may exceed 100.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-VI.png"
+  },
+  {
+    "index": 11,
+    "type": "table",
+    "number": "VII",
+    "caption": "Main results on ICAE-Bench-Lite using Claude Code. Values are percentages; File and LOC are generated-to-golden ratios and may exceed 100.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-VII.png"
+  },
+  {
+    "index": 12,
+    "type": "table",
+    "number": "VIII",
+    "caption": "Per-language overall pass rate on the full ICAE-Bench split.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-VIII.png"
+  },
+  {
+    "index": 13,
+    "type": "figure",
+    "number": "6",
+    "caption": "Overall pass rate across PRD ambiguity settings on ICAE-Bench-Lite. Fuzzy L2 restores a subset of the ambiguity points hidden in L1; Fuzzy L3 preserves more of GroundPRD through limited deletion and light ambiguity-oriented rewriting.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-figure-6.png"
+  },
+  {
+    "index": 14,
+    "type": "figure",
+    "number": "7",
+    "caption": "Requirement-token comparison on ICAE-Bench-Lite. User Agent Data is accessible only through interaction.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-figure-7.png"
+  },
+  {
+    "index": 15,
+    "type": "figure",
+    "number": "8",
+    "caption": "Distribution of ambiguity categories across Fuzzy L1–L3 in ICAE-Bench.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-figure-8.png"
+  },
+  {
+    "index": 16,
+    "type": "figure",
+    "number": "9",
+    "caption": "Evaluator-visible outcomes on full ICAE-Bench main runs. Failure modes are not mutually exclusive.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-figure-9.png"
+  },
+  {
+    "index": 17,
+    "type": "table",
+    "number": "IX",
+    "caption": "Effect of placing Public case files in the workspace for GLM-5.1 think-8k on ICAE-Bench-Lite. w/ includes the files; w/o (default) omits them while retaining interaction-based access to the same case content.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-IX.png"
+  },
+  {
+    "index": 18,
+    "type": "table",
+    "number": "X",
+    "caption": "Agent-framework comparison on ICAE-Bench-Lite.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-X.png"
+  },
+  {
+    "index": 19,
+    "type": "table",
+    "number": "XI",
+    "caption": "User Agent backbone ablation on ICAE-Bench-Lite with GLM-5.1.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-XI.png"
+  },
+  {
+    "index": 20,
+    "type": "figure",
+    "number": "10",
+    "caption": "Interaction-budget ablation on ICAE-Bench-Lite with GLM-5.1 think-8k.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-figure-10.png"
+  },
+  {
+    "index": 21,
+    "type": "table",
+    "number": "XII",
+    "caption": "Thinking-mode ablation for Gemini-3.1-Pro on ICAE-Bench-Lite.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-XII.png"
+  },
+  {
+    "index": 22,
+    "type": "table",
+    "number": "XIII",
+    "caption": "GLM-5.1 adaptive vs. think-8k on ICAE-Bench-Lite.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-XIII.png"
+  },
+  {
+    "index": 23,
+    "type": "table",
+    "number": "XIV",
+    "caption": "Execution-environment comparison for GLM-5.1 think-8k on ICAE-Bench-Lite.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-XIV.png"
+  },
+  {
+    "index": 24,
+    "type": "table",
+    "number": "XV",
+    "caption": "Cross-language Overall pass rates for GLM-5.1 on ICAE-Bench.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-XV.png"
+  },
+  {
+    "index": 25,
+    "type": "table",
+    "number": "XVI",
+    "caption": "Human validation of critic-based metrics on 200 repositories.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-table-XVI.png"
+  },
+  {
+    "index": 26,
+    "type": "figure",
+    "number": "11",
+    "caption": "Runtime and token usage for main Claude Code runs on ICAE-Bench and ICAE-Bench-Lite. Token counts are mean thousands of recorded tokens per repository; lines connect the same model across splits.",
+    "selector": "figcaption.ltx_caption",
+    "file": "icae-figure-11.png"
+  }
+]

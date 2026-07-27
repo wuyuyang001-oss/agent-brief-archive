@@ -1,0 +1,50 @@
+[
+  {
+    "index": 0,
+    "type": "table",
+    "number": "1",
+    "caption": "2 Two tiers, and why the second must be harness-owned",
+    "selector": "figure.ltx_table",
+    "file": "delivery-table-1.png"
+  },
+  {
+    "index": 1,
+    "type": "table",
+    "number": "2",
+    "caption": "Arms (9 pilot runs + 3 native-channel runs, all graded):",
+    "selector": "figure.ltx_table",
+    "file": "delivery-table-2.png"
+  },
+  {
+    "index": 2,
+    "type": "table",
+    "number": "3",
+    "caption": "Count-based metrics separate the arms more cleanly than wall-clock, which carries API-latency and agent-path noise:",
+    "selector": "figure.ltx_table",
+    "file": "delivery-table-3.png"
+  },
+  {
+    "index": 3,
+    "type": "table",
+    "number": "4",
+    "caption": "Five of the six pooled runs ran with an empty store, so this table prices the platform (semantic-search tools plus guidance), not memory delivery; it bounds the tool-surface effect and nothing in this paper’s memory argument rests on it. The memory measurement is the knowledge-held-constant comparison (same seeds):",
+    "selector": "figure.ltx_table",
+    "file": "delivery-table-4.png"
+  },
+  {
+    "index": 4,
+    "type": "table",
+    "number": "5",
+    "caption": "Arms. N runs with no memory tier. M runs the identical workload with the ten facts seeded as one-line notes in the working-memory store, re-injected by the session-start / prompt-submit hooks at every compact-resume.",
+    "selector": "figure.ltx_table",
+    "file": "delivery-table-5.png"
+  },
+  {
+    "index": 5,
+    "type": "figure",
+    "number": "1",
+    "caption": "survival regimes. Every summary is all-or-nothing (0/10 or 10/10 fact tokens; no strict subset ever occurred in either arm):",
+    "selector": "figure.ltx_table",
+    "file": "delivery-figure-1.png"
+  }
+]

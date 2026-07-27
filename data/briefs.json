@@ -1,6 +1,270 @@
 {
-  "generatedAt": "2026-07-24T02:15:18.970Z",
+  "generatedAt": "2026-07-27T03:35:37.277Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-27.html",
+      "date": "2026-07-27",
+      "weekday": "周一",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "Tencent WorkBuddy Bench: A Multi-Domain Coding-Agent Benchmark with Contamination-Resistant Task Construction",
+      "summary": "Runtime 正在成为被测能力：将真实 commit、PR 与业务场景反向改写成不可直接搜索的口语化角色请求；260 tasks 覆盖 Code 80、Web 70、Office 50、Security 60，在 CodeBuddy Code 与 Claude Code 双 harness 中三次运行并开…",
+      "problem": "帮助 Agent 产品与评测产品捕捉技术红利，而不是堆叠资讯。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-07-27.html",
+      "overview": "overviews/morning-brief-2026-07-27.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 1539,
+          "text": "1 obra/superpowers An agentic skills framework & software development methodology that works. 261,629 +1,539 Shell 2026…"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1438,
+          "text": "2 NousResearch/hermes-agent The agent that grows with you 220,977 +1,438 Python 2026-07-27T02:46:40Z"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 1367,
+          "text": "3 firecrawl/firecrawl The API to search, scrape, and interact with the web at scale. 🔥 156,506 +1,367 TypeScript 2026-…"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 916,
+          "text": "4 anomalyco/opencode The open source coding agent. 189,966 +916 TypeScript 2026-07-27T02:45:26Z"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 872,
+          "text": "5 farion1231/cc-switch A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok B…"
+        },
+        {
+          "repo": "mindsdb/mindshub",
+          "label": "mindsdb/mindshub",
+          "value": 39498,
+          "text": "1 mindsdb/mindshub 39,498 Make AI do actual work. Swap the model anytime — keep everything you've built. 可复用边界清晰，值得做最小试…"
+        },
+        {
+          "repo": "vercel-labs/agent-browser",
+          "label": "vercel-labs/agent-browser",
+          "value": 39271,
+          "text": "2 vercel-labs/agent-browser 39,271 Browser automation CLI for AI agents 可复用边界清晰，值得做最小试用 Rust 2026-07-27T02:45:09Z"
+        },
+        {
+          "repo": "AstrBotDevs/AstrBot",
+          "label": "AstrBotDevs/AstrBot",
+          "value": 38145,
+          "text": "3 AstrBotDevs/AstrBot 38,145 AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plu…"
+        }
+      ],
+      "githubRepoCount": 11,
+      "figureCount": 17,
+      "tableCount": 5,
+      "linkCount": 41,
+      "officialStatus": "2 条官方链接/动态",
+      "tags": "2026-07-27 Tencent WorkBuddy Bench: A Multi-Domain Coding-Agent Benchmark with Contamination-Resistant Task Construction obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch mindsdb/mindshub vercel-labs/agent-browser AstrBotDevs/AstrBot DeusData/codebase-memory-mcp OpenBMB/ChatDev anthropics/claude-code AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+    },
+    {
+      "fileName": "morning-brief-2026-07-26.html",
+      "date": "2026-07-26",
+      "weekday": "周日",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "ICAE-Bench: Evaluating Coding Agents as Interactive Project Builders",
+      "summary": "Runtime 正在成为被测能力：从可执行开源仓库反向构造 480 个、12 种语言的模糊需求；自动 User Agent 只能依据 Grounded User Agent Data 回答；用黑盒测试和语义、API、结构、设计、交互指标联合诊断。",
+      "problem": "帮助 Agent 产品与评测产品捕捉技术红利，而不是堆叠资讯。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-07-26.html",
+      "overview": "overviews/morning-brief-2026-07-26.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 1539,
+          "text": "1 obra/superpowers An agentic skills framework & software development methodology that works. 261,629 +1,539 Shell 2026…"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1438,
+          "text": "2 NousResearch/hermes-agent The agent that grows with you 220,977 +1,438 Python 2026-07-27T02:46:40Z"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 1367,
+          "text": "3 firecrawl/firecrawl The API to search, scrape, and interact with the web at scale. 🔥 156,506 +1,367 TypeScript 2026-…"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 916,
+          "text": "4 anomalyco/opencode The open source coding agent. 189,966 +916 TypeScript 2026-07-27T02:45:26Z"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 872,
+          "text": "5 farion1231/cc-switch A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok B…"
+        },
+        {
+          "repo": "HKUDS/CLI-Anything",
+          "label": "HKUDS/CLI-Anything",
+          "value": 46123,
+          "text": "1 HKUDS/CLI-Anything 46,123 \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/ 可复用边界清…"
+        },
+        {
+          "repo": "sickn33/agentic-awesome-skills",
+          "label": "sickn33/agentic-awesome-skills",
+          "value": 43968,
+          "text": "2 sickn33/agentic-awesome-skills 43,968 AAS Core is the local, agent-first control plane for complete catalog discovery…"
+        },
+        {
+          "repo": "kepano/obsidian-skills",
+          "label": "kepano/obsidian-skills",
+          "value": 43393,
+          "text": "3 kepano/obsidian-skills 43,393 Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats includ…"
+        }
+      ],
+      "githubRepoCount": 12,
+      "figureCount": 27,
+      "tableCount": 5,
+      "linkCount": 52,
+      "officialStatus": "2 条官方链接/动态",
+      "tags": "2026-07-26 ICAE-Bench: Evaluating Coding Agents as Interactive Project Builders ALEX-nlp/ICAE-EVAL obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch HKUDS/CLI-Anything sickn33/agentic-awesome-skills kepano/obsidian-skills calesthio/OpenMontage danny-avila/LibreChat anthropics/claude-code AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+    },
+    {
+      "fileName": "morning-brief-2026-07-25.html",
+      "date": "2026-07-25",
+      "weekday": "周六",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "Delivery, Not Storage: Cue-Anchored Working Memory as a Harness Property for Coding Agents",
+      "summary": "Runtime 正在成为被测能力：把记忆触发器做成 harness 的确定性能力：每条记忆绑定 path、symbol、semantic、event、temporal 等 cue，由运行时判断并主动注入。",
+      "problem": "帮助 Agent 产品与评测产品捕捉技术红利，而不是堆叠资讯。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "Agent 产品",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-07-25.html",
+      "overview": "overviews/morning-brief-2026-07-25.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 1539,
+          "text": "1 obra/superpowers An agentic skills framework & software development methodology that works. 261,629 +1,539 Shell 2026…"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1438,
+          "text": "2 NousResearch/hermes-agent The agent that grows with you 220,977 +1,438 Python 2026-07-27T02:46:40Z"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 1367,
+          "text": "3 firecrawl/firecrawl The API to search, scrape, and interact with the web at scale. 🔥 156,506 +1,367 TypeScript 2026-…"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 916,
+          "text": "4 anomalyco/opencode The open source coding agent. 189,966 +916 TypeScript 2026-07-27T02:45:26Z"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 872,
+          "text": "5 farion1231/cc-switch A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok B…"
+        },
+        {
+          "repo": "lobehub/lobehub",
+          "label": "lobehub/lobehub",
+          "value": 80834,
+          "text": "1 lobehub/lobehub 80,834 🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring…"
+        },
+        {
+          "repo": "colbymchenry/codegraph",
+          "label": "colbymchenry/codegraph",
+          "value": 62605,
+          "text": "2 colbymchenry/codegraph 62,605 Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, G…"
+        },
+        {
+          "repo": "upstash/context7",
+          "label": "upstash/context7",
+          "value": 59799,
+          "text": "3 upstash/context7 59,799 Context7 Platform -- Up-to-date code documentation for LLMs and AI code editors 补齐运行时、工具或交互层能…"
+        }
+      ],
+      "githubRepoCount": 11,
+      "figureCount": 6,
+      "tableCount": 6,
+      "linkCount": 31,
+      "officialStatus": "2 条官方链接/动态",
+      "tags": "2026-07-25 Delivery, Not Storage: Cue-Anchored Working Memory as a Harness Property for Coding Agents anthropics/claude-code obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch lobehub/lobehub colbymchenry/codegraph upstash/context7 zylon-ai/private-gpt huginn/huginn AI Agent benchmark GitHub OpenAI Anthropic Agent 产品 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-24.html",
       "date": "2026-07-24",

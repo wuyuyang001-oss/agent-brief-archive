@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-07-27T03:38:34.775Z",
+  "generatedAt": "2026-07-28T02:11:10.230Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-28.html",
+      "date": "2026-07-28",
+      "weekday": "周二",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning",
+      "summary": "跨岗位任务是 Agent 产品机会：OpenAI 对 80 万余条美国用户消息的分析显示，工作相关消息中 16.8% 涉及其他职业的任务；小型工作区跨岗比例更高。",
+      "problem": "面向 Agent 产品与评测产品：发现可复用技术红利，支持产品判断与创业机会筛选。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "Agent 架构与工具",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-07-28.html",
+      "overview": "overviews/morning-brief-2026-07-28.svg",
+      "githubRows": [
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 555,
+          "text": "1 firecrawl/firecrawl The API to search, scrape, and interact with the web at scale. 🔥 157,061 +555 TypeScript 2026-07…"
+        },
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 529,
+          "text": "2 obra/superpowers An agentic skills framework & software development methodology that works. 262,158 +529 Shell 2026-0…"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 467,
+          "text": "3 NousResearch/hermes-agent The agent that grows with you 221,444 +467 Python 2026-07-28T02:03:43Z"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 312,
+          "text": "4 farion1231/cc-switch A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok B…"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 293,
+          "text": "5 anomalyco/opencode The open source coding agent. 190,259 +293 TypeScript 2026-07-28T01:57:11Z"
+        },
+        {
+          "repo": "CherryHQ/cherry-studio",
+          "label": "CherryHQ/cherry-studio",
+          "value": 49053,
+          "text": "1 CherryHQ/cherry-studio 49,053 AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified…"
+        },
+        {
+          "repo": "microsoft/qlib",
+          "label": "microsoft/qlib",
+          "value": 46731,
+          "text": "2 microsoft/qlib 46,731 Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Rese…"
+        },
+        {
+          "repo": "heygen-com/hyperframes",
+          "label": "heygen-com/hyperframes",
+          "value": 38109,
+          "text": "3 heygen-com/hyperframes 38,109 Write HTML. Render video. Built for agents. HTML 到视频的可编程渲染面天然适合 Agent 生成、复核与迭代内容。 TypeS…"
+        }
+      ],
+      "githubRepoCount": 17,
+      "figureCount": 5,
+      "tableCount": 5,
+      "linkCount": 55,
+      "officialStatus": "3 条官方链接/动态",
+      "tags": "2026-07-28 Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning anthropics/claude-code NVIDIA-NeMo/labs-molt firecrawl/firecrawl obra/superpowers NousResearch/hermes-agent farion1231/cc-switch anomalyco/opencode CherryHQ/cherry-studio microsoft/qlib microsoft/RD-Agent heygen-com/hyperframes PostHog/posthog anthropics/claude-plugins-official openai/codex anthropics/skills browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-27.html",
       "date": "2026-07-27",

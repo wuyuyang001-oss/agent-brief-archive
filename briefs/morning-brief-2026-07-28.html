@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-07-28 AI / Agent 晨间简报</title>
+<style>
+:root{--ink:#172033;--muted:#5e6878;--line:#d8e0e9;--soft:#f6f8fb;--blue:#175cd3;--green:#067647;--amber:#b54708}
+*{box-sizing:border-box}html{background:#fff}body{margin:0;background:#fff;color:var(--ink);font:15px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+main{max-width:1180px;margin:auto;padding:28px 22px 72px}header{border:1px solid var(--line);border-top:6px solid var(--blue);padding:28px;border-radius:14px;background:linear-gradient(135deg,#fff,#f7faff)}
+h1{font-size:38px;line-height:1.14;margin:.18em 0}h2{font-size:25px;margin:42px 0 16px;padding-bottom:8px;border-bottom:2px solid #e8edf3}h3{line-height:1.35}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.meta,.method,.muted{color:var(--muted)}.chips{display:flex;gap:8px;flex-wrap:wrap}.chip,.state{display:inline-block;border:1px solid #b8cff7;background:#eef4ff;color:#174ea6;border-radius:999px;padding:3px 9px;font-size:12px}
+.summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.signal,.card,.callout,details{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px}.signal{box-shadow:0 6px 22px rgba(16,36,64,.05)}
+.signal-top{display:flex;justify-content:space-between;gap:12px}.signal h3{margin:0}.signal dl{display:grid;grid-template-columns:132px 1fr;gap:6px 12px}.signal dt{font-weight:700;color:#344054}.signal dd{margin:0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}.card h3{margin-top:8px}.callout{background:#f7fbff;border-left:5px solid var(--blue)}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px}table{width:100%;border-collapse:collapse;min-width:850px}th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#edf3f9;color:#24344d}tr:nth-child(even) td{background:#fafbfd}.up{color:var(--green);font-weight:700}
+details{margin:14px 0}summary{cursor:pointer;font-weight:700;color:#174ea6}figure{margin:20px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}figure img{display:block;width:100%;height:auto;max-height:900px;object-fit:contain;background:#fff}figcaption{padding:10px 14px;color:var(--muted);background:#fafbfd}
+.feedback textarea{width:100%;min-height:120px;padding:12px;border:1px solid var(--line);border-radius:8px}.feedback button{margin-top:8px;padding:9px 16px;border:0;border-radius:8px;background:var(--blue);color:#fff}.source-list li{margin:6px 0}
+@media(max-width:800px){.summary,.grid,.grid.four{grid-template-columns:1fr}.signal dl{grid-template-columns:1fr}.signal dt{margin-top:6px}h1{font-size:30px}main{padding:15px 12px 50px}}
+@media print{body{font-size:11pt}main{max-width:none;padding:0}details:not([open])>*:not(summary){display:block}.feedback{display:none}a{color:#000}}
+</style>
+</head>
+<body><main>
+<header><div class="meta">AI / AGENT DECISION BRIEF</div><h1>晨间简报</h1><p>面向 Agent 产品与评测产品：发现可复用技术红利，支持产品判断与创业机会筛选。</p><div class="chips"><span class="chip">2026-07-28</span><span class="chip">生成：2026-07-28 10:20 CST</span><span class="chip">信息截止：2026-07-28 10:10 CST</span><span class="chip">白底 · 可打印</span></div></header>
+
+<section><h2>90 秒摘要</h2><div class="summary">
+<article class="signal"><div class="signal-top"><h3>跨岗位任务是 Agent 产品机会</h3><span class="state">证据增强</span></div><dl>
+    <dt>核心结论</dt><dd>OpenAI 对 80 万余条美国用户消息的分析显示，工作相关消息中 16.8% 涉及其他职业的任务；小型工作区跨岗比例更高。</dd>
+    <dt>证据 / 可信度</dt><dd>OpenAI 官方观察性研究，样本大但不是因果生产率实验；分类、抽样和隐私处理限制外推。</dd>
+    <dt>与既有工作的差异</dt><dd>从“单岗位自动化”转向识别跨角色交接与低频专家任务，尤其适合资源有限的小团队。</dd>
+    <dt>产品 / 评测意义</dt><dd>产品入口可围绕交接、审批、证据引用和结果复核，而不是只做通用聊天。</dd>
+    <dt>建议动作</dt><dd>从一个真实跨岗流程做任务分解，记录交接次数、返工率、人工复核时间与错误成本。</dd>
+  </dl></article>
+<article class="signal"><div class="signal-top"><h3>Molt 把可读性变成 Agent RL 基础设施能力</h3><span class="state">新出现</span></div><dl>
+    <dt>核心结论</dt><dd>Molt 用普通 Python Agent、vLLM、FSDP2/NeMo AutoModel 与 Ray 异步队列组成一条 token-exact 训练链，并显式维护 token、策略版本和 forward 一致性。</dd>
+    <dt>证据 / 可信度</dt><dd>架构与代码开放，可信度较高；性能证据仅 3 次独立运行，且关键基准因 MoE forward 不一致未执行有效策略更新。</dd>
+    <dt>与既有工作的差异</dt><dd>目标不是新 RL 算法，而是让人和 Coding Agent 都能理解、修改与审计训练系统。</dd>
+    <dt>产品 / 评测意义</dt><dd>训练与评测产品应把 token 身份、behavior logprob、策略版本、路由与奖励谱系做成一等遥测。</dd>
+    <dt>建议动作</dt><dd>先复用其一致性 gate 设计，在现有 Agent 训练流水线加入 batch 拒绝与可追溯错误报告。</dd>
+  </dl></article>
+<article class="signal"><div class="signal-top"><h3>GitHub 增长只能使用约 24 小时代理</h3><span class="state">口径修正</span></div><dl>
+    <dt>核心结论</dt><dd>当前可验证代理增长前三为 firecrawl +555、superpowers +529、hermes-agent +467 Star。</dd>
+    <dt>证据 / 可信度</dt><dd>当前 API 快照减 7/27 本地快照；7/25 日报是后补文件，不是当时采集，不能据此构造严格三日增量。</dd>
+    <dt>与既有工作的差异</dt><dd>把数据缺口显式留空，优先保证趋势可复算，而不是维持看似完整的三日榜。</dd>
+    <dt>产品 / 评测意义</dt><dd>Star 只用于筛选试用优先级；代码活跃、license、部署难度和任务成功率决定真实复用价值。</dd>
+    <dt>建议动作</dt><dd>保持每日同时间快照；满 72 小时后恢复严格窗口，并对增长与 release/commit 活跃度做交叉判断。</dd>
+  </dl></article>
+<article class="signal"><div class="signal-top"><h3>吞吐 parity 不是 Agent RL 收敛 parity</h3><span class="state">证据边界</span></div><dl>
+    <dt>核心结论</dt><dd>Molt 报告 119.4±2.3 秒/step，slime 为 109.5±10.3 秒/step；但论文明确说明该基准未完成有效 policy update。</dd>
+    <dt>证据 / 可信度</dt><dd>论文表 2–3 与限制段落；均值差约 9%，落在跨运行方差范围，但训练后质量与稳定性没有被证明。</dd>
+    <dt>与既有工作的差异</dt><dd>把 token/forward 一致性视为性能结果的前置有效性条件，而不是事后脚注。</dd>
+    <dt>产品 / 评测意义</dt><dd>Agent RL 评测必须同时报告更新是否生效、KL/奖励曲线、策略版本、收敛质量与 wall-clock。</dd>
+    <dt>建议动作</dt><dd>建立“两阶段门”：先过一致性与有效更新 gate，再纳入吞吐和质量排名。</dd>
+  </dl></article>
+</div></section>
+
+<section><h2>前沿领头羊信号</h2><div class="grid">
+<article class="card"><span class="state">官方发布</span><h3>OpenAI：How AI is expanding what people do at work</h3><p><strong>发布：</strong>2026-07-27 · <a href="https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/">官方原文</a></p><p>对超过 80 万条美国 ChatGPT 用户消息的分析显示：16.8% 的工作相关消息、43.5% 的职业特定消息涉及另一职业关联任务。剔除通用工作后，客服、设计、HR、法律与营销的跨岗比例尤其高；2–5 人工作区为 18.9%，百人以上工作区为 16.3%。</p><p><strong>为何重要：</strong>官方关注从“是否使用 AI”深入到“工作边界如何重组”。与其近期企业工作流叙事连续，但仍是使用行为研究，不是任务正确率或生产率因果证据。</p><p><strong>建议：</strong>评测跨岗 Agent 时加入责任移交、专业边界、引用完整性和人工复核成本。</p></article>
+<article class="card"><span class="state">官方核验</span><h3>Anthropic 与 Claude Code</h3><p>自上一份简报截止后，未发现 Anthropic 新的官方技术博客、研究文章或 System Card。Claude Code 最新可核验版本仍为 <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.220">v2.1.220</a>（2026-07-25），只声明错误修复与可靠性改进。</p><p><strong>判断：</strong>这是维护状态，不足以推断新的能力边界。</p></article>
+<article class="card"><span class="state">个人公开判断</span><h3>未发现可核验新增</h3><p>本窗口未找到能够同时回到原始 X 帖、确认人物身份、发布时间与完整上下文的新内容，因此不转述二手聚合，也不把个人观点写成公司正式立场。</p></article>
+</div></section>
+
+<section><h2>四条主线</h2><div class="grid four">
+<article class="card"><h3>模型能力进展</h3><p>未发现值得单列的新模型能力发布。今日增量在训练基础设施：Molt 证明了 token-exact、策略版本与 forward 一致性应先于吞吐比较。</p></article>
+<article class="card"><h3>Agent 产品进展</h3><p>跨岗位任务边界正在松动。机会不只是替代某岗位，而是管理跨角色交接、低频专业任务与证据复核。</p></article>
+<article class="card"><h3>Agent 架构与可复用工具</h3><p>Molt 将 Agent、rollout、policy actor 和异步队列压缩为可理解的主循环；<a href="https://github.com/NVIDIA-NeMo/labs-molt">NVIDIA-NeMo/labs-molt</a> 当前 678 Star，Apache-2.0。</p></article>
+<article class="card"><h3>评测方法进展</h3><p>新增重点是有效性 gate：更新未生效时，吞吐只能作为系统性能记录，不能支持训练质量结论。</p></article>
+</div></section>
+
+<section><h2>今日论文</h2>
+<h3>Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning</h3>
+<p><strong>作者：</strong>Jian Hu, Huiying Li, Hao Zhang, Binfeng Xu, Yifan Zhang, Shaokun Zhang, Hemil Desai, Michael Demoret, Pavlo Molchanov, Jan Kautz, Yi Dong<br>
+<strong>发布日期：</strong>2026-07-22<br>
+<strong>链接：</strong><a href="https://arxiv.org/abs/2607.21653">arXiv</a> · <a href="https://arxiv.org/html/2607.21653">官方 HTML</a> · <a href="https://github.com/NVIDIA-NeMo/labs-molt">代码仓库</a></p>
+<p class="method">选择原因：上次截止后没有发现相关性与可验证性更高的新论文；该文虽于 7 月 22 日发布，但近期获得新的社区可见度，且开放代码、直接回答 Agent RL runtime 可修改性与一致性问题，因此选为今日最重要补充。</p>
+<div class="table-wrap"><table><tbody>
+<tr><th>此前遇到的问题</th><td>Agentic RL 框架的 trainer、并行后端、rollout 与胶水层高度耦合；改动会穿透整个栈，而且 token、策略版本或 forward 语义不一致时，训练可能在“看起来运行”的状态下失效。</td></tr>
+<tr><th>研究做法</th><td>以 PyTorch-native、可读性优先的代码组织三个组件和一个异步循环：普通 Python Agent、路由后的 vLLM rollout engines、FSDP2 policy actor，以及 Ray 异步队列。框架显式维护 token identity、policy-version semantics 与 forward consistency。</td></tr>
+<tr><th>关键结论</th><td>同一主循环支持多模态与 MoE，并从 4B dense 扩展到 700B MoE。匹配协议下，Molt 为 119.4±2.3 秒/step，slime 为 109.5±10.3 秒/step，作者认为吞吐统计上相近。</td></tr>
+<tr><th>与既有工作的差异</th><td>没有提出新 RL objective，而是用更小、可审计、适合人和 Coding Agent 修改的实现，把 rollout 到训练的 token 精确性与策略版本语义放在架构中心。</td></tr>
+<tr><th>可信度</th><td>架构透明度高：代码、recipe 与容器公开。性能/收敛可信度为中低：仅 3 次独立运行，训练 backend 与 rollout engine 仍有残余差异，关键基准因分布式 MoE forward 不一致而没有执行有效 policy update。</td></tr>
+<tr><th>局限</th><td>吞吐不能证明训练后质量或收敛 parity；多版本 serving、资源弹性、最优规划与用户可用性不在范围内；尚无独立复现。</td></tr>
+<tr><th>后续进展 / 待验证</th><td>修复并独立复现 MoE forward 一致性后，必须报告有效更新、奖励/KL 曲线、收敛质量、成本与故障恢复；还需验证“适合 Coding Agent 修改”的主张是否降低真实开发时间与回归率。</td></tr>
+</tbody></table></div>
+<details><summary>展开英文简介与逐段中文翻译</summary>
+<h3>English overview</h3><p lang="en">Molt is a PyTorch-native framework for agentic reinforcement learning designed around readability, token-exact data flow, and explicit policy-version semantics. It composes ordinary Python agents, vLLM rollout engines, a FSDP2 policy actor built with NeMo AutoModel, and a Ray asynchronous queue into one training loop. The same architecture supports multimodal and mixture-of-experts models and scales from 4B dense models to 700B MoE models.</p>
+<p lang="en">The paper reports statistically comparable step-time throughput to a recommended slime/Megatron configuration under a matched workload. That result must be interpreted narrowly: a distributed-MoE forward mismatch caused the benchmark batch to be rejected by Molt's consistency gate, so the measurements characterize system throughput without an effective policy update. The work therefore provides strong architectural transparency but not yet convergence or final-policy parity.</p>
+<h3>对应中文翻译</h3><p>Molt 是一个 PyTorch-native 的 Agentic RL 框架，围绕可读性、token 精确数据流与显式策略版本语义设计。它把普通 Python Agent、vLLM rollout engine、由 NeMo AutoModel 构建的 FSDP2 policy actor，以及 Ray 异步队列组合为一个训练循环。同一架构支持多模态与混合专家模型，并可从 4B dense 扩展到 700B MoE。</p>
+<p>论文在匹配工作负载下报告了与推荐 slime/Megatron 配置统计上相近的 step-time 吞吐。但该结果必须窄化解读：分布式 MoE forward 不一致触发了 Molt 的一致性 gate，基准 batch 被拒绝，因此测量描述的是没有有效策略更新时的系统吞吐。该工作提供了较强的架构透明度，但尚未证明收敛或最终策略质量相当。</p>
+</details>
+<details><summary>展开论文全部公开图表（1 图 / 4 表）</summary><figure>
+    <img loading="lazy" decoding="async" src="morning-brief-2026-07-28-assets/molt-figure-1.png" alt="figure 1: The whole system: three components and one loop. Molt composes user agents in plain Python, vLLM rollout engines behind a request router, and a single FSDP2 policy actor on NeMo AutoModel around one Ray asynchronous queue that implements the streaming pool and partial rollout. Trajectories flow token-exactly from the engines through the queue into training, and weight refit returns over NCCL directly to the engines, bypassing the request router.">
+    <figcaption><strong>图 1</strong>：The whole system: three components and one loop. Molt composes user agents in plain Python, vLLM rollout engines behind a request router, and a single FSDP2 policy actor on NeMo AutoModel around one Ray asynchronous queue that implements the streaming pool and partial rollout. Trajectories flow token-exactly from the engines through the queue into training, and weight refit returns over NCCL directly to the engines, bypassing the request router. · <a href="https://arxiv.org/html/2607.21653">论文原始 HTML</a></figcaption>
+  </figure><figure>
+    <img loading="lazy" decoding="async" src="morning-brief-2026-07-28-assets/molt-table-1.png" alt="table 1: Framework comparison: the lean point in the design space. Molt trains with FSDP2/EP/CP on NVIDIA AutoModel; slime’s FSDP backend is experimental; Molt and OpenRLHF orchestrate vLLM under Ray. 1RL code counts every Python file used by the RL entry path, trainer, rollout, orchestration, experience/advantage/loss, and imported model/utility/parallelism code, excluding pure SFT/DPO trainers, reward-model training, vendored code, tests, examples, and docs; counts trace the import graph from each RL entry point. Measured at verl 86e8123, slime 243773c, OpenRLHF b3d2927 (2026-06-16); Molt 2026-07-07. LOC measures implementation footprint, not usability or correctness.">
+    <figcaption><strong>表 1</strong>：Framework comparison: the lean point in the design space. Molt trains with FSDP2/EP/CP on NVIDIA AutoModel; slime’s FSDP backend is experimental; Molt and OpenRLHF orchestrate vLLM under Ray. 1RL code counts every Python file used by the RL entry path, trainer, rollout, orchestration, experience/advantage/loss, and imported model/utility/parallelism code, excluding pure SFT/DPO trainers, reward-model training, vendored code, tests, examples, and docs; counts trace the import graph from each RL entry point. Measured at verl 86e8123, slime 243773c, OpenRLHF b3d2927 (2026-06-16); Molt 2026-07-07. LOC measures implementation footprint, not usability or correctness. · <a href="https://arxiv.org/html/2607.21653">论文原始 HTML</a></figcaption>
+  </figure><figure>
+    <img loading="lazy" decoding="async" src="morning-brief-2026-07-28-assets/molt-table-2.png" alt="table 2: Head-to-head benchmark protocol. Shared settings are pinned identically; the differing rows are the training backend with its parallelism layout and the rollout engine. Each stack runs its recommended training layout for this model and context length: Molt its native FSDP2 data-parallel layout (context parallelism targets longer contexts), slime its native Megatron-Core 30B recipe. Every configuration is measured over three independent runs.">
+    <figcaption><strong>表 2</strong>：Head-to-head benchmark protocol. Shared settings are pinned identically; the differing rows are the training backend with its parallelism layout and the rollout engine. Each stack runs its recommended training layout for this model and context length: Molt its native FSDP2 data-parallel layout (context parallelism targets longer contexts), slime its native Megatron-Core 30B recipe. Every configuration is measured over three independent runs. · <a href="https://arxiv.org/html/2607.21653">论文原始 HTML</a></figcaption>
+  </figure><figure>
+    <img loading="lazy" decoding="async" src="morning-brief-2026-07-28-assets/molt-table-3.png" alt="table 3: Throughput parity under the matched protocol (Tab.˜2). Step: mean ±\pm standard deviation of steady-state wall time per optimizer step over three independent runs per configuration (per-run means over optimizer steps 2–10; prompt order is identical across runs, sampled responses vary). Neither stack loads a reference model. Tok/GPU/s: generated tokens per GPU-second on the common workload basis of approximately 880K tokens per step, i.e., 880​K880\mathrm{K} / mean step time / 16 GPUs.">
+    <figcaption><strong>表 3</strong>：Throughput parity under the matched protocol (Tab.˜2). Step: mean ±\pm standard deviation of steady-state wall time per optimizer step over three independent runs per configuration (per-run means over optimizer steps 2–10; prompt order is identical across runs, sampled responses vary). Neither stack loads a reference model. Tok/GPU/s: generated tokens per GPU-second on the common workload basis of approximately 880K tokens per step, i.e., 880​K880\mathrm{K} / mean step time / 16 GPUs. · <a href="https://arxiv.org/html/2607.21653">论文原始 HTML</a></figcaption>
+  </figure><figure>
+    <img loading="lazy" decoding="async" src="morning-brief-2026-07-28-assets/molt-table-4.png" alt="table 4: Molt scaling knobs. Actor-side parallelism composes with FSDP2 sharding; the vLLM side mirrors it per engine.">
+    <figcaption><strong>表 4</strong>：Molt scaling knobs. Actor-side parallelism composes with FSDP2 sharding; the vLLM side mirrors it per engine. · <a href="https://arxiv.org/html/2607.21653">论文原始 HTML</a></figcaption>
+  </figure><p class="method">已按论文顺序附上 arXiv HTML 中全部 5 个公开图表容器，均为页面渲染截图，未人工重排数值；没有未附上的公开图表。复杂内容以 <a href="https://arxiv.org/html/2607.21653">原论文</a> 为准。</p></details>
+</section>
+
+<section><h2>GitHub 三日增长项目</h2>
+<div class="callout"><strong>数据口径：</strong>今天无法形成严格三日榜。7 月 25 日日报是在 7 月 27 日回补，不能视为约 72 小时前的同步采集。下表使用 2026-07-27 10:46 CST → 2026-07-28 10:03 CST 的约 23 小时 17 分代理窗口，按当前值减历史快照排序；不把代理值伪装成三日新增。</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>仓库</th><th>用途</th><th>当前 Star</th><th>代理新增</th><th>语言</th><th>更新时间 UTC</th></tr></thead><tbody><tr><td>1</td><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>The API to search, scrape, and interact with the web at scale. 🔥</td><td>157,061</td><td class="up">+555</td><td>TypeScript</td><td>2026-07-28T02:03:40Z</td></tr><tr><td>2</td><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>An agentic skills framework &amp; software development methodology that works.</td><td>262,158</td><td class="up">+529</td><td>Shell</td><td>2026-07-28T02:01:41Z</td></tr><tr><td>3</td><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>The agent that grows with you</td><td>221,444</td><td class="up">+467</td><td>Python</td><td>2026-07-28T02:03:43Z</td></tr><tr><td>4</td><td><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td>A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok Build &amp; Hermes Agent. Only official website: ccswitch.io</td><td>121,736</td><td class="up">+312</td><td>Rust</td><td>2026-07-28T02:03:17Z</td></tr><tr><td>5</td><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>The open source coding agent.</td><td>190,259</td><td class="up">+293</td><td>TypeScript</td><td>2026-07-28T01:57:11Z</td></tr></tbody></table></div>
+</section>
+
+<section><h2>GitHub 高 Star 未总结项目</h2>
+<p class="method">查询 2026-07-28 10:03–10:06 CST；扫描当前线程与工作区全部历史日报，建立 173 个仓库的排除集合。候选范围限于 Agent 产品、运行时、评测、MCP、技能与可复用工具链，排除泛 AI 资料、模型训练库和仅因描述含 “agent” 的无关项目；在相关候选中按当前总 Star 降序。</p>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>仓库</th><th>Star</th><th>核心能力</th><th>为什么值得关注</th><th>语言</th><th>更新时间 UTC</th></tr></thead><tbody><tr><td>1</td><td><a href="https://github.com/CherryHQ/cherry-studio">CherryHQ/cherry-studio</a></td><td>49,053</td><td>AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs</td><td>多模型、Agent 与大量预设助手集中在桌面工作台，适合观察消费级 Agent 入口；AGPL 边界需先审查。</td><td>TypeScript</td><td>2026-07-28T02:02:24Z</td></tr><tr><td>2</td><td><a href="https://github.com/microsoft/qlib">microsoft/qlib</a></td><td>46,731</td><td>Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&amp;D process.</td><td>把研究想法、建模与生产连接起来，并接入 RD-Agent，适合作为垂直 Agent 研发闭环案例。</td><td>Python</td><td>2026-07-28T01:28:36Z</td></tr><tr><td>3</td><td><a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a></td><td>38,109</td><td>Write HTML. Render video. Built for agents.</td><td>HTML 到视频的可编程渲染面天然适合 Agent 生成、复核与迭代内容。</td><td>TypeScript</td><td>2026-07-28T02:06:29Z</td></tr><tr><td>4</td><td><a href="https://github.com/PostHog/posthog">PostHog/posthog</a></td><td>37,345</td><td>:hedgehog: PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more – capture all the context agents need to diagnose problems, uncover opportunities, and ship fixes. Steer it all from Slack, web, desktop, or the MCP.</td><td>观测、实验、日志、回放与 MCP 同处产品分析层，可用于 Agent 产品的闭环诊断。</td><td>Python</td><td>2026-07-28T01:58:05Z</td></tr><tr><td>5</td><td><a href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a></td><td>32,760</td><td>Official, Anthropic-managed directory of high quality Claude Code Plugins.</td><td>官方管理的 Claude Code 插件目录，是技能分发、权限和生态采用的重要观察面。</td><td>Python</td><td>2026-07-28T02:03:32Z</td></tr></tbody></table></div>
+</section>
+
+<section><h2>持续追踪项目</h2>
+<p class="method">Star 是关注度，不是质量。状态同时参考代理增长、最近代码推送、license 与可复用风险。</p>
+<div class="table-wrap"><table><thead><tr><th>项目</th><th>状态</th><th>关注度变化</th><th>License</th><th>最近推送 UTC</th><th>可复用性 / 风险</th></tr></thead><tbody><tr><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td><span class="state">持续增长</span></td><td class="up">+529 / 约 24h</td><td>MIT</td><td>2026-07-24T21:21:36Z</td><td>关注度强，但代码最近推送仍是 7/24；不能把 Star 增长解释成新版本。</td></tr><tr><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td><span class="state">加速</span></td><td class="up">+467 / 约 24h</td><td>MIT</td><td>2026-07-28T02:03:33Z</td><td>当日仍有代码推送；真实采用需检查 issue 质量、安装成本和任务成功率。</td></tr><tr><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td><span class="state">加速</span></td><td class="up">+555 / 约 24h</td><td>AGPL-3.0</td><td>2026-07-27T23:53:48Z</td><td>Web 数据能力适合 Agent，但 AGPL 与托管边界是产品集成前置条件。</td></tr><tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td><span class="state">持续增长</span></td><td class="up">+293 / 约 24h</td><td>MIT</td><td>2026-07-28T02:02:24Z</td><td>活跃推送；应对同一代码任务比较权限、回滚、成本和成功率。</td></tr><tr><td><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td><span class="state">持续增长</span></td><td class="up">+312 / 约 24h</td><td>MIT</td><td>2026-07-27T15:09:37Z</td><td>统一多 Coding Agent 入口有价值，需评估凭据存储与供应链风险。</td></tr><tr><td><a href="https://github.com/openai/codex">openai/codex</a></td><td><span class="state">持续增长</span></td><td class="up">+221 / 约 24h</td><td>Apache-2.0</td><td>2026-07-28T01:19:40Z</td><td>官方 coding agent 运行时活跃；跟踪版本、沙箱和审批策略变化。</td></tr><tr><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td><span class="state">持续增长</span></td><td class="up">+241 / 约 24h</td><td>NOASSERTION</td><td>2026-07-24T20:12:36Z</td><td>技能协议关注度高，但近几日没有新推送；关注规范稳定性而非 Star。</td></tr><tr><td><a href="https://github.com/browser-use/browser-use">browser-use/browser-use</a></td><td><span class="state">持续增长</span></td><td class="up">+110 / 约 24h</td><td>MIT</td><td>2026-07-27T17:25:46Z</td><td>浏览器自动化持续活跃；重点测网页漂移、登录态和误操作恢复。</td></tr><tr><td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td><td><span class="state">稳定增长</span></td><td class="up">+119 / 约 24h</td><td>NOASSERTION</td><td>2026-07-25T01:35:55Z</td><td>最新 v2.1.220 只声明修复与可靠性改进，尚无能力边界新证据。</td></tr><tr><td><a href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a></td><td><span class="state">持续增长</span></td><td class="up">+66 / 约 24h</td><td>MIT</td><td>2026-07-27T23:56:05Z</td><td>长时 Agent harness 活跃；需验证沙箱、记忆与子 Agent 的真实复用成本。</td></tr></tbody></table></div>
+</section>
+
+<section class="feedback"><h2>个人反馈</h2><p class="muted">反馈仅保存在当前浏览器，用于积累“持续追踪 / 不再关注 / 已试用结果”。</p><textarea id="feedback" placeholder="哪条结论影响了产品判断？准备试用什么？结果如何？"></textarea><button id="saveFeedback">保存反馈</button><span id="saved" class="muted"></span></section>
+
+<section><h2>来源与方法</h2><ul class="source-list">
+<li>论文：<a href="https://arxiv.org/abs/2607.21653">Molt arXiv 摘要</a>、<a href="https://arxiv.org/html/2607.21653">arXiv HTML</a>、<a href="https://github.com/NVIDIA-NeMo/labs-molt">官方代码仓库</a>。</li>
+<li>OpenAI 官方：<a href="https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/">How AI is expanding what people do at work</a>；发布状态只以官方页面判定。</li>
+<li>Anthropic 官方：<a href="https://www.anthropic.com/news">Anthropic News</a>、<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.220">Claude Code v2.1.220</a>。</li>
+<li>GitHub 数据：<a href="https://api.github.com/">GitHub REST API</a>；查询 2026-07-28 10:03–10:06 CST，历史代理基线来自 2026-07-27 本地日报。</li>
+<li>人物观点仅在能回到原始帖子、确认身份、时间与上下文时纳入；本期没有满足条件的新增。</li>
+<li>数据限制：GitHub Search 不是全站穷举；7 月 25 日没有同时间历史快照，因此增长榜仅提供约 24 小时代理；Star 不代表采用、质量或安全。OpenAI 工作研究是观察性使用数据，不能直接证明生产率因果关系。</li>
+<li>论文限制：Molt 的关键吞吐基准未发生有效 policy update；本简报不把吞吐 parity 解释为收敛或最终模型质量 parity。</li>
+<li>本次新增至“已总结仓库集合”：<code>CherryHQ/cherry-studio</code>、<code>microsoft/qlib</code>、<code>heygen-com/hyperframes</code>、<code>PostHog/posthog</code>、<code>anthropics/claude-plugins-official</code>。</li>
+<li id="publishStatus">发布状态待归档脚本与 GitHub Pages 最终校验后更新。</li>
+</ul>
+<h3>GitHub Star 快照（本次候选与持续追踪）</h3><div class="table-wrap"><table><thead><tr><th>仓库</th><th>当前 Star</th><th>语言</th><th>License</th><th>更新时间 UTC</th></tr></thead><tbody><tr><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>262,158</td><td>Shell</td><td>MIT</td><td>2026-07-28T02:01:41Z</td></tr><tr><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>221,444</td><td>Python</td><td>MIT</td><td>2026-07-28T02:03:43Z</td></tr><tr><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>157,061</td><td>TypeScript</td><td>AGPL-3.0</td><td>2026-07-28T02:03:40Z</td></tr><tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>190,259</td><td>TypeScript</td><td>MIT</td><td>2026-07-28T01:57:11Z</td></tr><tr><td><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td>121,736</td><td>Rust</td><td>MIT</td><td>2026-07-28T02:03:17Z</td></tr><tr><td><a href="https://github.com/openai/codex">openai/codex</a></td><td>101,897</td><td>Rust</td><td>Apache-2.0</td><td>2026-07-28T01:54:43Z</td></tr><tr><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td>164,604</td><td>Python</td><td>NOASSERTION</td><td>2026-07-28T02:02:57Z</td></tr><tr><td><a href="https://github.com/browser-use/browser-use">browser-use/browser-use</a></td><td>107,034</td><td>Python</td><td>MIT</td><td>2026-07-28T02:03:44Z</td></tr><tr><td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td><td>139,333</td><td>Python</td><td>NOASSERTION</td><td>2026-07-28T01:59:55Z</td></tr><tr><td><a href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a></td><td>77,984</td><td>Python</td><td>MIT</td><td>2026-07-28T01:56:37Z</td></tr><tr><td><a href="https://github.com/CherryHQ/cherry-studio">CherryHQ/cherry-studio</a></td><td>49,053</td><td>TypeScript</td><td>AGPL-3.0</td><td>2026-07-28T02:02:24Z</td></tr><tr><td><a href="https://github.com/microsoft/qlib">microsoft/qlib</a></td><td>46,731</td><td>Python</td><td>MIT</td><td>2026-07-28T01:28:36Z</td></tr><tr><td><a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a></td><td>38,109</td><td>TypeScript</td><td>Apache-2.0</td><td>2026-07-28T02:06:29Z</td></tr><tr><td><a href="https://github.com/PostHog/posthog">PostHog/posthog</a></td><td>37,345</td><td>Python</td><td>NOASSERTION</td><td>2026-07-28T01:58:05Z</td></tr><tr><td><a href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a></td><td>32,760</td><td>Python</td><td>Apache-2.0</td><td>2026-07-28T02:03:32Z</td></tr><tr><td><a href="https://github.com/NVIDIA-NeMo/labs-molt">NVIDIA-NeMo/labs-molt</a></td><td>678</td><td>Python</td><td>Apache-2.0</td><td>2026-07-28T01:10:20Z</td></tr></tbody></table></div>
+</section>
+</main>
+<script>const key="agent-brief-feedback-2026-07-28",box=document.getElementById("feedback"),saved=document.getElementById("saved");box.value=localStorage.getItem(key)||"";document.getElementById("saveFeedback").onclick=()=>{localStorage.setItem(key,box.value);saved.textContent=" 已保存";setTimeout(()=>saved.textContent="",1800)};</script>
+</body></html>

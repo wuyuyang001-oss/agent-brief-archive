@@ -1,0 +1,42 @@
+[
+  {
+    "index": 0,
+    "type": "figure",
+    "number": "1",
+    "caption": "The whole system: three components and one loop. Molt composes user agents in plain Python, vLLM rollout engines behind a request router, and a single FSDP2 policy actor on NeMo AutoModel around one Ray asynchronous queue that implements the streaming pool and partial rollout. Trajectories flow token-exactly from the engines through the queue into training, and weight refit returns over NCCL directly to the engines, bypassing the request router.",
+    "selector": "figcaption.ltx_caption",
+    "file": "molt-figure-1.png"
+  },
+  {
+    "index": 1,
+    "type": "table",
+    "number": "1",
+    "caption": "Framework comparison: the lean point in the design space. Molt trains with FSDP2/EP/CP on NVIDIA AutoModel; slime’s FSDP backend is experimental; Molt and OpenRLHF orchestrate vLLM under Ray. 1RL code counts every Python file used by the RL entry path, trainer, rollout, orchestration, experience/advantage/loss, and imported model/utility/parallelism code, excluding pure SFT/DPO trainers, reward-model training, vendored code, tests, examples, and docs; counts trace the import graph from each RL entry point. Measured at verl 86e8123, slime 243773c, OpenRLHF b3d2927 (2026-06-16); Molt 2026-07-07. LOC measures implementation footprint, not usability or correctness.",
+    "selector": "figcaption.ltx_caption",
+    "file": "molt-table-1.png"
+  },
+  {
+    "index": 2,
+    "type": "table",
+    "number": "2",
+    "caption": "Head-to-head benchmark protocol. Shared settings are pinned identically; the differing rows are the training backend with its parallelism layout and the rollout engine. Each stack runs its recommended training layout for this model and context length: Molt its native FSDP2 data-parallel layout (context parallelism targets longer contexts), slime its native Megatron-Core 30B recipe. Every configuration is measured over three independent runs.",
+    "selector": "figcaption.ltx_caption",
+    "file": "molt-table-2.png"
+  },
+  {
+    "index": 3,
+    "type": "table",
+    "number": "3",
+    "caption": "Throughput parity under the matched protocol (Tab.˜2). Step: mean ±\\pm standard deviation of steady-state wall time per optimizer step over three independent runs per configuration (per-run means over optimizer steps 2–10; prompt order is identical across runs, sampled responses vary). Neither stack loads a reference model. Tok/GPU/s: generated tokens per GPU-second on the common workload basis of approximately 880K tokens per step, i.e., 880​K880\\mathrm{K} / mean step time / 16 GPUs.",
+    "selector": "figcaption.ltx_caption",
+    "file": "molt-table-3.png"
+  },
+  {
+    "index": 4,
+    "type": "table",
+    "number": "4",
+    "caption": "Molt scaling knobs. Actor-side parallelism composes with FSDP2 sharding; the vLLM side mirrors it per engine.",
+    "selector": "figcaption.ltx_caption",
+    "file": "molt-table-4.png"
+  }
+]

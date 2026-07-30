@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-07-28T03:17:44.170Z",
+  "generatedAt": "2026-07-30T02:08:33.802Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-30.html",
+      "date": "2026-07-30",
+      "weekday": "周四",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "HANDBOOK.md: A Benchmark for Long-Context Agentic Instruction Following",
+      "summary": "长政策放进上下文，不等于政策会约束 Agent：HANDBOOK.md 的最佳配置在 65 个长政策任务上严格通过率仅 36.2%，多数前沿配置低于 25%。",
+      "problem": "面向 Agent 产品与评测产品：发现可复用技术红利，支持产品判断与创业机会筛选。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-07-30.html",
+      "overview": "overviews/morning-brief-2026-07-30.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 1168,
+          "text": "1 obra/superpowers An agentic skills framework & software development methodology that works. 263,326 +1,168 Shell 2026…"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 929,
+          "text": "2 NousResearch/hermes-agent The agent that grows with you 222,373 +929 Python 2026-07-30T02:02:12Z"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 868,
+          "text": "3 firecrawl/firecrawl The API to search, scrape, and interact with the web at scale. 🔥 157,929 +868 TypeScript 2026-07…"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 678,
+          "text": "4 anomalyco/opencode The open source coding agent. 190,937 +678 TypeScript 2026-07-30T01:58:23Z"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 559,
+          "text": "5 farion1231/cc-switch A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok B…"
+        },
+        {
+          "repo": "CopilotKit/CopilotKit",
+          "label": "CopilotKit/CopilotKit",
+          "value": 36360,
+          "text": "1 CopilotKit/CopilotKit 36,360 The Frontend Stack for Agents & Generative UI. React, Angular, Mobile, Slack, and more. …"
+        },
+        {
+          "repo": "github/github-mcp-server",
+          "label": "github/github-mcp-server",
+          "value": 31835,
+          "text": "2 github/github-mcp-server 31,835 GitHub's official MCP Server GitHub 官方 MCP，覆盖代码、issue 与协作对象；权限最小化和写操作审计值得重点验证。 Go 202…"
+        },
+        {
+          "repo": "mastra-ai/mastra",
+          "label": "mastra-ai/mastra",
+          "value": 26711,
+          "text": "3 mastra-ai/mastra 26,711 Mastra is the modern TypeScript framework for AI-powered applications and agents. TypeScript …"
+        }
+      ],
+      "githubRepoCount": 16,
+      "figureCount": 8,
+      "tableCount": 5,
+      "linkCount": 57,
+      "officialStatus": "2 条官方链接/动态",
+      "tags": "2026-07-30 HANDBOOK.md: A Benchmark for Long-Context Agentic Instruction Following surge-ai/handbook obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch CopilotKit/CopilotKit github/github-mcp-server mastra-ai/mastra letta-ai/letta trycua/cua openai/codex anthropics/skills browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-28.html",
       "date": "2026-07-28",

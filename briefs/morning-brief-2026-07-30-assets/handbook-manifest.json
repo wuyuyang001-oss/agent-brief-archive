@@ -1,0 +1,66 @@
+[
+  {
+    "index": 0,
+    "type": "table",
+    "number": "1",
+    "caption": "Dataset composition. Handbook format counts the primary policy document per task; page counts are measured on the source PDF where the handbook is a PDF and on a rendered PDF otherwise; token counts use the o200k_base tokenizer over extracted text. IB denotes the share of Incorrect-Behavior criteria.",
+    "selector": "figcaption.ltx_caption",
+    "file": "handbook-table-1.png"
+  },
+  {
+    "index": 1,
+    "type": "figure",
+    "number": "1",
+    "caption": "Dataset statistics across the 65 tasks: (a) handbook length in pages; (b) rubric criteria per task; (c) rubric criteria by domain, split into Expected-Output and Incorrect-Behavior types.",
+    "selector": "figcaption.ltx_caption",
+    "file": "handbook-figure-1.png"
+  },
+  {
+    "index": 2,
+    "type": "table",
+    "number": "2",
+    "caption": "Strict pass@1 on HANDBOOK.md (65 tasks, 4 trials per task, July 2026 leaderboard). A trial passes only if every rubric criterion passes. Equal scores share a rank.",
+    "selector": "figcaption.ltx_caption",
+    "file": "handbook-table-2.png"
+  },
+  {
+    "index": 3,
+    "type": "figure",
+    "number": "2",
+    "caption": "Strict pass@1 against (a) mean cost per trial and (b) mean output tokens per trial, for the twenty configurations in the June 2026 release evaluation. Dashed lines trace the Pareto frontier. Cost and token values are per-trial means over all trials of a configuration.",
+    "selector": "figcaption.ltx_caption",
+    "file": "handbook-figure-2.png"
+  },
+  {
+    "index": 4,
+    "type": "figure",
+    "number": "3",
+    "caption": "Strict pass@1 (circles) versus pass@1 (N−1N{-}1) (diamonds), which tolerates one failed criterion per trial; June 2026 release configurations.",
+    "selector": "figcaption.ltx_caption",
+    "file": "handbook-figure-3.png"
+  },
+  {
+    "index": 5,
+    "type": "table",
+    "number": "3",
+    "caption": "Rubric for the example task. The Incorrect-Behavior criteria jointly pin the environment: the only admissible state change is the addition of exactly the three required calendar events.",
+    "selector": "figcaption.ltx_caption",
+    "file": "handbook-table-3.png"
+  },
+  {
+    "index": 6,
+    "type": "table",
+    "number": "4",
+    "caption": "The uniform per-task tool surface. Services are seeded from JSON fixtures and persist all state changes for grading.",
+    "selector": "figcaption.ltx_caption",
+    "file": "handbook-table-4.png"
+  },
+  {
+    "index": 7,
+    "type": "table",
+    "number": "5",
+    "caption": "Per-task summary. Pages are measured on the source PDF or a rendered PDF; tokens (thousands, o200k_base) cover the primary handbook. EO/IB: Expected-Output / Incorrect-Behavior criteria. Services: M=mail, S=Slack, C=calendar, J=Jira, Sh=Shopify.",
+    "selector": "figcaption.ltx_caption",
+    "file": "handbook-table-5.png"
+  }
+]

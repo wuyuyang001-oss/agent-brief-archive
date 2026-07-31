@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-07-30T02:09:21.100Z",
+  "generatedAt": "2026-07-31T03:17:45.641Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-07-31.html",
+      "date": "2026-07-31",
+      "weekday": "周五",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "Messier: A High-Resolution Corpus for Cross-Benchmark Agent Evaluation",
+      "summary": "跨 benchmark 的评测数据层本身就是技术红利：Messier 把 30 个 benchmark 的 957,253 次 trial 统一到 model、scaffold、environment、task、verifier 与 aggregation rule 六类实体，可直接支持跨榜单能力分析。",
+      "problem": "面向 Agent 产品与评测产品：识别可复用技术红利，支持产品判断、知识积累与创业机会筛选。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-07-31.html",
+      "overview": "overviews/morning-brief-2026-07-31.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 670,
+          "text": "1 obra/superpowers An agentic skills framework & software development methodology that works. 263,996 +670 Shell 2026-0…"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 549,
+          "text": "2 NousResearch/hermes-agent The agent that grows with you 222,922 +549 Python 2026-07-31T02:23:30Z"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 461,
+          "text": "3 firecrawl/firecrawl The API to search, scrape, and interact with the web at scale. 🔥 158,390 +461 TypeScript 2026-07…"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 346,
+          "text": "4 anomalyco/opencode The open source coding agent. 191,283 +346 TypeScript 2026-07-31T02:20:16Z"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 301,
+          "text": "5 farion1231/cc-switch A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok B…"
+        },
+        {
+          "repo": "googleworkspace/cli",
+          "label": "googleworkspace/cli",
+          "value": 30082,
+          "text": "1 googleworkspace/cli 30,082 Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Cha…"
+        },
+        {
+          "repo": "alibaba/page-agent",
+          "label": "alibaba/page-agent",
+          "value": 28258,
+          "text": "2 alibaba/page-agent 28,258 JavaScript in-page GUI agent. Control web interfaces with natural language. 把自然语言 GUI 控制嵌入网…"
+        },
+        {
+          "repo": "PrefectHQ/fastmcp",
+          "label": "PrefectHQ/fastmcp",
+          "value": 26978,
+          "text": "3 PrefectHQ/fastmcp 26,978 🚀 The fast, Pythonic way to build MCP servers and clients. Python MCP server/client 基础库，适合快…"
+        }
+      ],
+      "githubRepoCount": 15,
+      "figureCount": 9,
+      "tableCount": 5,
+      "linkCount": 58,
+      "officialStatus": "2 条官方链接/动态",
+      "tags": "2026-07-31 Messier: A High-Resolution Corpus for Cross-Benchmark Agent Evaluation obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch googleworkspace/cli alibaba/page-agent PrefectHQ/fastmcp activepieces/activepieces screenpipe/screenpipe openai/codex anthropics/skills browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-30.html",
       "date": "2026-07-30",

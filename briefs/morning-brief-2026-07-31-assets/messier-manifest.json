@@ -1,0 +1,74 @@
+[
+  {
+    "index": 0,
+    "type": "table",
+    "number": "1",
+    "caption": "Comparison with related collections of LLM evaluation data. Counts are as reported by each resource at release; ∼\\sim denotes approximate values inferred from paper. N/A means the information is not reported or applicable.",
+    "selector": "figcaption.ltx_caption",
+    "file": "messier-table-1.png"
+  },
+  {
+    "index": 1,
+    "type": "table",
+    "number": "2",
+    "caption": "Messier per-benchmark summary. Rows grouped by benchmark group (§4); verifier and aggregation taxonomies defined in §3. The Verifiers column counts per-criterion rows for multi-verifier tasks and the task itself otherwise. Outcomes counts per-trial scoring events, with one entry per criterion for multi-verifier tasks. HarveyAI-Lab, MedAgentBench, DABStep, QCircuitBench, ReplicationBench, and ScienceAgentBench were collected via Harbor under a uniform five-agent OpenHands grid. Total agents is the union across benchmarks.",
+    "selector": "figcaption.ltx_caption",
+    "file": "messier-table-2.png"
+  },
+  {
+    "index": 2,
+    "type": "figure",
+    "number": "1",
+    "caption": "Composition and frontier analysis. Panels summarize the corpus across the dimensions defined in §3: (a) tasks by benchmark group, (b) action space, (c) environment state, (d) aggregation rule, and (e) verifier type. Counts in (b)–(e) are on a log scale. Panel (f) tracks frontier pass rate by release quarter and benchmark group, with dumbbell markers connecting each group’s first and final observed quarter.",
+    "selector": "figcaption.ltx_caption",
+    "file": "messier-figure-1.png"
+  },
+  {
+    "index": 3,
+    "type": "figure",
+    "number": "2",
+    "caption": "Capability orderings from Messier vs. Epoch’s ECI. Each panel plots Messier-fit per-agent θ\\theta (logit scale) against Epoch’s published ECI for the matched subset, with Spearman ρ\\rho, 95% bootstrap CI over 1000 resamples, pairwise concordance, and matched-agent count. The General panel uses Epoch’s overall ECI (n=75n=75); Coding uses SWE-ECI (n=59n=59); Math uses Math-ECI (n=63n=63). A 1PL fit on Messier alone aligns with Epoch’s orderings without any new evaluation campaign.",
+    "selector": "figcaption.ltx_caption",
+    "file": "messier-figure-2.png"
+  },
+  {
+    "index": 4,
+    "type": "table",
+    "number": "3",
+    "caption": "Counterfactual aggregation on benchmarks with per-criterion outcomes. We rescore the same trials under three alternative rules: all-pass (the official rule), soft (mean fraction of criteria passed), and ≥50%\\geq 50\\% (majority pass). Near-pass is the fraction of trials that fail all-pass but pass at least 80%80\\% of criteria. The last column reports the Spearman rank correlation across agents between their mean all-pass and mean soft scores: ρ=1\\rho=1 would mean the two rules preserve agent ordering; lower values indicate the rules reorder agents.",
+    "selector": "figcaption.ltx_caption",
+    "file": "messier-table-3.png"
+  },
+  {
+    "index": 5,
+    "type": "table",
+    "number": "4",
+    "caption": "Difficulty prediction across two targets and two input configurations. Targets: raw IRT difficulty β\\beta and within-benchmark zz-scored β\\beta. Inputs: task = raw instruction text; all = concatenation of task, environment, and action descriptions plus gold answer. The baseline predicts the training-fold benchmark mean. Entries report Spearman ρ\\rho under 5-fold cross-validation, mean ±\\pm std across folds. N=10,406N=10{,}406 tasks.",
+    "selector": "figcaption.ltx_caption",
+    "file": "messier-table-4.png"
+  },
+  {
+    "index": 6,
+    "type": "table",
+    "number": "5",
+    "caption": "Per-benchmark sources and upstream license/access status. Group ordering follows Table 2. aux. marks secondary releases used to cross-reference or fill per-task gaps under normalized identifiers. The license/status column reports the terms identified for the cited upstream source; it does not define the license of Messier as a whole. Our original Messier code, schema, mappings, and derived records are released under MIT, without overriding upstream licenses or access conditions. †MIT with author requests to avoid publishing unprotected solutions or including tasks in LLM training data. ‡HLE is tagged MIT on Hugging Face but is gated and asks users not to publicly share, re-upload, or distribute the dataset; we therefore redistribute only derived pass/fail outcomes. §The cited Hugging Face trajectory release is gated and no explicit HF license tag was identified; underlying benchmark projects may have separate licenses, but we do not treat those as relicensing the trajectory release.",
+    "selector": "figcaption.ltx_caption",
+    "file": "messier-table-5.png"
+  },
+  {
+    "index": 7,
+    "type": "figure",
+    "number": "3",
+    "caption": "Entity-relationship view of Messier. An agent is the composition of a model and a scaffold. A task specifies one or more verifiers v1,…,vNv_{1},\\ldots,v_{N}. A trial is one execution of an agent on a task; each verifier produces an outcome vi​(τ)∈{0,1}v_{i}(\\tau)\\in\\{0,1\\}, and the aggregation rule ff combines these into the trial score SS.",
+    "selector": "figcaption.ltx_caption",
+    "file": "messier-figure-3.png"
+  },
+  {
+    "index": 8,
+    "type": "figure",
+    "number": "4",
+    "caption": "Distributions of fitted IRT 1PL agent ability θ\\theta and task difficulty β\\beta across the full Messier corpus.",
+    "selector": "figcaption.ltx_caption",
+    "file": "messier-figure-4.png"
+  }
+]

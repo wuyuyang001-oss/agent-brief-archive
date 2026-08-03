@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-07-31T03:23:28.930Z",
+  "generatedAt": "2026-08-03T02:34:47.487Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-08-03.html",
+      "date": "2026-08-03",
+      "weekday": "周一",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems",
+      "summary": "把重复推理编译成工具，比每次重新写代码更像生产系统：Amazon 的生产研究把 SOP 节点在部署前编译为经真实环境和标签验证的版本化工具，运行时只在工具缺失或失败时回退到 CodeAct。",
+      "problem": "面向 Agent 产品与评测产品：识别可复用技术红利，支持产品判断、知识积累与创业机会筛选。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "Agent 架构与工具",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-08-03.html",
+      "overview": "overviews/morning-brief-2026-08-03.svg",
+      "githubRows": [
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1433,
+          "text": "1 NousResearch/hermes-agent The agent that grows with you 224,355 +1,433 Python 2026-08-03T02:30:17Z"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 1197,
+          "text": "2 firecrawl/firecrawl The API to search, scrape, and interact with the web at scale. 🔥 159,587 +1,197 TypeScript 2026-…"
+        },
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 1194,
+          "text": "3 obra/superpowers An agentic skills framework & software development methodology that works. 265,190 +1,194 Shell 2026…"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 1164,
+          "text": "4 anomalyco/opencode The open source coding agent. 192,447 +1,164 TypeScript 2026-08-03T02:28:06Z"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 1027,
+          "text": "5 farion1231/cc-switch A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok B…"
+        },
+        {
+          "repo": "sansan0/TrendRadar",
+          "label": "sansan0/TrendRadar",
+          "value": 61099,
+          "text": "1 sansan0/TrendRadar 61,099 ⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart a…"
+        },
+        {
+          "repo": "diegosouzapw/OmniRoute",
+          "label": "diegosouzapw/OmniRoute",
+          "value": 37957,
+          "text": "2 diegosouzapw/OmniRoute 37,957 Never stop coding. Free MIT AI gateway: one endpoint, 290+ providers (90+ free), 500+ m…"
+        },
+        {
+          "repo": "stablyai/orca",
+          "label": "stablyai/orca",
+          "value": 35876,
+          "text": "3 stablyai/orca 35,876 Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own …"
+        }
+      ],
+      "githubRepoCount": 15,
+      "figureCount": 21,
+      "tableCount": 5,
+      "linkCount": 66,
+      "officialStatus": "4 条官方链接/动态",
+      "tags": "2026-08-03 Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems NousResearch/hermes-agent firecrawl/firecrawl obra/superpowers anomalyco/opencode farion1231/cc-switch sansan0/TrendRadar diegosouzapw/OmniRoute stablyai/orca K-Dense-AI/scientific-agent-skills SigNoz/signoz openai/codex anthropics/skills browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-07-31.html",
       "date": "2026-07-31",

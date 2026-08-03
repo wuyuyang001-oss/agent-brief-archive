@@ -1,0 +1,170 @@
+[
+  {
+    "index": 0,
+    "type": "figure",
+    "number": "1",
+    "caption": "Offline (top), each SOP node is compiled into a tool: a data-collector sub-agent runs against MCP, producing a trace; a tool-maker LLM writes a candidate from it; and a reflector–tool-maker loop repairs the candidate against labeled cases. Online (bottom), the baseline sub-agent writes fresh MCP-querying code per node over 10–20 LLM turns, whereas our agent calls the compiled tools inline, one call per node.",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-figure-1.png"
+  },
+  {
+    "index": 1,
+    "type": "figure",
+    "number": "2",
+    "caption": "Per-node pass@1 (left) and generation cost in tokens (right) for each ablation configuration on GLM-4.7. +D adds the data-collection trace (Section 3.1); +R adds the test-repair loop. Only the deployed configuration (SOP+D+R) exceeds 90% pass@1.",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-figure-2.png"
+  },
+  {
+    "index": 2,
+    "type": "table",
+    "number": "1",
+    "caption": "Per-node pass@1 (%) by tool-maker and configuration. +D adds the data-collection trace; +R adds the test-repair loop. The deployed SOP+D+R column is in bold, with GLM-4.7 deployed. Confidence intervals and significance tests are in Table 9.",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-1.png"
+  },
+  {
+    "index": 3,
+    "type": "table",
+    "number": "2",
+    "caption": "Effect of targeted specification and data improvements on the four residual nodes (Opus). Augmentation adds labeled cases for the edge-case nodes.",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-2.png"
+  },
+  {
+    "index": 4,
+    "type": "table",
+    "number": "3",
+    "caption": "Production p50/p99 latency, relative to the no-tools sub-agent baseline (set to 100, lower is better). Rows 1 and 2 differ only in whether the agent uses tools. Row 3 additionally changes the architecture to direct calls and the model to GLM-4.5-Air.",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-3.png"
+  },
+  {
+    "index": 5,
+    "type": "table",
+    "number": "4",
+    "caption": "End-to-end agent accuracy (%, N=1500N{=}1500). \"No tools\": the sub-agent writes MCP code, fine-tuned on full-tool trajectories. \"Sub-agent\" and \"Main-agent\" both use generated tools, the latter called directly by the main agent. Significance vs. no-tools baseline: p∗∗<0.01{}^{**}p<0.01, p∗⁣∗∗<0.001{}^{***}p<0.001 (Tables 12–14).",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-4.png"
+  },
+  {
+    "index": 6,
+    "type": "figure",
+    "number": "3",
+    "caption": "pass@1 across repair rounds for each repair strategy, without the data-collection trace (SOP+R, Opus). No-reflection plateaus around 92.5%, while reflection peaks at 94.3% by round 10 but underperforms no-reflection at low round counts. Multi-hypothesis branching reaches 94.3% by round 3 at roughly 3×3{\\times} the per-round cost.",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-figure-3.png"
+  },
+  {
+    "index": 7,
+    "type": "table",
+    "number": "5",
+    "caption": "Trace-content ablation (Opus, three repair rounds). Each component contributes a consistent gain. Confidence intervals are in Table 10.",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-5.png"
+  },
+  {
+    "index": 8,
+    "type": "table",
+    "number": "6",
+    "caption": "Interaction between data grounding and repair strategy (Opus, 3 rounds). pass@1 %. Confidence intervals and tt-tests are in Table 11.",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-6.png"
+  },
+  {
+    "index": 9,
+    "type": "figure",
+    "number": "4",
+    "caption": "pass@1 vs. training-set size, with and without data grounding (Opus).",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-figure-4.png"
+  },
+  {
+    "index": 10,
+    "type": "table",
+    "number": "7",
+    "caption": "GLM-4.7 SOP+R configurations at higher token budgets, paired with two SOP+D+R configurations for reference. +D adds the data-collection trace; +R adds the test-repair loop. Per-seed tokens are means over 30 seeds (10 for the 3-branches row).",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-7.png"
+  },
+  {
+    "index": 11,
+    "type": "figure",
+    "number": "5",
+    "caption": "Per-node pass@1 (left bars) and generation cost in tokens per seed (right bars) for each ablation configuration on Claude Opus 4.6. The deployed configuration matches the repair-only ceiling within seed variance at 29% fewer tokens.",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-figure-5.png"
+  },
+  {
+    "index": 12,
+    "type": "table",
+    "number": "8",
+    "caption": "Per-trace output-token breakdown by agent role and content type, per-alarm production means (Qwen3 32B).",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-8.png"
+  },
+  {
+    "index": 13,
+    "type": "table",
+    "number": "9",
+    "caption": "Component ablations of the deployed pipeline with 95% CIs (pass@1, %), the confidence intervals for Table 1. +D adds the data-collection trace (Section 3.1); +R adds the test-repair loop. SOP+D+R is the deployed configuration. Differences between SOP+D+R and the SOP+D and SOP+R ablations are statistically significant on GLM-4.7, GLM-5, and GLM-4.7 Flash (significance tests in Table 15).",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-9.png"
+  },
+  {
+    "index": 14,
+    "type": "table",
+    "number": "10",
+    "caption": "Trace-content ablation with CIs (Table 5). Opus, three repair rounds.",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-10.png"
+  },
+  {
+    "index": 15,
+    "type": "table",
+    "number": "11",
+    "caption": "Data grounding and repair strategy with CIs and paired tt-tests (Table 6). Opus, three repair rounds, 30 seeds.",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-11.png"
+  },
+  {
+    "index": 16,
+    "type": "table",
+    "number": "12",
+    "caption": "Qwen3 32B, with vs. without tools (%). 95% CIs and pp-values are bootstrap-by-task (nboot=5,000n_{\\text{boot}}=5{,}000).",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-12.png"
+  },
+  {
+    "index": 17,
+    "type": "table",
+    "number": "13",
+    "caption": "GLM-4.5-Air, with vs. without tools (%). 95% CIs and pp-values are bootstrap-by-task (nboot=5,000n_{\\text{boot}}=5{,}000).",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-13.png"
+  },
+  {
+    "index": 18,
+    "type": "table",
+    "number": "14",
+    "caption": "GLM-4.5-Air with main-agent direct tool calls vs. without tools (%). 95% CIs and pp-values are bootstrap-by-task (nboot=5,000n_{\\text{boot}}=5{,}000).",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-14.png"
+  },
+  {
+    "index": 19,
+    "type": "table",
+    "number": "15",
+    "caption": "Significance of Table 9 ablation differences. +D adds the data-collection trace; +R adds the test-repair loop. Paired tt-tests over 30 seeds. Δ\\Delta in pp.",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-15.png"
+  },
+  {
+    "index": 20,
+    "type": "table",
+    "number": "16",
+    "caption": "Significance of the specification ceiling interventions (Table 2). Two-sample Welch’s tt-tests over per-seed pass@1. Δ\\Delta in pp. nx,nyn_{x},n_{y} are the per-condition seed counts.",
+    "selector": "figcaption.ltx_caption",
+    "file": "toolmaking-table-16.png"
+  }
+]

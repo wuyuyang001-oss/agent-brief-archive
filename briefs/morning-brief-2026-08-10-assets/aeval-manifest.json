@@ -1,0 +1,18 @@
+[
+  {
+    "index": 0,
+    "type": "figure",
+    "number": "1",
+    "caption": "AEVAL pipeline. An MR triggers CI, which detects changed skills and invokes the evaluator. The executor runs the four-phase workflow; the grader is a separate subagent with access only to outputs and transcript; suggestions are posted to the MR.",
+    "selector": "figcaption.ltx_caption",
+    "file": "aeval-figure-1.png"
+  },
+  {
+    "index": 1,
+    "type": "table",
+    "number": "1",
+    "caption": "Matched runs across two agent backends on the same skill and eval.config. Causal share = LV1/(LV1+LV2)\\text{LV1}/(\\text{LV1}+\\text{LV2}), the fraction of fix suggestions the grader marks as merge-blocking rather than advisory; this is a per-run scalar in [0,1][0,1] that normalises across the variable assertion-list size each grader writes from the declared expected_outcome. Self-corrections logged are the per-run count of in-place skill patches the executor applied during the first-attempt trajectory (Backend A logs these explicitly; Backend B does not, marked “—”). Protocol fidelity is whether the run honored the locked output-template contract; one Backend A run silently drifted from it. Pass rates are reported as a passed/total ratio and not directly compared across backends because each grader writes its own assertion list. Mean tokens-in were ≈\\approx8.5M (97% cached) for Backend A and ≈\\approx12.4M (95% cached) for Backend B; with caching, marginal cost per merge-blocking finding is on the order of a few hundred thousand uncached tokens.",
+    "selector": "figcaption.ltx_caption",
+    "file": "aeval-table-1.png"
+  }
+]

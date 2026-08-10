@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-08-03T02:34:47.487Z",
+  "generatedAt": "2026-08-10T05:22:43.901Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-08-10.html",
+      "date": "2026-08-10",
+      "weekday": "周一",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "AEVAL: From Anecdotal to Deterministic Testing for Agentic Skill Workflows",
+      "summary": "Astra 触及新的网络安全治理门槛：OpenAI 的初步内部评测使其无法排除即将推出的 Astra 达到 Critical cyber 能力，但这不是已经确认达到 Critical。",
+      "problem": "面向 Agent 产品与评测产品：识别可复用技术红利，支持产品决策、知识积累与创业机会筛选。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-08-10.html",
+      "overview": "overviews/morning-brief-2026-08-10.svg",
+      "githubRows": [
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 4740,
+          "text": "1 firecrawl/firecrawl 面向 Agent 的网页搜索、抓取与结构化数据 API。 164,327 +4,740 TypeScript 2026-08-10T05:15:11Z"
+        },
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 4635,
+          "text": "2 obra/superpowers 跨 Coding Agent 的技能框架与软件开发方法。 269,825 +4,635 Shell 2026-08-10T05:11:10Z"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 3675,
+          "text": "3 NousResearch/hermes-agent 带持久记忆、工具与自我扩展能力的个人 Agent。 228,030 +3,675 Python 2026-08-10T05:16:30Z"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 3071,
+          "text": "4 anomalyco/opencode 开源终端 Coding Agent 与运行时。 195,518 +3,071 TypeScript 2026-08-10T05:13:30Z"
+        },
+        {
+          "repo": "farion1231/cc-switch",
+          "label": "farion1231/cc-switch",
+          "value": 2386,
+          "text": "5 farion1231/cc-switch 统一管理 Claude Code、Codex、OpenCode 等工具配置的桌面端。 126,009 +2,386 Rust 2026-08-10T05:16:55Z"
+        },
+        {
+          "repo": "koala73/worldmonitor",
+          "label": "koala73/worldmonitor",
+          "value": 80274,
+          "text": "1 koala73/worldmonitor 80,274 Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monito…"
+        },
+        {
+          "repo": "netdata/netdata",
+          "label": "netdata/netdata",
+          "value": 80097,
+          "text": "2 netdata/netdata 80,097 The fastest path to AI-powered full stack observability, even for lean teams. 可把指标、日志与异常检测接入 A…"
+        },
+        {
+          "repo": "mudler/LocalAI",
+          "label": "mudler/LocalAI",
+          "value": 48353,
+          "text": "3 mudler/LocalAI 48,353 LocalAI is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on an…"
+        }
+      ],
+      "githubRepoCount": 15,
+      "figureCount": 2,
+      "tableCount": 5,
+      "linkCount": 51,
+      "officialStatus": "8 条官方链接/动态",
+      "tags": "2026-08-10 AEVAL: From Anecdotal to Deterministic Testing for Agentic Skill Workflows firecrawl/firecrawl obra/superpowers NousResearch/hermes-agent anomalyco/opencode farion1231/cc-switch koala73/worldmonitor netdata/netdata mudler/LocalAI Kong/kong novuhq/novu openai/codex anthropics/skills browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-08-03.html",
       "date": "2026-08-03",

@@ -1,0 +1,146 @@
+[
+  {
+    "index": 0,
+    "type": "figure",
+    "number": "1",
+    "caption": "(a): Capacity distributions across existing expert-defined and manually annotated embodied VLM benchmarks reveal redundant yet sparse coverage, leading to ranking distortion and excessive evaluation costs. (b): A2Eval replaces this expert-defined, annotation-heavy paradigm with an automated suite that maintains capability coverage while compressing benchmarks, achieving 4.6×\\times speedup and improved human alignment. (Details in Tables 3 and 5.)",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-figure-1.png"
+  },
+  {
+    "index": 1,
+    "type": "figure",
+    "number": "2",
+    "caption": "Overview of A2Eval. The left half shows the Data Agent with three roles, Proposer, Reviewer, and Assigner, which constructs compact, balanced benchmarks. The right half shows the Eval Agent with two roles, Evaluator and Scorer, which produces model predictions and scores. Each role is represented by a distinct color.",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-figure-2.png"
+  },
+  {
+    "index": 2,
+    "type": "table",
+    "number": "1",
+    "caption": "Data agent induced capability dimensions (left: full name and abbreviation) with detailed definitions (right).",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-table-1.png"
+  },
+  {
+    "index": 3,
+    "type": "table",
+    "number": "2",
+    "caption": "Number of examples per capability dimension before and after fixed-KK cluster sampling. “Source Set” denotes examples labeled by the data agent; “Retained Set” denotes examples retained after diversity-aware sampling. Percentages are shown in parentheses.",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-table-2.png"
+  },
+  {
+    "index": 4,
+    "type": "table",
+    "number": "3",
+    "caption": "Model scores on our constructed benchmark ℬ~\\widetilde{\\mathcal{B}}, the original benchmark ℬ\\mathcal{B}, and human evaluations ℋ\\mathcal{H}. The bottom section reports rank correlations with human evaluations and between the two benchmarks.",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-table-3.png"
+  },
+  {
+    "index": 8,
+    "type": "table",
+    "number": "4",
+    "caption": "Ablation study on Data Agent’s sampling strategies. Ours (Dim. + Div.) denotes our agentic dimension-aware and diversity-aware sampling approach. Spearman’s ρ\\rho measures ranking correlation with original benchmark scores (Agn. Source) and human evaluations (Agn. Human).",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-table-4.png"
+  },
+  {
+    "index": 9,
+    "type": "table",
+    "number": "5",
+    "caption": "Evaluation time (in hours) comparison using 8 GPUs. S.D. denotes the speedup of our method over the original benchmark. Our method achieves consistent 3.4×\\times to 4.6×\\times speedups across all models.",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-table-5.png"
+  },
+  {
+    "index": 10,
+    "type": "table",
+    "number": "6",
+    "caption": "Overall fidelity of the Eval Agent across all capability dimensions. Values represent the fidelity between agent-generated evaluation scores and reference scores. The agent achieves 96.9% average fidelity, demonstrating our reliable end-to-end evaluation.",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-table-6.png"
+  },
+  {
+    "index": 11,
+    "type": "table",
+    "number": "7",
+    "caption": "Performance of evaluated models across all capability dimensions. All scores are percentages. “Avg” is the mean across dimensions.",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-table-7.png"
+  },
+  {
+    "index": 12,
+    "type": "figure",
+    "number": "3",
+    "caption": "Heatmap of inter-benchmark similarity. The results reveal severe redundancy in the current evaluation ecosystem, with benchmarks exhibiting up to 91% overlap (e.g., RefSpatial vs. Where2Place).",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-figure-3.png"
+  },
+  {
+    "index": 13,
+    "type": "table",
+    "number": "8",
+    "caption": "Four pairs of redundant samples across benchmarks.",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-table-8.png"
+  },
+  {
+    "index": 14,
+    "type": "figure",
+    "number": "4",
+    "caption": "Capability distribution across dimensions before and after diversity-aware sampling. The retained set exhibits a substantially more balanced coverage compared to the highly skewed source distribution.",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-figure-4.png"
+  },
+  {
+    "index": 15,
+    "type": "figure",
+    "number": "5",
+    "caption": "UMAP visualization of sample embeddings across all dimensions.",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-figure-5.png"
+  },
+  {
+    "index": 16,
+    "type": "table",
+    "number": "9",
+    "caption": "Human–agent agreement on capability dimension assignment using a human-in-the-loop verification protocol. Cohen’s κ\\kappa measures agreement between automatic assignments and human-validated labels beyond chance, while IAA reports inter-annotator agreement among the five expert annotators.",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-table-9.png"
+  },
+  {
+    "index": 17,
+    "type": "table",
+    "number": "10",
+    "caption": "Inference fidelity between agent-generated inference outputs and reference model results.",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-table-10.png"
+  },
+  {
+    "index": 18,
+    "type": "table",
+    "number": "11",
+    "caption": "Scoring fidelity between agent-generated and reference scoring functions.",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-table-11.png"
+  },
+  {
+    "index": 19,
+    "type": "table",
+    "number": "12",
+    "caption": "Benchmarks with their description.",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-table-12.png"
+  },
+  {
+    "index": 20,
+    "type": "table",
+    "number": "13",
+    "caption": "Dimension-wise human evaluation example for the household scenario.",
+    "selector": "figcaption.ltx_caption",
+    "file": "a2eval-table-13.png"
+  }
+]

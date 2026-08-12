@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-08-10T05:42:44.551Z",
+  "generatedAt": "2026-08-12T02:52:03.674Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-08-12.html",
+      "date": "2026-08-12",
+      "weekday": "周三",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "A2Eval: Agentic and Automated Evaluation for Embodied Brain",
+      "summary": "Daybreak 从能力发布走向受治理的企业部署：OpenAI 将 Daybreak Blue 与 Red 通过 Amazon Bedrock 提供给获批客户，把高能力网络安全 Agent 接入现有云治理与采购路径。",
+      "problem": "面向 Agent 产品与评测产品：识别可复用技术红利，支持产品决策、知识积累与创业机会筛选。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-08-12.html",
+      "overview": "overviews/morning-brief-2026-08-12.svg",
+      "githubRows": [
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 1600,
+          "text": "1 firecrawl/firecrawl Agent 网页搜索、抓取与结构化数据层。 165,927 +1,600 TypeScript 2026-08-12T02:48:08Z"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1053,
+          "text": "2 NousResearch/hermes-agent 带记忆、工具与自扩展能力的个人 Agent。 229,083 +1,053 Python 2026-08-12T02:48:09Z"
+        },
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 975,
+          "text": "3 obra/superpowers 跨 Coding Agent 的技能框架与开发方法。 270,800 +975 Shell 2026-08-12T02:49:03Z"
+        },
+        {
+          "repo": "anthropics/skills",
+          "label": "anthropics/skills",
+          "value": 911,
+          "text": "4 anthropics/skills Anthropic 公开 Agent Skills 集合。 168,190 +911 Python 2026-08-12T02:48:40Z"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 754,
+          "text": "5 anomalyco/opencode 开源终端 Coding Agent 与运行时。 196,272 +754 TypeScript 2026-08-12T02:48:28Z"
+        },
+        {
+          "repo": "siyuan-note/siyuan",
+          "label": "siyuan-note/siyuan",
+          "value": 45744,
+          "text": "1 siyuan-note/siyuan 45,744 An open-source, privacy-first, self-hosted knowledge workspace where humans and AI agents w…"
+        },
+        {
+          "repo": "ToolJet/ToolJet",
+          "label": "ToolJet/ToolJet",
+          "value": 38417,
+          "text": "2 ToolJet/ToolJet 38,417 ToolJet is the open-source foundation of ToolJet AI - the enterprise app generation platform f…"
+        },
+        {
+          "repo": "PDFMathTranslate/PDFMathTranslate",
+          "label": "PDFMathTranslate/PDFMathTranslate",
+          "value": 36100,
+          "text": "3 PDFMathTranslate/PDFMathTranslate 36,100 [EMNLP 2025 Demo] PDF scientific paper translation with preserved formats - …"
+        }
+      ],
+      "githubRepoCount": 15,
+      "figureCount": 18,
+      "tableCount": 5,
+      "linkCount": 65,
+      "officialStatus": "6 条官方链接/动态",
+      "tags": "2026-08-12 A2Eval: Agentic and Automated Evaluation for Embodied Brain firecrawl/firecrawl NousResearch/hermes-agent obra/superpowers anthropics/skills anomalyco/opencode siyuan-note/siyuan ToolJet/ToolJet PDFMathTranslate/PDFMathTranslate esengine/DeepSeek-Reasonix agentscope-ai/QwenPaw farion1231/cc-switch openai/codex browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-08-10.html",
       "date": "2026-08-10",

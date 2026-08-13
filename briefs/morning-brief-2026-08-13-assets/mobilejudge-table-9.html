@@ -1,0 +1,46 @@
+<table id="A5.T9.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr id="A5.T9.2.1" class="ltx_tr">
+<th id="A5.T9.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt"><span id="A5.T9.2.1.1.1" class="ltx_text ltx_font_bold">Parameter</span></th>
+<td id="A5.T9.2.1.2" class="ltx_td ltx_align_left ltx_border_tt"><span id="A5.T9.2.1.2.1" class="ltx_text ltx_font_bold">Value</span></td></tr>
+<tr id="A5.T9.2.2" class="ltx_tr">
+<th id="A5.T9.2.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t">Base model</th>
+<td id="A5.T9.2.2.2" class="ltx_td ltx_align_left ltx_border_t">UI-TARS-7B-SFT</td></tr>
+<tr id="A5.T9.2.3" class="ltx_tr">
+<th id="A5.T9.2.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">RL algorithm</th>
+<td id="A5.T9.2.3.2" class="ltx_td ltx_align_left">GRPO</td></tr>
+<tr id="A5.T9.2.4" class="ltx_tr">
+<th id="A5.T9.2.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Optimizer</th>
+<td id="A5.T9.2.4.2" class="ltx_td ltx_align_left">AdamW (bf16)</td></tr>
+<tr id="A5.T9.2.5" class="ltx_tr">
+<th id="A5.T9.2.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Learning rate</th>
+<td id="A5.T9.2.5.2" class="ltx_td ltx_align_left"><math id="A5.T9.m1" class="ltx_Math" alttext="1\times 10^{-6}" display="inline" intent=":literal"><semantics><mrow><mn>1</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>6</mn></mrow></msup></mrow><annotation encoding="application/x-tex">1\times 10^{-6}</annotation></semantics></math></td></tr>
+<tr id="A5.T9.2.6" class="ltx_tr">
+<th id="A5.T9.2.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">LR warmup</th>
+<td id="A5.T9.2.6.2" class="ltx_td ltx_align_left">5% of steps (linear)</td></tr>
+<tr id="A5.T9.2.7" class="ltx_tr">
+<th id="A5.T9.2.7.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">KL coefficient</th>
+<td id="A5.T9.2.7.2" class="ltx_td ltx_align_left">0.05</td></tr>
+<tr id="A5.T9.2.8" class="ltx_tr">
+<th id="A5.T9.2.8.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Update epochs</th>
+<td id="A5.T9.2.8.2" class="ltx_td ltx_align_left">1</td></tr>
+<tr id="A5.T9.2.9" class="ltx_tr">
+<th id="A5.T9.2.9.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Clip ratio</th>
+<td id="A5.T9.2.9.2" class="ltx_td ltx_align_left">[0.2, 0.3] (asymmetric)</td></tr>
+<tr id="A5.T9.2.10" class="ltx_tr">
+<th id="A5.T9.2.10.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Max gradient norm</th>
+<td id="A5.T9.2.10.2" class="ltx_td ltx_align_left">1.0</td></tr>
+<tr id="A5.T9.2.11" class="ltx_tr">
+<th id="A5.T9.2.11.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Rollouts per task</th>
+<td id="A5.T9.2.11.2" class="ltx_td ltx_align_left">8</td></tr>
+<tr id="A5.T9.2.12" class="ltx_tr">
+<th id="A5.T9.2.12.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Tasks per step</th>
+<td id="A5.T9.2.12.2" class="ltx_td ltx_align_left">2</td></tr>
+<tr id="A5.T9.2.13" class="ltx_tr">
+<th id="A5.T9.2.13.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Max agent steps</th>
+<td id="A5.T9.2.13.2" class="ltx_td ltx_align_left">20</td></tr>
+<tr id="A5.T9.2.14" class="ltx_tr">
+<th id="A5.T9.2.14.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb">Sampling temperature</th>
+<td id="A5.T9.2.14.2" class="ltx_td ltx_align_left ltx_border_bb">1.0 (train), 0 (eval)</td></tr>
+</tbody>
+</table>

@@ -1,0 +1,316 @@
+<table id="A4.T7.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="A4.T7.2.1" class="ltx_tr">
+<th id="A4.T7.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="A4.T7.2.1.1.1" class="ltx_text ltx_font_bold">Judge Method</span></th>
+<th id="A4.T7.2.1.2" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="A4.T7.2.1.2.1" class="ltx_text ltx_font_bold">Backend</span></th>
+<th id="A4.T7.2.1.3" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="A4.T7.2.1.3.1" class="ltx_text ltx_font_bold">Acc</span></th>
+<th id="A4.T7.2.1.4" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="A4.T7.2.1.4.1" class="ltx_text ltx_font_bold">Prec</span></th>
+<th id="A4.T7.2.1.5" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="A4.T7.2.1.5.1" class="ltx_text ltx_font_bold">Rec</span></th>
+<th id="A4.T7.2.1.6" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="A4.T7.2.1.6.1" class="ltx_text ltx_font_bold">F1</span></th>
+<th id="A4.T7.2.1.7" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="A4.T7.2.1.7.1" class="ltx_text ltx_font_bold">BAcc</span></th>
+<th id="A4.T7.2.1.8" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="A4.T7.2.1.8.1" class="ltx_text ltx_font_bold">Ag.<math id="A4.T7.m1" class="ltx_Math" alttext="\rho" display="inline" intent=":literal"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math></span></th>
+<th id="A4.T7.2.1.9" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="A4.T7.2.1.9.1" class="ltx_text ltx_font_bold">Ag.MAE</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="A4.T7.2.2" class="ltx_tr">
+<th id="A4.T7.2.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;">Baseline</th>
+<th id="A4.T7.2.2.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;">Gemini</th>
+<td id="A4.T7.2.2.3" class="ltx_td ltx_align_center ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;">90.9</td>
+<td id="A4.T7.2.2.4" class="ltx_td ltx_align_center ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;">87.6</td>
+<td id="A4.T7.2.2.5" class="ltx_td ltx_align_center ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;">96.3</td>
+<td id="A4.T7.2.2.6" class="ltx_td ltx_align_center ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;">91.8</td>
+<td id="A4.T7.2.2.7" class="ltx_td ltx_align_center ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;">90.5</td>
+<td id="A4.T7.2.2.8" class="ltx_td ltx_align_center ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;">0.97</td>
+<td id="A4.T7.2.2.9" class="ltx_td ltx_align_center ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;">0.064</td></tr>
+<tr id="A4.T7.2.3" class="ltx_tr">
+<th id="A4.T7.2.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Baseline</th>
+<th id="A4.T7.2.3.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">GPT</th>
+<td id="A4.T7.2.3.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">90.8</td>
+<td id="A4.T7.2.3.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">88.3</td>
+<td id="A4.T7.2.3.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">95.1</td>
+<td id="A4.T7.2.3.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">91.6</td>
+<td id="A4.T7.2.3.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">90.5</td>
+<td id="A4.T7.2.3.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.96</td>
+<td id="A4.T7.2.3.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.054</td></tr>
+<tr id="A4.T7.2.4" class="ltx_tr">
+<th id="A4.T7.2.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">SPA-Bench</th>
+<th id="A4.T7.2.4.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">GPT</th>
+<td id="A4.T7.2.4.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">90.6</td>
+<td id="A4.T7.2.4.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">87.8</td>
+<td id="A4.T7.2.4.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">95.5</td>
+<td id="A4.T7.2.4.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">91.5</td>
+<td id="A4.T7.2.4.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">90.3</td>
+<td id="A4.T7.2.4.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.97</td>
+<td id="A4.T7.2.4.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.054</td></tr>
+<tr id="A4.T7.2.5" class="ltx_tr">
+<th id="A4.T7.2.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">SPA-Bench</th>
+<th id="A4.T7.2.5.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Gemini</th>
+<td id="A4.T7.2.5.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">89.8</td>
+<td id="A4.T7.2.5.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">88.5</td>
+<td id="A4.T7.2.5.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">92.9</td>
+<td id="A4.T7.2.5.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">90.7</td>
+<td id="A4.T7.2.5.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">89.6</td>
+<td id="A4.T7.2.5.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.96</td>
+<td id="A4.T7.2.5.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.054</td></tr>
+<tr id="A4.T7.2.6" class="ltx_tr">
+<th id="A4.T7.2.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">AgentRewardBench</th>
+<th id="A4.T7.2.6.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Gemini</th>
+<td id="A4.T7.2.6.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">89.3</td>
+<td id="A4.T7.2.6.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">88.6</td>
+<td id="A4.T7.2.6.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">91.7</td>
+<td id="A4.T7.2.6.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">90.1</td>
+<td id="A4.T7.2.6.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">89.2</td>
+<td id="A4.T7.2.6.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.97</td>
+<td id="A4.T7.2.6.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.040</td></tr>
+<tr id="A4.T7.2.7" class="ltx_tr">
+<th id="A4.T7.2.7.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">AndroidArena</th>
+<th id="A4.T7.2.7.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">GPT</th>
+<td id="A4.T7.2.7.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">88.2</td>
+<td id="A4.T7.2.7.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">89.0</td>
+<td id="A4.T7.2.7.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">88.6</td>
+<td id="A4.T7.2.7.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">88.8</td>
+<td id="A4.T7.2.7.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">88.1</td>
+<td id="A4.T7.2.7.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.95</td>
+<td id="A4.T7.2.7.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.049</td></tr>
+<tr id="A4.T7.2.8" class="ltx_tr">
+<th id="A4.T7.2.8.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">AndroidArena</th>
+<th id="A4.T7.2.8.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Gemini</th>
+<td id="A4.T7.2.8.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">87.7</td>
+<td id="A4.T7.2.8.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">88.4</td>
+<td id="A4.T7.2.8.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">88.4</td>
+<td id="A4.T7.2.8.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">88.4</td>
+<td id="A4.T7.2.8.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">87.7</td>
+<td id="A4.T7.2.8.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.94</td>
+<td id="A4.T7.2.8.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.050</td></tr>
+<tr id="A4.T7.2.9" class="ltx_tr">
+<th id="A4.T7.2.9.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">AgentRewardBench</th>
+<th id="A4.T7.2.9.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Claude</th>
+<td id="A4.T7.2.9.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">87.2</td>
+<td id="A4.T7.2.9.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">88.3</td>
+<td id="A4.T7.2.9.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">87.4</td>
+<td id="A4.T7.2.9.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">87.8</td>
+<td id="A4.T7.2.9.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">87.2</td>
+<td id="A4.T7.2.9.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.97</td>
+<td id="A4.T7.2.9.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.042</td></tr>
+<tr id="A4.T7.2.10" class="ltx_tr">
+<th id="A4.T7.2.10.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">AgentRewardBench</th>
+<th id="A4.T7.2.10.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">GLM</th>
+<td id="A4.T7.2.10.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">86.1</td>
+<td id="A4.T7.2.10.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">82.0</td>
+<td id="A4.T7.2.10.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">94.5</td>
+<td id="A4.T7.2.10.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">87.8</td>
+<td id="A4.T7.2.10.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">85.6</td>
+<td id="A4.T7.2.10.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.95</td>
+<td id="A4.T7.2.10.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.086</td></tr>
+<tr id="A4.T7.2.11" class="ltx_tr">
+<th id="A4.T7.2.11.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Baseline</th>
+<th id="A4.T7.2.11.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Claude</th>
+<td id="A4.T7.2.11.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">86.0</td>
+<td id="A4.T7.2.11.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">87.4</td>
+<td id="A4.T7.2.11.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">86.0</td>
+<td id="A4.T7.2.11.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">86.7</td>
+<td id="A4.T7.2.11.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">86.0</td>
+<td id="A4.T7.2.11.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.95</td>
+<td id="A4.T7.2.11.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.052</td></tr>
+<tr id="A4.T7.2.12" class="ltx_tr">
+<th id="A4.T7.2.12.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Baseline</th>
+<th id="A4.T7.2.12.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Qwen</th>
+<td id="A4.T7.2.12.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">85.7</td>
+<td id="A4.T7.2.12.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">82.6</td>
+<td id="A4.T7.2.12.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">92.5</td>
+<td id="A4.T7.2.12.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">87.2</td>
+<td id="A4.T7.2.12.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">85.3</td>
+<td id="A4.T7.2.12.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.96</td>
+<td id="A4.T7.2.12.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.066</td></tr>
+<tr id="A4.T7.2.13" class="ltx_tr">
+<th id="A4.T7.2.13.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Baseline</th>
+<th id="A4.T7.2.13.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">GLM</th>
+<td id="A4.T7.2.13.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">84.9</td>
+<td id="A4.T7.2.13.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">81.0</td>
+<td id="A4.T7.2.13.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">93.3</td>
+<td id="A4.T7.2.13.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">86.7</td>
+<td id="A4.T7.2.13.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">84.5</td>
+<td id="A4.T7.2.13.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.92</td>
+<td id="A4.T7.2.13.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.083</td></tr>
+<tr id="A4.T7.2.14" class="ltx_tr">
+<th id="A4.T7.2.14.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">AgentRewardBench</th>
+<th id="A4.T7.2.14.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Qwen</th>
+<td id="A4.T7.2.14.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">84.9</td>
+<td id="A4.T7.2.14.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">79.9</td>
+<td id="A4.T7.2.14.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">95.3</td>
+<td id="A4.T7.2.14.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">86.9</td>
+<td id="A4.T7.2.14.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">84.2</td>
+<td id="A4.T7.2.14.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.96</td>
+<td id="A4.T7.2.14.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.104</td></tr>
+<tr id="A4.T7.2.15" class="ltx_tr">
+<th id="A4.T7.2.15.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">SPA-Bench</th>
+<th id="A4.T7.2.15.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Claude</th>
+<td id="A4.T7.2.15.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">84.7</td>
+<td id="A4.T7.2.15.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">91.5</td>
+<td id="A4.T7.2.15.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">78.5</td>
+<td id="A4.T7.2.15.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">84.5</td>
+<td id="A4.T7.2.15.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">85.1</td>
+<td id="A4.T7.2.15.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.92</td>
+<td id="A4.T7.2.15.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.076</td></tr>
+<tr id="A4.T7.2.16" class="ltx_tr">
+<th id="A4.T7.2.16.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">AndroidArena</th>
+<th id="A4.T7.2.16.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Qwen</th>
+<td id="A4.T7.2.16.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">84.6</td>
+<td id="A4.T7.2.16.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">81.8</td>
+<td id="A4.T7.2.16.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">91.3</td>
+<td id="A4.T7.2.16.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">86.3</td>
+<td id="A4.T7.2.16.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">84.1</td>
+<td id="A4.T7.2.16.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.84</td>
+<td id="A4.T7.2.16.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.083</td></tr>
+<tr id="A4.T7.2.17" class="ltx_tr">
+<th id="A4.T7.2.17.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">AndroidArena</th>
+<th id="A4.T7.2.17.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">GLM</th>
+<td id="A4.T7.2.17.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">83.9</td>
+<td id="A4.T7.2.17.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">79.7</td>
+<td id="A4.T7.2.17.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">93.5</td>
+<td id="A4.T7.2.17.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">86.1</td>
+<td id="A4.T7.2.17.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">83.3</td>
+<td id="A4.T7.2.17.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.92</td>
+<td id="A4.T7.2.17.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.100</td></tr>
+<tr id="A4.T7.2.18" class="ltx_tr">
+<th id="A4.T7.2.18.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">A3 (final)</th>
+<th id="A4.T7.2.18.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Gemini</th>
+<td id="A4.T7.2.18.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">83.8</td>
+<td id="A4.T7.2.18.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">84.5</td>
+<td id="A4.T7.2.18.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">84.7</td>
+<td id="A4.T7.2.18.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">84.6</td>
+<td id="A4.T7.2.18.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">83.7</td>
+<td id="A4.T7.2.18.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.94</td>
+<td id="A4.T7.2.18.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.059</td></tr>
+<tr id="A4.T7.2.19" class="ltx_tr">
+<th id="A4.T7.2.19.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">A3 (essential)</th>
+<th id="A4.T7.2.19.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Gemini</th>
+<td id="A4.T7.2.19.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">83.7</td>
+<td id="A4.T7.2.19.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">88.5</td>
+<td id="A4.T7.2.19.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">79.5</td>
+<td id="A4.T7.2.19.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">83.7</td>
+<td id="A4.T7.2.19.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">83.9</td>
+<td id="A4.T7.2.19.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.91</td>
+<td id="A4.T7.2.19.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.082</td></tr>
+<tr id="A4.T7.2.20" class="ltx_tr">
+<th id="A4.T7.2.20.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">AgentRewardBench</th>
+<th id="A4.T7.2.20.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">GPT</th>
+<td id="A4.T7.2.20.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">82.8</td>
+<td id="A4.T7.2.20.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">90.7</td>
+<td id="A4.T7.2.20.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">75.2</td>
+<td id="A4.T7.2.20.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">82.2</td>
+<td id="A4.T7.2.20.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">83.3</td>
+<td id="A4.T7.2.20.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.90</td>
+<td id="A4.T7.2.20.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.086</td></tr>
+<tr id="A4.T7.2.21" class="ltx_tr">
+<th id="A4.T7.2.21.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">SPA-Bench</th>
+<th id="A4.T7.2.21.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">GLM</th>
+<td id="A4.T7.2.21.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">82.2</td>
+<td id="A4.T7.2.21.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">82.0</td>
+<td id="A4.T7.2.21.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">85.0</td>
+<td id="A4.T7.2.21.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">83.4</td>
+<td id="A4.T7.2.21.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">82.0</td>
+<td id="A4.T7.2.21.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.92</td>
+<td id="A4.T7.2.21.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.073</td></tr>
+<tr id="A4.T7.2.22" class="ltx_tr">
+<th id="A4.T7.2.22.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">A3 (essential)</th>
+<th id="A4.T7.2.22.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">GLM</th>
+<td id="A4.T7.2.22.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">81.9</td>
+<td id="A4.T7.2.22.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">85.2</td>
+<td id="A4.T7.2.22.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">79.7</td>
+<td id="A4.T7.2.22.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">82.3</td>
+<td id="A4.T7.2.22.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">82.1</td>
+<td id="A4.T7.2.22.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.91</td>
+<td id="A4.T7.2.22.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.081</td></tr>
+<tr id="A4.T7.2.23" class="ltx_tr">
+<th id="A4.T7.2.23.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">A3 (final)</th>
+<th id="A4.T7.2.23.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Qwen</th>
+<td id="A4.T7.2.23.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">81.5</td>
+<td id="A4.T7.2.23.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">82.3</td>
+<td id="A4.T7.2.23.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">82.9</td>
+<td id="A4.T7.2.23.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">82.6</td>
+<td id="A4.T7.2.23.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">81.4</td>
+<td id="A4.T7.2.23.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.90</td>
+<td id="A4.T7.2.23.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.075</td></tr>
+<tr id="A4.T7.2.24" class="ltx_tr">
+<th id="A4.T7.2.24.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">A3 (essential)</th>
+<th id="A4.T7.2.24.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Claude</th>
+<td id="A4.T7.2.24.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">81.3</td>
+<td id="A4.T7.2.24.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">83.0</td>
+<td id="A4.T7.2.24.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">81.3</td>
+<td id="A4.T7.2.24.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">82.1</td>
+<td id="A4.T7.2.24.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">81.3</td>
+<td id="A4.T7.2.24.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.87</td>
+<td id="A4.T7.2.24.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.078</td></tr>
+<tr id="A4.T7.2.25" class="ltx_tr">
+<th id="A4.T7.2.25.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">SPA-Bench</th>
+<th id="A4.T7.2.25.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Qwen</th>
+<td id="A4.T7.2.25.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">80.1</td>
+<td id="A4.T7.2.25.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">73.3</td>
+<td id="A4.T7.2.25.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">98.2</td>
+<td id="A4.T7.2.25.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">83.9</td>
+<td id="A4.T7.2.25.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">79.0</td>
+<td id="A4.T7.2.25.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.92</td>
+<td id="A4.T7.2.25.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.173</td></tr>
+<tr id="A4.T7.2.26" class="ltx_tr">
+<th id="A4.T7.2.26.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">A3 (essential)</th>
+<th id="A4.T7.2.26.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Qwen</th>
+<td id="A4.T7.2.26.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">80.0</td>
+<td id="A4.T7.2.26.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">80.5</td>
+<td id="A4.T7.2.26.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">82.1</td>
+<td id="A4.T7.2.26.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">81.3</td>
+<td id="A4.T7.2.26.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">79.9</td>
+<td id="A4.T7.2.26.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.83</td>
+<td id="A4.T7.2.26.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.086</td></tr>
+<tr id="A4.T7.2.27" class="ltx_tr">
+<th id="A4.T7.2.27.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">AndroidArena</th>
+<th id="A4.T7.2.27.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Claude</th>
+<td id="A4.T7.2.27.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">79.0</td>
+<td id="A4.T7.2.27.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">91.1</td>
+<td id="A4.T7.2.27.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">66.9</td>
+<td id="A4.T7.2.27.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">77.1</td>
+<td id="A4.T7.2.27.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">79.8</td>
+<td id="A4.T7.2.27.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.69</td>
+<td id="A4.T7.2.27.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.148</td></tr>
+<tr id="A4.T7.2.28" class="ltx_tr">
+<th id="A4.T7.2.28.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">A3 (final)</th>
+<th id="A4.T7.2.28.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">Claude</th>
+<td id="A4.T7.2.28.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">78.4</td>
+<td id="A4.T7.2.28.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">87.8</td>
+<td id="A4.T7.2.28.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">68.7</td>
+<td id="A4.T7.2.28.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">77.1</td>
+<td id="A4.T7.2.28.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">79.0</td>
+<td id="A4.T7.2.28.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.87</td>
+<td id="A4.T7.2.28.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.113</td></tr>
+<tr id="A4.T7.2.29" class="ltx_tr">
+<th id="A4.T7.2.29.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">A3 (final)</th>
+<th id="A4.T7.2.29.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">GLM</th>
+<td id="A4.T7.2.29.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">78.1</td>
+<td id="A4.T7.2.29.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">85.5</td>
+<td id="A4.T7.2.29.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">70.5</td>
+<td id="A4.T7.2.29.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">77.3</td>
+<td id="A4.T7.2.29.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">78.5</td>
+<td id="A4.T7.2.29.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.87</td>
+<td id="A4.T7.2.29.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.098</td></tr>
+<tr id="A4.T7.2.30" class="ltx_tr">
+<th id="A4.T7.2.30.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">A3 (essential)</th>
+<th id="A4.T7.2.30.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;">GPT</th>
+<td id="A4.T7.2.30.3" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">78.1</td>
+<td id="A4.T7.2.30.4" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">92.3</td>
+<td id="A4.T7.2.30.5" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">63.8</td>
+<td id="A4.T7.2.30.6" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">75.5</td>
+<td id="A4.T7.2.30.7" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">78.9</td>
+<td id="A4.T7.2.30.8" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.90</td>
+<td id="A4.T7.2.30.9" class="ltx_td ltx_align_center" style="padding-left:3.5pt;padding-right:3.5pt;">0.159</td></tr>
+<tr id="A4.T7.2.31" class="ltx_tr">
+<th id="A4.T7.2.31.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;">A3 (final)</th>
+<th id="A4.T7.2.31.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;">GPT</th>
+<td id="A4.T7.2.31.3" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;">76.4</td>
+<td id="A4.T7.2.31.4" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;">90.5</td>
+<td id="A4.T7.2.31.5" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;">61.9</td>
+<td id="A4.T7.2.31.6" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;">73.5</td>
+<td id="A4.T7.2.31.7" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;">77.3</td>
+<td id="A4.T7.2.31.8" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;">0.77</td>
+<td id="A4.T7.2.31.9" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;">0.142</td></tr>
+</tbody>
+</table>

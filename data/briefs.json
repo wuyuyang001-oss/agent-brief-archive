@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-08-12T02:52:03.674Z",
+  "generatedAt": "2026-08-13T03:52:39.479Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-08-13.html",
+      "date": "2026-08-13",
+      "weekday": "周四",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "Benchmarking LLM Judges for Mobile Agent Evaluation",
+      "summary": "移动 Agent 的 Judge 需要先被评测：MobileJudgeBench 发现，抽取轨迹截图的简单 Judge 基线可匹敌或超过复杂专用方法；Judge 的底层模型往往比流水线复杂度更重要。",
+      "problem": "面向 Agent 产品与评测产品：识别技术红利、形成知识库并辅助产品决策。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-08-13.html",
+      "overview": "overviews/morning-brief-2026-08-13.svg",
+      "githubRows": [
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 2195,
+          "text": "1 firecrawl/firecrawl Agent 网页搜索、抓取与结构化数据层。 166,522 +2,195 TypeScript 2026-08-13T03:45:56Z"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1638,
+          "text": "2 NousResearch/hermes-agent 带记忆、工具和自扩展能力的个人 Agent。 229,668 +1,638 Python 2026-08-13T03:48:12Z"
+        },
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 1497,
+          "text": "3 obra/superpowers 跨 Coding Agent 的技能框架。 271,322 +1,497 Shell 2026-08-13T03:43:28Z"
+        },
+        {
+          "repo": "anthropics/skills",
+          "label": "anthropics/skills",
+          "value": 1301,
+          "text": "4 anthropics/skills Anthropic 官方 Agent Skills 示例。 168,580 +1,301 Python 2026-08-13T03:39:20Z"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 1184,
+          "text": "5 anomalyco/opencode 开源终端 Coding Agent 与运行时。 196,702 +1,184 TypeScript 2026-08-13T03:45:22Z"
+        },
+        {
+          "repo": "dair-ai/Prompt-Engineering-Guide",
+          "label": "dair-ai/Prompt-Engineering-Guide",
+          "value": 77449,
+          "text": "1 dair-ai/Prompt-Engineering-Guide 77,449 🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, c…"
+        },
+        {
+          "repo": "tldraw/tldraw",
+          "label": "tldraw/tldraw",
+          "value": 49752,
+          "text": "2 tldraw/tldraw 49,752 Build infinite canvas apps in React with the tldraw SDK. World's best, top-most agent recommende…"
+        },
+        {
+          "repo": "jeecgboot/JeecgBoot",
+          "label": "jeecgboot/JeecgBoot",
+          "value": 47385,
+          "text": "3 jeecgboot/JeecgBoot 47,385 【低代码迈入v2.0时代，一句话即可生成整个系统】企业级AI低代码平台，一键生成前后端代码甚至整个系统。 AI Skills 一句话画流程、设计表单、生成报表、大屏。内置 AI应用…"
+        }
+      ],
+      "githubRepoCount": 15,
+      "figureCount": 19,
+      "tableCount": 15,
+      "linkCount": 63,
+      "officialStatus": "4 条官方链接/动态",
+      "tags": "2026-08-13 Benchmarking LLM Judges for Mobile Agent Evaluation firecrawl/firecrawl NousResearch/hermes-agent obra/superpowers anthropics/skills anomalyco/opencode dair-ai/Prompt-Engineering-Guide tldraw/tldraw jeecgboot/JeecgBoot pingcap/tidb chatchat-space/Langchain-Chatchat farion1231/cc-switch openai/codex browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-08-12.html",
       "date": "2026-08-12",

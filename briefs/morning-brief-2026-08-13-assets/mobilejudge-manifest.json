@@ -1,0 +1,222 @@
+[
+  {
+    "type": "figure",
+    "number": "1",
+    "caption": "Overview of MobileJudgeBench . We construct a judge benchmark from 931 human-annotated mobile agent trajectories spanning 6 benchmarks (left, § 3 ), evaluate 6 LLM-as-judge methods across 5 backends (middle, § 5.1 ), and validate that benchmark metrics predict judge utility for agent evaluation (§ 5.2.1 ) and on-policy training (§ 5.2.2 ), complemented by a root-cause failure analysis (§ 5.3 ) (right).",
+    "source": "https://arxiv.org/html/2608.11434#S1.F1",
+    "media": [
+      "https://arxiv.org/html/2608.11434v1/overview.png"
+    ],
+    "files": [
+      "mobilejudge-figure-1.png"
+    ],
+    "file": "mobilejudge-figure-1.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "1",
+    "caption": "Benchmark statistics. Tasks are unique task definitions; trajectories include up to 4 agent runs per task. Total app count excludes cross-app task categories in SPA-Bench; some apps appear in multiple benchmarks.",
+    "source": "https://arxiv.org/html/2608.11434#S3.T1",
+    "file": "mobilejudge-table-1.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "2",
+    "caption": "Judge accuracy (%) across methods and LLM backends (Qwen2.5-VL-72B, GPT-5-mini, Gemini 3 Flash, GLM-4.6V, Claude Sonnet 4.5). Bold marks the best backend per method (row-wise); underline marks the best method per backend (column-wise). Full results in Appendix D . † Default configuration: 48 uniformly sampled screenshots at max long edge 600px; no UI metadata or agent reasoning; see ablation below.",
+    "source": "https://arxiv.org/html/2608.11434#S5.T2",
+    "file": "mobilejudge-table-2.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "3",
+    "caption": "Ablation study on simple baseline judge. Top: fewer higher-resolution screenshots outperform many low-resolution ones at equal cost. Bottom: UI metadata has minimal impact; agent reasoning provides a modest gain for GPT only.",
+    "source": "https://arxiv.org/html/2608.11434#S5.T3",
+    "file": "mobilejudge-table-3.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "4",
+    "caption": "Meta-correlation across 30 judge variants. Each cell is the Spearman ρ s \\rho_{s} between a judge quality metric and a reliability metric: agent ranking fidelity ( ρ s \\rho_{s} w/ Ranking) or success-rate estimation error ( ρ s \\rho_{s} w/ MAE, where negative means higher quality → \\to lower error). Brackets give 95% CIs from a task-cluster bootstrap (tasks resampled with replacement within each source benchmark; 2,000 replicates; the 30 judge variants held fixed). Bold marks the strongest predictor per column.",
+    "source": "https://arxiv.org/html/2608.11434#S5.T4",
+    "file": "mobilejudge-table-4.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "2",
+    "caption": "Judge quality predicts evaluation reliability (30 method × \\times backend variants; marker shape = = judge method, color = = LLM backend). (a) Balanced accuracy correlates with agent ranking fidelity ( ρ s = 0.87 \\rho_{s}{=}0.87 ). (b) Balanced accuracy inversely correlates with success-rate estimation error. (c) The highest-accuracy judge (Baseline/Gemini, 90.9%) closely tracks human success rates across 24 agents ( ρ = 0.97 \\rho{=}0.97 ).",
+    "source": "https://arxiv.org/html/2608.11434#S5.F2",
+    "media": [
+      "https://arxiv.org/html/2608.11434v1/meta_correlation.svg"
+    ],
+    "files": [
+      "mobilejudge-figure-2.svg"
+    ],
+    "file": "mobilejudge-figure-2.svg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "3",
+    "caption": "On-policy RL training curves with different judge reward signals (mean ± \\pm std over 3 seeds). Inset table: judge quality on the AndroidWorld subset (Acc/Prec/Rec %) and best easy-set success rate. Training performance tracks judge accuracy (rule-based &gt; &gt; GPT-5-mini &gt; &gt; {GPT-5.2, Qwen}); the equal-accuracy pair is ordered by precision under the best-checkpoint convention.",
+    "source": "https://arxiv.org/html/2608.11434#S5.F3",
+    "media": [
+      "https://arxiv.org/html/2608.11434v1/training_curves.svg"
+    ],
+    "files": [
+      "mobilejudge-figure-3.svg"
+    ],
+    "file": "mobilejudge-figure-3.svg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "4",
+    "caption": "Root cause taxonomy for hard-core failures. The GPT set is dominated by false negatives (last-frame anchoring, unfamiliar success state), while the Qwen set is dominated by false positives (constraint violation, partial completion). Surface UI match is a shared weakness across both backends.",
+    "source": "https://arxiv.org/html/2608.11434#S5.F4",
+    "media": [
+      "https://arxiv.org/html/2608.11434v1/failure_taxonomy.svg"
+    ],
+    "files": [
+      "mobilejudge-figure-4.svg"
+    ],
+    "file": "mobilejudge-figure-4.svg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "5",
+    "caption": "Annotation platform. Left: trajectory video view with task description, agent reasoning, and playback controls. Center: step-by-step viewer showing before/after screenshots and action details. Right: annotation form collecting task achievability, success, optimality, side effects, repetition cycles, and free-text notes.",
+    "source": "https://arxiv.org/html/2608.11434#A1.F5",
+    "media": [
+      "https://arxiv.org/html/2608.11434v1/figures/appendix/annotation_platform/annotation_platform_1.jpg",
+      "https://arxiv.org/html/2608.11434v1/figures/appendix/annotation_platform/annotation_platform_2.jpg",
+      "https://arxiv.org/html/2608.11434v1/figures/appendix/annotation_platform/annotation_platform_3.jpg"
+    ],
+    "files": [
+      "mobilejudge-figure-5-1.jpg",
+      "mobilejudge-figure-5-2.jpg",
+      "mobilejudge-figure-5-3.jpg"
+    ],
+    "file": "mobilejudge-figure-5-1.jpg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "5",
+    "caption": "Structured comparison of AgentRewardBench ( 23 ) and MobileJudgeBench . The two benchmarks cover different agent domains and are complementary; MobileJudgeBench additionally validates judge metrics against downstream evaluation and training utility.",
+    "source": "https://arxiv.org/html/2608.11434#A2.T5",
+    "file": "mobilejudge-table-5.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "6",
+    "caption": "The 24 agent-level data points used for computing ranking fidelity and rate estimation error. Rate is the human-annotated success rate. Agents are grouped by model and sorted by success rate within each group.",
+    "source": "https://arxiv.org/html/2608.11434#A4.T6",
+    "file": "mobilejudge-table-6.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "7",
+    "caption": "Full evaluation results for all 30 judge variants, sorted by accuracy. Acc/Prec/Rec/F1/BAcc are trajectory-level percentages. Ag. ρ \\rho is the agent-level Spearman rank correlation with human rankings. Ag.MAE is the mean absolute error of per-agent success rate estimates.",
+    "source": "https://arxiv.org/html/2608.11434#A4.T7",
+    "file": "mobilejudge-table-7.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "6",
+    "caption": "Task-cluster bootstrap 95% CIs for the meta-correlation across the 30 judge variants. Green: interval excludes zero; grey: interval spans zero. Precision is non-predictive for both reliability metrics.",
+    "source": "https://arxiv.org/html/2608.11434#A4.F6",
+    "media": [
+      "https://arxiv.org/html/2608.11434v1/cluster_bootstrap_forest.svg"
+    ],
+    "files": [
+      "mobilejudge-figure-6.svg"
+    ],
+    "file": "mobilejudge-figure-6.svg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "8",
+    "caption": "Share of total variance ( η 2 \\eta^{2} ) across the 6 × \\times 5 judge grid attributable to the method and backbone main effects and the residual (interaction), with task-cluster bootstrap 95% CIs. The lower block repeats the decomposition on the competitive 4 × \\times 5 subgrid that excludes the two A3 modes; the same task draws are used for both grids.",
+    "source": "https://arxiv.org/html/2608.11434#A4.T8",
+    "file": "mobilejudge-table-8.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "9",
+    "caption": "Training hyperparameters for on-policy RL experiments.",
+    "source": "https://arxiv.org/html/2608.11434#A5.T9",
+    "file": "mobilejudge-table-9.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "10",
+    "caption": "Success rate (%) on the complete 116-task AndroidWorld suite, averaged over 3 seeds: best checkpoint per condition vs. the final (step-300) checkpoint.",
+    "source": "https://arxiv.org/html/2608.11434#A5.T10",
+    "file": "mobilejudge-table-10.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "7",
+    "caption": "Per-seed easy-set accuracy for each reward condition. Seed variance is moderate; the ranking Rule-based &gt; &gt; GPT-5-mini &gt; &gt; GPT-5.2 &gt; &gt; Qwen is consistent across most seeds and steps.",
+    "source": "https://arxiv.org/html/2608.11434#A5.F7",
+    "media": [
+      "https://arxiv.org/html/2608.11434v1/training_curves_per_seed.svg"
+    ],
+    "files": [
+      "mobilejudge-figure-7.svg"
+    ],
+    "file": "mobilejudge-figure-7.svg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "8",
+    "caption": "Representative false negative failure examples (4 categories). Judges incorrectly predict failure despite task success.",
+    "source": "https://arxiv.org/html/2608.11434#A6.F8",
+    "media": [
+      "https://arxiv.org/html/2608.11434v1/figures/appendix/spa_gpt-5-mini_files_2/1.jpg",
+      "https://arxiv.org/html/2608.11434v1/figures/appendix/bmoca_ui-tars_messages_2/1.jpg",
+      "https://arxiv.org/html/2608.11434v1/figures/appendix/AW_gpt-5-mini_RetroPlayingQueue/1.jpg",
+      "https://arxiv.org/html/2608.11434v1/figures/appendix/spa_ui-tars_instagram_5/1.jpg"
+    ],
+    "files": [
+      "mobilejudge-figure-8-1.jpg",
+      "mobilejudge-figure-8-2.jpg",
+      "mobilejudge-figure-8-3.jpg",
+      "mobilejudge-figure-8-4.jpg"
+    ],
+    "file": "mobilejudge-figure-8-1.jpg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "9",
+    "caption": "Representative false positive failure examples (3 categories). Judges incorrectly predict success despite task failure.",
+    "source": "https://arxiv.org/html/2608.11434#A6.F9",
+    "media": [
+      "https://arxiv.org/html/2608.11434v1/figures/appendix/arena_ui-tars_google_map_12/1.jpg",
+      "https://arxiv.org/html/2608.11434v1/figures/appendix/AW_llama_MarkorCreateNote/1.jpg",
+      "https://arxiv.org/html/2608.11434v1/figures/appendix/a3_gpt-5-mini_booking_task11/1.jpg"
+    ],
+    "files": [
+      "mobilejudge-figure-9-1.jpg",
+      "mobilejudge-figure-9-2.jpg",
+      "mobilejudge-figure-9-3.jpg"
+    ],
+    "file": "mobilejudge-figure-9-1.jpg",
+    "format": "downloaded-media"
+  }
+]

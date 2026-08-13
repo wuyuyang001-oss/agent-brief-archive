@@ -1,0 +1,107 @@
+<table id="A2.T5.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="A2.T5.2.1" class="ltx_tr">
+<th id="A2.T5.2.1.1" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_column ltx_border_tt"></th>
+<th id="A2.T5.2.1.2" class="ltx_td ltx_align_left ltx_align_top ltx_th ltx_th_column ltx_border_tt">
+<span id="A2.T5.2.1.2.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.1.2.1.1" class="ltx_p"><span id="A2.T5.2.1.2.1.1.1" class="ltx_text ltx_font_bold">AgentRewardBench</span> <cite class="ltx_cite ltx_citemacro_citep">(<a href="#bib.bib9" title="" class="ltx_ref">23</a>)</cite></span>
+</span></th>
+<th id="A2.T5.2.1.3" class="ltx_td ltx_nopad_r ltx_align_left ltx_align_top ltx_th ltx_th_column ltx_border_tt">
+<span id="A2.T5.2.1.3.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.1.3.1.1" class="ltx_p"><span id="A2.T5.2.1.3.1.1.1" class="ltx_text ltx_font_bold ltx_font_smallcaps">MobileJudgeBench<span id="A2.T5.2.1.3.1.1.1.1" class="ltx_text ltx_font_upright"> (ours)</span></span></span>
+</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="A2.T5.2.2" class="ltx_tr">
+<td id="A2.T5.2.2.1" class="ltx_td ltx_align_left ltx_align_top ltx_border_t">
+<span id="A2.T5.2.2.1.1" class="ltx_inline-block ltx_align_top" style="width:59.8pt;">
+<span id="A2.T5.2.2.1.1.1" class="ltx_p">Domain</span>
+</span></td>
+<td id="A2.T5.2.2.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_t">
+<span id="A2.T5.2.2.2.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.2.2.1.1" class="ltx_p">Web browsing: WebArena, VisualWebArena, AssistantBench, WorkArena, WorkArena++</span>
+</span></td>
+<td id="A2.T5.2.2.3" class="ltx_td ltx_nopad_r ltx_align_left ltx_align_top ltx_border_t">
+<span id="A2.T5.2.2.3.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.2.3.1.1" class="ltx_p">Mobile (Android): SPA-Bench, AndroidWorld, A3, AndroidArena, B-MoCA, AndroidLab; 68 real apps</span>
+</span></td></tr>
+<tr id="A2.T5.2.3" class="ltx_tr">
+<td id="A2.T5.2.3.1" class="ltx_td ltx_align_left ltx_align_top">
+<span id="A2.T5.2.3.1.1" class="ltx_inline-block ltx_align_top" style="width:59.8pt;">
+<span id="A2.T5.2.3.1.1.1" class="ltx_p">Trajectory observations</span>
+</span></td>
+<td id="A2.T5.2.3.2" class="ltx_td ltx_align_left ltx_align_top">
+<span id="A2.T5.2.3.2.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.3.2.1.1" class="ltx_p">Browser screenshots, DOM, and accessibility tree; judges evaluate the final browser state (screenshot or accessibility tree), for some judges together with the agent’s thought and action sequence</span>
+</span></td>
+<td id="A2.T5.2.3.3" class="ltx_td ltx_nopad_r ltx_align_left ltx_align_top">
+<span id="A2.T5.2.3.3.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.3.3.1.1" class="ltx_p">Per-step (screenshot, action, UI tree, agent reasoning) tuples; judge methods span full-sequence and final-state designs, image and text inputs</span>
+</span></td></tr>
+<tr id="A2.T5.2.4" class="ltx_tr">
+<td id="A2.T5.2.4.1" class="ltx_td ltx_align_left ltx_align_top">
+<span id="A2.T5.2.4.1.1" class="ltx_inline-block ltx_align_top" style="width:59.8pt;">
+<span id="A2.T5.2.4.1.1.1" class="ltx_p">Judges evaluated</span>
+</span></td>
+<td id="A2.T5.2.4.2" class="ltx_td ltx_align_left ltx_align_top">
+<span id="A2.T5.2.4.2.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.4.2.1.1" class="ltx_p">3 judge designs (AER, NNetNav, and a simplified judge), instantiated as 12 judges over 4 LLM backbones</span>
+</span></td>
+<td id="A2.T5.2.4.3" class="ltx_td ltx_nopad_r ltx_align_left ltx_align_top">
+<span id="A2.T5.2.4.3.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.4.3.1.1" class="ltx_p">6 judge methods (adapted from SPA-Bench, A3 with two modes, AndroidArena, and AgentRewardBench, plus a simple baseline), fully crossed with 5 LLM backbones: 30 judges</span>
+</span></td></tr>
+<tr id="A2.T5.2.5" class="ltx_tr">
+<td id="A2.T5.2.5.1" class="ltx_td ltx_align_left ltx_align_top">
+<span id="A2.T5.2.5.1.1" class="ltx_inline-block ltx_align_top" style="width:59.8pt;">
+<span id="A2.T5.2.5.1.1.1" class="ltx_p">Human annotation</span>
+</span></td>
+<td id="A2.T5.2.5.2" class="ltx_td ltx_align_left ltx_align_top">
+<span id="A2.T5.2.5.2.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.5.2.1.1" class="ltx_p">Each trajectory reviewed by an expert (success, side effects, repetitiveness); 89.3% success agreement measured on one agent–benchmark subset</span>
+</span></td>
+<td id="A2.T5.2.5.3" class="ltx_td ltx_nopad_r ltx_align_left ltx_align_top">
+<span id="A2.T5.2.5.3.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.5.3.1.1" class="ltx_p">Each trajectory independently labeled by 2–4 of 9 annotators; 88.4% pairwise success agreement; disagreements resolved by discussion</span>
+</span></td></tr>
+<tr id="A2.T5.2.6" class="ltx_tr">
+<td id="A2.T5.2.6.1" class="ltx_td ltx_align_left ltx_align_top">
+<span id="A2.T5.2.6.1.1" class="ltx_inline-block ltx_align_top" style="width:59.8pt;">
+<span id="A2.T5.2.6.1.1.1" class="ltx_p">Judge validation</span>
+</span></td>
+<td id="A2.T5.2.6.2" class="ltx_td ltx_align_left ltx_align_top">
+<span id="A2.T5.2.6.2.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.6.2.1.1" class="ltx_p">Per-trajectory precision, recall, and F1 against expert labels; precision emphasized as the primary metric, motivated by rejection fine-tuning and reward modeling; expert-vs-automatic success-rate comparison across agents</span>
+</span></td>
+<td id="A2.T5.2.6.3" class="ltx_td ltx_nopad_r ltx_align_left ltx_align_top">
+<span id="A2.T5.2.6.3.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.6.3.1.1" class="ltx_p">Per-trajectory accuracy, balanced accuracy, precision, recall, F1; meta-level validation linking judge metrics to agent-ranking fidelity and success-rate estimation error over 24 agents, with task-cluster bootstrap CIs</span>
+</span></td></tr>
+<tr id="A2.T5.2.7" class="ltx_tr">
+<td id="A2.T5.2.7.1" class="ltx_td ltx_align_left ltx_align_top">
+<span id="A2.T5.2.7.1.1" class="ltx_inline-block ltx_align_top" style="width:59.8pt;">
+<span id="A2.T5.2.7.1.1.1" class="ltx_p">Downstream RL</span>
+</span></td>
+<td id="A2.T5.2.7.2" class="ltx_td ltx_align_left ltx_align_top">
+<span id="A2.T5.2.7.2.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.7.2.1.1" class="ltx_p">Motivates judge use for fine-tuning and RL rewards; no training experiment</span>
+</span></td>
+<td id="A2.T5.2.7.3" class="ltx_td ltx_nopad_r ltx_align_left ltx_align_top">
+<span id="A2.T5.2.7.3.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.7.3.1.1" class="ltx_p">On-policy GRPO training with judge-based rewards (4 reward configurations, 3 seeds), linking judge metrics to training outcomes</span>
+</span></td></tr>
+<tr id="A2.T5.2.8" class="ltx_tr">
+<td id="A2.T5.2.8.1" class="ltx_td ltx_align_left ltx_align_top ltx_border_bb">
+<span id="A2.T5.2.8.1.1" class="ltx_inline-block ltx_align_top" style="width:59.8pt;">
+<span id="A2.T5.2.8.1.1.1" class="ltx_p">Failure analysis</span>
+</span></td>
+<td id="A2.T5.2.8.2" class="ltx_td ltx_align_left ltx_align_top ltx_border_bb">
+<span id="A2.T5.2.8.2.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.8.2.1.1" class="ltx_p">Four judge-error categories with examples</span>
+</span></td>
+<td id="A2.T5.2.8.3" class="ltx_td ltx_nopad_r ltx_align_left ltx_align_top ltx_border_bb">
+<span id="A2.T5.2.8.3.1" class="ltx_inline-block ltx_align_top" style="width:173.6pt;">
+<span id="A2.T5.2.8.3.1.1" class="ltx_p">Seven-category root-cause taxonomy of hard-core failures, contrasted across two backbones; double-coded sample: <math id="A2.T5.m1" class="ltx_Math" alttext="\kappa=0.957" display="inline" intent=":literal"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>0.957</mn></mrow><annotation encoding="application/x-tex">\kappa=0.957</annotation></semantics></math></span>
+</span></td></tr>
+</tbody>
+</table>

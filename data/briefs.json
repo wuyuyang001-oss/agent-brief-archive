@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-08-13T03:52:39.479Z",
+  "generatedAt": "2026-08-17T03:15:46.560Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-08-17.html",
+      "date": "2026-08-17",
+      "weekday": "周一",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "PACE-Bench: Benchmarking Physics Adaptation via Code Evolution in Dynamic Environments",
+      "summary": "动态环境里的“自我进化”仍远未可靠：已证实事实： PACE-Bench 在 144 个源环境→目标环境物理变异对上测试代码演化；论文中最强完整配置仅为 35.9% Pass@2，说明能修改代码不等于能在环境变化后恢复。",
+      "problem": "面向 Agent 产品与评测产品：识别技术红利、形成知识库，并把可验证信号转化为产品决策。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-08-17.html",
+      "overview": "overviews/morning-brief-2026-08-17.svg",
+      "githubRows": [
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1911,
+          "text": "1 NousResearch/hermes-agent 带记忆、工具与自扩展能力的个人 Agent。 231,579 +1,911 Python 2026-08-17T03:05:40Z"
+        },
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 1536,
+          "text": "2 obra/superpowers 跨 Coding Agent 的技能框架与工作方法。 272,858 +1,536 Shell 2026-08-13T00:36:31Z"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 1475,
+          "text": "3 anomalyco/opencode 开源终端 Coding Agent 与运行时。 198,177 +1,475 TypeScript 2026-08-17T03:04:29Z"
+        },
+        {
+          "repo": "anthropics/skills",
+          "label": "anthropics/skills",
+          "value": 1201,
+          "text": "4 anthropics/skills 官方 Agent Skills 示例仓库。 169,781 +1,201 Python 2026-08-13T18:09:56Z"
+        },
+        {
+          "repo": "openai/codex",
+          "label": "openai/codex",
+          "value": 722,
+          "text": "5 openai/codex 终端内运行的轻量 Coding Agent。 106,313 +722 Rust 2026-08-17T00:34:29Z"
+        },
+        {
+          "repo": "langfuse/langfuse",
+          "label": "langfuse/langfuse",
+          "value": 33207,
+          "text": "1 langfuse/langfuse 33,207 开源 LLM / Agent 观测、数据集、评测、指标与提示管理。 最直接服务评测产品的轨迹与线上质量闭环；许可证为 NOASSERTION，商用前需自行核验。 TypeScript …"
+        },
+        {
+          "repo": "conductor-oss/conductor",
+          "label": "conductor-oss/conductor",
+          "value": 32096,
+          "text": "2 conductor-oss/conductor 32,096 面向 Agent 应用的事件驱动、持久化工作流执行引擎。 可借鉴长任务编排、重试和可靠执行；引入 Java 基础设施与运维复杂度。 Java 2026-08-16T10:2…"
+        },
+        {
+          "repo": "getzep/graphiti",
+          "label": "getzep/graphiti",
+          "value": 29985,
+          "text": "3 getzep/graphiti 29,985 为 Agent 构建实时知识图谱与长期记忆。 适合验证时间敏感记忆与溯源；图谱抽取质量、延迟和隐私成本要实际测量。 Python 2026-08-16T17:36:43Z"
+        }
+      ],
+      "githubRepoCount": 12,
+      "figureCount": 7,
+      "tableCount": 5,
+      "linkCount": 67,
+      "officialStatus": "4 条官方链接/动态",
+      "tags": "2026-08-17 PACE-Bench: Benchmarking Physics Adaptation via Code Evolution in Dynamic Environments thunlp/PACE-Bench NousResearch/hermes-agent obra/superpowers anomalyco/opencode anthropics/skills openai/codex langfuse/langfuse conductor-oss/conductor getzep/graphiti volcengine/OpenViking promptfoo/promptfoo browser-use/browser-use AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-08-13.html",
       "date": "2026-08-13",

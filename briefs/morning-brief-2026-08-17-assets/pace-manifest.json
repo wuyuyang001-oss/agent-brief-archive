@@ -1,0 +1,276 @@
+[
+  {
+    "type": "figure",
+    "number": "1",
+    "caption": "Existing self-evolving benchmarks test transfer or generalization, whereas PACE-Bench tests adaptation of an executable design after physical environment shift.",
+    "source": "https://arxiv.org/html/2608.14441#S1.F1",
+    "media": [
+      "https://arxiv.org/html/2608.14441v1/paper_images_3.png"
+    ],
+    "files": [
+      "pace-figure-1.png"
+    ],
+    "file": "pace-figure-1.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "1",
+    "caption": "Comparison of representative benchmarks for self-evolution, engineering design, and physical environments. The highlighted final column is the core capability evaluated by PACE-Bench ; the other columns describe its evaluation setting.",
+    "source": "https://arxiv.org/html/2608.14441#S1.T1",
+    "file": "pace-table-1.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "2",
+    "caption": "Overview of the three-phase dataset construction pipeline.",
+    "source": "https://arxiv.org/html/2608.14441#S2.F2",
+    "media": [
+      "https://arxiv.org/html/2608.14441v1/paper_images_1.png"
+    ],
+    "files": [
+      "pace-figure-2.png"
+    ],
+    "file": "pace-figure-2.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "3",
+    "caption": "Overview of PACE-Bench . Left: the 36 tasks organized across six physics categories. Right: rendered snapshots of reference solutions succeeding on the source environments.",
+    "source": "https://arxiv.org/html/2608.14441#S3.F3",
+    "media": [
+      "https://arxiv.org/html/2608.14441v1/sunburst_panel3_combined_readable.png"
+    ],
+    "files": [
+      "pace-figure-3.png"
+    ],
+    "file": "pace-figure-3.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "2",
+    "caption": "Main Results: Pass@2 (%) and Score@2 by Method and Model. Values in parentheses show Δ \\Delta vs. Vanilla ( ↑ \\uparrow = improvement, ↓ \\downarrow = degradation).",
+    "source": "https://arxiv.org/html/2608.14441#S3.T2",
+    "file": "pace-table-2.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "3",
+    "caption": "Vanilla performance on Statics subset under the full 20-attempt budget.",
+    "source": "https://arxiv.org/html/2608.14441#S4.T3",
+    "file": "pace-table-3.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "4",
+    "caption": "Cost-normalized results on the Kinematics subset under 20-attempt budget. Scores are fitted to the nearest 1 / 24 1/24 increment and shown to one decimal. S/Hr is computed from the fitted scores before display rounding.",
+    "source": "https://arxiv.org/html/2608.14441#S4.T4",
+    "file": "pace-table-4.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "4",
+    "caption": "Error type distribution by category (left) and method (right).",
+    "source": "https://arxiv.org/html/2608.14441#S4.F4",
+    "media": [
+      "https://arxiv.org/html/2608.14441v1/bar_error_combined.svg"
+    ],
+    "files": [
+      "pace-figure-4.svg"
+    ],
+    "file": "pace-figure-4.svg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "5",
+    "caption": "Code Similarity by Method and Model (iterations ≥ \\geq 10). Trend (L − - E) = mean similarity difference between late and early attempts; positive = increasing self-similarity. Bold denotes the highest value in each column.",
+    "source": "https://arxiv.org/html/2608.14441#S4.T5",
+    "file": "pace-table-5.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "6",
+    "caption": "Change-Hidden (CH) vs. Change-Exposed (CE) Pass@2 (%) pooled over Statics and Kinematics (approximately 48 environment pairs). CE discloses the changed variables and their exact new values.",
+    "source": "https://arxiv.org/html/2608.14441#S4.T6",
+    "file": "pace-table-6.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "7",
+    "caption": "Modules of each task in PACE-Bench .",
+    "source": "https://arxiv.org/html/2608.14441#A1.T7",
+    "file": "pace-table-7.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "8",
+    "caption": "Severity levels used during human verification.",
+    "source": "https://arxiv.org/html/2608.14441#A1.T8",
+    "file": "pace-table-8.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "9",
+    "caption": "Dataset statistics by category (averaged over 6 tasks each). Stages 1–4 report average mutated physical parameters per stage, indicating progressive escalation in difficulty.",
+    "source": "https://arxiv.org/html/2608.14441#A1.T9",
+    "file": "pace-table-9.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "10",
+    "caption": "Run-reliability analysis. The full-benchmark panel compares the two independent runs; the Kinematics panel compares statistics computed from two runs with those computed after adding a third run for five representative methods.",
+    "source": "https://arxiv.org/html/2608.14441#A3.T10",
+    "file": "pace-table-10.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "5",
+    "caption": "Pass@2 and Score@2 by model on Statics, Vanilla method, five-attempt budget.",
+    "source": "https://arxiv.org/html/2608.14441#A3.F5",
+    "media": [
+      "https://arxiv.org/html/2608.14441v1/bar_large_baseline_model.svg"
+    ],
+    "files": [
+      "pace-figure-5.svg"
+    ],
+    "file": "pace-figure-5.svg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "11",
+    "caption": "VLM Video Feedback Impact on Statics and Kinematics.",
+    "source": "https://arxiv.org/html/2608.14441#A3.T11",
+    "file": "pace-table-11.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "12",
+    "caption": "VLM Effect on Error Taxonomy: Δ \\Delta error share when VLM video feedback is added. Positive = VLM increases this error type; negative = VLM reduces it.",
+    "source": "https://arxiv.org/html/2608.14441#A3.T12",
+    "file": "pace-table-12.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "13",
+    "caption": "CE Effect on Error Taxonomy: Δ \\Delta error share when mutated variables are disclosed (CE minus CH). Positive = CE increases this error type; negative = CE reduces it. Statics only.",
+    "source": "https://arxiv.org/html/2608.14441#A3.T13",
+    "file": "pace-table-13.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "6",
+    "caption": "Pass@2@ k k and Score@2@ k k by model (all methods, all categories).",
+    "source": "https://arxiv.org/html/2608.14441#A3.F6",
+    "media": [
+      "https://arxiv.org/html/2608.14441v1/discovery_and_score_curves_by_model.svg"
+    ],
+    "files": [
+      "pace-figure-6.svg"
+    ],
+    "file": "pace-figure-6.svg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "14",
+    "caption": "Adjacent-attempt Jaccard code similarity for one Qwen3-14B Stage 4 case study. Each entry compares solutions on consecutive transitions.",
+    "source": "https://arxiv.org/html/2608.14441#A3.T14",
+    "file": "pace-table-14.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "15",
+    "caption": "Vanilla from-scratch results by model, computed over eligible task–environment instances.",
+    "source": "https://arxiv.org/html/2608.14441#A4.T15",
+    "file": "pace-table-15.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "16",
+    "caption": "Vanilla from-scratch results by target environment, computed over eligible task–environment instances.",
+    "source": "https://arxiv.org/html/2608.14441#A4.T16",
+    "file": "pace-table-16.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "7",
+    "caption": "Model × \\times category Pass@2 heatmap (all methods aggregated).",
+    "source": "https://arxiv.org/html/2608.14441#A5.F7",
+    "media": [
+      "https://arxiv.org/html/2608.14441v1/heatmap_model_category_pass.png"
+    ],
+    "files": [
+      "pace-figure-7.png"
+    ],
+    "file": "pace-figure-7.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "17",
+    "caption": "Category: Statics & Equilibrium task specifications.",
+    "source": "https://arxiv.org/html/2608.14441#A7.T17",
+    "file": "pace-table-17.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "18",
+    "caption": "Category: Kinematics & Linkages task specifications.",
+    "source": "https://arxiv.org/html/2608.14441#A7.T18",
+    "file": "pace-table-18.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "19",
+    "caption": "Category: Dynamics & Energy task specifications.",
+    "source": "https://arxiv.org/html/2608.14441#A7.T19",
+    "file": "pace-table-19.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "20",
+    "caption": "Category: Granular & Fluid Interaction task specifications.",
+    "source": "https://arxiv.org/html/2608.14441#A7.T20",
+    "file": "pace-table-20.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "21",
+    "caption": "Category: Cybernetics & Control task specifications.",
+    "source": "https://arxiv.org/html/2608.14441#A7.T21",
+    "file": "pace-table-21.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "22",
+    "caption": "Category: Exotic Physics task specifications.",
+    "source": "https://arxiv.org/html/2608.14441#A7.T22",
+    "file": "pace-table-22.html",
+    "format": "html"
+  }
+]

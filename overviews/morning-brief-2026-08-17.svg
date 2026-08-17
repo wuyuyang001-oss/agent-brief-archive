@@ -30,21 +30,21 @@
   <text x="110" y="266" font-size="20" font-weight="800" fill="#087f5b">当日核心摘要</text>
   <text x="110" y="311" font-size="27" font-weight="850" fill="#132334">PACE-Bench: Benchmarking Physics Adaptation vi</text>
 <text x="110" y="345" font-size="27" font-weight="850" fill="#132334">a Code Evolution in Dynamic Environments</text>
-  <text x="110" y="378" font-size="18" font-weight="500" fill="#4d6176">动态环境里的“自我进化”仍远未可靠：已证实事实： PACE-Bench 在 144 个源</text>
-<text x="110" y="405" font-size="18" font-weight="500" fill="#4d6176">环境→目标环境物理变异对上测试代码演化；论文中最强完整配置仅为 35.9% P…</text>
+  <text x="110" y="378" font-size="18" font-weight="500" fill="#4d6176">已证实：Agent 的难点从“做对一次”转向“环境变了还能修复”：8 月 14 日的 P</text>
+<text x="110" y="405" font-size="18" font-weight="500" fill="#4d6176">ACE-Bench 让原本能工作的代码面对同接口、不同物理条件的目标环境；十种自…</text>
 
   <g>
     <rect x="82" y="460" width="130" height="106" rx="20" fill="#f3f8ff" stroke="#d8e5f2"/>
-    <text x="110" y="503" font-size="38" font-weight="850" fill="#0a67a3">12</text>
+    <text x="110" y="503" font-size="38" font-weight="850" fill="#0a67a3">14</text>
     <text x="110" y="536" font-size="15" font-weight="700" fill="#5f7184">GitHub 仓库</text>
     <rect x="224" y="460" width="130" height="106" rx="20" fill="#f3fbf6" stroke="#d8e5f2"/>
-    <text x="252" y="503" font-size="38" font-weight="850" fill="#087f5b">7</text>
+    <text x="252" y="503" font-size="38" font-weight="850" fill="#087f5b">29</text>
     <text x="252" y="536" font-size="15" font-weight="700" fill="#5f7184">论文图表</text>
     <rect x="366" y="460" width="130" height="106" rx="20" fill="#fff8ed" stroke="#d8e5f2"/>
     <text x="394" y="503" font-size="38" font-weight="850" fill="#a15c00">5</text>
     <text x="394" y="536" font-size="15" font-weight="700" fill="#5f7184">HTML 表格</text>
     <rect x="508" y="460" width="122" height="106" rx="20" fill="#f7f4ff" stroke="#d8e5f2"/>
-    <text x="536" y="503" font-size="38" font-weight="850" fill="#4f46e5">67</text>
+    <text x="536" y="503" font-size="38" font-weight="850" fill="#4f46e5">34</text>
     <text x="536" y="536" font-size="15" font-weight="700" fill="#5f7184">来源链接</text>
   </g>
 
@@ -56,28 +56,28 @@
       <text x="690" y="455" font-size="17" font-weight="650" fill="#233246">NousResearch/hermes-agent</text>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="#e8eef6"/>
       <rect x="910" y="438" width="330" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">1,911</text>
+      <text x="1255" y="453" font-size="13" font-weight="700" fill="#0b5f91">1,977</text>
 
-      <text x="690" y="493" font-size="17" font-weight="650" fill="#233246">obra/superpowers</text>
+      <text x="690" y="493" font-size="17" font-weight="650" fill="#233246">firecrawl/firecrawl</text>
       <rect x="910" y="476" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="476" width="265" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1190" y="491" font-size="13" font-weight="700" fill="#0b5f91">1,536</text>
+      <rect x="910" y="476" width="294" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1219" y="491" font-size="13" font-weight="700" fill="#0b5f91">1,763</text>
 
-      <text x="690" y="531" font-size="17" font-weight="650" fill="#233246">anomalyco/opencode</text>
+      <text x="690" y="531" font-size="17" font-weight="650" fill="#233246">obra/superpowers</text>
       <rect x="910" y="514" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="514" width="255" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1180" y="529" font-size="13" font-weight="700" fill="#0b5f91">1,475</text>
+      <rect x="910" y="514" width="262" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1187" y="529" font-size="13" font-weight="700" fill="#0b5f91">1,572</text>
 
-      <text x="690" y="569" font-size="17" font-weight="650" fill="#233246">anthropics/skills</text>
+      <text x="690" y="569" font-size="17" font-weight="650" fill="#233246">anomalyco/opencode</text>
       <rect x="910" y="552" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="552" width="207" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1132" y="567" font-size="13" font-weight="700" fill="#0b5f91">1,201</text>
+      <rect x="910" y="552" width="252" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1177" y="567" font-size="13" font-weight="700" fill="#0b5f91">1,507</text>
 
-      <text x="690" y="607" font-size="17" font-weight="650" fill="#233246">openai/codex</text>
+      <text x="690" y="607" font-size="17" font-weight="650" fill="#233246">anthropics/skills</text>
       <rect x="910" y="590" width="330" height="18" rx="9" fill="#e8eef6"/>
-      <rect x="910" y="590" width="125" height="18" rx="9" fill="url(#barGradient)"/>
-      <text x="1050" y="605" font-size="13" font-weight="700" fill="#0b5f91">722</text>
+      <rect x="910" y="590" width="205" height="18" rx="9" fill="url(#barGradient)"/>
+      <text x="1130" y="605" font-size="13" font-weight="700" fill="#0b5f91">1,228</text>
 
   <rect x="82" y="596" width="1116" height="42" rx="21" fill="url(#accent)" opacity="0.10"/>
-  <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：4 条官方链接/动态 · 生成时间：2026-08-17 03:15:46 UTC</text>
+  <text x="110" y="623" font-size="16" font-weight="750" fill="#183247">官方动态：2 条官方链接/动态 · 生成时间：2026-08-17 07:40:23 UTC</text>
 </svg>

@@ -1,0 +1,174 @@
+[
+  {
+    "type": "figure",
+    "number": "1",
+    "caption": "One small run drawn as the measured object. Agents (circles) and files (rectangles) are both nodes; every logged event is a typed edge carrying a timestamp, a byte size, and a token cost, and the circled numbers give the order in time. Here a 1 a_{1} opens with two messages (1, 2), a 2 a_{2} writes the specification once (3), two agents read it (4, 5), a 3 a_{3} and a 4 a_{4} agree an interface by message (6, 7), and a 4 a_{4} writes the deliverable (8). What to notice: the files take part in the network as nodes of their own, and one write (3) serves two readers (4, 5); a direct message reaches one recipient.",
+    "source": "https://arxiv.org/html/2608.16801#S2.F1",
+    "media": [],
+    "files": [
+      "coordination-figure-1.svg"
+    ],
+    "file": "coordination-figure-1.svg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "2",
+    "caption": "From a run to a network. The generator deals the task’s units to the agents, the agents run as parallel processes and message each other through a logging server, a verifier grades the workspace, and a parser turns the logs into four CSV tables: nodes, edges, turns, and runs. What to notice: instrumentation is external to the agents, so the pipeline works for any runtime that logs tool calls.",
+    "source": "https://arxiv.org/html/2608.16801#S2.F2",
+    "media": [],
+    "files": [
+      "coordination-figure-2.svg"
+    ],
+    "file": "coordination-figure-2.svg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "3",
+    "caption": "The dataset at a glance. Top: the two task shapes. In Experiment 1 the specification is cut into four parts and dealt out, so the team must reassemble knowledge; in Experiment 2 the task is a chain of steps owned by different agents, so the team must agree the interfaces between owners. Middle: every run sets three factors, team size, team structure, and the file policy; one choice of all factors is a configuration , and ten runs of a configuration in one collection form a cell (magnified). Bottom: the resulting run counts. What to notice: the dataset is one controlled grid, so any two cells differ only in the factors named here.",
+    "source": "https://arxiv.org/html/2608.16801#S3.F3",
+    "media": [],
+    "files": [
+      "coordination-figure-3.svg"
+    ],
+    "file": "coordination-figure-3.svg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "1",
+    "caption": "Mean edges per run as the team grows (flat team, collection B, files allowed, clean split, Experiment 1; ten runs per row). Messages rise steeply and file writes barely move. The file-read count at eight agents (38.8) is not a coordination signal: most of these reads are outside the workspace, the agents opening the reference solution, the hidden tests, and other runs’ files (Section 9 ); genuine reads of the team’s own workspace are about fifteen per run. Cells are drawn from collection B alone; Section 8 reports how far the two collections differ.",
+    "source": "https://arxiv.org/html/2608.16801#S4.T1",
+    "file": "coordination-table-1.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "4",
+    "caption": "Messages per run against team size on log-log axes, with an n 2 n^{2} reference (grey dashed); cells are drawn from collection B. What to notice: Experiment 2 tracks the quadratic reference (slope 1.92); the eight-step arm bends away from it after four agents; the sixteen-step arm goes flat between eight and sixteen. The quadratic growth ends within the measured range of team sizes.",
+    "source": "https://arxiv.org/html/2608.16801#S4.F4",
+    "media": [
+      "https://arxiv.org/html/2608.16801v1/figures/agent-scaling.png"
+    ],
+    "files": [
+      "coordination-figure-4.png"
+    ],
+    "file": "coordination-figure-4.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "5",
+    "caption": "The handshake in time. Each curve averages, across timing-eligible runs that contain at least one named directed pair, the per-run cumulative fraction of the sender-to-recipient pairs a run eventually uses that have appeared by normalised time τ \\tau ; one line per team size, one panel per experiment and collection session, the dotted line marking 90%. What to notice: most pairs appear early, though the mean per-run 90% arrival time varies from about 0.14 to 0.60 across team sizes and sessions, the session dependence Section 8 measures. The axis runs from the first message to the last, so it says nothing about where the run itself ends.",
+    "source": "https://arxiv.org/html/2608.16801#S4.F5",
+    "media": [
+      "https://arxiv.org/html/2608.16801v1/figures/handshake-arrival.png"
+    ],
+    "files": [
+      "coordination-figure-5.png"
+    ],
+    "file": "coordination-figure-5.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "6",
+    "caption": "The shape of the sustained network is set by the task, on the flat, allowed-policy, clean-split runs (both collection sessions pooled). Left: mean degree of the sustained undirected graph (a pair is joined once either direction has carried at least two messages) against the clique line n − 1 n-1 (black dashed), with standard-error bars; each two-, four-, or eight-agent point averages the two ten-run collection cells. Right: the global clustering coefficient of the same graph; at two agents it is zero by construction, since three agents are needed for a triangle. The open diamond is the chained sixteen-step scaling arm, the only sixteen-agent data. What to notice: the distributed task (blue) tracks the clique line and clusters tightly; the chained task (green) stays sparse and its gap to the clique line widens with team size; there are no sixteen-agent distributed runs.",
+    "source": "https://arxiv.org/html/2608.16801#S5.F6",
+    "media": [
+      "https://arxiv.org/html/2608.16801v1/figures/topology-density.png"
+    ],
+    "files": [
+      "coordination-figure-6.png"
+    ],
+    "file": "coordination-figure-6.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "7",
+    "caption": "Mean directed out-degree against team size when edges are filtered to ordered pairs where the sender pushed at least t t messages, against the clique line n − 1 n-1 (black dashed). What to notice: on the distributed task the once-only graph (light, t ≥ 1 t\\geq 1 ) tracks the clique; the sustained directed graph ( t ≥ 2 t\\geq 2 and above) grows more slowly, to between about two and five per agent at eight agents depending on experiment and session (5.0 and 3.0 on the distributed task, about two on the chained). The participant series normalises over the agents that sent any message, the team series over all N N agents. This is an out-degree, and it sits below the dense undirected graph of Figure 6 on the chained task and in one distributed session, though it approaches it in the other.",
+    "source": "https://arxiv.org/html/2608.16801#S5.F7",
+    "media": [
+      "https://arxiv.org/html/2608.16801v1/figures/coordination-degree.png"
+    ],
+    "files": [
+      "coordination-figure-7.png"
+    ],
+    "file": "coordination-figure-7.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "8",
+    "caption": "Where the coordination tokens go, by channel and policy (both experiments; 90 runs per bar group). The bars are proxies on two different bases: the message bar is the message length (about four characters per token), the file bars are the originating turn’s output tokens shared across its tool calls, and neither counts cached context. They therefore show only the direction of the channel shift; the run-level output-token totals in the text use the model’s reported figures. What to notice: under mandatory , message tokens collapse and file tokens grow in both experiments. Output falls overall only in Experiment 1; in Experiment 2 the files already carry the coordination, so the rule only adds overhead. Under forbidden the file bars are the deliverable itself, which the team must write: every write in those runs goes to the deliverable (270 of 270 multi-agent runs in Experiment 1), and the bars are non-zero because the same file is created and revised several times per run.",
+    "source": "https://arxiv.org/html/2608.16801#S6.F8",
+    "media": [
+      "https://arxiv.org/html/2608.16801v1/figures/cost-analysis.png"
+    ],
+    "files": [
+      "coordination-figure-8.png"
+    ],
+    "file": "coordination-figure-8.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "9",
+    "caption": "Coordination cost by channel against team size, log-log, under allowed (left) and mandatory (right), for the distributed task (top) and the chained task (bottom), all from collection B; the grey dashed line is n 2 n^{2} . Legend: M_dir = = messages aimed at one named peer, W = = file writes, R = = file reads, C = = all coordination edges together; the number after each is its fitted growth exponent. What to notice: directed messages track the quadratic wherever the teams use them; on the distributed task the mandatory policy moves the total from near-quadratic (exponent 1.70 to 2.11 across sessions) towards linear (1.12 to 1.32). The file-read channel itself is still super-linear there ( ≈ 1.7 \\approx 1.7 ): the total is near-linear because directed messaging is switched off. Only the chained task’s file channel is linear by construction.",
+    "source": "https://arxiv.org/html/2608.16801#S6.F9",
+    "media": [
+      "https://arxiv.org/html/2608.16801v1/figures/channel-linearisation.png"
+    ],
+    "files": [
+      "coordination-figure-9.png"
+    ],
+    "file": "coordination-figure-9.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "2",
+    "caption": "Success on the conflicting split (Experiment 1), where two agents hold contradictory validation rules, by team size, policy, and structure; files- allowed and the other policies shown separately, ten runs per cell. Collections A and B are the same flat configuration collected twice.",
+    "source": "https://arxiv.org/html/2608.16801#S7.T2",
+    "file": "coordination-table-2.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "10",
+    "caption": "Success by team structure and split, under the allowed (default) file policy, with Clopper–Pearson 95% intervals. Flat pools the two collection sessions ( N = 20 N{=}20 per point); coordinator has N = 10 N{=}10 . What to notice: at four agents the coordinator leads on the conflicting split (top left); at eight agents it no longer does (top right). In Experiment 2 (bottom) success follows the split, whatever the team structure, and the coordinator is the weakest point of all on the conflicting split at four agents (1/10).",
+    "source": "https://arxiv.org/html/2608.16801#S7.F10",
+    "media": [
+      "https://arxiv.org/html/2608.16801v1/figures/topology-split.png"
+    ],
+    "files": [
+      "coordination-figure-10.png"
+    ],
+    "file": "coordination-figure-10.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "11",
+    "caption": "Test-retest reliability: each point is one matched cell, with the two sessions’ mean messages per run on the two axes; open markers differ under a Benjamini–Hochberg correction across each task’s cells. What to notice: the chained task (green) hugs the diagonal, with no cell differing after correction; the distributed task (blue) scatters off it, with thirteen of twenty-seven differing. Reproducibility under a fixed model depends on the task.",
+    "source": "https://arxiv.org/html/2608.16801#S8.F11",
+    "media": [
+      "https://arxiv.org/html/2608.16801v1/figures/reliability-scatter.png"
+    ],
+    "files": [
+      "coordination-figure-11.png"
+    ],
+    "file": "coordination-figure-11.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "3",
+    "caption": "The eight hypotheses and their outcomes. H1 and H4–H8 are pre-registered in both prediction and test; H2 and H3 carry qualifications (see text).",
+    "source": "https://arxiv.org/html/2608.16801#A1.T3",
+    "file": "coordination-table-3.html",
+    "format": "html"
+  }
+]

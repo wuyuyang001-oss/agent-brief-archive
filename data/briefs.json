@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-08-17T07:40:23.814Z",
+  "generatedAt": "2026-08-18T03:06:02.839Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-08-18.html",
+      "date": "2026-08-18",
+      "weekday": "周二",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "When Agents Coordinate: Measuring Coordination in Multi-Agent AI Coding",
+      "summary": "已证实：多 Agent 产品需要测量“如何协调”，不能只看最终成功率：将 Agent 与文件都作为节点，把消息、读写与成本变成带时间戳的边；1,902 次主实验显示任务结构决定网络形态，单纯在提示词里任命 coordinator 不会自然形成领导中心。",
+      "problem": "面向 Agent 产品与评测产品：识别可复用技术红利、验证能力边界并沉淀决策证据。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "Agent 架构与工具",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-08-18.html",
+      "overview": "overviews/morning-brief-2026-08-18.svg",
+      "githubRows": [
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 443,
+          "text": "1 NousResearch/hermes-agent 带持久记忆、工具与自扩展能力的个人 Agent。 232,088 +443 Python 2026-08-18 02:48:36 UTC"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 404,
+          "text": "2 firecrawl/firecrawl 面向 Agent 的网页搜索、抓取与结构化上下文 API。 168,689 +404 TypeScript 2026-08-17 23:40:12 UTC"
+        },
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 375,
+          "text": "3 obra/superpowers 跨 Coding Agent 的技能框架与软件工程方法库。 273,269 +375 Shell 2026-08-13 00:36:31 UTC"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 308,
+          "text": "4 anomalyco/opencode 开源终端 Coding Agent 与工具运行时。 198,517 +308 TypeScript 2026-08-18 02:49:52 UTC"
+        },
+        {
+          "repo": "anthropics/skills",
+          "label": "anthropics/skills",
+          "value": 244,
+          "text": "5 anthropics/skills Anthropic 公开的 Agent Skills 示例集合。 170,052 +244 Python 2026-08-17 17:23:18 UTC"
+        },
+        {
+          "repo": "santifer/career-ops",
+          "label": "santifer/career-ops",
+          "value": 64810,
+          "text": "1 santifer/career-ops 64,810 把职位扫描、结构化评分、简历定制与申请追踪组合成可本地运行的垂直 Agent；值得观察专用工作流如何胜过通用聊天。 JavaScript / MIT 2026-08-18 02:2…"
+        },
+        {
+          "repo": "hugohe3/ppt-master",
+          "label": "hugohe3/ppt-master",
+          "value": 47531,
+          "text": "2 hugohe3/ppt-master 47,531 生成原生可编辑 PPT、图表、动画与讲稿音频；可作为文档 Agent 的结构化产物与模板约束参考。 Python / MIT 2026-08-18 02:12:16 UTC v4.8…"
+        },
+        {
+          "repo": "iOfficeAI/AionUi",
+          "label": "iOfficeAI/AionUi",
+          "value": 32068,
+          "text": "3 iOfficeAI/AionUi 32,068 为 20+ CLI Agent 提供 24/7 Cowork UI、定制助手与组队能力；适合研究多运行时聚合层和用户权限界面。 TypeScript / Apache-2.0 2026-…"
+        }
+      ],
+      "githubRepoCount": 16,
+      "figureCount": 14,
+      "tableCount": 8,
+      "linkCount": 81,
+      "officialStatus": "8 条官方链接/动态",
+      "tags": "2026-08-18 When Agents Coordinate: Measuring Coordination in Multi-Agent AI Coding giuseppedestefanis/when-agents-coordinate NousResearch/hermes-agent firecrawl/firecrawl obra/superpowers anomalyco/opencode anthropics/skills santifer/career-ops hugohe3/ppt-master iOfficeAI/AionUi Gitlawb/openclaude jackwener/OpenCLI openai/codex browser-use/browser-use bytedance/deer-flow anthropics/claude-code farion1231/cc-switch AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-08-17.html",
       "date": "2026-08-17",

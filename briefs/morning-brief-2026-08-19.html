@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI / Agent 晨间简报 · 2026-08-19</title><style>
+:root{--ink:#172433;--muted:#587083;--line:#d9e2e8;--blue:#0b67c2;--pale:#f4f8fb;--green:#08745f;--amber:#9a6200}*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font:15px/1.68 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}main{max-width:1060px;margin:auto;padding:38px 28px 72px}header{border-bottom:4px solid var(--ink);padding-bottom:24px}.eyebrow{font:700 12px/1.2 ui-monospace,monospace;letter-spacing:.12em;color:var(--blue)}h1{font-size:36px;line-height:1.15;margin:10px 0}h2{font-size:24px;line-height:1.3;margin:42px 0 14px;padding-top:4px}h3{font-size:18px;line-height:1.4;margin:0 0 8px}p{margin:8px 0}a{color:var(--blue);text-decoration-thickness:1px}.meta,.method{color:var(--muted);font-size:13px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.chip,.state{border:1px solid var(--line);padding:3px 8px;border-radius:999px;background:#fff;font-size:12px}.state{color:var(--green);white-space:nowrap}.summary,.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.signal,.card{border:1px solid var(--line);border-radius:10px;padding:17px;background:#fff}.signal:first-child{grid-column:span 2;border-color:#9cc4ec;background:#f8fbff}.signal-top{display:flex;justify-content:space-between;gap:12px;align-items:start}dl{margin:10px 0 0;display:grid;grid-template-columns:126px 1fr;gap:6px 12px}dt{font-weight:700;color:#314859}dd{margin:0}.callout{padding:13px 15px;border-left:4px solid var(--blue);background:var(--pale);margin:12px 0}.warn{border-left-color:var(--amber);background:#fff9ec}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px}table{border-collapse:collapse;width:100%;min-width:720px}th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{font-size:13px;background:#f7fafc}tr:last-child td{border-bottom:0}.up{color:var(--green);font-weight:700}details{border:1px solid var(--line);border-radius:9px;padding:0 15px;margin:14px 0;background:#fff}summary{cursor:pointer;font-weight:700;padding:13px 0}details>div,details>p{margin:0 0 15px}figure{margin:18px 0;padding:12px;border:1px solid var(--line);border-radius:8px;background:#fff}figure img{max-width:100%;height:auto;display:block;margin:auto}figcaption{font-size:13px;color:var(--muted);margin-top:8px}iframe{width:100%;height:360px;border:1px solid var(--line);background:#fff}.figure-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.small{font-size:13px;color:var(--muted)}ul{padding-left:22px}.visible-label{font-weight:700;color:#314859}@media(max-width:720px){main{padding:24px 16px}.summary,.grid{grid-template-columns:1fr}.signal:first-child{grid-column:auto}dl{grid-template-columns:1fr;gap:1px}dd{margin-bottom:8px}.figure-grid{grid-template-columns:1fr}}@media print{main{max-width:none;padding:12mm}details{display:block}details>summary{display:none}details>*{display:block!important}a{color:#000;text-decoration:none}iframe{height:260px}.signal,.card,figure{break-inside:avoid}}
+
+.feedback textarea{width:100%;min-height:120px;padding:12px;border:1px solid var(--line);border-radius:8px;font:inherit}.feedback button{margin-top:8px;padding:8px 14px;border:0;border-radius:7px;background:var(--ink);color:#fff;cursor:pointer}.feedback-status{margin-left:10px;color:var(--green);font-size:13px}
+
+.feedback textarea{width:100%;min-height:120px;padding:12px;border:1px solid var(--line);border-radius:8px;font:inherit}.feedback button{margin-top:8px;padding:8px 14px;border:0;border-radius:7px;background:var(--ink);color:#fff;cursor:pointer}.feedback-status{margin-left:10px;color:var(--green);font-size:13px}
+</style></head><body><main>
+<header><div class="eyebrow">AI / AGENT DECISION BRIEF</div><h1>晨间简报</h1><p>面向 Agent 产品与评测产品：识别可复用技术红利、验证能力边界并沉淀决策证据。</p><div class="chips"><span class="chip">2026-08-19 · 周三</span><span class="chip">生成：11:05 CST</span><span class="chip">信息截止：10:55 CST</span><span class="chip">HTTP / API / 静态解析 · 无浏览器</span></div></header>
+
+<section><h2>90 秒摘要</h2><div class="summary">
+<article class="signal"><div class="signal-top"><h3>已证实：真实工作流 Agent 的难点是“可验收交付”，不是做出部分进展</h3><span class="state">新论文 / 评测增量</span></div><dl><dt>核心结论</dt><dd>StartupBench 用 97 个市场验证工作流评测通用 Agent；即使对每个模型-任务取三次运行最优，成功率仍仅 28.06%，低于专用系统 39.18%。</dd><dt>证据 / 可信度</dt><dd>6 个领域、2,453 条 rubric、57 位专家；统一 harness、三次独立运行。论文和项目页公开，但刚发布、尚无独立复现，可信度中等。</dd><dt>与既有工作的差异</dt><dd>任务从已有用户采用的 AI 创业产品反推，而非研究者先验设计；评分落到最终文件和逐条验收条件。</dd><dt>产品 / 评测意义</dt><dd>产品护城河可能位于领域规范、完整性检查和产物验证，而不只是模型调用；“进程成功”不能替代“交付物通过”。</dd><dt>建议动作</dt><dd>把核心用户任务写成加权验收清单；独立打开最终文件做结构、数值和格式复核，并记录最严重失败项。</dd></dl></article>
+<article class="signal"><div class="signal-top"><h3>作者结论：通用 harness 有价值，但无法抹平专用产品优势</h3><span class="state">Agent 产品</span></div><dl><dt>核心结论</dt><dd>通用 Agent 平均分 64.26、成功率 19.74%；专用 Agent 为 83.50 和 39.18%。差距集中在复杂指令、领域知识、专业惯例和长程执行。</dd><dt>证据 / 可信度</dt><dd>来自同一论文的统一评测；专用产品的底层模型、工具和工程投入未必完全同质，不能把全部差距归因于“架构”。</dd><dt>与既有工作的差异</dt><dd>不是比较单步工具调用，而是比较用户最终愿意付费的完整工作流。</dd><dt>产品 / 评测意义</dt><dd>创业机会更接近“通用模型 + 垂直知识 + 可验证产物 + 工作流治理”，而不是另做一个聊天壳。</dd><dt>建议动作</dt><dd>选一个高价值垂直任务，先做专用验收器与回归集，再决定是否需要专用 Agent 编排。</dd></dl></article>
+<article class="signal"><div class="signal-top"><h3>编辑推断：自我验证幻觉是下一类可产品化评测能力</h3><span class="state">评测机会</span></div><dl><dt>核心结论</dt><dd>Agent 会把“脚本执行成功”或“过程摘要完整”误当作最终文件正确，导致关键数值、名称或格式错误漏检。</dd><dt>证据 / 可信度</dt><dd>论文给出工件级案例和失败模式分析；目前缺少跨 benchmark 的统一发生率，推断可信度中等。</dd><dt>与既有工作的差异</dt><dd>传统 judge 常只读回答文本；这里要求重新打开真实产物，并逐项对照原始需求。</dd><dt>产品 / 评测意义</dt><dd>可形成独立的 artifact verifier、验收轨迹与“生成者-验证者分离”产品层。</dd><dt>建议动作</dt><dd>为表格、PPT、代码和研究报告分别建立静态解析器、关键字段校验和可视化抽检。</dd></dl></article>
+<article class="signal"><div class="signal-top"><h3>开发者信号：持久 Agent 与上下文基础设施继续领涨</h3><span class="state">GitHub 约 23h 代理</span></div><dl><dt>核心结论</dt><dd>相对 8 月 18 日 11:03 快照，hermes-agent +515、firecrawl +502、superpowers +461、opencode +354、anthropics/skills +257。</dd><dt>证据 / 可信度</dt><dd>GitHub REST 当前值减本地历史值；窗口约 23 小时，不是严格三日，未插值或外推。</dd><dt>与既有工作的差异</dt><dd>增长继续集中在持久运行、数据接入、Skill 与 Coding Agent，而非单一模型包装。</dd><dt>产品 / 评测意义</dt><dd>可复用技术红利正在下沉到 harness；权限、记忆、状态恢复和产物验证仍是差异化空间。</dd><dt>建议动作</dt><dd>本周做一次 Hermes + Firecrawl 的受控试用，以固定任务测成本、记忆污染、来源可追溯和失败恢复。</dd></dl></article>
+</div></section>
+
+<section><h2>前沿领头羊信号</h2><div class="grid">
+<article class="card"><span class="state">OpenAI 官方 / 无新增</span><h3>未发现新发布内容</h3><p>核验 OpenAI 官方新闻索引、研究与产品入口；自 8 月 18 日 11:03 CST 上次截止后，未发现日期与内容均可确认的新技术博客、研究文章、System Card、开发者更新或官方视频。页面排序变化不作为发布证据。</p></article>
+<article class="card"><span class="state">Anthropic 官方 / 无新增</span><h3>未发现新发布内容</h3><p>核验 Anthropic Newsroom、研究入口和 sitemap。Responsible Scaling Policy 路线图出现新的页面更新时间，但没有足够证据确认是一次独立发布，因此不列为动态。</p></article>
+<article class="card"><span class="state">其他头部实验室 / 无重要增量</span><h3>不以低价值信息凑数</h3><p>本窗口没有找到能直接改变模型能力、Agent 产品或评测方法判断，且具备官方原始材料的重要发布。</p></article>
+<article class="card"><span class="state">个人公开判断 / 无可核验新增</span><h3>关键负责人 X 原帖</h3><p>未取得能同时核验人物身份、原始帖子、发布时间和完整上下文的新增原帖；不采用搜索摘要、截图或二手转述，也不把个人观点写成公司立场。</p></article>
+</div></section>
+
+<section><h2>四条主线</h2><div class="grid">
+<article class="card"><h3>模型能力进展</h3><p><strong>未发现值得纳入的新模型增量。</strong> 今天最重要的能力信号是边界：强模型可完成大量局部步骤，但在复杂约束、专业惯例和最终验收上仍不稳定，benchmark 分数不能直接代表可交付产品。</p></article>
+<article class="card"><h3>Agent 产品进展</h3><p><strong>证据增强。</strong> 专用系统仍显著领先统一通用 harness。可复用红利是把领域知识、模板、工具权限和验收器组合为窄而深的工作流。</p></article>
+<article class="card"><h3>Agent 架构与可复用工具</h3><p><strong>持续增长。</strong> Hermes、Firecrawl、OpenCode 与 Skills 继续吸引关注；新增关注 Qwen Code、OpenSandbox 和团队记忆层。评估重点应从功能清单转向可恢复状态、隔离和许可。</p></article>
+<article class="card"><h3>评测方法进展</h3><p><strong>新出现。</strong> 任务来源应有市场需求证据，评分应对照细粒度 rubric，并直接检查最终 Excel、PPT、代码或报告。建议报告“成功率 + 部分得分 + 核心 rubric 失败率”。</p></article>
+</div></section>
+
+<section><h2>今日论文</h2><h3>StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows</h3><p><strong>作者：</strong>Liya Zhu、Xin Ma、Tao Liu 等<br><strong>发布日期：</strong>2026-08-18 14:01 UTC<br><strong>链接：</strong><a href="https://arxiv.org/abs/2608.17800">arXiv</a> · <a href="https://arxiv.org/html/2608.17800">HTML</a> · <a href="https://startupbench.github.io/">项目页</a></p>
+<div class="table-wrap"><table><tbody>
+<tr><th>此前遇到的问题</th><td>现有 Agent benchmark 多由研究者选择任务，难以证明高分对应真实用户需求；整体 judge 也容易忽略最终交付物里的关键错误。</td></tr>
+<tr><th>研究做法</th><td>从已有采用的 AI 创业产品、产品演示与用户访谈提取工作流，构建 97 个跨 6 领域的端到端任务；57 位专家参与构建和交叉验证，用 2,453 条 rubric 检查正确性、完整性、数据处理、专业推理、工程质量和呈现。</td></tr>
+<tr><th>关键结论</th><td>最强通用模型即使取三次运行中的最好结果，成功率也约 28.06%；普通汇总下通用系统成功率 19.74%，专用系统 39.18%。Agent 常做出大量部分进展，却无法产出可直接使用的交付物。</td></tr>
+<tr><th>与既有工作的差异</th><td>以市场验证工作流而非研究者假设为任务源；要求完整文件产物；用逐项加权验收条件而非单一整体评分，并分析“自我验证幻觉”。</td></tr>
+<tr><th>可信度</th><td>中等：任务和 rubric 规模可观、专家背景透明、统一 harness 且每项三次运行；但刚发布，未见独立复现，项目页公开程度和全部原始轨迹仍需持续核验。Agent-as-a-judge 仍可能带入模型偏差。</td></tr>
+<tr><th>局限</th><td>创业产品有选择偏差；市场采用不等于任务代表性；专用与通用系统未必在模型、工具和预算上完全公平；成功阈值设为得分 ≥90，阈值敏感性需进一步验证；静态任务不能覆盖部署中的交互和责任风险。</td></tr>
+<tr><th>后续待验证问题</th><td>公开任务、轨迹与 judge 后能否复现；不同成本预算下差距是否保持；artifact verifier 能否降低核心 rubric 失败；通用模型升级后，专用系统优势来自知识、工具还是工作流约束。</td></tr>
+</tbody></table></div>
+<details><summary>展开英文简介与逐段对应中文翻译</summary><div><h3>English overview</h3><p lang="en">StartupBench evaluates general-purpose agents on end-to-end workflows derived from AI products with demonstrated adoption. The benchmark contains 97 tasks across six professional domains and uses 2,453 fine-grained rubric items to inspect complete deliverables rather than only intermediate text or coarse holistic judgments.</p><p lang="en">The strongest general-purpose setup completes only about 30% of tasks even under an oracle that keeps the best of three attempts. Specialized systems remain ahead, while failure analysis points to complex instruction following, domain expertise, professional conventions, long-horizon execution, and a recurring self-verification error: agents mistake a successful process summary for evidence that the final artifact is correct.</p><h3>对应中文翻译</h3><p>StartupBench 评测通用 Agent 完成源自已有用户采用 AI 产品的端到端工作流。它包含 6 个专业领域的 97 个任务，并以 2,453 条细粒度 rubric 检查完整交付物，而不只评中间文本或做粗粒度整体判断。</p><p>即使采用“每项三次取最好”的 oracle，最强通用方案也只完成约 30% 的任务，专用系统仍领先。失败集中在复杂指令遵循、领域知识、专业惯例和长程执行；还反复出现自我验证错误：Agent 把成功的过程摘要误当作最终产物正确的证据。</p></div></details>
+<details><summary>展开论文全部公开图表（9 图 / 9 表）</summary><div><p class="method">使用 arXiv HTML、HTTP 下载和静态解析，按论文顺序收集全部 18 个编号元素。9 张图均已保存为公开原始 PNG/SVG，9 张表转为 HTML；未发现缺失编号元素。</p><figure><img loading="lazy" src="morning-brief-2026-08-19-assets/startupbench-figure-1.png" alt="图 1：Overview of StartupBench: real AI-product workflows, long-horizon agent execution, six-domain coverage, and multi-format deliverable generation."><figcaption><strong>图 1：Overview of StartupBench: real AI-product workflows, long-horizon agent execution, six-domain coverage, and multi-format deliverable generation.</strong> · <a href="https://arxiv.org/html/2608.17800#S1.F1">论文原始位置</a></figcaption></figure>
+<figure><figcaption><strong>表 1：Comparison of StartupBench with existing benchmarks. E2E denotes end-to-end workflow completion; Item-wise Eval. denotes criterion-level judging. ✓, ✗, and △ \triangle indicate full, no, and partial support.</strong> · <a href="https://arxiv.org/html/2608.17800#S3.T1">论文原始位置</a></figcaption><div class="table-wrap"><table id="S3.T1.2.1" class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr id="S3.T1.2.1.1" class="ltx_tr">
+<td id="S3.T1.2.1.1.1" class="ltx_td ltx_align_left ltx_border_tt"><span id="S3.T1.2.1.1.1.1" class="ltx_text ltx_font_bold">Benchmark</span></td>
+<th id="S3.T1.2.1.1.2" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_tt"><span id="S3.T1.2.1.1.2.1" class="ltx_text"></span><span id="S3.T1.2.1.1.2.2" class="ltx_text ltx_font_bold"> <span id="S3.T1.2.1.1.2.2.1" class="ltx_text">
+<span id="S3.T1.2.1.1.2.2.1.1" class="ltx_tabular ltx_align_middle">
+<span id="S3.T1.2.1.1.2.2.1.1.1" class="ltx_tr">
+<span id="S3.T1.2.1.1.2.2.1.1.1.1" class="ltx_td ltx_nopad_r ltx_align_center"><span id="S3.T1.2.1.1.2.2.1.1.1.1.1" class="ltx_text" style="font-size:80%;">Task Source</span></span></span>
+</span></span><span id="S3.T1.2.1.1.2.2.2" class="ltx_text"></span></span></th>
+<th id="S3.T1.2.1.1.3" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_tt"><span id="S3.T1.2.1.1.3.1" class="ltx_text"></span><span id="S3.T1.2.1.1.3.2" class="ltx_text ltx_font_bold"> <span id="S3.T1.2.1.1.3.2.1" class="ltx_text">
+<span id="S3.T1.2.1.1.3.2.1.1" class="ltx_tabular ltx_align_middle">
+<span id="S3.T1.2.1.1.3.2.1.1.1" class="ltx_tr">
+<span id="S3.T1.2.1.1.3.2.1.1.1.1" class="ltx_td ltx_nopad_r ltx_align_center"><span id="S3.T1.2.1.1.3.2.1.1.1.1.1" class="ltx_text" style="font-size:80%;">Final</span></span></span>
+<span id="S3.T1.2.1.1.3.2.1.1.2" class="ltx_tr">
+<span id="S3.T1.2.1.1.3.2.1.1.2.1" class="ltx_td ltx_nopad_r ltx_align_center"><span id="S3.T1.2.1.1.3.2.1.1.2.1.1" class="ltx_text" style="font-size:80%;">Output</span></span></span>
+</span></span><span id="S3.T1.2.1.1.3.2.2" class="ltx_text"></span></span></th>
+<td id="S3.T1.2.1.1.4" class="ltx_td ltx_align_center ltx_border_tt"><span id="S3.T1.2.1.1.4.1" class="ltx_text ltx_font_bold">E2E</span></td>
+<th id="S3.T1.2.1.1.5" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_tt"><span id="S3.T1.2.1.1.5.1" class="ltx_text"></span><span id="S3.T1.2.1.1.5.2" class="ltx_text ltx_font_bold"> <span id="S3.T1.2.1.1.5.2.1" class="ltx_text">
+<span id="S3.T1.2.1.1.5.2.1.1" class="ltx_tabular ltx_align_middle">
+<span id="S3.T1.2.1.1.5.2.1.1.1" class="ltx_tr">
+<span id="S3.T1.2.1.1.5.2.1.1.1.1" class="ltx_td ltx_nopad_r ltx_align_center"><span id="S3.T1.2.1.1.5.2.1.1.1.1.1" class="ltx_text" style="font-size:80%;">Item-wise</span></span></span>
+<span id="S3.T1.2.1.1.5.2.1.1.2" class="ltx_tr">
+<span id="S3.T1.2.1.1.5.2.1.1.2.1" class="ltx_td ltx_nopad_r ltx_align_center"><span id="S3.T1.2.1.1.5.2.1.1.2.1.1" class="ltx_text" style="font-size:80%;">Eval.</span></span></span>
+</span></span><span id="S3.T1.2.1.1.5.2.2" class="ltx_text"></span></span></th>
+<th id="S3.T1.2.1.1.6" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_tt"><span id="S3.T1.2.1.1.6.1" class="ltx_text"></span><span id="S3.T1.2.1.1.6.2" class="ltx_text ltx_font_bold"> <span id="S3.T1.2.1.1.6.2.1" class="ltx_text">
+<span id="S3.T1.2.1.1.6.2.1.1" class="ltx_tabular ltx_align_middle">
+<span id="S3.T1.2.1.1.6.2.1.1.1" class="ltx_tr">
+<span id="S3.T1.2.1.1.6.2.1.1.1.1" class="ltx_td ltx_nopad_r ltx_align_center"><span id="S3.T1.2.1.1.6.2.1.1.1.1.1" class="ltx_text" style="font-size:80%;">Process</span></span></span>
+<span id="S3.T1.2.1.1.6.2.1.1.2" class="ltx_tr">
+<span id="S3.T1.2.1.1.6.2.1.1.2.1" class="ltx_td ltx_nopad_r ltx_align_center"><span id="S3.T1.2.1.1.6.2.1.1.2.1.1" class="ltx_text" style="font-size:80%;">Logic</span></span></span>
+</span></span><span id="S3.T1.2.1.1.6.2.2" class="ltx_text"></span></span></th>
+<th id="S3.T1.2.1.1.7" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_tt"><span id="S3.T1.2.1.1.7.1" class="ltx_text"></span><span id="S3.T1.2.1.1.7.2" class="ltx_text ltx_font_bold"> <span id="S3.T1.2.1.1.7.2.1" class="ltx_text">
+<span id="S3.T1.2.1.1.7.2.1.1" class="ltx_tabular ltx_align_middle">
+<span id="S3.T1.2.1.1.7.2.1.1.1" class="ltx_tr">
+<span id="S3.T1.2.1.1.7.2.1.1.1.1" class="ltx_td ltx_nopad_r ltx_align_center"><span id="S3.T1.2.1.1.7.2.1.1.1.1.1" class="ltx_text" style="font-size:80%;">Open-</span></span></span>
+<span id="S3.T1.2.1.1.7.2.1.1.2" class="ltx_tr">
+<span id="S3.T1.2.1.1.7.2.1.1.2.1" class="ltx_td ltx_nopad_r ltx_align_center"><span id="S3.T1.2.1.1.7.2.1.1.2.1.1" class="ltx_text" style="font-size:80%;">ended</span></span></span>
+</span></span><span id="S3.T1.2.1.1.7.2.2" class="ltx_text"></span></span></th>
+<th id="S3.T1.2.1.1.8" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_tt"><span id="S3.T1.2.1.1.8.1" class="ltx_text"></span><span id="S3.T1.2.1.1.8.2" class="ltx_text ltx_font_bold"> <span id="S3.T1.2.1.1.8.2.1" class="ltx_text">
+<span id="S3.T1.2.1.1.8.2.1.1" class="ltx_tabular ltx_align_middle">
+<span id="S3.T1.2.1.1.8.2.1.1.1" class="ltx_tr">
+<span id="S3.T1.2.1.1.8.2.1.1.1.1" class="ltx_td ltx_nopad_r ltx_align_center"><span id="S3.T1.2.1.1.8.2.1.1.1.1.1" class="ltx_text" style="font-size:80%;">Evaluation</span></span></span>
+<span id="S3.T1.2.1.1.8.2.1.1.2" class="ltx_tr">
+<span id="S3.T1.2.1.1.8.2.1.1.2.1" class="ltx_td ltx_nopad_r ltx_align_center"><span id="S3.T1.2.1.1.8.2.1.1.2.1.1" class="ltx_text" style="font-size:80%;">Method</span></span></span>
+</span></span><span id="S3.T1.2.1.1.8.2.2" class="ltx_text"></span></span></th></tr>
+<tr id="S3.T1.2.1.2" class="ltx_tr">
+<td id="S3.T1.2.1.2.1" class="ltx_td ltx_align_left ltx_border_t">GAIA <cite class="ltx_cite ltx_citemacro_citep">(<a href="#bib.bib12" title="" class="ltx_ref">Mialon et al. 2024</a>)</cite></td>
+<td id="S3.T1.2.1.2.2" class="ltx_td ltx_align_center ltx_border_t">Manual</td>
+<td id="S3.T1.2.1.2.3" class="ltx_td ltx_align_center ltx_border_t">Text</td>
+<td id="S3.T1.2.1.2.4" class="ltx_td ltx_align_center ltx_border_t"><math id="S3.T1.m3" class="ltx_Math" alttext="\triangle" display="inline" intent=":literal"><semantics><mi mathvariant="normal">△</mi><annotation encoding="application/x-tex">\triangle</annotation></semantics></math></td>
+<td id="S3.T1.2.1.2.5" class="ltx_td ltx_align_center ltx_border_t">✗</td>
+<td id="S3.T1.2.1.2.6" class="ltx_td ltx_align_center ltx_border_t">✗</td>
+<td id="S3.T1.2.1.2.7" class="ltx_td ltx_align_center ltx_border_t">✗</td>
+<td id="S3.T1.2.1.2.8" class="ltx_td ltx_align_center ltx_border_t">Rule</td></tr>
+<tr id="S3.T1.2.1.3" class="ltx_tr">
+<td id="S3.T1.2.1.3.1" class="ltx_td ltx_align_left">OSWorld <cite class="ltx_cite ltx_citemacro_citep">(<a href="#bib.bib27" title="" class="ltx_ref">Xie et al. 2024</a>)</cite></td>
+<td id="S3.T1.2.1.3.2" class="ltx_td ltx_align_center">Real+Manual</td>
+<td id="S3.T1.2.1.3.3" class="ltx_td ltx_align_center">Env State</td>
+<td id="S3.T1.2.1.3.4" class="ltx_td ltx_align_center"><math id="S3.T1.m4" class="ltx_Math" alttext="\triangle" display="inline" intent=":literal"><semantics><mi mathvariant="normal">△</mi><annotation encoding="application/x-tex">\triangle</annotation></semantics></math></td>
+<td id="S3.T1.2.1.3.5" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.3.6" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.3.7" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.3.8" class="ltx_td ltx_align_center">Execution</td></tr>
+<tr id="S3.T1.2.1.4" class="ltx_tr">
+<td id="S3.T1.2.1.4.1" class="ltx_td ltx_align_left">DAComp <cite class="ltx_cite ltx_citemacro_citep">(<a href="#bib.bib9" title="" class="ltx_ref">Lei et al. 2025</a>)</cite></td>
+<td id="S3.T1.2.1.4.2" class="ltx_td ltx_align_center">Real+Manual</td>
+<td id="S3.T1.2.1.4.3" class="ltx_td ltx_align_center">Workspace</td>
+<td id="S3.T1.2.1.4.4" class="ltx_td ltx_align_center">✓</td>
+<td id="S3.T1.2.1.4.5" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.4.6" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.4.7" class="ltx_td ltx_align_center">✓</td>
+<td id="S3.T1.2.1.4.8" class="ltx_td ltx_align_center">Hybrid</td></tr>
+<tr id="S3.T1.2.1.5" class="ltx_tr">
+<td id="S3.T1.2.1.5.1" class="ltx_td ltx_align_left">GDPval <cite class="ltx_cite ltx_citemacro_citep">(<a href="#bib.bib18" title="" class="ltx_ref">Patwardhan et al. 2025</a>)</cite></td>
+<td id="S3.T1.2.1.5.2" class="ltx_td ltx_align_center">Manual</td>
+<td id="S3.T1.2.1.5.3" class="ltx_td ltx_align_center">Work products</td>
+<td id="S3.T1.2.1.5.4" class="ltx_td ltx_align_center">✓</td>
+<td id="S3.T1.2.1.5.5" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.5.6" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.5.7" class="ltx_td ltx_align_center"><math id="S3.T1.m5" class="ltx_Math" alttext="\triangle" display="inline" intent=":literal"><semantics><mi mathvariant="normal">△</mi><annotation encoding="application/x-tex">\triangle</annotation></semantics></math></td>
+<td id="S3.T1.2.1.5.8" class="ltx_td ltx_align_center">Manual</td></tr>
+<tr id="S3.T1.2.1.6" class="ltx_tr">
+<td id="S3.T1.2.1.6.1" class="ltx_td ltx_align_left">Workspace-Bench <cite class="ltx_cite ltx_citemacro_citep">(<a href="#bib.bib24" title="" class="ltx_ref">Tang et al. 2026</a>)</cite></td>
+<td id="S3.T1.2.1.6.2" class="ltx_td ltx_align_center">Sim.+Manual</td>
+<td id="S3.T1.2.1.6.3" class="ltx_td ltx_align_center">Workspace</td>
+<td id="S3.T1.2.1.6.4" class="ltx_td ltx_align_center">✓</td>
+<td id="S3.T1.2.1.6.5" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.6.6" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.6.7" class="ltx_td ltx_align_center">✓</td>
+<td id="S3.T1.2.1.6.8" class="ltx_td ltx_align_center">Agent-as-Judge</td></tr>
+<tr id="S3.T1.2.1.7" class="ltx_tr">
+<td id="S3.T1.2.1.7.1" class="ltx_td ltx_align_left">OneMillionBench <cite class="ltx_cite ltx_citemacro_citep">(<a href="#bib.bib29" title="" class="ltx_ref">Yang et al. 2026</a>)</cite></td>
+<td id="S3.T1.2.1.7.2" class="ltx_td ltx_align_center">Expert-authored</td>
+<td id="S3.T1.2.1.7.3" class="ltx_td ltx_align_center">Text</td>
+<td id="S3.T1.2.1.7.4" class="ltx_td ltx_align_center"><math id="S3.T1.m6" class="ltx_Math" alttext="\triangle" display="inline" intent=":literal"><semantics><mi mathvariant="normal">△</mi><annotation encoding="application/x-tex">\triangle</annotation></semantics></math></td>
+<td id="S3.T1.2.1.7.5" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.7.6" class="ltx_td ltx_align_center"><math id="S3.T1.m7" class="ltx_Math" alttext="\triangle" display="inline" intent=":literal"><semantics><mi mathvariant="normal">△</mi><annotation encoding="application/x-tex">\triangle</annotation></semantics></math></td>
+<td id="S3.T1.2.1.7.7" class="ltx_td ltx_align_center">✓</td>
+<td id="S3.T1.2.1.7.8" class="ltx_td ltx_align_center">LLM-judge</td></tr>
+<tr id="S3.T1.2.1.8" class="ltx_tr">
+<td id="S3.T1.2.1.8.1" class="ltx_td ltx_align_left">Agents’ Last Exam <cite class="ltx_cite ltx_citemacro_citep">(<a href="#bib.bib23" title="" class="ltx_ref">Sun et al. 2026</a>)</cite></td>
+<td id="S3.T1.2.1.8.2" class="ltx_td ltx_align_center">Occupation-guided</td>
+<td id="S3.T1.2.1.8.3" class="ltx_td ltx_align_center">Workspace</td>
+<td id="S3.T1.2.1.8.4" class="ltx_td ltx_align_center">✓</td>
+<td id="S3.T1.2.1.8.5" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.8.6" class="ltx_td ltx_align_center"><math id="S3.T1.m8" class="ltx_Math" alttext="\triangle" display="inline" intent=":literal"><semantics><mi mathvariant="normal">△</mi><annotation encoding="application/x-tex">\triangle</annotation></semantics></math></td>
+<td id="S3.T1.2.1.8.7" class="ltx_td ltx_align_center"><math id="S3.T1.m9" class="ltx_Math" alttext="\triangle" display="inline" intent=":literal"><semantics><mi mathvariant="normal">△</mi><annotation encoding="application/x-tex">\triangle</annotation></semantics></math></td>
+<td id="S3.T1.2.1.8.8" class="ltx_td ltx_align_center">Hybrid</td></tr>
+<tr id="S3.T1.2.1.9" class="ltx_tr">
+<td id="S3.T1.2.1.9.1" class="ltx_td ltx_align_left">OfficeQA Pro <cite class="ltx_cite ltx_citemacro_citep">(<a href="#bib.bib17" title="" class="ltx_ref">Opsahl-Ong et al. 2026</a>)</cite></td>
+<td id="S3.T1.2.1.9.2" class="ltx_td ltx_align_center">Corpus-grounded</td>
+<td id="S3.T1.2.1.9.3" class="ltx_td ltx_align_center">Text</td>
+<td id="S3.T1.2.1.9.4" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.9.5" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.9.6" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.9.7" class="ltx_td ltx_align_center">✗</td>
+<td id="S3.T1.2.1.9.8" class="ltx_td ltx_align_center">Answer match</td></tr>
+<tr id="S3.T1.2.1.10" class="ltx_tr">
+<td id="S3.T1.2.1.10.1" class="ltx_td ltx_align_left ltx_border_bb ltx_border_t"><span id="S3.T1.2.1.10.1.1" class="ltx_text ltx_font_bold">StartupBench (Ours)</span></td>
+<th id="S3.T1.2.1.10.2" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_bb ltx_border_t"><span id="S3.T1.2.1.10.2.1" class="ltx_text"></span><span id="S3.T1.2.1.10.2.2" class="ltx_text ltx_font_bold"> <span id="S3.T1.2.1.10.2.2.1" class="ltx_text">
+<span id="S3.T1.2.1.10.2.2.1.1" class="ltx_tabular ltx_align_middle">
+<span id="S3.T1.2.1.10.2.2.1.1.1" class="ltx_tr">
+<span id="S3.T1.2.1.10.2.2.1.1.1.1" class="ltx_td ltx_nopad_r ltx_align_center"><span id="S3.T1.2.1.10.2.2.1.1.1.1.1" class="ltx_text" style="font-size:80%;">Market-vetted</span></span></span>
+<span id="S3.T1.2.1.10.2.2.1.1.2" class="ltx_tr">
+<span id="S3.T1.2.1.10.2.2.1.1.2.1" class="ltx_td ltx_nopad_r ltx_align_center"><span id="S3.T1.2.1.10.2.2.1.1.2.1.1" class="ltx_text" style="font-size:80%;">+ Expert-built</span></span></span>
+</span></span><span id="S3.T1.2.1.10.2.2.2" class="ltx_text"></span></span></th>
+<td id="S3.T1.2.1.10.3" class="ltx_td ltx_align_center ltx_border_bb ltx_border_t"><span id="S3.T1.2.1.10.3.1" class="ltx_text ltx_font_bold">Workspace</span></td>
+<td id="S3.T1.2.1.10.4" class="ltx_td ltx_align_center ltx_border_bb ltx_border_t">✓</td>
+<td id="S3.T1.2.1.10.5" class="ltx_td ltx_align_center ltx_border_bb ltx_border_t">✓</td>
+<td id="S3.T1.2.1.10.6" class="ltx_td ltx_align_center ltx_border_bb ltx_border_t">✓</td>
+<td id="S3.T1.2.1.10.7" class="ltx_td ltx_align_center ltx_border_bb ltx_border_t">✓</td>
+<td id="S3.T1.2.1.10.8" class="ltx_td ltx_align_center ltx_border_bb ltx_border_t"><span id="S3.T1.2.1.10.8.1" class="ltx_text ltx_font_bold">Agent-as-Judge</span></td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-19-assets/startupbench-figure-2.png" alt="图 2：StartupBench data construction pipeline. We select market-validated startup agents, collect real user workflows, construct task artifacts and instances, and calibrate quality and difficulty through multi-stage review."><figcaption><strong>图 2：StartupBench data construction pipeline. We select market-validated startup agents, collect real user workflows, construct task artifacts and instances, and calibrate quality and difficulty through multi-stage review.</strong> · <a href="https://arxiv.org/html/2608.17800#S3.F2">论文原始位置</a></figcaption></figure>
+<figure><figcaption><strong>表 2：Statistics of StartupBench. The benchmark contains 97 real-world workflow tasks across six top-level domains and requires diverse deliverable formats.</strong> · <a href="https://arxiv.org/html/2608.17800#S3.T2">论文原始位置</a></figcaption><div class="table-wrap"><table id="S3.T2.4" class="ltx_tabular ltx_centering ltx_figure_panel ltx_align_middle">
+<tr id="S3.T2.4.1" class="ltx_tr">
+<td id="S3.T2.4.1.1" class="ltx_td ltx_align_left ltx_border_tt" style="padding:0.55pt 12.0pt;"><span id="S3.T2.4.1.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Category</span></td>
+<td id="S3.T2.4.1.2" class="ltx_td ltx_align_left ltx_border_tt" style="padding:0.55pt 12.0pt;"><span id="S3.T2.4.1.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Count</span></td>
+<td id="S3.T2.4.1.3" class="ltx_td ltx_align_left ltx_border_tt" style="padding:0.55pt 12.0pt;"><span id="S3.T2.4.1.3.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Percentage (%)</span></td></tr>
+<tr id="S3.T2.4.2" class="ltx_tr" style="--ltx-bg-color:#F5F5F5;">
+<td id="S3.T2.4.2.1" class="ltx_td ltx_align_left ltx_border_t" style="padding:0.55pt 12.0pt;" colspan="3"><span id="S3.T2.4.2.1.1" class="ltx_text ltx_font_italic" style="font-size:90%;">Overall statistics<span id="S3.T2.4.2.1.1.1" class="ltx_text ltx_font_upright">  </span></span></td></tr>
+<tr id="S3.T2.4.3" class="ltx_tr">
+<td id="S3.T2.4.3.1" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><span id="S3.T2.4.3.1.1" class="ltx_text" style="font-size:90%;">Total tasks</span></td>
+<td id="S3.T2.4.3.2" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m1" class="ltx_Math" alttext="97" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">97</mn><annotation encoding="application/x-tex">97</annotation></semantics></math></td>
+<td id="S3.T2.4.3.3" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m2" class="ltx_Math" alttext="100.0" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">100.0</mn><annotation encoding="application/x-tex">100.0</annotation></semantics></math></td></tr>
+<tr id="S3.T2.4.4" class="ltx_tr">
+<td id="S3.T2.4.4.1" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><span id="S3.T2.4.4.1.1" class="ltx_text" style="font-size:90%;">Top-level domains</span></td>
+<td id="S3.T2.4.4.2" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m3" class="ltx_Math" alttext="6" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">6</mn><annotation encoding="application/x-tex">6</annotation></semantics></math></td>
+<td id="S3.T2.4.4.3" class="ltx_td ltx_align_center" style="padding:0.55pt 12.0pt;"><span id="S3.T2.4.4.3.1" class="ltx_text" style="font-size:90%;">–  </span></td></tr>
+<tr id="S3.T2.4.5" class="ltx_tr" style="--ltx-bg-color:#F5F5F5;">
+<td id="S3.T2.4.5.1" class="ltx_td ltx_align_left ltx_border_t" style="padding:0.55pt 12.0pt;" colspan="3"><span id="S3.T2.4.5.1.1" class="ltx_text ltx_font_italic" style="font-size:90%;">Domain distribution<span id="S3.T2.4.5.1.1.1" class="ltx_text ltx_font_upright">  </span></span></td></tr>
+<tr id="S3.T2.4.6" class="ltx_tr">
+<td id="S3.T2.4.6.1" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><span id="S3.T2.4.6.1.1" class="ltx_text" style="font-size:90%;">Medical &amp; HealthCare</span></td>
+<td id="S3.T2.4.6.2" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m4" class="ltx_Math" alttext="21" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">21</mn><annotation encoding="application/x-tex">21</annotation></semantics></math></td>
+<td id="S3.T2.4.6.3" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m5" class="ltx_Math" alttext="21.6" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">21.6</mn><annotation encoding="application/x-tex">21.6</annotation></semantics></math></td></tr>
+<tr id="S3.T2.4.7" class="ltx_tr">
+<td id="S3.T2.4.7.1" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><span id="S3.T2.4.7.1.1" class="ltx_text" style="font-size:90%;">Finance</span></td>
+<td id="S3.T2.4.7.2" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m6" class="ltx_Math" alttext="18" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">18</mn><annotation encoding="application/x-tex">18</annotation></semantics></math></td>
+<td id="S3.T2.4.7.3" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m7" class="ltx_Math" alttext="18.6" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">18.6</mn><annotation encoding="application/x-tex">18.6</annotation></semantics></math></td></tr>
+<tr id="S3.T2.4.8" class="ltx_tr">
+<td id="S3.T2.4.8.1" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><span id="S3.T2.4.8.1.1" class="ltx_text" style="font-size:90%;">Legal</span></td>
+<td id="S3.T2.4.8.2" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m8" class="ltx_Math" alttext="16" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">16</mn><annotation encoding="application/x-tex">16</annotation></semantics></math></td>
+<td id="S3.T2.4.8.3" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m9" class="ltx_Math" alttext="16.5" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">16.5</mn><annotation encoding="application/x-tex">16.5</annotation></semantics></math></td></tr>
+<tr id="S3.T2.4.9" class="ltx_tr">
+<td id="S3.T2.4.9.1" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><span id="S3.T2.4.9.1.1" class="ltx_text" style="font-size:90%;">Business &amp; Management</span></td>
+<td id="S3.T2.4.9.2" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m10" class="ltx_Math" alttext="19" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">19</mn><annotation encoding="application/x-tex">19</annotation></semantics></math></td>
+<td id="S3.T2.4.9.3" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m11" class="ltx_Math" alttext="19.6" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">19.6</mn><annotation encoding="application/x-tex">19.6</annotation></semantics></math></td></tr>
+<tr id="S3.T2.4.10" class="ltx_tr">
+<td id="S3.T2.4.10.1" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><span id="S3.T2.4.10.1.1" class="ltx_text" style="font-size:90%;">STEM &amp; Computer Science</span></td>
+<td id="S3.T2.4.10.2" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m12" class="ltx_Math" alttext="16" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">16</mn><annotation encoding="application/x-tex">16</annotation></semantics></math></td>
+<td id="S3.T2.4.10.3" class="ltx_td ltx_align_left" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m13" class="ltx_Math" alttext="16.5" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">16.5</mn><annotation encoding="application/x-tex">16.5</annotation></semantics></math></td></tr>
+<tr id="S3.T2.4.11" class="ltx_tr">
+<td id="S3.T2.4.11.1" class="ltx_td ltx_align_left ltx_border_bb" style="padding:0.55pt 12.0pt;"><span id="S3.T2.4.11.1.1" class="ltx_text" style="font-size:90%;">Education &amp; Humanities</span></td>
+<td id="S3.T2.4.11.2" class="ltx_td ltx_align_left ltx_border_bb" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m14" class="ltx_Math" alttext="7" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">7</mn><annotation encoding="application/x-tex">7</annotation></semantics></math></td>
+<td id="S3.T2.4.11.3" class="ltx_td ltx_align_left ltx_border_bb" style="padding:0.55pt 12.0pt;"><math id="S3.T2.m15" class="ltx_Math" alttext="7.2" display="inline" intent=":literal"><semantics><mn mathsize="0.900em">7.2</mn><annotation encoding="application/x-tex">7.2</annotation></semantics></math></td></tr>
+</table>
+</div></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-19-assets/startupbench-figure-3.svg" alt="图 3：Leaderboard of StartupBench."><figcaption><strong>图 3：Leaderboard of StartupBench.</strong> · <a href="https://arxiv.org/html/2608.17800#S4.F3">论文原始位置</a></figcaption></figure>
+<figure><figcaption><strong>表 3：Model performance of StartupBench, averaged over three independent runs. Top block: importance-weighted mean per-task score ( 0 0 – 100 100 ); bottom block: success rate, the fraction of samples scoring ≥ 90 \geq 90 (%), pooled over the three runs. Per-column best in bold , second-best underlined .</strong> · <a href="https://arxiv.org/html/2608.17800#S4.T3">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T3.19" class="ltx_tabular ltx_centering ltx_align_middle">
+<tr id="S4.T3.19.1" class="ltx_tr">
+<td id="S4.T3.19.1.1" class="ltx_td ltx_align_left ltx_border_tt" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.1.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Model</span></td>
+<td id="S4.T3.19.1.2" class="ltx_td ltx_align_center ltx_border_tt" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.1.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Overall</span></td>
+<td id="S4.T3.19.1.3" class="ltx_td ltx_align_center ltx_border_tt" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.1.3.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Med</span></td>
+<td id="S4.T3.19.1.4" class="ltx_td ltx_align_center ltx_border_tt" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.1.4.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Finance</span></td>
+<td id="S4.T3.19.1.5" class="ltx_td ltx_align_center ltx_border_tt" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.1.5.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Legal</span></td>
+<td id="S4.T3.19.1.6" class="ltx_td ltx_align_center ltx_border_tt" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.1.6.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Business</span></td>
+<td id="S4.T3.19.1.7" class="ltx_td ltx_align_center ltx_border_tt" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.1.7.1" class="ltx_text ltx_font_bold" style="font-size:90%;">STEM</span></td>
+<td id="S4.T3.19.1.8" class="ltx_td ltx_align_center ltx_border_tt" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.1.8.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Education</span></td></tr>
+<tr id="S4.T3.19.2" class="ltx_tr">
+<td id="S4.T3.19.2.1" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;" colspan="8"><span id="S4.T3.19.2.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Average score</span></td></tr>
+<tr id="S4.T3.19.3" class="ltx_tr">
+<td id="S4.T3.19.3.1" class="ltx_td ltx_align_left ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.3.1.1" class="ltx_text" style="font-size:90%;">Kimi-K3</span></td>
+<td id="S4.T3.19.3.2" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.3.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">73.67</span></td>
+<td id="S4.T3.19.3.3" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.3.3.1" class="ltx_text ltx_font_bold" style="font-size:90%;">80.03</span></td>
+<td id="S4.T3.19.3.4" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.3.4.1" class="ltx_text ltx_font_bold" style="font-size:90%;">62.38</span></td>
+<td id="S4.T3.19.3.5" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.3.5.1" class="ltx_text" style="font-size:90%;">69.45</span></td>
+<td id="S4.T3.19.3.6" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.3.6.1" class="ltx_text ltx_font_bold" style="font-size:90%;">83.90</span></td>
+<td id="S4.T3.19.3.7" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.3.7.1" class="ltx_text" style="font-size:90%;">68.34</span></td>
+<td id="S4.T3.19.3.8" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.3.8.1" class="ltx_text ltx_font_bold" style="font-size:90%;">77.71</span></td></tr>
+<tr id="S4.T3.19.4" class="ltx_tr">
+<td id="S4.T3.19.4.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.4.1.1" class="ltx_text" style="font-size:90%;">GPT-5.6-sol</span></td>
+<td id="S4.T3.19.4.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.4.2.1" class="ltx_text ltx_underline" style="font-size:90%;">73.61</span></td>
+<td id="S4.T3.19.4.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.4.3.1" class="ltx_text ltx_underline" style="font-size:90%;">79.32</span></td>
+<td id="S4.T3.19.4.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.4.4.1" class="ltx_text" style="font-size:90%;">61.66</span></td>
+<td id="S4.T3.19.4.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.4.5.1" class="ltx_text ltx_font_bold" style="font-size:90%;">73.53</span></td>
+<td id="S4.T3.19.4.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.4.6.1" class="ltx_text" style="font-size:90%;">77.61</span></td>
+<td id="S4.T3.19.4.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.4.7.1" class="ltx_text ltx_font_bold" style="font-size:90%;">74.77</span></td>
+<td id="S4.T3.19.4.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.4.8.1" class="ltx_text ltx_underline" style="font-size:90%;">73.94</span></td></tr>
+<tr id="S4.T3.19.5" class="ltx_tr">
+<td id="S4.T3.19.5.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.5.1.1" class="ltx_text" style="font-size:90%;">GPT-5.5</span></td>
+<td id="S4.T3.19.5.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.5.2.1" class="ltx_text" style="font-size:90%;">72.79</span></td>
+<td id="S4.T3.19.5.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.5.3.1" class="ltx_text" style="font-size:90%;">78.59</span></td>
+<td id="S4.T3.19.5.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.5.4.1" class="ltx_text ltx_underline" style="font-size:90%;">62.09</span></td>
+<td id="S4.T3.19.5.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.5.5.1" class="ltx_text ltx_underline" style="font-size:90%;">71.75</span></td>
+<td id="S4.T3.19.5.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.5.6.1" class="ltx_text ltx_underline" style="font-size:90%;">79.59</span></td>
+<td id="S4.T3.19.5.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.5.7.1" class="ltx_text ltx_underline" style="font-size:90%;">72.14</span></td>
+<td id="S4.T3.19.5.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.5.8.1" class="ltx_text" style="font-size:90%;">68.32</span></td></tr>
+<tr id="S4.T3.19.6" class="ltx_tr">
+<td id="S4.T3.19.6.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.6.1.1" class="ltx_text" style="font-size:90%;">Seed-2.1-Pro</span></td>
+<td id="S4.T3.19.6.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.6.2.1" class="ltx_text" style="font-size:90%;">67.19</span></td>
+<td id="S4.T3.19.6.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.6.3.1" class="ltx_text" style="font-size:90%;">73.15</span></td>
+<td id="S4.T3.19.6.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.6.4.1" class="ltx_text" style="font-size:90%;">57.26</span></td>
+<td id="S4.T3.19.6.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.6.5.1" class="ltx_text" style="font-size:90%;">61.35</span></td>
+<td id="S4.T3.19.6.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.6.6.1" class="ltx_text" style="font-size:90%;">77.83</span></td>
+<td id="S4.T3.19.6.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.6.7.1" class="ltx_text" style="font-size:90%;">65.61</span></td>
+<td id="S4.T3.19.6.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.6.8.1" class="ltx_text" style="font-size:90%;">62.91</span></td></tr>
+<tr id="S4.T3.19.7" class="ltx_tr">
+<td id="S4.T3.19.7.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.7.1.1" class="ltx_text" style="font-size:90%;">Kimi-K2.6</span></td>
+<td id="S4.T3.19.7.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.7.2.1" class="ltx_text" style="font-size:90%;">59.95</span></td>
+<td id="S4.T3.19.7.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.7.3.1" class="ltx_text" style="font-size:90%;">67.70</span></td>
+<td id="S4.T3.19.7.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.7.4.1" class="ltx_text" style="font-size:90%;">51.17</span></td>
+<td id="S4.T3.19.7.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.7.5.1" class="ltx_text" style="font-size:90%;">54.62</span></td>
+<td id="S4.T3.19.7.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.7.6.1" class="ltx_text" style="font-size:90%;">71.91</span></td>
+<td id="S4.T3.19.7.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.7.7.1" class="ltx_text" style="font-size:90%;">51.38</span></td>
+<td id="S4.T3.19.7.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.7.8.1" class="ltx_text" style="font-size:90%;">58.60</span></td></tr>
+<tr id="S4.T3.19.8" class="ltx_tr">
+<td id="S4.T3.19.8.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.8.1.1" class="ltx_text" style="font-size:90%;">GLM-5.1</span></td>
+<td id="S4.T3.19.8.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.8.2.1" class="ltx_text" style="font-size:90%;">60.79</span></td>
+<td id="S4.T3.19.8.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.8.3.1" class="ltx_text" style="font-size:90%;">65.66</span></td>
+<td id="S4.T3.19.8.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.8.4.1" class="ltx_text" style="font-size:90%;">51.22</span></td>
+<td id="S4.T3.19.8.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.8.5.1" class="ltx_text" style="font-size:90%;">50.20</span></td>
+<td id="S4.T3.19.8.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.8.6.1" class="ltx_text" style="font-size:90%;">78.53</span></td>
+<td id="S4.T3.19.8.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.8.7.1" class="ltx_text" style="font-size:90%;">52.18</span></td>
+<td id="S4.T3.19.8.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.8.8.1" class="ltx_text" style="font-size:90%;">66.50</span></td></tr>
+<tr id="S4.T3.19.9" class="ltx_tr">
+<td id="S4.T3.19.9.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.9.1.1" class="ltx_text" style="font-size:90%;">Qwen-3.6-Max</span></td>
+<td id="S4.T3.19.9.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.9.2.1" class="ltx_text" style="font-size:90%;">59.46</span></td>
+<td id="S4.T3.19.9.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.9.3.1" class="ltx_text" style="font-size:90%;">66.51</span></td>
+<td id="S4.T3.19.9.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.9.4.1" class="ltx_text" style="font-size:90%;">52.45</span></td>
+<td id="S4.T3.19.9.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.9.5.1" class="ltx_text" style="font-size:90%;">50.33</span></td>
+<td id="S4.T3.19.9.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.9.6.1" class="ltx_text" style="font-size:90%;">75.03</span></td>
+<td id="S4.T3.19.9.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.9.7.1" class="ltx_text" style="font-size:90%;">48.83</span></td>
+<td id="S4.T3.19.9.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.9.8.1" class="ltx_text" style="font-size:90%;">59.26</span></td></tr>
+<tr id="S4.T3.19.10" class="ltx_tr">
+<td id="S4.T3.19.10.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.10.1.1" class="ltx_text" style="font-size:90%;">DeepSeek-V4-Pro</span></td>
+<td id="S4.T3.19.10.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.10.2.1" class="ltx_text" style="font-size:90%;">61.11</span></td>
+<td id="S4.T3.19.10.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.10.3.1" class="ltx_text" style="font-size:90%;">69.42</span></td>
+<td id="S4.T3.19.10.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.10.4.1" class="ltx_text" style="font-size:90%;">51.11</span></td>
+<td id="S4.T3.19.10.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.10.5.1" class="ltx_text" style="font-size:90%;">54.53</span></td>
+<td id="S4.T3.19.10.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.10.6.1" class="ltx_text" style="font-size:90%;">73.69</span></td>
+<td id="S4.T3.19.10.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.10.7.1" class="ltx_text" style="font-size:90%;">54.89</span></td>
+<td id="S4.T3.19.10.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.10.8.1" class="ltx_text" style="font-size:90%;">57.03</span></td></tr>
+<tr id="S4.T3.19.11" class="ltx_tr">
+<td id="S4.T3.19.11.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.11.1.1" class="ltx_text" style="font-size:90%;">Gemini-3.1-Pro</span></td>
+<td id="S4.T3.19.11.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.11.2.1" class="ltx_text" style="font-size:90%;">49.73</span></td>
+<td id="S4.T3.19.11.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.11.3.1" class="ltx_text" style="font-size:90%;">54.05</span></td>
+<td id="S4.T3.19.11.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.11.4.1" class="ltx_text" style="font-size:90%;">41.00</span></td>
+<td id="S4.T3.19.11.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.11.5.1" class="ltx_text" style="font-size:90%;">43.49</span></td>
+<td id="S4.T3.19.11.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.11.6.1" class="ltx_text" style="font-size:90%;">61.18</span></td>
+<td id="S4.T3.19.11.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.11.7.1" class="ltx_text" style="font-size:90%;">45.88</span></td>
+<td id="S4.T3.19.11.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.11.8.1" class="ltx_text" style="font-size:90%;">51.23</span></td></tr>
+<tr id="S4.T3.19.12" class="ltx_tr">
+<td id="S4.T3.19.12.1" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;" colspan="8"><span id="S4.T3.19.12.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Success rate<span id="S4.T3.19.12.1.1.1" class="ltx_text ltx_font_medium">  (<math id="S4.T3.m7" class="ltx_Math" alttext="\geq 90" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo>≥</mo><mn>90</mn></mrow><annotation encoding="application/x-tex">\geq 90</annotation></semantics></math>)</span></span></td></tr>
+<tr id="S4.T3.19.13" class="ltx_tr">
+<td id="S4.T3.19.13.1" class="ltx_td ltx_align_left ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.13.1.1" class="ltx_text" style="font-size:90%;">Kimi-K3</span></td>
+<td id="S4.T3.19.13.2" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.13.2.1" class="ltx_text ltx_underline" style="font-size:90%;">29.55</span></td>
+<td id="S4.T3.19.13.3" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.13.3.1" class="ltx_text ltx_font_bold" style="font-size:90%;">34.92</span></td>
+<td id="S4.T3.19.13.4" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.13.4.1" class="ltx_text" style="font-size:90%;">20.37</span></td>
+<td id="S4.T3.19.13.5" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.13.5.1" class="ltx_text" style="font-size:90%;">20.83</span></td>
+<td id="S4.T3.19.13.6" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.13.6.1" class="ltx_text ltx_font_bold" style="font-size:90%;">52.63</span></td>
+<td id="S4.T3.19.13.7" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.13.7.1" class="ltx_text" style="font-size:90%;">16.67</span></td>
+<td id="S4.T3.19.13.8" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.13.8.1" class="ltx_text ltx_underline" style="font-size:90%;">23.81</span></td></tr>
+<tr id="S4.T3.19.14" class="ltx_tr">
+<td id="S4.T3.19.14.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.14.1.1" class="ltx_text" style="font-size:90%;">GPT-5.6-sol</span></td>
+<td id="S4.T3.19.14.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.14.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">31.27</span></td>
+<td id="S4.T3.19.14.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.14.3.1" class="ltx_text ltx_underline" style="font-size:90%;">33.33</span></td>
+<td id="S4.T3.19.14.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.14.4.1" class="ltx_text ltx_font_bold" style="font-size:90%;">27.78</span></td>
+<td id="S4.T3.19.14.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.14.5.1" class="ltx_text ltx_underline" style="font-size:90%;">22.92</span></td>
+<td id="S4.T3.19.14.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.14.6.1" class="ltx_text" style="font-size:90%;">38.60</span></td>
+<td id="S4.T3.19.14.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.14.7.1" class="ltx_text ltx_font_bold" style="font-size:90%;">33.33</span></td>
+<td id="S4.T3.19.14.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.14.8.1" class="ltx_text ltx_font_bold" style="font-size:90%;">28.57</span></td></tr>
+<tr id="S4.T3.19.15" class="ltx_tr">
+<td id="S4.T3.19.15.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.15.1.1" class="ltx_text" style="font-size:90%;">GPT-5.5</span></td>
+<td id="S4.T3.19.15.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.15.2.1" class="ltx_text" style="font-size:90%;">26.80</span></td>
+<td id="S4.T3.19.15.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.15.3.1" class="ltx_text" style="font-size:90%;">30.16</span></td>
+<td id="S4.T3.19.15.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.15.4.1" class="ltx_text ltx_underline" style="font-size:90%;">22.22</span></td>
+<td id="S4.T3.19.15.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.15.5.1" class="ltx_text ltx_font_bold" style="font-size:90%;">25.00</span></td>
+<td id="S4.T3.19.15.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.15.6.1" class="ltx_text" style="font-size:90%;">38.60</span></td>
+<td id="S4.T3.19.15.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.15.7.1" class="ltx_text ltx_underline" style="font-size:90%;">22.92</span></td>
+<td id="S4.T3.19.15.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.15.8.1" class="ltx_text" style="font-size:90%;">9.52</span></td></tr>
+<tr id="S4.T3.19.16" class="ltx_tr">
+<td id="S4.T3.19.16.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.16.1.1" class="ltx_text" style="font-size:90%;">Seed-2.1-Pro</span></td>
+<td id="S4.T3.19.16.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.16.2.1" class="ltx_text" style="font-size:90%;">22.34</span></td>
+<td id="S4.T3.19.16.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.16.3.1" class="ltx_text" style="font-size:90%;">19.05</span></td>
+<td id="S4.T3.19.16.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.16.4.1" class="ltx_text" style="font-size:90%;">16.67</span></td>
+<td id="S4.T3.19.16.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.16.5.1" class="ltx_text" style="font-size:90%;">14.58</span></td>
+<td id="S4.T3.19.16.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.16.6.1" class="ltx_text ltx_underline" style="font-size:90%;">45.61</span></td>
+<td id="S4.T3.19.16.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.16.7.1" class="ltx_text" style="font-size:90%;">20.83</span></td>
+<td id="S4.T3.19.16.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.16.8.1" class="ltx_text" style="font-size:90%;">4.76</span></td></tr>
+<tr id="S4.T3.19.17" class="ltx_tr">
+<td id="S4.T3.19.17.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.17.1.1" class="ltx_text" style="font-size:90%;">Kimi-K2.6</span></td>
+<td id="S4.T3.19.17.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.17.2.1" class="ltx_text" style="font-size:90%;">13.06</span></td>
+<td id="S4.T3.19.17.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.17.3.1" class="ltx_text" style="font-size:90%;">15.87</span></td>
+<td id="S4.T3.19.17.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.17.4.1" class="ltx_text" style="font-size:90%;">14.81</span></td>
+<td id="S4.T3.19.17.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.17.5.1" class="ltx_text" style="font-size:90%;">6.25</span></td>
+<td id="S4.T3.19.17.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.17.6.1" class="ltx_text" style="font-size:90%;">24.56</span></td>
+<td id="S4.T3.19.17.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.17.7.1" class="ltx_text" style="font-size:90%;">4.17</span></td>
+<td id="S4.T3.19.17.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.17.8.1" class="ltx_text" style="font-size:90%;">4.76</span></td></tr>
+<tr id="S4.T3.19.18" class="ltx_tr">
+<td id="S4.T3.19.18.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.18.1.1" class="ltx_text" style="font-size:90%;">GLM-5.1</span></td>
+<td id="S4.T3.19.18.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.18.2.1" class="ltx_text" style="font-size:90%;">16.49</span></td>
+<td id="S4.T3.19.18.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.18.3.1" class="ltx_text" style="font-size:90%;">12.70</span></td>
+<td id="S4.T3.19.18.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.18.4.1" class="ltx_text" style="font-size:90%;">16.67</span></td>
+<td id="S4.T3.19.18.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.18.5.1" class="ltx_text" style="font-size:90%;">8.33</span></td>
+<td id="S4.T3.19.18.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.18.6.1" class="ltx_text" style="font-size:90%;">36.84</span></td>
+<td id="S4.T3.19.18.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.18.7.1" class="ltx_text" style="font-size:90%;">8.33</span></td>
+<td id="S4.T3.19.18.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.18.8.1" class="ltx_text" style="font-size:90%;">9.52</span></td></tr>
+<tr id="S4.T3.19.19" class="ltx_tr">
+<td id="S4.T3.19.19.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.19.1.1" class="ltx_text" style="font-size:90%;">Qwen-3.6-Max</span></td>
+<td id="S4.T3.19.19.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.19.2.1" class="ltx_text" style="font-size:90%;">15.12</span></td>
+<td id="S4.T3.19.19.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.19.3.1" class="ltx_text" style="font-size:90%;">11.11</span></td>
+<td id="S4.T3.19.19.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.19.4.1" class="ltx_text" style="font-size:90%;">16.67</span></td>
+<td id="S4.T3.19.19.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.19.5.1" class="ltx_text" style="font-size:90%;">10.42</span></td>
+<td id="S4.T3.19.19.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.19.6.1" class="ltx_text" style="font-size:90%;">33.33</span></td>
+<td id="S4.T3.19.19.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.19.7.1" class="ltx_text" style="font-size:90%;">6.25</span></td>
+<td id="S4.T3.19.19.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.19.8.1" class="ltx_text" style="font-size:90%;">4.76</span></td></tr>
+<tr id="S4.T3.19.20" class="ltx_tr">
+<td id="S4.T3.19.20.1" class="ltx_td ltx_align_left" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.20.1.1" class="ltx_text" style="font-size:90%;">DeepSeek-V4-Pro</span></td>
+<td id="S4.T3.19.20.2" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.20.2.1" class="ltx_text" style="font-size:90%;">16.49</span></td>
+<td id="S4.T3.19.20.3" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.20.3.1" class="ltx_text" style="font-size:90%;">20.63</span></td>
+<td id="S4.T3.19.20.4" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.20.4.1" class="ltx_text" style="font-size:90%;">16.67</span></td>
+<td id="S4.T3.19.20.5" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.20.5.1" class="ltx_text" style="font-size:90%;">8.33</span></td>
+<td id="S4.T3.19.20.6" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.20.6.1" class="ltx_text" style="font-size:90%;">29.82</span></td>
+<td id="S4.T3.19.20.7" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.20.7.1" class="ltx_text" style="font-size:90%;">10.42</span></td>
+<td id="S4.T3.19.20.8" class="ltx_td ltx_align_center" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.20.8.1" class="ltx_text" style="font-size:90%;">0.00</span></td></tr>
+<tr id="S4.T3.19.21" class="ltx_tr">
+<td id="S4.T3.19.21.1" class="ltx_td ltx_align_left ltx_border_bb" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.21.1.1" class="ltx_text" style="font-size:90%;">Gemini-3.1-Pro</span></td>
+<td id="S4.T3.19.21.2" class="ltx_td ltx_align_center ltx_border_bb" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.21.2.1" class="ltx_text" style="font-size:90%;">6.53</span></td>
+<td id="S4.T3.19.21.3" class="ltx_td ltx_align_center ltx_border_bb" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.21.3.1" class="ltx_text" style="font-size:90%;">6.35</span></td>
+<td id="S4.T3.19.21.4" class="ltx_td ltx_align_center ltx_border_bb" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.21.4.1" class="ltx_text" style="font-size:90%;">11.11</span></td>
+<td id="S4.T3.19.21.5" class="ltx_td ltx_align_center ltx_border_bb" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.21.5.1" class="ltx_text" style="font-size:90%;">6.25</span></td>
+<td id="S4.T3.19.21.6" class="ltx_td ltx_align_center ltx_border_bb" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.21.6.1" class="ltx_text" style="font-size:90%;">8.77</span></td>
+<td id="S4.T3.19.21.7" class="ltx_td ltx_align_center ltx_border_bb" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.21.7.1" class="ltx_text" style="font-size:90%;">0.00</span></td>
+<td id="S4.T3.19.21.8" class="ltx_td ltx_align_center ltx_border_bb" style="padding:0.7pt 5.0pt;"><span id="S4.T3.19.21.8.1" class="ltx_text" style="font-size:90%;">4.76</span></td></tr>
+</table>
+</div></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-19-assets/startupbench-figure-4.png" alt="图 4：Performance across rubric dimensions. Importance-weighted pass rates (%) of different models on the six rubric dimensions in StartupBench. Higher values indicate better performance under the corresponding evaluation dimension."><figcaption><strong>图 4：Performance across rubric dimensions. Importance-weighted pass rates (%) of different models on the six rubric dimensions in StartupBench. Higher values indicate better performance under the corresponding evaluation dimension.</strong> · <a href="https://arxiv.org/html/2608.17800#S4.F4">论文原始位置</a></figcaption></figure>
+<figure><figcaption><strong>表 4：Task-normalized rubric satisfaction rates (%) across different importance levels. For each model–task–trial, we first compute the satisfaction rate within each importance level and then average across tasks and trials.</strong> · <a href="https://arxiv.org/html/2608.17800#S4.T4">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T4.4" class="ltx_tabular ltx_centering ltx_align_middle">
+<tr id="S4.T4.4.1" class="ltx_tr">
+<td id="S4.T4.4.1.1" class="ltx_td ltx_align_left ltx_border_tt"><span id="S4.T4.4.1.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Model</span></td>
+<td id="S4.T4.4.1.2" class="ltx_td ltx_align_center ltx_border_tt"><span id="S4.T4.4.1.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Auxiliary</span></td>
+<td id="S4.T4.4.1.3" class="ltx_td ltx_align_center ltx_border_tt"><span id="S4.T4.4.1.3.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Important</span></td>
+<td id="S4.T4.4.1.4" class="ltx_td ltx_align_center ltx_border_tt"><span id="S4.T4.4.1.4.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Core</span></td></tr>
+<tr id="S4.T4.4.2" class="ltx_tr">
+<td id="S4.T4.4.2.1" class="ltx_td ltx_align_left ltx_border_t"><span id="S4.T4.4.2.1.1" class="ltx_text" style="font-size:90%;">Kimi-K3</span></td>
+<td id="S4.T4.4.2.2" class="ltx_td ltx_align_center ltx_border_t"><span id="S4.T4.4.2.2.1" class="ltx_text" style="font-size:90%;">77.89</span></td>
+<td id="S4.T4.4.2.3" class="ltx_td ltx_align_center ltx_border_t"><span id="S4.T4.4.2.3.1" class="ltx_text" style="font-size:90%;">75.12</span></td>
+<td id="S4.T4.4.2.4" class="ltx_td ltx_align_center ltx_border_t"><span id="S4.T4.4.2.4.1" class="ltx_text" style="font-size:90%;">73.40</span></td></tr>
+<tr id="S4.T4.4.3" class="ltx_tr">
+<td id="S4.T4.4.3.1" class="ltx_td ltx_align_left"><span id="S4.T4.4.3.1.1" class="ltx_text" style="font-size:90%;">GPT-5.6-sol</span></td>
+<td id="S4.T4.4.3.2" class="ltx_td ltx_align_center"><span id="S4.T4.4.3.2.1" class="ltx_text" style="font-size:90%;">77.59</span></td>
+<td id="S4.T4.4.3.3" class="ltx_td ltx_align_center"><span id="S4.T4.4.3.3.1" class="ltx_text" style="font-size:90%;">74.47</span></td>
+<td id="S4.T4.4.3.4" class="ltx_td ltx_align_center"><span id="S4.T4.4.3.4.1" class="ltx_text" style="font-size:90%;">73.07</span></td></tr>
+<tr id="S4.T4.4.4" class="ltx_tr">
+<td id="S4.T4.4.4.1" class="ltx_td ltx_align_left"><span id="S4.T4.4.4.1.1" class="ltx_text" style="font-size:90%;">GPT-5.5</span></td>
+<td id="S4.T4.4.4.2" class="ltx_td ltx_align_center"><span id="S4.T4.4.4.2.1" class="ltx_text" style="font-size:90%;">75.12</span></td>
+<td id="S4.T4.4.4.3" class="ltx_td ltx_align_center"><span id="S4.T4.4.4.3.1" class="ltx_text" style="font-size:90%;">75.09</span></td>
+<td id="S4.T4.4.4.4" class="ltx_td ltx_align_center"><span id="S4.T4.4.4.4.1" class="ltx_text" style="font-size:90%;">72.07</span></td></tr>
+<tr id="S4.T4.4.5" class="ltx_tr">
+<td id="S4.T4.4.5.1" class="ltx_td ltx_align_left"><span id="S4.T4.4.5.1.1" class="ltx_text" style="font-size:90%;">Seed-2.1-Pro</span></td>
+<td id="S4.T4.4.5.2" class="ltx_td ltx_align_center"><span id="S4.T4.4.5.2.1" class="ltx_text" style="font-size:90%;">70.83</span></td>
+<td id="S4.T4.4.5.3" class="ltx_td ltx_align_center"><span id="S4.T4.4.5.3.1" class="ltx_text" style="font-size:90%;">69.85</span></td>
+<td id="S4.T4.4.5.4" class="ltx_td ltx_align_center"><span id="S4.T4.4.5.4.1" class="ltx_text" style="font-size:90%;">65.77</span></td></tr>
+<tr id="S4.T4.4.6" class="ltx_tr">
+<td id="S4.T4.4.6.1" class="ltx_td ltx_align_left"><span id="S4.T4.4.6.1.1" class="ltx_text" style="font-size:90%;">Kimi-K2.6</span></td>
+<td id="S4.T4.4.6.2" class="ltx_td ltx_align_center"><span id="S4.T4.4.6.2.1" class="ltx_text" style="font-size:90%;">66.64</span></td>
+<td id="S4.T4.4.6.3" class="ltx_td ltx_align_center"><span id="S4.T4.4.6.3.1" class="ltx_text" style="font-size:90%;">63.56</span></td>
+<td id="S4.T4.4.6.4" class="ltx_td ltx_align_center"><span id="S4.T4.4.6.4.1" class="ltx_text" style="font-size:90%;">57.82</span></td></tr>
+<tr id="S4.T4.4.7" class="ltx_tr">
+<td id="S4.T4.4.7.1" class="ltx_td ltx_align_left"><span id="S4.T4.4.7.1.1" class="ltx_text" style="font-size:90%;">GLM-5.1</span></td>
+<td id="S4.T4.4.7.2" class="ltx_td ltx_align_center"><span id="S4.T4.4.7.2.1" class="ltx_text" style="font-size:90%;">64.58</span></td>
+<td id="S4.T4.4.7.3" class="ltx_td ltx_align_center"><span id="S4.T4.4.7.3.1" class="ltx_text" style="font-size:90%;">61.40</span></td>
+<td id="S4.T4.4.7.4" class="ltx_td ltx_align_center"><span id="S4.T4.4.7.4.1" class="ltx_text" style="font-size:90%;">60.68</span></td></tr>
+<tr id="S4.T4.4.8" class="ltx_tr">
+<td id="S4.T4.4.8.1" class="ltx_td ltx_align_left"><span id="S4.T4.4.8.1.1" class="ltx_text" style="font-size:90%;">Qwen-3.6-Max</span></td>
+<td id="S4.T4.4.8.2" class="ltx_td ltx_align_center"><span id="S4.T4.4.8.2.1" class="ltx_text" style="font-size:90%;">65.39</span></td>
+<td id="S4.T4.4.8.3" class="ltx_td ltx_align_center"><span id="S4.T4.4.8.3.1" class="ltx_text" style="font-size:90%;">62.17</span></td>
+<td id="S4.T4.4.8.4" class="ltx_td ltx_align_center"><span id="S4.T4.4.8.4.1" class="ltx_text" style="font-size:90%;">58.08</span></td></tr>
+<tr id="S4.T4.4.9" class="ltx_tr">
+<td id="S4.T4.4.9.1" class="ltx_td ltx_align_left"><span id="S4.T4.4.9.1.1" class="ltx_text" style="font-size:90%;">DeepSeek-V4-Pro</span></td>
+<td id="S4.T4.4.9.2" class="ltx_td ltx_align_center"><span id="S4.T4.4.9.2.1" class="ltx_text" style="font-size:90%;">66.50</span></td>
+<td id="S4.T4.4.9.3" class="ltx_td ltx_align_center"><span id="S4.T4.4.9.3.1" class="ltx_text" style="font-size:90%;">62.97</span></td>
+<td id="S4.T4.4.9.4" class="ltx_td ltx_align_center"><span id="S4.T4.4.9.4.1" class="ltx_text" style="font-size:90%;">60.05</span></td></tr>
+<tr id="S4.T4.4.10" class="ltx_tr">
+<td id="S4.T4.4.10.1" class="ltx_td ltx_align_left"><span id="S4.T4.4.10.1.1" class="ltx_text" style="font-size:90%;">Gemini-3.1-Pro</span></td>
+<td id="S4.T4.4.10.2" class="ltx_td ltx_align_center"><span id="S4.T4.4.10.2.1" class="ltx_text" style="font-size:90%;">53.48</span></td>
+<td id="S4.T4.4.10.3" class="ltx_td ltx_align_center"><span id="S4.T4.4.10.3.1" class="ltx_text" style="font-size:90%;">48.41</span></td>
+<td id="S4.T4.4.10.4" class="ltx_td ltx_align_center"><span id="S4.T4.4.10.4.1" class="ltx_text" style="font-size:90%;">50.13</span></td></tr>
+<tr id="S4.T4.4.11" class="ltx_tr">
+<td id="S4.T4.4.11.1" class="ltx_td ltx_align_left ltx_border_bb ltx_border_t"><span id="S4.T4.4.11.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Average</span></td>
+<td id="S4.T4.4.11.2" class="ltx_td ltx_align_center ltx_border_bb ltx_border_t"><span id="S4.T4.4.11.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">68.67</span></td>
+<td id="S4.T4.4.11.3" class="ltx_td ltx_align_center ltx_border_bb ltx_border_t"><span id="S4.T4.4.11.3.1" class="ltx_text ltx_font_bold" style="font-size:90%;">65.89</span></td>
+<td id="S4.T4.4.11.4" class="ltx_td ltx_align_center ltx_border_bb ltx_border_t"><span id="S4.T4.4.11.4.1" class="ltx_text ltx_font_bold" style="font-size:90%;">63.45</span></td></tr>
+</table>
+</div></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-19-assets/startupbench-figure-5.png" alt="图 5：A representative case of models failing on core rubrics though passing auxiliary rubrics on StartupBench."><figcaption><strong>图 5：A representative case of models failing on core rubrics though passing auxiliary rubrics on StartupBench.</strong> · <a href="https://arxiv.org/html/2608.17800#S4.F5">论文原始位置</a></figcaption></figure>
+<figure><figcaption><strong>表 5：Output-format compliance on the 56 StartupBench tasks with explicit output-file requirement rubrics. Models are ranked by compliance rate.</strong> · <a href="https://arxiv.org/html/2608.17800#S4.T5">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T5.4" class="ltx_tabular ltx_centering ltx_align_middle">
+<tr id="S4.T5.4.1" class="ltx_tr">
+<td id="S4.T5.4.1.1" class="ltx_td ltx_align_left ltx_border_tt"><span id="S4.T5.4.1.1.1" class="ltx_text ltx_font_bold" style="font-size:80%;">Model</span></td>
+<td id="S4.T5.4.1.2" class="ltx_td ltx_align_center ltx_border_tt"><span id="S4.T5.4.1.2.1" class="ltx_text ltx_font_bold" style="font-size:80%;">Compliance (%)</span></td></tr>
+<tr id="S4.T5.4.2" class="ltx_tr">
+<td id="S4.T5.4.2.1" class="ltx_td ltx_align_left ltx_border_t"><span id="S4.T5.4.2.1.1" class="ltx_text" style="font-size:80%;">Kimi-K3</span></td>
+<td id="S4.T5.4.2.2" class="ltx_td ltx_align_center ltx_border_t"><span id="S4.T5.4.2.2.1" class="ltx_text" style="font-size:80%;">97.6</span></td></tr>
+<tr id="S4.T5.4.3" class="ltx_tr">
+<td id="S4.T5.4.3.1" class="ltx_td ltx_align_left"><span id="S4.T5.4.3.1.1" class="ltx_text" style="font-size:80%;">Seed-2.1-Pro</span></td>
+<td id="S4.T5.4.3.2" class="ltx_td ltx_align_center"><span id="S4.T5.4.3.2.1" class="ltx_text" style="font-size:80%;">95.2</span></td></tr>
+<tr id="S4.T5.4.4" class="ltx_tr">
+<td id="S4.T5.4.4.1" class="ltx_td ltx_align_left"><span id="S4.T5.4.4.1.1" class="ltx_text" style="font-size:80%;">GPT-5.6-sol</span></td>
+<td id="S4.T5.4.4.2" class="ltx_td ltx_align_center"><span id="S4.T5.4.4.2.1" class="ltx_text" style="font-size:80%;">94.6</span></td></tr>
+<tr id="S4.T5.4.5" class="ltx_tr">
+<td id="S4.T5.4.5.1" class="ltx_td ltx_align_left"><span id="S4.T5.4.5.1.1" class="ltx_text" style="font-size:80%;">Qwen-3.6-Max</span></td>
+<td id="S4.T5.4.5.2" class="ltx_td ltx_align_center"><span id="S4.T5.4.5.2.1" class="ltx_text" style="font-size:80%;">94.6</span></td></tr>
+<tr id="S4.T5.4.6" class="ltx_tr">
+<td id="S4.T5.4.6.1" class="ltx_td ltx_align_left"><span id="S4.T5.4.6.1.1" class="ltx_text" style="font-size:80%;">DeepSeek-V4-Pro</span></td>
+<td id="S4.T5.4.6.2" class="ltx_td ltx_align_center"><span id="S4.T5.4.6.2.1" class="ltx_text" style="font-size:80%;">94.0</span></td></tr>
+<tr id="S4.T5.4.7" class="ltx_tr">
+<td id="S4.T5.4.7.1" class="ltx_td ltx_align_left"><span id="S4.T5.4.7.1.1" class="ltx_text" style="font-size:80%;">GPT-5.5</span></td>
+<td id="S4.T5.4.7.2" class="ltx_td ltx_align_center"><span id="S4.T5.4.7.2.1" class="ltx_text" style="font-size:80%;">93.5</span></td></tr>
+<tr id="S4.T5.4.8" class="ltx_tr">
+<td id="S4.T5.4.8.1" class="ltx_td ltx_align_left"><span id="S4.T5.4.8.1.1" class="ltx_text" style="font-size:80%;">Kimi-K2.6</span></td>
+<td id="S4.T5.4.8.2" class="ltx_td ltx_align_center"><span id="S4.T5.4.8.2.1" class="ltx_text" style="font-size:80%;">92.9</span></td></tr>
+<tr id="S4.T5.4.9" class="ltx_tr">
+<td id="S4.T5.4.9.1" class="ltx_td ltx_align_left"><span id="S4.T5.4.9.1.1" class="ltx_text" style="font-size:80%;">Gemini-3.1-Pro</span></td>
+<td id="S4.T5.4.9.2" class="ltx_td ltx_align_center"><span id="S4.T5.4.9.2.1" class="ltx_text" style="font-size:80%;">86.9</span></td></tr>
+<tr id="S4.T5.4.10" class="ltx_tr">
+<td id="S4.T5.4.10.1" class="ltx_td ltx_align_left ltx_border_bb"><span id="S4.T5.4.10.1.1" class="ltx_text" style="font-size:80%;">GLM-5.1</span></td>
+<td id="S4.T5.4.10.2" class="ltx_td ltx_align_center ltx_border_bb"><span id="S4.T5.4.10.2.1" class="ltx_text" style="font-size:80%;">86.3</span></td></tr>
+</table>
+</div></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-19-assets/startupbench-figure-6.svg" alt="图 6：A representative case of complex instruction following failure. Although the generated workbook appears complete, artifact-level evaluation reveals that several critical acceptance conditions remain unsatisfied, illustrating a common pattern of partial compliance."><figcaption><strong>图 6：A representative case of complex instruction following failure. Although the generated workbook appears complete, artifact-level evaluation reveals that several critical acceptance conditions remain unsatisfied, illustrating a common pattern of partial compliance.</strong> · <a href="https://arxiv.org/html/2608.17800#S4.F6">论文原始位置</a></figcaption></figure>
+<figure><figcaption><strong>表 6：Performance under different general-purpose agent frameworks. For each model, we report the average score under three general-purpose frameworks and the performance range (max–min) across frameworks.</strong> · <a href="https://arxiv.org/html/2608.17800#S4.T6">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T6.4" class="ltx_tabular ltx_centering ltx_align_middle">
+<tr id="S4.T6.4.1" class="ltx_tr">
+<td id="S4.T6.4.1.1" class="ltx_td ltx_align_left ltx_border_tt" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.1.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Model</span></td>
+<td id="S4.T6.4.1.2" class="ltx_td ltx_align_center ltx_border_tt" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.1.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Hermes</span></td>
+<td id="S4.T6.4.1.3" class="ltx_td ltx_align_center ltx_border_tt" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.1.3.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Claude Code</span></td>
+<td id="S4.T6.4.1.4" class="ltx_td ltx_align_center ltx_border_tt" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.1.4.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Nanobot</span></td>
+<td id="S4.T6.4.1.5" class="ltx_td ltx_align_center ltx_border_tt" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.1.5.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Max–Min</span></td></tr>
+<tr id="S4.T6.4.2" class="ltx_tr">
+<td id="S4.T6.4.2.1" class="ltx_td ltx_align_left ltx_border_t" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.2.1.1" class="ltx_text" style="font-size:90%;">GPT-5.5</span></td>
+<td id="S4.T6.4.2.2" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.2.2.1" class="ltx_text" style="font-size:90%;">71.00</span></td>
+<td id="S4.T6.4.2.3" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.2.3.1" class="ltx_text" style="font-size:90%;">70.11</span></td>
+<td id="S4.T6.4.2.4" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.2.4.1" class="ltx_text" style="font-size:90%;">72.79</span></td>
+<td id="S4.T6.4.2.5" class="ltx_td ltx_align_center ltx_border_t" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.2.5.1" class="ltx_text" style="font-size:90%;">2.68</span></td></tr>
+<tr id="S4.T6.4.3" class="ltx_tr">
+<td id="S4.T6.4.3.1" class="ltx_td ltx_align_left" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.3.1.1" class="ltx_text" style="font-size:90%;">GLM-5.1</span></td>
+<td id="S4.T6.4.3.2" class="ltx_td ltx_align_center" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.3.2.1" class="ltx_text" style="font-size:90%;">60.20</span></td>
+<td id="S4.T6.4.3.3" class="ltx_td ltx_align_center" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.3.3.1" class="ltx_text" style="font-size:90%;">60.18</span></td>
+<td id="S4.T6.4.3.4" class="ltx_td ltx_align_center" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.3.4.1" class="ltx_text" style="font-size:90%;">60.79</span></td>
+<td id="S4.T6.4.3.5" class="ltx_td ltx_align_center" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.3.5.1" class="ltx_text" style="font-size:90%;">0.61</span></td></tr>
+<tr id="S4.T6.4.4" class="ltx_tr">
+<td id="S4.T6.4.4.1" class="ltx_td ltx_align_left" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.4.1.1" class="ltx_text" style="font-size:90%;">Qwen-3.6-Max</span></td>
+<td id="S4.T6.4.4.2" class="ltx_td ltx_align_center" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.4.2.1" class="ltx_text" style="font-size:90%;">59.10</span></td>
+<td id="S4.T6.4.4.3" class="ltx_td ltx_align_center" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.4.3.1" class="ltx_text" style="font-size:90%;">57.38</span></td>
+<td id="S4.T6.4.4.4" class="ltx_td ltx_align_center" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.4.4.1" class="ltx_text" style="font-size:90%;">59.46</span></td>
+<td id="S4.T6.4.4.5" class="ltx_td ltx_align_center" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.4.5.1" class="ltx_text" style="font-size:90%;">2.08</span></td></tr>
+<tr id="S4.T6.4.5" class="ltx_tr">
+<td id="S4.T6.4.5.1" class="ltx_td ltx_align_left ltx_border_bb ltx_border_t" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.5.1.1" class="ltx_text" style="font-size:90%;">Average</span></td>
+<td id="S4.T6.4.5.2" class="ltx_td ltx_align_center ltx_border_bb ltx_border_t" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.5.2.1" class="ltx_text" style="font-size:90%;">63.43</span></td>
+<td id="S4.T6.4.5.3" class="ltx_td ltx_align_center ltx_border_bb ltx_border_t" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.5.3.1" class="ltx_text" style="font-size:90%;">62.56</span></td>
+<td id="S4.T6.4.5.4" class="ltx_td ltx_align_center ltx_border_bb ltx_border_t" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.5.4.1" class="ltx_text" style="font-size:90%;">64.35</span></td>
+<td id="S4.T6.4.5.5" class="ltx_td ltx_align_center ltx_border_bb ltx_border_t" style="padding:0.7pt 7.0pt;"><span id="S4.T6.4.5.5.1" class="ltx_text" style="font-size:90%;">1.79</span></td></tr>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 7：General-purpose versus specialized agent systems. Oracle General denotes the averages of the highest score achieved in all trials for every model.</strong> · <a href="https://arxiv.org/html/2608.17800#S4.T7">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T7.4" class="ltx_tabular ltx_centering ltx_align_middle">
+<tr id="S4.T7.4.1" class="ltx_tr">
+<td id="S4.T7.4.1.1" class="ltx_td ltx_align_left ltx_border_tt"><span id="S4.T7.4.1.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Agent System</span></td>
+<td id="S4.T7.4.1.2" class="ltx_td ltx_align_center ltx_border_tt"><span id="S4.T7.4.1.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Avg Score</span></td>
+<td id="S4.T7.4.1.3" class="ltx_td ltx_align_center ltx_border_tt"><span id="S4.T7.4.1.3.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Success Rate</span></td></tr>
+<tr id="S4.T7.4.2" class="ltx_tr">
+<td id="S4.T7.4.2.1" class="ltx_td ltx_align_left ltx_border_t"><span id="S4.T7.4.2.1.1" class="ltx_text" style="font-size:90%;">General (All Runs avg)</span></td>
+<td id="S4.T7.4.2.2" class="ltx_td ltx_align_center ltx_border_t"><span id="S4.T7.4.2.2.1" class="ltx_text" style="font-size:90%;">64.26</span></td>
+<td id="S4.T7.4.2.3" class="ltx_td ltx_align_center ltx_border_t"><span id="S4.T7.4.2.3.1" class="ltx_text" style="font-size:90%;">19.74</span></td></tr>
+<tr id="S4.T7.4.3" class="ltx_tr">
+<td id="S4.T7.4.3.1" class="ltx_td ltx_align_left"><span id="S4.T7.4.3.1.1" class="ltx_text" style="font-size:90%;">General (Oracle)</span></td>
+<td id="S4.T7.4.3.2" class="ltx_td ltx_align_center"><span id="S4.T7.4.3.2.1" class="ltx_text" style="font-size:90%;">71.75</span></td>
+<td id="S4.T7.4.3.3" class="ltx_td ltx_align_center"><span id="S4.T7.4.3.3.1" class="ltx_text" style="font-size:90%;">28.06</span></td></tr>
+<tr id="S4.T7.4.4" class="ltx_tr">
+<td id="S4.T7.4.4.1" class="ltx_td ltx_align_left ltx_border_bb"><span id="S4.T7.4.4.1.1" class="ltx_text" style="font-size:90%;">Specialized Agent</span></td>
+<td id="S4.T7.4.4.2" class="ltx_td ltx_align_center ltx_border_bb"><span id="S4.T7.4.4.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">83.50</span></td>
+<td id="S4.T7.4.4.3" class="ltx_td ltx_align_center ltx_border_bb"><span id="S4.T7.4.4.3.1" class="ltx_text ltx_font_bold" style="font-size:90%;">39.18</span></td></tr>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 8：Summary of domain expert backgrounds. Professional experience refers to reported years of experience in the corresponding or closely related domain.</strong> · <a href="https://arxiv.org/html/2608.17800#A2.T8">论文原始位置</a></figcaption><div class="table-wrap"><table id="A2.T8.4" class="ltx_tabular ltx_centering ltx_align_middle">
+<tr id="A2.T8.4.1" class="ltx_tr">
+<td id="A2.T8.4.1.1" class="ltx_td ltx_align_left ltx_border_tt"><span id="A2.T8.4.1.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Expert Statistics</span></td>
+<td id="A2.T8.4.1.2" class="ltx_td ltx_align_center ltx_border_tt"><span id="A2.T8.4.1.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Value</span></td></tr>
+<tr id="A2.T8.4.2" class="ltx_tr">
+<td id="A2.T8.4.2.1" class="ltx_td ltx_align_left ltx_border_t"><span id="A2.T8.4.2.1.1" class="ltx_text" style="font-size:90%;">Number of domain experts</span></td>
+<td id="A2.T8.4.2.2" class="ltx_td ltx_align_center ltx_border_t"><span id="A2.T8.4.2.2.1" class="ltx_text" style="font-size:90%;">57</span></td></tr>
+<tr id="A2.T8.4.3" class="ltx_tr">
+<td id="A2.T8.4.3.1" class="ltx_td ltx_align_left"><span id="A2.T8.4.3.1.1" class="ltx_text" style="font-size:90%;">Median professional experience</span></td>
+<td id="A2.T8.4.3.2" class="ltx_td ltx_align_center"><span id="A2.T8.4.3.2.1" class="ltx_text" style="font-size:90%;">5 years</span></td></tr>
+<tr id="A2.T8.4.4" class="ltx_tr">
+<td id="A2.T8.4.4.1" class="ltx_td ltx_align_left"><span id="A2.T8.4.4.1.1" class="ltx_text" style="font-size:90%;">Experts with <math id="A2.T8.m1" class="ltx_Math" alttext="\geq 3" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">\geq 3</annotation></semantics></math> years of experience</span></td>
+<td id="A2.T8.4.4.2" class="ltx_td ltx_align_center"><span id="A2.T8.4.4.2.1" class="ltx_text" style="font-size:90%;">68.4%</span></td></tr>
+<tr id="A2.T8.4.5" class="ltx_tr">
+<td id="A2.T8.4.5.1" class="ltx_td ltx_align_left"><span id="A2.T8.4.5.1.1" class="ltx_text" style="font-size:90%;">Experts with <math id="A2.T8.m2" class="ltx_Math" alttext="\geq 6" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo>≥</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">\geq 6</annotation></semantics></math> years of experience</span></td>
+<td id="A2.T8.4.5.2" class="ltx_td ltx_align_center"><span id="A2.T8.4.5.2.1" class="ltx_text" style="font-size:90%;">42.1%</span></td></tr>
+<tr id="A2.T8.4.6" class="ltx_tr">
+<td id="A2.T8.4.6.1" class="ltx_td ltx_align_left"><span id="A2.T8.4.6.1.1" class="ltx_text" style="font-size:90%;">Experts with <math id="A2.T8.m3" class="ltx_Math" alttext="\geq 10" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo>≥</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">\geq 10</annotation></semantics></math> years of experience</span></td>
+<td id="A2.T8.4.6.2" class="ltx_td ltx_align_center"><span id="A2.T8.4.6.2.1" class="ltx_text" style="font-size:90%;">24.6%</span></td></tr>
+<tr id="A2.T8.4.7" class="ltx_tr">
+<td id="A2.T8.4.7.1" class="ltx_td ltx_align_left ltx_border_bb"><span id="A2.T8.4.7.1.1" class="ltx_text" style="font-size:90%;">StartupBench domain coverage</span></td>
+<td id="A2.T8.4.7.2" class="ltx_td ltx_align_center ltx_border_bb"><span id="A2.T8.4.7.2.1" class="ltx_text" style="font-size:90%;">6 / 6</span></td></tr>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 9：Distribution of rubric categories in StartupBench.</strong> · <a href="https://arxiv.org/html/2608.17800#A3.T9">论文原始位置</a></figcaption><div class="table-wrap"><table id="A3.T9.4" class="ltx_tabular ltx_centering ltx_align_middle">
+<tr id="A3.T9.4.1" class="ltx_tr">
+<td id="A3.T9.4.1.1" class="ltx_td ltx_align_left ltx_border_tt"><span id="A3.T9.4.1.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Category</span></td>
+<td id="A3.T9.4.1.2" class="ltx_td ltx_align_center ltx_border_tt"><span id="A3.T9.4.1.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Percentage</span></td></tr>
+<tr id="A3.T9.4.2" class="ltx_tr">
+<td id="A3.T9.4.2.1" class="ltx_td ltx_align_left ltx_border_t"><span id="A3.T9.4.2.1.1" class="ltx_text" style="font-size:90%;">Structure &amp; Completeness</span></td>
+<td id="A3.T9.4.2.2" class="ltx_td ltx_align_center ltx_border_t"><span id="A3.T9.4.2.2.1" class="ltx_text" style="font-size:90%;">27.31%</span></td></tr>
+<tr id="A3.T9.4.3" class="ltx_tr">
+<td id="A3.T9.4.3.1" class="ltx_td ltx_align_left"><span id="A3.T9.4.3.1.1" class="ltx_text" style="font-size:90%;">Calculation Precision</span></td>
+<td id="A3.T9.4.3.2" class="ltx_td ltx_align_center"><span id="A3.T9.4.3.2.1" class="ltx_text" style="font-size:90%;">38.89%</span></td></tr>
+<tr id="A3.T9.4.4" class="ltx_tr">
+<td id="A3.T9.4.4.1" class="ltx_td ltx_align_left"><span id="A3.T9.4.4.1.1" class="ltx_text" style="font-size:90%;">Information Integration</span></td>
+<td id="A3.T9.4.4.2" class="ltx_td ltx_align_center"><span id="A3.T9.4.4.2.1" class="ltx_text" style="font-size:90%;">9.46%</span></td></tr>
+<tr id="A3.T9.4.5" class="ltx_tr">
+<td id="A3.T9.4.5.1" class="ltx_td ltx_align_left"><span id="A3.T9.4.5.1.1" class="ltx_text" style="font-size:90%;">Domain-Specific Compliance</span></td>
+<td id="A3.T9.4.5.2" class="ltx_td ltx_align_center"><span id="A3.T9.4.5.2.1" class="ltx_text" style="font-size:90%;">15.49%</span></td></tr>
+<tr id="A3.T9.4.6" class="ltx_tr">
+<td id="A3.T9.4.6.1" class="ltx_td ltx_align_left"><span id="A3.T9.4.6.1.1" class="ltx_text" style="font-size:90%;">Engineering &amp; Format</span></td>
+<td id="A3.T9.4.6.2" class="ltx_td ltx_align_center"><span id="A3.T9.4.6.2.1" class="ltx_text" style="font-size:90%;">6.20%</span></td></tr>
+<tr id="A3.T9.4.7" class="ltx_tr">
+<td id="A3.T9.4.7.1" class="ltx_td ltx_align_left"><span id="A3.T9.4.7.1.1" class="ltx_text" style="font-size:90%;">Output &amp; Presentation</span></td>
+<td id="A3.T9.4.7.2" class="ltx_td ltx_align_center"><span id="A3.T9.4.7.2.1" class="ltx_text" style="font-size:90%;">2.65%</span></td></tr>
+<tr id="A3.T9.4.8" class="ltx_tr">
+<td id="A3.T9.4.8.1" class="ltx_td ltx_align_left ltx_border_bb ltx_border_t"><span id="A3.T9.4.8.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Total</span></td>
+<td id="A3.T9.4.8.2" class="ltx_td ltx_align_center ltx_border_bb ltx_border_t"><span id="A3.T9.4.8.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">100.00%</span></td></tr>
+</table>
+</div></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-19-assets/startupbench-figure-7.png" alt="图 7：A representative example of a rubric of a task spanning 3 levels. Core rubrics assess the essential financial reasoning and calculations required to solve the investment problem, Important rubrics evaluate the correctness and completeness of the supporting analysis, while Auxiliary rubrics capture presentation quality and additional quantitative support."><figcaption><strong>图 7：A representative example of a rubric of a task spanning 3 levels. Core rubrics assess the essential financial reasoning and calculations required to solve the investment problem, Important rubrics evaluate the correctness and completeness of the supporting analysis, while Auxiliary rubrics capture presentation quality and additional quantitative support.</strong> · <a href="https://arxiv.org/html/2608.17800#A3.F7">论文原始位置</a></figcaption></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-19-assets/startupbench-figure-8.svg" alt="图 8：A representative example of self-verification hallucination. The model generates a plausible workbook and concludes that the task has been completed based on its execution process. However, artifact-level spot checks expose acceptance-critical errors in the final deliverable, showing that the model mistakes a progress summary for actual verification instead of validating the generated artifact against the original task requirements."><figcaption><strong>图 8：A representative example of self-verification hallucination. The model generates a plausible workbook and concludes that the task has been completed based on its execution process. However, artifact-level spot checks expose acceptance-critical errors in the final deliverable, showing that the model mistakes a progress summary for actual verification instead of validating the generated artifact against the original task requirements.</strong> · <a href="https://arxiv.org/html/2608.17800#A4.F8">论文原始位置</a></figcaption></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-19-assets/startupbench-figure-9.svg" alt="图 9：A representative example of failure caused by insufficient domain-specific clinical actionability."><figcaption><strong>图 9：A representative example of failure caused by insufficient domain-specific clinical actionability.</strong> · <a href="https://arxiv.org/html/2608.17800#A4.F9">论文原始位置</a></figcaption></figure></div></details>
+</section>
+
+<section><h2>GitHub 三日增长项目</h2><div class="callout warn"><strong>窗口限制：</strong>基线为 2026-08-18 11:03 CST，本次查询约 10:50 CST，实际约 23 小时。由于没有约 72 小时且同候选集的严格快照，本榜使用当前值减上期值排序，不插值、不外推，不能解读为严格三日增长。</div><div class="table-wrap"><table><thead><tr><th>#</th><th>仓库</th><th>用途</th><th>当前 Star</th><th>约 23h 新增</th><th>语言</th><th>最近推送</th></tr></thead><tbody><tr><td>1</td><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>持久记忆、工具与自扩展个人 Agent</td><td>232,603</td><td class="up">+515</td><td>Python</td><td>2026-08-19 02:43:56 UTC</td></tr><tr><td>2</td><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>面向 Agent 的网页抓取与结构化上下文 API</td><td>169,191</td><td class="up">+502</td><td>TypeScript</td><td>2026-08-18 23:53:14 UTC</td></tr><tr><td>3</td><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>跨 Coding Agent 的技能框架</td><td>273,730</td><td class="up">+461</td><td>Shell</td><td>2026-08-13 00:36:31 UTC</td></tr><tr><td>4</td><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>开源终端 Coding Agent</td><td>198,871</td><td class="up">+354</td><td>TypeScript</td><td>2026-08-19 02:42:57 UTC</td></tr><tr><td>5</td><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td>Anthropic Agent Skills 示例</td><td>170,309</td><td class="up">+257</td><td>Python</td><td>2026-08-18 16:02:06 UTC</td></tr></tbody></table></div></section>
+
+<section><h2>GitHub 高 Star 未总结项目</h2><p class="method">扫描工作区全部历史日报得到 195 个仓库链接集合，排除所有曾在 GitHub 板块出现的仓库；再从 GitHub <code>topic:ai-agent</code> 高 Star 候选中筛选与 Coding Agent、运行时、记忆和业务工作流直接相关者。该检索不是 GitHub 全站穷举。</p><div class="table-wrap"><table><thead><tr><th>#</th><th>仓库</th><th>Star</th><th>核心能力 / 为什么值得关注</th><th>语言</th><th>最近推送</th></tr></thead><tbody><tr><td>1</td><td><a href="https://github.com/QwenLM/qwen-code">QwenLM/qwen-code</a></td><td>27,166</td><td>开源终端 Coding Agent；值得比较工具协议、审批和模型可替换性。</td><td>TypeScript</td><td>2026-08-19 02:50:11 UTC</td></tr><tr><td>2</td><td><a href="https://github.com/can1357/oh-my-pi">can1357/oh-my-pi</a></td><td>25,702</td><td>带哈希锚定编辑、LSP、子 Agent 的终端 harness；适合研究低漂移代码修改。</td><td>TypeScript</td><td>2026-08-19 02:50:02 UTC</td></tr><tr><td>3</td><td><a href="https://github.com/nocobase/nocobase">nocobase/nocobase</a></td><td>23,692</td><td>AI + 无代码业务系统底座；技术红利在于让 Agent 作用于成熟权限与数据模型。</td><td>TypeScript</td><td>2026-08-19 02:34:45 UTC</td></tr><tr><td>4</td><td><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory">TencentCloud/TencentDB-Agent-Memory</a></td><td>23,002</td><td>团队级 Agent 记忆中心，统一 Chat Memory、Skill、Wiki 与 Code Graph。</td><td>TypeScript</td><td>2026-08-19 02:41:21 UTC</td></tr><tr><td>5</td><td><a href="https://github.com/opensandbox-group/OpenSandbox">opensandbox-group/OpenSandbox</a></td><td>14,278</td><td>面向 Agent 的开源隔离运行时；直接关联执行权限、环境复现和安全评测。</td><td>Python</td><td>2026-08-19 02:44:13 UTC</td></tr></tbody></table></div></section>
+
+<section><h2>持续追踪项目</h2><p class="method">Star 只表示关注度；状态同时参考代码活动、许可、部署难度、可验证性和采用风险。GitHub 匿名 API 在补查 Release 时限流，因此不报告无法完成核验的 Release 字段。</p><div class="table-wrap"><table><thead><tr><th>项目</th><th>状态</th><th>约 23h 变化</th><th>最近推送</th><th>License</th><th>真实可复用性 / 风险</th></tr></thead><tbody><tr><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td><span class="state">加速</span></td><td class="up">+515</td><td>2026-08-19 02:43:56 UTC</td><td>MIT</td><td>本窗口增长第一且当日仍在推送；先审计记忆写入、工具安装和自修改权限。</td></tr><tr><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td><span class="state">加速</span></td><td class="up">+502</td><td>2026-08-18 23:53:14 UTC</td><td>AGPL-3.0</td><td>增长紧随其后；复用价值高，但需评估抓取合规、网页漂移、成本与 AGPL 边界。</td></tr><tr><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td><span class="state">热度增长 / 代码降温</span></td><td class="up">+461</td><td>2026-08-13 00:36:31 UTC</td><td>MIT</td><td>Star 继续增长，但最后推送仍为 8 月 13 日；逐项验证 Skill，不把热度等同维护活跃。</td></tr><tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td><span class="state">持续增长</span></td><td class="up">+354</td><td>2026-08-19 02:42:57 UTC</td><td>MIT</td><td>当日持续推送；横评时必须冻结模型、工具、审批与上下文压缩策略。</td></tr><tr><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td><span class="state">持续增长</span></td><td class="up">+257</td><td>2026-08-18 16:02:06 UTC</td><td>未标注</td><td>有代码活动但无明确 SPDX 许可；适合研究结构，商用复用前需单独核权。</td></tr><tr><td><a href="https://github.com/openai/codex">openai/codex</a></td><td><span class="state">持续增长</span></td><td class="up">+185</td><td>2026-08-19 02:48:06 UTC</td><td>Apache-2.0</td><td>活跃提交；持续跟踪沙箱、并行任务、审批与可恢复轨迹。</td></tr><tr><td><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td><span class="state">持续增长</span></td><td class="up">+216</td><td>2026-08-18 08:57:45 UTC</td><td>MIT</td><td>多 Agent 配置层热度上升；风险是凭证与配置文件成为新的集中攻击面。</td></tr><tr><td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td><td><span class="state">持续增长</span></td><td class="up">+129</td><td>2026-08-18 20:38:54 UTC</td><td>未标注</td><td>产品与仓库均活跃；需要用真实长任务测失败恢复和权限边界。</td></tr><tr><td><a href="https://github.com/browser-use/browser-use">browser-use/browser-use</a></td><td><span class="state">稳定</span></td><td class="up">+119</td><td>2026-08-18 17:07:08 UTC</td><td>MIT</td><td>关注增长较慢；重点测动态网页、登录态变化和不可逆操作拦截。</td></tr><tr><td><a href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a></td><td><span class="state">降温</span></td><td class="up">+82</td><td>2026-08-18 15:14:17 UTC</td><td>MIT</td><td>仍有推送但窗口增量最低；优先观察长程成本、子 Agent 归因与记忆漂移。</td></tr></tbody></table></div></section>
+
+<section class="feedback"><h2>个人反馈</h2><p>记录这份简报是否带来决策增量、希望继续追踪什么。内容仅保存在当前浏览器的本地存储，不上传服务器。</p><textarea id="feedback" placeholder="例如：把 artifact verifier 纳入产品评测；本周试用 Hermes + Firecrawl。"></textarea><br><button id="save-feedback" type="button">保存反馈</button><span id="feedback-status" class="feedback-status"></span></section>
+
+<section><h2>来源与方法</h2><ul>
+<li><strong>检索时间：</strong>2026-08-19 10:05–10:55 CST。全程使用 arXiv API/HTML、官方 HTTP 页面、站点 sitemap、GitHub REST API 与本地静态解析；没有调用浏览器、GUI 或浏览器自动化。</li>
+<li><strong>论文：</strong><a href="https://arxiv.org/abs/2608.17800">arXiv 摘要</a>、<a href="https://arxiv.org/html/2608.17800">arXiv HTML</a>、<a href="https://startupbench.github.io/">项目页</a>。结果和局限以论文 v1 为准；尚未发现独立复现。</li>
+<li><strong>OpenAI：</strong><a href="https://openai.com/news/">官方新闻索引</a>。本窗口未发现可确认新增。</li>
+<li><strong>Anthropic：</strong><a href="https://www.anthropic.com/news">官方 Newsroom</a>、<a href="https://www.anthropic.com/sitemap.xml">官方 sitemap</a>、<a href="https://www.anthropic.com/responsible-scaling-policy/roadmap">RSP 路线图</a>。路线图页面 lastmod 变化不等于正式发布，故仅记录限制。</li>
+<li><strong>人物观点：</strong>未获得可核验新增 X 原帖；未采用搜索摘要或二手转述。</li>
+<li><strong>GitHub：</strong><a href="https://api.github.com/">REST API</a> 当前快照，约 10:50 CST；增长基线来自 8 月 18 日本地日报。匿名 API 在补查 Release 时返回 403 限流，Star、语言、许可与推送时间已在此前请求中取得；未核验的 Release 不展示。</li>
+<li><strong>不确定性：</strong>Star 不是质量或采用率；短窗口排行受外部传播影响。StartupBench 的市场任务采样、专用系统公平性、judge 偏差与复现性仍需验证。</li>
+<li><strong>本次新增至已总结集合：</strong><code>QwenLM/qwen-code</code>、<code>can1357/oh-my-pi</code>、<code>nocobase/nocobase</code>、<code>TencentCloud/TencentDB-Agent-Memory</code>、<code>opensandbox-group/OpenSandbox</code>。</li>
+</ul><h3>GitHub Star 快照（全部候选与持续追踪）</h3><div class="table-wrap"><table><thead><tr><th>仓库</th><th>Star</th><th>语言</th><th>License</th><th>最近推送</th></tr></thead><tbody><tr><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>232,603</td><td>Python</td><td>MIT</td><td>2026-08-19 02:43:56 UTC</td></tr><tr><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>169,191</td><td>TypeScript</td><td>AGPL-3.0</td><td>2026-08-18 23:53:14 UTC</td></tr><tr><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>273,730</td><td>Shell</td><td>MIT</td><td>2026-08-13 00:36:31 UTC</td></tr><tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>198,871</td><td>TypeScript</td><td>MIT</td><td>2026-08-19 02:42:57 UTC</td></tr><tr><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td>170,309</td><td>Python</td><td>未标注</td><td>2026-08-18 16:02:06 UTC</td></tr><tr><td><a href="https://github.com/openai/codex">openai/codex</a></td><td>106,702</td><td>Rust</td><td>Apache-2.0</td><td>2026-08-19 02:48:06 UTC</td></tr><tr><td><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td>128,111</td><td>Rust</td><td>MIT</td><td>2026-08-18 08:57:45 UTC</td></tr><tr><td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td><td>141,913</td><td>Python</td><td>未标注</td><td>2026-08-18 20:38:54 UTC</td></tr><tr><td><a href="https://github.com/browser-use/browser-use">browser-use/browser-use</a></td><td>109,663</td><td>Python</td><td>MIT</td><td>2026-08-18 17:07:08 UTC</td></tr><tr><td><a href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a></td><td>80,269</td><td>Python</td><td>MIT</td><td>2026-08-18 15:14:17 UTC</td></tr><tr><td><a href="https://github.com/QwenLM/qwen-code">QwenLM/qwen-code</a></td><td>27,166</td><td>TypeScript</td><td>API 限流前未补查</td><td>2026-08-19 02:50:11 UTC</td></tr><tr><td><a href="https://github.com/can1357/oh-my-pi">can1357/oh-my-pi</a></td><td>25,702</td><td>TypeScript</td><td>API 限流前未补查</td><td>2026-08-19 02:50:02 UTC</td></tr><tr><td><a href="https://github.com/nocobase/nocobase">nocobase/nocobase</a></td><td>23,692</td><td>TypeScript</td><td>API 限流前未补查</td><td>2026-08-19 02:34:45 UTC</td></tr><tr><td><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory">TencentCloud/TencentDB-Agent-Memory</a></td><td>23,002</td><td>TypeScript</td><td>API 限流前未补查</td><td>2026-08-19 02:41:21 UTC</td></tr><tr><td><a href="https://github.com/opensandbox-group/OpenSandbox">opensandbox-group/OpenSandbox</a></td><td>14,278</td><td>Python</td><td>API 限流前未补查</td><td>2026-08-19 02:44:13 UTC</td></tr></tbody></table></div></section>
+</main><script>(()=>{const key="agent-brief-feedback-2026-08-19",box=document.getElementById("feedback"),status=document.getElementById("feedback-status");box.value=localStorage.getItem(key)||"";document.getElementById("save-feedback").addEventListener("click",()=>{localStorage.setItem(key,box.value);status.textContent="已保存到本地";setTimeout(()=>status.textContent="",2000)})})()</script></body></html>

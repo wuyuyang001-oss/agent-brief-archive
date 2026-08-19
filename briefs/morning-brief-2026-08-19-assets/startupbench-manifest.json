@@ -1,0 +1,200 @@
+[
+  {
+    "type": "figure",
+    "number": "1",
+    "caption": "Overview of StartupBench: real AI-product workflows, long-horizon agent execution, six-domain coverage, and multi-format deliverable generation.",
+    "source": "https://arxiv.org/html/2608.17800#S1.F1",
+    "media": [
+      "https://arxiv.org/html/2608.17800v1/MainFig.png"
+    ],
+    "files": [
+      "startupbench-figure-1.png"
+    ],
+    "file": "startupbench-figure-1.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "1",
+    "caption": "Comparison of StartupBench with existing benchmarks. E2E denotes end-to-end workflow completion; Item-wise Eval. denotes criterion-level judging. ✓, ✗, and △ \\triangle indicate full, no, and partial support.",
+    "source": "https://arxiv.org/html/2608.17800#S3.T1",
+    "file": "startupbench-table-1.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "2",
+    "caption": "StartupBench data construction pipeline. We select market-validated startup agents, collect real user workflows, construct task artifacts and instances, and calibrate quality and difficulty through multi-stage review.",
+    "source": "https://arxiv.org/html/2608.17800#S3.F2",
+    "media": [
+      "https://arxiv.org/html/2608.17800v1/StartupBench-fig2.png"
+    ],
+    "files": [
+      "startupbench-figure-2.png"
+    ],
+    "file": "startupbench-figure-2.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "2",
+    "caption": "Statistics of StartupBench. The benchmark contains 97 real-world workflow tasks across six top-level domains and requires diverse deliverable formats.",
+    "source": "https://arxiv.org/html/2608.17800#S3.T2",
+    "file": "startupbench-table-2.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "3",
+    "caption": "Leaderboard of StartupBench.",
+    "source": "https://arxiv.org/html/2608.17800#S4.F3",
+    "media": [
+      "https://arxiv.org/html/2608.17800v1/overall_score_bs_out.svg"
+    ],
+    "files": [
+      "startupbench-figure-3.svg"
+    ],
+    "file": "startupbench-figure-3.svg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "3",
+    "caption": "Model performance of StartupBench, averaged over three independent runs. Top block: importance-weighted mean per-task score ( 0 0 – 100 100 ); bottom block: success rate, the fraction of samples scoring ≥ 90 \\geq 90 (%), pooled over the three runs. Per-column best in bold , second-best underlined .",
+    "source": "https://arxiv.org/html/2608.17800#S4.T3",
+    "file": "startupbench-table-3.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "4",
+    "caption": "Performance across rubric dimensions. Importance-weighted pass rates (%) of different models on the six rubric dimensions in StartupBench. Higher values indicate better performance under the corresponding evaluation dimension.",
+    "source": "https://arxiv.org/html/2608.17800#S4.F4",
+    "media": [
+      "https://arxiv.org/html/2608.17800v1/heatmap_9model.png"
+    ],
+    "files": [
+      "startupbench-figure-4.png"
+    ],
+    "file": "startupbench-figure-4.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "4",
+    "caption": "Task-normalized rubric satisfaction rates (%) across different importance levels. For each model–task–trial, we first compute the satisfaction rate within each importance level and then average across tasks and trials.",
+    "source": "https://arxiv.org/html/2608.17800#S4.T4",
+    "file": "startupbench-table-4.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "5",
+    "caption": "A representative case of models failing on core rubrics though passing auxiliary rubrics on StartupBench.",
+    "source": "https://arxiv.org/html/2608.17800#S4.F5",
+    "media": [
+      "https://arxiv.org/html/2608.17800v1/rubric_corefail_case.png"
+    ],
+    "files": [
+      "startupbench-figure-5.png"
+    ],
+    "file": "startupbench-figure-5.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "5",
+    "caption": "Output-format compliance on the 56 StartupBench tasks with explicit output-file requirement rubrics. Models are ranked by compliance rate.",
+    "source": "https://arxiv.org/html/2608.17800#S4.T5",
+    "file": "startupbench-table-5.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "6",
+    "caption": "A representative case of complex instruction following failure. Although the generated workbook appears complete, artifact-level evaluation reveals that several critical acceptance conditions remain unsatisfied, illustrating a common pattern of partial compliance.",
+    "source": "https://arxiv.org/html/2608.17800#S4.F6",
+    "media": [
+      "https://arxiv.org/html/2608.17800v1/figure5_hr.svg"
+    ],
+    "files": [
+      "startupbench-figure-6.svg"
+    ],
+    "file": "startupbench-figure-6.svg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "6",
+    "caption": "Performance under different general-purpose agent frameworks. For each model, we report the average score under three general-purpose frameworks and the performance range (max–min) across frameworks.",
+    "source": "https://arxiv.org/html/2608.17800#S4.T6",
+    "file": "startupbench-table-6.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "7",
+    "caption": "General-purpose versus specialized agent systems. Oracle General denotes the averages of the highest score achieved in all trials for every model.",
+    "source": "https://arxiv.org/html/2608.17800#S4.T7",
+    "file": "startupbench-table-7.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "8",
+    "caption": "Summary of domain expert backgrounds. Professional experience refers to reported years of experience in the corresponding or closely related domain.",
+    "source": "https://arxiv.org/html/2608.17800#A2.T8",
+    "file": "startupbench-table-8.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "9",
+    "caption": "Distribution of rubric categories in StartupBench.",
+    "source": "https://arxiv.org/html/2608.17800#A3.T9",
+    "file": "startupbench-table-9.html",
+    "format": "html"
+  },
+  {
+    "type": "figure",
+    "number": "7",
+    "caption": "A representative example of a rubric of a task spanning 3 levels. Core rubrics assess the essential financial reasoning and calculations required to solve the investment problem, Important rubrics evaluate the correctness and completeness of the supporting analysis, while Auxiliary rubrics capture presentation quality and additional quantitative support.",
+    "source": "https://arxiv.org/html/2608.17800#A3.F7",
+    "media": [
+      "https://arxiv.org/html/2608.17800v1/multi_level_rubric.png"
+    ],
+    "files": [
+      "startupbench-figure-7.png"
+    ],
+    "file": "startupbench-figure-7.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "8",
+    "caption": "A representative example of self-verification hallucination. The model generates a plausible workbook and concludes that the task has been completed based on its execution process. However, artifact-level spot checks expose acceptance-critical errors in the final deliverable, showing that the model mistakes a progress summary for actual verification instead of validating the generated artifact against the original task requirements.",
+    "source": "https://arxiv.org/html/2608.17800#A4.F8",
+    "media": [
+      "https://arxiv.org/html/2608.17800v1/figure6_self_verification_hallucination.svg"
+    ],
+    "files": [
+      "startupbench-figure-8.svg"
+    ],
+    "file": "startupbench-figure-8.svg",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "figure",
+    "number": "9",
+    "caption": "A representative example of failure caused by insufficient domain-specific clinical actionability.",
+    "source": "https://arxiv.org/html/2608.17800#A4.F9",
+    "media": [
+      "https://arxiv.org/html/2608.17800v1/figure7_medical_clinical_actionability.svg"
+    ],
+    "files": [
+      "startupbench-figure-9.svg"
+    ],
+    "file": "startupbench-figure-9.svg",
+    "format": "downloaded-media"
+  }
+]

@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-08-18T03:06:02.839Z",
+  "generatedAt": "2026-08-19T02:53:39.817Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-08-19.html",
+      "date": "2026-08-19",
+      "weekday": "周三",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows",
+      "summary": "已证实：真实工作流 Agent 的难点是“可验收交付”，不是做出部分进展：StartupBench 用 97 个市场验证工作流评测通用 Agent；即使对每个模型-任务取三次运行最优，成功率仍仅 28.06%，低于专用系统 39.18%。",
+      "problem": "面向 Agent 产品与评测产品：识别可复用技术红利、验证能力边界并沉淀决策证据。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-08-19.html",
+      "overview": "overviews/morning-brief-2026-08-19.svg",
+      "githubRows": [
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 515,
+          "text": "1 NousResearch/hermes-agent 持久记忆、工具与自扩展个人 Agent 232,603 +515 Python 2026-08-19 02:43:56 UTC"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 502,
+          "text": "2 firecrawl/firecrawl 面向 Agent 的网页抓取与结构化上下文 API 169,191 +502 TypeScript 2026-08-18 23:53:14 UTC"
+        },
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 461,
+          "text": "3 obra/superpowers 跨 Coding Agent 的技能框架 273,730 +461 Shell 2026-08-13 00:36:31 UTC"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 354,
+          "text": "4 anomalyco/opencode 开源终端 Coding Agent 198,871 +354 TypeScript 2026-08-19 02:42:57 UTC"
+        },
+        {
+          "repo": "anthropics/skills",
+          "label": "anthropics/skills",
+          "value": 257,
+          "text": "5 anthropics/skills Anthropic Agent Skills 示例 170,309 +257 Python 2026-08-18 16:02:06 UTC"
+        },
+        {
+          "repo": "QwenLM/qwen-code",
+          "label": "QwenLM/qwen-code",
+          "value": 27166,
+          "text": "1 QwenLM/qwen-code 27,166 开源终端 Coding Agent；值得比较工具协议、审批和模型可替换性。 TypeScript 2026-08-19 02:50:11 UTC"
+        },
+        {
+          "repo": "can1357/oh-my-pi",
+          "label": "can1357/oh-my-pi",
+          "value": 25702,
+          "text": "2 can1357/oh-my-pi 25,702 带哈希锚定编辑、LSP、子 Agent 的终端 harness；适合研究低漂移代码修改。 TypeScript 2026-08-19 02:50:02 UTC"
+        },
+        {
+          "repo": "nocobase/nocobase",
+          "label": "nocobase/nocobase",
+          "value": 23692,
+          "text": "3 nocobase/nocobase 23,692 AI + 无代码业务系统底座；技术红利在于让 Agent 作用于成熟权限与数据模型。 TypeScript 2026-08-19 02:34:45 UTC"
+        }
+      ],
+      "githubRepoCount": 15,
+      "figureCount": 18,
+      "tableCount": 14,
+      "linkCount": 72,
+      "officialStatus": "未发现新发布内容",
+      "tags": "2026-08-19 StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows NousResearch/hermes-agent firecrawl/firecrawl obra/superpowers anomalyco/opencode anthropics/skills QwenLM/qwen-code can1357/oh-my-pi nocobase/nocobase TencentCloud/TencentDB-Agent-Memory opensandbox-group/OpenSandbox openai/codex farion1231/cc-switch anthropics/claude-code browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-08-18.html",
       "date": "2026-08-18",

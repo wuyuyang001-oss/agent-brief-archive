@@ -227,18 +227,19 @@ function extractLeaderSignal(html) {
   };
 }
 
-function classifyBrief(text, title) {
-  const haystack = `${title} ${text}`.toLowerCase();
-  const tracks = ["architecture"];
-  if (/(gpt|claude|gemini|model capability|模型能力|基础模型|backbone|reasoning|推理能力|multimodal)/i.test(haystack)) tracks.push("model");
-  if (/(agent product|产品|chatgpt|claude code|copilot|computer[- ]use|coding agent|助手|工作台|workflow)/i.test(haystack)) tracks.push("product");
-  if (/(benchmark|evaluation|evals?|评测|评估方法|swe-bench|browsecomp|accuracy|item f1)/i.test(haystack)) tracks.push("evaluation");
-
+function classifyBrief(_text, title) {
   let primaryTrack = "Agent 架构与工具";
+  let primaryTrackKey = "architecture";
   if (/(benchmark|evaluation|evals?|评测|评估方法|calibration|challenge|qanta|failure|trajector|reliability|audit)/i.test(title)) primaryTrack = "评测方法";
   else if (/(gpt|claude|gemini|模型|reasoning|推理)/i.test(title)) primaryTrack = "模型能力";
   else if (/(product|产品|chatgpt|copilot|computer[- ]use|coding agent)/i.test(title)) primaryTrack = "Agent 产品";
-  return { tracks: [...new Set(tracks)], primaryTrack };
+  if (primaryTrack === "评测方法") primaryTrackKey = "evaluation";
+  else if (primaryTrack === "模型能力") primaryTrackKey = "model";
+  else if (primaryTrack === "Agent 产品") primaryTrackKey = "product";
+
+  // Every daily brief contains all four fixed sections, so full-text tags make every filter match.
+  // Archive filters instead represent the issue's primary research focus.
+  return { tracks: [primaryTrackKey], primaryTrack };
 }
 
 function optimizeBriefHtml(html) {
@@ -542,6 +543,7 @@ function renderIndex(briefs) {
     .top-stats strong { color: var(--ink); }
     .track-tabs {
       display: flex;
+      align-items: center;
       gap: 4px;
       overflow-x: auto;
       margin: 0 -2px;
@@ -549,6 +551,7 @@ function renderIndex(briefs) {
       scrollbar-width: none;
     }
     .track-tabs::-webkit-scrollbar { display: none; }
+    .track-label { flex: 0 0 auto; margin-right: 5px; color: var(--quiet); font-size: 11px; font-weight: 760; }
     .track-tab {
       flex: 0 0 auto;
       min-height: 36px;
@@ -566,11 +569,30 @@ function renderIndex(briefs) {
     .workspace {
       display: grid;
       flex: 1;
-      grid-template-columns: minmax(330px, 35%) minmax(0, 65%);
-      gap: 14px;
+      grid-template-columns: minmax(300px, var(--archive-width, 35%)) 18px minmax(0, 1fr);
+      gap: 0;
       min-height: 0;
       height: auto;
     }
+    .workspace-resizer {
+      display: flex;
+      position: relative;
+      z-index: 3;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+      padding: 0;
+      border: 0;
+      color: var(--quiet);
+      background: transparent;
+      cursor: col-resize;
+      touch-action: none;
+    }
+    .workspace-resizer::before { content: ""; position: absolute; inset: 0 8px; border-radius: 999px; background: var(--line-strong); transition: inset .16s ease, background .16s ease; }
+    .workspace-resizer::after { content: "•••"; position: relative; padding: 7px 2px; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--quiet); background: #fff; font-size: 8px; letter-spacing: 1px; line-height: 1; writing-mode: vertical-rl; }
+    .workspace-resizer:hover::before, .workspace-resizer:focus-visible::before, body.is-resizing .workspace-resizer::before { inset: 0 6px; background: rgba(21, 94, 239, .28); }
+    .workspace-resizer:hover::after, .workspace-resizer:focus-visible::after, body.is-resizing .workspace-resizer::after { color: var(--blue); border-color: rgba(21, 94, 239, .42); background: var(--blue-soft); }
+    body.is-resizing { cursor: col-resize; user-select: none; }
     .archive-panel, .reader-panel {
       min-width: 0;
       overflow: hidden;
@@ -589,6 +611,9 @@ function renderIndex(briefs) {
       border-bottom: 1px solid var(--line);
       background: #fbfcfe;
     }
+    .filter-status-row { display: flex; grid-column: 1 / -1; align-items: center; justify-content: space-between; gap: 8px; color: var(--quiet); font-size: 10.5px; }
+    .filter-status-row strong { color: var(--ink); }
+    .clear-filters { padding: 2px 0; border: 0; color: var(--blue); background: transparent; font-size: 10.5px; font-weight: 760; cursor: pointer; }
     .search-box { position: relative; min-width: 0; }
     .search-box svg { position: absolute; left: 11px; top: 50%; width: 16px; height: 16px; color: var(--quiet); transform: translateY(-50%); pointer-events: none; }
     .search-box input {
@@ -664,17 +689,25 @@ function renderIndex(briefs) {
     .reader-head {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      align-items: center;
+      align-items: start;
       gap: 12px;
-      min-height: 56px;
-      padding: 9px 13px;
+      min-height: 104px;
+      padding: 11px 13px 12px;
       border-bottom: 1px solid var(--line);
       background: #fbfcfe;
     }
     .reader-heading { min-width: 0; }
-    .reader-heading strong { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 13.5px; }
-    .reader-heading span { display: block; margin-top: 3px; color: var(--quiet); font-size: 10.5px; }
-    .reader-actions { display: flex; align-items: center; gap: 6px; }
+    .reader-kicker { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; margin-bottom: 5px; color: var(--quiet); font-size: 9.5px; font-weight: 760; }
+    .reader-kicker span, .reader-kicker time { padding: 2px 6px; border: 1px solid var(--line); border-radius: 999px; background: #fff; }
+    .reader-kicker span:first-of-type { color: var(--green); border-color: rgba(8, 122, 91, .18); background: var(--green-soft); }
+    .reader-heading > strong { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 14px; }
+    .reader-insights { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(180px, .8fr); gap: 7px; margin-top: 8px; }
+    .reader-insight { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px; min-width: 0; margin: 0; padding: 6px 8px; border-radius: 8px; background: var(--blue-soft); font-size: 10.5px; line-height: 1.35; }
+    .reader-insight span { color: var(--blue); font-weight: 800; white-space: nowrap; }
+    .reader-insight b { display: block; overflow: hidden; color: var(--muted); font-weight: 600; white-space: nowrap; text-overflow: ellipsis; }
+    .reader-insight.action { background: var(--amber-soft); }
+    .reader-insight.action span { color: var(--amber); }
+    .reader-actions { display: flex; align-items: center; gap: 6px; padding-top: 1px; }
     .compact-link, .close-reader {
       display: inline-flex;
       align-items: center;
@@ -758,9 +791,10 @@ function renderIndex(briefs) {
     .feedback-note { width: 100%; min-height: 30px; padding: 6px 9px; resize: vertical; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: #fff; font-size: 10.5px; outline: 0; }
     .privacy-note { color: var(--quiet); font-size: 9.5px; font-weight: 500; }
     @media (max-width: 1180px) {
-      .workspace { grid-template-columns: minmax(300px, 38%) minmax(0, 62%); }
       .decision-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .decision-card { min-height: 70px; }
+      .reader-insights { grid-template-columns: 1fr; }
+      .reader-head { min-height: 124px; }
     }
     @media (max-width: 980px) {
       .page { min-height: 100dvh; height: auto; padding: 12px 12px 18px; }
@@ -768,6 +802,7 @@ function renderIndex(briefs) {
       .brand p { max-width: none; font-size: 12px; }
       .top-stats { overflow-x: auto; }
       .workspace { display: block; height: auto; min-height: 0; }
+      .workspace-resizer { display: none; }
       .archive-panel { min-height: calc(100dvh - 174px); box-shadow: none; }
       .archive-list { overflow: visible; }
       .reader-panel {
@@ -801,7 +836,8 @@ function renderIndex(briefs) {
       .brief-thumb { width: 92px; }
       .brief-row p { -webkit-line-clamp: 1; }
       .reader-actions .compact-link:not(.primary) { display: none; }
-      .reader-heading span { display: none; }
+      .reader-kicker span:nth-child(n+2) { display: none; }
+      .reader-insight.action { display: none; }
       .decision-grid { grid-template-columns: 1fr; }
       .decision-card { min-height: 0; }
       .decision-foot, .feedback-body { grid-template-columns: 1fr; }
@@ -830,6 +866,7 @@ function renderIndex(briefs) {
     </header>
 
     <nav class="track-tabs" aria-label="研究主题">
+      <span class="track-label">按本期主线</span>
       <button class="track-tab" type="button" data-track="all" aria-pressed="true">全部档案</button>
       <button class="track-tab" type="button" data-track="model" aria-pressed="false">模型能力</button>
       <button class="track-tab" type="button" data-track="product" aria-pressed="false">Agent 产品</button>
@@ -845,6 +882,7 @@ function renderIndex(briefs) {
             <input id="searchInput" type="search" placeholder="搜索论文、项目或机构" autocomplete="off">
           </label>
           <span id="resultCount" class="result-count" aria-live="polite">${briefs.length} / ${briefs.length}</span>
+          <div class="filter-status-row"><span>当前条件：<strong id="filterStatus">全部档案</strong></span><button id="clearFilters" class="clear-filters" type="button" hidden>清除筛选</button></div>
         </div>
         <div id="archiveList" class="archive-list">
 ${cards}
@@ -852,14 +890,20 @@ ${cards}
         </div>
       </aside>
 
+      <button id="workspaceResizer" class="workspace-resizer" type="button" role="separator" aria-label="调节左侧预览栏宽度" aria-orientation="vertical" aria-valuemin="300" aria-valuenow="0" title="拖拽调节左栏宽度；双击复位"></button>
+
       <section id="readerPanel" class="reader-panel" aria-label="简报阅读器">
         <div class="reader-empty"><div><strong>当前筛选没有可读简报</strong><br><span>调整搜索条件后，阅读区会自动载入第一条匹配结果。</span></div></div>
         <div class="reader-content">
           <header class="reader-head">
             <button id="closeReader" class="close-reader" type="button" aria-label="关闭阅读器">×</button>
             <div class="reader-heading">
-              <strong id="readerTitle">${escapeHtml(latest.date)} · ${escapeHtml(latest.title)}</strong>
-              <span id="readerSubline">${escapeHtml(latest.primaryTrack)} · ${escapeHtml(latest.evidence)}</span>
+              <div class="reader-kicker"><time id="readerDate" datetime="${escapeHtml(latest.date)}">${escapeHtml(latest.date)}</time><span id="readerTrack">${escapeHtml(latest.primaryTrack)}</span><span id="readerEvidence">${escapeHtml(latest.evidence)}</span></div>
+              <strong id="readerTitle">${escapeHtml(latest.title)}</strong>
+              <div class="reader-insights">
+                <p class="reader-insight"><span>核心结论</span><b id="readerValue">${escapeHtml(latest.summary)}</b></p>
+                <p class="reader-insight action"><span>建议动作</span><b id="readerHeaderAction">${escapeHtml(latest.action)}</b></p>
+              </div>
             </div>
             <div class="reader-actions">
               <a id="overviewOpen" class="compact-link" href="${escapeHtml(latest.overview)}" target="_blank" rel="noopener">概览图</a>
@@ -927,7 +971,11 @@ ${cards}
     const readerPanel = document.getElementById("readerPanel");
     const readerFrame = document.getElementById("readerFrame");
     const readerTitle = document.getElementById("readerTitle");
-    const readerSubline = document.getElementById("readerSubline");
+    const readerDate = document.getElementById("readerDate");
+    const readerTrack = document.getElementById("readerTrack");
+    const readerEvidence = document.getElementById("readerEvidence");
+    const readerValue = document.getElementById("readerValue");
+    const readerHeaderAction = document.getElementById("readerHeaderAction");
     const readerOpen = document.getElementById("readerOpen");
     const overviewOpen = document.getElementById("overviewOpen");
     const overviewPreview = document.getElementById("overviewPreview");
@@ -935,13 +983,22 @@ ${cards}
     const decisionPanel = document.getElementById("decisionPanel");
     const searchInput = document.getElementById("searchInput");
     const resultCount = document.getElementById("resultCount");
+    const filterStatus = document.getElementById("filterStatus");
+    const clearFilters = document.getElementById("clearFilters");
     const emptyList = document.getElementById("emptyList");
+    const workspace = document.querySelector(".workspace");
+    const workspaceResizer = document.getElementById("workspaceResizer");
     const feedbackNote = document.getElementById("feedbackNote");
     const feedbackSummary = document.getElementById("feedbackSummary");
     let activeTrack = "all";
     let selectedId = briefs[0].fileName;
     let feedbackState = {};
     let noteTimer = null;
+    let resizeStartX = 0;
+    let resizeStartWidth = 0;
+
+    const trackNames = { all: "全部档案", model: "模型能力", product: "Agent 产品", evaluation: "评测方法", architecture: "架构与工具" };
+    const archiveWidthKey = "agentBriefArchiveWidth:v1";
 
     try { feedbackState = JSON.parse(localStorage.getItem(feedbackKey) || "{}"); } catch (_) { feedbackState = {}; }
 
@@ -985,8 +1042,13 @@ ${cards}
         row.setAttribute("aria-selected", String(active));
       });
       readerPanel.classList.remove("is-empty");
-      readerTitle.textContent = brief.date + " · " + brief.title;
-      readerSubline.textContent = brief.primaryTrack + " · " + brief.evidence;
+      readerTitle.textContent = brief.title;
+      readerDate.textContent = brief.date;
+      readerDate.dateTime = brief.date;
+      readerTrack.textContent = brief.primaryTrack;
+      readerEvidence.textContent = brief.evidence;
+      readerValue.textContent = brief.summary;
+      readerHeaderAction.textContent = brief.action;
       readerOpen.href = brief.source;
       overviewOpen.href = brief.overview;
       overviewPreview.src = brief.overview;
@@ -1040,6 +1102,9 @@ ${cards}
         if (show) visible.push(brief);
       });
       resultCount.textContent = visible.length + " / " + briefs.length;
+      const query = searchInput.value.trim();
+      filterStatus.textContent = trackNames[activeTrack] + (query ? " · 搜索“" + query + "”" : "");
+      clearFilters.hidden = activeTrack === "all" && !query;
       emptyList.style.display = visible.length ? "none" : "block";
       if (!visible.length) {
         readerPanel.classList.add("is-empty");
@@ -1072,6 +1137,70 @@ ${cards}
         trackButtons.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
         applyFilters();
       });
+    });
+
+    clearFilters.addEventListener("click", () => {
+      activeTrack = "all";
+      searchInput.value = "";
+      trackButtons.forEach(item => item.setAttribute("aria-pressed", String(item.dataset.track === "all")));
+      applyFilters();
+      searchInput.focus();
+    });
+
+    function archiveWidthBounds() {
+      const total = workspace.getBoundingClientRect().width;
+      return { min: 300, max: Math.max(300, total - 558) };
+    }
+
+    function setArchiveWidth(width, persist) {
+      const bounds = archiveWidthBounds();
+      const next = Math.round(Math.min(bounds.max, Math.max(bounds.min, width)));
+      workspace.style.setProperty("--archive-width", next + "px");
+      workspaceResizer.setAttribute("aria-valuenow", String(next));
+      workspaceResizer.setAttribute("aria-valuemax", String(Math.round(bounds.max)));
+      if (persist) {
+        try { localStorage.setItem(archiveWidthKey, String(next)); } catch (_) {}
+      }
+    }
+
+    function resetArchiveWidth(persist) {
+      setArchiveWidth(workspace.getBoundingClientRect().width * .35, persist);
+    }
+
+    workspaceResizer.addEventListener("pointerdown", event => {
+      if (isMobile()) return;
+      resizeStartX = event.clientX;
+      resizeStartWidth = document.querySelector(".archive-panel").getBoundingClientRect().width;
+      workspaceResizer.setPointerCapture(event.pointerId);
+      document.body.classList.add("is-resizing");
+    });
+    workspaceResizer.addEventListener("pointermove", event => {
+      if (!workspaceResizer.hasPointerCapture(event.pointerId)) return;
+      setArchiveWidth(resizeStartWidth + event.clientX - resizeStartX, false);
+    });
+    workspaceResizer.addEventListener("pointerup", event => {
+      if (!workspaceResizer.hasPointerCapture(event.pointerId)) return;
+      workspaceResizer.releasePointerCapture(event.pointerId);
+      document.body.classList.remove("is-resizing");
+      setArchiveWidth(document.querySelector(".archive-panel").getBoundingClientRect().width, true);
+    });
+    workspaceResizer.addEventListener("pointercancel", event => {
+      if (workspaceResizer.hasPointerCapture(event.pointerId)) workspaceResizer.releasePointerCapture(event.pointerId);
+      document.body.classList.remove("is-resizing");
+      setArchiveWidth(document.querySelector(".archive-panel").getBoundingClientRect().width, true);
+    });
+    workspaceResizer.addEventListener("dblclick", () => resetArchiveWidth(true));
+    workspaceResizer.addEventListener("keydown", event => {
+      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+      event.preventDefault();
+      const current = document.querySelector(".archive-panel").getBoundingClientRect().width;
+      const bounds = archiveWidthBounds();
+      if (event.key === "Home") setArchiveWidth(bounds.min, true);
+      else if (event.key === "End") setArchiveWidth(bounds.max, true);
+      else setArchiveWidth(current + (event.key === "ArrowLeft" ? -24 : 24), true);
+    });
+    window.addEventListener("resize", () => {
+      if (!isMobile()) setArchiveWidth(document.querySelector(".archive-panel").getBoundingClientRect().width, false);
     });
 
     feedbackButtons.forEach(button => {
@@ -1117,11 +1246,36 @@ ${cards}
     const linkedBrief = briefs.find(brief => brief.fileName.replace(".html", "") === deepLink);
     if (linkedBrief) selectBrief(linkedBrief, { openMobile: isMobile(), updateHash: false });
     else selectBrief(briefs[0], { openMobile: false, updateHash: false });
+    if (!isMobile()) {
+      let savedWidth = 0;
+      try { savedWidth = Number(localStorage.getItem(archiveWidthKey) || 0); } catch (_) {}
+      if (savedWidth > 0) setArchiveWidth(savedWidth, false);
+      else resetArchiveWidth(false);
+    }
     if (isMobile()) decisionPanel.removeAttribute("open");
     applyFilters();
   </script>
 </body>
 </html>`;
+}
+
+function validateGeneratedIndex(html, briefs) {
+  const inlineScripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/gi)].map(match => match[1]);
+  if (inlineScripts.length !== 1) throw new Error(`Expected one inline archive script, found ${inlineScripts.length}`);
+  // Compile without executing browser APIs so syntax regressions fail before publishing.
+  new Function(inlineScripts[0]);
+
+  const requiredIds = ["searchInput", "filterStatus", "workspaceResizer", "readerValue", "readerHeaderAction"];
+  for (const id of requiredIds) {
+    if (!html.includes(`id="${id}"`)) throw new Error(`Generated archive is missing #${id}`);
+  }
+  const trackCounts = new Map();
+  for (const brief of briefs) {
+    for (const track of brief.tracks) trackCounts.set(track, (trackCounts.get(track) || 0) + 1);
+  }
+  if (briefs.length > 1 && [...trackCounts.values()].every(count => count === briefs.length)) {
+    throw new Error("Archive track filters still match every brief");
+  }
 }
 
 function main() {
@@ -1171,7 +1325,9 @@ function main() {
   });
 
   fs.writeFileSync(path.join(dataDir, "briefs.json"), `${JSON.stringify({ generatedAt, briefs }, null, 2)}\n`);
-  fs.writeFileSync(path.join(archiveDir, "index.html"), renderIndex(briefs));
+  const indexHtml = renderIndex(briefs);
+  validateGeneratedIndex(indexHtml, briefs);
+  fs.writeFileSync(path.join(archiveDir, "index.html"), indexHtml);
   console.log(`Updated ${briefs.length} briefs, ${briefs.length} overview images, and index.html`);
 }
 

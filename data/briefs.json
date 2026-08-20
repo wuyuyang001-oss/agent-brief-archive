@@ -18,9 +18,6 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -87,7 +84,7 @@
       "tableCount": 20,
       "linkCount": 91,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-08-20 ComponentBench: Diagnosing Component-Level Failures in Computer-Use Agents TianchenGuan/ComponentBench NousResearch/hermes-agent obra/superpowers firecrawl/firecrawl anomalyco/opencode anthropics/skills op7418/guizang-ppt-skill teableio/teable 1jehuang/jcode browser-use/browser-harness e2b-dev/E2B openai/codex browser-use/browser-use bytedance/deer-flow anthropics/claude-code farion1231/cc-switch AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-08-20 ComponentBench: Diagnosing Component-Level Failures in Computer-Use Agents TianchenGuan/ComponentBench NousResearch/hermes-agent obra/superpowers firecrawl/firecrawl anomalyco/opencode anthropics/skills op7418/guizang-ppt-skill teableio/teable 1jehuang/jcode browser-use/browser-harness e2b-dev/E2B openai/codex browser-use/browser-use bytedance/deer-flow anthropics/claude-code farion1231/cc-switch AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-08-19.html",
@@ -106,9 +103,6 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -175,7 +169,7 @@
       "tableCount": 14,
       "linkCount": 72,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-08-19 StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows NousResearch/hermes-agent firecrawl/firecrawl obra/superpowers anomalyco/opencode anthropics/skills QwenLM/qwen-code can1357/oh-my-pi nocobase/nocobase TencentCloud/TencentDB-Agent-Memory opensandbox-group/OpenSandbox openai/codex farion1231/cc-switch anthropics/claude-code browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-08-19 StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows NousResearch/hermes-agent firecrawl/firecrawl obra/superpowers anomalyco/opencode anthropics/skills QwenLM/qwen-code can1357/oh-my-pi nocobase/nocobase TencentCloud/TencentDB-Agent-Memory opensandbox-group/OpenSandbox openai/codex farion1231/cc-switch anthropics/claude-code browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-08-18.html",
@@ -194,10 +188,7 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "Agent 架构与工具",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
-        "evaluation"
+        "architecture"
       ],
       "leaderSignal": {
         "kind": "官方核验",
@@ -263,7 +254,7 @@
       "tableCount": 8,
       "linkCount": 81,
       "officialStatus": "8 条官方链接/动态",
-      "tags": "2026-08-18 When Agents Coordinate: Measuring Coordination in Multi-Agent AI Coding giuseppedestefanis/when-agents-coordinate NousResearch/hermes-agent firecrawl/firecrawl obra/superpowers anomalyco/opencode anthropics/skills santifer/career-ops hugohe3/ppt-master iOfficeAI/AionUi Gitlawb/openclaude jackwener/OpenCLI openai/codex browser-use/browser-use bytedance/deer-flow anthropics/claude-code farion1231/cc-switch AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-08-18 When Agents Coordinate: Measuring Coordination in Multi-Agent AI Coding giuseppedestefanis/when-agents-coordinate NousResearch/hermes-agent firecrawl/firecrawl obra/superpowers anomalyco/opencode anthropics/skills santifer/career-ops hugohe3/ppt-master iOfficeAI/AionUi Gitlawb/openclaude jackwener/OpenCLI openai/codex browser-use/browser-use bytedance/deer-flow anthropics/claude-code farion1231/cc-switch AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-08-17.html",
@@ -282,9 +273,6 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -351,7 +339,7 @@
       "tableCount": 5,
       "linkCount": 34,
       "officialStatus": "2 条官方链接/动态",
-      "tags": "2026-08-17 PACE-Bench: Benchmarking Physics Adaptation via Code Evolution in Dynamic Environments thunlp/PACE-Bench NousResearch/hermes-agent firecrawl/firecrawl obra/superpowers anomalyco/opencode anthropics/skills bojieli/ai-agent-book khoj-ai/khoj zeroclaw-labs/zeroclaw herdrdev/herdr labring/FastGPT openai/codex browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-08-17 PACE-Bench: Benchmarking Physics Adaptation via Code Evolution in Dynamic Environments thunlp/PACE-Bench NousResearch/hermes-agent firecrawl/firecrawl obra/superpowers anomalyco/opencode anthropics/skills bojieli/ai-agent-book khoj-ai/khoj zeroclaw-labs/zeroclaw herdrdev/herdr labring/FastGPT openai/codex browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-08-13.html",
@@ -370,9 +358,6 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -439,7 +424,7 @@
       "tableCount": 15,
       "linkCount": 63,
       "officialStatus": "4 条官方链接/动态",
-      "tags": "2026-08-13 Benchmarking LLM Judges for Mobile Agent Evaluation firecrawl/firecrawl NousResearch/hermes-agent obra/superpowers anthropics/skills anomalyco/opencode dair-ai/Prompt-Engineering-Guide tldraw/tldraw jeecgboot/JeecgBoot pingcap/tidb chatchat-space/Langchain-Chatchat farion1231/cc-switch openai/codex browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-08-13 Benchmarking LLM Judges for Mobile Agent Evaluation firecrawl/firecrawl NousResearch/hermes-agent obra/superpowers anthropics/skills anomalyco/opencode dair-ai/Prompt-Engineering-Guide tldraw/tldraw jeecgboot/JeecgBoot pingcap/tidb chatchat-space/Langchain-Chatchat farion1231/cc-switch openai/codex browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-08-12.html",
@@ -458,9 +443,6 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -527,7 +509,7 @@
       "tableCount": 5,
       "linkCount": 65,
       "officialStatus": "6 条官方链接/动态",
-      "tags": "2026-08-12 A2Eval: Agentic and Automated Evaluation for Embodied Brain firecrawl/firecrawl NousResearch/hermes-agent obra/superpowers anthropics/skills anomalyco/opencode siyuan-note/siyuan ToolJet/ToolJet PDFMathTranslate/PDFMathTranslate esengine/DeepSeek-Reasonix agentscope-ai/QwenPaw farion1231/cc-switch openai/codex browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-08-12 A2Eval: Agentic and Automated Evaluation for Embodied Brain firecrawl/firecrawl NousResearch/hermes-agent obra/superpowers anthropics/skills anomalyco/opencode siyuan-note/siyuan ToolJet/ToolJet PDFMathTranslate/PDFMathTranslate esengine/DeepSeek-Reasonix agentscope-ai/QwenPaw farion1231/cc-switch openai/codex browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-08-10.html",
@@ -546,9 +528,6 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -615,7 +594,7 @@
       "tableCount": 5,
       "linkCount": 51,
       "officialStatus": "8 条官方链接/动态",
-      "tags": "2026-08-10 AEVAL: From Anecdotal to Deterministic Testing for Agentic Skill Workflows firecrawl/firecrawl obra/superpowers NousResearch/hermes-agent anomalyco/opencode farion1231/cc-switch koala73/worldmonitor netdata/netdata mudler/LocalAI Kong/kong novuhq/novu openai/codex anthropics/skills browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-08-10 AEVAL: From Anecdotal to Deterministic Testing for Agentic Skill Workflows firecrawl/firecrawl obra/superpowers NousResearch/hermes-agent anomalyco/opencode farion1231/cc-switch koala73/worldmonitor netdata/netdata mudler/LocalAI Kong/kong novuhq/novu openai/codex anthropics/skills browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-08-03.html",
@@ -634,10 +613,7 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "Agent 架构与工具",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
-        "evaluation"
+        "architecture"
       ],
       "leaderSignal": {
         "kind": "官方核验",
@@ -703,7 +679,7 @@
       "tableCount": 5,
       "linkCount": 66,
       "officialStatus": "4 条官方链接/动态",
-      "tags": "2026-08-03 Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems NousResearch/hermes-agent firecrawl/firecrawl obra/superpowers anomalyco/opencode farion1231/cc-switch sansan0/TrendRadar diegosouzapw/OmniRoute stablyai/orca K-Dense-AI/scientific-agent-skills SigNoz/signoz openai/codex anthropics/skills browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-08-03 Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems NousResearch/hermes-agent firecrawl/firecrawl obra/superpowers anomalyco/opencode farion1231/cc-switch sansan0/TrendRadar diegosouzapw/OmniRoute stablyai/orca K-Dense-AI/scientific-agent-skills SigNoz/signoz openai/codex anthropics/skills browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-31.html",
@@ -722,9 +698,6 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -791,7 +764,7 @@
       "tableCount": 5,
       "linkCount": 58,
       "officialStatus": "2 条官方链接/动态",
-      "tags": "2026-07-31 Messier: A High-Resolution Corpus for Cross-Benchmark Agent Evaluation obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch googleworkspace/cli alibaba/page-agent PrefectHQ/fastmcp activepieces/activepieces screenpipe/screenpipe openai/codex anthropics/skills browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-31 Messier: A High-Resolution Corpus for Cross-Benchmark Agent Evaluation obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch googleworkspace/cli alibaba/page-agent PrefectHQ/fastmcp activepieces/activepieces screenpipe/screenpipe openai/codex anthropics/skills browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-30.html",
@@ -810,9 +783,6 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -879,7 +849,7 @@
       "tableCount": 5,
       "linkCount": 57,
       "officialStatus": "2 条官方链接/动态",
-      "tags": "2026-07-30 HANDBOOK.md: A Benchmark for Long-Context Agentic Instruction Following surge-ai/handbook obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch CopilotKit/CopilotKit github/github-mcp-server mastra-ai/mastra letta-ai/letta trycua/cua openai/codex anthropics/skills browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-30 HANDBOOK.md: A Benchmark for Long-Context Agentic Instruction Following surge-ai/handbook obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch CopilotKit/CopilotKit github/github-mcp-server mastra-ai/mastra letta-ai/letta trycua/cua openai/codex anthropics/skills browser-use/browser-use anthropics/claude-code bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-28.html",
@@ -898,10 +868,7 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "Agent 架构与工具",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
-        "evaluation"
+        "architecture"
       ],
       "leaderSignal": {
         "kind": "官方核验",
@@ -967,7 +934,7 @@
       "tableCount": 5,
       "linkCount": 55,
       "officialStatus": "3 条官方链接/动态",
-      "tags": "2026-07-28 Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning anthropics/claude-code NVIDIA-NeMo/labs-molt firecrawl/firecrawl obra/superpowers NousResearch/hermes-agent farion1231/cc-switch anomalyco/opencode CherryHQ/cherry-studio microsoft/qlib microsoft/RD-Agent heygen-com/hyperframes PostHog/posthog anthropics/claude-plugins-official openai/codex anthropics/skills browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-28 Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning anthropics/claude-code NVIDIA-NeMo/labs-molt firecrawl/firecrawl obra/superpowers NousResearch/hermes-agent farion1231/cc-switch anomalyco/opencode CherryHQ/cherry-studio microsoft/qlib microsoft/RD-Agent heygen-com/hyperframes PostHog/posthog anthropics/claude-plugins-official openai/codex anthropics/skills browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-27.html",
@@ -986,9 +953,6 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -1055,7 +1019,7 @@
       "tableCount": 5,
       "linkCount": 41,
       "officialStatus": "2 条官方链接/动态",
-      "tags": "2026-07-27 Tencent WorkBuddy Bench: A Multi-Domain Coding-Agent Benchmark with Contamination-Resistant Task Construction obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch mindsdb/mindshub vercel-labs/agent-browser AstrBotDevs/AstrBot DeusData/codebase-memory-mcp OpenBMB/ChatDev anthropics/claude-code AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-27 Tencent WorkBuddy Bench: A Multi-Domain Coding-Agent Benchmark with Contamination-Resistant Task Construction obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch mindsdb/mindshub vercel-labs/agent-browser AstrBotDevs/AstrBot DeusData/codebase-memory-mcp OpenBMB/ChatDev anthropics/claude-code AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-26.html",
@@ -1074,9 +1038,6 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -1143,7 +1104,7 @@
       "tableCount": 5,
       "linkCount": 52,
       "officialStatus": "2 条官方链接/动态",
-      "tags": "2026-07-26 ICAE-Bench: Evaluating Coding Agents as Interactive Project Builders ALEX-nlp/ICAE-EVAL obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch HKUDS/CLI-Anything sickn33/agentic-awesome-skills kepano/obsidian-skills calesthio/OpenMontage danny-avila/LibreChat anthropics/claude-code AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-26 ICAE-Bench: Evaluating Coding Agents as Interactive Project Builders ALEX-nlp/ICAE-EVAL obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch HKUDS/CLI-Anything sickn33/agentic-awesome-skills kepano/obsidian-skills calesthio/OpenMontage danny-avila/LibreChat anthropics/claude-code AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-25.html",
@@ -1162,10 +1123,7 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "Agent 产品",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
-        "evaluation"
+        "product"
       ],
       "leaderSignal": {
         "kind": "官方核验",
@@ -1231,7 +1189,7 @@
       "tableCount": 6,
       "linkCount": 31,
       "officialStatus": "2 条官方链接/动态",
-      "tags": "2026-07-25 Delivery, Not Storage: Cue-Anchored Working Memory as a Harness Property for Coding Agents anthropics/claude-code obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch lobehub/lobehub colbymchenry/codegraph upstash/context7 zylon-ai/private-gpt huginn/huginn AI Agent benchmark GitHub OpenAI Anthropic Agent 产品 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-25 Delivery, Not Storage: Cue-Anchored Working Memory as a Harness Property for Coding Agents anthropics/claude-code obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode farion1231/cc-switch lobehub/lobehub colbymchenry/codegraph upstash/context7 zylon-ai/private-gpt huginn/huginn AI Agent benchmark GitHub OpenAI Anthropic Agent 产品 product  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-24.html",
@@ -1250,10 +1208,7 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "模型能力",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
-        "evaluation"
+        "model"
       ],
       "leaderSignal": {
         "kind": "官方发布",
@@ -1319,7 +1274,7 @@
       "tableCount": 5,
       "linkCount": 24,
       "officialStatus": "3 条官方链接/动态",
-      "tags": "2026-07-24 PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning alexisfox7/PRO-LONG obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl farion1231/cc-switch anomalyco/opencode ChromeDevTools/chrome-devtools-mcp HKUDS/nanobot agentscope-ai/agentscope deepset-ai/haystack zai-org/Open-AutoGLM AI Agent benchmark GitHub OpenAI Anthropic 模型能力 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-24 PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning alexisfox7/PRO-LONG obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl farion1231/cc-switch anomalyco/opencode ChromeDevTools/chrome-devtools-mcp HKUDS/nanobot agentscope-ai/agentscope deepset-ai/haystack zai-org/Open-AutoGLM AI Agent benchmark GitHub OpenAI Anthropic 模型能力 model  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-23.html",
@@ -1338,9 +1293,6 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -1407,7 +1359,7 @@
       "tableCount": 5,
       "linkCount": 21,
       "officialStatus": "4 条官方链接/动态",
-      "tags": "2026-07-23 Co-Evolving LLM Evaluators and Policies via DynamicRubric anthropics/claude-code obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl farion1231/cc-switch anomalyco/opencode Graphify-Labs/graphify nexu-io/open-design ComposioHQ/awesome-claude-skills Mintplex-Labs/anything-llm aaif-goose/goose AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-23 Co-Evolving LLM Evaluators and Policies via DynamicRubric anthropics/claude-code obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl farion1231/cc-switch anomalyco/opencode Graphify-Labs/graphify nexu-io/open-design ComposioHQ/awesome-claude-skills Mintplex-Labs/anything-llm aaif-goose/goose AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-22.html",
@@ -1426,10 +1378,7 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "Agent 架构与工具",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
-        "evaluation"
+        "architecture"
       ],
       "leaderSignal": {
         "kind": "官方发布",
@@ -1495,7 +1444,7 @@
       "tableCount": 5,
       "linkCount": 49,
       "officialStatus": "5 条官方链接/动态",
-      "tags": "2026-07-22 90 秒摘要 openai/codex anthropics/claude-code Qijia-He/agent-budget-control obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch openai/swarm google/adk-python microsoft/agent-framework The-PR-Agent/pr-agent microsoft/magentic-ui anomalyco/opencode a2aproject/A2A AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-22 90 秒摘要 openai/codex anthropics/claude-code Qijia-He/agent-budget-control obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch openai/swarm google/adk-python microsoft/agent-framework The-PR-Agent/pr-agent microsoft/magentic-ui anomalyco/opencode a2aproject/A2A AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-21.html",
@@ -1514,10 +1463,7 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "Agent 架构与工具",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
-        "evaluation"
+        "architecture"
       ],
       "leaderSignal": {
         "kind": "官方发布",
@@ -1583,7 +1529,7 @@
       "tableCount": 5,
       "linkCount": 52,
       "officialStatus": "5 条官方链接/动态",
-      "tags": "2026-07-21 90 秒摘要 anthropics/claude-code divelab/MAS-SAS obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills anomalyco/opencode microsoft/markitdown github/awesome-copilot microsoft/semantic-kernel a2aproject/A2A browserbase/stagehand openai/codex browser-use/browser-use AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-21 90 秒摘要 anthropics/claude-code divelab/MAS-SAS obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills anomalyco/opencode microsoft/markitdown github/awesome-copilot microsoft/semantic-kernel a2aproject/A2A browserbase/stagehand openai/codex browser-use/browser-use AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-18.html",
@@ -1602,9 +1548,6 @@
       "action": "产品机会： 为 Agent eval 增加“预算模拟器”：从完整轨迹回放不同 token、工具调用和美元 cap，输出能力曲线、边际收益和推荐部署点。",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -1671,7 +1614,7 @@
       "tableCount": 7,
       "linkCount": 65,
       "officialStatus": "6 条官方链接/动态",
-      "tags": "2026-07-18 Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Security Agents obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anthropics/claude-code browser-use/browser-use multica-ai/andrej-karpathy-skills farion1231/cc-switch OpenBB-finance/OpenBB Leonxlnx/taste-skill mvanhorn/last30days-skill wshobson/agents Yeachan-Heo/oh-my-claudecode openai/codex anomalyco/opencode bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation weekly 周报 formal 正式简报"
+      "tags": "2026-07-18 Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Security Agents obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anthropics/claude-code browser-use/browser-use multica-ai/andrej-karpathy-skills farion1231/cc-switch OpenBB-finance/OpenBB Leonxlnx/taste-skill mvanhorn/last30days-skill wshobson/agents Yeachan-Heo/oh-my-claudecode openai/codex anomalyco/opencode bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation weekly 周报 formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-17.html",
@@ -1690,9 +1633,6 @@
       "action": "产品机会： 把通用 Agent benchmark 变成“领域交付验证器”：允许企业上传业务 rubric，自动拆成静态、执行、E2E 与语义检查，输出失败定位、Skill 干预增益和上线门槛。",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -1759,7 +1699,7 @@
       "tableCount": 6,
       "linkCount": 65,
       "officialStatus": "6 条官方链接/动态",
-      "tags": "2026-07-17 Alipay-PIBench: A Realistic Payment Integration Benchmark for Coding Agents inclusionAI/PIBench obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills firecrawl/firecrawl farion1231/cc-switch 666ghj/BettaFish multica-ai/multica coreyhaines31/marketingskills luongnv89/claude-howto Hmbown/CodeWhale openai/codex anthropics/claude-code anomalyco/opencode browser-use/browser-use bytedance/deer-flow wuyuyang001-oss/agent-brief-archive AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-17 Alipay-PIBench: A Realistic Payment Integration Benchmark for Coding Agents inclusionAI/PIBench obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills firecrawl/firecrawl farion1231/cc-switch 666ghj/BettaFish multica-ai/multica coreyhaines31/marketingskills luongnv89/claude-howto Hmbown/CodeWhale openai/codex anthropics/claude-code anomalyco/opencode browser-use/browser-use bytedance/deer-flow wuyuyang001-oss/agent-brief-archive AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-15.html",
@@ -1778,9 +1718,6 @@
       "action": "对评测产品的直接启发： 默认输出不应只有排行榜分数。至少要同时展示“胜出阈值、已覆盖任务组、错误上界、未决比较比例”，并在证据不足时给出继续跑哪些任务的建议。",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -1847,7 +1784,7 @@
       "tableCount": 7,
       "linkCount": 62,
       "officialStatus": "OpenAI：4 条新官方视频；Anthropic：1 场录像已可看，1 场录像待发布",
-      "tags": "2026-07-15 How Many Tasks Are Enough for Agent Benchmark Decisions? A Replay Analysis of Public LLM Agent Benchmarks anthropics/claude-code WilliamWJHuang/How-Many-Tasks-Are-Enough-for-Agent-Benchmark-Decisions obra/superpowers firecrawl/firecrawl NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC opendatalab/MinerU datawhalechina/hello-agents warpdotdev/warp zhayujie/CowAgent abhigyanpatwari/GitNexus openai/codex anomalyco/opencode browser-use/browser-use bytedance/deer-flow wuyuyang001-oss/agent-brief-archive AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-15 How Many Tasks Are Enough for Agent Benchmark Decisions? A Replay Analysis of Public LLM Agent Benchmarks anthropics/claude-code WilliamWJHuang/How-Many-Tasks-Are-Enough-for-Agent-Benchmark-Decisions obra/superpowers firecrawl/firecrawl NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC opendatalab/MinerU datawhalechina/hello-agents warpdotdev/warp zhayujie/CowAgent abhigyanpatwari/GitNexus openai/codex anomalyco/opencode browser-use/browser-use bytedance/deer-flow wuyuyang001-oss/agent-brief-archive AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-14.html",
@@ -1866,9 +1803,6 @@
       "action": "产品决策： 先实现一个低成本 assumption gate：在目录、权限、依赖、任务规格与测试入口等关键状态发生变化时做机器校验；如果恢复尝试超过成功轨迹的典型长度，就回退到重新诊断，而不是继续修同一个错误问题。",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -1935,7 +1869,7 @@
       "tableCount": 11,
       "linkCount": 60,
       "officialStatus": "Anthropic：2 场官方活动；OpenAI：无新增",
-      "tags": "2026-07-14 Failure as a Process: An Anatomy of CLI Coding Agent Trajectories anthropics/claude-code anomalyco/opencode xz-Sean/cli_trajectory_analysis obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch FoundationAgents/MetaGPT microsoft/ai-agents-for-beginners 666ghj/MiroFish FoundationAgents/OpenManus hesreallyhim/awesome-claude-code openai/codex browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-14 Failure as a Process: An Anatomy of CLI Coding Agent Trajectories anthropics/claude-code anomalyco/opencode xz-Sean/cli_trajectory_analysis obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch FoundationAgents/MetaGPT microsoft/ai-agents-for-beginners 666ghj/MiroFish FoundationAgents/OpenManus hesreallyhim/awesome-claude-code openai/codex browser-use/browser-use bytedance/deer-flow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-13.html",
@@ -1954,9 +1888,6 @@
       "action": "给 Agent 增加独立 policy layer，输入候选动作、模型置信、可逆性与失败成本，输出 execute / wait / ask / escalate；评测同时记录任务收益、误操作损失和校准误差。",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -2023,7 +1954,7 @@
       "tableCount": 10,
       "linkCount": 53,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-07-13 Task-Specific Multimodal Question Answering Agents via Confidence Calibration and Incremental Reasoning for QANTA 2026 openai/codex anthropics/claude-code browser-use/browser-use obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch x1xhlol/system-prompts-and-models-of-ai-tools github/spec-kit nextlevelbuilder/ui-ux-pro-max-skill bytedance/deer-flow daytonaio/daytona anomalyco/opencode AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-13 Task-Specific Multimodal Question Answering Agents via Confidence Calibration and Incremental Reasoning for QANTA 2026 openai/codex anthropics/claude-code browser-use/browser-use obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch x1xhlol/system-prompts-and-models-of-ai-tools github/spec-kit nextlevelbuilder/ui-ux-pro-max-skill bytedance/deer-flow daytonaio/daytona anomalyco/opencode AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-10.html",
@@ -2042,10 +1973,7 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "Agent 架构与工具",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
-        "evaluation"
+        "architecture"
       ],
       "leaderSignal": {
         "kind": "官方发布",
@@ -2111,7 +2039,7 @@
       "tableCount": 10,
       "linkCount": 44,
       "officialStatus": "11 条官方链接/动态",
-      "tags": "2026-07-10 WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch open-webui/open-webui D4Vinci/Scrapling headroomlabs-ai/headroom MemPalace/mempalace Panniantong/Agent-Reach AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-10 WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl multica-ai/andrej-karpathy-skills farion1231/cc-switch open-webui/open-webui D4Vinci/Scrapling headroomlabs-ai/headroom MemPalace/mempalace Panniantong/Agent-Reach AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-08.html",
@@ -2130,9 +2058,6 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -2199,7 +2124,7 @@
       "tableCount": 6,
       "linkCount": 33,
       "officialStatus": "8 条官方链接/动态",
-      "tags": "2026-07-08 RuBench: A Repository-Level Agentic Coding Benchmark with Natively Authored Russian Task Specifications eugeneshilow/rubench firecrawl/firecrawl obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills farion1231/cc-switch bytedance/UI-TARS-desktop microsoft/playwright-mcp continuedev/continue ComposioHQ/composio openai/openai-agents-python AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-08 RuBench: A Repository-Level Agentic Coding Benchmark with Natively Authored Russian Task Specifications eugeneshilow/rubench firecrawl/firecrawl obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills farion1231/cc-switch bytedance/UI-TARS-desktop microsoft/playwright-mcp continuedev/continue ComposioHQ/composio openai/openai-agents-python AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-06.html",
@@ -2218,9 +2143,6 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -2287,7 +2209,7 @@
       "tableCount": 6,
       "linkCount": 36,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-07-06 TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution obra/superpowers firecrawl/firecrawl NousResearch/hermes-agent multica-ai/andrej-karpathy-skills farion1231/cc-switch addyosmani/agent-skills earendil-works/pi code-yeongyu/oh-my-openagent cline/cline openinterpreter/openinterpreter AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-06 TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution obra/superpowers firecrawl/firecrawl NousResearch/hermes-agent multica-ai/andrej-karpathy-skills farion1231/cc-switch addyosmani/agent-skills earendil-works/pi code-yeongyu/oh-my-openagent cline/cline openinterpreter/openinterpreter AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-03.html",
@@ -2306,10 +2228,7 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "Agent 架构与工具",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
-        "evaluation"
+        "architecture"
       ],
       "leaderSignal": {
         "kind": "官方核验",
@@ -2375,7 +2294,7 @@
       "tableCount": 8,
       "linkCount": 26,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-07-03 A Task-State Representation for Long-Horizon Mobile GUI Agents obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC firecrawl/firecrawl VoltAgent/awesome-design-md karpathy/autoresearch JuliusBrussee/caveman safishamsi/graphify Egonex-AI/Understand-Anything AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-03 A Task-State Representation for Long-Horizon Mobile GUI Agents obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC firecrawl/firecrawl VoltAgent/awesome-design-md karpathy/autoresearch JuliusBrussee/caveman safishamsi/graphify Egonex-AI/Understand-Anything AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-07-02.html",
@@ -2394,9 +2313,6 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -2463,7 +2379,7 @@
       "tableCount": 4,
       "linkCount": 51,
       "officialStatus": "14 条官方链接/动态",
-      "tags": "2026-07-02 Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents? obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills firecrawl/firecrawl farion1231/cc-switch shareAI-lab/learn-claude-code FlowiseAI/Flowise run-llama/llama_index agno-agi/agno langchain-ai/langgraph repos/obra repos/NousResearch repos/multica-ai repos/firecrawl repos/farion1231 repos/affaan-m repos/anomalyco repos/anthropics repos/browser-use repos/shareAI-lab repos/FlowiseAI repos/run-llama repos/agno-agi repos/langchain-ai AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-07-02 Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents? obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills firecrawl/firecrawl farion1231/cc-switch shareAI-lab/learn-claude-code FlowiseAI/Flowise run-llama/llama_index agno-agi/agno langchain-ai/langgraph repos/obra repos/NousResearch repos/multica-ai repos/firecrawl repos/farion1231 repos/affaan-m repos/anomalyco repos/anthropics repos/browser-use repos/shareAI-lab repos/FlowiseAI repos/run-llama repos/agno-agi repos/langchain-ai AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-29.html",
@@ -2482,9 +2398,6 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -2551,7 +2464,7 @@
       "tableCount": 4,
       "linkCount": 60,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-06-29 ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents firecrawl/firecrawl obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills farion1231/cc-switch openai/codex punkpeye/awesome-mcp-servers TauricResearch/TradingAgents thedotmack/claude-mem infiniflow/ragflow repos/firecrawl repos/obra repos/NousResearch repos/multica-ai repos/farion1231 repos/openai repos/punkpeye repos/TauricResearch repos/thedotmack repos/infiniflow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-06-29 ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents firecrawl/firecrawl obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills farion1231/cc-switch openai/codex punkpeye/awesome-mcp-servers TauricResearch/TradingAgents thedotmack/claude-mem infiniflow/ragflow repos/firecrawl repos/obra repos/NousResearch repos/multica-ai repos/farion1231 repos/openai repos/punkpeye repos/TauricResearch repos/thedotmack repos/infiniflow AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-28.html",
@@ -2570,9 +2483,6 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -2639,7 +2549,7 @@
       "tableCount": 3,
       "linkCount": 82,
       "officialStatus": "8 条官方链接/动态",
-      "tags": "2026-06-28 Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets NousResearch/hermes-agent obra/superpowers farion1231/cc-switch multica-ai/andrej-karpathy-skills affaan-m/ECC paperclipai/paperclip DietrichGebert/ponytail ruvnet/ruflo shanraisshan/claude-code-best-practice mem0ai/mem0 crewAIInc/crewAI openai/gdpval repos/NousResearch repos/obra repos/farion1231 repos/multica-ai repos/affaan-m repos/firecrawl repos/anthropics repos/anomalyco repos/browser-use repos/paperclipai repos/DietrichGebert repos/ruvnet repos/shanraisshan repos/mem0ai repos/crewAIInc AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-06-28 Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets NousResearch/hermes-agent obra/superpowers farion1231/cc-switch multica-ai/andrej-karpathy-skills affaan-m/ECC paperclipai/paperclip DietrichGebert/ponytail ruvnet/ruflo shanraisshan/claude-code-best-practice mem0ai/mem0 crewAIInc/crewAI openai/gdpval repos/NousResearch repos/obra repos/farion1231 repos/multica-ai repos/affaan-m repos/firecrawl repos/anthropics repos/anomalyco repos/browser-use repos/paperclipai repos/DietrichGebert repos/ruvnet repos/shanraisshan repos/mem0ai repos/crewAIInc AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-24.html",
@@ -2658,9 +2568,6 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -2727,7 +2634,7 @@
       "tableCount": 6,
       "linkCount": 55,
       "officialStatus": "12 条官方链接/动态",
-      "tags": "2026-06-24 EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions FrontisAI/EnterpriseClawBench NousResearch/hermes-agent obra/superpowers firecrawl/firecrawl farion1231/cc-switch multica-ai/andrej-karpathy-skills bozhouDev/codex-orange-book HKUDS/AgentSpace Johell1NS/browser-search iart-ai/motion-skills mattpocock/skills garrytan/gstack modelcontextprotocol/servers OpenHands/OpenHands microsoft/autogen affaan-m/ECC anthropics/skills anomalyco/opencode browser-use/browser-use anthropics/claude-code AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-06-24 EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions FrontisAI/EnterpriseClawBench NousResearch/hermes-agent obra/superpowers firecrawl/firecrawl farion1231/cc-switch multica-ai/andrej-karpathy-skills bozhouDev/codex-orange-book HKUDS/AgentSpace Johell1NS/browser-search iart-ai/motion-skills mattpocock/skills garrytan/gstack modelcontextprotocol/servers OpenHands/OpenHands microsoft/autogen affaan-m/ECC anthropics/skills anomalyco/opencode browser-use/browser-use anthropics/claude-code AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-22.html",
@@ -2746,10 +2653,7 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "Agent 产品",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
-        "evaluation"
+        "product"
       ],
       "leaderSignal": {
         "kind": "官方核验",
@@ -2815,7 +2719,7 @@
       "tableCount": 3,
       "linkCount": 62,
       "officialStatus": "4 条官方链接/动态",
-      "tags": "2026-06-22 StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns amazon-science/StaminaBench obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills firecrawl/firecrawl affaan-m/ECC Shubhamsaboo/awesome-llm-apps msitarzewski/agency-agents farion1231/cc-switch google-gemini/gemini-cli browser-use/browser-use en/rest anthropics/skills anomalyco/opencode openclaw/openclaw anthropics/claude-code n8n-io/n8n langgenius/dify langchain-ai/langchain langflow-ai/langflow AI Agent benchmark GitHub OpenAI Anthropic Agent 产品 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-06-22 StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns amazon-science/StaminaBench obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills firecrawl/firecrawl affaan-m/ECC Shubhamsaboo/awesome-llm-apps msitarzewski/agency-agents farion1231/cc-switch google-gemini/gemini-cli browser-use/browser-use en/rest anthropics/skills anomalyco/opencode openclaw/openclaw anthropics/claude-code n8n-io/n8n langgenius/dify langchain-ai/langchain langflow-ai/langflow AI Agent benchmark GitHub OpenAI Anthropic Agent 产品 product  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-17.html",
@@ -2834,9 +2738,6 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -2903,7 +2804,7 @@
       "tableCount": 4,
       "linkCount": 50,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-06-17 ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues LithiumDA/ReproRepo obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC anomalyco/opencode anthropics/skills langflow-ai/langflow langchain-ai/langchain firecrawl/firecrawl anthropics/claude-code search/repositories openclaw/openclaw n8n-io/n8n langgenius/dify AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-06-17 ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues LithiumDA/ReproRepo obra/superpowers NousResearch/hermes-agent multica-ai/andrej-karpathy-skills affaan-m/ECC anomalyco/opencode anthropics/skills langflow-ai/langflow langchain-ai/langchain firecrawl/firecrawl anthropics/claude-code search/repositories openclaw/openclaw n8n-io/n8n langgenius/dify AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-13.html",
@@ -2922,10 +2823,7 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "模型能力",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
-        "evaluation"
+        "model"
       ],
       "leaderSignal": {
         "kind": "官方核验",
@@ -2973,7 +2871,7 @@
       "tableCount": 4,
       "linkCount": 50,
       "officialStatus": "8 条官方链接/动态",
-      "tags": "2026-06-13 SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning NVlabs/SpatialClaw NousResearch/hermes-agent affaan-m/ECC anomalyco/opencode n8n-io/n8n langgenius/dify openclaw/openclaw obra/superpowers ultraworkers/claw-code Significant-Gravitas/AutoGPT multica-ai/andrej-karpathy-skills ApodexAI/AgentHarness GordenSun/GordenSuperPPTSkills AI Agent benchmark GitHub OpenAI Anthropic 模型能力 architecture model product evaluation weekly 周报 formal 正式简报"
+      "tags": "2026-06-13 SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning NVlabs/SpatialClaw NousResearch/hermes-agent affaan-m/ECC anomalyco/opencode n8n-io/n8n langgenius/dify openclaw/openclaw obra/superpowers ultraworkers/claw-code Significant-Gravitas/AutoGPT multica-ai/andrej-karpathy-skills ApodexAI/AgentHarness GordenSun/GordenSuperPPTSkills AI Agent benchmark GitHub OpenAI Anthropic 模型能力 model weekly 周报 formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-12.html",
@@ -2992,10 +2890,7 @@
       "action": "持续追踪代码开放与后续复现，暂不直接接入",
       "primaryTrack": "Agent 架构与工具",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
-        "evaluation"
+        "architecture"
       ],
       "leaderSignal": {
         "kind": "官方核验",
@@ -3043,7 +2938,7 @@
       "tableCount": 2,
       "linkCount": 48,
       "officialStatus": "6 条官方链接/动态",
-      "tags": "2026-06-12 AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility GordenSun/GordenSuperPPTSkills JimLiu/baoyu-design amElnagdy/guard-skills ApodexAI/AgentHarness adamallcock/codex-chatgpt-control affaan-m/ECC n8n-io/n8n NousResearch/hermes-agent anomalyco/opencode langgenius/dify AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-06-12 AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility GordenSun/GordenSuperPPTSkills JimLiu/baoyu-design amElnagdy/guard-skills ApodexAI/AgentHarness adamallcock/codex-chatgpt-control affaan-m/ECC n8n-io/n8n NousResearch/hermes-agent anomalyco/opencode langgenius/dify AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture  formal 正式简报"
     },
     {
       "fileName": "morning-brief-2026-06-09.html",
@@ -3062,10 +2957,7 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "Agent 架构与工具",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
-        "evaluation"
+        "architecture"
       ],
       "leaderSignal": {
         "kind": "官方核验",
@@ -3113,7 +3005,7 @@
       "tableCount": 2,
       "linkCount": 24,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-06-09 Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations JimLiu/baoyu-design amElnagdy/guard-skills GordenSun/GordenSuperPPTSkills adamallcock/codex-chatgpt-control ApodexAI/AgentHarness search/repositories AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture model product evaluation  formal 正式简报"
+      "tags": "2026-06-09 Autonomous Incident Resolution at Hyperscale: An Agentic AI Architecture for Network Operations JimLiu/baoyu-design amElnagdy/guard-skills GordenSun/GordenSuperPPTSkills adamallcock/codex-chatgpt-control ApodexAI/AgentHarness search/repositories AI Agent benchmark GitHub OpenAI Anthropic Agent 架构与工具 architecture  formal 正式简报"
     },
     {
       "fileName": "morning-brief-test-2026-06-08.html",
@@ -3132,9 +3024,6 @@
       "action": "核验代码与复现条件，安排小规模产品验证",
       "primaryTrack": "评测方法",
       "tracks": [
-        "architecture",
-        "model",
-        "product",
         "evaluation"
       ],
       "leaderSignal": {
@@ -3183,7 +3072,7 @@
       "tableCount": 2,
       "linkCount": 31,
       "officialStatus": "未发现新发布内容",
-      "tags": "2026-06-08 QBugLM: An Agentic Benchmarking Framework for LLM-based Quantum Software Debugging qachub/qbuglm JimLiu/baoyu-design amElnagdy/guard-skills GordenSun/GordenSuperPPTSkills adamallcock/codex-chatgpt-control RainyMarks/DeepX search/repositories AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  test 测试稿"
+      "tags": "2026-06-08 QBugLM: An Agentic Benchmarking Framework for LLM-based Quantum Software Debugging qachub/qbuglm JimLiu/baoyu-design amElnagdy/guard-skills GordenSun/GordenSuperPPTSkills adamallcock/codex-chatgpt-control RainyMarks/DeepX search/repositories AI Agent benchmark GitHub OpenAI Anthropic 评测方法 evaluation  test 测试稿"
     }
   ]
 }

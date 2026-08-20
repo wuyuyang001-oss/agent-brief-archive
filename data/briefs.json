@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-08-19T02:53:39.817Z",
+  "generatedAt": "2026-08-20T02:08:49.592Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-08-20.html",
+      "date": "2026-08-20",
+      "weekday": "周四",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "ComponentBench: Diagnosing Component-Level Failures in Computer-Use Agents",
+      "summary": "已证实：评测 computer-use Agent 时，harness 可能比模型名更能改变结果：ComponentBench 在同一 harness 中只改变观察与动作空间，GPT-5 mini 成功率就从 AX-tree 的 83.1% 降到纯坐标 Pixel 的 48.9%，差异超过 30 个百分点。",
+      "problem": "面向 Agent 产品与评测产品：识别可复用技术红利、验证能力边界并沉淀决策证据。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "核验代码与复现条件，安排小规模产品验证",
+      "primaryTrack": "评测方法",
+      "tracks": [
+        "architecture",
+        "model",
+        "product",
+        "evaluation"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-08-20.html",
+      "overview": "overviews/morning-brief-2026-08-20.svg",
+      "githubRows": [
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1438,
+          "text": "1 NousResearch/hermes-agent 持久记忆、工具与自扩展个人 Agent 233,083 +1,438 Python 2026-08-20 01:58:55 UTC"
+        },
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 1417,
+          "text": "2 obra/superpowers 跨 Coding Agent 的技能框架 274,311 +1,417 Shell 2026-08-19 17:33:23 UTC"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 1382,
+          "text": "3 firecrawl/firecrawl 面向 Agent 的网页抓取与上下文 API 169,667 +1,382 TypeScript 2026-08-20 01:31:42 UTC"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 1046,
+          "text": "4 anomalyco/opencode 开源终端 Coding Agent 199,255 +1,046 TypeScript 2026-08-20 01:56:41 UTC"
+        },
+        {
+          "repo": "anthropics/skills",
+          "label": "anthropics/skills",
+          "value": 688,
+          "text": "5 anthropics/skills Anthropic Agent Skills 示例 170,496 +688 Python 2026-08-18 16:02:06 UTC"
+        },
+        {
+          "repo": "op7418/guizang-ppt-skill",
+          "label": "op7418/guizang-ppt-skill",
+          "value": 24427,
+          "text": "1 op7418/guizang-ppt-skill 24,427 生成精致 HTML 幻灯片的 Agent Skill；值得拆解版式规则、低功耗运行时和产物验收。 HTML / AGPL-3.0 2026-08-07 03:58:08 …"
+        },
+        {
+          "repo": "teableio/teable",
+          "label": "teableio/teable",
+          "value": 21672,
+          "text": "2 teableio/teable 21,672 AI Spreadsheet 业务产品；适合观察 Agent 如何作用于结构化数据、权限和协作。 TypeScript / NOASSERTION 2026-08-19 15:02:35 …"
+        },
+        {
+          "repo": "1jehuang/jcode",
+          "label": "1jehuang/jcode",
+          "value": 18022,
+          "text": "3 1jehuang/jcode 18,022 强调低内存的 Coding Agent harness；v0.78.1 本窗口发布，值得测资源效率。 Rust / MIT 2026-08-19 06:30:28 UTC v0.78.1 ·…"
+        }
+      ],
+      "githubRepoCount": 16,
+      "figureCount": 25,
+      "tableCount": 20,
+      "linkCount": 91,
+      "officialStatus": "未发现新发布内容",
+      "tags": "2026-08-20 ComponentBench: Diagnosing Component-Level Failures in Computer-Use Agents TianchenGuan/ComponentBench NousResearch/hermes-agent obra/superpowers firecrawl/firecrawl anomalyco/opencode anthropics/skills op7418/guizang-ppt-skill teableio/teable 1jehuang/jcode browser-use/browser-harness e2b-dev/E2B openai/codex browser-use/browser-use bytedance/deer-flow anthropics/claude-code farion1231/cc-switch AI Agent benchmark GitHub OpenAI Anthropic 评测方法 architecture model product evaluation  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-08-19.html",
       "date": "2026-08-19",

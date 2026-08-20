@@ -1,0 +1,1271 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI / Agent 晨间简报 · 2026-08-20</title><style>
+:root{--ink:#172433;--muted:#587083;--line:#d9e2e8;--blue:#0b67c2;--pale:#f4f8fb;--green:#08745f;--amber:#9a6200}*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font:15px/1.68 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}main{max-width:1060px;margin:auto;padding:38px 28px 72px}header{border-bottom:4px solid var(--ink);padding-bottom:24px}.eyebrow{font:700 12px/1.2 ui-monospace,monospace;letter-spacing:.12em;color:var(--blue)}h1{font-size:36px;line-height:1.15;margin:10px 0}h2{font-size:24px;line-height:1.3;margin:42px 0 14px;padding-top:4px}h3{font-size:18px;line-height:1.4;margin:0 0 8px}p{margin:8px 0}a{color:var(--blue);text-decoration-thickness:1px}.meta,.method{color:var(--muted);font-size:13px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.chip,.state{border:1px solid var(--line);padding:3px 8px;border-radius:999px;background:#fff;font-size:12px}.state{color:var(--green);white-space:nowrap}.summary,.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.signal,.card{border:1px solid var(--line);border-radius:10px;padding:17px;background:#fff}.signal:first-child{grid-column:span 2;border-color:#9cc4ec;background:#f8fbff}.signal-top{display:flex;justify-content:space-between;gap:12px;align-items:start}dl{margin:10px 0 0;display:grid;grid-template-columns:126px 1fr;gap:6px 12px}dt{font-weight:700;color:#314859}dd{margin:0}.callout{padding:13px 15px;border-left:4px solid var(--blue);background:var(--pale);margin:12px 0}.warn{border-left-color:var(--amber);background:#fff9ec}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px}table{border-collapse:collapse;width:100%;min-width:720px}th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{font-size:13px;background:#f7fafc}tr:last-child td{border-bottom:0}.up{color:var(--green);font-weight:700}details{border:1px solid var(--line);border-radius:9px;padding:0 15px;margin:14px 0;background:#fff}summary{cursor:pointer;font-weight:700;padding:13px 0}details>div,details>p{margin:0 0 15px}figure{margin:18px 0;padding:12px;border:1px solid var(--line);border-radius:8px;background:#fff}figure img{max-width:100%;height:auto;display:block;margin:auto}figcaption{font-size:13px;color:var(--muted);margin-top:8px}iframe{width:100%;height:360px;border:1px solid var(--line);background:#fff}.figure-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.small{font-size:13px;color:var(--muted)}ul{padding-left:22px}.visible-label{font-weight:700;color:#314859}@media(max-width:720px){main{padding:24px 16px}.summary,.grid{grid-template-columns:1fr}.signal:first-child{grid-column:auto}dl{grid-template-columns:1fr;gap:1px}dd{margin-bottom:8px}.figure-grid{grid-template-columns:1fr}}@media print{main{max-width:none;padding:12mm}details{display:block}details>summary{display:none}details>*{display:block!important}a{color:#000;text-decoration:none}iframe{height:260px}.signal,.card,figure{break-inside:avoid}}
+
+.feedback textarea{width:100%;min-height:120px;padding:12px;border:1px solid var(--line);border-radius:8px;font:inherit}.feedback button{margin-top:8px;padding:8px 14px;border:0;border-radius:7px;background:var(--ink);color:#fff;cursor:pointer}.feedback-status{margin-left:10px;color:var(--green);font-size:13px}
+
+.feedback textarea{width:100%;min-height:120px;padding:12px;border:1px solid var(--line);border-radius:8px;font:inherit}.feedback button{margin-top:8px;padding:8px 14px;border:0;border-radius:7px;background:var(--ink);color:#fff;cursor:pointer}.feedback-status{margin-left:10px;color:var(--green);font-size:13px}
+</style></head><body><main>
+<header><div class="eyebrow">AI / AGENT DECISION BRIEF</div><h1>晨间简报</h1><p>面向 Agent 产品与评测产品：识别可复用技术红利、验证能力边界并沉淀决策证据。</p><div class="chips"><span class="chip">2026-08-20 · 周四</span><span class="chip">生成：10:35 CST</span><span class="chip">信息截止：10:25 CST</span><span class="chip">HTTP / API / 静态解析 · 无浏览器</span></div></header>
+
+<section><h2>90 秒摘要</h2><div class="summary">
+<article class="signal"><div class="signal-top"><h3>已证实：评测 computer-use Agent 时，harness 可能比模型名更能改变结果</h3><span class="state">新论文 / 评测增量</span></div><dl><dt>核心结论</dt><dd>ComponentBench 在同一 harness 中只改变观察与动作空间，GPT-5 mini 成功率就从 AX-tree 的 83.1% 降到纯坐标 Pixel 的 48.9%，差异超过 30 个百分点。</dd><dt>证据 / 可信度</dt><dd>2,910 个程序化验证任务、97 类组件、14 个交互族、7 个模型、4 种接口；代码、数据与运行记录公开。可信度中等偏高，但主表多数 cell 只有一次确定性运行。</dd><dt>与既有工作的差异</dt><dd>长程 benchmark 难归因，单步 grounding 又过于原子化；它补上“短而真实、可定位组件失败”的中间层。</dd><dt>产品 / 评测意义</dt><dd>不能把模型榜单直接当产品能力榜单；DOM、可访问树、Set-of-Marks、坐标控制与动作原语都应视作产品架构变量。</dd><dt>建议动作</dt><dd>将同一模型在 AX-tree、标框和纯视觉模式下做 A/B，对每类组件报告成功率、动作数和失败机制。</dd></dl></article>
+<article class="signal"><div class="signal-top"><h3>作者结论：成功不等于可用，最快 Agent 仍比人类慢 3.7 倍</h3><span class="state">Agent 产品边界</span></div><dl><dt>核心结论</dt><dd>强 Agent 能最终完成不少组件任务，但即使最快配置也耗时为匹配人类参考的 3.7 倍；滑块、拖拽列表和分割器等人类 1–2 步完成的操作，跨 Agent 平均成功率仍低于 60%。</dd><dt>证据 / 可信度</dt><dd>所有任务有清洗后的人类参考轨迹；额外 2 位标注者在 278 任务子集验证，人类间动作数差仅约 1.05 倍。</dd><dt>与既有工作的差异</dt><dd>除了 pass rate，还测是否在人类动作预算内完成，把延迟、成本和漂移风险纳入可用性。</dd><dt>产品 / 评测意义</dt><dd>纯视觉 Agent 的产品瓶颈不只在规划，而在高频 GUI 原语的可靠度与效率；组件级失败会在长流程中乘法累积。</dd><dt>建议动作</dt><dd>为高频组件建立回归门槛；低于 99% 的关键原语优先改为 API、DOM 或受控专用工具。</dd></dl></article>
+<article class="signal"><div class="signal-top"><h3>编辑推断：组件级诊断可以成为 Agent 产品的“可靠性地图”</h3><span class="state">产品机会 / 编辑推断</span></div><dl><dt>核心结论</dt><dd>将失败映射到组件族、视觉拥挤度、间距和动作原语，比只看网站级成功率更能指导产品路线。</dd><dt>证据 / 可信度</dt><dd>论文显示拥挤与紧凑间距会显著放大 AX-tree 与 Pixel 差距；因果外推到真实网站仍需验证，推断可信度中等。</dd><dt>与既有工作的差异</dt><dd>从“哪个 Agent 更强”转为“在何种 UI 条件下，哪一层能力失效”。</dd><dt>产品 / 评测意义</dt><dd>可做持续扫描真实产品 UI、预测 Agent 可操作性、生成无障碍与 Agent-ready 改造建议的评测产品。</dd><dt>建议动作</dt><dd>对目标 SaaS 抽取组件清单，用 ComponentBench 类任务生成器建立每次前端发布后的 Agent 可操作性回归。</dd></dl></article>
+<article class="signal"><div class="signal-top"><h3>开发者信号：harness、数据接入和技能层在约 68 小时窗口继续领涨</h3><span class="state">GitHub 最近可得三日代理</span></div><dl><dt>核心结论</dt><dd>相对 8 月 17 日 14:02 快照，hermes-agent +1,438、superpowers +1,417、firecrawl +1,382、opencode +1,046、anthropics/skills +688。</dd><dt>证据 / 可信度</dt><dd>GitHub REST 当前值减本地历史值，实际约 68 小时；接近但不等于严格 72 小时，不插值、不外推。</dd><dt>与既有工作的差异</dt><dd>superpowers 恢复推送；Claude Code 发布 v2.1.237，E2B 发布 2.42.0。</dd><dt>产品 / 评测意义</dt><dd>技术红利继续下沉到技能、上下文、隔离和运行时；模型之外的可控性正成为产品竞争变量。</dd><dt>建议动作</dt><dd>本周试用 E2B 隔离环境，并把 ComponentBench 的动作效率指标加入网页 Agent 测试。</dd></dl></article>
+</div></section>
+
+<section><h2>前沿领头羊信号</h2><div class="grid">
+<article class="card"><span class="state">OpenAI 官方视频 / 直播</span><h3>Builder Bootcamp: Agents</h3><p><strong>日期：</strong>2026-08-19 · <a href="https://academy.openai.com/public/events">官方活动与视频入口</a></p><p>OpenAI Academy 官方列表显示该 Agent 构建直播已举行并进入 On-Demand 列表。页面未提供可稳定提取的独立回放 URL 或完整议程，因此只记录发布事实，不推断技术内容。对产品的意义是官方开发者教育继续把 Agents 与可复用工作流作为独立主题。</p></article>
+<article class="card"><span class="state">OpenAI 官方 / 无其他新增</span><h3>未发现新技术博客或 System Card</h3><p>核验新闻、研究、产品和开发者入口；除上述 Academy 直播外，自上次截止后未发现可确认的新技术文章、研究、System Card 或产品发布。</p></article>
+<article class="card"><span class="state">Anthropic 官方 / 无新增</span><h3>未发现新发布内容</h3><p>核验 Newsroom、研究入口和 sitemap。多个页面在同一秒更新 lastmod，符合站点批量刷新特征，不能作为独立发布证据。</p></article>
+<article class="card"><span class="state">个人公开判断 / 无可核验新增</span><h3>关键负责人 X 原帖</h3><p>未取得能同时核验身份、原帖、发布时间和完整上下文的新增帖子；不采用搜索摘要或二手转述，不把个人观点写成公司立场。</p></article>
+</div></section>
+
+<section><h2>四条主线</h2><div class="grid">
+<article class="card"><h3>模型能力进展</h3><p><strong>无新模型发布，能力边界证据增强。</strong> 同一模型在不同接口下出现 30+ 个百分点差异，说明产品端的观测与动作设计会放大或掩盖底层模型能力。</p></article>
+<article class="card"><h3>Agent 产品进展</h3><p><strong>发布关键版本。</strong> Claude Code v2.1.237 与 E2B 2.42.0 均在本窗口发布。可复用红利集中在 coding workflow 与隔离执行，但版本号不等于可靠性提升，仍需任务回归。</p></article>
+<article class="card"><h3>Agent 架构与可复用工具</h3><p><strong>持续增长。</strong> 新增关注低内存 coding harness、自修复网页 harness、AI Spreadsheet 与 PPT Skill；选择工具时同时核对 license、环境隔离、状态恢复和产物可验证性。</p></article>
+<article class="card"><h3>评测方法进展</h3><p><strong>新出现。</strong> 把端到端失败拆成组件、视觉上下文、动作原语和效率；主结果应同时报告最终成功、动作预算内成功、失败类别和重复运行任务级 churn。</p></article>
+</div></section>
+
+<section><h2>今日论文</h2><h3>ComponentBench: Diagnosing Component-Level Failures in Computer-Use Agents</h3><p><strong>作者：</strong>Tianchen Guan、Xinlei Lin、Royce Cheng-Yue、Xiangjun Wang、Shuyan Zhou<br><strong>发布日期：</strong>2026-08-18（在上次简报截止后进入 arXiv cs.AI recent 列表）<br><strong>链接：</strong><a href="https://arxiv.org/abs/2608.18307">arXiv</a> · <a href="https://arxiv.org/html/2608.18307">HTML</a> · <a href="https://componentbench.com">项目页</a> · <a href="https://github.com/TianchenGuan/ComponentBench">代码</a> · <a href="https://huggingface.co/datasets/TianchenGuan/ComponentBench">数据与运行记录</a></p>
+<div class="table-wrap"><table><tbody>
+<tr><th>此前遇到的问题</th><td>长程 GUI benchmark 能测最终完成却难定位根因；单步 grounding benchmark 只测点哪里，覆盖不了日期选择、拖拽、滑块、组合筛选等短多步组件交互。</td></tr>
+<tr><th>研究做法</th><td>构建与 UI 库无关的 97 类组件本体、14 个交互族和 24 个模板，在 Ant Design、MUI、Mantine 等环境实例化 2,910 个程序化验证任务；配套人类轨迹、难度审计和轨迹级失败分类。</td></tr>
+<tr><th>关键结论</th><td>接口设计可令同一模型成功率变化超过 30 个百分点；最快配置仍比人类参考慢 3.7 倍；拖拽、滑块和 splitter 等空间操作跨 Agent 平均低于 60%；拥挤和紧凑间距尤其伤害视觉 Agent。</td></tr>
+<tr><th>与既有工作的差异</th><td>在真实长流程和原子定位之间增加可归因的组件层，既保留现代 UI 负担，又能程序化判定结果、比较动作效率并追踪具体失败机制。</td></tr>
+<tr><th>可信度</th><td>中等偏高：任务量大、状态验证程序化、任务级 bootstrap CI、代码/数据/运行公开；278 任务子集增加两名人类标注者和两次模型运行。局限是主表多数 model-mode cell 仅一次确定性运行。</td></tr>
+<tr><th>局限</th><td>主要是合成组件页面而非真实产品；任务聚焦单一主组件，弱化长程规划与跨页面状态；Browser-Use 的一步可含最多 4 个原子动作，效率口径偏乐观；UI-TARS 与 Opus 使用原生 harness，跨模型公平性不完全一致；尚无独立复现。</td></tr>
+<tr><th>后续待验证问题</th><td>组件得分能否预测真实网站成功率；把 Agent-ready 组件规范加入设计系统能否提升纯视觉可靠性；重复运行的任务级 churn 如何进入发布门槛；API/DOM fallback 的成本与安全收益。</td></tr>
+</tbody></table></div>
+<details><summary>展开英文简介与逐段对应中文翻译</summary><div><h3>English overview</h3><p lang="en">ComponentBench fills the diagnostic gap between long-horizon workflow benchmarks and atomic grounding tests. It instantiates 97 canonical UI component types as 2,910 programmatically verified tasks, with cleaned human reference trajectories for measuring both completion and interaction efficiency.</p><p lang="en">Across seven models and four observation/action spaces, interface design changes performance dramatically: GPT-5 mini drops from 83.1% with accessibility-tree observations to 48.9% under coordinate-only Pixel control. Even the fastest agent configuration is 3.7 times slower than the matched human reference, while spatial manipulations remain persistent failure points.</p><h3>对应中文翻译</h3><p>ComponentBench 填补了长程工作流 benchmark 与原子 grounding 测试之间的诊断空白。它把 97 类标准 UI 组件实例化为 2,910 个程序化验证任务，并提供清洗后的人类参考轨迹，同时测完成率与交互效率。</p><p>在 7 个模型和 4 种观察/动作空间中，接口设计显著改变结果：GPT-5 mini 从可访问树观察的 83.1% 降至纯坐标 Pixel 控制的 48.9%。即使最快 Agent 配置也比匹配的人类参考慢 3.7 倍，空间操作仍是持续失败点。</p></div></details>
+<details><summary>展开论文全部公开图表（10 图 / 15 表）</summary><div><p class="method">通过 arXiv HTML、HTTP 下载和静态解析，按论文顺序收集全部 25 个编号元素；10 张图保存为公开原始 PNG/SVG，15 张表转为 HTML，未发现缺失项。</p><figure><img loading="lazy" src="morning-brief-2026-08-20-assets/componentbench-figure-1.png" alt="图 1：ComponentBench evaluates computer-use agents on 97 canonical UI component types organized into 14 families. Left : Tasks span diverse interaction types implemented across Ant Design, MUI, and Mantine. Right : The ontology covers the breadth of modern web UI interaction."><figcaption><strong>图 1：ComponentBench evaluates computer-use agents on 97 canonical UI component types organized into 14 families. Left : Tasks span diverse interaction types implemented across Ant Design, MUI, and Mantine. Right : The ontology covers the breadth of modern web UI interaction.</strong> · <a href="https://arxiv.org/html/2608.18307#S1.F1">论文原始位置</a></figcaption></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-20-assets/componentbench-figure-2.png" alt="图 2：A concrete ComponentBench task ( data_table_filterable-mantine-T10 ). (a) The agent sees a rendered page containing three visually similar mini-tables. (b) The instruction, programmatic verifier, and structured metadata. The agent must disambiguate the correct table instance (Invoices), apply two filters, and commit via the instance-local Apply button."><figcaption><strong>图 2：A concrete ComponentBench task ( data_table_filterable-mantine-T10 ). (a) The agent sees a rendered page containing three visually similar mini-tables. (b) The instruction, programmatic verifier, and structured metadata. The agent must disambiguate the correct table instance (Invoices), apply two filters, and commit via the instance-local Apply button.</strong> · <a href="https://arxiv.org/html/2608.18307#S2.F2">论文原始位置</a></figcaption></figure>
+<figure><figcaption><strong>表 1：ComponentBench-Full pass rates (%) by model and observation/action space. All runs use a 20-step budget. Browser-Use is a tool-rich reference regime with DOM access; AX-tree, SoM, and Pixel share the same harness and differ only in observation and action space. Task-resampling bootstrap 95% CIs ( B = 10,000 B{=}10{,}000 ) have half-width ≤ \leq 1.9% per cell. † Native pixel-only harness with coordinate prediction. ‡ Browser-Use served via Amazon Bedrock (precision unspecified); other Qwen cells use local vLLM FP8 (Appendix M ).</strong> · <a href="https://arxiv.org/html/2608.18307#S3.T1">论文原始位置</a></figcaption><div class="table-wrap"><table id="S3.T1.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="S3.T1.2.1" class="ltx_tr">
+<th id="S3.T1.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt"><span id="S3.T1.2.1.1.1" class="ltx_text ltx_font_bold">Model</span></th>
+<th id="S3.T1.2.1.2" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span id="S3.T1.2.1.2.1" class="ltx_text ltx_font_bold">Browser-Use</span></th>
+<th id="S3.T1.2.1.3" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span id="S3.T1.2.1.3.1" class="ltx_text ltx_font_bold">AX-tree</span></th>
+<th id="S3.T1.2.1.4" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span id="S3.T1.2.1.4.1" class="ltx_text ltx_font_bold">SoM</span></th>
+<th id="S3.T1.2.1.5" class="ltx_td ltx_nopad_r ltx_align_center ltx_th ltx_th_column ltx_border_tt"><span id="S3.T1.2.1.5.1" class="ltx_text ltx_font_bold">Pixel</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="S3.T1.2.2" class="ltx_tr">
+<th id="S3.T1.2.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t">Gemini 3 Flash</th>
+<td id="S3.T1.2.2.2" class="ltx_td ltx_align_center ltx_border_t">95.2</td>
+<td id="S3.T1.2.2.3" class="ltx_td ltx_align_center ltx_border_t">89.6</td>
+<td id="S3.T1.2.2.4" class="ltx_td ltx_align_center ltx_border_t">87.1</td>
+<td id="S3.T1.2.2.5" class="ltx_td ltx_nopad_r ltx_align_center ltx_border_t">85.4</td></tr>
+<tr id="S3.T1.2.3" class="ltx_tr">
+<th id="S3.T1.2.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">GPT-5.4</th>
+<td id="S3.T1.2.3.2" class="ltx_td ltx_align_center">90.4</td>
+<td id="S3.T1.2.3.3" class="ltx_td ltx_align_center">81.5</td>
+<td id="S3.T1.2.3.4" class="ltx_td ltx_align_center">77.0</td>
+<td id="S3.T1.2.3.5" class="ltx_td ltx_nopad_r ltx_align_center">83.8</td></tr>
+<tr id="S3.T1.2.4" class="ltx_tr">
+<th id="S3.T1.2.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Gemini 3.1 Flash-Lite</th>
+<td id="S3.T1.2.4.2" class="ltx_td ltx_align_center">87.4</td>
+<td id="S3.T1.2.4.3" class="ltx_td ltx_align_center">77.7</td>
+<td id="S3.T1.2.4.4" class="ltx_td ltx_align_center">73.5</td>
+<td id="S3.T1.2.4.5" class="ltx_td ltx_nopad_r ltx_align_center">63.3</td></tr>
+<tr id="S3.T1.2.5" class="ltx_tr">
+<th id="S3.T1.2.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">GPT-5 mini</th>
+<td id="S3.T1.2.5.2" class="ltx_td ltx_align_center">87.0</td>
+<td id="S3.T1.2.5.3" class="ltx_td ltx_align_center">83.1</td>
+<td id="S3.T1.2.5.4" class="ltx_td ltx_align_center">78.5</td>
+<td id="S3.T1.2.5.5" class="ltx_td ltx_nopad_r ltx_align_center">48.9</td></tr>
+<tr id="S3.T1.2.6" class="ltx_tr">
+<th id="S3.T1.2.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">GPT-5.4 mini</th>
+<td id="S3.T1.2.6.2" class="ltx_td ltx_align_center">85.8</td>
+<td id="S3.T1.2.6.3" class="ltx_td ltx_align_center">79.1</td>
+<td id="S3.T1.2.6.4" class="ltx_td ltx_align_center">74.7</td>
+<td id="S3.T1.2.6.5" class="ltx_td ltx_nopad_r ltx_align_center">77.1</td></tr>
+<tr id="S3.T1.2.7" class="ltx_tr">
+<th id="S3.T1.2.7.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Qwen3-VL-235B<sup id="S3.T1.2.7.1.1" class="ltx_sup">‡</sup></th>
+<td id="S3.T1.2.7.2" class="ltx_td ltx_align_center">78.8</td>
+<td id="S3.T1.2.7.3" class="ltx_td ltx_align_center">77.0</td>
+<td id="S3.T1.2.7.4" class="ltx_td ltx_align_center">54.4</td>
+<td id="S3.T1.2.7.5" class="ltx_td ltx_nopad_r ltx_align_center">50.5</td></tr>
+<tr id="S3.T1.2.8" class="ltx_tr">
+<th id="S3.T1.2.8.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb">UI-TARS-1.5-7B<sup id="S3.T1.2.8.1.1" class="ltx_sup">†</sup></th>
+<td id="S3.T1.2.8.2" class="ltx_td ltx_align_center ltx_border_bb">—</td>
+<td id="S3.T1.2.8.3" class="ltx_td ltx_align_center ltx_border_bb">—</td>
+<td id="S3.T1.2.8.4" class="ltx_td ltx_align_center ltx_border_bb">—</td>
+<td id="S3.T1.2.8.5" class="ltx_td ltx_nopad_r ltx_align_center ltx_border_bb">12.6</td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 2：Step efficiency (% of 2,910 tasks). ≤ H \leq H / ≤ \leq 2 H H : solved within 1/2 × \times human steps, where H = max ⁡ ( human steps , 1 ) H=\max(\text{human steps},1) ; hover-only references count as H = 1 H{=}1 . Browser-Use “steps” are model turns of up to 4 primitive actions (page-load turn excluded), so its efficiency columns are optimistic. † Native pixel-only harness. Full ≤ \leq 3 H H /5 H H breakdown in Appendix C .</strong> · <a href="https://arxiv.org/html/2608.18307#S4.T2">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T2.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="S4.T2.2.1" class="ltx_tr">
+<th id="S4.T2.2.1.1" class="ltx_td ltx_th ltx_th_row ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"></th>
+<th id="S4.T2.2.1.2" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;" colspan="3"><span id="S4.T2.2.1.2.1" class="ltx_text ltx_font_bold">Browser-Use</span></th>
+<th id="S4.T2.2.1.3" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;" colspan="3"><span id="S4.T2.2.1.3.1" class="ltx_text ltx_font_bold">AX-tree</span></th>
+<th id="S4.T2.2.1.4" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;" colspan="3"><span id="S4.T2.2.1.4.1" class="ltx_text ltx_font_bold">SoM</span></th>
+<th id="S4.T2.2.1.5" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;" colspan="3"><span id="S4.T2.2.1.5.1" class="ltx_text ltx_font_bold">Pixel</span></th></tr>
+<tr id="S4.T2.2.2" class="ltx_tr">
+<th id="S4.T2.2.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T2.2.2.1.1" class="ltx_text ltx_font_bold">Model</span></th>
+<th id="S4.T2.2.2.2" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">Pass</th>
+<th id="S4.T2.2.2.3" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="S4.T2.m1" class="ltx_Math" alttext="\leq H" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo>≤</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">\leq H</annotation></semantics></math></th>
+<th id="S4.T2.2.2.4" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="S4.T2.m2" class="ltx_Math" alttext="\leq" display="inline" intent=":literal"><semantics><mo>≤</mo><annotation encoding="application/x-tex">\leq</annotation></semantics></math>2<math id="S4.T2.m3" class="ltx_Math" alttext="H" display="inline" intent=":literal"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math></th>
+<th id="S4.T2.2.2.5" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">Pass</th>
+<th id="S4.T2.2.2.6" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="S4.T2.m4" class="ltx_Math" alttext="\leq H" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo>≤</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">\leq H</annotation></semantics></math></th>
+<th id="S4.T2.2.2.7" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="S4.T2.m5" class="ltx_Math" alttext="\leq" display="inline" intent=":literal"><semantics><mo>≤</mo><annotation encoding="application/x-tex">\leq</annotation></semantics></math>2<math id="S4.T2.m6" class="ltx_Math" alttext="H" display="inline" intent=":literal"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math></th>
+<th id="S4.T2.2.2.8" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">Pass</th>
+<th id="S4.T2.2.2.9" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="S4.T2.m7" class="ltx_Math" alttext="\leq H" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo>≤</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">\leq H</annotation></semantics></math></th>
+<th id="S4.T2.2.2.10" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="S4.T2.m8" class="ltx_Math" alttext="\leq" display="inline" intent=":literal"><semantics><mo>≤</mo><annotation encoding="application/x-tex">\leq</annotation></semantics></math>2<math id="S4.T2.m9" class="ltx_Math" alttext="H" display="inline" intent=":literal"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math></th>
+<th id="S4.T2.2.2.11" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">Pass</th>
+<th id="S4.T2.2.2.12" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="S4.T2.m10" class="ltx_Math" alttext="\leq H" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo>≤</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">\leq H</annotation></semantics></math></th>
+<th id="S4.T2.2.2.13" class="ltx_td ltx_nopad_r ltx_align_right ltx_th ltx_th_column ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="S4.T2.m11" class="ltx_Math" alttext="\leq" display="inline" intent=":literal"><semantics><mo>≤</mo><annotation encoding="application/x-tex">\leq</annotation></semantics></math>2<math id="S4.T2.m12" class="ltx_Math" alttext="H" display="inline" intent=":literal"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="S4.T2.2.3" class="ltx_tr">
+<th id="S4.T2.2.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">Gemini 3 Flash</th>
+<td id="S4.T2.2.3.2" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">95.2</td>
+<td id="S4.T2.2.3.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">56.1</td>
+<td id="S4.T2.2.3.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">85.3</td>
+<td id="S4.T2.2.3.5" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">89.6</td>
+<td id="S4.T2.2.3.6" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">74.7</td>
+<td id="S4.T2.2.3.7" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">82.5</td>
+<td id="S4.T2.2.3.8" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">87.1</td>
+<td id="S4.T2.2.3.9" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">73.2</td>
+<td id="S4.T2.2.3.10" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">81.4</td>
+<td id="S4.T2.2.3.11" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">85.4</td>
+<td id="S4.T2.2.3.12" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">65.0</td>
+<td id="S4.T2.2.3.13" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">77.8</td></tr>
+<tr id="S4.T2.2.4" class="ltx_tr">
+<th id="S4.T2.2.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.0pt;padding-right:3.0pt;">GPT-5.4</th>
+<td id="S4.T2.2.4.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">90.4</td>
+<td id="S4.T2.2.4.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">40.6</td>
+<td id="S4.T2.2.4.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">75.3</td>
+<td id="S4.T2.2.4.5" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">81.5</td>
+<td id="S4.T2.2.4.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">56.5</td>
+<td id="S4.T2.2.4.7" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">72.4</td>
+<td id="S4.T2.2.4.8" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">77.0</td>
+<td id="S4.T2.2.4.9" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">49.6</td>
+<td id="S4.T2.2.4.10" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">68.2</td>
+<td id="S4.T2.2.4.11" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">83.8</td>
+<td id="S4.T2.2.4.12" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">48.1</td>
+<td id="S4.T2.2.4.13" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">69.5</td></tr>
+<tr id="S4.T2.2.5" class="ltx_tr">
+<th id="S4.T2.2.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.0pt;padding-right:3.0pt;">Gemini 3.1 FL</th>
+<td id="S4.T2.2.5.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">87.4</td>
+<td id="S4.T2.2.5.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">50.2</td>
+<td id="S4.T2.2.5.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">77.3</td>
+<td id="S4.T2.2.5.5" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">77.7</td>
+<td id="S4.T2.2.5.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">68.6</td>
+<td id="S4.T2.2.5.7" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">73.9</td>
+<td id="S4.T2.2.5.8" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">73.5</td>
+<td id="S4.T2.2.5.9" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">64.8</td>
+<td id="S4.T2.2.5.10" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">70.9</td>
+<td id="S4.T2.2.5.11" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">63.3</td>
+<td id="S4.T2.2.5.12" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">47.3</td>
+<td id="S4.T2.2.5.13" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">56.2</td></tr>
+<tr id="S4.T2.2.6" class="ltx_tr">
+<th id="S4.T2.2.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.0pt;padding-right:3.0pt;">GPT-5 mini</th>
+<td id="S4.T2.2.6.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">87.0</td>
+<td id="S4.T2.2.6.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">51.7</td>
+<td id="S4.T2.2.6.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">78.5</td>
+<td id="S4.T2.2.6.5" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">83.1</td>
+<td id="S4.T2.2.6.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">66.6</td>
+<td id="S4.T2.2.6.7" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">76.5</td>
+<td id="S4.T2.2.6.8" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">78.5</td>
+<td id="S4.T2.2.6.9" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">63.2</td>
+<td id="S4.T2.2.6.10" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">73.4</td>
+<td id="S4.T2.2.6.11" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">48.9</td>
+<td id="S4.T2.2.6.12" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">19.0</td>
+<td id="S4.T2.2.6.13" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">28.2</td></tr>
+<tr id="S4.T2.2.7" class="ltx_tr">
+<th id="S4.T2.2.7.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.0pt;padding-right:3.0pt;">GPT-5.4 mini</th>
+<td id="S4.T2.2.7.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">85.8</td>
+<td id="S4.T2.2.7.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">51.0</td>
+<td id="S4.T2.2.7.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">77.9</td>
+<td id="S4.T2.2.7.5" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">79.1</td>
+<td id="S4.T2.2.7.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">69.0</td>
+<td id="S4.T2.2.7.7" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">73.8</td>
+<td id="S4.T2.2.7.8" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">74.7</td>
+<td id="S4.T2.2.7.9" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">64.0</td>
+<td id="S4.T2.2.7.10" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">70.6</td>
+<td id="S4.T2.2.7.11" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">77.1</td>
+<td id="S4.T2.2.7.12" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">60.2</td>
+<td id="S4.T2.2.7.13" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">68.9</td></tr>
+<tr id="S4.T2.2.8" class="ltx_tr">
+<th id="S4.T2.2.8.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.0pt;padding-right:3.0pt;">Qwen3-VL-235B</th>
+<td id="S4.T2.2.8.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">78.8</td>
+<td id="S4.T2.2.8.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">39.7</td>
+<td id="S4.T2.2.8.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">70.1</td>
+<td id="S4.T2.2.8.5" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">77.0</td>
+<td id="S4.T2.2.8.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">66.1</td>
+<td id="S4.T2.2.8.7" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">73.2</td>
+<td id="S4.T2.2.8.8" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">54.4</td>
+<td id="S4.T2.2.8.9" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">41.1</td>
+<td id="S4.T2.2.8.10" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">48.4</td>
+<td id="S4.T2.2.8.11" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">50.5</td>
+<td id="S4.T2.2.8.12" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">29.3</td>
+<td id="S4.T2.2.8.13" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">38.1</td></tr>
+<tr id="S4.T2.2.9" class="ltx_tr">
+<th id="S4.T2.2.9.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">UI-TARS<sup id="S4.T2.2.9.1.1" class="ltx_sup">†</sup></th>
+<td id="S4.T2.2.9.2" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">—</td>
+<td id="S4.T2.2.9.3" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">—</td>
+<td id="S4.T2.2.9.4" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">—</td>
+<td id="S4.T2.2.9.5" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">—</td>
+<td id="S4.T2.2.9.6" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">—</td>
+<td id="S4.T2.2.9.7" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">—</td>
+<td id="S4.T2.2.9.8" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">—</td>
+<td id="S4.T2.2.9.9" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">—</td>
+<td id="S4.T2.2.9.10" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">—</td>
+<td id="S4.T2.2.9.11" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">12.6</td>
+<td id="S4.T2.2.9.12" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">9.0</td>
+<td id="S4.T2.2.9.13" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">10.5</td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 3：Pass rate (%) by family and mode, averaged across all six models (excluding UI-TARS). Top: five hardest families; bottom: three easiest. Full breakdown in Figure 3 (Appendix).</strong> · <a href="https://arxiv.org/html/2608.18307#S4.T3">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T3.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="S4.T3.2.1" class="ltx_tr">
+<th id="S4.T3.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T3.2.1.1.1" class="ltx_text ltx_font_bold">Family</span></th>
+<th id="S4.T3.2.1.2" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T3.2.1.2.1" class="ltx_text ltx_font_bold">BU</span></th>
+<th id="S4.T3.2.1.3" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T3.2.1.3.1" class="ltx_text ltx_font_bold">AX</span></th>
+<th id="S4.T3.2.1.4" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T3.2.1.4.1" class="ltx_text ltx_font_bold">SoM</span></th>
+<th id="S4.T3.2.1.5" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T3.2.1.5.1" class="ltx_text ltx_font_bold">Pix</span></th>
+<th id="S4.T3.2.1.6" class="ltx_td ltx_nopad_r ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T3.2.1.6.1" class="ltx_text ltx_font_bold">Avg</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="S4.T3.2.2" class="ltx_tr">
+<td id="S4.T3.2.2.1" class="ltx_td ltx_align_left ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">Drag/Drop &amp; Workspace</td>
+<td id="S4.T3.2.2.2" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">29.7</td>
+<td id="S4.T3.2.2.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">72.1</td>
+<td id="S4.T3.2.2.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">31.8</td>
+<td id="S4.T3.2.2.5" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">57.4</td>
+<td id="S4.T3.2.2.6" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">47.7</td></tr>
+<tr id="S4.T3.2.3" class="ltx_tr">
+<td id="S4.T3.2.3.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Continuous Precision</td>
+<td id="S4.T3.2.3.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">74.0</td>
+<td id="S4.T3.2.3.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">53.8</td>
+<td id="S4.T3.2.3.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">53.9</td>
+<td id="S4.T3.2.3.5" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">56.2</td>
+<td id="S4.T3.2.3.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">59.4</td></tr>
+<tr id="S4.T3.2.4" class="ltx_tr">
+<td id="S4.T3.2.4.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Advanced Editors</td>
+<td id="S4.T3.2.4.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">83.6</td>
+<td id="S4.T3.2.4.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">67.8</td>
+<td id="S4.T3.2.4.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">49.7</td>
+<td id="S4.T3.2.4.5" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">46.4</td>
+<td id="S4.T3.2.4.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">61.9</td></tr>
+<tr id="S4.T3.2.5" class="ltx_tr">
+<td id="S4.T3.2.5.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Date &amp; Time</td>
+<td id="S4.T3.2.5.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">83.4</td>
+<td id="S4.T3.2.5.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">76.2</td>
+<td id="S4.T3.2.5.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">65.8</td>
+<td id="S4.T3.2.5.5" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">59.4</td>
+<td id="S4.T3.2.5.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">71.2</td></tr>
+<tr id="S4.T3.2.6" class="ltx_tr">
+<td id="S4.T3.2.6.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Disclosure &amp; Progressive</td>
+<td id="S4.T3.2.6.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">80.1</td>
+<td id="S4.T3.2.6.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">76.0</td>
+<td id="S4.T3.2.6.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">64.1</td>
+<td id="S4.T3.2.6.5" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">68.3</td>
+<td id="S4.T3.2.6.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">72.1</td></tr>
+<tr id="S4.T3.2.7" class="ltx_tr">
+<td id="S4.T3.2.7.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Discrete Choice</td>
+<td id="S4.T3.2.7.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">97.2</td>
+<td id="S4.T3.2.7.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">85.7</td>
+<td id="S4.T3.2.7.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">83.3</td>
+<td id="S4.T3.2.7.5" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">79.0</td>
+<td id="S4.T3.2.7.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">86.3</td></tr>
+<tr id="S4.T3.2.8" class="ltx_tr">
+<td id="S4.T3.2.8.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Overlays &amp; Transient UI</td>
+<td id="S4.T3.2.8.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">96.4</td>
+<td id="S4.T3.2.8.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">91.0</td>
+<td id="S4.T3.2.8.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">88.6</td>
+<td id="S4.T3.2.8.5" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">80.7</td>
+<td id="S4.T3.2.8.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">89.2</td></tr>
+<tr id="S4.T3.2.9" class="ltx_tr">
+<td id="S4.T3.2.9.1" class="ltx_td ltx_align_left ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">Command &amp; Navigation</td>
+<td id="S4.T3.2.9.2" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">97.3</td>
+<td id="S4.T3.2.9.3" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">96.1</td>
+<td id="S4.T3.2.9.4" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">89.9</td>
+<td id="S4.T3.2.9.5" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">83.1</td>
+<td id="S4.T3.2.9.6" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">91.6</td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 4：Failure taxonomy over all failed BrowserGym-mode traces, under two complementary labelings: a deterministic trace-feature pass over five models, and Layer-2 LLM diagnostic labels for Gemini 3.1 Flash-Lite mapped onto the same categories. The two labelings surface overlapping high-frequency mechanism families, though their percentages are not directly comparable (different model sets and schemas). Continuous-calibration and drag-execution failures are not represented as separate categories in the original Layer-2 schema, hence absent from that column.</strong> · <a href="https://arxiv.org/html/2608.18307#S4.T4">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T4.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="S4.T4.2.1" class="ltx_tr">
+<th id="S4.T4.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.2.1.1.1" class="ltx_text ltx_font_bold">Failure category</span></th>
+<th id="S4.T4.2.1.2" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.2.1.2.1" class="ltx_text ltx_font_bold">Deterministic</span></th>
+<th id="S4.T4.2.1.3" class="ltx_td ltx_nopad_r ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.2.1.3.1" class="ltx_text ltx_font_bold">Layer-2</span></th></tr>
+<tr id="S4.T4.2.2" class="ltx_tr">
+<th id="S4.T4.2.2.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="S4.T4.2.2.2" class="ltx_td ltx_align_right ltx_th ltx_th_column" style="padding-left:4.0pt;padding-right:4.0pt;">(5 models, <math id="S4.T4.m1" class="ltx_Math" alttext="n" display="inline" intent=":literal"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>=8,864)</th>
+<th id="S4.T4.2.2.3" class="ltx_td ltx_nopad_r ltx_align_right ltx_th ltx_th_column" style="padding-left:4.0pt;padding-right:4.0pt;">(1 model, <math id="S4.T4.m2" class="ltx_Math" alttext="n" display="inline" intent=":literal"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>=2,752)</th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="S4.T4.2.3" class="ltx_tr">
+<th id="S4.T4.2.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Continuous calibration error</th>
+<td id="S4.T4.2.3.2" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">20.2%</td>
+<td id="S4.T4.2.3.3" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">—</td></tr>
+<tr id="S4.T4.2.4" class="ltx_tr">
+<th id="S4.T4.2.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Transient state loss</th>
+<td id="S4.T4.2.4.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">19.9%</td>
+<td id="S4.T4.2.4.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">15.0%</td></tr>
+<tr id="S4.T4.2.5" class="ltx_tr">
+<th id="S4.T4.2.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Missing commit or confirmation</th>
+<td id="S4.T4.2.5.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">11.6%</td>
+<td id="S4.T4.2.5.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">20.0%</td></tr>
+<tr id="S4.T4.2.6" class="ltx_tr">
+<th id="S4.T4.2.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Target acquisition / wrong instance</th>
+<td id="S4.T4.2.6.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">11.2%</td>
+<td id="S4.T4.2.6.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">31.6%</td></tr>
+<tr id="S4.T4.2.7" class="ltx_tr">
+<th id="S4.T4.2.7.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Repetition / no-progress loop</th>
+<td id="S4.T4.2.7.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">11.2%</td>
+<td id="S4.T4.2.7.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">5.6%</td></tr>
+<tr id="S4.T4.2.8" class="ltx_tr">
+<th id="S4.T4.2.8.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Widget-specific procedure missing</th>
+<td id="S4.T4.2.8.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">9.6%</td>
+<td id="S4.T4.2.8.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">24.1%</td></tr>
+<tr id="S4.T4.2.9" class="ltx_tr">
+<th id="S4.T4.2.9.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Drag execution failure</th>
+<td id="S4.T4.2.9.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.3%</td>
+<td id="S4.T4.2.9.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">—</td></tr>
+<tr id="S4.T4.2.10" class="ltx_tr">
+<th id="S4.T4.2.10.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Semantic value error</th>
+<td id="S4.T4.2.10.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.6%</td>
+<td id="S4.T4.2.10.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.3%</td></tr>
+<tr id="S4.T4.2.11" class="ltx_tr">
+<th id="S4.T4.2.11.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">Other / unclear</th>
+<td id="S4.T4.2.11.2" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">8.4%</td>
+<td id="S4.T4.2.11.3" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">0.3%</td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 5：ComponentBench-Core results (% of 912 tasks). Same metrics (and Browser-Use turn-level caveat) as Table 2 , on the hard-only Core suite. Pass rates drop 10–39% from Full , confirming that Core concentrates diagnostic mass on unresolved interaction families. Opus 4.6 is evaluated only on Core Pixel.</strong> · <a href="https://arxiv.org/html/2608.18307#S4.T5">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T5.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="S4.T5.2.1" class="ltx_tr">
+<th id="S4.T5.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.2.1.1.1" class="ltx_text ltx_font_bold">Model</span></th>
+<th id="S4.T5.2.1.2" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.2.1.2.1" class="ltx_text ltx_font_bold">Mode</span></th>
+<th id="S4.T5.2.1.3" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.2.1.3.1" class="ltx_text ltx_font_bold">Pass</span></th>
+<th id="S4.T5.2.1.4" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><math id="S4.T5.m1" class="ltx_Math" alttext="\leq H" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo class="ltx_mathvariant_bold" mathvariant="bold">≤</mo><mi>𝑯</mi></mrow><annotation encoding="application/x-tex">\leq H</annotation></semantics></math></th>
+<th id="S4.T5.2.1.5" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><math id="S4.T5.m2" class="ltx_Math" alttext="\leq 2H" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo class="ltx_mathvariant_bold" mathvariant="bold">≤</mo><mrow><mn>𝟐</mn><mo lspace="0em" rspace="0em">​</mo><mi>𝑯</mi></mrow></mrow><annotation encoding="application/x-tex">\leq 2H</annotation></semantics></math></th>
+<th id="S4.T5.2.1.6" class="ltx_td ltx_nopad_r ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><math id="S4.T5.m3" class="ltx_Math" alttext="\leq 3H" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo class="ltx_mathvariant_bold" mathvariant="bold">≤</mo><mrow><mn>𝟑</mn><mo lspace="0em" rspace="0em">​</mo><mi>𝑯</mi></mrow></mrow><annotation encoding="application/x-tex">\leq 3H</annotation></semantics></math></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="S4.T5.2.2" class="ltx_tr">
+<th id="S4.T5.2.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Gemini 3 Flash</th>
+<th id="S4.T5.2.2.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="S4.T5.2.2.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">84.5</td>
+<td id="S4.T5.2.2.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">51.5</td>
+<td id="S4.T5.2.2.5" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">71.5</td>
+<td id="S4.T5.2.2.6" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">78.5</td></tr>
+<tr id="S4.T5.2.3" class="ltx_tr">
+<th id="S4.T5.2.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Gemini 3 Flash</th>
+<th id="S4.T5.2.3.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="S4.T5.2.3.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">60.9</td>
+<td id="S4.T5.2.3.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">30.5</td>
+<td id="S4.T5.2.3.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">51.0</td>
+<td id="S4.T5.2.3.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">56.0</td></tr>
+<tr id="S4.T5.2.4" class="ltx_tr">
+<th id="S4.T5.2.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">GPT-5.4 mini</th>
+<th id="S4.T5.2.4.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="S4.T5.2.4.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">57.8</td>
+<td id="S4.T5.2.4.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">36.8</td>
+<td id="S4.T5.2.4.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">51.2</td>
+<td id="S4.T5.2.4.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">55.3</td></tr>
+<tr id="S4.T5.2.5" class="ltx_tr">
+<th id="S4.T5.2.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">GPT-5.4 mini</th>
+<th id="S4.T5.2.5.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="S4.T5.2.5.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">37.7</td>
+<td id="S4.T5.2.5.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">22.0</td>
+<td id="S4.T5.2.5.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">32.1</td>
+<td id="S4.T5.2.5.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">34.1</td></tr>
+<tr id="S4.T5.2.6" class="ltx_tr">
+<th id="S4.T5.2.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">Opus 4.6</th>
+<th id="S4.T5.2.6.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="S4.T5.2.6.3" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">65.4</td>
+<td id="S4.T5.2.6.4" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">34.1</td>
+<td id="S4.T5.2.6.5" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">53.8</td>
+<td id="S4.T5.2.6.6" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">59.4</td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 6：Realized diversity of the 2,910 ComponentBench-Full tasks over libraries, templates, difficulty, and the eight controlled scene factors. The 30 external tasks are the markdown-editor tasks, which use the third-party @uiw/react-md-editor because none of the three primary libraries ships a core markdown editor. One additional ad-hoc template variant ( replace_code ) is used by a single OTP-input task. The realized difficulty buckets deviate slightly from the prompted 970/970/970 split because two later-added types (breadcrumb, pagination) were generated by a run that did not enforce the per-type balance quota.</strong> · <a href="https://arxiv.org/html/2608.18307#A1.T6">论文原始位置</a></figcaption><div class="table-wrap"><table id="A1.T6.2" class="ltx_tabular ltx_centering ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr id="A1.T6.2.1" class="ltx_tr">
+<td id="A1.T6.2.1.1" class="ltx_td ltx_align_left ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A1.T6.2.1.1.1" class="ltx_text ltx_font_bold">Dimension</span></td>
+<td id="A1.T6.2.1.2" class="ltx_td ltx_align_left ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A1.T6.2.1.2.1" class="ltx_text ltx_font_bold">Levels (count)</span></td>
+<td id="A1.T6.2.1.3" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A1.T6.2.1.3.1" class="ltx_text ltx_font_bold">Coverage</span></td></tr>
+<tr id="A1.T6.2.2" class="ltx_tr">
+<td id="A1.T6.2.2.1" class="ltx_td ltx_align_left ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Canonical type</td>
+<td id="A1.T6.2.2.2" class="ltx_td ltx_align_left ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">97 types <math id="A1.T6.m1" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math> 30 tasks</td>
+<td id="A1.T6.2.2.3" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">100%</td></tr>
+<tr id="A1.T6.2.3" class="ltx_tr">
+<td id="A1.T6.2.3.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">Family</td>
+<td id="A1.T6.2.3.2" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">14 families (120–300 tasks each)</td>
+<td id="A1.T6.2.3.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">100%</td></tr>
+<tr id="A1.T6.2.4" class="ltx_tr">
+<td id="A1.T6.2.4.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">Library</td>
+<td id="A1.T6.2.4.2" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">antd 1,000 / mui 910 / mantine 970 / external 30</td>
+<td id="A1.T6.2.4.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4</td></tr>
+<tr id="A1.T6.2.5" class="ltx_tr">
+<td id="A1.T6.2.5.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">Task template</td>
+<td id="A1.T6.2.5.2" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">24 templates; most-used <span id="A1.T6.2.5.2.1" class="ltx_text ltx_font_typewriter">match_reference</span> (351),</td>
+<td id="A1.T6.2.5.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">24/24</td></tr>
+<tr id="A1.T6.2.6" class="ltx_tr">
+<td id="A1.T6.2.6.1" class="ltx_td" style="padding-left:4.0pt;padding-right:4.0pt;"></td>
+<td id="A1.T6.2.6.2" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">least-used <span id="A1.T6.2.6.2.1" class="ltx_text ltx_font_typewriter">file_manage</span> (10)</td>
+<td id="A1.T6.2.6.3" class="ltx_td ltx_nopad_r" style="padding-left:4.0pt;padding-right:4.0pt;"></td></tr>
+<tr id="A1.T6.2.7" class="ltx_tr">
+<td id="A1.T6.2.7.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">Difficulty bucket</td>
+<td id="A1.T6.2.7.2" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">easy 972 / mid 985 / hard 953</td>
+<td id="A1.T6.2.7.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3/3</td></tr>
+<tr id="A1.T6.2.8" class="ltx_tr">
+<td id="A1.T6.2.8.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">Difficulty tier</td>
+<td id="A1.T6.2.8.2" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">L0 789 / L1 1,050 / L2 818 / L3 253</td>
+<td id="A1.T6.2.8.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4/4</td></tr>
+<tr id="A1.T6.2.9" class="ltx_tr">
+<td id="A1.T6.2.9.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">Theme</td>
+<td id="A1.T6.2.9.2" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">light 2,600 / dark 310</td>
+<td id="A1.T6.2.9.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">2/2</td></tr>
+<tr id="A1.T6.2.10" class="ltx_tr">
+<td id="A1.T6.2.10.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">Spacing</td>
+<td id="A1.T6.2.10.2" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">comfortable 2,595 / compact 315</td>
+<td id="A1.T6.2.10.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">2/2</td></tr>
+<tr id="A1.T6.2.11" class="ltx_tr">
+<td id="A1.T6.2.11.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">Scale</td>
+<td id="A1.T6.2.11.2" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">default 2,634 / small 272 / large 4</td>
+<td id="A1.T6.2.11.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3/3</td></tr>
+<tr id="A1.T6.2.12" class="ltx_tr">
+<td id="A1.T6.2.12.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">Clutter</td>
+<td id="A1.T6.2.12.2" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">none 1,751 / low 666 / medium 339 / high 154</td>
+<td id="A1.T6.2.12.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4/4</td></tr>
+<tr id="A1.T6.2.13" class="ltx_tr">
+<td id="A1.T6.2.13.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">Instances</td>
+<td id="A1.T6.2.13.2" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">1: 2,266 / 2: 398 / 3: 206 / <math id="A1.T6.m2" class="ltx_Math" alttext="\geq" display="inline" intent=":literal"><semantics><mo>≥</mo><annotation encoding="application/x-tex">\geq</annotation></semantics></math>4: 40</td>
+<td id="A1.T6.2.13.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">full</td></tr>
+<tr id="A1.T6.2.14" class="ltx_tr">
+<td id="A1.T6.2.14.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">Layout</td>
+<td id="A1.T6.2.14.2" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">8 layouts; isolated_card 1,866, form_section 244,</td>
+<td id="A1.T6.2.14.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">8/8</td></tr>
+<tr id="A1.T6.2.15" class="ltx_tr">
+<td id="A1.T6.2.15.1" class="ltx_td" style="padding-left:4.0pt;padding-right:4.0pt;"></td>
+<td id="A1.T6.2.15.2" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">dashboard 210, settings_panel 207, others 383</td>
+<td id="A1.T6.2.15.3" class="ltx_td ltx_nopad_r" style="padding-left:4.0pt;padding-right:4.0pt;"></td></tr>
+<tr id="A1.T6.2.16" class="ltx_tr">
+<td id="A1.T6.2.16.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">Placement</td>
+<td id="A1.T6.2.16.2" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;">center 2,456 / off-center (4 corners) 454</td>
+<td id="A1.T6.2.16.3" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">5/5</td></tr>
+<tr id="A1.T6.2.17" class="ltx_tr">
+<td id="A1.T6.2.17.1" class="ltx_td ltx_align_left ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">Guidance</td>
+<td id="A1.T6.2.17.2" class="ltx_td ltx_align_left ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">text 2,476 / visual 250 / mixed 184</td>
+<td id="A1.T6.2.17.3" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">3/3</td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 7：Full step efficiency on ComponentBench-Full (% of 2,910 tasks). Pass : solved within 20 steps. ≤ H \leq H / ≤ 2 ​ H \leq 2H / ≤ 3 ​ H \leq 3H / ≤ 5 ​ H \leq 5H : solved within 1/2/3/5 × \times the human step count. Bold : best per model. Browser-Use steps are model turns of up to 4 primitive actions (page-load turn excluded), so its efficiency columns are optimistic. † Native pixel-only interface.</strong> · <a href="https://arxiv.org/html/2608.18307#A3.T7">论文原始位置</a></figcaption><div class="table-wrap"><table id="A3.T7.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr id="A3.T7.2.1" class="ltx_tr">
+<th id="A3.T7.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.1.1.1" class="ltx_text ltx_font_bold">Model</span></th>
+<th id="A3.T7.2.1.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.1.2.1" class="ltx_text ltx_font_bold">Mode</span></th>
+<td id="A3.T7.2.1.3" class="ltx_td ltx_align_right ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.1.3.1" class="ltx_text ltx_font_bold">Pass</span></td>
+<td id="A3.T7.2.1.4" class="ltx_td ltx_align_right ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><math id="A3.T7.m1" class="ltx_Math" alttext="\leq H" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo class="ltx_mathvariant_bold" mathvariant="bold">≤</mo><mi>𝑯</mi></mrow><annotation encoding="application/x-tex">\leq H</annotation></semantics></math></td>
+<td id="A3.T7.2.1.5" class="ltx_td ltx_align_right ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><math id="A3.T7.m2" class="ltx_Math" alttext="\leq 2H" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo class="ltx_mathvariant_bold" mathvariant="bold">≤</mo><mrow><mn>𝟐</mn><mo lspace="0em" rspace="0em">​</mo><mi>𝑯</mi></mrow></mrow><annotation encoding="application/x-tex">\leq 2H</annotation></semantics></math></td>
+<td id="A3.T7.2.1.6" class="ltx_td ltx_align_right ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><math id="A3.T7.m3" class="ltx_Math" alttext="\leq 3H" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo class="ltx_mathvariant_bold" mathvariant="bold">≤</mo><mrow><mn>𝟑</mn><mo lspace="0em" rspace="0em">​</mo><mi>𝑯</mi></mrow></mrow><annotation encoding="application/x-tex">\leq 3H</annotation></semantics></math></td>
+<td id="A3.T7.2.1.7" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><math id="A3.T7.m4" class="ltx_Math" alttext="\leq 5H" display="inline" intent=":literal"><semantics><mrow><mphantom></mphantom><mo class="ltx_mathvariant_bold" mathvariant="bold">≤</mo><mrow><mn>𝟓</mn><mo lspace="0em" rspace="0em">​</mo><mi>𝑯</mi></mrow></mrow><annotation encoding="application/x-tex">\leq 5H</annotation></semantics></math></td></tr>
+<tr id="A3.T7.2.2" class="ltx_tr">
+<th id="A3.T7.2.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Gemini 3 Flash</th>
+<th id="A3.T7.2.2.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A3.T7.2.2.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.2.3.1" class="ltx_text ltx_font_bold">95.2</span></td>
+<td id="A3.T7.2.2.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">56.1</td>
+<td id="A3.T7.2.2.5" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">85.3</td>
+<td id="A3.T7.2.2.6" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">89.1</td>
+<td id="A3.T7.2.2.7" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">91.9</td></tr>
+<tr id="A3.T7.2.3" class="ltx_tr">
+<th id="A3.T7.2.3.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.3.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">AX-tree</th>
+<td id="A3.T7.2.3.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">89.6</td>
+<td id="A3.T7.2.3.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.3.4.1" class="ltx_text ltx_font_bold">74.7</span></td>
+<td id="A3.T7.2.3.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">82.5</td>
+<td id="A3.T7.2.3.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">84.7</td>
+<td id="A3.T7.2.3.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">87.4</td></tr>
+<tr id="A3.T7.2.4" class="ltx_tr">
+<th id="A3.T7.2.4.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.4.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">SoM</th>
+<td id="A3.T7.2.4.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">87.1</td>
+<td id="A3.T7.2.4.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">73.2</td>
+<td id="A3.T7.2.4.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">81.4</td>
+<td id="A3.T7.2.4.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">83.6</td>
+<td id="A3.T7.2.4.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">85.2</td></tr>
+<tr id="A3.T7.2.5" class="ltx_tr">
+<th id="A3.T7.2.5.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.5.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A3.T7.2.5.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">85.4</td>
+<td id="A3.T7.2.5.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">65.0</td>
+<td id="A3.T7.2.5.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">77.8</td>
+<td id="A3.T7.2.5.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">80.9</td>
+<td id="A3.T7.2.5.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">83.6</td></tr>
+<tr id="A3.T7.2.6" class="ltx_tr">
+<th id="A3.T7.2.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">GPT-5.4</th>
+<th id="A3.T7.2.6.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A3.T7.2.6.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.6.3.1" class="ltx_text ltx_font_bold">90.4</span></td>
+<td id="A3.T7.2.6.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">40.6</td>
+<td id="A3.T7.2.6.5" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">75.3</td>
+<td id="A3.T7.2.6.6" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">82.9</td>
+<td id="A3.T7.2.6.7" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">86.8</td></tr>
+<tr id="A3.T7.2.7" class="ltx_tr">
+<th id="A3.T7.2.7.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.7.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">AX-tree</th>
+<td id="A3.T7.2.7.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">81.5</td>
+<td id="A3.T7.2.7.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.7.4.1" class="ltx_text ltx_font_bold">56.5</span></td>
+<td id="A3.T7.2.7.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">72.4</td>
+<td id="A3.T7.2.7.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">76.3</td>
+<td id="A3.T7.2.7.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">79.4</td></tr>
+<tr id="A3.T7.2.8" class="ltx_tr">
+<th id="A3.T7.2.8.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.8.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">SoM</th>
+<td id="A3.T7.2.8.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">77.0</td>
+<td id="A3.T7.2.8.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">49.6</td>
+<td id="A3.T7.2.8.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">68.2</td>
+<td id="A3.T7.2.8.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">72.9</td>
+<td id="A3.T7.2.8.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">75.5</td></tr>
+<tr id="A3.T7.2.9" class="ltx_tr">
+<th id="A3.T7.2.9.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.9.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A3.T7.2.9.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">83.8</td>
+<td id="A3.T7.2.9.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">48.1</td>
+<td id="A3.T7.2.9.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">69.5</td>
+<td id="A3.T7.2.9.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">75.7</td>
+<td id="A3.T7.2.9.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">80.0</td></tr>
+<tr id="A3.T7.2.10" class="ltx_tr">
+<th id="A3.T7.2.10.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Gemini 3.1 Flash-Lite</th>
+<th id="A3.T7.2.10.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A3.T7.2.10.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.10.3.1" class="ltx_text ltx_font_bold">87.4</span></td>
+<td id="A3.T7.2.10.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">50.2</td>
+<td id="A3.T7.2.10.5" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">77.3</td>
+<td id="A3.T7.2.10.6" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">81.1</td>
+<td id="A3.T7.2.10.7" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">83.8</td></tr>
+<tr id="A3.T7.2.11" class="ltx_tr">
+<th id="A3.T7.2.11.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.11.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">AX-tree</th>
+<td id="A3.T7.2.11.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">77.7</td>
+<td id="A3.T7.2.11.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.11.4.1" class="ltx_text ltx_font_bold">68.6</span></td>
+<td id="A3.T7.2.11.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">73.9</td>
+<td id="A3.T7.2.11.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">75.3</td>
+<td id="A3.T7.2.11.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">76.5</td></tr>
+<tr id="A3.T7.2.12" class="ltx_tr">
+<th id="A3.T7.2.12.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.12.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">SoM</th>
+<td id="A3.T7.2.12.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">73.5</td>
+<td id="A3.T7.2.12.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">64.8</td>
+<td id="A3.T7.2.12.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">70.9</td>
+<td id="A3.T7.2.12.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">72.2</td>
+<td id="A3.T7.2.12.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">72.8</td></tr>
+<tr id="A3.T7.2.13" class="ltx_tr">
+<th id="A3.T7.2.13.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.13.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A3.T7.2.13.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">63.3</td>
+<td id="A3.T7.2.13.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">47.3</td>
+<td id="A3.T7.2.13.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">56.2</td>
+<td id="A3.T7.2.13.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">59.0</td>
+<td id="A3.T7.2.13.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">61.0</td></tr>
+<tr id="A3.T7.2.14" class="ltx_tr">
+<th id="A3.T7.2.14.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">GPT-5 mini</th>
+<th id="A3.T7.2.14.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A3.T7.2.14.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.14.3.1" class="ltx_text ltx_font_bold">87.0</span></td>
+<td id="A3.T7.2.14.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">51.7</td>
+<td id="A3.T7.2.14.5" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">78.5</td>
+<td id="A3.T7.2.14.6" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">82.1</td>
+<td id="A3.T7.2.14.7" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">84.8</td></tr>
+<tr id="A3.T7.2.15" class="ltx_tr">
+<th id="A3.T7.2.15.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.15.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">AX-tree</th>
+<td id="A3.T7.2.15.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">83.1</td>
+<td id="A3.T7.2.15.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.15.4.1" class="ltx_text ltx_font_bold">66.6</span></td>
+<td id="A3.T7.2.15.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">76.5</td>
+<td id="A3.T7.2.15.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">78.8</td>
+<td id="A3.T7.2.15.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">80.6</td></tr>
+<tr id="A3.T7.2.16" class="ltx_tr">
+<th id="A3.T7.2.16.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.16.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">SoM</th>
+<td id="A3.T7.2.16.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">78.5</td>
+<td id="A3.T7.2.16.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">63.2</td>
+<td id="A3.T7.2.16.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">73.4</td>
+<td id="A3.T7.2.16.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">75.9</td>
+<td id="A3.T7.2.16.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">77.3</td></tr>
+<tr id="A3.T7.2.17" class="ltx_tr">
+<th id="A3.T7.2.17.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.17.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A3.T7.2.17.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">48.9</td>
+<td id="A3.T7.2.17.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">19.0</td>
+<td id="A3.T7.2.17.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">28.2</td>
+<td id="A3.T7.2.17.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">32.7</td>
+<td id="A3.T7.2.17.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">38.7</td></tr>
+<tr id="A3.T7.2.18" class="ltx_tr">
+<th id="A3.T7.2.18.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">GPT-5.4 mini</th>
+<th id="A3.T7.2.18.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A3.T7.2.18.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.18.3.1" class="ltx_text ltx_font_bold">85.8</span></td>
+<td id="A3.T7.2.18.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">51.0</td>
+<td id="A3.T7.2.18.5" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">77.9</td>
+<td id="A3.T7.2.18.6" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">81.6</td>
+<td id="A3.T7.2.18.7" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">83.7</td></tr>
+<tr id="A3.T7.2.19" class="ltx_tr">
+<th id="A3.T7.2.19.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.19.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">AX-tree</th>
+<td id="A3.T7.2.19.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">79.1</td>
+<td id="A3.T7.2.19.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.19.4.1" class="ltx_text ltx_font_bold">69.0</span></td>
+<td id="A3.T7.2.19.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">73.8</td>
+<td id="A3.T7.2.19.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">75.4</td>
+<td id="A3.T7.2.19.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">76.9</td></tr>
+<tr id="A3.T7.2.20" class="ltx_tr">
+<th id="A3.T7.2.20.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.20.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">SoM</th>
+<td id="A3.T7.2.20.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">74.7</td>
+<td id="A3.T7.2.20.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">64.0</td>
+<td id="A3.T7.2.20.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">70.6</td>
+<td id="A3.T7.2.20.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">72.2</td>
+<td id="A3.T7.2.20.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">73.5</td></tr>
+<tr id="A3.T7.2.21" class="ltx_tr">
+<th id="A3.T7.2.21.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.21.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A3.T7.2.21.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">77.1</td>
+<td id="A3.T7.2.21.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">60.2</td>
+<td id="A3.T7.2.21.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">68.9</td>
+<td id="A3.T7.2.21.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">72.1</td>
+<td id="A3.T7.2.21.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">74.9</td></tr>
+<tr id="A3.T7.2.22" class="ltx_tr">
+<th id="A3.T7.2.22.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Qwen3-VL-235B</th>
+<th id="A3.T7.2.22.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A3.T7.2.22.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.22.3.1" class="ltx_text ltx_font_bold">78.8</span></td>
+<td id="A3.T7.2.22.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">39.7</td>
+<td id="A3.T7.2.22.5" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">70.1</td>
+<td id="A3.T7.2.22.6" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">74.2</td>
+<td id="A3.T7.2.22.7" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">77.0</td></tr>
+<tr id="A3.T7.2.23" class="ltx_tr">
+<th id="A3.T7.2.23.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.23.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">AX-tree</th>
+<td id="A3.T7.2.23.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">77.0</td>
+<td id="A3.T7.2.23.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A3.T7.2.23.4.1" class="ltx_text ltx_font_bold">66.1</span></td>
+<td id="A3.T7.2.23.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">73.2</td>
+<td id="A3.T7.2.23.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">74.8</td>
+<td id="A3.T7.2.23.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">75.7</td></tr>
+<tr id="A3.T7.2.24" class="ltx_tr">
+<th id="A3.T7.2.24.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.24.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">SoM</th>
+<td id="A3.T7.2.24.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">54.4</td>
+<td id="A3.T7.2.24.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">41.1</td>
+<td id="A3.T7.2.24.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">48.4</td>
+<td id="A3.T7.2.24.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">51.3</td>
+<td id="A3.T7.2.24.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">53.0</td></tr>
+<tr id="A3.T7.2.25" class="ltx_tr">
+<th id="A3.T7.2.25.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A3.T7.2.25.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A3.T7.2.25.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">50.5</td>
+<td id="A3.T7.2.25.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">29.3</td>
+<td id="A3.T7.2.25.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">38.1</td>
+<td id="A3.T7.2.25.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">42.3</td>
+<td id="A3.T7.2.25.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">46.3</td></tr>
+<tr id="A3.T7.2.26" class="ltx_tr">
+<th id="A3.T7.2.26.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">UI-TARS-1.5-7B<sup id="A3.T7.2.26.1.1" class="ltx_sup">†</sup></th>
+<th id="A3.T7.2.26.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A3.T7.2.26.3" class="ltx_td ltx_align_right ltx_border_bb ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">12.6</td>
+<td id="A3.T7.2.26.4" class="ltx_td ltx_align_right ltx_border_bb ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">9.0</td>
+<td id="A3.T7.2.26.5" class="ltx_td ltx_align_right ltx_border_bb ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">10.5</td>
+<td id="A3.T7.2.26.6" class="ltx_td ltx_align_right ltx_border_bb ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">11.2</td>
+<td id="A3.T7.2.26.7" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_bb ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">11.9</td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 8：Full time efficiency on successful ComponentBench-Full tasks. Human and Agent columns report mean wall-clock duration over the same task set: the tasks each model–mode configuration solved (hence the Human column varies by row). Ratio is agent-to-human mean time.</strong> · <a href="https://arxiv.org/html/2608.18307#A4.T8">论文原始位置</a></figcaption><div class="table-wrap"><table id="A4.T8.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="A4.T8.2.1" class="ltx_tr">
+<th id="A4.T8.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A4.T8.2.1.1.1" class="ltx_text ltx_font_bold">Model</span></th>
+<th id="A4.T8.2.1.2" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A4.T8.2.1.2.1" class="ltx_text ltx_font_bold">Mode</span></th>
+<th id="A4.T8.2.1.3" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A4.T8.2.1.3.1" class="ltx_text ltx_font_bold">Human</span></th>
+<th id="A4.T8.2.1.4" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A4.T8.2.1.4.1" class="ltx_text ltx_font_bold">Agent</span></th>
+<th id="A4.T8.2.1.5" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A4.T8.2.1.5.1" class="ltx_text ltx_font_bold">Ratio</span></th>
+<th id="A4.T8.2.1.6" class="ltx_td ltx_nopad_r ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A4.T8.2.1.6.1" class="ltx_text ltx_font_bold">Med. Agent</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="A4.T8.2.2" class="ltx_tr">
+<th id="A4.T8.2.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Gemini 3 Flash</th>
+<th id="A4.T8.2.2.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">AX-tree</th>
+<td id="A4.T8.2.2.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">4.5s</td>
+<td id="A4.T8.2.2.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">21.5s</td>
+<td id="A4.T8.2.2.5" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">4.7<math id="A4.T8.m1" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.2.6" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">13.5s</td></tr>
+<tr id="A4.T8.2.3" class="ltx_tr">
+<th id="A4.T8.2.3.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.3.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">SoM</th>
+<td id="A4.T8.2.3.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.6s</td>
+<td id="A4.T8.2.3.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">22.0s</td>
+<td id="A4.T8.2.3.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.8<math id="A4.T8.m2" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.3.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">14.4s</td></tr>
+<tr id="A4.T8.2.4" class="ltx_tr">
+<th id="A4.T8.2.4.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.4.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A4.T8.2.4.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.3s</td>
+<td id="A4.T8.2.4.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">27.6s</td>
+<td id="A4.T8.2.4.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">6.4<math id="A4.T8.m3" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.4.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">17.1s</td></tr>
+<tr id="A4.T8.2.5" class="ltx_tr">
+<th id="A4.T8.2.5.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.5.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A4.T8.2.5.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.6s</td>
+<td id="A4.T8.2.5.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">32.6s</td>
+<td id="A4.T8.2.5.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">7.1<math id="A4.T8.m4" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.5.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">21.2s</td></tr>
+<tr id="A4.T8.2.6" class="ltx_tr">
+<th id="A4.T8.2.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Gemini 3.1 Flash-Lite</th>
+<th id="A4.T8.2.6.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">AX-tree</th>
+<td id="A4.T8.2.6.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.1s</td>
+<td id="A4.T8.2.6.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">14.5s</td>
+<td id="A4.T8.2.6.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.6<math id="A4.T8.m5" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.6.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">11.2s</td></tr>
+<tr id="A4.T8.2.7" class="ltx_tr">
+<th id="A4.T8.2.7.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.7.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">SoM</th>
+<td id="A4.T8.2.7.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.8s</td>
+<td id="A4.T8.2.7.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">14.4s</td>
+<td id="A4.T8.2.7.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.8<math id="A4.T8.m6" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.7.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">11.6s</td></tr>
+<tr id="A4.T8.2.8" class="ltx_tr">
+<th id="A4.T8.2.8.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.8.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A4.T8.2.8.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.1s</td>
+<td id="A4.T8.2.8.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">15.8s</td>
+<td id="A4.T8.2.8.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">5.1<math id="A4.T8.m7" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.8.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">11.8s</td></tr>
+<tr id="A4.T8.2.9" class="ltx_tr">
+<th id="A4.T8.2.9.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.9.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A4.T8.2.9.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.5s</td>
+<td id="A4.T8.2.9.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">23.1s</td>
+<td id="A4.T8.2.9.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">5.1<math id="A4.T8.m8" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.9.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">17.7s</td></tr>
+<tr id="A4.T8.2.10" class="ltx_tr">
+<th id="A4.T8.2.10.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">GPT-5.4</th>
+<th id="A4.T8.2.10.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">AX-tree</th>
+<td id="A4.T8.2.10.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.0s</td>
+<td id="A4.T8.2.10.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">31.9s</td>
+<td id="A4.T8.2.10.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">7.9<math id="A4.T8.m9" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.10.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">19.2s</td></tr>
+<tr id="A4.T8.2.11" class="ltx_tr">
+<th id="A4.T8.2.11.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.11.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">SoM</th>
+<td id="A4.T8.2.11.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.7s</td>
+<td id="A4.T8.2.11.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">35.0s</td>
+<td id="A4.T8.2.11.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">9.4<math id="A4.T8.m10" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.11.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">22.3s</td></tr>
+<tr id="A4.T8.2.12" class="ltx_tr">
+<th id="A4.T8.2.12.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.12.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A4.T8.2.12.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.2s</td>
+<td id="A4.T8.2.12.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">23.0s</td>
+<td id="A4.T8.2.12.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">5.5<math id="A4.T8.m11" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.12.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">14.2s</td></tr>
+<tr id="A4.T8.2.13" class="ltx_tr">
+<th id="A4.T8.2.13.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.13.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A4.T8.2.13.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.6s</td>
+<td id="A4.T8.2.13.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">36.2s</td>
+<td id="A4.T8.2.13.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">7.8<math id="A4.T8.m12" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.13.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">24.3s</td></tr>
+<tr id="A4.T8.2.14" class="ltx_tr">
+<th id="A4.T8.2.14.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">GPT-5 mini</th>
+<th id="A4.T8.2.14.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">AX-tree</th>
+<td id="A4.T8.2.14.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.5s</td>
+<td id="A4.T8.2.14.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">32.1s</td>
+<td id="A4.T8.2.14.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">7.2<math id="A4.T8.m13" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.14.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">18.9s</td></tr>
+<tr id="A4.T8.2.15" class="ltx_tr">
+<th id="A4.T8.2.15.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.15.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">SoM</th>
+<td id="A4.T8.2.15.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.3s</td>
+<td id="A4.T8.2.15.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">32.7s</td>
+<td id="A4.T8.2.15.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">7.7<math id="A4.T8.m14" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.15.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">19.9s</td></tr>
+<tr id="A4.T8.2.16" class="ltx_tr">
+<th id="A4.T8.2.16.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.16.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A4.T8.2.16.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.3s</td>
+<td id="A4.T8.2.16.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">71.8s</td>
+<td id="A4.T8.2.16.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">21.5<math id="A4.T8.m15" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.16.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">41.4s</td></tr>
+<tr id="A4.T8.2.17" class="ltx_tr">
+<th id="A4.T8.2.17.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.17.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A4.T8.2.17.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.6s</td>
+<td id="A4.T8.2.17.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">36.3s</td>
+<td id="A4.T8.2.17.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">8.0<math id="A4.T8.m16" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.17.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">24.2s</td></tr>
+<tr id="A4.T8.2.18" class="ltx_tr">
+<th id="A4.T8.2.18.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">GPT-5.4 mini</th>
+<th id="A4.T8.2.18.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">AX-tree</th>
+<td id="A4.T8.2.18.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.9s</td>
+<td id="A4.T8.2.18.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">14.7s</td>
+<td id="A4.T8.2.18.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.8<math id="A4.T8.m17" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.18.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">11.4s</td></tr>
+<tr id="A4.T8.2.19" class="ltx_tr">
+<th id="A4.T8.2.19.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.19.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">SoM</th>
+<td id="A4.T8.2.19.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.9s</td>
+<td id="A4.T8.2.19.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">14.2s</td>
+<td id="A4.T8.2.19.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.7<math id="A4.T8.m18" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.19.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">11.4s</td></tr>
+<tr id="A4.T8.2.20" class="ltx_tr">
+<th id="A4.T8.2.20.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.20.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A4.T8.2.20.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.6s</td>
+<td id="A4.T8.2.20.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">14.2s</td>
+<td id="A4.T8.2.20.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.9<math id="A4.T8.m19" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.20.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">10.7s</td></tr>
+<tr id="A4.T8.2.21" class="ltx_tr">
+<th id="A4.T8.2.21.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.21.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A4.T8.2.21.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.2s</td>
+<td id="A4.T8.2.21.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">17.6s</td>
+<td id="A4.T8.2.21.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.2<math id="A4.T8.m20" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.21.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">13.7s</td></tr>
+<tr id="A4.T8.2.22" class="ltx_tr">
+<th id="A4.T8.2.22.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Qwen3-VL-235B</th>
+<th id="A4.T8.2.22.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">AX-tree</th>
+<td id="A4.T8.2.22.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.9s</td>
+<td id="A4.T8.2.22.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">21.6s</td>
+<td id="A4.T8.2.22.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">5.6<math id="A4.T8.m21" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.22.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">13.8s</td></tr>
+<tr id="A4.T8.2.23" class="ltx_tr">
+<th id="A4.T8.2.23.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.23.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">SoM</th>
+<td id="A4.T8.2.23.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">3.4s</td>
+<td id="A4.T8.2.23.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">24.4s</td>
+<td id="A4.T8.2.23.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">7.1<math id="A4.T8.m22" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.23.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">14.4s</td></tr>
+<tr id="A4.T8.2.24" class="ltx_tr">
+<th id="A4.T8.2.24.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.24.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A4.T8.2.24.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">2.9s</td>
+<td id="A4.T8.2.24.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">26.8s</td>
+<td id="A4.T8.2.24.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">9.3<math id="A4.T8.m23" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.24.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">16.0s</td></tr>
+<tr id="A4.T8.2.25" class="ltx_tr">
+<th id="A4.T8.2.25.1" class="ltx_td ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;"></th>
+<th id="A4.T8.2.25.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A4.T8.2.25.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">4.1s</td>
+<td id="A4.T8.2.25.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">45.0s</td>
+<td id="A4.T8.2.25.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">10.9<math id="A4.T8.m24" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.25.6" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">28.1s</td></tr>
+<tr id="A4.T8.2.26" class="ltx_tr">
+<th id="A4.T8.2.26.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">UI-TARS-1.5-7B</th>
+<th id="A4.T8.2.26.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">Native Pixel</th>
+<td id="A4.T8.2.26.3" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">2.4s</td>
+<td id="A4.T8.2.26.4" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">15.5s</td>
+<td id="A4.T8.2.26.5" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">6.5<math id="A4.T8.m25" class="ltx_Math" alttext="\times" display="inline" intent=":literal"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math></td>
+<td id="A4.T8.2.26.6" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">10.1s</td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 9：SoM–Pixel delta on ComponentBench-Full (%). The SoM advantage is model-dependent, ranging from + + 29.6% to − - 6.8%.</strong> · <a href="https://arxiv.org/html/2608.18307#A5.T9">论文原始位置</a></figcaption><div class="table-wrap"><table id="A5.T9.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="A5.T9.2.1" class="ltx_tr">
+<th id="A5.T9.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt"><span id="A5.T9.2.1.1.1" class="ltx_text ltx_font_bold">Model</span></th>
+<th id="A5.T9.2.1.2" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt"><span id="A5.T9.2.1.2.1" class="ltx_text ltx_font_bold">SoM</span></th>
+<th id="A5.T9.2.1.3" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt"><span id="A5.T9.2.1.3.1" class="ltx_text ltx_font_bold">Pixel</span></th>
+<th id="A5.T9.2.1.4" class="ltx_td ltx_nopad_r ltx_align_right ltx_th ltx_th_column ltx_border_tt"><math id="A5.T9.m1" class="ltx_Math" alttext="\Delta" display="inline" intent=":literal"><semantics><mi mathvariant="normal">Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math><span id="A5.T9.2.1.4.1" class="ltx_text ltx_font_bold"> (SoM<math id="A5.T9.m2" class="ltx_Math" alttext="-" display="inline" intent=":literal"><semantics><mo>−</mo><annotation encoding="application/x-tex">-</annotation></semantics></math>Pixel)</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="A5.T9.2.2" class="ltx_tr">
+<th id="A5.T9.2.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t">GPT-5 mini</th>
+<td id="A5.T9.2.2.2" class="ltx_td ltx_align_right ltx_border_t">78.5</td>
+<td id="A5.T9.2.2.3" class="ltx_td ltx_align_right ltx_border_t">48.9</td>
+<td id="A5.T9.2.2.4" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t"><math id="A5.T9.m3" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>29.6</td></tr>
+<tr id="A5.T9.2.3" class="ltx_tr">
+<th id="A5.T9.2.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Gemini 3.1 Flash-Lite</th>
+<td id="A5.T9.2.3.2" class="ltx_td ltx_align_right">73.5</td>
+<td id="A5.T9.2.3.3" class="ltx_td ltx_align_right">63.3</td>
+<td id="A5.T9.2.3.4" class="ltx_td ltx_nopad_r ltx_align_right"><math id="A5.T9.m4" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>10.2</td></tr>
+<tr id="A5.T9.2.4" class="ltx_tr">
+<th id="A5.T9.2.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Qwen3-VL-235B</th>
+<td id="A5.T9.2.4.2" class="ltx_td ltx_align_right">54.4</td>
+<td id="A5.T9.2.4.3" class="ltx_td ltx_align_right">50.5</td>
+<td id="A5.T9.2.4.4" class="ltx_td ltx_nopad_r ltx_align_right"><math id="A5.T9.m5" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>3.9</td></tr>
+<tr id="A5.T9.2.5" class="ltx_tr">
+<th id="A5.T9.2.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">Gemini 3 Flash</th>
+<td id="A5.T9.2.5.2" class="ltx_td ltx_align_right">87.1</td>
+<td id="A5.T9.2.5.3" class="ltx_td ltx_align_right">85.4</td>
+<td id="A5.T9.2.5.4" class="ltx_td ltx_nopad_r ltx_align_right"><math id="A5.T9.m6" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>1.7</td></tr>
+<tr id="A5.T9.2.6" class="ltx_tr">
+<th id="A5.T9.2.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">GPT-5.4 mini</th>
+<td id="A5.T9.2.6.2" class="ltx_td ltx_align_right">74.7</td>
+<td id="A5.T9.2.6.3" class="ltx_td ltx_align_right">77.1</td>
+<td id="A5.T9.2.6.4" class="ltx_td ltx_nopad_r ltx_align_right"><math id="A5.T9.m7" class="ltx_Math" alttext="-" display="inline" intent=":literal"><semantics><mo>−</mo><annotation encoding="application/x-tex">-</annotation></semantics></math>2.4</td></tr>
+<tr id="A5.T9.2.7" class="ltx_tr">
+<th id="A5.T9.2.7.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb">GPT-5.4</th>
+<td id="A5.T9.2.7.2" class="ltx_td ltx_align_right ltx_border_bb">77.0</td>
+<td id="A5.T9.2.7.3" class="ltx_td ltx_align_right ltx_border_bb">83.8</td>
+<td id="A5.T9.2.7.4" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_bb"><math id="A5.T9.m8" class="ltx_Math" alttext="-" display="inline" intent=":literal"><semantics><mo>−</mo><annotation encoding="application/x-tex">-</annotation></semantics></math>6.8</td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 10：Browser-Use advantage over mean non-Browser-Use pass rate (%). The advantage is largest for weaker models.</strong> · <a href="https://arxiv.org/html/2608.18307#A5.T10">论文原始位置</a></figcaption><div class="table-wrap"><table id="A5.T10.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="A5.T10.2.1" class="ltx_tr">
+<th id="A5.T10.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt"><span id="A5.T10.2.1.1.1" class="ltx_text ltx_font_bold">Model</span></th>
+<th id="A5.T10.2.1.2" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt"><span id="A5.T10.2.1.2.1" class="ltx_text ltx_font_bold">Browser-Use</span></th>
+<th id="A5.T10.2.1.3" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt"><span id="A5.T10.2.1.3.1" class="ltx_text ltx_font_bold">Mean(AX,SoM,Pix)</span></th>
+<th id="A5.T10.2.1.4" class="ltx_td ltx_nopad_r ltx_align_right ltx_th ltx_th_column ltx_border_tt"><math id="A5.T10.m1" class="ltx_Math" alttext="\Delta" display="inline" intent=":literal"><semantics><mi mathvariant="normal">Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="A5.T10.2.2" class="ltx_tr">
+<td id="A5.T10.2.2.1" class="ltx_td ltx_align_left ltx_border_t">Qwen3-VL-235B</td>
+<td id="A5.T10.2.2.2" class="ltx_td ltx_align_right ltx_border_t">78.8</td>
+<td id="A5.T10.2.2.3" class="ltx_td ltx_align_right ltx_border_t">60.6</td>
+<td id="A5.T10.2.2.4" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t"><math id="A5.T10.m2" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>18.2</td></tr>
+<tr id="A5.T10.2.3" class="ltx_tr">
+<td id="A5.T10.2.3.1" class="ltx_td ltx_align_left">GPT-5 mini</td>
+<td id="A5.T10.2.3.2" class="ltx_td ltx_align_right">87.0</td>
+<td id="A5.T10.2.3.3" class="ltx_td ltx_align_right">70.2</td>
+<td id="A5.T10.2.3.4" class="ltx_td ltx_nopad_r ltx_align_right"><math id="A5.T10.m3" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>16.8</td></tr>
+<tr id="A5.T10.2.4" class="ltx_tr">
+<td id="A5.T10.2.4.1" class="ltx_td ltx_align_left">Gemini 3.1 Flash-Lite</td>
+<td id="A5.T10.2.4.2" class="ltx_td ltx_align_right">87.4</td>
+<td id="A5.T10.2.4.3" class="ltx_td ltx_align_right">71.5</td>
+<td id="A5.T10.2.4.4" class="ltx_td ltx_nopad_r ltx_align_right"><math id="A5.T10.m4" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>15.9</td></tr>
+<tr id="A5.T10.2.5" class="ltx_tr">
+<td id="A5.T10.2.5.1" class="ltx_td ltx_align_left">GPT-5.4</td>
+<td id="A5.T10.2.5.2" class="ltx_td ltx_align_right">90.4</td>
+<td id="A5.T10.2.5.3" class="ltx_td ltx_align_right">80.8</td>
+<td id="A5.T10.2.5.4" class="ltx_td ltx_nopad_r ltx_align_right"><math id="A5.T10.m5" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>9.6</td></tr>
+<tr id="A5.T10.2.6" class="ltx_tr">
+<td id="A5.T10.2.6.1" class="ltx_td ltx_align_left">GPT-5.4 mini</td>
+<td id="A5.T10.2.6.2" class="ltx_td ltx_align_right">85.8</td>
+<td id="A5.T10.2.6.3" class="ltx_td ltx_align_right">77.0</td>
+<td id="A5.T10.2.6.4" class="ltx_td ltx_nopad_r ltx_align_right"><math id="A5.T10.m6" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>8.8</td></tr>
+<tr id="A5.T10.2.7" class="ltx_tr">
+<td id="A5.T10.2.7.1" class="ltx_td ltx_align_left ltx_border_bb">Gemini 3 Flash</td>
+<td id="A5.T10.2.7.2" class="ltx_td ltx_align_right ltx_border_bb">95.2</td>
+<td id="A5.T10.2.7.3" class="ltx_td ltx_align_right ltx_border_bb">87.4</td>
+<td id="A5.T10.2.7.4" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_bb"><math id="A5.T10.m7" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>7.8</td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-20-assets/componentbench-figure-3.png" alt="图 3：Pass rate (%) by component family, model, and observation mode on ComponentBench-Full. Families sorted by difficulty (hardest at top). The heatmap reveals where mode ordering inverts: Drag/Drop favors Pixel over Browser-Use; Advanced Editors strongly favor Browser-Use."><figcaption><strong>图 3：Pass rate (%) by component family, model, and observation mode on ComponentBench-Full. Families sorted by difficulty (hardest at top). The heatmap reveals where mode ordering inverts: Drag/Drop favors Pixel over Browser-Use; Advanced Editors strongly favor Browser-Use.</strong> · <a href="https://arxiv.org/html/2608.18307#A6.F3">论文原始位置</a></figcaption></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-20-assets/componentbench-figure-4.svg" alt="图 4：Human-agent difficulty inversion. Each point is one canonical type. The lower-left quadrant contains components trivial for humans ( ≤ \leq 2 steps) but hard for agents ( &amp;lt; &amp;lt; 60% pass)."><figcaption><strong>图 4：Human-agent difficulty inversion. Each point is one canonical type. The lower-left quadrant contains components trivial for humans ( ≤ \leq 2 steps) but hard for agents ( &amp;lt; &amp;lt; 60% pass).</strong> · <a href="https://arxiv.org/html/2608.18307#A6.F4">论文原始位置</a></figcaption></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-20-assets/componentbench-figure-5.svg" alt="图 5：Clutter and spacing disproportionately hurt Pixel mode, widening the AX-tree–Pixel gap from 10% to 24% (clutter) and 12% to 21% (spacing)."><figcaption><strong>图 5：Clutter and spacing disproportionately hurt Pixel mode, widening the AX-tree–Pixel gap from 10% to 24% (clutter) and 12% to 21% (spacing).</strong> · <a href="https://arxiv.org/html/2608.18307#A6.F5">论文原始位置</a></figcaption></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-20-assets/componentbench-figure-6.svg" alt="图 6：GPT-5.4 mini SoM vs. Pixel task outcomes by component family. For each family, tasks are classified as both-pass, SoM-only, Pixel-only, or both-fail. Drag/Drop and Continuous Precision families show the strongest Pixel-over-SoM advantage."><figcaption><strong>图 6：GPT-5.4 mini SoM vs. Pixel task outcomes by component family. For each family, tasks are classified as both-pass, SoM-only, Pixel-only, or both-fail. Drag/Drop and Continuous Precision families show the strongest Pixel-over-SoM advantage.</strong> · <a href="https://arxiv.org/html/2608.18307#A6.F6">论文原始位置</a></figcaption></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-20-assets/componentbench-figure-7.svg" alt="图 7：Browser-Use (CUA) advantage by component family, averaged across the six models evaluated in all four regimes. The advantage ranges from + + 29% (Advanced Editors) to − - 24% (Drag/Drop), confirming that DOM-level tool access is not uniformly beneficial."><figcaption><strong>图 7：Browser-Use (CUA) advantage by component family, averaged across the six models evaluated in all four regimes. The advantage ranges from + + 29% (Advanced Editors) to − - 24% (Drag/Drop), confirming that DOM-level tool access is not uniformly beneficial.</strong> · <a href="https://arxiv.org/html/2608.18307#A6.F7">论文原始位置</a></figcaption></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-20-assets/componentbench-figure-8.svg" alt="图 8：Pass rate by task template and observation mode. Templates requiring spatial control (set_range, drag_operation) or complex editing (editor_operation) are substantially harder than simple activation or disclosure tasks."><figcaption><strong>图 8：Pass rate by task template and observation mode. Templates requiring spatial control (set_range, drag_operation) or complex editing (editor_operation) are substantially harder than simple activation or disclosure tasks.</strong> · <a href="https://arxiv.org/html/2608.18307#A6.F8">论文原始位置</a></figcaption></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-20-assets/componentbench-figure-9.svg" alt="图 9：Efficiency frontier: pass rate vs. mean time per successful task. Each point is one model-mode combination among the six models evaluated in the shared and Browser-Use regimes; the native UI-TARS configuration is omitted. The human reference point (100% pass, 4.8s) is shown for comparison."><figcaption><strong>图 9：Efficiency frontier: pass rate vs. mean time per successful task. Each point is one model-mode combination among the six models evaluated in the shared and Browser-Use regimes; the native UI-TARS configuration is omitted. The human reference point (100% pass, 4.8s) is shown for comparison.</strong> · <a href="https://arxiv.org/html/2608.18307#A6.F9">论文原始位置</a></figcaption></figure>
+<figure><img loading="lazy" src="morning-brief-2026-08-20-assets/componentbench-figure-10.svg" alt="图 10：Marginal tasks solved per additional step (Gemini 3 Flash). Most diagnostic value is concentrated in the first 5 steps; steps 6–20 contribute diminishing returns."><figcaption><strong>图 10：Marginal tasks solved per additional step (Gemini 3 Flash). Most diagnostic value is concentrated in the first 5 steps; steps 6–20 contribute diminishing returns.</strong> · <a href="https://arxiv.org/html/2608.18307#A6.F10">论文原始位置</a></figcaption></figure>
+<figure><figcaption><strong>表 11：Pearson correlation between intended difficulty axes and agent failure rate. Precision requirement is the most predictive axis overall; all axes predict Pixel failure more strongly than Browser-Use failure.</strong> · <a href="https://arxiv.org/html/2608.18307#A7.T11">论文原始位置</a></figcaption><div class="table-wrap"><table id="A7.T11.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="A7.T11.2.1" class="ltx_tr">
+<th id="A7.T11.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="A7.T11.2.1.1.1" class="ltx_text ltx_font_bold">Difficulty axis</span></th>
+<th id="A7.T11.2.1.2" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="A7.T11.2.1.2.1" class="ltx_text ltx_font_bold">Overall</span></th>
+<th id="A7.T11.2.1.3" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="A7.T11.2.1.3.1" class="ltx_text ltx_font_bold">AX-tree</span></th>
+<th id="A7.T11.2.1.4" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="A7.T11.2.1.4.1" class="ltx_text ltx_font_bold">Pixel</span></th>
+<th id="A7.T11.2.1.5" class="ltx_td ltx_nopad_r ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="A7.T11.2.1.5.1" class="ltx_text ltx_font_bold">Browser-Use</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="A7.T11.2.2" class="ltx_tr">
+<th id="A7.T11.2.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">Precision requirement</th>
+<td id="A7.T11.2.2.2" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m1" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.44</td>
+<td id="A7.T11.2.2.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m2" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.30</td>
+<td id="A7.T11.2.2.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m3" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.41</td>
+<td id="A7.T11.2.2.5" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m4" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.33</td></tr>
+<tr id="A7.T11.2.3" class="ltx_tr">
+<th id="A7.T11.2.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.0pt;padding-right:3.0pt;">Target acquisition</th>
+<td id="A7.T11.2.3.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m5" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.31</td>
+<td id="A7.T11.2.3.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m6" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.17</td>
+<td id="A7.T11.2.3.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m7" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.36</td>
+<td id="A7.T11.2.3.5" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m8" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.19</td></tr>
+<tr id="A7.T11.2.4" class="ltx_tr">
+<th id="A7.T11.2.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.0pt;padding-right:3.0pt;">Density / choice interf.</th>
+<td id="A7.T11.2.4.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m9" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.23</td>
+<td id="A7.T11.2.4.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m10" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.10</td>
+<td id="A7.T11.2.4.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m11" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.31</td>
+<td id="A7.T11.2.4.5" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m12" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.12</td></tr>
+<tr id="A7.T11.2.5" class="ltx_tr">
+<th id="A7.T11.2.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.0pt;padding-right:3.0pt;">Feedback dynamics</th>
+<td id="A7.T11.2.5.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m13" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.23</td>
+<td id="A7.T11.2.5.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m14" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.12</td>
+<td id="A7.T11.2.5.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m15" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.29</td>
+<td id="A7.T11.2.5.5" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m16" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.13</td></tr>
+<tr id="A7.T11.2.6" class="ltx_tr">
+<th id="A7.T11.2.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.0pt;padding-right:3.0pt;">Depth / layering</th>
+<td id="A7.T11.2.6.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m17" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.20</td>
+<td id="A7.T11.2.6.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m18" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.11</td>
+<td id="A7.T11.2.6.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m19" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.29</td>
+<td id="A7.T11.2.6.5" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m20" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.05</td></tr>
+<tr id="A7.T11.2.7" class="ltx_tr">
+<th id="A7.T11.2.7.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.0pt;padding-right:3.0pt;">Semantic observability</th>
+<td id="A7.T11.2.7.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m21" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.13</td>
+<td id="A7.T11.2.7.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m22" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.08</td>
+<td id="A7.T11.2.7.4" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m23" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.17</td>
+<td id="A7.T11.2.7.5" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m24" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.05</td></tr>
+<tr id="A7.T11.2.8" class="ltx_tr">
+<th id="A7.T11.2.8.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">Disambiguation load</th>
+<td id="A7.T11.2.8.2" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m25" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.09</td>
+<td id="A7.T11.2.8.3" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m26" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.04</td>
+<td id="A7.T11.2.8.4" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m27" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.15</td>
+<td id="A7.T11.2.8.5" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="A7.T11.m28" class="ltx_Math" alttext="+" display="inline" intent=":literal"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math>0.02</td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 12：Pass rate by intended difficulty tier and observation mode, averaged across all six models (excluding UI-TARS). The AX-tree–Pixel gap widens monotonically from 4.6% (L0) to 21.9% (L3).</strong> · <a href="https://arxiv.org/html/2608.18307#A7.T12">论文原始位置</a></figcaption><div class="table-wrap"><table id="A7.T12.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="A7.T12.2.1" class="ltx_tr">
+<th id="A7.T12.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt"><span id="A7.T12.2.1.1.1" class="ltx_text ltx_font_bold">Tier</span></th>
+<th id="A7.T12.2.1.2" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt"><span id="A7.T12.2.1.2.1" class="ltx_text ltx_font_bold">AX-tree</span></th>
+<th id="A7.T12.2.1.3" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt"><span id="A7.T12.2.1.3.1" class="ltx_text ltx_font_bold">SoM</span></th>
+<th id="A7.T12.2.1.4" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt"><span id="A7.T12.2.1.4.1" class="ltx_text ltx_font_bold">Pixel</span></th>
+<th id="A7.T12.2.1.5" class="ltx_td ltx_nopad_r ltx_align_right ltx_th ltx_th_column ltx_border_tt"><span id="A7.T12.2.1.5.1" class="ltx_text ltx_font_bold">Browser-Use</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="A7.T12.2.2" class="ltx_tr">
+<th id="A7.T12.2.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t">L0 (easy)</th>
+<td id="A7.T12.2.2.2" class="ltx_td ltx_align_right ltx_border_t">87.7%</td>
+<td id="A7.T12.2.2.3" class="ltx_td ltx_align_right ltx_border_t">85.9%</td>
+<td id="A7.T12.2.2.4" class="ltx_td ltx_align_right ltx_border_t">83.0%</td>
+<td id="A7.T12.2.2.5" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t">92.8%</td></tr>
+<tr id="A7.T12.2.3" class="ltx_tr">
+<th id="A7.T12.2.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">L1 (medium)</th>
+<td id="A7.T12.2.3.2" class="ltx_td ltx_align_right">82.0%</td>
+<td id="A7.T12.2.3.3" class="ltx_td ltx_align_right">75.1%</td>
+<td id="A7.T12.2.3.4" class="ltx_td ltx_align_right">69.8%</td>
+<td id="A7.T12.2.3.5" class="ltx_td ltx_nopad_r ltx_align_right">87.6%</td></tr>
+<tr id="A7.T12.2.4" class="ltx_tr">
+<th id="A7.T12.2.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row">L2 (hard)</th>
+<td id="A7.T12.2.4.2" class="ltx_td ltx_align_right">77.4%</td>
+<td id="A7.T12.2.4.3" class="ltx_td ltx_align_right">66.4%</td>
+<td id="A7.T12.2.4.4" class="ltx_td ltx_align_right">57.6%</td>
+<td id="A7.T12.2.4.5" class="ltx_td ltx_nopad_r ltx_align_right">84.3%</td></tr>
+<tr id="A7.T12.2.5" class="ltx_tr">
+<th id="A7.T12.2.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb">L3 (hard+)</th>
+<td id="A7.T12.2.5.2" class="ltx_td ltx_align_right ltx_border_bb">71.4%</td>
+<td id="A7.T12.2.5.3" class="ltx_td ltx_align_right ltx_border_bb">59.4%</td>
+<td id="A7.T12.2.5.4" class="ltx_td ltx_align_right ltx_border_bb">49.5%</td>
+<td id="A7.T12.2.5.5" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_bb">80.4%</td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 13：The 15 hardest canonical types by mean agent pass rate (averaged across all models and modes, excluding UI-TARS). Human steps column shows the mean normalized human reference steps. Components with ≤ \leq 2 human steps but &amp;lt; &amp;lt; 60% agent pass rate represent the human-agent difficulty inversion.</strong> · <a href="https://arxiv.org/html/2608.18307#A9.T13">论文原始位置</a></figcaption><div class="table-wrap"><table id="A9.T13.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="A9.T13.2.1" class="ltx_tr">
+<th id="A9.T13.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="A9.T13.2.1.1.1" class="ltx_text ltx_font_bold">Component type</span></th>
+<th id="A9.T13.2.1.2" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="A9.T13.2.1.2.1" class="ltx_text ltx_font_bold">Agent %</span></th>
+<th id="A9.T13.2.1.3" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="A9.T13.2.1.3.1" class="ltx_text ltx_font_bold">Human steps</span></th>
+<th id="A9.T13.2.1.4" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="A9.T13.2.1.4.1" class="ltx_text ltx_font_bold">Family</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="A9.T13.2.2" class="ltx_tr">
+<td id="A9.T13.2.2.1" class="ltx_td ltx_align_left ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">resizable_columns</td>
+<td id="A9.T13.2.2.2" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">24.4</td>
+<td id="A9.T13.2.2.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">1.7</td>
+<td id="A9.T13.2.2.4" class="ltx_td ltx_align_left ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;">Drag/Drop</td></tr>
+<tr id="A9.T13.2.3" class="ltx_tr">
+<td id="A9.T13.2.3.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">window_splitter</td>
+<td id="A9.T13.2.3.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">38.3</td>
+<td id="A9.T13.2.3.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">1.3</td>
+<td id="A9.T13.2.3.4" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Disclosure</td></tr>
+<tr id="A9.T13.2.4" class="ltx_tr">
+<td id="A9.T13.2.4.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">slider_range</td>
+<td id="A9.T13.2.4.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">39.9</td>
+<td id="A9.T13.2.4.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">1.9</td>
+<td id="A9.T13.2.4.4" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Continuous</td></tr>
+<tr id="A9.T13.2.5" class="ltx_tr">
+<td id="A9.T13.2.5.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">rich_text_editor</td>
+<td id="A9.T13.2.5.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">40.7</td>
+<td id="A9.T13.2.5.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">4.9</td>
+<td id="A9.T13.2.5.4" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Adv. Editors</td></tr>
+<tr id="A9.T13.2.6" class="ltx_tr">
+<td id="A9.T13.2.6.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">meter</td>
+<td id="A9.T13.2.6.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">46.5</td>
+<td id="A9.T13.2.6.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">1.6</td>
+<td id="A9.T13.2.6.4" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Continuous</td></tr>
+<tr id="A9.T13.2.7" class="ltx_tr">
+<td id="A9.T13.2.7.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">datetime_picker_range</td>
+<td id="A9.T13.2.7.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">48.9</td>
+<td id="A9.T13.2.7.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">10.5</td>
+<td id="A9.T13.2.7.4" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Date/Time</td></tr>
+<tr id="A9.T13.2.8" class="ltx_tr">
+<td id="A9.T13.2.8.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">alpha_slider</td>
+<td id="A9.T13.2.8.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">50.0</td>
+<td id="A9.T13.2.8.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">1.5</td>
+<td id="A9.T13.2.8.4" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Continuous</td></tr>
+<tr id="A9.T13.2.9" class="ltx_tr">
+<td id="A9.T13.2.9.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">kanban_board_drag_drop</td>
+<td id="A9.T13.2.9.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">52.1</td>
+<td id="A9.T13.2.9.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">1.4</td>
+<td id="A9.T13.2.9.4" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Drag/Drop</td></tr>
+<tr id="A9.T13.2.10" class="ltx_tr">
+<td id="A9.T13.2.10.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">select_native</td>
+<td id="A9.T13.2.10.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">53.1</td>
+<td id="A9.T13.2.10.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">1.4</td>
+<td id="A9.T13.2.10.4" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">List Selection</td></tr>
+<tr id="A9.T13.2.11" class="ltx_tr">
+<td id="A9.T13.2.11.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">feed_infinite_scroll</td>
+<td id="A9.T13.2.11.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">53.3</td>
+<td id="A9.T13.2.11.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">4.3</td>
+<td id="A9.T13.2.11.4" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Disclosure</td></tr>
+<tr id="A9.T13.2.12" class="ltx_tr">
+<td id="A9.T13.2.12.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">color_picker_2d</td>
+<td id="A9.T13.2.12.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">55.7</td>
+<td id="A9.T13.2.12.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">2.9</td>
+<td id="A9.T13.2.12.4" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Continuous</td></tr>
+<tr id="A9.T13.2.13" class="ltx_tr">
+<td id="A9.T13.2.13.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">virtual_list</td>
+<td id="A9.T13.2.13.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">56.7</td>
+<td id="A9.T13.2.13.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">3.3</td>
+<td id="A9.T13.2.13.4" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Structured Data</td></tr>
+<tr id="A9.T13.2.14" class="ltx_tr">
+<td id="A9.T13.2.14.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">drag_drop_between_lists</td>
+<td id="A9.T13.2.14.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">56.9</td>
+<td id="A9.T13.2.14.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">1.7</td>
+<td id="A9.T13.2.14.4" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Drag/Drop</td></tr>
+<tr id="A9.T13.2.15" class="ltx_tr">
+<td id="A9.T13.2.15.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">drag_drop_sortable_list</td>
+<td id="A9.T13.2.15.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">57.5</td>
+<td id="A9.T13.2.15.3" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;">1.8</td>
+<td id="A9.T13.2.15.4" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;">Drag/Drop</td></tr>
+<tr id="A9.T13.2.16" class="ltx_tr">
+<td id="A9.T13.2.16.1" class="ltx_td ltx_align_left ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">code_editor</td>
+<td id="A9.T13.2.16.2" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">59.0</td>
+<td id="A9.T13.2.16.3" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">3.9</td>
+<td id="A9.T13.2.16.4" class="ltx_td ltx_align_left ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;">Adv. Editors</td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 14：Agreement between the original reference annotator and two additional annotators (A1, A2) on the 278-task validation subset (action tasks only). Human-to-human variation is small at the aggregate level.</strong> · <a href="https://arxiv.org/html/2608.18307#A11.T14">论文原始位置</a></figcaption><div class="table-wrap"><table id="A11.T14.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="A11.T14.2.1" class="ltx_tr">
+<th id="A11.T14.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt"><span id="A11.T14.2.1.1.1" class="ltx_text ltx_font_bold">Metric</span></th>
+<th id="A11.T14.2.1.2" class="ltx_td ltx_th ltx_th_column ltx_border_tt"></th>
+<th id="A11.T14.2.1.3" class="ltx_td ltx_nopad_r ltx_align_right ltx_th ltx_th_column ltx_border_tt"><span id="A11.T14.2.1.3.1" class="ltx_text ltx_font_bold">Value</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="A11.T14.2.2" class="ltx_tr">
+<td id="A11.T14.2.2.1" class="ltx_td ltx_align_left ltx_border_t">Mean normalized steps (Original / A1 / A2)</td>
+<td id="A11.T14.2.2.2" class="ltx_td ltx_border_t"></td>
+<td id="A11.T14.2.2.3" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t">2.92 / 2.90 / 3.14</td></tr>
+<tr id="A11.T14.2.3" class="ltx_tr">
+<td id="A11.T14.2.3.1" class="ltx_td ltx_align_left">Median normalized steps (all annotators)</td>
+<td id="A11.T14.2.3.2" class="ltx_td"></td>
+<td id="A11.T14.2.3.3" class="ltx_td ltx_nopad_r ltx_align_right">2</td></tr>
+<tr id="A11.T14.2.4" class="ltx_tr">
+<td id="A11.T14.2.4.1" class="ltx_td ltx_align_left">Pairwise step-count Pearson correlation</td>
+<td id="A11.T14.2.4.2" class="ltx_td"></td>
+<td id="A11.T14.2.4.3" class="ltx_td ltx_nopad_r ltx_align_right">0.79–0.94</td></tr>
+<tr id="A11.T14.2.5" class="ltx_tr">
+<td id="A11.T14.2.5.1" class="ltx_td ltx_align_left">Exact step-count agreement</td>
+<td id="A11.T14.2.5.2" class="ltx_td"></td>
+<td id="A11.T14.2.5.3" class="ltx_td ltx_nopad_r ltx_align_right">71%–84%</td></tr>
+<tr id="A11.T14.2.6" class="ltx_tr">
+<td id="A11.T14.2.6.1" class="ltx_td ltx_align_left ltx_border_bb">Mean absolute step-count difference</td>
+<td id="A11.T14.2.6.2" class="ltx_td ltx_border_bb"></td>
+<td id="A11.T14.2.6.3" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_bb">0.32–0.64</td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 15：Repeated-run stability on the 278-task subset (2 runs per cell, same harness commit and endpoint). Max dev: run-to-run pass-rate deviation (%). Agree%: task-level exact pass/fail agreement. Jaccard: overlap of passed-task sets. CI: bootstrap 95% interval on the mean pass rate.</strong> · <a href="https://arxiv.org/html/2608.18307#A12.T15">论文原始位置</a></figcaption><div class="table-wrap"><table id="A12.T15.2" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="A12.T15.2.1" class="ltx_tr">
+<th id="A12.T15.2.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A12.T15.2.1.1.1" class="ltx_text ltx_font_bold">Model</span></th>
+<th id="A12.T15.2.1.2" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A12.T15.2.1.2.1" class="ltx_text ltx_font_bold">Mode</span></th>
+<th id="A12.T15.2.1.3" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A12.T15.2.1.3.1" class="ltx_text ltx_font_bold">Mean pass (%)</span></th>
+<th id="A12.T15.2.1.4" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A12.T15.2.1.4.1" class="ltx_text ltx_font_bold">Max dev</span></th>
+<th id="A12.T15.2.1.5" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A12.T15.2.1.5.1" class="ltx_text ltx_font_bold">Agree%</span></th>
+<th id="A12.T15.2.1.6" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A12.T15.2.1.6.1" class="ltx_text ltx_font_bold">Jaccard</span></th>
+<th id="A12.T15.2.1.7" class="ltx_td ltx_nopad_r ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="A12.T15.2.1.7.1" class="ltx_text ltx_font_bold">95% CI</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="A12.T15.2.2" class="ltx_tr">
+<th id="A12.T15.2.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Gemini 3 Flash</th>
+<th id="A12.T15.2.2.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A12.T15.2.2.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">95.1</td>
+<td id="A12.T15.2.2.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">1.1</td>
+<td id="A12.T15.2.2.5" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">97.5</td>
+<td id="A12.T15.2.2.6" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">0.974</td>
+<td id="A12.T15.2.2.7" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;">[92.6, 97.3]</td></tr>
+<tr id="A12.T15.2.3" class="ltx_tr">
+<th id="A12.T15.2.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Gemini 3 Flash</th>
+<th id="A12.T15.2.3.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A12.T15.2.3.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">87.4</td>
+<td id="A12.T15.2.3.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">0.7</td>
+<td id="A12.T15.2.3.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">90.6</td>
+<td id="A12.T15.2.3.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">0.898</td>
+<td id="A12.T15.2.3.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">[84.0, 90.8]</td></tr>
+<tr id="A12.T15.2.4" class="ltx_tr">
+<th id="A12.T15.2.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Gemini 3.1 Flash-Lite</th>
+<th id="A12.T15.2.4.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A12.T15.2.4.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">87.1</td>
+<td id="A12.T15.2.4.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">0.7</td>
+<td id="A12.T15.2.4.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">94.2</td>
+<td id="A12.T15.2.4.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">0.936</td>
+<td id="A12.T15.2.4.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">[83.3, 90.6]</td></tr>
+<tr id="A12.T15.2.5" class="ltx_tr">
+<th id="A12.T15.2.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Gemini 3.1 Flash-Lite</th>
+<th id="A12.T15.2.5.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A12.T15.2.5.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">77.0</td>
+<td id="A12.T15.2.5.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">0.0</td>
+<td id="A12.T15.2.5.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">86.3</td>
+<td id="A12.T15.2.5.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">0.837</td>
+<td id="A12.T15.2.5.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">[72.5, 81.3]</td></tr>
+<tr id="A12.T15.2.6" class="ltx_tr">
+<th id="A12.T15.2.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">GPT-5 mini</th>
+<th id="A12.T15.2.6.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A12.T15.2.6.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">86.7</td>
+<td id="A12.T15.2.6.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">1.4</td>
+<td id="A12.T15.2.6.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">92.1</td>
+<td id="A12.T15.2.6.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">0.913</td>
+<td id="A12.T15.2.6.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">[82.9, 90.3]</td></tr>
+<tr id="A12.T15.2.7" class="ltx_tr">
+<th id="A12.T15.2.7.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">GPT-5 mini</th>
+<th id="A12.T15.2.7.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A12.T15.2.7.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">52.5</td>
+<td id="A12.T15.2.7.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">0.0</td>
+<td id="A12.T15.2.7.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">82.7</td>
+<td id="A12.T15.2.7.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">0.718</td>
+<td id="A12.T15.2.7.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">[47.1, 57.9]</td></tr>
+<tr id="A12.T15.2.8" class="ltx_tr">
+<th id="A12.T15.2.8.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">GPT-5.4 mini</th>
+<th id="A12.T15.2.8.2" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:4.0pt;padding-right:4.0pt;">Browser-Use</th>
+<td id="A12.T15.2.8.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">85.4</td>
+<td id="A12.T15.2.8.4" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">1.1</td>
+<td id="A12.T15.2.8.5" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">91.0</td>
+<td id="A12.T15.2.8.6" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">0.900</td>
+<td id="A12.T15.2.8.7" class="ltx_td ltx_nopad_r ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;">[81.5, 89.0]</td></tr>
+<tr id="A12.T15.2.9" class="ltx_tr">
+<th id="A12.T15.2.9.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">GPT-5.4 mini</th>
+<th id="A12.T15.2.9.2" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">Pixel</th>
+<td id="A12.T15.2.9.3" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">80.6</td>
+<td id="A12.T15.2.9.4" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">1.4</td>
+<td id="A12.T15.2.9.5" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">87.8</td>
+<td id="A12.T15.2.9.6" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">0.859</td>
+<td id="A12.T15.2.9.7" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;">[76.3, 84.7]</td></tr>
+</tbody>
+</table>
+</div></figure></div></details>
+</section>
+
+<section><h2>GitHub 三日增长项目</h2><div class="callout warn"><strong>窗口说明：</strong>使用 2026-08-17 14:02 CST 本地快照与 2026-08-20 10:04 CST 当前值，实际约 68 小时，是最接近 72 小时的可验证同仓库窗口。未插值、未外推，因此仍标为三日代理而非严格 72 小时。</div><div class="table-wrap"><table><thead><tr><th>#</th><th>仓库</th><th>用途</th><th>当前 Star</th><th>约 68h 新增</th><th>语言</th><th>最近推送</th></tr></thead><tbody><tr><td>1</td><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>持久记忆、工具与自扩展个人 Agent</td><td>233,083</td><td class="up">+1,438</td><td>Python</td><td>2026-08-20 01:58:55 UTC</td></tr><tr><td>2</td><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>跨 Coding Agent 的技能框架</td><td>274,311</td><td class="up">+1,417</td><td>Shell</td><td>2026-08-19 17:33:23 UTC</td></tr><tr><td>3</td><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>面向 Agent 的网页抓取与上下文 API</td><td>169,667</td><td class="up">+1,382</td><td>TypeScript</td><td>2026-08-20 01:31:42 UTC</td></tr><tr><td>4</td><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>开源终端 Coding Agent</td><td>199,255</td><td class="up">+1,046</td><td>TypeScript</td><td>2026-08-20 01:56:41 UTC</td></tr><tr><td>5</td><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td>Anthropic Agent Skills 示例</td><td>170,496</td><td class="up">+688</td><td>Python</td><td>2026-08-18 16:02:06 UTC</td></tr></tbody></table></div></section>
+
+<section><h2>GitHub 高 Star 未总结项目</h2><p class="method">扫描全部历史日报得到 200 个仓库链接集合并全部排除；从 GitHub <code>topic:ai-agent</code> 高 Star 候选中选择与 Agent Skill、业务产品、coding harness、网页 harness 和隔离运行时直接相关的最高价值项目。排除了通用清单、投资 Agent 与低相关项目；该搜索不是全站穷举。</p><div class="table-wrap"><table><thead><tr><th>#</th><th>仓库</th><th>Star</th><th>核心能力 / 为什么值得关注</th><th>语言 / License</th><th>最近推送</th><th>最新 Release</th></tr></thead><tbody><tr><td>1</td><td><a href="https://github.com/op7418/guizang-ppt-skill">op7418/guizang-ppt-skill</a></td><td>24,427</td><td>生成精致 HTML 幻灯片的 Agent Skill；值得拆解版式规则、低功耗运行时和产物验收。</td><td>HTML / AGPL-3.0</td><td>2026-08-07 03:58:08 UTC</td><td>未发现 GitHub Release</td></tr><tr><td>2</td><td><a href="https://github.com/teableio/teable">teableio/teable</a></td><td>21,672</td><td>AI Spreadsheet 业务产品；适合观察 Agent 如何作用于结构化数据、权限和协作。</td><td>TypeScript / NOASSERTION</td><td>2026-08-19 15:02:35 UTC</td><td><a href="https://github.com/teableio/teable/releases/tag/release.2026-08-19T02-25-59Z.2698">release.2026-08-19T02-25-59Z.2698</a> · 2026-08-19 04:05:41 UTC</td></tr><tr><td>3</td><td><a href="https://github.com/1jehuang/jcode">1jehuang/jcode</a></td><td>18,022</td><td>强调低内存的 Coding Agent harness；v0.78.1 本窗口发布，值得测资源效率。</td><td>Rust / MIT</td><td>2026-08-19 06:30:28 UTC</td><td><a href="https://github.com/1jehuang/jcode/releases/tag/v0.78.1">v0.78.1</a> · 2026-08-19 07:14:28 UTC</td></tr><tr><td>4</td><td><a href="https://github.com/browser-use/browser-harness">browser-use/browser-harness</a></td><td>16,813</td><td>面向网页任务的自修复 harness；应重点验证所谓自修复是否降低回归而非隐藏失败。</td><td>Python / MIT</td><td>2026-08-20 00:59:20 UTC</td><td><a href="https://github.com/browser-use/browser-harness/releases/tag/v0.1.9">v0.1.9</a> · 2026-08-16 17:50:53 UTC</td></tr><tr><td>5</td><td><a href="https://github.com/e2b-dev/E2B">e2b-dev/E2B</a></td><td>13,476</td><td>企业 Agent 隔离运行时；2.42.0 本窗口发布，直接关联权限、环境复现和执行安全。</td><td>Python / Apache-2.0</td><td>2026-08-20 01:52:11 UTC</td><td><a href="https://github.com/e2b-dev/E2B/releases/tag/e2b%402.42.0">e2b@2.42.0</a> · 2026-08-19 23:27:02 UTC</td></tr></tbody></table></div></section>
+
+<section><h2>持续追踪项目</h2><p class="method">Star 只代表关注度；状态同时参考推送、Release、许可、部署难度、采用证据和真实可复用风险。</p><div class="table-wrap"><table><thead><tr><th>项目</th><th>状态</th><th>最新 Release</th><th>最近推送</th><th>License</th><th>真实可复用性 / 风险</th></tr></thead><tbody><tr><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td><span class="state">加速</span></td><td><a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.8.18">v2026.8.18</a> · 2026-08-18 07:26:46 UTC</td><td>2026-08-20 01:58:55 UTC</td><td>MIT</td><td>约 68 小时增长第一且持续推送；审计记忆、工具安装和自修改权限。</td></tr><tr><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td><span class="state">加速 / 恢复活跃</span></td><td><a href="https://github.com/obra/superpowers/releases/tag/v6.3.0">v6.3.0</a> · 2026-08-12 16:58:30 UTC</td><td>2026-08-19 17:33:23 UTC</td><td>MIT</td><td>Star 高增且 8 月 19 日恢复推送；逐项验证 Skill，避免方法论污染任务。</td></tr><tr><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td><span class="state">加速</span></td><td><a href="https://github.com/firecrawl/firecrawl/releases/tag/v2.11.0">v2.11.0</a> · 2026-06-19 15:09:30 UTC</td><td>2026-08-20 01:31:42 UTC</td><td>AGPL-3.0</td><td>数据接入需求持续；评估抓取合规、网页漂移、成本和 AGPL 商用边界。</td></tr><tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td><span class="state">持续增长</span></td><td><a href="https://github.com/anomalyco/opencode/releases/tag/v1.18.18">v1.18.18</a> · 2026-08-13 01:15:04 UTC</td><td>2026-08-20 01:56:41 UTC</td><td>MIT</td><td>当日持续推送；横评必须冻结模型、工具、审批和压缩策略。</td></tr><tr><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td><span class="state">增长 / 代码降温</span></td><td>未发现 GitHub Release</td><td>2026-08-18 16:02:06 UTC</td><td>未标注</td><td>Star 增长但最后推送停在 8 月 18 日，且无明确 SPDX 许可。</td></tr><tr><td><a href="https://github.com/openai/codex">openai/codex</a></td><td><span class="state">发布关键版本</span></td><td><a href="https://github.com/openai/codex/releases/tag/rust-v0.148.0">rust-v0.148.0</a> · 2026-08-18 22:26:03 UTC</td><td>2026-08-20 01:59:13 UTC</td><td>Apache-2.0</td><td>rust-v0.148.0 于 8 月 18 日发布；重点验证沙箱与可恢复轨迹。</td></tr><tr><td><a href="https://github.com/browser-use/browser-use">browser-use/browser-use</a></td><td><span class="state">稳定</span></td><td><a href="https://github.com/browser-use/browser-use/releases/tag/0.13.8">0.13.8</a> · 2026-08-16 18:48:54 UTC</td><td>2026-08-19 17:35:21 UTC</td><td>MIT</td><td>持续维护；用动态页面、状态变化和不可逆操作验证可靠性。</td></tr><tr><td><a href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a></td><td><span class="state">降温</span></td><td><a href="https://github.com/bytedance/deer-flow/releases/tag/v2.0.0">v2.0.0</a> · 2026-06-25 16:23:22 UTC</td><td>2026-08-20 00:57:10 UTC</td><td>MIT</td><td>有推送但增长较慢；关注长程成本、子 Agent 归因和记忆漂移。</td></tr><tr><td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td><td><span class="state">发布关键版本</span></td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.237">v2.1.237</a> · 2026-08-20 00:54:41 UTC</td><td>2026-08-20 00:54:41 UTC</td><td>未标注</td><td>v2.1.237 在本窗口发布；用固定长任务验证权限、上下文压缩和失败恢复。</td></tr><tr><td><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td><span class="state">持续增长</span></td><td><a href="https://github.com/farion1231/cc-switch/releases/tag/v3.20.0">v3.20.0</a> · 2026-08-18 09:11:14 UTC</td><td>2026-08-19 05:49:45 UTC</td><td>MIT</td><td>多 Agent 配置聚合有需求，但凭证与配置成为集中风险。</td></tr></tbody></table></div></section>
+
+<section class="feedback"><h2>个人反馈</h2><p>记录这份简报是否带来决策增量、希望继续追踪什么。内容仅保存在当前浏览器本地，不上传服务器。</p><textarea id="feedback" placeholder="例如：用组件级回归评估目标 SaaS；试用 E2B 2.42.0。"></textarea><br><button id="save-feedback" type="button">保存反馈</button><span id="feedback-status" class="feedback-status"></span></section>
+
+<section><h2>来源与方法</h2><ul>
+<li><strong>检索时间：</strong>2026-08-20 10:01–10:25 CST。仅使用 arXiv 官方列表/HTML、官方 HTTP 页面与 sitemap、GitHub REST API 和本地静态解析；未调用浏览器、GUI 或浏览器自动化。</li>
+<li><strong>论文：</strong><a href="https://arxiv.org/list/cs.AI/recent">arXiv cs.AI recent</a>、<a href="https://arxiv.org/abs/2608.18307">摘要</a>、<a href="https://arxiv.org/html/2608.18307">HTML</a>、<a href="https://github.com/TianchenGuan/ComponentBench">代码</a>、<a href="https://huggingface.co/datasets/TianchenGuan/ComponentBench">数据</a>。arXiv API 一度返回 429，改用官方 recent 页面完成核验。</li>
+<li><strong>OpenAI：</strong><a href="https://openai.com/news/">新闻索引</a>、<a href="https://academy.openai.com/public/events">Academy 活动/视频入口</a>。直播页面未暴露稳定独立回放链接，因此不转述未核验内容。</li>
+<li><strong>Anthropic：</strong><a href="https://www.anthropic.com/news">Newsroom</a>、<a href="https://www.anthropic.com/sitemap.xml">sitemap</a>。批量 lastmod 变化不作为发布证据。</li>
+<li><strong>其他头部实验室：</strong><a href="https://deepmind.google/blog/">Google DeepMind News</a>、<a href="https://ai.google.dev/gemini-api/docs/changelog">Gemini API Release Notes</a>；未发现本窗口重要增量。</li>
+<li><strong>人物观点：</strong>未获得身份、原帖、时间和上下文均可核验的新增 X 帖，未采用搜索摘要。</li>
+<li><strong>GitHub：</strong><a href="https://api.github.com/">REST API</a>，当前快照约 10:04 CST；68 小时增长基线来自 8 月 17 日本地日报。Star 不是质量或采用率，Release 仅按官方 GitHub Release API 判定。</li>
+<li><strong>本次新增至已总结集合：</strong><code>op7418/guizang-ppt-skill</code>、<code>teableio/teable</code>、<code>1jehuang/jcode</code>、<code>browser-use/browser-harness</code>、<code>e2b-dev/E2B</code>。</li>
+</ul><h3>GitHub Star 快照（全部候选与持续追踪）</h3><div class="table-wrap"><table><thead><tr><th>仓库</th><th>Star</th><th>语言</th><th>License</th><th>最近推送</th></tr></thead><tbody><tr><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>233,083</td><td>Python</td><td>MIT</td><td>2026-08-20 01:58:55 UTC</td></tr><tr><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>274,311</td><td>Shell</td><td>MIT</td><td>2026-08-19 17:33:23 UTC</td></tr><tr><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>169,667</td><td>TypeScript</td><td>AGPL-3.0</td><td>2026-08-20 01:31:42 UTC</td></tr><tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>199,255</td><td>TypeScript</td><td>MIT</td><td>2026-08-20 01:56:41 UTC</td></tr><tr><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td>170,496</td><td>Python</td><td>未标注</td><td>2026-08-18 16:02:06 UTC</td></tr><tr><td><a href="https://github.com/openai/codex">openai/codex</a></td><td>106,883</td><td>Rust</td><td>Apache-2.0</td><td>2026-08-20 01:59:13 UTC</td></tr><tr><td><a href="https://github.com/browser-use/browser-use">browser-use/browser-use</a></td><td>109,783</td><td>Python</td><td>MIT</td><td>2026-08-19 17:35:21 UTC</td></tr><tr><td><a href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a></td><td>80,347</td><td>Python</td><td>MIT</td><td>2026-08-20 00:57:10 UTC</td></tr><tr><td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td><td>142,030</td><td>Python</td><td>未标注</td><td>2026-08-20 00:54:41 UTC</td></tr><tr><td><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td>128,312</td><td>Rust</td><td>MIT</td><td>2026-08-19 05:49:45 UTC</td></tr><tr><td><a href="https://github.com/op7418/guizang-ppt-skill">op7418/guizang-ppt-skill</a></td><td>24,427</td><td>HTML</td><td>AGPL-3.0</td><td>2026-08-07 03:58:08 UTC</td></tr><tr><td><a href="https://github.com/teableio/teable">teableio/teable</a></td><td>21,672</td><td>TypeScript</td><td>NOASSERTION</td><td>2026-08-19 15:02:35 UTC</td></tr><tr><td><a href="https://github.com/1jehuang/jcode">1jehuang/jcode</a></td><td>18,022</td><td>Rust</td><td>MIT</td><td>2026-08-19 06:30:28 UTC</td></tr><tr><td><a href="https://github.com/browser-use/browser-harness">browser-use/browser-harness</a></td><td>16,813</td><td>Python</td><td>MIT</td><td>2026-08-20 00:59:20 UTC</td></tr><tr><td><a href="https://github.com/e2b-dev/E2B">e2b-dev/E2B</a></td><td>13,476</td><td>Python</td><td>Apache-2.0</td><td>2026-08-20 01:52:11 UTC</td></tr></tbody></table></div></section>
+</main><script>(()=>{const key="agent-brief-feedback-2026-08-20",box=document.getElementById("feedback"),status=document.getElementById("feedback-status");box.value=localStorage.getItem(key)||"";document.getElementById("save-feedback").addEventListener("click",()=>{localStorage.setItem(key,box.value);status.textContent="已保存到本地";setTimeout(()=>status.textContent="",2000)})})()</script></body></html>

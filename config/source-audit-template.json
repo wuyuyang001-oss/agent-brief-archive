@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "date": "YYYY-MM-DD",
+  "generatedAt": "ISO-8601 timestamp",
+  "cutoffAt": "ISO-8601 timestamp",
+  "scanArtifact": "tmp/brief-source-scan-YYYY-MM-DD.json",
+  "candidatePoolSize": 0,
+  "editorialException": "",
+  "scans": [
+    {
+      "sourceId": "openai-news",
+      "status": "reviewed",
+      "checkedAt": "ISO-8601 timestamp",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": ""
+    }
+  ],
+  "signals": [
+    {
+      "id": "signal-1",
+      "title": "",
+      "factType": "verified-fact",
+      "confidence": "high",
+      "sourceUrls": [],
+      "primarySourceUrls": [],
+      "originalUrl": "",
+      "difference": "",
+      "productImpact": "",
+      "action": "",
+      "limitations": "",
+      "speaker": "",
+      "episodeTitle": "",
+      "episodeUrl": "",
+      "publishedAt": "",
+      "verificationMode": "",
+      "timestamps": [],
+      "attribution": ""
+    }
+  ]
+}

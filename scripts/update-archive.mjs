@@ -8,6 +8,7 @@ const workspaceDir = path.resolve(archiveDir, "..", "..");
 const briefsDir = path.join(archiveDir, "briefs");
 const overviewsDir = path.join(archiveDir, "overviews");
 const dataDir = path.join(archiveDir, "data");
+const sourceAuditsDir = path.join(dataDir, "sources");
 
 let generatedAt = "";
 
@@ -297,6 +298,22 @@ function extractBriefMetadata(fileName, html) {
     hasWeekly ? "weekly 周报" : "",
     isTest ? "test 测试稿" : "formal 正式简报",
   ].join(" ");
+  const sourceAuditFile = fileName.replace(/\.html$/i, "-sources.json");
+  const sourceAuditPath = path.join(workspaceDir, sourceAuditFile);
+  let sourceCoverage = null;
+  if (fs.existsSync(sourceAuditPath)) {
+    try {
+      const audit = JSON.parse(fs.readFileSync(sourceAuditPath, "utf8"));
+      const sourceIds = new Set((audit.scans || []).map(item => item.sourceId).filter(Boolean));
+      sourceCoverage = {
+        sources: sourceIds.size,
+        candidates: Number(audit.candidatePoolSize || 0),
+        signals: Array.isArray(audit.signals) ? audit.signals.length : 0,
+      };
+    } catch {
+      sourceCoverage = null;
+    }
+  }
 
   const declaredOfficialStatus = decodeEntities(
     (html.match(/data-official-status=["']([^"']+)["']/i) || [])[1] || "",
@@ -328,6 +345,8 @@ function extractBriefMetadata(fileName, html) {
     tableCount,
     linkCount,
     officialStatus: declaredOfficialStatus || (officialNoUpdate ? "未发现新发布内容" : `${officialLinks || "若干"} 条官方链接/动态`),
+    sourceAudit: sourceCoverage ? `data/sources/${sourceAuditFile}` : "",
+    sourceCoverage,
     tags,
   };
 }
@@ -898,7 +917,7 @@ ${cards}
           <header class="reader-head">
             <button id="closeReader" class="close-reader" type="button" aria-label="关闭阅读器">×</button>
             <div class="reader-heading">
-              <div class="reader-kicker"><time id="readerDate" datetime="${escapeHtml(latest.date)}">${escapeHtml(latest.date)}</time><span id="readerTrack">${escapeHtml(latest.primaryTrack)}</span><span id="readerEvidence">${escapeHtml(latest.evidence)}</span></div>
+              <div class="reader-kicker"><time id="readerDate" datetime="${escapeHtml(latest.date)}">${escapeHtml(latest.date)}</time><span id="readerTrack">${escapeHtml(latest.primaryTrack)}</span><span id="readerEvidence">${escapeHtml(latest.evidence)}</span><span id="readerSources"${latest.sourceCoverage ? "" : " hidden"}>${latest.sourceCoverage ? `${latest.sourceCoverage.sources} 个来源 · ${latest.sourceCoverage.signals} 条信号` : ""}</span></div>
               <strong id="readerTitle">${escapeHtml(latest.title)}</strong>
               <div class="reader-insights">
                 <p class="reader-insight"><span>核心结论</span><b id="readerValue">${escapeHtml(latest.summary)}</b></p>
@@ -906,6 +925,7 @@ ${cards}
               </div>
             </div>
             <div class="reader-actions">
+              <a id="sourceAuditOpen" class="compact-link" href="${escapeHtml(latest.sourceAudit || "#")}" target="_blank" rel="noopener"${latest.sourceAudit ? "" : " hidden"}>证据链</a>
               <a id="overviewOpen" class="compact-link" href="${escapeHtml(latest.overview)}" target="_blank" rel="noopener">概览图</a>
               <a id="readerOpen" class="compact-link primary" href="${escapeHtml(latest.source)}" target="_blank" rel="noopener">独立阅读</a>
             </div>
@@ -976,7 +996,9 @@ ${cards}
     const readerEvidence = document.getElementById("readerEvidence");
     const readerValue = document.getElementById("readerValue");
     const readerHeaderAction = document.getElementById("readerHeaderAction");
+    const readerSources = document.getElementById("readerSources");
     const readerOpen = document.getElementById("readerOpen");
+    const sourceAuditOpen = document.getElementById("sourceAuditOpen");
     const overviewOpen = document.getElementById("overviewOpen");
     const overviewPreview = document.getElementById("overviewPreview");
     const overviewPreviewLink = document.getElementById("overviewPreviewLink");
@@ -1049,6 +1071,10 @@ ${cards}
       readerEvidence.textContent = brief.evidence;
       readerValue.textContent = brief.summary;
       readerHeaderAction.textContent = brief.action;
+      readerSources.hidden = !brief.sourceCoverage;
+      readerSources.textContent = brief.sourceCoverage ? brief.sourceCoverage.sources + " 个来源 · " + brief.sourceCoverage.signals + " 条信号" : "";
+      sourceAuditOpen.hidden = !brief.sourceAudit;
+      sourceAuditOpen.href = brief.sourceAudit || "#";
       readerOpen.href = brief.source;
       overviewOpen.href = brief.overview;
       overviewPreview.src = brief.overview;
@@ -1282,6 +1308,7 @@ function main() {
   ensureDir(briefsDir);
   ensureDir(overviewsDir);
   ensureDir(dataDir);
+  ensureDir(sourceAuditsDir);
 
   const sourceFiles = fs.readdirSync(workspaceDir)
     .filter(file => /^morning-brief.*\.html$/i.test(file))
@@ -1298,6 +1325,9 @@ function main() {
     const dest = path.join(briefsDir, fileName);
     const html = fs.readFileSync(src, "utf8");
     fs.writeFileSync(dest, optimizeBriefHtml(html));
+    const sourceAuditFile = fileName.replace(/\.html$/i, "-sources.json");
+    const sourceAuditSrc = path.join(workspaceDir, sourceAuditFile);
+    if (fs.existsSync(sourceAuditSrc)) fs.copyFileSync(sourceAuditSrc, path.join(sourceAuditsDir, sourceAuditFile));
 
     const assetDirs = new Set();
     for (const match of html.matchAll(/(?:src|href)=["']([^"']*assets[^"']*)["']/gi)) {

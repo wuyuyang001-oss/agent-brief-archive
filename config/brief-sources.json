@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-20",
+  "policy": {
+    "minimumScannedSources": 30,
+    "minimumReachableSources": 20,
+    "minimumFamilies": 7,
+    "minimumDistinctDomains": 18,
+    "minimumCandidateItems": 20,
+    "minimumPublishedSignals": 8,
+    "hardMinimumPublishedSignals": 5,
+    "minimumPrimaryBackedSignals": 4,
+    "communityRole": "discovery-and-sentiment-only",
+    "podcastRole": "attributed-long-form-context",
+    "primarySourceRule": "Verified capability, release, benchmark, numerical, and company claims require a primary source. Community posts and independent analysis cannot be the sole factual source."
+  },
+  "families": [
+    "official-lab",
+    "research-eval",
+    "developer-ecosystem",
+    "community",
+    "podcast",
+    "independent-analysis",
+    "standards-security"
+  ],
+  "sources": [
+    {"id":"openai-news","name":"OpenAI News","family":"official-lab","authority":"primary","priority":"daily","url":"https://openai.com/news/","use":"Official releases, research, system cards, and product announcements"},
+    {"id":"openai-research","name":"OpenAI Research","family":"official-lab","authority":"primary","priority":"daily","url":"https://openai.com/research/","use":"Official research and capability evidence"},
+    {"id":"openai-changelog","name":"OpenAI API Changelog","family":"official-lab","authority":"primary","priority":"daily","url":"https://platform.openai.com/docs/changelog","use":"Developer and API changes"},
+    {"id":"anthropic-news","name":"Anthropic News","family":"official-lab","authority":"primary","priority":"daily","url":"https://www.anthropic.com/news","use":"Official releases and company research"},
+    {"id":"anthropic-research","name":"Anthropic Research","family":"official-lab","authority":"primary","priority":"daily","url":"https://www.anthropic.com/research","use":"Official model, interpretability, safety, and agent research"},
+    {"id":"anthropic-release-notes","name":"Anthropic API Release Notes","family":"official-lab","authority":"primary","priority":"daily","url":"https://docs.anthropic.com/en/release-notes/overview","use":"Developer and API changes"},
+    {"id":"deepmind-blog","name":"Google DeepMind Blog","family":"official-lab","authority":"primary","priority":"daily","url":"https://deepmind.google/discover/blog/","use":"Official model and research updates"},
+    {"id":"gemini-changelog","name":"Gemini API Release Notes","family":"official-lab","authority":"primary","priority":"daily","url":"https://ai.google.dev/gemini-api/docs/changelog","use":"Developer-facing Gemini changes"},
+    {"id":"meta-ai-blog","name":"Meta AI Blog","family":"official-lab","authority":"primary","priority":"daily","url":"https://ai.meta.com/blog/","use":"Official open model and research updates"},
+    {"id":"mistral-news","name":"Mistral News","family":"official-lab","authority":"primary","priority":"daily","url":"https://mistral.ai/news","use":"Official model and product releases"},
+    {"id":"xai-news","name":"xAI News","family":"official-lab","authority":"primary","priority":"daily","url":"https://x.ai/news","use":"Official model and product releases"},
+    {"id":"microsoft-research","name":"Microsoft Research Blog","family":"official-lab","authority":"primary","priority":"daily","url":"https://www.microsoft.com/en-us/research/blog/","use":"Research and agent-system updates"},
+
+    {"id":"arxiv-cs-ai","name":"arXiv cs.AI Recent","family":"research-eval","authority":"primary","priority":"daily","url":"https://export.arxiv.org/api/query?search_query=cat%3Acs.AI&start=0&max_results=50&sortBy=submittedDate&sortOrder=descending","extractor":"atom","use":"Recent AI and agent papers"},
+    {"id":"arxiv-cs-cl","name":"arXiv cs.CL Recent","family":"research-eval","authority":"primary","priority":"daily","url":"https://export.arxiv.org/api/query?search_query=cat%3Acs.CL&start=0&max_results=50&sortBy=submittedDate&sortOrder=descending","extractor":"atom","use":"Recent language-model papers"},
+    {"id":"arxiv-cs-se","name":"arXiv cs.SE Recent","family":"research-eval","authority":"primary","priority":"daily","url":"https://export.arxiv.org/api/query?search_query=cat%3Acs.SE&start=0&max_results=50&sortBy=submittedDate&sortOrder=descending","extractor":"atom","use":"Coding-agent and software-engineering papers"},
+    {"id":"huggingface-papers","name":"Hugging Face Daily Papers","family":"research-eval","authority":"discovery","priority":"daily","url":"https://huggingface.co/api/daily_papers","extractor":"json","use":"Paper discovery; verify selected work on the paper or project page"},
+    {"id":"openreview","name":"OpenReview","family":"research-eval","authority":"primary","priority":"weekly","url":"https://openreview.net/","use":"Conference submissions, reviews, and revisions"},
+    {"id":"metr","name":"METR Research","family":"research-eval","authority":"independent","priority":"daily","url":"https://metr.org/blog/","use":"Agent capability, autonomy, and evaluation research"},
+    {"id":"epoch-ai","name":"Epoch AI","family":"research-eval","authority":"independent","priority":"daily","url":"https://epoch.ai/blog","use":"Compute, model trends, and independent analysis"},
+    {"id":"stanford-crfm","name":"Stanford CRFM","family":"research-eval","authority":"primary","priority":"weekly","url":"https://crfm.stanford.edu/","use":"Foundation-model evaluation and policy research"},
+    {"id":"lmsys-blog","name":"LMSYS Org Blog","family":"research-eval","authority":"primary","priority":"daily","url":"https://lmsys.org/blog/","use":"Model evaluation, serving, and community benchmarks"},
+    {"id":"swe-bench","name":"SWE-bench","family":"research-eval","authority":"primary","priority":"daily","url":"https://www.swebench.com/","use":"Coding-agent benchmark updates"},
+    {"id":"arc-prize","name":"ARC Prize Blog","family":"research-eval","authority":"primary","priority":"daily","url":"https://arcprize.org/blog/","use":"Reasoning benchmark and competition updates"},
+
+    {"id":"github-agent-search","name":"GitHub Agent Repository Search","family":"developer-ecosystem","authority":"primary-metadata","priority":"daily","url":"https://api.github.com/search/repositories?q=topic%3Aai-agent&sort=updated&order=desc&per_page=50","extractor":"json","use":"Repository discovery and activity metadata"},
+    {"id":"openai-codex-releases","name":"OpenAI Codex Releases","family":"developer-ecosystem","authority":"primary","priority":"daily","url":"https://api.github.com/repos/openai/codex/releases?per_page=20","extractor":"json","use":"Official Codex release metadata"},
+    {"id":"claude-code-releases","name":"Anthropic Claude Code Releases","family":"developer-ecosystem","authority":"primary","priority":"daily","url":"https://api.github.com/repos/anthropics/claude-code/releases?per_page=20","extractor":"json","use":"Official Claude Code release metadata"},
+    {"id":"mcp-spec-commits","name":"Model Context Protocol Commits","family":"developer-ecosystem","authority":"primary","priority":"daily","url":"https://api.github.com/repos/modelcontextprotocol/modelcontextprotocol/commits?per_page=30","extractor":"json","use":"Protocol and specification changes"},
+    {"id":"browser-use-releases","name":"Browser Use Releases","family":"developer-ecosystem","authority":"primary","priority":"daily","url":"https://api.github.com/repos/browser-use/browser-use/releases?per_page=20","extractor":"json","use":"Browser-agent framework changes"},
+    {"id":"e2b-releases","name":"E2B Releases","family":"developer-ecosystem","authority":"primary","priority":"daily","url":"https://api.github.com/repos/e2b-dev/E2B/releases?per_page=20","extractor":"json","use":"Agent sandbox and runtime changes"},
+
+    {"id":"hn-best","name":"Hacker News Best Stories","family":"community","authority":"community","priority":"daily","url":"https://hacker-news.firebaseio.com/v0/beststories.json","extractor":"hn-list","use":"Discover high-signal technical discussion; verify facts at the original URL"},
+    {"id":"hn-top","name":"Hacker News Top Stories","family":"community","authority":"community","priority":"daily","url":"https://hacker-news.firebaseio.com/v0/topstories.json","extractor":"hn-list","use":"Discover current technical attention; preserve score and comment-count snapshot"},
+    {"id":"hn-show","name":"Show HN","family":"community","authority":"community","priority":"daily","url":"https://hacker-news.firebaseio.com/v0/showstories.json","extractor":"hn-list","use":"Discover emerging tools and founder-built products; verify repositories and claims"},
+    {"id":"lobsters","name":"Lobsters RSS","family":"community","authority":"community","priority":"daily","url":"https://lobste.rs/rss","extractor":"rss","use":"Developer discussion and implementation signals"},
+
+    {"id":"latent-space-podcast","name":"Latent Space Podcast","family":"podcast","authority":"long-form-primary","priority":"daily","url":"https://api.substack.com/feed/podcast/1084089.rss","extractor":"rss","use":"Technical interviews with builders; use official show notes or timestamped transcript"},
+    {"id":"no-priors-podcast","name":"No Priors","family":"podcast","authority":"long-form-primary","priority":"daily","url":"https://feeds.megaphone.fm/nopriors","extractor":"rss","use":"Founder, research, and product interviews; attribute claims to speakers"},
+    {"id":"cognitive-revolution-podcast","name":"The Cognitive Revolution","family":"podcast","authority":"long-form-primary","priority":"daily","url":"https://feeds.megaphone.fm/RINTP3108857801","extractor":"rss","use":"Long-form AI interviews and scouting reports"},
+    {"id":"practical-ai-podcast","name":"Practical AI","family":"podcast","authority":"long-form-primary","priority":"daily","url":"https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm","extractor":"rss","use":"Production and implementation-oriented AI discussions"},
+    {"id":"dwarkesh-podcast","name":"Dwarkesh Podcast","family":"podcast","authority":"long-form-primary","priority":"daily","url":"https://apple.dwarkesh-podcast.workers.dev/feed.rss","extractor":"rss","use":"Deep interviews; only include AI-relevant episodes with attributable evidence"},
+
+    {"id":"artificial-analysis","name":"Artificial Analysis","family":"independent-analysis","authority":"independent","priority":"daily","url":"https://artificialanalysis.ai/","use":"Independent model price, latency, and benchmark context; verify vendor claims separately"},
+    {"id":"simon-willison","name":"Simon Willison Weblog","family":"independent-analysis","authority":"independent","priority":"daily","url":"https://simonwillison.net/atom/everything/","extractor":"atom","use":"Hands-on model, tooling, and product analysis"},
+    {"id":"latent-space-newsletter","name":"Latent Space Newsletter","family":"independent-analysis","authority":"independent","priority":"daily","url":"https://www.latent.space/feed","extractor":"rss","use":"AI engineering synthesis and discovery; return factual claims to originals"},
+    {"id":"import-ai","name":"Import AI","family":"independent-analysis","authority":"independent","priority":"weekly","url":"https://importai.substack.com/feed","extractor":"rss","use":"Research and policy synthesis"},
+    {"id":"interconnects","name":"Interconnects","family":"independent-analysis","authority":"independent","priority":"daily","url":"https://www.interconnects.ai/feed","extractor":"rss","use":"Model training, open models, and research analysis"},
+
+    {"id":"mcp-spec","name":"Model Context Protocol Specification","family":"standards-security","authority":"primary","priority":"daily","url":"https://modelcontextprotocol.io/specification/","use":"Protocol requirements and compatibility changes"},
+    {"id":"nist-ai","name":"NIST Artificial Intelligence","family":"standards-security","authority":"primary","priority":"weekly","url":"https://www.nist.gov/artificial-intelligence","use":"Standards, risk management, and evaluation guidance"},
+    {"id":"owasp-genai","name":"OWASP GenAI Security Project","family":"standards-security","authority":"primary","priority":"daily","url":"https://genai.owasp.org/","use":"Agent and LLM application security guidance"}
+  ]
+}

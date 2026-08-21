@@ -1,0 +1,506 @@
+{
+  "version": 1,
+  "date": "2026-08-21",
+  "generatedAt": "2026-08-21T02:58:16.258Z",
+  "cutoffAt": "2026-08-21T02:55:00.000Z",
+  "scanArtifact": "tmp/brief-source-scan-2026-08-21.json",
+  "candidatePoolSize": 27,
+  "editorialException": "",
+  "scans": [
+    {
+      "sourceId": "openai-news",
+      "status": "no-update",
+      "checkedAt": "2026-08-21T02:46:39.738Z",
+      "itemsReviewed": 10,
+      "selectedItems": 0,
+      "limitation": "OpenAI 新闻页直连返回 403；改用官方域名检索及 Academy 官方活动页核验，未发现新技术博客或 System Card。"
+    },
+    {
+      "sourceId": "openai-research",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:46:39.772Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "http-error / HTTP 403"
+    },
+    {
+      "sourceId": "openai-changelog",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:46:39.772Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "http-error / HTTP 403"
+    },
+    {
+      "sourceId": "anthropic-news",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:46:39.772Z",
+      "itemsReviewed": 1,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "anthropic-research",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:46:39.773Z",
+      "itemsReviewed": 1,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "anthropic-release-notes",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:46:39.773Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "inaccessible / fetch failed"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:46:50.768Z",
+      "itemsReviewed": 1,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "gemini-changelog",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:46:50.770Z",
+      "itemsReviewed": 1,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "meta-ai-blog",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:46:50.770Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "inaccessible / fetch failed"
+    },
+    {
+      "sourceId": "mistral-news",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:46:50.770Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "http-error / HTTP 403"
+    },
+    {
+      "sourceId": "xai-news",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:46:50.771Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "http-error / HTTP 403"
+    },
+    {
+      "sourceId": "microsoft-research",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:46:50.771Z",
+      "itemsReviewed": 1,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "arxiv-cs-ai",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:47:01.280Z",
+      "itemsReviewed": 50,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "arxiv-cs-cl",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:47:01.311Z",
+      "itemsReviewed": 50,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "arxiv-cs-se",
+      "status": "selected",
+      "checkedAt": "2026-08-21T02:47:01.311Z",
+      "itemsReviewed": 50,
+      "selectedItems": 3,
+      "limitation": ""
+    },
+    {
+      "sourceId": "huggingface-papers",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:47:01.311Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "inaccessible / fetch failed"
+    },
+    {
+      "sourceId": "metr",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:47:01.312Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "http-error / HTTP 403"
+    },
+    {
+      "sourceId": "epoch-ai",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:47:01.312Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "http-error / HTTP 403"
+    },
+    {
+      "sourceId": "lmsys-blog",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:47:02.300Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "http-error / HTTP 403"
+    },
+    {
+      "sourceId": "swe-bench",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:47:02.301Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "http-error / HTTP 403"
+    },
+    {
+      "sourceId": "arc-prize",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:47:02.302Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "http-error / HTTP 403"
+    },
+    {
+      "sourceId": "github-agent-search",
+      "status": "selected",
+      "checkedAt": "2026-08-21T02:47:02.303Z",
+      "itemsReviewed": 50,
+      "selectedItems": 5,
+      "limitation": ""
+    },
+    {
+      "sourceId": "openai-codex-releases",
+      "status": "selected",
+      "checkedAt": "2026-08-21T02:47:02.303Z",
+      "itemsReviewed": 0,
+      "selectedItems": 2,
+      "limitation": "inaccessible / Unterminated string in JSON at position 2000000 (line 1 column 2000001)"
+    },
+    {
+      "sourceId": "claude-code-releases",
+      "status": "selected",
+      "checkedAt": "2026-08-21T02:47:02.304Z",
+      "itemsReviewed": 20,
+      "selectedItems": 1,
+      "limitation": ""
+    },
+    {
+      "sourceId": "mcp-spec-commits",
+      "status": "selected",
+      "checkedAt": "2026-08-21T02:47:06.601Z",
+      "itemsReviewed": 30,
+      "selectedItems": 1,
+      "limitation": ""
+    },
+    {
+      "sourceId": "browser-use-releases",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:47:06.605Z",
+      "itemsReviewed": 20,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "e2b-releases",
+      "status": "selected",
+      "checkedAt": "2026-08-21T02:47:06.605Z",
+      "itemsReviewed": 20,
+      "selectedItems": 1,
+      "limitation": ""
+    },
+    {
+      "sourceId": "hn-best",
+      "status": "selected",
+      "checkedAt": "2026-08-21T02:47:06.605Z",
+      "itemsReviewed": 40,
+      "selectedItems": 1,
+      "limitation": ""
+    },
+    {
+      "sourceId": "hn-top",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:47:06.606Z",
+      "itemsReviewed": 40,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "hn-show",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:47:06.607Z",
+      "itemsReviewed": 40,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "lobsters",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:47:12.696Z",
+      "itemsReviewed": 25,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "latent-space-podcast",
+      "status": "no-update",
+      "checkedAt": "2026-08-21T02:47:12.697Z",
+      "itemsReviewed": 10,
+      "selectedItems": 0,
+      "limitation": "RSS 直连失败；改用 Latent.Space 官方 Archive 核验至 8 月 11 日，未发现本窗口新节目。"
+    },
+    {
+      "sourceId": "no-priors-podcast",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:47:12.698Z",
+      "itemsReviewed": 175,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "cognitive-revolution-podcast",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:47:12.699Z",
+      "itemsReviewed": 187,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "practical-ai-podcast",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:47:12.700Z",
+      "itemsReviewed": 220,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "dwarkesh-podcast",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:47:12.700Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "inaccessible / fetch failed"
+    },
+    {
+      "sourceId": "artificial-analysis",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:47:23.196Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "http-error / HTTP 403"
+    },
+    {
+      "sourceId": "simon-willison",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:47:23.201Z",
+      "itemsReviewed": 30,
+      "selectedItems": 0,
+      "limitation": ""
+    },
+    {
+      "sourceId": "latent-space-newsletter",
+      "status": "no-update",
+      "checkedAt": "2026-08-21T02:47:23.202Z",
+      "itemsReviewed": 10,
+      "selectedItems": 0,
+      "limitation": "Feed 直连返回 403；改用官方 Archive 检索，未纳入未回溯原始材料的聚合内容。"
+    },
+    {
+      "sourceId": "interconnects",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:47:23.203Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "http-error / HTTP 403"
+    },
+    {
+      "sourceId": "mcp-spec",
+      "status": "inaccessible",
+      "checkedAt": "2026-08-21T02:47:23.203Z",
+      "itemsReviewed": 0,
+      "selectedItems": 0,
+      "limitation": "http-error / HTTP 403"
+    },
+    {
+      "sourceId": "owasp-genai",
+      "status": "reviewed",
+      "checkedAt": "2026-08-21T02:47:23.204Z",
+      "itemsReviewed": 1,
+      "selectedItems": 0,
+      "limitation": ""
+    }
+  ],
+  "signals": [
+    {
+      "id": "agent-docs-dominant",
+      "title": "Agent 实际读得最多的不是 API 文档，而是给 Agent 的指令与工作笔记",
+      "factType": "author-claim",
+      "confidence": "medium",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2608.20195",
+        "https://arxiv.org/html/2608.20195"
+      ],
+      "primarySourceUrls": [
+        "https://arxiv.org/abs/2608.20195"
+      ],
+      "difference": "此前 agent-friendly 文档建议多基于直觉；研究首次用 557 次真实会话和 33,097 个 Agent PR 描述文档行为。",
+      "productImpact": "AGENTS.md、CLAUDE.md、SKILL.md 与工作笔记应成为 Agent 产品的版本化配置面和评测对象。",
+      "action": "对现有仓库做指令文件消融实验，记录成功率、测试次数、token 与错误类型。",
+      "limitations": "25.1% 工作笔记占比依赖未经人工验证的二级分类器，精确数值应视作暂定。"
+    },
+    {
+      "id": "docs-validation-gap",
+      "title": "读文档没有自然带来验证：研究轨迹中未观察到显式文档校验序列",
+      "factType": "author-claim",
+      "confidence": "medium",
+      "sourceUrls": [
+        "https://arxiv.org/html/2608.20195"
+      ],
+      "primarySourceUrls": [
+        "https://arxiv.org/abs/2608.20195"
+      ],
+      "difference": "把文档的 actionability 与 verifiability 从设计口号转为可观察的行为序列和统计关联。",
+      "productImpact": "文档必须附带机器可执行断言、示例测试或检查器，不能假设 Agent 会主动把文档当 oracle。",
+      "action": "给关键规则添加可执行验收命令，并比较文档读取后 3 个事件内的 test/build 率。",
+      "limitations": "观察性关联不是因果；文件路径方法漏掉 docstring、注释和源文件内 prose。"
+    },
+    {
+      "id": "swe-bench-science",
+      "title": "科学软件把 coding Agent 拉回未饱和区：最佳配置 pass@1 仍低于 50%",
+      "factType": "author-claim",
+      "confidence": "medium",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2608.19799"
+      ],
+      "primarySourceUrls": [
+        "https://arxiv.org/abs/2608.19799"
+      ],
+      "difference": "从通用 GitHub issue 扩展到 98 个仓库、20 个科学领域和三类任务范式，并分析科学知识是否真的帮助修复。",
+      "productImpact": "垂直 coding Agent 需要把领域知识正确性、探索策略和系统集成拆开评测；检索更多知识可能反而造成锚定。",
+      "action": "在一个科学仓库上对有/无领域提示做配对试验，记录精确修复、token 与错误机制。",
+      "limitations": "119 个任务规模有限；作者自报结果，尚无独立复现，科学领域之间外推风险较高。"
+    },
+    {
+      "id": "codex-0149",
+      "title": "OpenAI Codex 0.149.0 把多任务管理、异步消息和运行诊断提升为一等能力",
+      "factType": "verified-fact",
+      "confidence": "high",
+      "sourceUrls": [
+        "https://github.com/openai/codex/releases/tag/rust-v0.149.0"
+      ],
+      "primarySourceUrls": [
+        "https://github.com/openai/codex/releases/tag/rust-v0.149.0"
+      ],
+      "difference": "相对 0.148.0，新增 agents dashboard、codex queue、doctor 诊断，并修复恢复任务时权限配置回退。",
+      "productImpact": "coding Agent 的竞争面从单次生成扩展到跨任务编排、会话恢复、权限连续性和故障诊断。",
+      "action": "用 3 个并发任务测试 queue、恢复权限和失败诊断，保存完整轨迹而非只看任务成功。",
+      "limitations": "Release 说明证明功能存在，不证明在真实项目中的可靠性、延迟或成本改善。"
+    },
+    {
+      "id": "claude-code-21238",
+      "title": "Claude Code v2.1.238 聚焦自托管连续性、Remote Control 和插件凭证边界",
+      "factType": "verified-fact",
+      "confidence": "high",
+      "sourceUrls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.238"
+      ],
+      "primarySourceUrls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.238"
+      ],
+      "difference": "新增延迟关闭和动态代理认证，修复长会话 subagent 结果内存增长、远程消息丢失与重连问题。",
+      "productImpact": "长程 Agent 的企业部署瓶颈正转向会话连续性、凭证最小暴露、消息可达性与资源回收。",
+      "action": "在代理短暂 403、SIGTERM 和长会话条件下跑故障注入，检查消息、权限和内存是否可恢复。",
+      "limitations": "官方 Release 未提供基准或故障率数据；不能把修复列表等同于生产稳定性。"
+    },
+    {
+      "id": "e2b-runtime-contract",
+      "title": "E2B 数小时内连续发布 2.43.0–2.44.1，运行时 API 语义仍需契约回归",
+      "factType": "verified-fact",
+      "confidence": "high",
+      "sourceUrls": [
+        "https://github.com/e2b-dev/E2B/releases/tag/e2b%402.44.1"
+      ],
+      "primarySourceUrls": [
+        "https://github.com/e2b-dev/E2B/releases/tag/e2b%402.44.1"
+      ],
+      "difference": "2.44.1 专门修复 Volume.exists() 在缺失路径上的行为回归，显示沙箱运行时的错误类型变化会穿透 Agent 工作流。",
+      "productImpact": "隔离环境不能只测能否启动，还要冻结文件、网络、进程与错误语义契约。",
+      "action": "为 sandbox 适配层增加缺失路径、超时、重启和卷恢复的黑盒契约测试。",
+      "limitations": "这是窄范围补丁信号，不代表整体安全性或性能变化。"
+    },
+    {
+      "id": "hn-vomit",
+      "title": "HN 对“用第二个本地模型重写 Agent 输出”的讨论升温，但原项目主动披露幻觉与漏信息风险",
+      "factType": "community-signal",
+      "confidence": "low",
+      "sourceUrls": [
+        "https://news.ycombinator.com/item?id=49375996",
+        "https://github.com/zachahn/vomit"
+      ],
+      "primarySourceUrls": [
+        "https://github.com/zachahn/vomit"
+      ],
+      "originalUrl": "https://github.com/zachahn/vomit",
+      "difference": "截至 10:47 CST 快照为 195 分、209 条评论；关注点从模型回答本身移到输出通道的二次压缩。",
+      "productImpact": "输出代理可以降低阅读负担，但会引入第二模型幻觉、延迟和信息丢失，需要保留原始轨迹。",
+      "action": "对同一批长输出测摘要忠实度、漏项率、延迟和可回溯性，不采用社区热度作为质量证明。",
+      "limitations": "HN 分数只表示社区注意力；仓库自述仅 Mac 测试、速度慢且可能漏掉完整消息。"
+    },
+    {
+      "id": "github-growth",
+      "title": "约 72 小时增长继续集中在技能、coding harness、数据接入与个人 Agent",
+      "factType": "verified-fact",
+      "confidence": "high",
+      "sourceUrls": [
+        "https://github.com/obra/superpowers",
+        "https://github.com/openai/codex",
+        "https://github.com/NousResearch/hermes-agent",
+        "https://github.com/firecrawl/firecrawl",
+        "https://github.com/anomalyco/opencode"
+      ],
+      "primarySourceUrls": [
+        "https://github.com/obra/superpowers",
+        "https://github.com/openai/codex",
+        "https://github.com/NousResearch/hermes-agent",
+        "https://github.com/firecrawl/firecrawl",
+        "https://github.com/anomalyco/opencode"
+      ],
+      "difference": "Codex 以 +1,638 进入前二，并发布 0.149.0；superpowers +1,740 居首但代码活跃度没有同步加速。",
+      "productImpact": "关注度正在流向模型外的 harness 与技能层，但 Star 必须与 Release、维护活跃度和任务实测分开。",
+      "action": "固定模型和任务，比较 Codex、OpenCode 与 Skill 层的成功率、权限请求、成本及恢复能力。",
+      "limitations": "窗口从 2026-08-18 11:06 CST 到 2026-08-21 10:51 CST，约 71 小时 45 分，是最接近 72 小时的本地快照代理。"
+    },
+    {
+      "id": "agent-ready-dual-interface",
+      "title": "编辑推断：Agent-ready 产品需要同时设计“可读规则面”和“可操作界面”",
+      "factType": "editorial-inference",
+      "confidence": "medium",
+      "sourceUrls": [
+        "https://arxiv.org/abs/2608.20195",
+        "https://arxiv.org/abs/2608.18307"
+      ],
+      "primarySourceUrls": [
+        "https://arxiv.org/abs/2608.20195",
+        "https://arxiv.org/abs/2608.18307"
+      ],
+      "difference": "把今天的文档轨迹研究与昨日 ComponentBench 的组件级失败证据连接起来，覆盖 Agent 输入规范和 GUI 执行两端。",
+      "productImpact": "创业机会不是再做一个通用聊天层，而是做仓库规则、UI 组件、权限和验收的联合可靠性地图。",
+      "action": "选一个 SaaS 同时审计 AGENTS.md/帮助文档与高频 UI 组件，生成可执行的 Agent-readiness scorecard。",
+      "limitations": "这是跨论文综合推断，尚未有同一数据集证明文档设计与 GUI 成功率之间的因果关系。"
+    }
+  ]
+}

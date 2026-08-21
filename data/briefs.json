@@ -1,6 +1,97 @@
 {
-  "generatedAt": "2026-08-20T02:08:49.592Z",
+  "generatedAt": "2026-08-21T02:58:16.260Z",
   "briefs": [
+    {
+      "fileName": "morning-brief-2026-08-21.html",
+      "date": "2026-08-21",
+      "weekday": "周五",
+      "type": "formal",
+      "hasWeekly": false,
+      "title": "From Agent Behaviour to Agent-Friendly Documentation: An Empirical Study of How Coding Agents Discover, Read, and Write Technical Documentation",
+      "summary": "Agent 文档的真实重心已经变化：60.5% 交互落在指令文件与工作笔记：557 次真实 coding-agent 会话中，AGENTS.md、CLAUDE.md 等指令文件占 35.4%，Agent 工作笔记占 25.1%；传统 API reference 仅 1.3%。",
+      "problem": "面向 Agent 产品与评测产品：发现可复用红利、识别能力边界，并把每条结论连接到原始证据。",
+      "method": "查看当期论文方法与架构摘要。",
+      "conclusion": "查看当期实验结果与核心结论。",
+      "difference": "查看当期创新点与既有工作的比较。",
+      "limitation": "仍需结合复现、成本和真实产品场景验证。",
+      "evidence": "论文实验 · 待独立复现",
+      "action": "持续追踪代码开放与后续复现，暂不直接接入",
+      "primaryTrack": "Agent 产品",
+      "tracks": [
+        "product"
+      ],
+      "leaderSignal": {
+        "kind": "官方核验",
+        "org": "OpenAI / Anthropic",
+        "title": "本期未抽取到新的官方技术信号",
+        "summary": "历史简报可能明确记录为未发现更新；请以当期原文的官方动态板块为准。",
+        "url": ""
+      },
+      "source": "briefs/morning-brief-2026-08-21.html",
+      "overview": "overviews/morning-brief-2026-08-21.svg",
+      "githubRows": [
+        {
+          "repo": "obra/superpowers",
+          "label": "obra/superpowers",
+          "value": 1740,
+          "text": "1 obra/superpowers An agentic skills framework & software development methodology that works. 275,009 +1,740 Shell 2026…"
+        },
+        {
+          "repo": "openai/codex",
+          "label": "openai/codex",
+          "value": 1638,
+          "text": "2 openai/codex Lightweight coding agent that runs in your terminal 108,155 +1,638 Rust 2026-08-21 02:35:23 UTC"
+        },
+        {
+          "repo": "NousResearch/hermes-agent",
+          "label": "NousResearch/hermes-agent",
+          "value": 1496,
+          "text": "3 NousResearch/hermes-agent The agent that grows with you 233,584 +1,496 Python 2026-08-21 02:46:35 UTC"
+        },
+        {
+          "repo": "firecrawl/firecrawl",
+          "label": "firecrawl/firecrawl",
+          "value": 1450,
+          "text": "4 firecrawl/firecrawl The context API to search, scrape, and interact with the web at scale. 🔥 170,139 +1,450 TypeScri…"
+        },
+        {
+          "repo": "anomalyco/opencode",
+          "label": "anomalyco/opencode",
+          "value": 1069,
+          "text": "5 anomalyco/opencode The open source coding agent. 199,586 +1,069 TypeScript 2026-08-21 02:49:10 UTC"
+        },
+        {
+          "repo": "thedaviddias/Front-End-Checklist",
+          "label": "thedaviddias/Front-End-Checklist",
+          "value": 73592,
+          "text": "1 thedaviddias/Front-End-Checklist 73,592 面向人和 Agent 的前端交付检查表；可转为生成式 UI 的静态验收与 Agent-ready 页面评测，但仓库许可 API 未返回明确 SPDX。 M…"
+        },
+        {
+          "repo": "ZhuLinsen/daily_stock_analysis",
+          "label": "ZhuLinsen/daily_stock_analysis",
+          "value": 63515,
+          "text": "2 ZhuLinsen/daily_stock_analysis 63,515 多市场分析、新闻、看板与定时推送的垂直 Agent 产品；值得研究多源证据链，但金融决策风险与数据时效要求高。 Python / MIT 2026-08-20…"
+        },
+        {
+          "repo": "HKUDS/Vibe-Trading",
+          "label": "HKUDS/Vibe-Trading",
+          "value": 31359,
+          "text": "3 HKUDS/Vibe-Trading 31,359 个人交易 Agent；适合作为高风险垂直 Agent 的权限、回测污染与人类复核案例，不应以 Star 代替收益证据。 Python / MIT 2026-08-20 00:02:2…"
+        }
+      ],
+      "githubRepoCount": 16,
+      "figureCount": 11,
+      "tableCount": 17,
+      "linkCount": 84,
+      "officialStatus": "若干 条官方链接/动态",
+      "sourceAudit": "data/sources/morning-brief-2026-08-21-sources.json",
+      "sourceCoverage": {
+        "sources": 42,
+        "candidates": 27,
+        "signals": 9
+      },
+      "tags": "2026-08-21 From Agent Behaviour to Agent-Friendly Documentation: An Empirical Study of How Coding Agents Discover, Read, and Write Technical Documentation openai/codex anthropics/claude-code e2b-dev/E2B zachahn/vomit obra/superpowers NousResearch/hermes-agent firecrawl/firecrawl anomalyco/opencode thedaviddias/Front-End-Checklist ZhuLinsen/daily_stock_analysis HKUDS/Vibe-Trading titanwings/colleague-skill leon-ai/leon anthropics/skills browser-use/browser-use 1jehuang/jcode AI Agent benchmark GitHub OpenAI Anthropic Agent 产品 product  formal 正式简报"
+    },
     {
       "fileName": "morning-brief-2026-08-20.html",
       "date": "2026-08-20",

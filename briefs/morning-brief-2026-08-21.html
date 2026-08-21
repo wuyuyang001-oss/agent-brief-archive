@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI / Agent 晨间简报 · 2026-08-21</title><style>
+:root{--ink:#172433;--muted:#587083;--line:#d9e2e8;--blue:#0b67c2;--pale:#f4f8fb;--green:#08745f;--amber:#9a6200}*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font:15px/1.68 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}main{max-width:1060px;margin:auto;padding:38px 28px 72px}header{border-bottom:4px solid var(--ink);padding-bottom:24px}.eyebrow{font:700 12px/1.2 ui-monospace,monospace;letter-spacing:.12em;color:var(--blue)}h1{font-size:36px;line-height:1.15;margin:10px 0}h2{font-size:24px;line-height:1.3;margin:42px 0 14px;padding-top:4px}h3{font-size:18px;line-height:1.4;margin:0 0 8px}p{margin:8px 0}a{color:var(--blue);text-decoration-thickness:1px}.meta,.method{color:var(--muted);font-size:13px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.chip,.state{border:1px solid var(--line);padding:3px 8px;border-radius:999px;background:#fff;font-size:12px}.state{color:var(--green);white-space:nowrap}.summary,.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.signal,.card{border:1px solid var(--line);border-radius:10px;padding:17px;background:#fff}.signal:first-child{grid-column:span 2;border-color:#9cc4ec;background:#f8fbff}.signal-top{display:flex;justify-content:space-between;gap:12px;align-items:start}dl{margin:10px 0 0;display:grid;grid-template-columns:126px 1fr;gap:6px 12px}dt{font-weight:700;color:#314859}dd{margin:0}.callout{padding:13px 15px;border-left:4px solid var(--blue);background:var(--pale);margin:12px 0}.warn{border-left-color:var(--amber);background:#fff9ec}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px}table{border-collapse:collapse;width:100%;min-width:720px}th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{font-size:13px;background:#f7fafc}tr:last-child td{border-bottom:0}.up{color:var(--green);font-weight:700}details{border:1px solid var(--line);border-radius:9px;padding:0 15px;margin:14px 0;background:#fff}summary{cursor:pointer;font-weight:700;padding:13px 0}details>div,details>p{margin:0 0 15px}figure{margin:18px 0;padding:12px;border:1px solid var(--line);border-radius:8px;background:#fff}figure img{max-width:100%;height:auto;display:block;margin:auto}figcaption{font-size:13px;color:var(--muted);margin-top:8px}iframe{width:100%;height:360px;border:1px solid var(--line);background:#fff}.figure-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.small{font-size:13px;color:var(--muted)}ul{padding-left:22px}.visible-label{font-weight:700;color:#314859}@media(max-width:720px){main{padding:24px 16px}.summary,.grid{grid-template-columns:1fr}.signal:first-child{grid-column:auto}dl{grid-template-columns:1fr;gap:1px}dd{margin-bottom:8px}.figure-grid{grid-template-columns:1fr}}@media print{main{max-width:none;padding:12mm}details{display:block}details>summary{display:none}details>*{display:block!important}a{color:#000;text-decoration:none}iframe{height:260px}.signal,.card,figure{break-inside:avoid}}
+
+.feedback textarea{width:100%;min-height:120px;padding:12px;border:1px solid var(--line);border-radius:8px;font:inherit}.feedback button{margin-top:8px;padding:8px 14px;border:0;border-radius:7px;background:var(--ink);color:#fff;cursor:pointer}.feedback-status{margin-left:10px;color:var(--green);font-size:13px}
+
+.feedback textarea{width:100%;min-height:120px;padding:12px;border:1px solid var(--line);border-radius:8px;font:inherit}.feedback button{margin-top:8px;padding:8px 14px;border:0;border-radius:7px;background:var(--ink);color:#fff;cursor:pointer}.feedback-status{margin-left:10px;color:var(--green);font-size:13px}
+
+.coverage-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}.coverage-stat{padding:14px 16px;border:1px solid var(--line,#d9e0ea);border-radius:14px;background:#fff}.coverage-stat strong{display:block;font-size:1.65rem;color:#17324d}.coverage-stat span{color:#5d6b7a;font-size:.86rem}.radar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}@media(max-width:780px){.coverage-strip,.radar{grid-template-columns:1fr}}@media print{.coverage-strip{grid-template-columns:repeat(3,1fr)}.radar{display:block}.radar .card{break-inside:avoid;margin-bottom:12px}}
+</style></head><body><main>
+<header><div class="eyebrow">AI / AGENT DECISION BRIEF</div><h1>晨间简报</h1><p>面向 Agent 产品与评测产品：发现可复用红利、识别能力边界，并把每条结论连接到原始证据。</p><div class="chips"><span class="chip">2026-08-21 · 周五</span><span class="chip">信息截止：10:55 CST</span><span class="chip">HTTP / API / 静态解析 · 无浏览器</span></div><div class="coverage-strip"><div class="coverage-stat"><strong>42</strong><span>扫描来源</span></div><div class="coverage-stat"><strong>27</strong><span>去重候选</span></div><div class="coverage-stat"><strong>9</strong><span>入选信号</span></div></div></header>
+
+<section><h2>90 秒摘要</h2><div class="summary">
+<article class="signal"><div class="signal-top"><h3>Agent 文档的真实重心已经变化：60.5% 交互落在指令文件与工作笔记</h3><span class="state">新论文 / 证据增强</span></div><dl><dt>核心结论</dt><dd>557 次真实 coding-agent 会话中，AGENTS.md、CLAUDE.md 等指令文件占 35.4%，Agent 工作笔记占 25.1%；传统 API reference 仅 1.3%。</dd><dt>证据 / 可信度</dt><dd>两套公开数据、94,813 个会话事件和 33,097 个 Agent PR；统计处理考虑 session/repository 聚类。可信度中等，工作笔记二级分类尚未人工验证。</dd><dt>与既有工作的差异</dt><dd>从“怎样写 Agent 友好文档”的直觉指南，转为观察 Agent 实际读写什么。</dd><dt>产品 / 评测意义</dt><dd>指令文件和工作笔记是 Agent 运行时配置，不只是文档；需要版本、作用域、冲突和消融评测。</dd><dt>建议动作</dt><dd>对一个仓库做指令文件 A/B，比较成功率、测试次数、token 和失败类别。</dd></dl></article>
+<article class="signal"><div class="signal-top"><h3>阅读不等于执行，更不等于验证：文档后没有自然形成测试闭环</h3><span class="state">评测方法进展</span></div><dl><dt>核心结论</dt><dd>研究未观察到显式“依据文档验证代码”的序列；读文档后短期测试更少，且读后直接改代码的相邻转移概率只有 0.002。</dd><dt>证据 / 可信度</dt><dd>作者同时报告未调整 lift 和阶段调整 odds ratio，并拒绝对小样本恢复策略强行排序。可信度中等，仍是观察性关联。</dd><dt>与既有工作的差异</dt><dd>把 actionability、verifiability 拆为行为事件，而非文档风格标签。</dd><dt>产品 / 评测意义</dt><dd>规则必须附带可执行检查；仅把说明放进上下文，可能只增加推理和继续阅读。</dd><dt>建议动作</dt><dd>为关键规则配套命令、断言和失败样例，测读文档后 3 个事件内的 test/build 率。</dd></dl></article>
+<article class="signal"><div class="signal-top"><h3>科学软件仍是 coding Agent 的未饱和区：最佳配置 pass@1 低于 50%</h3><span class="state">模型边界 / 新 benchmark</span></div><dl><dt>核心结论</dt><dd>SWE-bench Science 收集 119 个任务、98 个仓库和 20 个科学领域；作者报告 Claude Code + Opus-5(max) 仍低于 50%。</dd><dt>证据 / 可信度</dt><dd>arXiv 首发论文与任务设计已核验；可信度中等，作者自报且尚无独立复现。</dd><dt>与既有工作的差异</dt><dd>不仅看是否修复，还区分科学抽象缺口、误导探索、覆盖不完整和知识泛化失败。</dd><dt>产品 / 评测意义</dt><dd>垂直 Agent 不能把“更多领域知识”视为单调收益；错误指导会导致锚定。</dd><dt>建议动作</dt><dd>选一个科学仓库做有/无领域提示配对实验，报告精确修复和 token 效率。</dd></dl></article>
+<article class="signal"><div class="signal-top"><h3>Codex 与 Claude Code 同日把重点放在多任务、远程连续性、权限和诊断</h3><span class="state">官方产品发布</span></div><dl><dt>核心结论</dt><dd>Codex 0.149.0 新增 agents dashboard、queue 与 doctor；Claude Code v2.1.238 增强 self-hosted runner、Remote Control、凭证隔离与长会话内存释放。</dd><dt>证据 / 可信度</dt><dd>两家官方 GitHub Release，功能存在的可信度高；实际可靠性提升仍未由 benchmark 证明。</dd><dt>与既有工作的差异</dt><dd>竞争面从单线程代码生成转向跨任务管理、会话恢复与企业运行控制面。</dd><dt>产品 / 评测意义</dt><dd>评测需要加入 SIGTERM、403、消息丢失、恢复权限和内存增长等故障注入。</dd><dt>建议动作</dt><dd>用相同三任务工作流测试两个版本，保存权限、消息和恢复轨迹。</dd></dl></article>
+<article class="signal"><div class="signal-top"><h3>编辑推断：Agent-ready 产品要同时设计可读规则面与可操作界面</h3><span class="state">产品机会</span></div><dl><dt>核心结论</dt><dd>今天的文档轨迹研究与昨日 ComponentBench 共同表明，Agent 可靠性同时受仓库规则表达和 GUI 组件操作影响。</dd><dt>证据 / 可信度</dt><dd>跨两篇公开论文综合，可信度中等；尚无同一数据集证明二者因果关系。</dd><dt>与既有工作的差异</dt><dd>从单一模型榜单扩展为文档、组件、权限、工具和验收的联合可靠性图谱。</dd><dt>产品 / 评测意义</dt><dd>可形成面向 SaaS 与代码库的 Agent-readiness 评测产品。</dd><dt>建议动作</dt><dd>选一个 SaaS 同时审计 AGENTS.md、帮助文档与高频组件，并跑可执行回归。</dd></dl></article>
+</div></section>
+
+<section><h2>前沿领头羊信号</h2><div class="grid">
+<article class="card"><span class="state">OpenAI 官方产品发布</span><h3>Codex 0.149.0：Agent 任务控制面正在成形</h3><p><strong>发布时间：</strong>2026-08-20 21:04 UTC · <a href="https://github.com/openai/codex/releases/tag/rust-v0.149.0">原始 Release</a></p><p>新增任务搜索/启动/重命名/停止面板、向现有会话发消息的 queue，以及 endpoint protection、网络、代理、Desktop 状态诊断；同时修复恢复任务时权限配置静默回退。相对近期持续强化沙箱与审批，这次把“可管理、可诊断、可恢复”推到用户界面。</p></article>
+<article class="card"><span class="state">Anthropic 官方产品发布</span><h3>Claude Code v2.1.238：自托管与 Remote Control 的运维边界</h3><p><strong>发布时间：</strong>2026-08-20 20:33 UTC · <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.238">原始 Release</a></p><p>新增优雅延迟关闭与动态代理认证；修复远程消息消失、会话崩溃后不可复用、短暂 403 导致断连和 subagent 结果造成的内存增长。headersHelper 需要目录信任且不继承凭证环境变量，延续其近期对企业权限和远程工作流的关注。</p></article>
+<article class="card"><span class="state">OpenAI 官方产品教育</span><h3>ChatGPT Work 被明确描述为跨多步、带工具和上下文的工作方式</h3><p><strong>日期：</strong>2026-08-20 · <a href="https://academy.openai.com/public/clubs/news-organizations-b9osl/events/intro-to-chatgpt-work-for-news-organizations-dcxi1hu4jh?autoRsvp=true">官方活动页</a></p><p>活动材料明确使用 agents、skills、plugins 支持研究、分析和规划，但这是产品教育材料，不是技术博客或能力 benchmark。它说明官方关注正从“问答”迁移到可复用工作流，同时仍强调人员复核和权限。</p></article>
+<article class="card"><span class="state">官方博客 / 个人原帖核验</span><h3>没有用低可信摘要补位</h3><p>自昨日截止后，未发现 OpenAI 或 Anthropic 可确认的新技术博客、研究文章或 System Card。未取得身份、原帖、时间和完整上下文均可核验的关键负责人 X 新帖，因此不转述个人观点。</p></article>
+</div></section>
+
+<section><h2>多源信号雷达</h2><p class="method">从 42 个注册入口和官方检索回退形成 27 条去重候选，最终选择 9 条。事实、作者结论、社区热度和编辑推断分开标注。</p><div class="radar"><article class="card"><span class="state">1 · author-claim · medium</span><h3>Agent 实际读得最多的不是 API 文档，而是给 Agent 的指令与工作笔记</h3><p><strong>发生了什么：</strong>研究显示 60.5% 的文档交互落在 Agent 指令与工作笔记。</p><p><strong>差异：</strong>此前 agent-friendly 文档建议多基于直觉；研究首次用 557 次真实会话和 33,097 个 Agent PR 描述文档行为。</p><p><strong>意义：</strong>AGENTS.md、CLAUDE.md、SKILL.md 与工作笔记应成为 Agent 产品的版本化配置面和评测对象。</p><p><strong>反证 / 边界：</strong>25.1% 工作笔记占比依赖未经人工验证的二级分类器，精确数值应视作暂定。</p><p><strong>动作：</strong>对现有仓库做指令文件消融实验，记录成功率、测试次数、token 与错误类型。</p><p><strong>原始证据：</strong><a href="https://arxiv.org/abs/2608.20195">arxiv.org</a> · <a href="https://arxiv.org/html/2608.20195">arxiv.org</a></p></article><article class="card"><span class="state">2 · author-claim · medium</span><h3>读文档没有自然带来验证：研究轨迹中未观察到显式文档校验序列</h3><p><strong>发生了什么：</strong>文档读取后没有自然出现显式校验，短期测试关联反而更低。</p><p><strong>差异：</strong>把文档的 actionability 与 verifiability 从设计口号转为可观察的行为序列和统计关联。</p><p><strong>意义：</strong>文档必须附带机器可执行断言、示例测试或检查器，不能假设 Agent 会主动把文档当 oracle。</p><p><strong>反证 / 边界：</strong>观察性关联不是因果；文件路径方法漏掉 docstring、注释和源文件内 prose。</p><p><strong>动作：</strong>给关键规则添加可执行验收命令，并比较文档读取后 3 个事件内的 test/build 率。</p><p><strong>原始证据：</strong><a href="https://arxiv.org/html/2608.20195">arxiv.org</a></p></article><article class="card"><span class="state">3 · author-claim · medium</span><h3>科学软件把 coding Agent 拉回未饱和区：最佳配置 pass@1 仍低于 50%</h3><p><strong>发生了什么：</strong>新 benchmark 显示科学软件修复仍显著困难。</p><p><strong>差异：</strong>从通用 GitHub issue 扩展到 98 个仓库、20 个科学领域和三类任务范式，并分析科学知识是否真的帮助修复。</p><p><strong>意义：</strong>垂直 coding Agent 需要把领域知识正确性、探索策略和系统集成拆开评测；检索更多知识可能反而造成锚定。</p><p><strong>反证 / 边界：</strong>119 个任务规模有限；作者自报结果，尚无独立复现，科学领域之间外推风险较高。</p><p><strong>动作：</strong>在一个科学仓库上对有/无领域提示做配对试验，记录精确修复、token 与错误机制。</p><p><strong>原始证据：</strong><a href="https://arxiv.org/abs/2608.19799">arxiv.org</a></p></article><article class="card"><span class="state">4 · verified-fact · high</span><h3>OpenAI Codex 0.149.0 把多任务管理、异步消息和运行诊断提升为一等能力</h3><p><strong>发生了什么：</strong>Codex 发布 0.149.0。</p><p><strong>差异：</strong>相对 0.148.0，新增 agents dashboard、codex queue、doctor 诊断，并修复恢复任务时权限配置回退。</p><p><strong>意义：</strong>coding Agent 的竞争面从单次生成扩展到跨任务编排、会话恢复、权限连续性和故障诊断。</p><p><strong>反证 / 边界：</strong>Release 说明证明功能存在，不证明在真实项目中的可靠性、延迟或成本改善。</p><p><strong>动作：</strong>用 3 个并发任务测试 queue、恢复权限和失败诊断，保存完整轨迹而非只看任务成功。</p><p><strong>原始证据：</strong><a href="https://github.com/openai/codex/releases/tag/rust-v0.149.0">github.com</a></p></article><article class="card"><span class="state">5 · verified-fact · high</span><h3>Claude Code v2.1.238 聚焦自托管连续性、Remote Control 和插件凭证边界</h3><p><strong>发生了什么：</strong>Claude Code 发布 v2.1.238。</p><p><strong>差异：</strong>新增延迟关闭和动态代理认证，修复长会话 subagent 结果内存增长、远程消息丢失与重连问题。</p><p><strong>意义：</strong>长程 Agent 的企业部署瓶颈正转向会话连续性、凭证最小暴露、消息可达性与资源回收。</p><p><strong>反证 / 边界：</strong>官方 Release 未提供基准或故障率数据；不能把修复列表等同于生产稳定性。</p><p><strong>动作：</strong>在代理短暂 403、SIGTERM 和长会话条件下跑故障注入，检查消息、权限和内存是否可恢复。</p><p><strong>原始证据：</strong><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.238">github.com</a></p></article><article class="card"><span class="state">6 · verified-fact · high</span><h3>E2B 数小时内连续发布 2.43.0–2.44.1，运行时 API 语义仍需契约回归</h3><p><strong>发生了什么：</strong>E2B 连续发布并修复运行时语义回归。</p><p><strong>差异：</strong>2.44.1 专门修复 Volume.exists() 在缺失路径上的行为回归，显示沙箱运行时的错误类型变化会穿透 Agent 工作流。</p><p><strong>意义：</strong>隔离环境不能只测能否启动，还要冻结文件、网络、进程与错误语义契约。</p><p><strong>反证 / 边界：</strong>这是窄范围补丁信号，不代表整体安全性或性能变化。</p><p><strong>动作：</strong>为 sandbox 适配层增加缺失路径、超时、重启和卷恢复的黑盒契约测试。</p><p><strong>原始证据：</strong><a href="https://github.com/e2b-dev/E2B/releases/tag/e2b%402.44.1">github.com</a></p></article><article class="card"><span class="state">7 · community-signal · low</span><h3>HN 对“用第二个本地模型重写 Agent 输出”的讨论升温，但原项目主动披露幻觉与漏信息风险</h3><p><strong>发生了什么：</strong>HN 出现高讨论度的输出重写工具。</p><p><strong>差异：</strong>截至 10:47 CST 快照为 195 分、209 条评论；关注点从模型回答本身移到输出通道的二次压缩。</p><p><strong>意义：</strong>输出代理可以降低阅读负担，但会引入第二模型幻觉、延迟和信息丢失，需要保留原始轨迹。</p><p><strong>反证 / 边界：</strong>HN 分数只表示社区注意力；仓库自述仅 Mac 测试、速度慢且可能漏掉完整消息。</p><p><strong>动作：</strong>对同一批长输出测摘要忠实度、漏项率、延迟和可回溯性，不采用社区热度作为质量证明。</p><p><strong>原始证据：</strong><a href="https://news.ycombinator.com/item?id=49375996">news.ycombinator.com</a> · <a href="https://github.com/zachahn/vomit">github.com</a></p></article><article class="card"><span class="state">8 · verified-fact · high</span><h3>约 72 小时增长继续集中在技能、coding harness、数据接入与个人 Agent</h3><p><strong>发生了什么：</strong>本地约 72 小时 Star 快照显示 harness 与技能层继续增长。</p><p><strong>差异：</strong>Codex 以 +1,638 进入前二，并发布 0.149.0；superpowers +1,740 居首但代码活跃度没有同步加速。</p><p><strong>意义：</strong>关注度正在流向模型外的 harness 与技能层，但 Star 必须与 Release、维护活跃度和任务实测分开。</p><p><strong>反证 / 边界：</strong>窗口从 2026-08-18 11:06 CST 到 2026-08-21 10:51 CST，约 71 小时 45 分，是最接近 72 小时的本地快照代理。</p><p><strong>动作：</strong>固定模型和任务，比较 Codex、OpenCode 与 Skill 层的成功率、权限请求、成本及恢复能力。</p><p><strong>原始证据：</strong><a href="https://github.com/obra/superpowers">github.com</a> · <a href="https://github.com/openai/codex">github.com</a> · <a href="https://github.com/NousResearch/hermes-agent">github.com</a> · <a href="https://github.com/firecrawl/firecrawl">github.com</a> · <a href="https://github.com/anomalyco/opencode">github.com</a></p></article><article class="card"><span class="state">9 · editorial-inference · medium</span><h3>编辑推断：Agent-ready 产品需要同时设计“可读规则面”和“可操作界面”</h3><p><strong>发生了什么：</strong>两篇研究共同指向 Agent-ready 双界面。</p><p><strong>差异：</strong>把今天的文档轨迹研究与昨日 ComponentBench 的组件级失败证据连接起来，覆盖 Agent 输入规范和 GUI 执行两端。</p><p><strong>意义：</strong>创业机会不是再做一个通用聊天层，而是做仓库规则、UI 组件、权限和验收的联合可靠性地图。</p><p><strong>反证 / 边界：</strong>这是跨论文综合推断，尚未有同一数据集证明文档设计与 GUI 成功率之间的因果关系。</p><p><strong>动作：</strong>选一个 SaaS 同时审计 AGENTS.md/帮助文档与高频 UI 组件，生成可执行的 Agent-readiness scorecard。</p><p><strong>原始证据：</strong><a href="https://arxiv.org/abs/2608.20195">arxiv.org</a> · <a href="https://arxiv.org/abs/2608.18307">arxiv.org</a></p></article></div></section>
+
+<section><h2>四条主线</h2><div class="grid">
+<article class="card"><h3>模型能力进展</h3><p><strong>证据增强。</strong> 未发现值得纳入的新模型发布；SWE-bench Science 显示强模型加成熟 harness 在科学软件上仍低于 50%，且错误领域提示可能造成锚定。真实产品应按领域、知识质量和修复机制分层。</p></article>
+<article class="card"><h3>Agent 产品进展</h3><p><strong>发布关键版本。</strong> Codex 与 Claude Code 同日强化多任务、远程会话、自托管、权限和诊断。最小验证不是“能不能运行”，而是中断、恢复、跨端消息与权限是否保持一致。</p></article>
+<article class="card"><h3>Agent 架构与可复用工具</h3><p><strong>上下文与隔离层加速。</strong> 文档研究把指令文件和工作笔记暴露为主要上下文面；E2B 与 jcode 分别提醒运行时契约和大型 MCP 工具目录的上下文成本。</p></article>
+<article class="card"><h3>评测方法进展</h3><p><strong>从结果转向行为机制。</strong> 同时记录文档读取、后续测试、领域知识锚定、权限恢复和故障注入；只报 pass rate 会掩盖“为什么成功或失败”。</p></article>
+</div></section>
+
+<section><h2>今日论文</h2><h3>From Agent Behaviour to Agent-Friendly Documentation: An Empirical Study of How Coding Agents Discover, Read, and Write Technical Documentation</h3><p><strong>作者：</strong>Zhijun Gao、Jing Chen<br><strong>发布日期：</strong>2026-08-20<br><strong>链接：</strong><a href="https://arxiv.org/abs/2608.20195">arXiv</a> · <a href="https://arxiv.org/html/2608.20195">HTML</a> · <a href="https://export.arxiv.org/e-print/2608.20195">TeX source / replication description</a><br><strong>代码 / 项目页：</strong>论文声明发布 replication package，但 arXiv HTML 与源包未暴露独立稳定 URL；不虚构链接。</p>
+<div class="table-wrap"><table><tbody>
+<tr><th>此前遇到的问题</th><td>“Agent-friendly documentation”多基于人类文档经验或直觉，没有回答 Agent 实际读什么、何时读、读完做什么。</td></tr>
+<tr><th>研究做法</th><td>结合 SWE-chat 的 557 次真实会话（94,813 个事件、3,033 次文档交互）与 AIDev 的 33,097 个 Agent PR（690,260 条文件级变化），做路径分类、事件序列、cluster bootstrap 和阶段调整模型。</td></tr>
+<tr><th>关键结论</th><td>Agent-facing 指令与工作笔记占 60.5%；API reference 仅 1.3%；70.2% 文档交互为自发；没有观察到显式文档校验序列；多 commit PR 中代码先于文档的概率约为反向的 4.7 倍。</td></tr>
+<tr><th>与既有工作的差异</th><td>不先规定好文档品质再测效果，而是从真实 Agent 轨迹反推文档设计；还区分“描述 Agent 做了什么”和“证明这样做有效”。</td></tr>
+<tr><th>可信度</th><td>中等：两个公开数据集、事件与 PR 两种单位互补，区间考虑聚类，作者主动拒绝小样本强结论；提供提取管线、编码方案和事件级材料描述。</td></tr>
+<tr><th>局限</th><td>观察性数据不能证明因果；路径方法漏掉 docstring 和注释；工作笔记的二级分类未经人工验证；SWE-chat 不能看 merge 结果，AIDev 没有工具轨迹；大仓库聚类明显，外推到私有企业代码有限。</td></tr>
+<tr><th>后续进展 / 待验证</th><td>人工双标 200–300 个事件验证分类；对指令文件做任务级消融；把可执行断言写入文档并测测试行为；追踪文档变更是否改善实际修复，而非只增加阅读。</td></tr>
+</tbody></table></div>
+<details><summary>展开英文简介与逐段对应中文翻译</summary><div><h3>English overview</h3><p lang="en">This study examines how coding agents interact with documentation in real development traces. Across 557 SWE-chat sessions and 33,097 agentic pull requests, agent-facing instruction files and working notes dominate documentation activity, while conventional API references represent only a small fraction.</p><p lang="en">The traces do not support a simple read-then-code-then-validate journey. Documentation reads are usually followed by more reading or reasoning, no explicit documentation-based validation sequence is observed, and code tends to precede documentation in multi-commit pull requests. The authors therefore describe a two-lobed cycle and call for documentation properties to be tested behaviourally rather than assumed.</p><h3>逐段中文翻译</h3><p>这项研究考察 coding Agent 在真实开发轨迹中如何与文档交互。在 557 次 SWE-chat 会话和 33,097 个 Agent PR 中，面向 Agent 的指令文件与工作笔记主导文档活动，传统 API reference 只占很小一部分。</p><p>这些轨迹不支持简单的“阅读—编码—验证”线性过程。读文档之后通常是继续阅读或推理，没有观察到显式的文档校验序列；在多 commit PR 中，代码也往往先于文档。作者据此提出双叶循环，并主张通过行为实验验证文档属性，而不是默认它们有效。</p></div></details>
+<details><summary>展开论文全部公开图表（1 图 / 10 表）</summary><div><p class="method">通过 arXiv HTML、HTTP 下载与静态解析按论文顺序收集全部 11 个编号元素；图 1 保存为原始 PNG，10 张表转为 HTML，未发现缺失项。</p><figure><img loading="lazy" src="morning-brief-2026-08-21-assets/agent-docs-figure-1.png" alt="图 1：Agents’ documentation interactions across 557 SWE-chat sessions (panels a–d, n = 3,033 n=3{,}033 documentation events) and 33,097 AIDev agentic pull requests (panel e). (a) Agent-facing documents — instruction files and agent working notes — account for 60.5% of interactions, whereas API references account for 1.3%; the right-hand column uses a magnified axis. (b) Testing and building are less frequent within three events of a consultation and remain so after adjustment; the two authoring outcomes differ between the unadjusted lift and the stage-adjusted odds ratio, so those associations remain unresolved. Intervals are session-level cluster-bootstrap estimates. (c) Interaction is predominantly self-initiated (70.2% of all 3,033 interactions; 62.5% of the 1,615 consultation events) rather than failure-driven (7.5%; 9.7%); the axis counts all interactions. (d) Of ten candidate stages, Validate and Escalate have zero events under our operational definitions (open markers); stages overlap and do not sum to 3,033. (e) Among pull requests that change both code and documentation, code is touched first 4.7 × \times more often, although 42.6% first touch both in a single commit, for which no order is observable; panel e uses a different dataset and unit of analysis (pull requests), and its error bars are Wilson intervals — the repository cluster-bootstrap equivalents are in Table 6 . Five panels summarising document types, post-consultation actions, interaction triggers, candidate interaction stages, and code–documentation ordering in pull requests."><figcaption><strong>图 1：Agents’ documentation interactions across 557 SWE-chat sessions (panels a–d, n = 3,033 n=3{,}033 documentation events) and 33,097 AIDev agentic pull requests (panel e). (a) Agent-facing documents — instruction files and agent working notes — account for 60.5% of interactions, whereas API references account for 1.3%; the right-hand column uses a magnified axis. (b) Testing and building are less frequent within three events of a consultation and remain so after adjustment; the two authoring outcomes differ between the unadjusted lift and the stage-adjusted odds ratio, so those associations remain unresolved. Intervals are session-level cluster-bootstrap estimates. (c) Interaction is predominantly self-initiated (70.2% of all 3,033 interactions; 62.5% of the 1,615 consultation events) rather than failure-driven (7.5%; 9.7%); the axis counts all interactions. (d) Of ten candidate stages, Validate and Escalate have zero events under our operational definitions (open markers); stages overlap and do not sum to 3,033. (e) Among pull requests that change both code and documentation, code is touched first 4.7 × \times more often, although 42.6% first touch both in a single commit, for which no order is observable; panel e uses a different dataset and unit of analysis (pull requests), and its error bars are Wilson intervals — the repository cluster-bootstrap equivalents are in Table 6 . Five panels summarising document types, post-consultation actions, interaction triggers, candidate interaction stages, and code–documentation ordering in pull requests.</strong> · <a href="https://arxiv.org/html/2608.20195#S4.F1">论文原始位置</a></figcaption></figure>
+<figure><figcaption><strong>表 1：Documentation-interaction events by document type ( n = 3,033 n=3{,}033 events across 557 sessions). Agent-facing categories are marked † \dagger . Together, the two agent-facing categories account for 60.5% of interactions; the nine categories constituting classical technical documentation (API reference, troubleshooting, architecture, schema, installation, examples, testing, contributing, and changelog) account for 10.6%.</strong> · <a href="https://arxiv.org/html/2608.20195#S4.T1">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T1.6" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr id="S4.T1.6.1" class="ltx_tr">
+<th id="S4.T1.6.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt"><span id="S4.T1.6.1.1.1" class="ltx_text" style="font-size:90%;">Document type</span></th>
+<td id="S4.T1.6.1.2" class="ltx_td ltx_align_right ltx_border_tt"><span id="S4.T1.6.1.2.1" class="ltx_text" style="font-size:90%;">Events</span></td>
+<td id="S4.T1.6.1.3" class="ltx_td ltx_align_right ltx_border_tt"><span id="S4.T1.6.1.3.1" class="ltx_text" style="font-size:90%;">Share</span></td></tr>
+<tr id="S4.T1.6.2" class="ltx_tr">
+<th id="S4.T1.6.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t"><span id="S4.T1.6.2.1.1" class="ltx_text" style="font-size:90%;">Agent instructions<sup id="S4.T1.6.2.1.1.1" class="ltx_sup">†</sup></span></th>
+<td id="S4.T1.6.2.2" class="ltx_td ltx_align_right ltx_border_t"><span id="S4.T1.6.2.2.1" class="ltx_text" style="font-size:90%;">1,074</span></td>
+<td id="S4.T1.6.2.3" class="ltx_td ltx_align_right ltx_border_t"><span id="S4.T1.6.2.3.1" class="ltx_text" style="font-size:90%;">35.4%</span></td></tr>
+<tr id="S4.T1.6.3" class="ltx_tr">
+<th id="S4.T1.6.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.3.1.1" class="ltx_text" style="font-size:90%;">Agent working notes<sup id="S4.T1.6.3.1.1.1" class="ltx_sup">†</sup></span></th>
+<td id="S4.T1.6.3.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.3.2.1" class="ltx_text" style="font-size:90%;">760</span></td>
+<td id="S4.T1.6.3.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.3.3.1" class="ltx_text" style="font-size:90%;">25.1%</span></td></tr>
+<tr id="S4.T1.6.4" class="ltx_tr">
+<th id="S4.T1.6.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.4.1.1" class="ltx_text" style="font-size:90%;">Task / requirements</span></th>
+<td id="S4.T1.6.4.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.4.2.1" class="ltx_text" style="font-size:90%;">301</span></td>
+<td id="S4.T1.6.4.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.4.3.1" class="ltx_text" style="font-size:90%;">9.9%</span></td></tr>
+<tr id="S4.T1.6.5" class="ltx_tr">
+<th id="S4.T1.6.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.5.1.1" class="ltx_text" style="font-size:90%;">Configuration</span></th>
+<td id="S4.T1.6.5.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.5.2.1" class="ltx_text" style="font-size:90%;">205</span></td>
+<td id="S4.T1.6.5.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.5.3.1" class="ltx_text" style="font-size:90%;">6.8%</span></td></tr>
+<tr id="S4.T1.6.6" class="ltx_tr">
+<th id="S4.T1.6.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.6.1.1" class="ltx_text" style="font-size:90%;">README</span></th>
+<td id="S4.T1.6.6.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.6.2.1" class="ltx_text" style="font-size:90%;">197</span></td>
+<td id="S4.T1.6.6.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.6.3.1" class="ltx_text" style="font-size:90%;">6.5%</span></td></tr>
+<tr id="S4.T1.6.7" class="ltx_tr">
+<th id="S4.T1.6.7.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.7.1.1" class="ltx_text" style="font-size:90%;">Other prose (residual)</span></th>
+<td id="S4.T1.6.7.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.7.2.1" class="ltx_text" style="font-size:90%;">165</span></td>
+<td id="S4.T1.6.7.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.7.3.1" class="ltx_text" style="font-size:90%;">5.4%</span></td></tr>
+<tr id="S4.T1.6.8" class="ltx_tr">
+<th id="S4.T1.6.8.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.8.1.1" class="ltx_text" style="font-size:90%;">Architecture / ADR</span></th>
+<td id="S4.T1.6.8.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.8.2.1" class="ltx_text" style="font-size:90%;">120</span></td>
+<td id="S4.T1.6.8.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.8.3.1" class="ltx_text" style="font-size:90%;">4.0%</span></td></tr>
+<tr id="S4.T1.6.9" class="ltx_tr">
+<th id="S4.T1.6.9.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.9.1.1" class="ltx_text" style="font-size:90%;">Install / deploy</span></th>
+<td id="S4.T1.6.9.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.9.2.1" class="ltx_text" style="font-size:90%;">41</span></td>
+<td id="S4.T1.6.9.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.9.3.1" class="ltx_text" style="font-size:90%;">1.4%</span></td></tr>
+<tr id="S4.T1.6.10" class="ltx_tr">
+<th id="S4.T1.6.10.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.10.1.1" class="ltx_text" style="font-size:90%;">API reference</span></th>
+<td id="S4.T1.6.10.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.10.2.1" class="ltx_text" style="font-size:90%;">40</span></td>
+<td id="S4.T1.6.10.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.10.3.1" class="ltx_text" style="font-size:90%;">1.3%</span></td></tr>
+<tr id="S4.T1.6.11" class="ltx_tr">
+<th id="S4.T1.6.11.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.11.1.1" class="ltx_text" style="font-size:90%;">Schema</span></th>
+<td id="S4.T1.6.11.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.11.2.1" class="ltx_text" style="font-size:90%;">32</span></td>
+<td id="S4.T1.6.11.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.11.3.1" class="ltx_text" style="font-size:90%;">1.1%</span></td></tr>
+<tr id="S4.T1.6.12" class="ltx_tr">
+<th id="S4.T1.6.12.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.12.1.1" class="ltx_text" style="font-size:90%;">Testing docs</span></th>
+<td id="S4.T1.6.12.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.12.2.1" class="ltx_text" style="font-size:90%;">29</span></td>
+<td id="S4.T1.6.12.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.12.3.1" class="ltx_text" style="font-size:90%;">1.0%</span></td></tr>
+<tr id="S4.T1.6.13" class="ltx_tr">
+<th id="S4.T1.6.13.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.13.1.1" class="ltx_text" style="font-size:90%;">Examples</span></th>
+<td id="S4.T1.6.13.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.13.2.1" class="ltx_text" style="font-size:90%;">27</span></td>
+<td id="S4.T1.6.13.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.13.3.1" class="ltx_text" style="font-size:90%;">0.9%</span></td></tr>
+<tr id="S4.T1.6.14" class="ltx_tr">
+<th id="S4.T1.6.14.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.14.1.1" class="ltx_text" style="font-size:90%;">Changelog</span></th>
+<td id="S4.T1.6.14.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.14.2.1" class="ltx_text" style="font-size:90%;">22</span></td>
+<td id="S4.T1.6.14.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.14.3.1" class="ltx_text" style="font-size:90%;">0.7%</span></td></tr>
+<tr id="S4.T1.6.15" class="ltx_tr">
+<th id="S4.T1.6.15.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.15.1.1" class="ltx_text" style="font-size:90%;">Troubleshooting</span></th>
+<td id="S4.T1.6.15.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.15.2.1" class="ltx_text" style="font-size:90%;">11</span></td>
+<td id="S4.T1.6.15.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.15.3.1" class="ltx_text" style="font-size:90%;">0.4%</span></td></tr>
+<tr id="S4.T1.6.16" class="ltx_tr">
+<th id="S4.T1.6.16.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.16.1.1" class="ltx_text" style="font-size:90%;">License / legal</span></th>
+<td id="S4.T1.6.16.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.16.2.1" class="ltx_text" style="font-size:90%;">8</span></td>
+<td id="S4.T1.6.16.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.16.3.1" class="ltx_text" style="font-size:90%;">0.3%</span></td></tr>
+<tr id="S4.T1.6.17" class="ltx_tr">
+<th id="S4.T1.6.17.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T1.6.17.1.1" class="ltx_text" style="font-size:90%;">Contributing</span></th>
+<td id="S4.T1.6.17.2" class="ltx_td ltx_align_right"><span id="S4.T1.6.17.2.1" class="ltx_text" style="font-size:90%;">1</span></td>
+<td id="S4.T1.6.17.3" class="ltx_td ltx_align_right"><span id="S4.T1.6.17.3.1" class="ltx_text" style="font-size:90%;">0.0%</span></td></tr>
+<tr id="S4.T1.6.18" class="ltx_tr">
+<th id="S4.T1.6.18.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t"><span id="S4.T1.6.18.1.1" class="ltx_text ltx_font_italic" style="font-size:90%;">Agent-facing subtotal<sup id="S4.T1.6.18.1.1.1" class="ltx_sup">†</sup></span></th>
+<td id="S4.T1.6.18.2" class="ltx_td ltx_align_right ltx_border_t"><span id="S4.T1.6.18.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">1,834</span></td>
+<td id="S4.T1.6.18.3" class="ltx_td ltx_align_right ltx_border_t"><span id="S4.T1.6.18.3.1" class="ltx_text ltx_font_bold" style="font-size:90%;">60.5%</span></td></tr>
+<tr id="S4.T1.6.19" class="ltx_tr">
+<th id="S4.T1.6.19.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb"><span id="S4.T1.6.19.1.1" class="ltx_text ltx_font_italic" style="font-size:90%;">Classical technical documentation</span></th>
+<td id="S4.T1.6.19.2" class="ltx_td ltx_align_right ltx_border_bb"><span id="S4.T1.6.19.2.1" class="ltx_text" style="font-size:90%;">323</span></td>
+<td id="S4.T1.6.19.3" class="ltx_td ltx_align_right ltx_border_bb"><span id="S4.T1.6.19.3.1" class="ltx_text" style="font-size:90%;">10.6%</span></td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 2：RQ2: what triggers documentation interaction ( n = 3,033 n=3{,}033 interactions; consultation events alone are n = 1,615 n=1{,}615 , for which the self-initiated share is 62.5%). Self-initiated triggers outnumber failure-driven ones by 9.3 × \times .</strong> · <a href="https://arxiv.org/html/2608.20195#S4.T2">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T2.10" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr id="S4.T2.10.1" class="ltx_tr">
+<th id="S4.T2.10.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt"><span id="S4.T2.10.1.1.1" class="ltx_text" style="font-size:90%;">Trigger</span></th>
+<td id="S4.T2.10.1.2" class="ltx_td ltx_align_right ltx_border_tt"><span id="S4.T2.10.1.2.1" class="ltx_text" style="font-size:90%;">Events</span></td>
+<td id="S4.T2.10.1.3" class="ltx_td ltx_align_right ltx_border_tt"><span id="S4.T2.10.1.3.1" class="ltx_text" style="font-size:90%;">Share</span></td></tr>
+<tr id="S4.T2.10.2" class="ltx_tr">
+<th id="S4.T2.10.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t"><span id="S4.T2.10.2.1.1" class="ltx_text" style="font-size:90%;">Agent initiative</span></th>
+<td id="S4.T2.10.2.2" class="ltx_td ltx_align_right ltx_border_t"><span id="S4.T2.10.2.2.1" class="ltx_text" style="font-size:90%;">1,236</span></td>
+<td id="S4.T2.10.2.3" class="ltx_td ltx_align_right ltx_border_t"><span id="S4.T2.10.2.3.1" class="ltx_text" style="font-size:90%;">40.8%</span></td></tr>
+<tr id="S4.T2.10.3" class="ltx_tr">
+<th id="S4.T2.10.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T2.10.3.1.1" class="ltx_text" style="font-size:90%;">Implementation need</span></th>
+<td id="S4.T2.10.3.2" class="ltx_td ltx_align_right"><span id="S4.T2.10.3.2.1" class="ltx_text" style="font-size:90%;">893</span></td>
+<td id="S4.T2.10.3.3" class="ltx_td ltx_align_right"><span id="S4.T2.10.3.3.1" class="ltx_text" style="font-size:90%;">29.4%</span></td></tr>
+<tr id="S4.T2.10.4" class="ltx_tr">
+<th id="S4.T2.10.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T2.10.4.1.1" class="ltx_text" style="font-size:90%;">User instruction</span></th>
+<td id="S4.T2.10.4.2" class="ltx_td ltx_align_right"><span id="S4.T2.10.4.2.1" class="ltx_text" style="font-size:90%;">618</span></td>
+<td id="S4.T2.10.4.3" class="ltx_td ltx_align_right"><span id="S4.T2.10.4.3.1" class="ltx_text" style="font-size:90%;">20.4%</span></td></tr>
+<tr id="S4.T2.10.5" class="ltx_tr">
+<th id="S4.T2.10.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T2.10.5.1.1" class="ltx_text" style="font-size:90%;">Tool failure</span></th>
+<td id="S4.T2.10.5.2" class="ltx_td ltx_align_right"><span id="S4.T2.10.5.2.1" class="ltx_text" style="font-size:90%;">217</span></td>
+<td id="S4.T2.10.5.3" class="ltx_td ltx_align_right"><span id="S4.T2.10.5.3.1" class="ltx_text" style="font-size:90%;">7.2%</span></td></tr>
+<tr id="S4.T2.10.6" class="ltx_tr">
+<th id="S4.T2.10.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T2.10.6.1.1" class="ltx_text" style="font-size:90%;">Planning</span></th>
+<td id="S4.T2.10.6.2" class="ltx_td ltx_align_right"><span id="S4.T2.10.6.2.1" class="ltx_text" style="font-size:90%;">58</span></td>
+<td id="S4.T2.10.6.3" class="ltx_td ltx_align_right"><span id="S4.T2.10.6.3.1" class="ltx_text" style="font-size:90%;">1.9%</span></td></tr>
+<tr id="S4.T2.10.7" class="ltx_tr">
+<th id="S4.T2.10.7.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T2.10.7.1.1" class="ltx_text" style="font-size:90%;">Test failure</span></th>
+<td id="S4.T2.10.7.2" class="ltx_td ltx_align_right"><span id="S4.T2.10.7.2.1" class="ltx_text" style="font-size:90%;">7</span></td>
+<td id="S4.T2.10.7.3" class="ltx_td ltx_align_right"><span id="S4.T2.10.7.3.1" class="ltx_text" style="font-size:90%;">0.2%</span></td></tr>
+<tr id="S4.T2.10.8" class="ltx_tr">
+<th id="S4.T2.10.8.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T2.10.8.1.1" class="ltx_text" style="font-size:90%;">Build error</span></th>
+<td id="S4.T2.10.8.2" class="ltx_td ltx_align_right"><span id="S4.T2.10.8.2.1" class="ltx_text" style="font-size:90%;">4</span></td>
+<td id="S4.T2.10.8.3" class="ltx_td ltx_align_right"><span id="S4.T2.10.8.3.1" class="ltx_text" style="font-size:90%;">0.1%</span></td></tr>
+<tr id="S4.T2.10.9" class="ltx_tr">
+<th id="S4.T2.10.9.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t"><span id="S4.T2.10.9.1.1" class="ltx_text ltx_font_italic" style="font-size:90%;">Self-initiated</span></th>
+<td id="S4.T2.10.9.2" class="ltx_td ltx_align_right ltx_border_t"><span id="S4.T2.10.9.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">2,129</span></td>
+<td id="S4.T2.10.9.3" class="ltx_td ltx_align_right ltx_border_t"><span id="S4.T2.10.9.3.1" class="ltx_text ltx_font_bold" style="font-size:90%;">70.2%</span></td></tr>
+<tr id="S4.T2.10.10" class="ltx_tr">
+<th id="S4.T2.10.10.1" class="ltx_td ltx_align_left ltx_th ltx_th_row"><span id="S4.T2.10.10.1.1" class="ltx_text ltx_font_italic" style="font-size:90%;">Externally instructed</span></th>
+<td id="S4.T2.10.10.2" class="ltx_td ltx_align_right"><span id="S4.T2.10.10.2.1" class="ltx_text" style="font-size:90%;">618</span></td>
+<td id="S4.T2.10.10.3" class="ltx_td ltx_align_right"><span id="S4.T2.10.10.3.1" class="ltx_text" style="font-size:90%;">20.4%</span></td></tr>
+<tr id="S4.T2.10.11" class="ltx_tr">
+<th id="S4.T2.10.11.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb"><span id="S4.T2.10.11.1.1" class="ltx_text ltx_font_italic" style="font-size:90%;">Failure-driven</span></th>
+<td id="S4.T2.10.11.2" class="ltx_td ltx_align_right ltx_border_bb"><span id="S4.T2.10.11.2.1" class="ltx_text" style="font-size:90%;">228</span></td>
+<td id="S4.T2.10.11.3" class="ltx_td ltx_align_right ltx_border_bb"><span id="S4.T2.10.11.3.1" class="ltx_text" style="font-size:90%;">7.5%</span></td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 3：Actions within three events of a documentation consultation ( n c = 1,615 n_{c}=1{,}615 anchors) compared with the non-anchor base rate ( n b = 93,198 n_{b}=93{,}198 ), with session cluster-bootstrap intervals (2,000 resamples, percentile method) for the risk difference Δ ​ p \Delta p and the lift ratio, and an adjusted association from a logistic GEE with exchangeable working correlation clustered by session and adjusted for development stage, within-session position, session length, and agent family. Unadjusted and adjusted estimates differ for the two authoring outcomes: documentation creation is elevated before adjustment, but its adjusted interval includes 1; code editing is indistinguishable from the baseline before adjustment, but is elevated after controlling for stage. Only the lower frequencies of testing and building are robust to both analyses. We therefore treat these reductions as the finding and the authoring associations as unresolved.</strong> · <a href="https://arxiv.org/html/2608.20195#S4.T3">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T3.7" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="S4.T3.7.1" class="ltx_tr">
+<th id="S4.T3.7.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.1.1.1" class="ltx_text" style="font-size:90%;">Action</span></th>
+<th id="S4.T3.7.1.2" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.1.2.1" class="ltx_text" style="font-size:90%;">After consult.</span></th>
+<th id="S4.T3.7.1.3" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.1.3.1" class="ltx_text" style="font-size:90%;">Base</span></th>
+<th id="S4.T3.7.1.4" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><math id="S4.T3.m7" class="ltx_Math" alttext="\Delta p" display="inline" intent=":literal"><semantics><mrow><mi mathsize="0.900em" mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><mi mathsize="0.900em">p</mi></mrow><annotation encoding="application/x-tex">\Delta p</annotation></semantics></math><span id="S4.T3.7.1.4.1" class="ltx_text" style="font-size:90%;"> [95% CI]</span></th>
+<th id="S4.T3.7.1.5" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.1.5.1" class="ltx_text" style="font-size:90%;">Lift [95% CI]</span></th>
+<th id="S4.T3.7.1.6" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.1.6.1" class="ltx_text" style="font-size:90%;">Adj. OR [95% CI]</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="S4.T3.7.2" class="ltx_tr">
+<th id="S4.T3.7.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.2.1.1" class="ltx_text" style="font-size:90%;">Create documentation</span></th>
+<td id="S4.T3.7.2.2" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.2.2.1" class="ltx_text" style="font-size:90%;">0.044</span></td>
+<td id="S4.T3.7.2.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.2.3.1" class="ltx_text" style="font-size:90%;">0.026</span></td>
+<td id="S4.T3.7.2.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.2.4.1" class="ltx_text" style="font-size:90%;">+0.0176 [+0.0040, +0.0320]</span></td>
+<td id="S4.T3.7.2.5" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.2.5.1" class="ltx_text" style="font-size:90%;">1.67 [1.14, 2.31]</span></td>
+<td id="S4.T3.7.2.6" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.2.6.1" class="ltx_text" style="font-size:90%;">1.41 [0.98, 2.02]</span></td></tr>
+<tr id="S4.T3.7.3" class="ltx_tr">
+<th id="S4.T3.7.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.3.1.1" class="ltx_text" style="font-size:90%;">Edit code</span></th>
+<td id="S4.T3.7.3.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.3.2.1" class="ltx_text" style="font-size:90%;">0.232</span></td>
+<td id="S4.T3.7.3.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.3.3.1" class="ltx_text" style="font-size:90%;">0.221</span></td>
+<td id="S4.T3.7.3.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.3.4.1" class="ltx_text" style="font-size:90%;">+0.0113 [-0.0325, +0.0587]</span></td>
+<td id="S4.T3.7.3.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.3.5.1" class="ltx_text" style="font-size:90%;">1.05 [0.86, 1.27]</span></td>
+<td id="S4.T3.7.3.6" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.3.6.1" class="ltx_text" style="font-size:90%;">1.33 [1.09, 1.62]</span></td></tr>
+<tr id="S4.T3.7.4" class="ltx_tr">
+<th id="S4.T3.7.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.4.1.1" class="ltx_text" style="font-size:90%;">Revise plan</span></th>
+<td id="S4.T3.7.4.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.4.2.1" class="ltx_text" style="font-size:90%;">0.015</span></td>
+<td id="S4.T3.7.4.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.4.3.1" class="ltx_text" style="font-size:90%;">0.019</span></td>
+<td id="S4.T3.7.4.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.4.4.1" class="ltx_text" style="font-size:90%;">-0.0044 [-0.0124, +0.0042]</span></td>
+<td id="S4.T3.7.4.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.4.5.1" class="ltx_text" style="font-size:90%;">0.77 [0.35, 1.24]</span></td>
+<td id="S4.T3.7.4.6" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.4.6.1" class="ltx_text" style="font-size:90%;">0.75 [0.43, 1.30]</span></td></tr>
+<tr id="S4.T3.7.5" class="ltx_tr">
+<th id="S4.T3.7.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.5.1.1" class="ltx_text" style="font-size:90%;">Run test</span></th>
+<td id="S4.T3.7.5.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.5.2.1" class="ltx_text" style="font-size:90%;">0.005</span></td>
+<td id="S4.T3.7.5.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.5.3.1" class="ltx_text" style="font-size:90%;">0.022</span></td>
+<td id="S4.T3.7.5.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.5.4.1" class="ltx_text" style="font-size:90%;">-0.0169 [-0.0250, -0.0094]</span></td>
+<td id="S4.T3.7.5.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.5.5.1" class="ltx_text" style="font-size:90%;">0.23 [0.08, 0.45]</span></td>
+<td id="S4.T3.7.5.6" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.5.6.1" class="ltx_text" style="font-size:90%;">0.39 [0.25, 0.60]</span></td></tr>
+<tr id="S4.T3.7.6" class="ltx_tr">
+<th id="S4.T3.7.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.6.1.1" class="ltx_text" style="font-size:90%;">Build</span></th>
+<td id="S4.T3.7.6.2" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.6.2.1" class="ltx_text" style="font-size:90%;">0.004</span></td>
+<td id="S4.T3.7.6.3" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.6.3.1" class="ltx_text" style="font-size:90%;">0.025</span></td>
+<td id="S4.T3.7.6.4" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.6.4.1" class="ltx_text" style="font-size:90%;">-0.0214 [-0.0292, -0.0143]</span></td>
+<td id="S4.T3.7.6.5" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.6.5.1" class="ltx_text" style="font-size:90%;">0.15 [0.02, 0.33]</span></td>
+<td id="S4.T3.7.6.6" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T3.7.6.6.1" class="ltx_text" style="font-size:90%;">0.25 [0.14, 0.44]</span></td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 4：Failure recovery: the first action after each of 2,034 failure episodes and the fraction of episodes subsequently resolved. Resolution can be computed only for episodes followed by an observable test or build outcome, so the resolution denominators are smaller than the frequency counts. Documentation-based recovery has the highest point estimate but the widest interval; it overlaps every other strategy, so we draw no conclusion about the relative ranking.</strong> · <a href="https://arxiv.org/html/2608.20195#S4.T4">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T4.4" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="S4.T4.4.1" class="ltx_tr">
+<th id="S4.T4.4.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.1.1.1" class="ltx_text" style="font-size:80%;">First recovery action</span></th>
+<th id="S4.T4.4.1.2" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><math id="S4.T4.m1" class="ltx_Math" alttext="n" display="inline" intent=":literal"><semantics><mi mathsize="0.800em">n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math><span id="S4.T4.4.1.2.1" class="ltx_text" style="font-size:80%;"> (%)</span></th>
+<th id="S4.T4.4.1.3" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.1.3.1" class="ltx_text" style="font-size:80%;">Resolved</span></th>
+<th id="S4.T4.4.1.4" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.1.4.1" class="ltx_text" style="font-size:80%;">95% CI</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="S4.T4.4.2" class="ltx_tr">
+<td id="S4.T4.4.2.1" class="ltx_td ltx_align_left ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.2.1.1" class="ltx_text" style="font-size:80%;">Read code</span></td>
+<td id="S4.T4.4.2.2" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.2.2.1" class="ltx_text" style="font-size:80%;">631 (31.0)</span></td>
+<td id="S4.T4.4.2.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.2.3.1" class="ltx_text" style="font-size:80%;">39/159</span></td>
+<td id="S4.T4.4.2.4" class="ltx_td ltx_align_center ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.2.4.1" class="ltx_text" style="font-size:80%;">[.18, .32]</span></td></tr>
+<tr id="S4.T4.4.3" class="ltx_tr">
+<td id="S4.T4.4.3.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.3.1.1" class="ltx_text" style="font-size:80%;">Retry directly</span></td>
+<td id="S4.T4.4.3.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.3.2.1" class="ltx_text" style="font-size:80%;">404 (19.9)</span></td>
+<td id="S4.T4.4.3.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.3.3.1" class="ltx_text" style="font-size:80%;">48/192</span></td>
+<td id="S4.T4.4.3.4" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.3.4.1" class="ltx_text" style="font-size:80%;">[.19, .32]</span></td></tr>
+<tr id="S4.T4.4.4" class="ltx_tr">
+<td id="S4.T4.4.4.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.4.1.1" class="ltx_text" style="font-size:80%;">No action within horizon</span></td>
+<td id="S4.T4.4.4.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.4.2.1" class="ltx_text" style="font-size:80%;">318 (15.6)</span></td>
+<td id="S4.T4.4.4.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.4.3.1" class="ltx_text" style="font-size:80%;">5/67</span></td>
+<td id="S4.T4.4.4.4" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.4.4.1" class="ltx_text" style="font-size:80%;">[.03, .16]</span></td></tr>
+<tr id="S4.T4.4.5" class="ltx_tr">
+<td id="S4.T4.4.5.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.5.1.1" class="ltx_text" style="font-size:80%;">Edit directly</span></td>
+<td id="S4.T4.4.5.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.5.2.1" class="ltx_text" style="font-size:80%;">312 (15.3)</span></td>
+<td id="S4.T4.4.5.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.5.3.1" class="ltx_text" style="font-size:80%;">45/160</span></td>
+<td id="S4.T4.4.5.4" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.5.4.1" class="ltx_text" style="font-size:80%;">[.22, .36]</span></td></tr>
+<tr id="S4.T4.4.6" class="ltx_tr">
+<td id="S4.T4.4.6.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.6.1.1" class="ltx_text" style="font-size:80%;">Search code</span></td>
+<td id="S4.T4.4.6.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.6.2.1" class="ltx_text" style="font-size:80%;">251 (12.3)</span></td>
+<td id="S4.T4.4.6.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.6.3.1" class="ltx_text" style="font-size:80%;">17/73</span></td>
+<td id="S4.T4.4.6.4" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.6.4.1" class="ltx_text" style="font-size:80%;">[.15, .34]</span></td></tr>
+<tr id="S4.T4.4.7" class="ltx_tr">
+<td id="S4.T4.4.7.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.7.1.1" class="ltx_text ltx_font_bold" style="font-size:80%;">Read documentation</span></td>
+<td id="S4.T4.4.7.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.7.2.1" class="ltx_text" style="font-size:80%;">109 (5.4)</span></td>
+<td id="S4.T4.4.7.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.7.3.1" class="ltx_text" style="font-size:80%;">7/11</span></td>
+<td id="S4.T4.4.7.4" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.7.4.1" class="ltx_text" style="font-size:80%;">[.35, .85]</span></td></tr>
+<tr id="S4.T4.4.8" class="ltx_tr">
+<td id="S4.T4.4.8.1" class="ltx_td ltx_align_left ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.8.1.1" class="ltx_text" style="font-size:80%;">Ask user</span></td>
+<td id="S4.T4.4.8.2" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.8.2.1" class="ltx_text" style="font-size:80%;">9 (0.4)</span></td>
+<td id="S4.T4.4.8.3" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.8.3.1" class="ltx_text" style="font-size:80%;">—</span></td>
+<td id="S4.T4.4.8.4" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T4.4.8.4.1" class="ltx_text" style="font-size:80%;">—</span></td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 5：Artefact-level results for RQ3 (AIDev pull requests): (a) documentation involvement among all analysable agentic PRs; (b) the artefact touched first, restricted to multi-commit PRs that change both artefact types and for which order is observable; and (c) merge rate by documentation involvement, reported as an association rather than a causal effect. All intervals are Wilson 95% CIs.</strong> · <a href="https://arxiv.org/html/2608.20195#S4.T5">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T5.4" class="ltx_tabular ltx_centering ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr id="S4.T5.4.1" class="ltx_tr">
+<td id="S4.T5.4.1.1" class="ltx_td ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"></td>
+<td id="S4.T5.4.1.2" class="ltx_td ltx_align_right ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><math id="S4.T5.m1" class="ltx_Math" alttext="k/n" display="inline" intent=":literal"><semantics><mrow><mi mathsize="0.800em">k</mi><mo maxsize="0.800em" minsize="0.800em" stretchy="true" symmetric="true">/</mo><mi mathsize="0.800em">n</mi></mrow><annotation encoding="application/x-tex">k/n</annotation></semantics></math></td>
+<td id="S4.T5.4.1.3" class="ltx_td ltx_align_center ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.1.3.1" class="ltx_text" style="font-size:80%;">Prop. [95% CI]</span></td></tr>
+<tr id="S4.T5.4.2" class="ltx_tr">
+<td id="S4.T5.4.2.1" class="ltx_td ltx_align_left ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;" colspan="3"><span id="S4.T5.4.2.1.1" class="ltx_text ltx_font_italic" style="font-size:80%;">(a) Documentation involvement</span></td></tr>
+<tr id="S4.T5.4.3" class="ltx_tr">
+<td id="S4.T5.4.3.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.3.1.1" class="ltx_text" style="font-size:80%;">Code only</span></td>
+<td id="S4.T5.4.3.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.3.2.1" class="ltx_text" style="font-size:80%;">17,988/33,097</span></td>
+<td id="S4.T5.4.3.3" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.3.3.1" class="ltx_text" style="font-size:80%;">.543 [.538, .549]</span></td></tr>
+<tr id="S4.T5.4.4" class="ltx_tr">
+<td id="S4.T5.4.4.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.4.1.1" class="ltx_text" style="font-size:80%;">Code + documentation</span></td>
+<td id="S4.T5.4.4.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.4.2.1" class="ltx_text" style="font-size:80%;">10,586/33,097</span></td>
+<td id="S4.T5.4.4.3" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.4.3.1" class="ltx_text" style="font-size:80%;">.320 [.315, .325]</span></td></tr>
+<tr id="S4.T5.4.5" class="ltx_tr">
+<td id="S4.T5.4.5.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.5.1.1" class="ltx_text" style="font-size:80%;">Documentation only</span></td>
+<td id="S4.T5.4.5.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.5.2.1" class="ltx_text" style="font-size:80%;">3,164/33,097</span></td>
+<td id="S4.T5.4.5.3" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.5.3.1" class="ltx_text" style="font-size:80%;">.096 [.092, .099]</span></td></tr>
+<tr id="S4.T5.4.6" class="ltx_tr">
+<td id="S4.T5.4.6.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.6.1.1" class="ltx_text" style="font-size:80%;">Neither (build/config/data)</span></td>
+<td id="S4.T5.4.6.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.6.2.1" class="ltx_text" style="font-size:80%;">1,359/33,097</span></td>
+<td id="S4.T5.4.6.3" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.6.3.1" class="ltx_text" style="font-size:80%;">.041 [.039, .043]</span></td></tr>
+<tr id="S4.T5.4.7" class="ltx_tr">
+<td id="S4.T5.4.7.1" class="ltx_td ltx_align_left ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;" colspan="3"><span id="S4.T5.4.7.1.1" class="ltx_text ltx_font_italic" style="font-size:80%;">(b) First artefact touched</span></td></tr>
+<tr id="S4.T5.4.8" class="ltx_tr">
+<td id="S4.T5.4.8.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.8.1.1" class="ltx_text" style="font-size:80%;">Code first</span></td>
+<td id="S4.T5.4.8.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.8.2.1" class="ltx_text" style="font-size:80%;">2,076/4,386</span></td>
+<td id="S4.T5.4.8.3" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.8.3.1" class="ltx_text" style="font-size:80%;">.473 [.459, .488]</span></td></tr>
+<tr id="S4.T5.4.9" class="ltx_tr">
+<td id="S4.T5.4.9.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.9.1.1" class="ltx_text" style="font-size:80%;">Same commit</span></td>
+<td id="S4.T5.4.9.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.9.2.1" class="ltx_text" style="font-size:80%;">1,870/4,386</span></td>
+<td id="S4.T5.4.9.3" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.9.3.1" class="ltx_text" style="font-size:80%;">.426 [.412, .441]</span></td></tr>
+<tr id="S4.T5.4.10" class="ltx_tr">
+<td id="S4.T5.4.10.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.10.1.1" class="ltx_text" style="font-size:80%;">Documentation first</span></td>
+<td id="S4.T5.4.10.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.10.2.1" class="ltx_text" style="font-size:80%;">440/4,386</span></td>
+<td id="S4.T5.4.10.3" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.10.3.1" class="ltx_text" style="font-size:80%;">.100 [.092, .110]</span></td></tr>
+<tr id="S4.T5.4.11" class="ltx_tr">
+<td id="S4.T5.4.11.1" class="ltx_td ltx_align_left ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;" colspan="3"><span id="S4.T5.4.11.1.1" class="ltx_text ltx_font_italic" style="font-size:80%;">(c) Merge rate</span></td></tr>
+<tr id="S4.T5.4.12" class="ltx_tr">
+<td id="S4.T5.4.12.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.12.1.1" class="ltx_text" style="font-size:80%;">Touches documentation</span></td>
+<td id="S4.T5.4.12.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.12.2.1" class="ltx_text" style="font-size:80%;">10,303/12,707</span></td>
+<td id="S4.T5.4.12.3" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.12.3.1" class="ltx_text" style="font-size:80%;">.811 [.804, .818]</span></td></tr>
+<tr id="S4.T5.4.13" class="ltx_tr">
+<td id="S4.T5.4.13.1" class="ltx_td ltx_align_left ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.13.1.1" class="ltx_text" style="font-size:80%;">Code only</span></td>
+<td id="S4.T5.4.13.2" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.13.2.1" class="ltx_text" style="font-size:80%;">12,614/16,815</span></td>
+<td id="S4.T5.4.13.3" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T5.4.13.3.1" class="ltx_text" style="font-size:80%;">.750 [.744, .757]</span></td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 6：Cluster-bootstrap intervals (2,000 resamples) for the headline proportions, resampling sessions for SWE-chat statistics and repositories for AIDev statistics, alongside Wilson intervals that assume independent trials. The ratio column gives cluster-interval width divided by Wilson-interval width. Clustering widens every interval, especially for AIDev, where the largest repository contributes 8,911 pull requests and the ten largest contribute 44.7%. We report cluster intervals as the primary uncertainty estimates.</strong> · <a href="https://arxiv.org/html/2608.20195#S4.T6">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T6.10" class="ltx_tabular ltx_centering ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr id="S4.T6.10.1" class="ltx_tr">
+<td id="S4.T6.10.1.1" class="ltx_td ltx_align_left ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.1.1.1" class="ltx_text" style="font-size:90%;">Statistic</span></td>
+<td id="S4.T6.10.1.2" class="ltx_td ltx_align_right ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><math id="S4.T6.m1" class="ltx_Math" alttext="k/n" display="inline" intent=":literal"><semantics><mrow><mi mathsize="0.900em">k</mi><mo maxsize="0.900em" minsize="0.900em" stretchy="true" symmetric="true">/</mo><mi mathsize="0.900em">n</mi></mrow><annotation encoding="application/x-tex">k/n</annotation></semantics></math></td>
+<td id="S4.T6.10.1.3" class="ltx_td ltx_align_center ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.1.3.1" class="ltx_text" style="font-size:90%;">Prop.</span></td>
+<td id="S4.T6.10.1.4" class="ltx_td ltx_align_center ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.1.4.1" class="ltx_text" style="font-size:90%;">Cluster-bootstrap 95% CI</span></td>
+<td id="S4.T6.10.1.5" class="ltx_td ltx_align_center ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.1.5.1" class="ltx_text" style="font-size:90%;">Wilson 95% CI</span></td>
+<td id="S4.T6.10.1.6" class="ltx_td ltx_align_right ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.1.6.1" class="ltx_text" style="font-size:90%;">Width ratio</span></td></tr>
+<tr id="S4.T6.10.2" class="ltx_tr">
+<td id="S4.T6.10.2.1" class="ltx_td ltx_align_left ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;" colspan="6"><span id="S4.T6.10.2.1.1" class="ltx_text ltx_font_italic" style="font-size:90%;">Sessions as clusters (SWE-chat)</span></td></tr>
+<tr id="S4.T6.10.3" class="ltx_tr">
+<td id="S4.T6.10.3.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.3.1.1" class="ltx_text" style="font-size:90%;">Agent-facing, all interactions</span></td>
+<td id="S4.T6.10.3.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.3.2.1" class="ltx_text" style="font-size:90%;">1,834/3,033</span></td>
+<td id="S4.T6.10.3.3" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.3.3.1" class="ltx_text" style="font-size:90%;">0.605</span></td>
+<td id="S4.T6.10.3.4" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.3.4.1" class="ltx_text" style="font-size:90%;">[0.539, 0.665]</span></td>
+<td id="S4.T6.10.3.5" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.3.5.1" class="ltx_text" style="font-size:90%;">[0.587, 0.622]</span></td>
+<td id="S4.T6.10.3.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.3.6.1" class="ltx_text" style="font-size:90%;">3.6</span></td></tr>
+<tr id="S4.T6.10.4" class="ltx_tr">
+<td id="S4.T6.10.4.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.4.1.1" class="ltx_text" style="font-size:90%;">   consultation events</span></td>
+<td id="S4.T6.10.4.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.4.2.1" class="ltx_text" style="font-size:90%;">927/1,615</span></td>
+<td id="S4.T6.10.4.3" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.4.3.1" class="ltx_text" style="font-size:90%;">0.574</span></td>
+<td id="S4.T6.10.4.4" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.4.4.1" class="ltx_text" style="font-size:90%;">[0.508, 0.634]</span></td>
+<td id="S4.T6.10.4.5" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.4.5.1" class="ltx_text" style="font-size:90%;">[0.550, 0.598]</span></td>
+<td id="S4.T6.10.4.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.4.6.1" class="ltx_text" style="font-size:90%;">2.6</span></td></tr>
+<tr id="S4.T6.10.5" class="ltx_tr">
+<td id="S4.T6.10.5.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.5.1.1" class="ltx_text" style="font-size:90%;">   production events</span></td>
+<td id="S4.T6.10.5.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.5.2.1" class="ltx_text" style="font-size:90%;">893/1,401</span></td>
+<td id="S4.T6.10.5.3" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.5.3.1" class="ltx_text" style="font-size:90%;">0.637</span></td>
+<td id="S4.T6.10.5.4" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.5.4.1" class="ltx_text" style="font-size:90%;">[0.553, 0.713]</span></td>
+<td id="S4.T6.10.5.5" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.5.5.1" class="ltx_text" style="font-size:90%;">[0.612, 0.662]</span></td>
+<td id="S4.T6.10.5.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.5.6.1" class="ltx_text" style="font-size:90%;">3.2</span></td></tr>
+<tr id="S4.T6.10.6" class="ltx_tr">
+<td id="S4.T6.10.6.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.6.1.1" class="ltx_text" style="font-size:90%;">Self-initiated, all interactions</span></td>
+<td id="S4.T6.10.6.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.6.2.1" class="ltx_text" style="font-size:90%;">2,129/3,033</span></td>
+<td id="S4.T6.10.6.3" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.6.3.1" class="ltx_text" style="font-size:90%;">0.702</span></td>
+<td id="S4.T6.10.6.4" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.6.4.1" class="ltx_text" style="font-size:90%;">[0.667, 0.733]</span></td>
+<td id="S4.T6.10.6.5" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.6.5.1" class="ltx_text" style="font-size:90%;">[0.685, 0.718]</span></td>
+<td id="S4.T6.10.6.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.6.6.1" class="ltx_text" style="font-size:90%;">2.0</span></td></tr>
+<tr id="S4.T6.10.7" class="ltx_tr">
+<td id="S4.T6.10.7.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.7.1.1" class="ltx_text" style="font-size:90%;">Failure-driven, all interactions</span></td>
+<td id="S4.T6.10.7.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.7.2.1" class="ltx_text" style="font-size:90%;">228/3,033</span></td>
+<td id="S4.T6.10.7.3" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.7.3.1" class="ltx_text" style="font-size:90%;">0.075</span></td>
+<td id="S4.T6.10.7.4" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.7.4.1" class="ltx_text" style="font-size:90%;">[0.060, 0.093]</span></td>
+<td id="S4.T6.10.7.5" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.7.5.1" class="ltx_text" style="font-size:90%;">[0.066, 0.085]</span></td>
+<td id="S4.T6.10.7.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.7.6.1" class="ltx_text" style="font-size:90%;">1.8</span></td></tr>
+<tr id="S4.T6.10.8" class="ltx_tr">
+<td id="S4.T6.10.8.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.8.1.1" class="ltx_text" style="font-size:90%;">Sessions with doc event</span></td>
+<td id="S4.T6.10.8.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.8.2.1" class="ltx_text" style="font-size:90%;">316/557</span></td>
+<td id="S4.T6.10.8.3" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.8.3.1" class="ltx_text" style="font-size:90%;">0.567</span></td>
+<td id="S4.T6.10.8.4" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.8.4.1" class="ltx_text" style="font-size:90%;">[0.526, 0.605]</span></td>
+<td id="S4.T6.10.8.5" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.8.5.1" class="ltx_text" style="font-size:90%;">[0.526, 0.608]</span></td>
+<td id="S4.T6.10.8.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.8.6.1" class="ltx_text" style="font-size:90%;">1.0</span></td></tr>
+<tr id="S4.T6.10.9" class="ltx_tr">
+<td id="S4.T6.10.9.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.9.1.1" class="ltx_text" style="font-size:90%;">Doc-first recovery</span></td>
+<td id="S4.T6.10.9.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.9.2.1" class="ltx_text" style="font-size:90%;">109/2,034</span></td>
+<td id="S4.T6.10.9.3" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.9.3.1" class="ltx_text" style="font-size:90%;">0.054</span></td>
+<td id="S4.T6.10.9.4" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.9.4.1" class="ltx_text" style="font-size:90%;">[0.038, 0.073]</span></td>
+<td id="S4.T6.10.9.5" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.9.5.1" class="ltx_text" style="font-size:90%;">[0.045, 0.064]</span></td>
+<td id="S4.T6.10.9.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.9.6.1" class="ltx_text" style="font-size:90%;">1.8</span></td></tr>
+<tr id="S4.T6.10.10" class="ltx_tr">
+<td id="S4.T6.10.10.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;" colspan="6"><span id="S4.T6.10.10.1.1" class="ltx_text ltx_font_italic" style="font-size:90%;">Repositories as clusters (AIDev)</span></td></tr>
+<tr id="S4.T6.10.11" class="ltx_tr">
+<td id="S4.T6.10.11.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.11.1.1" class="ltx_text" style="font-size:90%;">Documentation changed (PRs)</span></td>
+<td id="S4.T6.10.11.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.11.2.1" class="ltx_text" style="font-size:90%;">13,750/33,097</span></td>
+<td id="S4.T6.10.11.3" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.11.3.1" class="ltx_text" style="font-size:90%;">0.415</span></td>
+<td id="S4.T6.10.11.4" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.11.4.1" class="ltx_text" style="font-size:90%;">[0.358, 0.454]</span></td>
+<td id="S4.T6.10.11.5" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.11.5.1" class="ltx_text" style="font-size:90%;">[0.410, 0.421]</span></td>
+<td id="S4.T6.10.11.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.11.6.1" class="ltx_text" style="font-size:90%;">9.1</span></td></tr>
+<tr id="S4.T6.10.12" class="ltx_tr">
+<td id="S4.T6.10.12.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.12.1.1" class="ltx_text" style="font-size:90%;">Code–doc co-change (PRs)</span></td>
+<td id="S4.T6.10.12.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.12.2.1" class="ltx_text" style="font-size:90%;">10,586/33,097</span></td>
+<td id="S4.T6.10.12.3" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.12.3.1" class="ltx_text" style="font-size:90%;">0.320</span></td>
+<td id="S4.T6.10.12.4" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.12.4.1" class="ltx_text" style="font-size:90%;">[0.243, 0.389]</span></td>
+<td id="S4.T6.10.12.5" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.12.5.1" class="ltx_text" style="font-size:90%;">[0.315, 0.325]</span></td>
+<td id="S4.T6.10.12.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.12.6.1" class="ltx_text" style="font-size:90%;">14.4</span></td></tr>
+<tr id="S4.T6.10.13" class="ltx_tr">
+<td id="S4.T6.10.13.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.13.1.1" class="ltx_text" style="font-size:90%;">Code first, different commits</span></td>
+<td id="S4.T6.10.13.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.13.2.1" class="ltx_text" style="font-size:90%;">2,076/2,516</span></td>
+<td id="S4.T6.10.13.3" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.13.3.1" class="ltx_text" style="font-size:90%;">0.825</span></td>
+<td id="S4.T6.10.13.4" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.13.4.1" class="ltx_text" style="font-size:90%;">[0.787, 0.860]</span></td>
+<td id="S4.T6.10.13.5" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.13.5.1" class="ltx_text" style="font-size:90%;">[0.810, 0.839]</span></td>
+<td id="S4.T6.10.13.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.13.6.1" class="ltx_text" style="font-size:90%;">2.5</span></td></tr>
+<tr id="S4.T6.10.14" class="ltx_tr">
+<td id="S4.T6.10.14.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.14.1.1" class="ltx_text" style="font-size:90%;">Merge rate, doc-touching</span></td>
+<td id="S4.T6.10.14.2" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.14.2.1" class="ltx_text" style="font-size:90%;">10,303/12,707</span></td>
+<td id="S4.T6.10.14.3" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.14.3.1" class="ltx_text" style="font-size:90%;">0.811</span></td>
+<td id="S4.T6.10.14.4" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.14.4.1" class="ltx_text" style="font-size:90%;">[0.713, 0.856]</span></td>
+<td id="S4.T6.10.14.5" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.14.5.1" class="ltx_text" style="font-size:90%;">[0.804, 0.818]</span></td>
+<td id="S4.T6.10.14.6" class="ltx_td ltx_align_right" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.14.6.1" class="ltx_text" style="font-size:90%;">10.5</span></td></tr>
+<tr id="S4.T6.10.15" class="ltx_tr">
+<td id="S4.T6.10.15.1" class="ltx_td ltx_align_left ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.15.1.1" class="ltx_text" style="font-size:90%;">Merge rate, code-only</span></td>
+<td id="S4.T6.10.15.2" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.15.2.1" class="ltx_text" style="font-size:90%;">12,614/16,815</span></td>
+<td id="S4.T6.10.15.3" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.15.3.1" class="ltx_text" style="font-size:90%;">0.750</span></td>
+<td id="S4.T6.10.15.4" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.15.4.1" class="ltx_text" style="font-size:90%;">[0.649, 0.811]</span></td>
+<td id="S4.T6.10.15.5" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.15.5.1" class="ltx_text" style="font-size:90%;">[0.744, 0.757]</span></td>
+<td id="S4.T6.10.15.6" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T6.10.15.6.1" class="ltx_text" style="font-size:90%;">12.4</span></td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 7：Consultation (Read, Search, Discover; n c = 1,615 n_{c}=1{,}615 ) versus production (Edit, Create; n p = 1,401 n_{p}=1{,}401 ) events by document type. Agent-facing categories are marked † \dagger ; they account for 57.4% of consultation and 63.7% of production. Configuration files are consulted far more than they are produced; agent working notes are consulted and produced in nearly equal measure. “Other low-frequency” pools troubleshooting, license/legal, and contributing, so the columns sum to n c n_{c} and n p n_{p} .</strong> · <a href="https://arxiv.org/html/2608.20195#S4.T7">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T7.9" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr id="S4.T7.9.1" class="ltx_tr">
+<th id="S4.T7.9.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.1.1.1" class="ltx_text" style="font-size:80%;">Document type</span></th>
+<td id="S4.T7.9.1.2" class="ltx_td ltx_align_right ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.1.2.1" class="ltx_text" style="font-size:80%;">Cons.</span></td>
+<td id="S4.T7.9.1.3" class="ltx_td ltx_align_right ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.1.3.1" class="ltx_text" style="font-size:80%;">%</span></td>
+<td id="S4.T7.9.1.4" class="ltx_td ltx_align_right ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.1.4.1" class="ltx_text" style="font-size:80%;">Prod.</span></td>
+<td id="S4.T7.9.1.5" class="ltx_td ltx_align_right ltx_border_tt" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.1.5.1" class="ltx_text" style="font-size:80%;">%</span></td></tr>
+<tr id="S4.T7.9.2" class="ltx_tr">
+<th id="S4.T7.9.2.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.2.1.1" class="ltx_text" style="font-size:80%;">Agent instructions<sup id="S4.T7.9.2.1.1.1" class="ltx_sup">†</sup></span></th>
+<td id="S4.T7.9.2.2" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.2.2.1" class="ltx_text" style="font-size:80%;">545</span></td>
+<td id="S4.T7.9.2.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.2.3.1" class="ltx_text" style="font-size:80%;">33.7</span></td>
+<td id="S4.T7.9.2.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.2.4.1" class="ltx_text" style="font-size:80%;">526</span></td>
+<td id="S4.T7.9.2.5" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.2.5.1" class="ltx_text" style="font-size:80%;">37.5</span></td></tr>
+<tr id="S4.T7.9.3" class="ltx_tr">
+<th id="S4.T7.9.3.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.3.1.1" class="ltx_text" style="font-size:80%;">Agent working notes<sup id="S4.T7.9.3.1.1.1" class="ltx_sup">†</sup></span></th>
+<td id="S4.T7.9.3.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.3.2.1" class="ltx_text" style="font-size:80%;">382</span></td>
+<td id="S4.T7.9.3.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.3.3.1" class="ltx_text" style="font-size:80%;">23.7</span></td>
+<td id="S4.T7.9.3.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.3.4.1" class="ltx_text" style="font-size:80%;">367</span></td>
+<td id="S4.T7.9.3.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.3.5.1" class="ltx_text" style="font-size:80%;">26.2</span></td></tr>
+<tr id="S4.T7.9.4" class="ltx_tr">
+<th id="S4.T7.9.4.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.4.1.1" class="ltx_text" style="font-size:80%;">Task / requirements</span></th>
+<td id="S4.T7.9.4.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.4.2.1" class="ltx_text" style="font-size:80%;">129</span></td>
+<td id="S4.T7.9.4.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.4.3.1" class="ltx_text" style="font-size:80%;">8.0</span></td>
+<td id="S4.T7.9.4.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.4.4.1" class="ltx_text" style="font-size:80%;">170</span></td>
+<td id="S4.T7.9.4.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.4.5.1" class="ltx_text" style="font-size:80%;">12.1</span></td></tr>
+<tr id="S4.T7.9.5" class="ltx_tr">
+<th id="S4.T7.9.5.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.5.1.1" class="ltx_text" style="font-size:80%;">Configuration</span></th>
+<td id="S4.T7.9.5.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.5.2.1" class="ltx_text" style="font-size:80%;">195</span></td>
+<td id="S4.T7.9.5.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.5.3.1" class="ltx_text" style="font-size:80%;">12.1</span></td>
+<td id="S4.T7.9.5.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.5.4.1" class="ltx_text" style="font-size:80%;">10</span></td>
+<td id="S4.T7.9.5.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.5.5.1" class="ltx_text" style="font-size:80%;">0.7</span></td></tr>
+<tr id="S4.T7.9.6" class="ltx_tr">
+<th id="S4.T7.9.6.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.6.1.1" class="ltx_text" style="font-size:80%;">README</span></th>
+<td id="S4.T7.9.6.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.6.2.1" class="ltx_text" style="font-size:80%;">89</span></td>
+<td id="S4.T7.9.6.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.6.3.1" class="ltx_text" style="font-size:80%;">5.5</span></td>
+<td id="S4.T7.9.6.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.6.4.1" class="ltx_text" style="font-size:80%;">107</span></td>
+<td id="S4.T7.9.6.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.6.5.1" class="ltx_text" style="font-size:80%;">7.6</span></td></tr>
+<tr id="S4.T7.9.7" class="ltx_tr">
+<th id="S4.T7.9.7.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.7.1.1" class="ltx_text" style="font-size:80%;">Other prose</span></th>
+<td id="S4.T7.9.7.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.7.2.1" class="ltx_text" style="font-size:80%;">72</span></td>
+<td id="S4.T7.9.7.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.7.3.1" class="ltx_text" style="font-size:80%;">4.5</span></td>
+<td id="S4.T7.9.7.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.7.4.1" class="ltx_text" style="font-size:80%;">93</span></td>
+<td id="S4.T7.9.7.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.7.5.1" class="ltx_text" style="font-size:80%;">6.6</span></td></tr>
+<tr id="S4.T7.9.8" class="ltx_tr">
+<th id="S4.T7.9.8.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.8.1.1" class="ltx_text" style="font-size:80%;">Architecture / ADR</span></th>
+<td id="S4.T7.9.8.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.8.2.1" class="ltx_text" style="font-size:80%;">69</span></td>
+<td id="S4.T7.9.8.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.8.3.1" class="ltx_text" style="font-size:80%;">4.3</span></td>
+<td id="S4.T7.9.8.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.8.4.1" class="ltx_text" style="font-size:80%;">51</span></td>
+<td id="S4.T7.9.8.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.8.5.1" class="ltx_text" style="font-size:80%;">3.6</span></td></tr>
+<tr id="S4.T7.9.9" class="ltx_tr">
+<th id="S4.T7.9.9.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.9.1.1" class="ltx_text" style="font-size:80%;">Install / deploy</span></th>
+<td id="S4.T7.9.9.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.9.2.1" class="ltx_text" style="font-size:80%;">24</span></td>
+<td id="S4.T7.9.9.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.9.3.1" class="ltx_text" style="font-size:80%;">1.5</span></td>
+<td id="S4.T7.9.9.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.9.4.1" class="ltx_text" style="font-size:80%;">17</span></td>
+<td id="S4.T7.9.9.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.9.5.1" class="ltx_text" style="font-size:80%;">1.2</span></td></tr>
+<tr id="S4.T7.9.10" class="ltx_tr">
+<th id="S4.T7.9.10.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.10.1.1" class="ltx_text" style="font-size:80%;">API reference</span></th>
+<td id="S4.T7.9.10.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.10.2.1" class="ltx_text" style="font-size:80%;">37</span></td>
+<td id="S4.T7.9.10.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.10.3.1" class="ltx_text" style="font-size:80%;">2.3</span></td>
+<td id="S4.T7.9.10.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.10.4.1" class="ltx_text" style="font-size:80%;">3</span></td>
+<td id="S4.T7.9.10.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.10.5.1" class="ltx_text" style="font-size:80%;">0.2</span></td></tr>
+<tr id="S4.T7.9.11" class="ltx_tr">
+<th id="S4.T7.9.11.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.11.1.1" class="ltx_text" style="font-size:80%;">Schema</span></th>
+<td id="S4.T7.9.11.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.11.2.1" class="ltx_text" style="font-size:80%;">16</span></td>
+<td id="S4.T7.9.11.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.11.3.1" class="ltx_text" style="font-size:80%;">1.0</span></td>
+<td id="S4.T7.9.11.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.11.4.1" class="ltx_text" style="font-size:80%;">16</span></td>
+<td id="S4.T7.9.11.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.11.5.1" class="ltx_text" style="font-size:80%;">1.1</span></td></tr>
+<tr id="S4.T7.9.12" class="ltx_tr">
+<th id="S4.T7.9.12.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.12.1.1" class="ltx_text" style="font-size:80%;">Testing docs</span></th>
+<td id="S4.T7.9.12.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.12.2.1" class="ltx_text" style="font-size:80%;">19</span></td>
+<td id="S4.T7.9.12.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.12.3.1" class="ltx_text" style="font-size:80%;">1.2</span></td>
+<td id="S4.T7.9.12.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.12.4.1" class="ltx_text" style="font-size:80%;">10</span></td>
+<td id="S4.T7.9.12.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.12.5.1" class="ltx_text" style="font-size:80%;">0.7</span></td></tr>
+<tr id="S4.T7.9.13" class="ltx_tr">
+<th id="S4.T7.9.13.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.13.1.1" class="ltx_text" style="font-size:80%;">Examples</span></th>
+<td id="S4.T7.9.13.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.13.2.1" class="ltx_text" style="font-size:80%;">17</span></td>
+<td id="S4.T7.9.13.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.13.3.1" class="ltx_text" style="font-size:80%;">1.1</span></td>
+<td id="S4.T7.9.13.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.13.4.1" class="ltx_text" style="font-size:80%;">10</span></td>
+<td id="S4.T7.9.13.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.13.5.1" class="ltx_text" style="font-size:80%;">0.7</span></td></tr>
+<tr id="S4.T7.9.14" class="ltx_tr">
+<th id="S4.T7.9.14.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.14.1.1" class="ltx_text" style="font-size:80%;">Changelog</span></th>
+<td id="S4.T7.9.14.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.14.2.1" class="ltx_text" style="font-size:80%;">11</span></td>
+<td id="S4.T7.9.14.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.14.3.1" class="ltx_text" style="font-size:80%;">0.7</span></td>
+<td id="S4.T7.9.14.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.14.4.1" class="ltx_text" style="font-size:80%;">11</span></td>
+<td id="S4.T7.9.14.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.14.5.1" class="ltx_text" style="font-size:80%;">0.8</span></td></tr>
+<tr id="S4.T7.9.15" class="ltx_tr">
+<th id="S4.T7.9.15.1" class="ltx_td ltx_align_left ltx_th ltx_th_row" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.15.1.1" class="ltx_text" style="font-size:80%;">Other low-frequency</span></th>
+<td id="S4.T7.9.15.2" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.15.2.1" class="ltx_text" style="font-size:80%;">10</span></td>
+<td id="S4.T7.9.15.3" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.15.3.1" class="ltx_text" style="font-size:80%;">0.6</span></td>
+<td id="S4.T7.9.15.4" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.15.4.1" class="ltx_text" style="font-size:80%;">10</span></td>
+<td id="S4.T7.9.15.5" class="ltx_td ltx_align_right" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.15.5.1" class="ltx_text" style="font-size:80%;">0.7</span></td></tr>
+<tr id="S4.T7.9.16" class="ltx_tr">
+<th id="S4.T7.9.16.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.16.1.1" class="ltx_text ltx_font_italic" style="font-size:80%;">Total</span></th>
+<td id="S4.T7.9.16.2" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.16.2.1" class="ltx_text" style="font-size:80%;">1,615</span></td>
+<td id="S4.T7.9.16.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.16.3.1" class="ltx_text" style="font-size:80%;">100.0</span></td>
+<td id="S4.T7.9.16.4" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.16.4.1" class="ltx_text" style="font-size:80%;">1,401</span></td>
+<td id="S4.T7.9.16.5" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.16.5.1" class="ltx_text" style="font-size:80%;">100.0</span></td></tr>
+<tr id="S4.T7.9.17" class="ltx_tr">
+<th id="S4.T7.9.17.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.17.1.1" class="ltx_text ltx_font_italic" style="font-size:80%;">Agent-facing<sup id="S4.T7.9.17.1.1.1" class="ltx_sup">†</sup></span></th>
+<td id="S4.T7.9.17.2" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.17.2.1" class="ltx_text ltx_font_bold" style="font-size:80%;">927</span></td>
+<td id="S4.T7.9.17.3" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.17.3.1" class="ltx_text ltx_font_bold" style="font-size:80%;">57.4</span></td>
+<td id="S4.T7.9.17.4" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.17.4.1" class="ltx_text ltx_font_bold" style="font-size:80%;">893</span></td>
+<td id="S4.T7.9.17.5" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:3.5pt;padding-right:3.5pt;"><span id="S4.T7.9.17.5.1" class="ltx_text ltx_font_bold" style="font-size:80%;">63.7</span></td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 8：Sensitivity of headline proportions to weighting. The event-weighted estimate pools all events (long sessions weigh more); the session-equal estimate averages per-session shares; and the agent-weighted estimate reweights sessions to the corpus agent distribution (83.8% Claude Code, 4,852/5,790 labelled sessions; 61 of the 5,851 released sessions are excluded from the reweighting — 52 carry no agent label and 9 belong to agents with fewer than 20 sessions), correcting our deliberate oversampling of minority agents. Because the sample was also stratified by session length, this corrects agent-level oversampling only and is not a full joint-stratum estimate. All three statistics describe the stratified sample; the broad pattern is stable across all three weightings.</strong> · <a href="https://arxiv.org/html/2608.20195#S4.T8">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T8.4" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="S4.T8.4.1" class="ltx_tr">
+<th id="S4.T8.4.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.1.1.1" class="ltx_text" style="font-size:80%;">Statistic</span></th>
+<th id="S4.T8.4.1.2" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.1.2.1" class="ltx_text" style="font-size:80%;">Event</span></th>
+<th id="S4.T8.4.1.3" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.1.3.1" class="ltx_text" style="font-size:80%;">Sess.-eq.</span></th>
+<th id="S4.T8.4.1.4" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.1.4.1" class="ltx_text" style="font-size:80%;">Agent-wt.</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="S4.T8.4.2" class="ltx_tr">
+<td id="S4.T8.4.2.1" class="ltx_td ltx_align_left ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.2.1.1" class="ltx_text" style="font-size:80%;">Agent-facing, all interactions</span></td>
+<td id="S4.T8.4.2.2" class="ltx_td ltx_align_center ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.2.2.1" class="ltx_text" style="font-size:80%;">60.5%</span></td>
+<td id="S4.T8.4.2.3" class="ltx_td ltx_align_center ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.2.3.1" class="ltx_text" style="font-size:80%;">54.7%</span></td>
+<td id="S4.T8.4.2.4" class="ltx_td ltx_align_center ltx_border_t" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.2.4.1" class="ltx_text" style="font-size:80%;">55.1%</span></td></tr>
+<tr id="S4.T8.4.3" class="ltx_tr">
+<td id="S4.T8.4.3.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.3.1.1" class="ltx_text" style="font-size:80%;">consultation events only</span></td>
+<td id="S4.T8.4.3.2" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.3.2.1" class="ltx_text" style="font-size:80%;">57.4%</span></td>
+<td id="S4.T8.4.3.3" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.3.3.1" class="ltx_text" style="font-size:80%;">50.5%</span></td>
+<td id="S4.T8.4.3.4" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.3.4.1" class="ltx_text" style="font-size:80%;">50.1%</span></td></tr>
+<tr id="S4.T8.4.4" class="ltx_tr">
+<td id="S4.T8.4.4.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.4.1.1" class="ltx_text" style="font-size:80%;">production events only</span></td>
+<td id="S4.T8.4.4.2" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.4.2.1" class="ltx_text" style="font-size:80%;">63.7%</span></td>
+<td id="S4.T8.4.4.3" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.4.3.1" class="ltx_text" style="font-size:80%;">67.1%</span></td>
+<td id="S4.T8.4.4.4" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.4.4.1" class="ltx_text" style="font-size:80%;">66.3%</span></td></tr>
+<tr id="S4.T8.4.5" class="ltx_tr">
+<td id="S4.T8.4.5.1" class="ltx_td ltx_align_left" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.5.1.1" class="ltx_text" style="font-size:80%;">Self-initiated, all interactions</span></td>
+<td id="S4.T8.4.5.2" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.5.2.1" class="ltx_text" style="font-size:80%;">70.2%</span></td>
+<td id="S4.T8.4.5.3" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.5.3.1" class="ltx_text" style="font-size:80%;">63.2%</span></td>
+<td id="S4.T8.4.5.4" class="ltx_td ltx_align_center" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.5.4.1" class="ltx_text" style="font-size:80%;">61.9%</span></td></tr>
+<tr id="S4.T8.4.6" class="ltx_tr">
+<td id="S4.T8.4.6.1" class="ltx_td ltx_align_left ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.6.1.1" class="ltx_text" style="font-size:80%;">Sessions w/ doc event</span></td>
+<td id="S4.T8.4.6.2" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.6.2.1" class="ltx_text" style="font-size:80%;">—</span></td>
+<td id="S4.T8.4.6.3" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.6.3.1" class="ltx_text" style="font-size:80%;">56.7%</span></td>
+<td id="S4.T8.4.6.4" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:3.0pt;padding-right:3.0pt;"><span id="S4.T8.4.6.4.1" class="ltx_text" style="font-size:80%;">59.8%</span></td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 9：Fraction of sessions containing at least one documentation interaction, by agent. Sampling was deliberately non-proportional, so these per-agent estimates must not be pooled. The zero estimate for one agent is based on 11 sessions and does not constitute evidence of absence.</strong> · <a href="https://arxiv.org/html/2608.20195#S4.T9">论文原始位置</a></figcaption><div class="table-wrap"><table id="S4.T9.4" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="S4.T9.4.1" class="ltx_tr">
+<th id="S4.T9.4.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.1.1.1" class="ltx_text" style="font-size:80%;">Agent</span></th>
+<th id="S4.T9.4.1.2" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.1.2.1" class="ltx_text" style="font-size:80%;">With docs</span></th>
+<th id="S4.T9.4.1.3" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.1.3.1" class="ltx_text" style="font-size:80%;">Sessions</span></th>
+<th id="S4.T9.4.1.4" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.1.4.1" class="ltx_text" style="font-size:80%;">Rate [95% CI]</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="S4.T9.4.2" class="ltx_tr">
+<td id="S4.T9.4.2.1" class="ltx_td ltx_align_left ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.2.1.1" class="ltx_text" style="font-size:80%;">Gemini CLI</span></td>
+<td id="S4.T9.4.2.2" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.2.2.1" class="ltx_text" style="font-size:80%;">9</span></td>
+<td id="S4.T9.4.2.3" class="ltx_td ltx_align_right ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.2.3.1" class="ltx_text" style="font-size:80%;">12</span></td>
+<td id="S4.T9.4.2.4" class="ltx_td ltx_align_center ltx_border_t" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.2.4.1" class="ltx_text" style="font-size:80%;">.750 [.468, .911]</span></td></tr>
+<tr id="S4.T9.4.3" class="ltx_tr">
+<td id="S4.T9.4.3.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.3.1.1" class="ltx_text" style="font-size:80%;">Agent</span></td>
+<td id="S4.T9.4.3.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.3.2.1" class="ltx_text" style="font-size:80%;">8</span></td>
+<td id="S4.T9.4.3.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.3.3.1" class="ltx_text" style="font-size:80%;">12</span></td>
+<td id="S4.T9.4.3.4" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.3.4.1" class="ltx_text" style="font-size:80%;">.667 [.391, .862]</span></td></tr>
+<tr id="S4.T9.4.4" class="ltx_tr">
+<td id="S4.T9.4.4.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.4.1.1" class="ltx_text" style="font-size:80%;">Claude Code</span></td>
+<td id="S4.T9.4.4.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.4.2.1" class="ltx_text" style="font-size:80%;">238</span></td>
+<td id="S4.T9.4.4.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.4.3.1" class="ltx_text" style="font-size:80%;">380</span></td>
+<td id="S4.T9.4.4.4" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.4.4.1" class="ltx_text" style="font-size:80%;">.626 [.577, .673]</span></td></tr>
+<tr id="S4.T9.4.5" class="ltx_tr">
+<td id="S4.T9.4.5.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.5.1.1" class="ltx_text" style="font-size:80%;">OpenCode</span></td>
+<td id="S4.T9.4.5.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.5.2.1" class="ltx_text" style="font-size:80%;">45</span></td>
+<td id="S4.T9.4.5.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.5.3.1" class="ltx_text" style="font-size:80%;">99</span></td>
+<td id="S4.T9.4.5.4" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.5.4.1" class="ltx_text" style="font-size:80%;">.455 [.360, .552]</span></td></tr>
+<tr id="S4.T9.4.6" class="ltx_tr">
+<td id="S4.T9.4.6.1" class="ltx_td ltx_align_left" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.6.1.1" class="ltx_text" style="font-size:80%;">Codex</span></td>
+<td id="S4.T9.4.6.2" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.6.2.1" class="ltx_text" style="font-size:80%;">16</span></td>
+<td id="S4.T9.4.6.3" class="ltx_td ltx_align_right" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.6.3.1" class="ltx_text" style="font-size:80%;">43</span></td>
+<td id="S4.T9.4.6.4" class="ltx_td ltx_align_center" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.6.4.1" class="ltx_text" style="font-size:80%;">.372 [.244, .521]</span></td></tr>
+<tr id="S4.T9.4.7" class="ltx_tr">
+<td id="S4.T9.4.7.1" class="ltx_td ltx_align_left ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.7.1.1" class="ltx_text" style="font-size:80%;">Cursor</span></td>
+<td id="S4.T9.4.7.2" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.7.2.1" class="ltx_text" style="font-size:80%;">0</span></td>
+<td id="S4.T9.4.7.3" class="ltx_td ltx_align_right ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.7.3.1" class="ltx_text" style="font-size:80%;">11</span></td>
+<td id="S4.T9.4.7.4" class="ltx_td ltx_align_center ltx_border_bb" style="padding-left:4.0pt;padding-right:4.0pt;"><span id="S4.T9.4.7.4.1" class="ltx_text" style="font-size:80%;">.000 [.000, .259]</span></td></tr>
+</tbody>
+</table>
+</div></figure>
+<figure><figcaption><strong>表 10：Evidence for each candidate stage of the documentation-interaction cycle ( n = 3,033 n=3{,}033 documentation events). Two stages in the initial scheme are entirely unattested.</strong> · <a href="https://arxiv.org/html/2608.20195#S5.T10">论文原始位置</a></figcaption><div class="table-wrap"><table id="S5.T10.5" class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="S5.T10.5.1" class="ltx_tr">
+<th id="S5.T10.5.1.1" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt"><span id="S5.T10.5.1.1.1" class="ltx_text" style="font-size:90%;">Candidate stage</span></th>
+<th id="S5.T10.5.1.2" class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt"><span id="S5.T10.5.1.2.1" class="ltx_text" style="font-size:90%;">Events</span></th>
+<th id="S5.T10.5.1.3" class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt"><span id="S5.T10.5.1.3.1" class="ltx_text" style="font-size:90%;">Status</span></th></tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="S5.T10.5.2" class="ltx_tr">
+<td id="S5.T10.5.2.1" class="ltx_td ltx_align_left ltx_border_t"><span id="S5.T10.5.2.1.1" class="ltx_text" style="font-size:90%;">Contribute/Update</span></td>
+<td id="S5.T10.5.2.2" class="ltx_td ltx_align_right ltx_border_t"><span id="S5.T10.5.2.2.1" class="ltx_text" style="font-size:90%;">1,401</span></td>
+<td id="S5.T10.5.2.3" class="ltx_td ltx_align_left ltx_border_t"><span id="S5.T10.5.2.3.1" class="ltx_text" style="font-size:90%;">strongly attested</span></td></tr>
+<tr id="S5.T10.5.3" class="ltx_tr">
+<td id="S5.T10.5.3.1" class="ltx_td ltx_align_left"><span id="S5.T10.5.3.1.1" class="ltx_text" style="font-size:90%;">Retrieve</span></td>
+<td id="S5.T10.5.3.2" class="ltx_td ltx_align_right"><span id="S5.T10.5.3.2.1" class="ltx_text" style="font-size:90%;">1,344</span></td>
+<td id="S5.T10.5.3.3" class="ltx_td ltx_align_left"><span id="S5.T10.5.3.3.1" class="ltx_text" style="font-size:90%;">strongly attested</span></td></tr>
+<tr id="S5.T10.5.4" class="ltx_tr">
+<td id="S5.T10.5.4.1" class="ltx_td ltx_align_left"><span id="S5.T10.5.4.1.1" class="ltx_text" style="font-size:90%;">Orient</span></td>
+<td id="S5.T10.5.4.2" class="ltx_td ltx_align_right"><span id="S5.T10.5.4.2.1" class="ltx_text" style="font-size:90%;">462</span></td>
+<td id="S5.T10.5.4.3" class="ltx_td ltx_align_left"><span id="S5.T10.5.4.3.1" class="ltx_text" style="font-size:90%;">attested</span></td></tr>
+<tr id="S5.T10.5.5" class="ltx_tr">
+<td id="S5.T10.5.5.1" class="ltx_td ltx_align_left"><span id="S5.T10.5.5.1.1" class="ltx_text" style="font-size:90%;">Interpret</span></td>
+<td id="S5.T10.5.5.2" class="ltx_td ltx_align_right"><span id="S5.T10.5.5.2.1" class="ltx_text" style="font-size:90%;">413</span></td>
+<td id="S5.T10.5.5.3" class="ltx_td ltx_align_left"><span id="S5.T10.5.5.3.1" class="ltx_text" style="font-size:90%;">attested</span></td></tr>
+<tr id="S5.T10.5.6" class="ltx_tr">
+<td id="S5.T10.5.6.1" class="ltx_td ltx_align_left"><span id="S5.T10.5.6.1.1" class="ltx_text" style="font-size:90%;">Revisit</span></td>
+<td id="S5.T10.5.6.2" class="ltx_td ltx_align_right"><span id="S5.T10.5.6.2.1" class="ltx_text" style="font-size:90%;">360</span></td>
+<td id="S5.T10.5.6.3" class="ltx_td ltx_align_left"><span id="S5.T10.5.6.3.1" class="ltx_text" style="font-size:90%;">attested</span></td></tr>
+<tr id="S5.T10.5.7" class="ltx_tr">
+<td id="S5.T10.5.7.1" class="ltx_td ltx_align_left"><span id="S5.T10.5.7.1.1" class="ltx_text" style="font-size:90%;">Discover</span></td>
+<td id="S5.T10.5.7.2" class="ltx_td ltx_align_right"><span id="S5.T10.5.7.2.1" class="ltx_text" style="font-size:90%;">287</span></td>
+<td id="S5.T10.5.7.3" class="ltx_td ltx_align_left"><span id="S5.T10.5.7.3.1" class="ltx_text" style="font-size:90%;">attested</span></td></tr>
+<tr id="S5.T10.5.8" class="ltx_tr">
+<td id="S5.T10.5.8.1" class="ltx_td ltx_align_left"><span id="S5.T10.5.8.1.1" class="ltx_text" style="font-size:90%;">Recover</span></td>
+<td id="S5.T10.5.8.2" class="ltx_td ltx_align_right"><span id="S5.T10.5.8.2.1" class="ltx_text" style="font-size:90%;">109</span></td>
+<td id="S5.T10.5.8.3" class="ltx_td ltx_align_left"><span id="S5.T10.5.8.3.1" class="ltx_text" style="font-size:90%;">attested, weak</span></td></tr>
+<tr id="S5.T10.5.9" class="ltx_tr">
+<td id="S5.T10.5.9.1" class="ltx_td ltx_align_left"><span id="S5.T10.5.9.1.1" class="ltx_text" style="font-size:90%;">Apply</span></td>
+<td id="S5.T10.5.9.2" class="ltx_td ltx_align_right"><span id="S5.T10.5.9.2.1" class="ltx_text" style="font-size:90%;">75</span></td>
+<td id="S5.T10.5.9.3" class="ltx_td ltx_align_left"><span id="S5.T10.5.9.3.1" class="ltx_text" style="font-size:90%;">weak</span></td></tr>
+<tr id="S5.T10.5.10" class="ltx_tr">
+<td id="S5.T10.5.10.1" class="ltx_td ltx_align_left"><span id="S5.T10.5.10.1.1" class="ltx_text" style="font-size:90%;">Validate</span></td>
+<td id="S5.T10.5.10.2" class="ltx_td ltx_align_right"><span id="S5.T10.5.10.2.1" class="ltx_text" style="font-size:90%;">0</span></td>
+<td id="S5.T10.5.10.3" class="ltx_td ltx_align_left"><span id="S5.T10.5.10.3.1" class="ltx_text ltx_font_bold" style="font-size:90%;">not attested</span></td></tr>
+<tr id="S5.T10.5.11" class="ltx_tr">
+<td id="S5.T10.5.11.1" class="ltx_td ltx_align_left ltx_border_bb"><span id="S5.T10.5.11.1.1" class="ltx_text" style="font-size:90%;">Escalate</span></td>
+<td id="S5.T10.5.11.2" class="ltx_td ltx_align_right ltx_border_bb"><span id="S5.T10.5.11.2.1" class="ltx_text" style="font-size:90%;">0</span></td>
+<td id="S5.T10.5.11.3" class="ltx_td ltx_align_left ltx_border_bb"><span id="S5.T10.5.11.3.1" class="ltx_text ltx_font_bold" style="font-size:90%;">not attested</span></td></tr>
+</tbody>
+</table>
+</div></figure></div></details>
+</section>
+
+<section><h2>GitHub 三日增长项目</h2><div class="callout warn"><strong>窗口说明：</strong>使用 2026-08-18 11:06 CST 本地日报快照与 2026-08-21 10:51 CST GitHub REST 当前值，实际约 71 小时 45 分。它是可验证的最近 72 小时代理，不插值、不外推。</div><div class="table-wrap"><table><thead><tr><th>#</th><th>仓库</th><th>用途</th><th>当前 Star</th><th>约 72h 新增</th><th>语言</th><th>最近推送</th></tr></thead><tbody><tr><td>1</td><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>An agentic skills framework &amp; software development methodology that works.</td><td>275,009</td><td class="up">+1,740</td><td>Shell</td><td>2026-08-19 17:33:23 UTC</td></tr><tr><td>2</td><td><a href="https://github.com/openai/codex">openai/codex</a></td><td>Lightweight coding agent that runs in your terminal</td><td>108,155</td><td class="up">+1,638</td><td>Rust</td><td>2026-08-21 02:35:23 UTC</td></tr><tr><td>3</td><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>The agent that grows with you</td><td>233,584</td><td class="up">+1,496</td><td>Python</td><td>2026-08-21 02:46:35 UTC</td></tr><tr><td>4</td><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>The context API to search, scrape, and interact with the web at scale. 🔥</td><td>170,139</td><td class="up">+1,450</td><td>TypeScript</td><td>2026-08-20 23:13:09 UTC</td></tr><tr><td>5</td><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>The open source coding agent.</td><td>199,586</td><td class="up">+1,069</td><td>TypeScript</td><td>2026-08-21 02:49:10 UTC</td></tr></tbody></table></div></section>
+
+<section><h2>GitHub 高 Star 未总结项目</h2><p class="method">扫描历史日报得到 207 个 GitHub 仓库并全部排除；从 GitHub topic:ai-agent 高 Star 候选中按总 Star 选择 5 个高度相关项目。搜索结果不是 GitHub 全站穷举。</p><div class="table-wrap"><table><thead><tr><th>#</th><th>仓库</th><th>Star</th><th>核心能力 / 为什么值得关注</th><th>语言 / License</th><th>最近推送</th></tr></thead><tbody><tr><td>1</td><td><a href="https://github.com/thedaviddias/Front-End-Checklist">thedaviddias/Front-End-Checklist</a></td><td>73,592</td><td>面向人和 Agent 的前端交付检查表；可转为生成式 UI 的静态验收与 Agent-ready 页面评测，但仓库许可 API 未返回明确 SPDX。</td><td>MDX / NOASSERTION</td><td>2026-08-14 05:59:25 UTC</td></tr><tr><td>2</td><td><a href="https://github.com/ZhuLinsen/daily_stock_analysis">ZhuLinsen/daily_stock_analysis</a></td><td>63,515</td><td>多市场分析、新闻、看板与定时推送的垂直 Agent 产品；值得研究多源证据链，但金融决策风险与数据时效要求高。</td><td>Python / MIT</td><td>2026-08-20 17:06:56 UTC</td></tr><tr><td>3</td><td><a href="https://github.com/HKUDS/Vibe-Trading">HKUDS/Vibe-Trading</a></td><td>31,359</td><td>个人交易 Agent；适合作为高风险垂直 Agent 的权限、回测污染与人类复核案例，不应以 Star 代替收益证据。</td><td>Python / MIT</td><td>2026-08-20 00:02:21 UTC</td></tr><tr><td>4</td><td><a href="https://github.com/titanwings/colleague-skill">titanwings/colleague-skill</a></td><td>23,647</td><td>把个人数字痕迹包装为 Skill 的产品实验；关注隐私、身份授权、长期记忆和情感依赖风险。</td><td>Python / MIT</td><td>2026-08-19 11:11:54 UTC</td></tr><tr><td>5</td><td><a href="https://github.com/leon-ai/leon">leon-ai/leon</a></td><td>17,448</td><td>本地开源个人助理；可拆解技能运行时与本地数据边界，真实可用性仍需固定工作流实测。</td><td>TypeScript / MIT</td><td>2026-08-20 15:47:29 UTC</td></tr></tbody></table></div></section>
+
+<section><h2>持续追踪项目</h2><p class="method">状态同时参考 Star、Release、推送、License、部署难度和可复用风险；Star 不是质量或采用率。</p><div class="table-wrap"><table><thead><tr><th>项目</th><th>状态</th><th>Star</th><th>最新 Release</th><th>License</th><th>可复用性 / 风险</th></tr></thead><tbody><tr><td><a href="https://github.com/openai/codex">openai/codex</a></td><td><span class="state">发布关键版本 / 加速</span></td><td>108,155</td><td><a href="https://github.com/openai/codex/releases/tag/rust-v0.149.0">rust-v0.149.0</a> · 2026-08-20 21:04:55 UTC</td><td>Apache-2.0</td><td>0.149.0 新增 agents 任务面板、消息队列和 doctor 诊断；权限恢复、沙箱与 MCP 安全修复值得做回归。</td></tr><tr><td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td><td><span class="state">发布关键版本</span></td><td>142,166</td><td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.238">v2.1.238</a> · 2026-08-20 20:33:51 UTC</td><td>NOASSERTION</td><td>v2.1.238 加强 self-hosted runner、Remote Control、代理结果内存释放与 headersHelper 信任边界。</td></tr><tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td><span class="state">持续增长 / 发布版本</span></td><td>199,586</td><td><a href="https://github.com/anomalyco/opencode/releases/tag/v1.18.19">v1.18.19</a> · 2026-08-20 06:22:06 UTC</td><td>MIT</td><td>v1.18.19 增加模型网关 passthrough、workspace compute residency 与 WebSocket 回退；跨供应商行为需冻结配置验证。</td></tr><tr><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td><span class="state">加速</span></td><td>233,584</td><td><a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.8.18">v2026.8.18</a> · 2026-08-18 07:26:46 UTC</td><td>MIT</td><td>约 72 小时继续高增且持续推送；自扩展、记忆和工具安装仍是核心权限风险。</td></tr><tr><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td><span class="state">热度加速 / 代码降温</span></td><td>275,009</td><td><a href="https://github.com/obra/superpowers/releases/tag/v6.3.0">v6.3.0</a> · 2026-08-12 16:58:30 UTC</td><td>MIT</td><td>关注度增长第一，但最后推送仍停在 8 月 19 日；Skill 方法论需要任务级 A/B。</td></tr><tr><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td><span class="state">加速</span></td><td>170,139</td><td><a href="https://github.com/firecrawl/firecrawl/releases/tag/v2.11.0">v2.11.0</a> · 2026-06-19 15:09:30 UTC</td><td>AGPL-3.0</td><td>数据接入热度持续；评估抓取漂移、隐私、成本以及 AGPL 商业边界。</td></tr><tr><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td><span class="state">增长 / 代码降温</span></td><td>170,707</td><td>未发现 GitHub Release</td><td>NOASSERTION</td><td>Star 继续上涨但代码无本窗口更新，且无明确 SPDX 许可。</td></tr><tr><td><a href="https://github.com/browser-use/browser-use">browser-use/browser-use</a></td><td><span class="state">稳定</span></td><td>109,899</td><td><a href="https://github.com/browser-use/browser-use/releases/tag/0.13.8">0.13.8</a> · 2026-08-16 18:48:54 UTC</td><td>MIT</td><td>持续推送但无新 Release；用动态页面、不可逆操作和登录态恢复测可靠性。</td></tr><tr><td><a href="https://github.com/e2b-dev/E2B">e2b-dev/E2B</a></td><td><span class="state">快速迭代</span></td><td>13,497</td><td><a href="https://github.com/e2b-dev/E2B/releases/tag/e2b%402.44.1">e2b@2.44.1</a> · 2026-08-20 19:21:48 UTC</td><td>Apache-2.0</td><td>2.43.0–2.44.1 在数小时内连续发布；2.44.1 修复 Volume.exists() 对缺失路径的回归，说明运行时语义也需契约测试。</td></tr><tr><td><a href="https://github.com/1jehuang/jcode">1jehuang/jcode</a></td><td><span class="state">发布关键版本</span></td><td>18,114</td><td><a href="https://github.com/1jehuang/jcode/releases/tag/v0.79.1">v0.79.1</a> · 2026-08-21 02:33:18 UTC</td><td>MIT</td><td>v0.79.1 可延迟大型 MCP 工具目录以压缩上下文，并为会话列表加入持久索引。</td></tr></tbody></table></div></section>
+
+<section class="feedback"><h2>个人反馈</h2><p>记录这份简报是否带来决策增量、希望继续追踪什么。内容只保存在当前浏览器本地，不上传服务器。</p><textarea id="feedback" placeholder="例如：对一个仓库做 AGENTS.md 消融；比较 Codex 与 Claude Code 的恢复轨迹。"></textarea><br><button id="save-feedback" type="button">保存反馈</button><span id="feedback-status" class="feedback-status"></span></section>
+
+<section><h2>来源覆盖与证据链</h2><p class="method">扫描于 2026-08-21 10:46–10:47 CST 完成，信息截止 10:55 CST。42 个日更入口中 22 个由扫描器直接访问，OpenAI News 与 Latent.Space 使用官方域名检索回退；所有不可访问项保留原因。播客核验了 No Priors、The Cognitive Revolution、Practical AI 与 Latent.Space 官方 Archive，未发现本窗口值得入选的新节目；Dwarkesh feed 本次不可访问。</p><div class="table-wrap"><table><thead><tr><th>来源家族</th><th>扫描</th><th>可达 / 已审阅</th><th>条目审阅</th><th>入选信号</th></tr></thead><tbody><tr><td>官方实验室</td><td>12</td><td>6</td><td>15</td><td>1</td></tr><tr><td>研究与评测</td><td>9</td><td>3</td><td>150</td><td>3</td></tr><tr><td>开发者生态</td><td>6</td><td>6</td><td>140</td><td>4</td></tr><tr><td>社区</td><td>4</td><td>4</td><td>145</td><td>1</td></tr><tr><td>播客</td><td>5</td><td>4</td><td>592</td><td>0</td></tr><tr><td>独立分析</td><td>4</td><td>2</td><td>40</td><td>0</td></tr><tr><td>标准与安全</td><td>2</td><td>1</td><td>1</td><td>0</td></tr></tbody></table></div>
+<details><summary>展开 42 个来源的访问状态与限制</summary><div class="table-wrap"><table><thead><tr><th>来源</th><th>家族</th><th>状态</th><th>审阅条目</th><th>选中</th><th>限制</th></tr></thead><tbody><tr><td>OpenAI News</td><td>官方实验室</td><td><span class="state">no-update</span></td><td>10</td><td>0</td><td>OpenAI 新闻页直连返回 403；改用官方域名检索及 Academy 官方活动页核验，未发现新技术博客或 System Card。</td></tr><tr><td>OpenAI Research</td><td>官方实验室</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>http-error / HTTP 403</td></tr><tr><td>OpenAI API Changelog</td><td>官方实验室</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>http-error / HTTP 403</td></tr><tr><td>Anthropic News</td><td>官方实验室</td><td><span class="state">reviewed</span></td><td>1</td><td>0</td><td>无</td></tr><tr><td>Anthropic Research</td><td>官方实验室</td><td><span class="state">reviewed</span></td><td>1</td><td>0</td><td>无</td></tr><tr><td>Anthropic API Release Notes</td><td>官方实验室</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>inaccessible / fetch failed</td></tr><tr><td>Google DeepMind Blog</td><td>官方实验室</td><td><span class="state">reviewed</span></td><td>1</td><td>0</td><td>无</td></tr><tr><td>Gemini API Release Notes</td><td>官方实验室</td><td><span class="state">reviewed</span></td><td>1</td><td>0</td><td>无</td></tr><tr><td>Meta AI Blog</td><td>官方实验室</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>inaccessible / fetch failed</td></tr><tr><td>Mistral News</td><td>官方实验室</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>http-error / HTTP 403</td></tr><tr><td>xAI News</td><td>官方实验室</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>http-error / HTTP 403</td></tr><tr><td>Microsoft Research Blog</td><td>官方实验室</td><td><span class="state">reviewed</span></td><td>1</td><td>0</td><td>无</td></tr><tr><td>arXiv cs.AI Recent</td><td>研究与评测</td><td><span class="state">reviewed</span></td><td>50</td><td>0</td><td>无</td></tr><tr><td>arXiv cs.CL Recent</td><td>研究与评测</td><td><span class="state">reviewed</span></td><td>50</td><td>0</td><td>无</td></tr><tr><td>arXiv cs.SE Recent</td><td>研究与评测</td><td><span class="state">selected</span></td><td>50</td><td>3</td><td>无</td></tr><tr><td>Hugging Face Daily Papers</td><td>研究与评测</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>inaccessible / fetch failed</td></tr><tr><td>METR Research</td><td>研究与评测</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>http-error / HTTP 403</td></tr><tr><td>Epoch AI</td><td>研究与评测</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>http-error / HTTP 403</td></tr><tr><td>LMSYS Org Blog</td><td>研究与评测</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>http-error / HTTP 403</td></tr><tr><td>SWE-bench</td><td>研究与评测</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>http-error / HTTP 403</td></tr><tr><td>ARC Prize Blog</td><td>研究与评测</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>http-error / HTTP 403</td></tr><tr><td>GitHub Agent Repository Search</td><td>开发者生态</td><td><span class="state">selected</span></td><td>50</td><td>5</td><td>无</td></tr><tr><td>OpenAI Codex Releases</td><td>开发者生态</td><td><span class="state">selected</span></td><td>0</td><td>2</td><td>inaccessible / Unterminated string in JSON at position 2000000 (line 1 column 2000001)</td></tr><tr><td>Anthropic Claude Code Releases</td><td>开发者生态</td><td><span class="state">selected</span></td><td>20</td><td>1</td><td>无</td></tr><tr><td>Model Context Protocol Commits</td><td>开发者生态</td><td><span class="state">selected</span></td><td>30</td><td>1</td><td>无</td></tr><tr><td>Browser Use Releases</td><td>开发者生态</td><td><span class="state">reviewed</span></td><td>20</td><td>0</td><td>无</td></tr><tr><td>E2B Releases</td><td>开发者生态</td><td><span class="state">selected</span></td><td>20</td><td>1</td><td>无</td></tr><tr><td>Hacker News Best Stories</td><td>社区</td><td><span class="state">selected</span></td><td>40</td><td>1</td><td>无</td></tr><tr><td>Hacker News Top Stories</td><td>社区</td><td><span class="state">reviewed</span></td><td>40</td><td>0</td><td>无</td></tr><tr><td>Show HN</td><td>社区</td><td><span class="state">reviewed</span></td><td>40</td><td>0</td><td>无</td></tr><tr><td>Lobsters RSS</td><td>社区</td><td><span class="state">reviewed</span></td><td>25</td><td>0</td><td>无</td></tr><tr><td>Latent Space Podcast</td><td>播客</td><td><span class="state">no-update</span></td><td>10</td><td>0</td><td>RSS 直连失败；改用 Latent.Space 官方 Archive 核验至 8 月 11 日，未发现本窗口新节目。</td></tr><tr><td>No Priors</td><td>播客</td><td><span class="state">reviewed</span></td><td>175</td><td>0</td><td>无</td></tr><tr><td>The Cognitive Revolution</td><td>播客</td><td><span class="state">reviewed</span></td><td>187</td><td>0</td><td>无</td></tr><tr><td>Practical AI</td><td>播客</td><td><span class="state">reviewed</span></td><td>220</td><td>0</td><td>无</td></tr><tr><td>Dwarkesh Podcast</td><td>播客</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>inaccessible / fetch failed</td></tr><tr><td>Artificial Analysis</td><td>独立分析</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>http-error / HTTP 403</td></tr><tr><td>Simon Willison Weblog</td><td>独立分析</td><td><span class="state">reviewed</span></td><td>30</td><td>0</td><td>无</td></tr><tr><td>Latent Space Newsletter</td><td>独立分析</td><td><span class="state">no-update</span></td><td>10</td><td>0</td><td>Feed 直连返回 403；改用官方 Archive 检索，未纳入未回溯原始材料的聚合内容。</td></tr><tr><td>Interconnects</td><td>独立分析</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>http-error / HTTP 403</td></tr><tr><td>Model Context Protocol Specification</td><td>标准与安全</td><td><span class="state">inaccessible</span></td><td>0</td><td>0</td><td>http-error / HTTP 403</td></tr><tr><td>OWASP GenAI Security Project</td><td>标准与安全</td><td><span class="state">reviewed</span></td><td>1</td><td>0</td><td>无</td></tr></tbody></table></div></details>
+<h3>证据分层</h3><ul><li><strong>Primary：</strong>官方 GitHub Release、arXiv 论文与源包、官方活动页、项目仓库。</li><li><strong>Corroborating：</strong>Simon Willison 等独立分析只用于发现或交叉检查，未替代原始材料。</li><li><strong>Discovery / sentiment：</strong>HN 分数和评论数只描述社区注意力；Vomit 信号同时回到项目仓库核验限制。</li><li><strong>播客：</strong>检查 4 个可核验官方入口，没有新相关节目，因而不制造 podcast-view 信号。</li></ul>
+</section>
+
+<section><h2>来源与方法</h2><ul>
+<li><strong>原始检索：</strong><a href="https://arxiv.org/abs/2608.20195">Agent 文档论文</a>、<a href="https://arxiv.org/abs/2608.19799">SWE-bench Science</a>、<a href="https://github.com/openai/codex/releases/tag/rust-v0.149.0">Codex Release</a>、<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.238">Claude Code Release</a>、<a href="https://github.com/e2b-dev/E2B/releases/tag/e2b%402.44.1">E2B Release</a>。</li>
+<li><strong>社区：</strong><a href="https://news.ycombinator.com/item?id=49375996">HN 讨论</a>与<a href="https://github.com/zachahn/vomit">原始仓库</a>同时保存；快照 195 分、209 评论，不能外推质量或采用率。</li>
+<li><strong>领头羊：</strong>OpenAI/Anthropic 官方技术博客和研究入口未发现本窗口新文章；官方产品 Release 单独标注，个人 X 观点未满足原帖核验条件。</li>
+<li><strong>GitHub：</strong>REST API 当前值减 8 月 18 日本地日报同仓库值；窗口约 71 小时 45 分。全部候选当前快照如下。</li>
+<li><strong>本次新增至已总结集合：</strong><code>thedaviddias/Front-End-Checklist</code>、<code>ZhuLinsen/daily_stock_analysis</code>、<code>HKUDS/Vibe-Trading</code>、<code>titanwings/colleague-skill</code>、<code>leon-ai/leon</code>。</li>
+<li><strong>生成方式：</strong>仅使用 web 搜索/打开接口、官方 HTTP/RSS/API、GitHub REST、arXiv HTML/源包与本地静态解析；未启动浏览器内核或 GUI。</li>
+</ul><h3>GitHub Star 快照</h3><div class="table-wrap"><table><thead><tr><th>仓库</th><th>Star</th><th>语言</th><th>License</th><th>最近推送</th></tr></thead><tbody><tr><td><a href="https://github.com/openai/codex">openai/codex</a></td><td>108,155</td><td>Rust</td><td>Apache-2.0</td><td>2026-08-21 02:35:23 UTC</td></tr><tr><td><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></td><td>142,166</td><td>Python</td><td>NOASSERTION</td><td>2026-08-20 20:33:50 UTC</td></tr><tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>199,586</td><td>TypeScript</td><td>MIT</td><td>2026-08-21 02:49:10 UTC</td></tr><tr><td><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></td><td>233,584</td><td>Python</td><td>MIT</td><td>2026-08-21 02:46:35 UTC</td></tr><tr><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>275,009</td><td>Shell</td><td>MIT</td><td>2026-08-19 17:33:23 UTC</td></tr><tr><td><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a></td><td>170,139</td><td>TypeScript</td><td>AGPL-3.0</td><td>2026-08-20 23:13:09 UTC</td></tr><tr><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td>170,707</td><td>Python</td><td>NOASSERTION</td><td>2026-08-18 16:02:06 UTC</td></tr><tr><td><a href="https://github.com/browser-use/browser-use">browser-use/browser-use</a></td><td>109,899</td><td>Python</td><td>MIT</td><td>2026-08-21 00:00:12 UTC</td></tr><tr><td><a href="https://github.com/e2b-dev/E2B">e2b-dev/E2B</a></td><td>13,497</td><td>Python</td><td>Apache-2.0</td><td>2026-08-20 20:09:20 UTC</td></tr><tr><td><a href="https://github.com/1jehuang/jcode">1jehuang/jcode</a></td><td>18,114</td><td>Rust</td><td>MIT</td><td>2026-08-21 01:49:22 UTC</td></tr><tr><td><a href="https://github.com/thedaviddias/Front-End-Checklist">thedaviddias/Front-End-Checklist</a></td><td>73,592</td><td>MDX</td><td>NOASSERTION</td><td>2026-08-14 05:59:25 UTC</td></tr><tr><td><a href="https://github.com/ZhuLinsen/daily_stock_analysis">ZhuLinsen/daily_stock_analysis</a></td><td>63,515</td><td>Python</td><td>MIT</td><td>2026-08-20 17:06:56 UTC</td></tr><tr><td><a href="https://github.com/HKUDS/Vibe-Trading">HKUDS/Vibe-Trading</a></td><td>31,359</td><td>Python</td><td>MIT</td><td>2026-08-20 00:02:21 UTC</td></tr><tr><td><a href="https://github.com/titanwings/colleague-skill">titanwings/colleague-skill</a></td><td>23,647</td><td>Python</td><td>MIT</td><td>2026-08-19 11:11:54 UTC</td></tr><tr><td><a href="https://github.com/leon-ai/leon">leon-ai/leon</a></td><td>17,448</td><td>TypeScript</td><td>MIT</td><td>2026-08-20 15:47:29 UTC</td></tr></tbody></table></div></section>
+</main><script>(()=>{const key="agent-brief-feedback-2026-08-21",box=document.getElementById("feedback"),status=document.getElementById("feedback-status");box.value=localStorage.getItem(key)||"";document.getElementById("save-feedback").addEventListener("click",()=>{localStorage.setItem(key,box.value);status.textContent="已保存到本地";setTimeout(()=>status.textContent="",2000)})})()</script></body></html>

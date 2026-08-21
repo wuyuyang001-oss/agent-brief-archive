@@ -1,0 +1,96 @@
+[
+  {
+    "type": "figure",
+    "number": "1",
+    "caption": "Agents’ documentation interactions across 557 SWE-chat sessions (panels a–d, n = 3,033 n=3{,}033 documentation events) and 33,097 AIDev agentic pull requests (panel e). (a) Agent-facing documents — instruction files and agent working notes — account for 60.5% of interactions, whereas API references account for 1.3%; the right-hand column uses a magnified axis. (b) Testing and building are less frequent within three events of a consultation and remain so after adjustment; the two authoring outcomes differ between the unadjusted lift and the stage-adjusted odds ratio, so those associations remain unresolved. Intervals are session-level cluster-bootstrap estimates. (c) Interaction is predominantly self-initiated (70.2% of all 3,033 interactions; 62.5% of the 1,615 consultation events) rather than failure-driven (7.5%; 9.7%); the axis counts all interactions. (d) Of ten candidate stages, Validate and Escalate have zero events under our operational definitions (open markers); stages overlap and do not sum to 3,033. (e) Among pull requests that change both code and documentation, code is touched first 4.7 × \\times more often, although 42.6% first touch both in a single commit, for which no order is observable; panel e uses a different dataset and unit of analysis (pull requests), and its error bars are Wilson intervals — the repository cluster-bootstrap equivalents are in Table 6 . Five panels summarising document types, post-consultation actions, interaction triggers, candidate interaction stages, and code–documentation ordering in pull requests.",
+    "source": "https://arxiv.org/html/2608.20195#S4.F1",
+    "media": [
+      "https://arxiv.org/html/2608.20195v1/fig1_overview.png"
+    ],
+    "files": [
+      "agent-docs-figure-1.png"
+    ],
+    "file": "agent-docs-figure-1.png",
+    "format": "downloaded-media"
+  },
+  {
+    "type": "table",
+    "number": "1",
+    "caption": "Documentation-interaction events by document type ( n = 3,033 n=3{,}033 events across 557 sessions). Agent-facing categories are marked † \\dagger . Together, the two agent-facing categories account for 60.5% of interactions; the nine categories constituting classical technical documentation (API reference, troubleshooting, architecture, schema, installation, examples, testing, contributing, and changelog) account for 10.6%.",
+    "source": "https://arxiv.org/html/2608.20195#S4.T1",
+    "file": "agent-docs-table-1.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "2",
+    "caption": "RQ2: what triggers documentation interaction ( n = 3,033 n=3{,}033 interactions; consultation events alone are n = 1,615 n=1{,}615 , for which the self-initiated share is 62.5%). Self-initiated triggers outnumber failure-driven ones by 9.3 × \\times .",
+    "source": "https://arxiv.org/html/2608.20195#S4.T2",
+    "file": "agent-docs-table-2.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "3",
+    "caption": "Actions within three events of a documentation consultation ( n c = 1,615 n_{c}=1{,}615 anchors) compared with the non-anchor base rate ( n b = 93,198 n_{b}=93{,}198 ), with session cluster-bootstrap intervals (2,000 resamples, percentile method) for the risk difference Δ ​ p \\Delta p and the lift ratio, and an adjusted association from a logistic GEE with exchangeable working correlation clustered by session and adjusted for development stage, within-session position, session length, and agent family. Unadjusted and adjusted estimates differ for the two authoring outcomes: documentation creation is elevated before adjustment, but its adjusted interval includes 1; code editing is indistinguishable from the baseline before adjustment, but is elevated after controlling for stage. Only the lower frequencies of testing and building are robust to both analyses. We therefore treat these reductions as the finding and the authoring associations as unresolved.",
+    "source": "https://arxiv.org/html/2608.20195#S4.T3",
+    "file": "agent-docs-table-3.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "4",
+    "caption": "Failure recovery: the first action after each of 2,034 failure episodes and the fraction of episodes subsequently resolved. Resolution can be computed only for episodes followed by an observable test or build outcome, so the resolution denominators are smaller than the frequency counts. Documentation-based recovery has the highest point estimate but the widest interval; it overlaps every other strategy, so we draw no conclusion about the relative ranking.",
+    "source": "https://arxiv.org/html/2608.20195#S4.T4",
+    "file": "agent-docs-table-4.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "5",
+    "caption": "Artefact-level results for RQ3 (AIDev pull requests): (a) documentation involvement among all analysable agentic PRs; (b) the artefact touched first, restricted to multi-commit PRs that change both artefact types and for which order is observable; and (c) merge rate by documentation involvement, reported as an association rather than a causal effect. All intervals are Wilson 95% CIs.",
+    "source": "https://arxiv.org/html/2608.20195#S4.T5",
+    "file": "agent-docs-table-5.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "6",
+    "caption": "Cluster-bootstrap intervals (2,000 resamples) for the headline proportions, resampling sessions for SWE-chat statistics and repositories for AIDev statistics, alongside Wilson intervals that assume independent trials. The ratio column gives cluster-interval width divided by Wilson-interval width. Clustering widens every interval, especially for AIDev, where the largest repository contributes 8,911 pull requests and the ten largest contribute 44.7%. We report cluster intervals as the primary uncertainty estimates.",
+    "source": "https://arxiv.org/html/2608.20195#S4.T6",
+    "file": "agent-docs-table-6.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "7",
+    "caption": "Consultation (Read, Search, Discover; n c = 1,615 n_{c}=1{,}615 ) versus production (Edit, Create; n p = 1,401 n_{p}=1{,}401 ) events by document type. Agent-facing categories are marked † \\dagger ; they account for 57.4% of consultation and 63.7% of production. Configuration files are consulted far more than they are produced; agent working notes are consulted and produced in nearly equal measure. “Other low-frequency” pools troubleshooting, license/legal, and contributing, so the columns sum to n c n_{c} and n p n_{p} .",
+    "source": "https://arxiv.org/html/2608.20195#S4.T7",
+    "file": "agent-docs-table-7.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "8",
+    "caption": "Sensitivity of headline proportions to weighting. The event-weighted estimate pools all events (long sessions weigh more); the session-equal estimate averages per-session shares; and the agent-weighted estimate reweights sessions to the corpus agent distribution (83.8% Claude Code, 4,852/5,790 labelled sessions; 61 of the 5,851 released sessions are excluded from the reweighting — 52 carry no agent label and 9 belong to agents with fewer than 20 sessions), correcting our deliberate oversampling of minority agents. Because the sample was also stratified by session length, this corrects agent-level oversampling only and is not a full joint-stratum estimate. All three statistics describe the stratified sample; the broad pattern is stable across all three weightings.",
+    "source": "https://arxiv.org/html/2608.20195#S4.T8",
+    "file": "agent-docs-table-8.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "9",
+    "caption": "Fraction of sessions containing at least one documentation interaction, by agent. Sampling was deliberately non-proportional, so these per-agent estimates must not be pooled. The zero estimate for one agent is based on 11 sessions and does not constitute evidence of absence.",
+    "source": "https://arxiv.org/html/2608.20195#S4.T9",
+    "file": "agent-docs-table-9.html",
+    "format": "html"
+  },
+  {
+    "type": "table",
+    "number": "10",
+    "caption": "Evidence for each candidate stage of the documentation-interaction cycle ( n = 3,033 n=3{,}033 documentation events). Two stages in the initial scheme are entirely unattested.",
+    "source": "https://arxiv.org/html/2608.20195#S5.T10",
+    "file": "agent-docs-table-10.html",
+    "format": "html"
+  }
+]
